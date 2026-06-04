@@ -1,0 +1,361 @@
+/* css styles */
+.research-page h1 {
+  color: #1b4332;
+}
+
+
+.research-page {
+  background-color: #f8fff8;
+}
+
+body {
+  font-size: 22px;
+}
+
+
+.content {
+  max-width: 1150px;
+}
+
+
+.contact a {
+  text-decoration: none;
+  font-weight: 500;
+  font-family:Serif ;
+}
+
+.contact a:hover {
+  text-decoration: none;
+}
+
+.columns {
+  text-align: center;
+  color: white;
+}
+
+.columns a {
+  color: white;
+}
+
+
+.statement-frame {
+  background:
+    linear-gradient(rgba(0,0,0,0.45),
+                    rgba(0,0,0,0.45)),
+    url("EdinPicture.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  padding: 3rem;
+  border-radius: 12px;
+}
+
+.justified-list {
+  text-align: justify;
+}
+
+.justified-list li {
+  margin-bottom: 1.2rem;  /* increase this for more space */
+}
+
+
+
+
+/* Keep text above overlay */
+.hero-full > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* TITLE */
+.hero-full h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* SUBTITLE */
+.hero-full p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+/* CONTACT LINKS */
+.hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.hero-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero-links a:hover {
+  text-decoration: underline;
+}
+
+.justified-list {
+  text-align: left !important;
+}
+
+.justified-list li {
+  text-align: left !important;
+  margin-bottom: 0.8rem;
+}
+
+.paper {
+  margin-bottom: 2rem;
+}
+
+.paper h3 {
+  margin-bottom: 0.3rem;
+}
+
+.paper-links {
+  margin-top: 0.3rem;
+}
+
+.paper-links a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.paper-links a:hover {
+  text-decoration: underline;
+}
+
+/* ABSTRACT TOGGLE */
+details {
+  margin-top: 0.5rem;
+}
+
+/* ABSTRACT BUTTON */
+summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: #2c7be5;
+}
+
+summary:hover {
+  text-decoration: underline;
+}
+
+/* ABSTRACT BOX WHEN OPEN */
+details[open] {
+  background: #eef4ff;
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 4px solid #2c7be5;
+  margin-top: 0.8rem;
+  text-align: justify;
+}
+
+details[open] {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* ABSTRACT TEXT */
+details p {
+  margin-top: 0.7rem;
+  margin-bottom: 0;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
+.journal-tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: #f1f3f5;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+
+.research-page .quarto-title-banner {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.35),
+                    rgba(0,0,0,0.35)),
+    url("EdinPicture.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 8rem 2rem;
+  text-align: center;
+}
+
+
+.research-page .title {
+  color: white !important;
+}
+
+.navbar .container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center title in normal flow */
+.navbar-brand {
+  position: static;
+  margin: 0 auto;
+}
+
+/* Center navigation links */
+.navbar-nav {
+  margin: 0 auto;
+  justify-content: center;
+}
+
+iframe {
+  border-radius: 10px;
+}
+
+
+.research-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.research-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: white;
+}
+
+.research-links a:hover {
+  text-decoration: underline;
+}
+
+/* GRID LAYOUT */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* CARD STYLE */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #eee;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* TITLE INSIDE CARD */
+.card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+/* LINKS */
+.card a {
+  color: #2c7be5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* =====================================================
+   FULL HOMEPAGE HERO BACKGROUND
+===================================================== */
+
+.home-page {
+
+  background-image:
+    linear-gradient(rgba(0,0,0,0.45),
+                    rgba(0,0,0,0.45)),
+    url("Profile.jpg");
+
+  background-size: 115%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  min-height: 100vh;
+}
+
+/* =====================================================
+   ABOUT BLOCK CONTAINER
+===================================================== */
+
+.home-page #quarto-content {
+  padding-top: 6rem;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.home-page h1.title {
+  color: white !important;
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.hero-subtitle {
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   PROFILE IMAGE
+===================================================== */
+
+.home-page .about-image {
+  border-radius: 50%;
+  border: 4px solid white;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* =====================================================
+   ABOUT DESCRIPTION
+===================================================== */
+
+.home-page .about-entity,
+.home-page .about-links {
+  color: white !important;
+}
+
+/* =====================================================
+   SOCIAL LINKS
+===================================================== */
+
+.home-page .about-links a {
+  color: white !important;
+}
+
+.home-page .about-links a:hover {
+  opacity: 0.8;
+}

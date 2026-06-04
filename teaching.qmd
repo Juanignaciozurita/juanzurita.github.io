@@ -1,0 +1,88 @@
+---
+title: "Teaching"
+title-block-banner: true
+---
+
+<!-- ## Teaching -->
+<p style="text-align: justify;">
+In recent years, I have taught undergraduate and postgraduate courses in programming and numerical methods, forecasting, macroeconomics, mathematics, and the history of economic thought.
+</p>
+
+
+---
+
+## Courses
+
+#### Applications of Econometrics *(Honours)*  
+The University of Edinburgh, United Kingdom — 2026
+
+---
+
+#### Economics 2 *(Undergraduate)*  
+The University of Edinburgh, United Kingdom — 2024–2026  
+[Teaching Evaluation Reports](#)
+
+---
+
+#### Programming and Numerical Methods *(Honours)*  
+The University of Edinburgh, United Kingdom — 2024–2026
+
+---
+
+---
+
+#### Macroeconomics 2 *(PhD Students)*  
+University of Technology Sydney, Australia — 2024
+
+---
+
+#### Advanced Macroeconomics *(Honours)*  
+University of Technology Sydney, Australia — 2024
+
+---
+
+#### Intermediate Macroeconomics  
+University of Technology Sydney, Australia — 2024
+
+---
+
+#### Central Banking and Monetary Policy  
+University of Technology Sydney, Australia — 2024  
+[Teaching Evaluation Reports](#)
+
+---
+
+#### Economic and Business Forecasting  
+The Australian National University, Australia — 2023  
+[Teaching Evaluation Reports](#)
+
+---
+
+#### Economics for Business  
+University of Technology Sydney, Australia — 2022  
+[Teaching Evaluation Reports](#)
+
+---
+
+#### History of Economic Thought  
+Universidad Católica Argentina, Argentina — 2011–2015  
+[Teaching Evaluation Reports](#)
+
+---
+
+## Lectures
+
+- [Deep Learning for Macroeconomics]()
+
+<!-- --- -->
+
+<!-- ## Tutorials -->
+
+<!-- - Applications of Econometrics -->
+
+---
+
+### Letters of Recommendation
+
+For undergraduate recommendation letters, please follow these instructions:  
+[Click here](#)

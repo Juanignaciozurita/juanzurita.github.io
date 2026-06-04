@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Juan Zurita"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Research
+        href: research.qmd
+      - text: Teaching
+        href: teaching.qmd
+      - text: CV
+        href: cv.qmd
+      - text: Open Collaborations
+        href: opencollaborations.qmd
+      - text: Useful Links
+        href: usefullinks.qmd
+
+format:
+  html:
+    #fontcolor: "darkgreen"
+    mainfont: "serif"
+    theme: cosmo
+    css: styles.css
+    toc: true
+    
+    

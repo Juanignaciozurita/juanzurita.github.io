@@ -1,0 +1,8 @@
+.Rproj.user/
+.quarto/
+_site/
+_site_libs/
+*_files/
+*.log
+*.aux
+*.toc

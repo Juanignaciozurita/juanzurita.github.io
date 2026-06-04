@@ -1,0 +1,49 @@
+---
+title: "Open Collaborations"
+title-block-banner: true
+---
+
+<!-- ## Collaborations on Demand -->
+
+<p style="text-align: justify;">
+Here you will find a list of ongoing research collaborations open to new contributors. Please feel free to contact me if you are interested in participating in any of the following projects.
+</p>
+---
+
+#### **Sectoral Wage Dynamics during Periods of Low and High Inflation** *(Open)*  
+##### **Co-author:** Emiliano Carlevaro  
+
+##### <span class="journal-tag">**Type of Collaboration:** Data cleaning, Data visualization, Literature review </span>
+
+---
+
+#### **The Heterogeneous Effects of Capital Requirements on Credit Supply** *(Open)*  
+
+##### <span class="journal-tag">**Type of Collaboration:** Research analysis, Data visualization </span> 
+
+---
+
+#### **Household Debt and Low Labour Productivity: Implications for Labour Supply** *(Open)*   
+
+<!-- <span class="journal-tag">  </span>   -->
+
+##### <span class="journal-tag">**Type of Collaboration:**  Data analysis, Research analysis, Data visualization, Literature review </span>  
+
+---
+
+#### **Shock Therapy and Wages: Sectoral Effects of Fiscal Consolidation in Argentina** *(Open)*  
+
+##### <span class="journal-tag">**Type of Collaboration:** Research analysis, Literature review, Data work, Data visualization </span>
+
+---
+
+<!-- ## Collaborations on Supply -->
+
+<!-- I am also open to collaborating on research projects that require expertise in the following areas: -->
+
+<!-- #### Data Sets -->
+<!-- - Individual wage data from Argentina   -->
+<!-- - HILDA (Household, Income and Labour Dynamics in Australia)   -->
+<!-- - U.S. Call Reports Data   -->
+<!-- - HMDA data   -->
+<!-- - Monthly wage data from Argentina   -->

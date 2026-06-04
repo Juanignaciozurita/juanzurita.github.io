@@ -1,0 +1,180 @@
+---
+title: "Useful Links"
+body-classes: usefullinks
+---
+
+Here I list some links that I find useful during my research or learning activities.
+
+---
+
+## Julia
+
+::: {.card-grid}
+
+::: {.card}
+### 🟣 Julia Academy
+
+Free courses for programming, machine learning, and data science.
+
+🔗 https://juliaacademy.com/courses
+:::
+
+:::
+
+---
+
+## Math and Statistics Notes
+
+::: {.card-grid}
+
+::: {.card}
+### 📊 Math & Probability Notes
+
+Oliver Knill’s lecture materials and notes.
+
+🔗 https://math.dartmouth.edu/~prob/prob/prob.pdf
+:::
+
+::: {.card}
+### 📈 Bayesian Econometrics
+
+Applied Bayesian Econometrics for Central Bankers (add link if available).
+:::
+
+:::
+
+---
+
+## C++
+
+::: {.card-grid}
+
+::: {.card}
+### 💻 Learn C++
+
+Coding Ninjas C++ tutorials.
+
+🔗 https://www.codingninjas.com/studio/library/learn-c-plus-plus
+:::
+
+:::
+
+---
+
+## LaTeX & Writing
+
+::: {.card-grid}
+
+::: {.card}
+### ✍️ Overleaf
+
+Online LaTeX editor.
+
+🔗 https://www.overleaf.com
+:::
+
+::: {.card}
+### 📐 LaTeX Table Generator
+
+Easy table builder for LaTeX.
+
+🔗 https://www.tablesgenerator.com/latex_tables
+:::
+
+::: {.card}
+### ✏️ Hemingway Editor
+
+Improve clarity and readability of writing.
+
+🔗 https://hemingwayapp.com
+:::
+
+::: {.card}
+### 🤖 QuillBot
+
+Paraphrasing and writing assistant.
+
+🔗 https://quillbot.com
+:::
+
+:::
+
+---
+
+## References Tools
+
+::: {.card-grid}
+
+::: {.card}
+### 🔗 DOI / BibTeX
+
+Find and format DOIs for references.
+
+🔗 https://www.doi.org
+:::
+
+::: {.card}
+### 🧠 Litmaps
+
+Visual literature mapping tool.
+
+🔗 https://www.litmaps.com
+:::
+
+::: {.card}
+### 🔍 ResearchRabbit
+
+Discover and map academic papers.
+
+🔗 https://www.researchrabbit.ai
+:::
+
+:::
+
+---
+
+## AI for Research
+
+::: {.card-grid}
+
+::: {.card}
+### 🤖 AI & Me
+
+AI tools for research workflows.
+
+🔗 https://aiandme.com
+:::
+
+::: {.card}
+### ⚙️ Refine AI
+
+Research assistance and paper refinement tools.
+
+🔗 https://refine.ai
+:::
+
+:::
+
+---
+
+## Funding & Research Opportunities
+
+::: {.card-grid}
+
+::: {.card}
+### 💰 INOMICS
+
+Economics jobs, funding, and summer schools.
+
+🔗 https://inomics.com
+:::
+
+::: {.card}
+### 🎓 Research Professional
+
+Funding and research opportunities database.
+
+🔗 https://www.researchprofessional.com
+:::
+
+:::

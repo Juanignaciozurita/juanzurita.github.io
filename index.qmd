@@ -1,0 +1,74 @@
+---
+# title-block-banner: true   
+title: "Juan Zurita"
+subtitle: |
+  <div style="font-size:1em; text-align:center;">
+  Lecturer in Economics<br>
+  The University of Edinburgh
+  </div>
+  
+
+about:
+  template: jolla
+  image: Profile.jpg
+  links:
+    - icon: linkedin   
+      text: LinkedIn
+      href: https://www.linkedin.com/in/juan-ignacio-z-4b345425/
+
+    - icon: github
+      text: Github
+      href: https://github.com/Juanignaciozurita
+      
+toc: false
+body-classes: home-page
+---
+
+::: {.contact}
+<span style="color:#a33a2a;">
+<i class="bi bi-envelope-fill"></i>
+</span>
+[juan.zurita@ed.ac.uk](mailto:juan.zurita@ed.ac.uk)
+<!-- 📧 [juan.zurita@ed.ac.uk](mailto:juan.zurita@ed.ac.uk) -->
+<!-- 🐙 [GitHub](https://github.com/Juanignaciozurita) -->
+<!-- 📄 [CV](https://drive.google.com/file/d/1DlbczDUbWkBIWiaEBQGoVwmb0AAtj5Dn/view) -->
+:::
+
+< \br >
+
+ 
+## Research Interest
+Macroeconomics
+
+ 
+####  <span style="color:#b22222;">Welcome to my personal website</span>
+
+<p style="text-align: justify;">
+I am a fixed-term Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy.
+</p>
+
+::: {.statement-frame}
+
+::: {.columns}
+
+::: {.column width="50%"}
+## [Research Statement](https://drive.google.com/file/d/1tWsicZ2M4dt5BGN5eYs_M9gSFJi06CT2/view?usp=sharing)
+:::
+
+::: {.column width="50%"}
+## [Teaching Statement](https://drive.google.com/file/d/1MlIbBB82C9jQIq8BS_OEGIp93ZXj7W0v/view?usp=sharing)
+:::
+
+:::
+
+:::
+
+
+## Research Highlights
+::: {.justified-list}
+- **March 2026**: New Working Paper: ["*The Bank Profit Channel of Monetary Policy*"](https://drive.google.com/file/d/1diD_WeOjfIid2flkEFpJnEuftlgbH2H8/view?usp=sharing) with Jiening Le  
+- **February 2026**: My project [“*Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom*”](https://drive.google.com/file/d/1JgVkmJzz4pxLuUIiWGliRyAgdT616lJh/view?usp=sharing) has received funding from the Royal Society of Edinburgh.  
+- **January 2026**: My paper [*Banking Heterogeneity, Credit Supply and Economic Growth*](https://doi.org/10.1016/j.iref.2026.104921), Slides, has been published at the International Review of Economics and Finance.
+:::
+
+
