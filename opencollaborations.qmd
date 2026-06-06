@@ -1,5 +1,5 @@
 ---
-title: "Open Collaborations"
+# title: "Open Collaborations"
 title-block-banner: true
 ---
 
@@ -11,7 +11,7 @@ Here you will find a list of ongoing research collaborations open to new contrib
 ---
 
 #### **Sectoral Wage Dynamics during Periods of Low and High Inflation** *(Open)*  
-##### **Co-author:** Emiliano Carlevaro  
+##### Co-author: Emiliano Carlevaro  
 
 ##### <span class="journal-tag">**Type of Collaboration:** Data cleaning, Data visualization, Literature review </span>
 

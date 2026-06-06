@@ -1,5 +1,6 @@
 ---
-title: "Useful Links"
+# title: "Useful Links"
+title-block-banner: true
 body-classes: usefullinks
 ---
 
@@ -16,7 +17,7 @@ Here I list some links that I find useful during my research or learning activit
 
 Free courses for programming, machine learning, and data science.
 
-🔗 https://juliaacademy.com/courses
+🔗 [Link](https://juliaacademy.com/courses)
 :::
 
 :::
@@ -32,13 +33,15 @@ Free courses for programming, machine learning, and data science.
 
 Oliver Knill’s lecture materials and notes.
 
-🔗 https://math.dartmouth.edu/~prob/prob/prob.pdf
+🔗 [Link](https://math.dartmouth.edu/~prob/prob/prob.pdf)
 :::
 
 ::: {.card}
 ### 📈 Bayesian Econometrics
 
-Applied Bayesian Econometrics for Central Bankers (add link if available).
+Applied Bayesian Econometrics for Central Bankers. 
+
+🔗 [Link](https://www.bankofengland.co.uk/ccbs/applied-bayesian-econometrics-for-central-bankers-updated-2017)
 :::
 
 :::
@@ -54,7 +57,7 @@ Applied Bayesian Econometrics for Central Bankers (add link if available).
 
 Coding Ninjas C++ tutorials.
 
-🔗 https://www.codingninjas.com/studio/library/learn-c-plus-plus
+🔗 [Link](https://www.codingninjas.com/studio/library/learn-c-plus-plus)
 :::
 
 :::
@@ -70,7 +73,7 @@ Coding Ninjas C++ tutorials.
 
 Online LaTeX editor.
 
-🔗 https://www.overleaf.com
+🔗 [Link](https://www.overleaf.com)
 :::
 
 ::: {.card}
@@ -78,7 +81,7 @@ Online LaTeX editor.
 
 Easy table builder for LaTeX.
 
-🔗 https://www.tablesgenerator.com/latex_tables
+🔗 [Link](https://www.tablesgenerator.com/latex_tables)
 :::
 
 ::: {.card}
@@ -86,7 +89,7 @@ Easy table builder for LaTeX.
 
 Improve clarity and readability of writing.
 
-🔗 https://hemingwayapp.com
+🔗 [Link](https://hemingwayapp.com)
 :::
 
 ::: {.card}
@@ -94,7 +97,7 @@ Improve clarity and readability of writing.
 
 Paraphrasing and writing assistant.
 
-🔗 https://quillbot.com
+🔗 [Link](https://quillbot.com)
 :::
 
 :::
@@ -110,7 +113,7 @@ Paraphrasing and writing assistant.
 
 Find and format DOIs for references.
 
-🔗 https://www.doi.org
+🔗 [Link](https://www.doi.org)
 :::
 
 ::: {.card}
@@ -118,7 +121,7 @@ Find and format DOIs for references.
 
 Visual literature mapping tool.
 
-🔗 https://www.litmaps.com
+🔗 [Link](https://www.litmaps.com)
 :::
 
 ::: {.card}
@@ -126,7 +129,7 @@ Visual literature mapping tool.
 
 Discover and map academic papers.
 
-🔗 https://www.researchrabbit.ai
+🔗 [Link](https://www.researchrabbit.ai)
 :::
 
 :::
@@ -142,7 +145,7 @@ Discover and map academic papers.
 
 AI tools for research workflows.
 
-🔗 https://aiandme.com
+🔗 [Link](https://aiandme.com)
 :::
 
 ::: {.card}
@@ -150,7 +153,7 @@ AI tools for research workflows.
 
 Research assistance and paper refinement tools.
 
-🔗 https://refine.ai
+🔗 [Link](https://refine.ai)
 :::
 
 :::
@@ -166,7 +169,7 @@ Research assistance and paper refinement tools.
 
 Economics jobs, funding, and summer schools.
 
-🔗 https://inomics.com
+🔗 [Link](https://inomics.com)
 :::
 
 ::: {.card}
@@ -174,7 +177,7 @@ Economics jobs, funding, and summer schools.
 
 Funding and research opportunities database.
 
-🔗 https://www.researchprofessional.com
+🔗 [Link](https://www.researchprofessional.com)
 :::
 
 :::
