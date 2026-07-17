@@ -9,7 +9,17 @@
 }
 
 body {
-  font-size: 22px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.25;
+}
+
+h2 {
+  margin-top: 2.2rem;
+  padding-bottom: 0.3rem;
 }
 
 
@@ -218,22 +228,61 @@ details p {
   color: white !important;
 }
 
-.navbar .container-fluid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* =====================================================
+   NAVBAR — brand left, links right, clean spacing
+===================================================== */
+
+.navbar {
+  padding: 0.55rem 1.25rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
 }
 
-/* Center title in normal flow */
 .navbar-brand {
-  position: static;
-  margin: 0 auto;
+  font-family: serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+  color: #f5efe6 !important;
 }
 
-/* Center navigation links */
-.navbar-nav {
-  margin: 0 auto;
-  justify-content: center;
+.navbar .nav-link {
+  color: rgba(245, 239, 230, 0.9) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.45rem 0.85rem !important;
+  white-space: nowrap;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #ffffff !important;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+}
+
+/* Dropdown menus */
+.navbar .dropdown-menu {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  padding: 0.4rem 0;
+}
+
+.navbar .dropdown-item {
+  font-size: 0.95rem;
+  padding: 0.45rem 1.1rem;
+}
+
+.navbar .dropdown-item:hover {
+  background: #fdf6ec;
+  color: #7a2318;
+}
+
+/* Right-side icon links */
+.navbar .quarto-navbar-tools .quarto-navigation-tool,
+.navbar-nav .bi {
+  color: rgba(245, 239, 230, 0.9);
 }
 
 iframe {
