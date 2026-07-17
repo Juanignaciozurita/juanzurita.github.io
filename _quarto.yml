@@ -17,23 +17,28 @@ website:
   # Uncomment and add your Google Analytics ID to enable analytics:
   # google-analytics: "G-XXXXXXXXXX"
   navbar:
+    background: "#7a2318"
     left:
       - href: index.qmd
         text: Home
       - text: Research
-        href: research.qmd
+        menu:
+          - text: Publications & Working Papers
+            href: research.qmd
+          - text: Open Collaborations
+            href: opencollaborations.qmd
       - text: Teaching
-        href: teaching.qmd
-      - text: For Students
-        href: students.qmd
+        menu:
+          - text: Courses
+            href: teaching.qmd
+          - text: For Students
+            href: students.qmd
+          - text: Resources
+            href: usefullinks.qmd
       - text: Consulting & Policy
         href: consulting.qmd
       - text: CV
         href: cv.qmd
-      - text: Open Collaborations
-        href: opencollaborations.qmd
-      - text: Resources
-        href: usefullinks.qmd
     right:
       - icon: github
         href: https://github.com/Juanignaciozurita
