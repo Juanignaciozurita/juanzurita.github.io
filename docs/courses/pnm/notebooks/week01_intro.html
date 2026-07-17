@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 1 — Introduction to Julia for Economists – Juan Zurita</title>
+<title>Week 1 — Introduction to Programming – Juan Zurita</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -138,11 +138,11 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../../styles.css">
-<meta property="og:title" content="Week 1 — Introduction to Julia for Economists – Juan Zurita">
+<meta property="og:title" content="Week 1 — Introduction to Programming – Juan Zurita">
 <meta property="og:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
 <meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/Profile.jpg">
 <meta property="og:site_name" content="Juan Zurita">
-<meta name="twitter:title" content="Week 1 — Introduction to Julia for Economists – Juan Zurita">
+<meta name="twitter:title" content="Week 1 — Introduction to Programming – Juan Zurita">
 <meta name="twitter:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
 <meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/Profile.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -249,11 +249,23 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#variables-and-typesjulia-is-fast-like-c-but-reads-like-maths.-assign-variables-with-julia-infers-the-type." id="toc-variables-and-typesjulia-is-fast-like-c-but-reads-like-maths.-assign-variables-with-julia-infers-the-type." class="nav-link active" data-scroll-target="#variables-and-typesjulia-is-fast-like-c-but-reads-like-maths.-assign-variables-with-julia-infers-the-type.">1. Variables and typesJulia is fast like C but reads like maths. Assign variables with <code>=</code>; Julia infers the type.</a></li>
-  <li><a href="#vectors-and-matriceseconomic-data-lives-in-arrays-time-series-are-vectors-panel-data-are-matrices." id="toc-vectors-and-matriceseconomic-data-lives-in-arrays-time-series-are-vectors-panel-data-are-matrices." class="nav-link" data-scroll-target="#vectors-and-matriceseconomic-data-lives-in-arrays-time-series-are-vectors-panel-data-are-matrices.">2. Vectors and matricesEconomic data lives in arrays: time series are vectors, panel data are matrices.</a></li>
-  <li><a href="#functions-and-control-flowfunctions-are-the-building-blocks-of-every-model-you-will-write-in-this-course." id="toc-functions-and-control-flowfunctions-are-the-building-blocks-of-every-model-you-will-write-in-this-course." class="nav-link" data-scroll-target="#functions-and-control-flowfunctions-are-the-building-blocks-of-every-model-you-will-write-in-this-course.">3. Functions and control flowFunctions are the building blocks of every model you will write in this course.</a></li>
-  <li><a href="#plottingwe-use-plots.jl.-the-first-plot-takes-a-moment-to-compile-that-is-normal." id="toc-plottingwe-use-plots.jl.-the-first-plot-takes-a-moment-to-compile-that-is-normal." class="nav-link" data-scroll-target="#plottingwe-use-plots.jl.-the-first-plot-takes-a-moment-to-compile-that-is-normal.">4. PlottingWe use <code>Plots.jl</code>. The first plot takes a moment to compile — that is normal.</a></li>
-  <li><a href="#application-the-solow-growth-modeleverything-together.-capital-evolves-ask_t1-s-k_talpha-1---delta-k_twhere-s-is-the-saving-rate-alpha-the-capital-share-and-delta-depreciation.-we-simulate-the-path-of-capital-from-a-low-starting-point-and-watch-convergence-to-the-steady-state." id="toc-application-the-solow-growth-modeleverything-together.-capital-evolves-ask_t1-s-k_talpha-1---delta-k_twhere-s-is-the-saving-rate-alpha-the-capital-share-and-delta-depreciation.-we-simulate-the-path-of-capital-from-a-low-starting-point-and-watch-convergence-to-the-steady-state." class="nav-link" data-scroll-target="#application-the-solow-growth-modeleverything-together.-capital-evolves-ask_t1-s-k_talpha-1---delta-k_twhere-s-is-the-saving-rate-alpha-the-capital-share-and-delta-depreciation.-we-simulate-the-path-of-capital-from-a-low-starting-point-and-watch-convergence-to-the-steady-state.">5. Application: the Solow growth modelEverything together. Capital evolves as<span class="math display">\[k_{t+1} = s \, k_t^{\alpha} + (1 - \delta) k_t\]</span>where <span class="math inline">\(s\)</span> is the saving rate, <span class="math inline">\(\alpha\)</span> the capital share, and <span class="math inline">\(\delta\)</span> depreciation. We simulate the path of capital from a low starting point and watch convergence to the steady state.</a></li>
+  <li><a href="#import-libraries" id="toc-import-libraries" class="nav-link active" data-scroll-target="#import-libraries">Import libraries</a></li>
+  <li><a href="#on-good-coding-practices" id="toc-on-good-coding-practices" class="nav-link" data-scroll-target="#on-good-coding-practices">On good coding practices</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a></li>
+  <li><a href="#arrays" id="toc-arrays" class="nav-link" data-scroll-target="#arrays">Arrays</a></li>
+  <li><a href="#some-operations" id="toc-some-operations" class="nav-link" data-scroll-target="#some-operations">Some operations</a></li>
+  <li><a href="#boolean-values" id="toc-boolean-values" class="nav-link" data-scroll-target="#boolean-values">Boolean values</a></li>
+  <li><a href="#exercises-from-quantecon" id="toc-exercises-from-quantecon" class="nav-link" data-scroll-target="#exercises-from-quantecon">Exercises (from QuantEcon)</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1-inner-product" id="toc-exercise-1-inner-product" class="nav-link" data-scroll-target="#exercise-1-inner-product">Exercise 1 — Inner product</a></li>
+  <li><a href="#exercise-2-count-the-even-numbers-in-099" id="toc-exercise-2-count-the-even-numbers-in-099" class="nav-link" data-scroll-target="#exercise-2-count-the-even-numbers-in-099">Exercise 2 — Count the even numbers in 0–99</a></li>
+  <li><a href="#exercise-3-count-pairs-where-both-numbers-are-even" id="toc-exercise-3-count-pairs-where-both-numbers-are-even" class="nav-link" data-scroll-target="#exercise-3-count-pairs-where-both-numbers-are-even">Exercise 3 — Count pairs where both numbers are even</a></li>
+  <li><a href="#exercise-4-compute-int_02-x3-dx" id="toc-exercise-4-compute-int_02-x3-dx" class="nav-link" data-scroll-target="#exercise-4-compute-int_02-x3-dx">Exercise 4 — Compute <span class="math inline">\(\int_0^2 x^3 \, dx\)</span></a></li>
+  <li><a href="#exercise-5-evaluate-a-polynomial" id="toc-exercise-5-evaluate-a-polynomial" class="nav-link" data-scroll-target="#exercise-5-evaluate-a-polynomial">Exercise 5 — Evaluate a polynomial</a></li>
+  <li><a href="#exercise-6-count-capital-letters" id="toc-exercise-6-count-capital-letters" class="nav-link" data-scroll-target="#exercise-6-count-capital-letters">Exercise 6 — Count capital letters</a></li>
+  <li><a href="#self-check-quiz" id="toc-self-check-quiz" class="nav-link" data-scroll-target="#self-check-quiz">Self-check quiz</a></li>
+  <li><a href="#before-next-week" id="toc-before-next-week" class="nav-link" data-scroll-target="#before-next-week">Before next week</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -262,7 +274,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 1 — Introduction to Julia for Economists</h1>
+<h1 class="title">Week 1 — Introduction to Programming</h1>
 </div>
 
 
@@ -279,77 +291,293 @@ window.Quarto = {
 </header>
 
 
-<p><strong>Programming &amp; Numerical Methods for Economics</strong> · The University of Edinburgh · Juan Zurita</p>
-<p><strong>Learning goals.</strong> By the end of this notebook you can:</p>
-<ol type="1">
-<li>Use variables, vectors, and matrices in Julia</li>
-<li>Write functions and loops</li>
-<li>Plot economic data</li>
-<li>Build your first economic simulation (the Solow growth model)</li>
-</ol>
+<p><strong>Programming and Numerical Methods for Economics (ECNM10115)</strong> · The University of Edinburgh</p>
+<p><em>Python Essentials</em></p>
+<p><strong>Learning goals.</strong> After this notebook you can: create lists and NumPy arrays; use loops, conditionals, and functions; and solve your first real exercises from QuantEcon.</p>
 <blockquote class="blockquote">
-<p><strong>Running this notebook:</strong> in Google Colab, set <em>Runtime → Change runtime type → Julia</em>. Locally, install <a href="https://julialang.org/downloads/">Julia</a> and IJulia.</p>
+<p><strong>How to use this notebook:</strong> run every cell (<code>Shift+Enter</code>), and for each exercise <strong>write your own attempt before opening the solution</strong>. Programming is learned through the fingers, not the eyes.</p>
 </blockquote>
-<section id="variables-and-typesjulia-is-fast-like-c-but-reads-like-maths.-assign-variables-with-julia-infers-the-type." class="level2">
-<h2 class="anchored" data-anchor-id="variables-and-typesjulia-is-fast-like-c-but-reads-like-maths.-assign-variables-with-julia-infers-the-type.">1. Variables and typesJulia is fast like C but reads like maths. Assign variables with <code>=</code>; Julia infers the type.</h2>
-<div id="cell-3" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Economic variablesgdp = 2.85e12        # UK GDP in dollars (Float64)population = 68_350_000   # underscores make big numbers readable (Int64)country = "United Kingdom"gdp_per_capita = gdp / populationprintln("GDP per capita: ", round(gdp_per_capita, digits=2))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-4" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Julia supports Unicode — write economics like economicsα = 0.3          # capital share  (type \alpha then press TAB)β = 0.96         # discount factorprintln("α + β = ", α + β)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Exercise 1.1</strong> — Create variables for an economy: consumption <code>C = 1.8e12</code>, investment <code>I = 0.5e12</code>, government spending <code>G = 0.6e12</code>, and net exports <code>NX = -0.05e12</code>. Compute GDP with the expenditure identity and print it.</p>
-<div id="cell-6" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answer here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>If you’ve never used Python before, start with the Python refresher (PS0) on the course page.</p>
+<section id="import-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="import-libraries">Import libraries</h2>
+<p>By convention, <code>numpy</code> (numerical computing) is imported as <code>np</code> and <code>matplotlib.pyplot</code> (plotting) as <code>plt</code>.</p>
+<div id="97c5e153" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-17T09:05:30.269296Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-17T09:05:30.269092Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-17T09:05:31.073274Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-17T09:05:31.071821Z&quot;}}" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="vectors-and-matriceseconomic-data-lives-in-arrays-time-series-are-vectors-panel-data-are-matrices." class="level2">
-<h2 class="anchored" data-anchor-id="vectors-and-matriceseconomic-data-lives-in-arrays-time-series-are-vectors-panel-data-are-matrices.">2. Vectors and matricesEconomic data lives in arrays: time series are vectors, panel data are matrices.</h2>
-<div id="cell-8" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A time series of annual growth rates (percent)growth = [2.1, 1.7, -9.3, 7.6, 4.1, 0.3, 0.9]years  = 2018:2024      # a rangeprintln("Mean growth: ", sum(growth)/length(growth))println("Worst year: ", years[argmin(growth)])</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="on-good-coding-practices" class="level2">
+<h2 class="anchored" data-anchor-id="on-good-coding-practices">On good coding practices</h2>
+<p>Python has a philosophy — run this:</p>
+<div id="5b1cdf7e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-17T09:05:31.075659Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-17T09:05:31.075387Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-17T09:05:31.079632Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-17T09:05:31.078804Z&quot;}}" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> this</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!</code></pre>
 </div>
-<div id="cell-9" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrices: an input-output style exampleA = [0.2 0.3;     0.1 0.4]x = [100.0, 50.0]A * x        # matrix-vector product — no special syntax needed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-10" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Broadcasting: apply an operation element-wise with a dotreal_growth = growth .- 2.0      # subtract 2% inflation from every entrypositive_years = growth .&gt; 0     # element-wise comparisonprintln(real_growth)println(positive_years)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Exercise 2.1</strong> — Using <code>growth</code> above, compute the <em>cumulative</em> level of GDP relative to 2017 (=100). Hint: <code>cumprod(1 .+ growth ./ 100)</code>.</p>
-<div id="cell-12" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answer here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="functions-and-control-flowfunctions-are-the-building-blocks-of-every-model-you-will-write-in-this-course." class="level2">
-<h2 class="anchored" data-anchor-id="functions-and-control-flowfunctions-are-the-building-blocks-of-every-model-you-will-write-in-this-course.">3. Functions and control flowFunctions are the building blocks of every model you will write in this course.</h2>
-<div id="cell-14" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cobb-Douglas production function — three equivalent definitionsfunction production(K, L, α)    return K^α * L^(1-α)endproduce(K, L; α=0.3) = K^α * L^(1-α)     # one-liner with a keyword argumentY = production(100.0, 50.0, 0.3)println("Output: ", round(Y, digits=2))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-15" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Control flow: a simple progressive taxfunction tax(income)    if income &lt;= 12_570        return 0.0    elseif income &lt;= 50_270        return 0.20 * (income - 12_570)    else        return 0.20 * (50_270 - 12_570) + 0.40 * (income - 50_270)    endendfor inc in [10_000, 30_000, 80_000]    println("Income £", inc, " → tax £", round(tax(inc), digits=0))end</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p><strong>Exercise 3.1</strong> — Write a function <code>present_value(payment, r, T)</code> that returns the present value of receiving <code>payment</code> every year for <code>T</code> years at interest rate <code>r</code>. Check: <code>present_value(100, 0.05, 10) ≈ 772.17</code>.</p>
-<div id="cell-17" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answer here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="plottingwe-use-plots.jl.-the-first-plot-takes-a-moment-to-compile-that-is-normal." class="level2">
-<h2 class="anchored" data-anchor-id="plottingwe-use-plots.jl.-the-first-plot-takes-a-moment-to-compile-that-is-normal.">4. PlottingWe use <code>Plots.jl</code>. The first plot takes a moment to compile — that is normal.</h2>
-<div id="cell-19" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plotsplot(years</span>, <span class="bu">growth</span>,     <span class="bu">marker</span> = :circle,     linewidth <span class="op">=</span> <span class="fl">2</span>,     label <span class="op">=</span> <span class="st">"GDP growth"</span>,     xlabel <span class="op">=</span> <span class="st">"Year"</span>,     ylabel <span class="op">=</span> <span class="st">"Percent"</span>,     title <span class="op">=</span> <span class="st">"Annual GDP growth"</span>)<span class="fu">hline!</span>([<span class="fl">0</span>], linestyle <span class="op">=</span> <span class="op">:</span>dash, color <span class="op">=</span> <span class="op">:</span>gray, label <span class="op">=</span> <span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="application-the-solow-growth-modeleverything-together.-capital-evolves-ask_t1-s-k_talpha-1---delta-k_twhere-s-is-the-saving-rate-alpha-the-capital-share-and-delta-depreciation.-we-simulate-the-path-of-capital-from-a-low-starting-point-and-watch-convergence-to-the-steady-state." class="level2">
-<h2 class="anchored" data-anchor-id="application-the-solow-growth-modeleverything-together.-capital-evolves-ask_t1-s-k_talpha-1---delta-k_twhere-s-is-the-saving-rate-alpha-the-capital-share-and-delta-depreciation.-we-simulate-the-path-of-capital-from-a-low-starting-point-and-watch-convergence-to-the-steady-state.">5. Application: the Solow growth modelEverything together. Capital evolves as<span class="math display">\[k_{t+1} = s \, k_t^{\alpha} + (1 - \delta) k_t\]</span>where <span class="math inline">\(s\)</span> is the saving rate, <span class="math inline">\(\alpha\)</span> the capital share, and <span class="math inline">\(\delta\)</span> depreciation. We simulate the path of capital from a low starting point and watch convergence to the steady state.</h2>
-<div id="cell-21" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">solow_path</span>(; s<span class="op">=</span><span class="fl">0.25</span>, α<span class="op">=</span><span class="fl">0.3</span>, δ<span class="op">=</span><span class="fl">0.05</span>, k0<span class="op">=</span><span class="fl">1.0</span>, T<span class="op">=</span><span class="fl">100</span>)    k <span class="op">=</span> <span class="fu">zeros</span>(T)    k[<span class="fl">1</span>] <span class="op">=</span> k0    <span class="cf">for</span> t <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span>T<span class="op">-</span><span class="fl">1</span>        k[t<span class="op">+</span><span class="fl">1</span>] <span class="op">=</span> s <span class="op">*</span> k[t]<span class="op">^</span>α <span class="op">+</span> (<span class="fl">1</span> <span class="op">-</span> δ) <span class="op">*</span> k[t]    <span class="cf">end</span>    <span class="cf">return</span> kendk <span class="op">=</span> <span class="fu">solow_path</span>()k_star <span class="op">=</span> (<span class="fl">0.25</span><span class="op">/</span><span class="fl">0.05</span>)<span class="op">^</span>(<span class="fl">1</span><span class="op">/</span>(<span class="fl">1</span><span class="op">-</span><span class="fl">0.3</span>))    <span class="co"># analytical steady state: (s/δ)^(1/(1-α))plot(k, linewidth=2, label="capital path", xlabel="t", ylabel="k")hline!([k_star], linestyle=:dash, label="steady state")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="lists" class="level2">
+<h2 class="anchored" data-anchor-id="lists">Lists</h2>
+<p>A list holds an ordered collection of items — numbers, strings, anything.</p>
+<div id="e9643651" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-17T09:05:31.081498Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-17T09:05:31.081282Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-17T09:05:31.086032Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-17T09:05:31.084804Z&quot;}}" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>list_1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>list_2 <span class="op">=</span> [<span class="st">'Boris'</span>, <span class="st">'Laura'</span>, <span class="st">'Robert'</span>]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(list_1)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(list_2)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(list_1[<span class="dv">0</span>])     <span class="co"># indexing starts at ZERO in Python!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 2, 3]
+['Boris', 'Laura', 'Robert']
+1</code></pre>
 </div>
-<p><strong>Exercise 5.1</strong> — Simulate two economies, one with <code>s = 0.20</code> and one with <code>s = 0.30</code>, and plot both capital paths on the same figure. Which converges to a higher steady state, and does it converge faster or slower?<strong>Exercise 5.2 (harder)</strong> — Extend <code>solow_path</code> to also return the path of <em>output</em> <span class="math inline">\(y_t = k_t^\alpha\)</span> and <em>consumption</em> <span class="math inline">\(c_t = (1-s) y_t\)</span>. Plot consumption for <code>s ∈ [0.1, 0.2, ..., 0.9]</code> at <span class="math inline">\(t = 100\)</span>. Which saving rate maximises long-run consumption? (You have just discovered the <em>golden rule</em>.)</p>
-<div id="cell-23" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answers here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>—## SummaryYou can now write Julia code with variables, arrays, functions, loops, and plots — and you have simulated your first growth model. Next week: performance, linear algebra, and why Julia loops are fast.<strong>Further reading:</strong> <a href="https://julia.quantecon.org/">QuantEcon Julia lectures 1–3</a> · <a href="https://docs.julialang.org/">Julia documentation</a></p>
+<p><strong>Quick check ✋</strong> — before you run the next cell: what will <code>list_1[0]</code> print, <code>1</code> or <code>2</code>?</p>
+<details>
+<summary>
+Answer
+</summary>
+<code>1</code> — Python indexes from zero, unlike MATLAB or R. This will bite you at least once this semester.
+</details>
+</section>
+<section id="arrays" class="level2">
+<h2 class="anchored" data-anchor-id="arrays">Arrays</h2>
+<p>NumPy arrays are how we do maths. A 2-D array is a matrix:</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 1 \\
+\end{bmatrix}
+\]</span></p>
+<div id="41049b0a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-17T09:05:31.088319Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-17T09:05:31.088128Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-17T09:05:31.092854Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-17T09:05:31.092007Z&quot;}}" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>]])  <span class="co"># create the 2-D array — i.e. matrix</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Procedural approach: call the np.mean function on A.</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>m1_A <span class="op">=</span> np.mean(A)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Object-oriented approach: call the array's own .mean() method.</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>m2_A <span class="op">=</span> A.mean()</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Python does not automatically display everything we compute (as Stata does) —</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># we call print() when we want to see something.</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m1_A)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m2_A)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.5
+0.5</code></pre>
+</div>
+</div>
+</section>
+<section id="some-operations" class="level2">
+<h2 class="anchored" data-anchor-id="some-operations">Some operations</h2>
+<div id="088d5f16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-17T09:05:31.095373Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-17T09:05:31.095173Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-17T09:05:31.100009Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-17T09:05:31.098558Z&quot;}}" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="fl">4.6</span>, <span class="dv">10</span>, <span class="dv">2</span>]</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>(x))          <span class="co"># the largest element</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">3</span>)))  <span class="co"># range(n) generates 0, 1, ..., n-1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10
+[0, 1, 2]</code></pre>
+</div>
+</div>
+</section>
+<section id="boolean-values" class="level2">
+<h2 class="anchored" data-anchor-id="boolean-values">Boolean values</h2>
+<p><code>True</code>/<code>False</code> values power all the logic in your programs — and they behave like 1/0 in arithmetic, which is a trick we use constantly.</p>
+<div id="13417b39" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-17T09:05:31.101864Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-17T09:05:31.101557Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-17T09:05:31.106262Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-17T09:05:31.105492Z&quot;}}" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>bools <span class="op">=</span> <span class="va">True</span>, <span class="va">False</span>, <span class="va">True</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">all</span>(bools))   <span class="co"># are ALL of them True?</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">any</span>(bools))   <span class="co"># is ANY of them True?</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="va">True</span> <span class="op">+</span> <span class="va">True</span>)  <span class="co"># booleans behave like 1 and 0!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>False
+True
+2</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="exercises-from-quantecon" class="level1">
+<h1>Exercises (from QuantEcon)</h1>
+<p>Now you. Each exercise has an empty cell for your attempt and a hidden solution. <strong>Attempt first</strong> — struggling for ten minutes teaches you more than reading the answer for one.</p>
+<section id="exercise-1-inner-product" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-inner-product">Exercise 1 — Inner product</h2>
+<p>Compute the inner product of <code>x_vals</code> and <code>y_vals</code> using a loop: multiply the lists element by element and collect the results.</p>
+<p><em>Predict first:</em> what is <code>2×10 + 4×3 + ...</code>? Roughly what numbers should appear in your list?</p>
+<div id="f159f8d1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-17T09:05:31.108241Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-17T09:05:31.108051Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-17T09:05:31.112355Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-17T09:05:31.111326Z&quot;}}" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x_vals <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>y_vals <span class="op">=</span> [<span class="dv">10</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">9</span>, <span class="dv">8</span>]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Your attempt here:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+<b>💡 Click to reveal the solution — but try it yourself first!</b>
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>inner_vals <span class="op">=</span> []</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x, y <span class="kw">in</span> <span class="bu">zip</span>(x_vals, y_vals):   <span class="co"># zip loops through the two lists in tandem</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    inner <span class="op">=</span> x <span class="op">*</span> y</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    inner_vals.append(inner)       <span class="co"># appending (storing) results in a list</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(inner_vals)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+Expected output: <code>[20, 12, 6, 45, 0]</code>
+</details>
+</section>
+<section id="exercise-2-count-the-even-numbers-in-099" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-count-the-even-numbers-in-099">Exercise 2 — Count the even numbers in 0–99</h2>
+<p>Hint: <code>%</code> is the remainder operator, so <code>x % 2 == 0</code> tests whether <code>x</code> is even. Remember booleans add like 1s and 0s.</p>
+<div id="3a25c8c0" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-17T09:05:31.114803Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-17T09:05:31.114564Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-17T09:05:31.118361Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-17T09:05:31.117239Z&quot;}}" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your attempt here:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+<b>💡 Click to reveal the solution — but try it yourself first!</b>
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):          <span class="co"># for-loop over 0..99</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    even_yes <span class="op">=</span> (x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>)   <span class="co"># remainder operator + comparison</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> even_yes         <span class="co"># booleans add as 1/0</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+Expected output: <code>50</code>
+</details>
+</section>
+<section id="exercise-3-count-pairs-where-both-numbers-are-even" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-count-pairs-where-both-numbers-are-even">Exercise 3 — Count pairs where both numbers are even</h2>
+<p>Given <code>pairs = ((2,5), (4,2), (9,8), (12,10))</code>, count how many pairs have <strong>both</strong> numbers even.</p>
+<div id="6b62ec22" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-17T09:05:31.120526Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-17T09:05:31.120310Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-17T09:05:31.124444Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-17T09:05:31.123405Z&quot;}}" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>pairs <span class="op">=</span> ((<span class="dv">2</span>,<span class="dv">5</span>), (<span class="dv">4</span>,<span class="dv">2</span>), (<span class="dv">9</span>,<span class="dv">8</span>), (<span class="dv">12</span>,<span class="dv">10</span>))</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your attempt here:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+<b>💡 Click to reveal the solution — but try it yourself first!</b>
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> x, y <span class="kw">in</span> pairs:</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> (x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> y <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>)   <span class="co"># 'and' logical operator</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+Expected output: <code>2</code> — the pairs (4,2) and (12,10).
+</details>
+</section>
+<section id="exercise-4-compute-int_02-x3-dx" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4-compute-int_02-x3-dx">Exercise 4 — Compute <span class="math inline">\(\int_0^2 x^3 \, dx\)</span></h2>
+<p>Your first taste of numerical methods! Use <code>quad</code> from SciPy, the main library for numerical analysis. (Check yourself with the analytical answer: <span class="math inline">\(\frac{x^4}{4}\Big|_0^2 = 4\)</span>.)</p>
+<div id="a09814bc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-17T09:05:31.126916Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-17T09:05:31.126697Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-17T09:05:33.020502Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-17T09:05:33.019341Z&quot;}}" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.integrate <span class="im">import</span> quad   <span class="co"># SciPy's definite-integral routine</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Your attempt here:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+<b>💡 Click to reveal the solution — but try it yourself first!</b>
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fx <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">3</span>          <span class="co"># lambda creates a one-line function</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                             <span class="co"># in Python, the power operator is **</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>fx_area <span class="op">=</span> quad(fx, <span class="dv">0</span>, <span class="dv">2</span>)     <span class="co"># compute the definite integral</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'The area of x^3 on [0,2] is'</span>, fx_area[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+Expected output: <code>4.0</code> — matching the analytical answer.
+</details>
+</section>
+<section id="exercise-5-evaluate-a-polynomial" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5-evaluate-a-polynomial">Exercise 5 — Evaluate a polynomial</h2>
+<p>Write a function <code>polynomial(x, coeff)</code> that computes <span class="math inline">\(a_0 + a_1 x + a_2 x^2 + \dots\)</span> for a list of coefficients. Test it with <code>coeff = [1, 2, 1]</code> (that is, <span class="math inline">\(1 + 2x + x^2\)</span>) at <span class="math inline">\(x = 2\)</span>.</p>
+<div id="ae2d616e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-17T09:05:33.022790Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-17T09:05:33.022500Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-17T09:05:33.026199Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-17T09:05:33.025059Z&quot;}}" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your attempt here:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+<b>💡 Click to reveal the solution — but try it yourself first!</b>
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> polynomial(x, coeff):</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    poly <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, a <span class="kw">in</span> <span class="bu">enumerate</span>(coeff):   <span class="co"># enumerate gives you (index, value) pairs</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        poly <span class="op">+=</span> a <span class="op">*</span> x<span class="op">**</span>i</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> poly</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(polynomial(<span class="dv">2</span>, [<span class="dv">1</span>, <span class="dv">1</span>]))        <span class="co"># 1 + x        -&gt; 3</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(polynomial(<span class="dv">2</span>, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>]))     <span class="co"># 1 + 2x + x^2 -&gt; 9</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(polynomial(<span class="dv">2</span>, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>]))  <span class="co"># 1 + 2x + 2x^2 + x^3 -&gt; 21</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</section>
+<section id="exercise-6-count-capital-letters" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6-count-capital-letters">Exercise 6 — Count capital letters</h2>
+<p>Write a function that counts the number of capital letters in a string. Test it on <code>'The Rain in Spain is Wet'</code>.</p>
+<p>Hint: <code>letter.upper()</code> turns a letter into upper case, and <code>letter.isalpha()</code> tells you whether a character is a letter at all.</p>
+<div id="b7a64450" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-07-17T09:05:33.027916Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-07-17T09:05:33.027729Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-07-17T09:05:33.030894Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-07-17T09:05:33.029986Z&quot;}}" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your attempt here:</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<details>
+<summary>
+<b>💡 Click to reveal the solution — but try it yourself first!</b>
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_capitals(string):</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> letter <span class="kw">in</span> string:</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> letter <span class="op">==</span> letter.upper() <span class="kw">and</span> letter.isalpha():</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>            count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> count</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count_capitals(<span class="st">'The Rain in Spain is Wet'</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+Expected output: <code>4</code> — T, R, S, W.
+</details>
+<hr>
+</section>
+<section id="self-check-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="self-check-quiz">Self-check quiz</h2>
+<p>Answer in your head, then click to check.</p>
+<strong>Q1.</strong> What does <code>range(5)</code> produce?
+<details>
+<summary>
+Answer
+</summary>
+0, 1, 2, 3, 4 — five numbers, starting at zero, stopping before 5.
+</details>
+<strong>Q2.</strong> What is <code>True + False + True</code>?
+<details>
+<summary>
+Answer
+</summary>
+2 — booleans behave like 1 and 0 in arithmetic.
+</details>
+<strong>Q3.</strong> <code>A.mean()</code> and <code>np.mean(A)</code> — which one is the object-oriented style?
+<details>
+<summary>
+Answer
+</summary>
+<code>A.mean()</code> — you call the method that belongs to the array object itself.
+</details>
+</section>
+<section id="before-next-week" class="level2">
+<h2 class="anchored" data-anchor-id="before-next-week">Before next week</h2>
+<ul>
+<li>Finish any exercise you didn’t complete — bring questions to the lab.</li>
+<li>If Python is new to you, work through PS0 (the Python refresher) on the course page.</li>
+<li>Skim the <a href="https://python.quantecon.org/">QuantEcon Python programming lectures</a> — lectures 1–3 mirror what we did today.</li>
+</ul>
+<p><em>Next week: fundamentals of programming in Python — data types, control flow, and writing serious functions.</em></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

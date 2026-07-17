@@ -204,7 +204,8 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#how-to-use-these-materials" id="toc-how-to-use-these-materials" class="nav-link active" data-scroll-target="#how-to-use-these-materials">How to use these materials</a></li>
   <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
-  <li><a href="#suggested-outline" id="toc-suggested-outline" class="nav-link" data-scroll-target="#suggested-outline">Suggested outline</a></li>
+  <li><a href="#syllabus" id="toc-syllabus" class="nav-link" data-scroll-target="#syllabus">Syllabus</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   </ul>
 </nav>
@@ -217,15 +218,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p style="text-align: justify;">
-This course teaches you to solve economic problems with code: writing clean programs in <strong>Julia</strong>, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements.
+This course teaches you to solve economic problems with code: writing clean programs in <strong>Python</strong>, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements.
 </p>
 <section id="how-to-use-these-materials" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-use-these-materials">How to use these materials</h2>
 <p>Each week has a <strong>notebook</strong> you can read online, download, or run in the cloud:</p>
 <ul>
-<li><strong>Read online</strong> — click the notebook link; it renders as a webpage with all code.</li>
-<li><strong>Run in Google Colab</strong> — click the Colab badge; then set the runtime to Julia via <em>Runtime → Change runtime type → Julia</em>. Nothing to install.</li>
-<li><strong>Run locally</strong> — <a href="https://julialang.org/downloads/">install Julia</a>, then <code>using Pkg; Pkg.add("IJulia")</code> to open notebooks in Jupyter, and download the <code>.ipynb</code> file from the links below.</li>
+<li><strong>Read online</strong> — click the notebook link; it renders as a webpage with all code and output.</li>
+<li><strong>Run in Google Colab</strong> — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.</li>
+<li><strong>Run locally</strong> — install <a href="https://www.anaconda.com/download">Anaconda</a> (includes Python, Jupyter, NumPy, and Matplotlib), then download the <code>.ipynb</code> file from the links below and open it in Jupyter.</li>
 </ul>
 </section>
 <section id="materials" class="level2">
@@ -237,36 +238,59 @@ This course teaches you to solve economic problems with code: writing clean prog
 <th style="text-align: left;">Topic</th>
 <th style="text-align: left;">Notebook</th>
 <th style="text-align: left;">Slides</th>
+<th style="text-align: left;">Problem Set</th>
+<th style="text-align: left;">Lab</th>
 <th style="text-align: left;">Colab</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">Introduction to Julia for Economists</td>
+<td style="text-align: left;">Introduction to Programming</td>
 <td style="text-align: left;"><a href="../../courses/pnm/notebooks/week01_intro.html">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week01_intro.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="../../courses/pnm/slides/week01.html">Slides</a></td>
+<td style="text-align: left;"><a href="slides/Lecture1.pdf">PDF</a></td>
+<td style="text-align: left;"><a href="psets/PS0_ECNM10115.pdf">PS0 — Python refresher</a></td>
+<td style="text-align: left;">—</td>
 <td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week01_intro.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Fundamentals of Programming in Python</td>
+<td style="text-align: left;"><a href="../../courses/pnm/notebooks/week02_fundamentals.html">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week02_fundamentals.ipynb">Download</a></td>
+<td style="text-align: left;"><a href="slides/Lecture2.pdf">PDF</a></td>
+<td style="text-align: left;"><a href="psets/PS1_ECNM10115.pdf">PS1</a></td>
+<td style="text-align: left;"><a href="../../courses/pnm/notebooks/lab01.html">Lab 1</a></td>
+<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week02_fundamentals.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
 </tr>
 </tbody>
 </table>
-<!-- TEMPLATE for adding a week — copy the row above and change:
-| 2 | Root-finding & Optimisation | [View](notebooks/week02_optim.ipynb) · [Download](https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week02_optim.ipynb) | [Slides](slides/week02.qmd) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week02_optim.ipynb) |
-NOTE: if you rename the GitHub repo, update the Download and Colab URLs to match. -->
-<p><em>More weeks will be posted as the course progresses.</em></p>
+<!-- TEMPLATE for adding a week — copy the row above and adjust week number/topic/filenames.
+NOTE: if you rename the GitHub repo, update the Download and Colab URLs to match.
+POLICY: problem-set QUESTIONS only — solutions are never published here. -->
+<p><em>Notebooks include interactive exercises with hidden solutions — try first, then click to check. More weeks will be posted as the course progresses.</em></p>
 </section>
-<section id="suggested-outline" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-outline">Suggested outline</h2>
+<section id="syllabus" class="level2">
+<h2 class="anchored" data-anchor-id="syllabus">Syllabus</h2>
 <ol type="1">
-<li>Introduction to Julia for economists</li>
-<li>Arrays, linear algebra, and performance</li>
-<li>Root-finding and optimisation</li>
-<li>Interpolation and function approximation</li>
-<li>Dynamic programming: value function iteration</li>
-<li>Simulation and random numbers</li>
-<li>Solving a small macro model end-to-end</li>
+<li>Introduction to programming</li>
+<li>Fundamentals of programming in Python</li>
+<li>Data manipulation and data analysis</li>
+<li>From data to models</li>
+<li>Numerical Methods I</li>
+<li>Numerical Methods II</li>
+<li>Numerical Methods III</li>
+<li>Economic models</li>
+<li>Model estimation</li>
+<li>Advanced topics</li>
 </ol>
-<!-- EDIT: replace with your actual syllabus -->
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><strong>Numerical Methods in Economics</strong>, Kenneth L. Judd (1998) — main reference for the numerical-methods weeks</li>
+<li><a href="https://quantecon.org"><strong>QuantEcon</strong></a> — T. Sargent and J. Stachurski’s open lectures, main reference</li>
+<li>Advanced: <a href="https://www.sas.upenn.edu/~jesusfv/teaching.html">Jesús Fernández-Villaverde’s Computational Methods for Economists</a> lecture notes</li>
+</ul>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>

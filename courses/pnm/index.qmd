@@ -6,40 +6,48 @@ toc: true
 ---
 
 <p style="text-align: justify;">
-This course teaches you to solve economic problems with code: writing clean programs in **Julia**, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements.
+This course teaches you to solve economic problems with code: writing clean programs in **Python**, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements.
 </p>
 
 ## How to use these materials
 
 Each week has a **notebook** you can read online, download, or run in the cloud:
 
-- **Read online** — click the notebook link; it renders as a webpage with all code.
-- **Run in Google Colab** — click the Colab badge; then set the runtime to Julia via *Runtime → Change runtime type → Julia*. Nothing to install.
-- **Run locally** — [install Julia](https://julialang.org/downloads/), then `using Pkg; Pkg.add("IJulia")` to open notebooks in Jupyter, and download the `.ipynb` file from the links below.
+- **Read online** — click the notebook link; it renders as a webpage with all code and output.
+- **Run in Google Colab** — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.
+- **Run locally** — install [Anaconda](https://www.anaconda.com/download) (includes Python, Jupyter, NumPy, and Matplotlib), then download the `.ipynb` file from the links below and open it in Jupyter.
 
 ## Materials
 
-| Week | Topic | Notebook | Slides | Colab |
-|:----:|:------|:---------|:-------|:------|
-| 1 | Introduction to Julia for Economists | [View](notebooks/week01_intro.ipynb) · [Download](https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week01_intro.ipynb) | [Slides](slides/week01.qmd) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week01_intro.ipynb) |
+| Week | Topic | Notebook | Slides | Problem Set | Lab | Colab |
+|:----:|:------|:---------|:-------|:------------|:----|:------|
+| 1 | Introduction to Programming | [View](notebooks/week01_intro.ipynb) · [Download](https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week01_intro.ipynb) | [PDF](slides/Lecture1.pdf) | [PS0 — Python refresher](psets/PS0_ECNM10115.pdf) | — | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week01_intro.ipynb) |
+| 2 | Fundamentals of Programming in Python | [View](notebooks/week02_fundamentals.ipynb) · [Download](https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week02_fundamentals.ipynb) | [PDF](slides/Lecture2.pdf) | [PS1](psets/PS1_ECNM10115.pdf) | [Lab 1](notebooks/lab01.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week02_fundamentals.ipynb) |
 
-<!-- TEMPLATE for adding a week — copy the row above and change:
-| 2 | Root-finding & Optimisation | [View](notebooks/week02_optim.ipynb) · [Download](https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week02_optim.ipynb) | [Slides](slides/week02.qmd) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week02_optim.ipynb) |
-NOTE: if you rename the GitHub repo, update the Download and Colab URLs to match. -->
+<!-- TEMPLATE for adding a week — copy the row above and adjust week number/topic/filenames.
+NOTE: if you rename the GitHub repo, update the Download and Colab URLs to match.
+POLICY: problem-set QUESTIONS only — solutions are never published here. -->
 
-*More weeks will be posted as the course progresses.*
+*Notebooks include interactive exercises with hidden solutions — try first, then click to check. More weeks will be posted as the course progresses.*
 
-## Suggested outline
+## Syllabus
 
-1. Introduction to Julia for economists
-2. Arrays, linear algebra, and performance
-3. Root-finding and optimisation
-4. Interpolation and function approximation
-5. Dynamic programming: value function iteration
-6. Simulation and random numbers
-7. Solving a small macro model end-to-end
+1. Introduction to programming
+2. Fundamentals of programming in Python
+3. Data manipulation and data analysis
+4. From data to models
+5. Numerical Methods I
+6. Numerical Methods II
+7. Numerical Methods III
+8. Economic models
+9. Model estimation
+10. Advanced topics
 
-<!-- EDIT: replace with your actual syllabus -->
+## References
+
+- **Numerical Methods in Economics**, Kenneth L. Judd (1998) — main reference for the numerical-methods weeks
+- [**QuantEcon**](https://quantecon.org) — T. Sargent and J. Stachurski's open lectures, main reference
+- Advanced: [Jesús Fernández-Villaverde's Computational Methods for Economists](https://www.sas.upenn.edu/~jesusfv/teaching.html) lecture notes
 
 ## Questions
 

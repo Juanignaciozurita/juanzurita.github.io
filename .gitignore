@@ -6,3 +6,10 @@
 /.quarto/
 
 **/*.quarto_ipynb
+
+# Raw course material — source files for building notebooks, never published
+_course-material/
+
+# Safety net: raw week folders must never reach GitHub, wherever they sit
+**/Week */
+docs/courses/Week */

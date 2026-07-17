@@ -60,7 +60,7 @@
     "href": "students.html#office-hours-contact",
     "title": "Juan Zurita",
     "section": "Office Hours & Contact",
-    "text": "Office Hours & Contact\nOffice hours are by appointment — email me and suggest two or three times that work for you. \nWhen you email, it helps if you include:\n\nYour course and year (e.g., Economics 2, Year 2; MSc Economics).\nA specific question — the more precise you are, the faster and more useful my answer will be.\nFor coursework questions, what you have already tried.\n\nI normally reply within two working days during the semester."
+    "text": "Office Hours & Contact\nOffice hours: Fridays 16:00–17:00, Office 2.11, School of Economics (during teaching weeks). Outside these hours, email me and suggest two or three times that work for you.\nWhen you email, it helps if you include:\n\nYour course and year (e.g., Economics 2, Year 2; MSc Economics).\nA specific question — the more precise you are, the faster and more useful my answer will be.\nFor coursework questions, what you have already tried.\n\nI normally reply within two working days during the semester."
   },
   {
     "objectID": "students.html#letters-of-recommendation",
@@ -112,46 +112,130 @@
     "text": "Download PDF"
   },
   {
-    "objectID": "courses/pnm/notebooks/week01_intro.html",
-    "href": "courses/pnm/notebooks/week01_intro.html",
-    "title": "Week 1 — Introduction to Julia for Economists",
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html",
+    "title": "Week 2 — Fundamentals of Programming in Python",
     "section": "",
-    "text": "Programming & Numerical Methods for Economics · The University of Edinburgh · Juan Zurita\nLearning goals. By the end of this notebook you can:"
+    "text": "Programming and Numerical Methods for Economics (ECNM10115) · The University of Edinburgh\nLearning goals. After this notebook you can: work with Python’s main data types (integers, floats, booleans, strings, lists, tuples, dictionaries); use NumPy arrays fluently; and control your programs with loops, conditionals, and functions.\nimport numpy as np"
   },
   {
-    "objectID": "courses/pnm/notebooks/week01_intro.html#variables-and-typesjulia-is-fast-like-c-but-reads-like-maths.-assign-variables-with-julia-infers-the-type.",
-    "href": "courses/pnm/notebooks/week01_intro.html#variables-and-typesjulia-is-fast-like-c-but-reads-like-maths.-assign-variables-with-julia-infers-the-type.",
-    "title": "Week 1 — Introduction to Julia for Economists",
-    "section": "1. Variables and typesJulia is fast like C but reads like maths. Assign variables with =; Julia infers the type.",
-    "text": "1. Variables and typesJulia is fast like C but reads like maths. Assign variables with =; Julia infers the type.\n\n# Economic variablesgdp = 2.85e12        # UK GDP in dollars (Float64)population = 68_350_000   # underscores make big numbers readable (Int64)country = \"United Kingdom\"gdp_per_capita = gdp / populationprintln(\"GDP per capita: \", round(gdp_per_capita, digits=2))\n\n\n# Julia supports Unicode — write economics like economicsα = 0.3          # capital share  (type \\alpha then press TAB)β = 0.96         # discount factorprintln(\"α + β = \", α + β)\n\nExercise 1.1 — Create variables for an economy: consumption C = 1.8e12, investment I = 0.5e12, government spending G = 0.6e12, and net exports NX = -0.05e12. Compute GDP with the expenditure identity and print it.\n\n# Your answer here"
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#indentation",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#indentation",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Indentation",
+    "text": "Indentation\nPython uses indentation (4 spaces) to define blocks — where other languages use braces or end. Get it wrong and the code means something different. Here is the log-utility function economists use everywhere:\n\ndef log_u(c):\n    if c &lt; 1e-8:\n        u = -np.inf        # one indent level: inside the if-block\n    else:\n        u = np.log(c)\n    return u\n\nprint(log_u(2.0))\nprint(log_u(-1.0))\n\n0.6931471805599453\n-inf\n\n\nQuick check ✋ — these two snippets contain the same lines. Why do they print different things?\nfor i in [1,2]:          for i in [1,2]:\n    for j in [5,6]:          print(i)\n        print(i,j)       for j in [5,6]:\n                             print(j)\n\n\nAnswer\n\nLeft: the second loop is inside the first (nested) — it prints every (i,j) combination. Right: the loops run one after the other. Only the indentation differs!"
   },
   {
-    "objectID": "courses/pnm/notebooks/week01_intro.html#vectors-and-matriceseconomic-data-lives-in-arrays-time-series-are-vectors-panel-data-are-matrices.",
-    "href": "courses/pnm/notebooks/week01_intro.html#vectors-and-matriceseconomic-data-lives-in-arrays-time-series-are-vectors-panel-data-are-matrices.",
-    "title": "Week 1 — Introduction to Julia for Economists",
-    "section": "2. Vectors and matricesEconomic data lives in arrays: time series are vectors, panel data are matrices.",
-    "text": "2. Vectors and matricesEconomic data lives in arrays: time series are vectors, panel data are matrices.\n\n# A time series of annual growth rates (percent)growth = [2.1, 1.7, -9.3, 7.6, 4.1, 0.3, 0.9]years  = 2018:2024      # a rangeprintln(\"Mean growth: \", sum(growth)/length(growth))println(\"Worst year: \", years[argmin(growth)])\n\n\n# Matrices: an input-output style exampleA = [0.2 0.3;     0.1 0.4]x = [100.0, 50.0]A * x        # matrix-vector product — no special syntax needed\n\n\n# Broadcasting: apply an operation element-wise with a dotreal_growth = growth .- 2.0      # subtract 2% inflation from every entrypositive_years = growth .&gt; 0     # element-wise comparisonprintln(real_growth)println(positive_years)\n\nExercise 2.1 — Using growth above, compute the cumulative level of GDP relative to 2017 (=100). Hint: cumprod(1 .+ growth ./ 100).\n\n# Your answer here"
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#integers-and-floats",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#integers-and-floats",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Integers and floats",
+    "text": "Integers and floats\nThe computer distinguishes integers from floats because floats carry more information while integer arithmetic is faster and exact.\n\ny = 2       # integer\nx = 2.0     # float\nprint([type(y), type(x)])\n\nprint(1/2)    # normal division  -&gt; 0.5 (a float)\nprint(1//2)   # integer division -&gt; 0\n\n[&lt;class 'int'&gt;, &lt;class 'float'&gt;]\n0.5\n0\n\n\n\n# Converting to float\nprint(float(y), float('4'), float(True))\n\n# Not-a-number: impossible operations return nan rather than crashing\nprint(np.log(-1))\n\n# Handy built-ins\na = 2.4\nprint(round(a), abs(-23))\n\n2.0 4.0 1.0\nnan\n2 23\n\n\n/tmp/ipykernel_4010/103602420.py:5: RuntimeWarning: invalid value encountered in log\n  print(np.log(-1))"
   },
   {
-    "objectID": "courses/pnm/notebooks/week01_intro.html#functions-and-control-flowfunctions-are-the-building-blocks-of-every-model-you-will-write-in-this-course.",
-    "href": "courses/pnm/notebooks/week01_intro.html#functions-and-control-flowfunctions-are-the-building-blocks-of-every-model-you-will-write-in-this-course.",
-    "title": "Week 1 — Introduction to Julia for Economists",
-    "section": "3. Functions and control flowFunctions are the building blocks of every model you will write in this course.",
-    "text": "3. Functions and control flowFunctions are the building blocks of every model you will write in this course.\n\n# Cobb-Douglas production function — three equivalent definitionsfunction production(K, L, α)    return K^α * L^(1-α)endproduce(K, L; α=0.3) = K^α * L^(1-α)     # one-liner with a keyword argumentY = production(100.0, 50.0, 0.3)println(\"Output: \", round(Y, digits=2))\n\n\n# Control flow: a simple progressive taxfunction tax(income)    if income &lt;= 12_570        return 0.0    elseif income &lt;= 50_270        return 0.20 * (income - 12_570)    else        return 0.20 * (50_270 - 12_570) + 0.40 * (income - 50_270)    endendfor inc in [10_000, 30_000, 80_000]    println(\"Income £\", inc, \" → tax £\", round(tax(inc), digits=0))end\n\nExercise 3.1 — Write a function present_value(payment, r, T) that returns the present value of receiving payment every year for T years at interest rate r. Check: present_value(100, 0.05, 10) ≈ 772.17.\n\n# Your answer here"
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#augmented-assignment",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#augmented-assignment",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Augmented assignment",
+    "text": "Augmented assignment\nx += 1 is shorthand for x = x + 1. You will use this constantly to accumulate results.\n\nx = 3\nx += 1\nprint(x)    # 4\n\nx = 3\nx *= 2\nprint(x)    # 6\n\nx = 3\nx /= 2\nprint(x)    # 1.5\n\n4\n6\n1.5"
   },
   {
-    "objectID": "courses/pnm/notebooks/week01_intro.html#plottingwe-use-plots.jl.-the-first-plot-takes-a-moment-to-compile-that-is-normal.",
-    "href": "courses/pnm/notebooks/week01_intro.html#plottingwe-use-plots.jl.-the-first-plot-takes-a-moment-to-compile-that-is-normal.",
-    "title": "Week 1 — Introduction to Julia for Economists",
-    "section": "4. PlottingWe use Plots.jl. The first plot takes a moment to compile — that is normal.",
-    "text": "4. PlottingWe use Plots.jl. The first plot takes a moment to compile — that is normal.\n\nusing Plotsplot(years, growth,     marker = :circle,     linewidth = 2,     label = \"GDP growth\",     xlabel = \"Year\",     ylabel = \"Percent\",     title = \"Annual GDP growth\")hline!([0], linestyle = :dash, color = :gray, label = \"\")"
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#booleans",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#booleans",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Booleans",
+    "text": "Booleans\nBooleans are a numeric type in Python: True behaves like 1 and False like 0.\n\nx = True\ny = 100 &lt; 0          # comparisons produce booleans\nprint(type(y), y)\n\nprint(x + y, x * y)   # arithmetic with booleans\n\nbools = [True, True, False, True]\nprint(sum(bools))     # counts the Trues!\n\nprint(bool(3))        # bool(x) is equivalent to x != 0\n\n&lt;class 'bool'&gt; False\n1 0\n3\nTrue\n\n\n\n# Compound boolean logic\nx, z, y = True, 100 &gt; 10, 100 &lt; 0\nprint(x and (z or y))    # True\nprint((x or z) and y)    # False\n\na, b, c = 5, 1, 'you'\nprint(b &gt; 0 and a &lt; 10 or len(c) &gt; 3)\nprint(b &gt; 0 and a &lt; 10 and len(c) &gt; 3)\n\nTrue\nFalse\nTrue\nFalse"
   },
   {
-    "objectID": "courses/pnm/notebooks/week01_intro.html#application-the-solow-growth-modeleverything-together.-capital-evolves-ask_t1-s-k_talpha-1---delta-k_twhere-s-is-the-saving-rate-alpha-the-capital-share-and-delta-depreciation.-we-simulate-the-path-of-capital-from-a-low-starting-point-and-watch-convergence-to-the-steady-state.",
-    "href": "courses/pnm/notebooks/week01_intro.html#application-the-solow-growth-modeleverything-together.-capital-evolves-ask_t1-s-k_talpha-1---delta-k_twhere-s-is-the-saving-rate-alpha-the-capital-share-and-delta-depreciation.-we-simulate-the-path-of-capital-from-a-low-starting-point-and-watch-convergence-to-the-steady-state.",
-    "title": "Week 1 — Introduction to Julia for Economists",
-    "section": "5. Application: the Solow growth modelEverything together. Capital evolves as\\[k_{t+1} = s \\, k_t^{\\alpha} + (1 - \\delta) k_t\\]where \\(s\\) is the saving rate, \\(\\alpha\\) the capital share, and \\(\\delta\\) depreciation. We simulate the path of capital from a low starting point and watch convergence to the steady state.",
-    "text": "5. Application: the Solow growth modelEverything together. Capital evolves as\\[k_{t+1} = s \\, k_t^{\\alpha} + (1 - \\delta) k_t\\]where \\(s\\) is the saving rate, \\(\\alpha\\) the capital share, and \\(\\delta\\) depreciation. We simulate the path of capital from a low starting point and watch convergence to the steady state.\n\nfunction solow_path(; s=0.25, α=0.3, δ=0.05, k0=1.0, T=100)    k = zeros(T)    k[1] = k0    for t in 1:T-1        k[t+1] = s * k[t]^α + (1 - δ) * k[t]    end    return kendk = solow_path()k_star = (0.25/0.05)^(1/(1-0.3))    # analytical steady state: (s/δ)^(1/(1-α))plot(k, linewidth=2, label=\"capital path\", xlabel=\"t\", ylabel=\"k\")hline!([k_star], linestyle=:dash, label=\"steady state\")\n\nExercise 5.1 — Simulate two economies, one with s = 0.20 and one with s = 0.30, and plot both capital paths on the same figure. Which converges to a higher steady state, and does it converge faster or slower?Exercise 5.2 (harder) — Extend solow_path to also return the path of output \\(y_t = k_t^\\alpha\\) and consumption \\(c_t = (1-s) y_t\\). Plot consumption for s ∈ [0.1, 0.2, ..., 0.9] at \\(t = 100\\). Which saving rate maximises long-run consumption? (You have just discovered the golden rule.)\n\n# Your answers here\n\n—## SummaryYou can now write Julia code with variables, arrays, functions, loops, and plots — and you have simulated your first growth model. Next week: performance, linear algebra, and why Julia loops are fast.Further reading: QuantEcon Julia lectures 1–3 · Julia documentation"
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#strings",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#strings",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Strings",
+    "text": "Strings\n\nstr1 = 'This is a string in Python'\nstr2 = str(4.29)              # convert a number to a string\n\nprint(str1[0])       # 'T' — strings are indexed like lists\nprint(str1[10:16])   # slicing: 'string'\n\n# Strings are IMMUTABLE — you cannot change them in place:\ntry:\n    str1[9] = 'a'\nexcept TypeError as e:\n    print('Error:', e)\n\nT\nstring\nError: 'str' object does not support item assignment\n\n\n\n# String operators\na = 'black'\nb = 'pepper'\n\nprint(a + b)        # concatenation\nprint(3 * b)        # repetition\nprint('x' in b)     # membership test\n\nblackpepper\npepperpepperpepper\nFalse"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#lists",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#lists",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Lists",
+    "text": "Lists\nLists are Python’s workhorse container: ordered, sliceable, and mutable — and they can hold anything, even functions.\n\ny = lambda x: x**2                    # a function object\nlist_obj = [1, 2, 3, 'a', 'b', y]     # numbers, strings, and a function in one list\nlist_obj2 = [[1, 2, 3], ['a', 'b']]   # a list of lists\n\nprint(list_obj[0])        # indexing\nprint(list_obj[1:3])      # slicing\nprint(list_obj2[0][0])    # first element of the first inner list\n\n1\n[2, 3]\n1\n\n\n\nlist_1 = [1, 2, 3]\n\nlist_1.append(4)          # add one element at the end\nprint(list_1)\n\nlist_1.remove(2)          # remove an element\nprint(list_1)\n\nlist_1.append([4, 5, 6])  # append adds the WHOLE list as one element\nprint(list_1)\nlist_1.remove([4, 5, 6])\n\nlist_1.extend([4, 5, 6])  # extend adds each element separately\nprint(list_1)\n\nlist_1.reverse()\nprint(list_1)\n\nprint(list_1.index(5))    # where is 5?\n\n[1, 2, 3, 4]\n[1, 3, 4]\n[1, 3, 4, [4, 5, 6]]\n[1, 3, 4, 4, 5, 6]\n[6, 5, 4, 4, 3, 1]\n1\n\n\nYour turn 2.1 — Start from prices = [101.2, 99.8, 103.4]. Append 105.1, then compute the list of returns \\(r_t = p_t/p_{t-1} - 1\\) using a loop, and print it.\nPredict first: how many returns should a list of 4 prices produce?\n\nprices = [101.2, 99.8, 103.4]\n\n# Your attempt here:\n\n\n\n💡 Click to reveal the solution — but try it yourself first!\n\nprices.append(105.1)\n\nreturns = []\nfor t in range(1, len(prices)):\n    r = prices[t] / prices[t-1] - 1\n    returns.append(r)\nprint(returns)\n3 returns from 4 prices — one fewer, since returns need a previous price."
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#numpy-arrays",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#numpy-arrays",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "NumPy arrays",
+    "text": "NumPy arrays\nArrays are how we do serious numerical work. Unlike lists, they support fast element-wise maths.\n\nflat_a = np.array([1, 2, 3, 4, 5, 6])   # 1-D (flat) array\nprint(flat_a[0], flat_a[3:])\n\na = np.array([[1, 2, 3], [4, 5, 6]])    # 2-D array (a matrix)\nprint(a)\nprint(a.shape)      # (rows, columns)\nprint(a[0, :])      # first row, all columns\nprint(a[:, 1])      # second column\n\n1 [4 5 6]\n[[1 2 3]\n [4 5 6]]\n(2, 3)\n[1 2 3]\n[2 5]\n\n\n\n# Standard arrays you will create all the time\nzeros = np.zeros(10)\nprint(zeros.reshape((2, 5)))     # reshape returns a NEW array...\nzeros = zeros.reshape((2, 5))    # ...assign it to keep the change\n\nm1 = np.ones((3, 4))             # 3x4 matrix of ones\nb  = np.eye(4)                   # identity matrix\nx  = np.linspace(0, 99, 100)     # 100 evenly spaced points from 0 to 99\nprint(np.linspace(2, 4, 5))\n\n[[0. 0. 0. 0. 0.]\n [0. 0. 0. 0. 0.]]\n[2.  2.5 3.  3.5 4. ]\n\n\n\n# Array methods\nprint(x.sum(), x.min(), x.mean(), x.max())\nprint(x.argmax())        # INDEX of the maximum element\n\na = np.array([[1, 2, 3], [4, 5, 6]])\n\n# Operations along axes: axis=0 works column-wise, axis=1 row-wise\nprint(a.sum())           # all elements\nprint(a.sum(axis=0))     # per column\nprint(a.sum(axis=1))     # per row\nprint(a.mean(axis=0))\n\n# NumPy functions apply element-wise\nprint(np.log(a))\n\n4950.0 0.0 49.5 99.0\n99\n21\n[5 7 9]\n[ 6 15]\n[2.5 3.5 4.5]\n[[0.         0.69314718 1.09861229]\n [1.38629436 1.60943791 1.79175947]]\n\n\n\n# Comparisons are element-wise too\nprint(a &gt; 3)\nprint((a &gt; 3).any(), (a &gt; 3).all())\n\n# argmax on a matrix returns the position in the FLATTENED array —\n# use unravel_index to convert it to (row, column):\nidx = a.argmax()\ni_row, i_col = np.unravel_index(idx, a.shape)\nprint(a[i_row, i_col])   # the maximum element\n\nprint(a.T)               # transpose\n\n[[False False False]\n [ True  True  True]]\nTrue False\n6\n[[1 4]\n [2 5]\n [3 6]]\n\n\nYour turn 2.2 — Create the matrix M = np.array([[3., 7., 1.], [9., 2., 5.]]). Find: (a) the column-wise means, (b) the position (row, column) of the largest element, (c) how many elements are greater than 4.\n\n# Your attempt here:\n\n\n\n💡 Click to reveal the solution — but try it yourself first!\n\nM = np.array([[3., 7., 1.], [9., 2., 5.]])\n\nprint(M.mean(axis=0))                           # (a)\ni, j = np.unravel_index(M.argmax(), M.shape)\nprint((i, j))                                   # (b) -&gt; (1, 0)\nprint((M &gt; 4).sum())                            # (c) booleans sum as 1/0 -&gt; 3"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#tuples",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#tuples",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Tuples",
+    "text": "Tuples\nTuples look like lists but are immutable — perfect for things that shouldn’t change, and for functions that return several values.\n\ny = ('a', 'b')\nz = 4, 5                 # parentheses are optional\nprint(y[0])\n\ntry:\n    y[0] = 10            # tuples are immutable\nexcept TypeError as e:\n    print('Error:', e)\n\nz1, z2 = z               # unpacking (as with unravel_index above)\nprint(z1, z2)\n\na\nError: 'tuple' object does not support item assignment\n4 5"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#dictionaries",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#dictionaries",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Dictionaries",
+    "text": "Dictionaries\nDictionaries map keys to values — ideal for keeping model parameters tidy.\n\nindividual = {'name': 'Francis', 'age': 28, 'weight': 100}\nprint(individual['age'])\nprint(individual['weight'])\n\n# A very common economics pattern: a parameter dictionary\nparams = {'alpha': 0.3, 'beta': 0.96, 'delta': 0.05}\nprint(params['beta'])\n\n28\n100\n0.96"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#loops",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#loops",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Loops",
+    "text": "Loops\n\n# Accumulate results by appending to a list\nsquares = []\nfor i in range(10):\n    squares.append(i**2)\nprint(squares)\n\n[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\n\n\n# Loop directly over items — and use enumerate when you also need the index\nlist_verbs = ['run', 'sit', 'jump', 'play', 'dance']\n\nfor i, verb in enumerate(list_verbs):\n    print('Verb ' + str(i+1) + ': ' + verb)    # indexing starts at 0, so +1\n\n# zip loops over two lists in tandem\nlist_verbs_spanish = ['correr', 'sentarse', 'saltar', 'jugar', 'bailar']\nfor v_eng, v_spa in zip(list_verbs, list_verbs_spanish):\n    print(v_eng + ': ' + v_spa)\n\nVerb 1: run\nVerb 2: sit\nVerb 3: jump\nVerb 4: play\nVerb 5: dance\nrun: correr\nsit: sentarse\njump: saltar\nplay: jugar\ndance: bailar\n\n\n\n# Nested loops: the inner loop runs fully for each step of the outer loop\nfor i in range(6, 8):\n    print('Multiplication table of', i)\n    for j in range(1, 11):\n        print(i, \"*\", j, \"=\", i*j)\n\nMultiplication table of 6\n6 * 1 = 6\n6 * 2 = 12\n6 * 3 = 18\n6 * 4 = 24\n6 * 5 = 30\n6 * 6 = 36\n6 * 7 = 42\n6 * 8 = 48\n6 * 9 = 54\n6 * 10 = 60\nMultiplication table of 7\n7 * 1 = 7\n7 * 2 = 14\n7 * 3 = 21\n7 * 4 = 28\n7 * 5 = 35\n7 * 6 = 42\n7 * 7 = 49\n7 * 8 = 56\n7 * 9 = 63\n7 * 10 = 70\n\n\n\n# While loops: repeat until a condition fails\ncount = 1\nwhile count &lt; 5:\n    print(count)\n    count += 1\n\n1\n2\n3\n4\n\n\n\n# While loops shine when you don't know in advance how many steps you need —\n# here: searching for the solution of 3 = x/2, starting from a guess\nLHS = 3\neps = 0.001\nx = 20\nRHS = x / 2\ncount = 1\nwhile np.abs(LHS - RHS) &gt; eps:\n    x -= 1\n    RHS = x / 2\n    count += 1\n    if np.abs(LHS - RHS) &lt; eps:\n        print('solution is x =', x)\n    elif count == 20:\n        print('no solution found with', count, 'iterations')\n        break\n    else:\n        continue\n\nsolution is x = 6\n\n\nQuick check ✋ — change x = 20 to x = 100 above and re-run. Why does it fail to find the solution?\n\n\nAnswer\n\nStarting from 100 and stepping down by 1, after 20 iterations x is only at ~80 — far from the solution x=6 — and the count==20 guard stops the search. Iterative algorithms need either enough iterations or a smarter update rule. This idea — convergence and iteration limits — returns in every numerical method later in the course."
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#conditional-statements",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#conditional-statements",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Conditional statements",
+    "text": "Conditional statements\n\nimport random\nx = random.random()\nprint('Random number is x =', x)\nif x &gt; 0.3 and x &lt; 0.5:\n    print(\"You win a prize of $1, congratulations!\")\nelse:\n    print(\"Sorry, you win nothing!\")\n\nRandom number is x = 0.1890908435474722\nSorry, you win nothing!\n\n\n\n# Combining while + if/else: classify numbers as even or odd\nn = 7\nwhile n &gt; 0:\n    if n % 2 == 0:\n        print(n, 'is an even number')\n    else:\n        print(n, 'is an odd number')\n    n = n - 1\n\n7 is an odd number\n6 is an even number\n5 is an odd number\n4 is an even number\n3 is an odd number\n2 is an even number\n1 is an odd number"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#functions",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#functions",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Functions",
+    "text": "Functions\n\ndef say_hi(name):\n    return 'Hi ' + name + '! We welcome you at the econ-programming course in the UoE.'\n\nprint(say_hi('Brad Pitt'))\n\nHi Brad Pitt! We welcome you at the econ-programming course in the UoE.\n\n\n\n# Positional vs keyword arguments — keyword arguments have default values\ndef f(x, y, a=2, b=2):\n    return x**a + y*b\n\nprint(f(2, 4))              # use both defaults\nprint(f(2, 4, b=6))         # override one\nprint(f(2, 4, a=6, b=3))    # override both\n\n12\n28\n76\n\n\nYour turn 2.3 — Write a function ces(K, L, alpha=0.5, sigma=2.0, A=1.0) implementing the CES production function\n\\[Y = A\\left(\\alpha K^{\\frac{\\sigma-1}{\\sigma}} + (1-\\alpha)L^{\\frac{\\sigma-1}{\\sigma}}\\right)^{\\frac{\\sigma}{\\sigma-1}}\\]\nand evaluate it at K=4, L=9. (This function stars in PS1 and this week’s lab.)\n\n# Your attempt here:\n\n\n\n💡 Click to reveal the solution — but try it yourself first!\n\ndef ces(K, L, alpha=0.5, sigma=2.0, A=1.0):\n    rho = (sigma - 1) / sigma\n    return A * (alpha * K**rho + (1 - alpha) * L**rho)**(1 / rho)\n\nprint(ces(4, 9))\nExpected output: about 6.25."
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#self-check-quiz",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#self-check-quiz",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Self-check quiz",
+    "text": "Self-check quiz\nQ1. What is 1//2?\n\n\nAnswer\n\n0 — integer division truncates.\n\nQ2. sum([True, False, True, True]) = ?\n\n\nAnswer\n\n3 — booleans are numeric.\n\nQ3. Which of these can you modify in place: a list, a tuple, a string?\n\n\nAnswer\n\nOnly the list. Tuples and strings are immutable.\n\nQ4. For matrix a, what does a.sum(axis=0) compute?\n\n\nAnswer\n\nColumn sums (axis 0 runs down the rows)."
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week02_fundamentals.html#before-the-lab",
+    "href": "courses/pnm/notebooks/week02_fundamentals.html#before-the-lab",
+    "title": "Week 2 — Fundamentals of Programming in Python",
+    "section": "Before the lab",
+    "text": "Before the lab\n\nFinish Your turn 2.1–2.3 — the CES function is directly relevant to PS1.\nThe lab gives tips for PS1 Exercises 1–2; review the Python refresher sections it points to.\nReference: QuantEcon — Python Essentials.\n\nNext week: data manipulation and data analysis with pandas."
+  },
+  {
+    "objectID": "courses/pnm/notebooks/lab01.html",
+    "href": "courses/pnm/notebooks/lab01.html",
+    "title": "\n\nLab 1\n\n",
+    "section": "",
+    "text": "Lab 1"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/lab01.html#y-fkl-a-leftalpha-kfracsigma-1sigma-1-alphalfracsigma-1sigma-rightfracsigmasigma-1",
+    "href": "courses/pnm/notebooks/lab01.html#y-fkl-a-leftalpha-kfracsigma-1sigma-1-alphalfracsigma-1sigma-rightfracsigmasigma-1",
+    "title": "\n\nLab 1\n\n",
+    "section": "\\[Y = F(K,L) = A \\left(\\alpha K^{\\frac{\\sigma-1}{\\sigma}} +(1-\\alpha)L^{\\frac{\\sigma-1}{\\sigma}}  \\right)^{\\frac{\\sigma}{\\sigma-1}} \\]",
+    "text": "\\[Y = F(K,L) = A \\left(\\alpha K^{\\frac{\\sigma-1}{\\sigma}} +(1-\\alpha)L^{\\frac{\\sigma-1}{\\sigma}}  \\right)^{\\frac{\\sigma}{\\sigma-1}} \\]\nWhen $ $,"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/lab01.html#y-fkl-a-kalpha-l1-alpha",
+    "href": "courses/pnm/notebooks/lab01.html#y-fkl-a-kalpha-l1-alpha",
+    "title": "\n\nLab 1\n\n",
+    "section": "\\[Y = F(K,L) = A  K^{\\alpha} L^{1-\\alpha} \\]",
+    "text": "\\[Y = F(K,L) = A  K^{\\alpha} L^{1-\\alpha} \\]\n\nQuestions:\n\nWhat are the parameters and variables?\n\nParameters: * xxxx * xxxx\nVariables: * xxxx * xxxx\n\n\nImport Libraries\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n\nLet’s define the parameters\n\nalpha = 0.33  ## capital share\nsigma = 1.5   ## constant elasticity of substitution\nA = 1.5       ## TFP\n\n\n\nLet’s define function\n\ndef ces_func(k,l,A=1.5,alpha=0.33,sigma=1.5):\n    if sigma==1:\n        print('function takes Cobb-Douglas form')\n        y = A*k**(alpha)*l**(1-alpha)\n\n    else:\n        y = A*(alpha*k**((sigma-1)/sigma) +(1-alpha)*l**((sigma-1)/sigma) )**(sigma/(sigma-1))\n        \n    return y\n\n\n\nLet’s define an even space grid\n\nk_grid = np.linspace(1e-5,10,11)\n\n\n\n\narray([1.000000e-05, 1.000009e+00, 2.000008e+00, 3.000007e+00,\n       4.000006e+00, 5.000005e+00, 6.000004e+00, 7.000003e+00,\n       8.000002e+00, 9.000001e+00, 1.000000e+01])\n\n\n\n\nLet’s compute the value of the function using the previous grid and l=3\n\ny1_k = ces_func(k_grid,3,sigma=1)\n\nfunction takes Cobb-Douglas form\n\n\n\n\nLet’s explore the dimension of y1_k\n\nnp.shape(y1_k)\n\n(11,)\n\n\n\n\nLet’s draw a graph of the production function\n\nfig, ax = plt.subplots()\nax.plot(k_grid, y1_k, linewidth=5.0)\nax.set_xlabel('K',fontsize=(16))\nax.set_ylabel('Y',fontsize=(16))\nax.set_title('Cobb-douglass production function under a capital share of 0.33')\nax.grid()\nax.tick_params(axis='y', labelsize=16)\nax.tick_params(axis='x', labelsize=16)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nTips to solve exercise 4\n\nCompute Steady State (some algebra)\nFor each period of time you will have a level of capital in steady state and a level of output in steady state\nUse arrays to represent the capital and output paths\nEquation (1) will capture the negative shock to identify the new level of capital.\nDraw a flowchart before start coding.\n\n\n\nSteady State Computation\n\n \n\n\n# Parameter values\nalpha=0.3\ns = 0.4\nA = 4\ndelta=0.7\n\n# Steady State\n\nk_s = (s*A/delta)**(1/(1-alpha))\ny_s = A*k_s**(alpha)\n\n\n\n\nIntroducing a Shock\n\neps=0.5 # Tolerance parameter\nt=0\n\nk_path = [k_s,k_s,k_s]\ny_path = [y_s,y_s,y_s]\n\nk_old = k_s\n\nA = A*0.75\nparams = s,A,alpha,delta\n\ndef law_of_motion(k,params):\n    s,A,alpha,delta=params\n    return s*A*k**alpha+(1-delta)*k"
   },
   {
     "objectID": "consulting.html",
@@ -200,28 +284,35 @@
     "href": "courses/pnm/index.html",
     "title": "Programming & Numerical Methods for Economics",
     "section": "",
-    "text": "This course teaches you to solve economic problems with code: writing clean programs in Julia, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements."
+    "text": "This course teaches you to solve economic problems with code: writing clean programs in Python, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements."
   },
   {
     "objectID": "courses/pnm/index.html#how-to-use-these-materials",
     "href": "courses/pnm/index.html#how-to-use-these-materials",
     "title": "Programming & Numerical Methods for Economics",
     "section": "How to use these materials",
-    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud:\n\nRead online — click the notebook link; it renders as a webpage with all code.\nRun in Google Colab — click the Colab badge; then set the runtime to Julia via Runtime → Change runtime type → Julia. Nothing to install.\nRun locally — install Julia, then using Pkg; Pkg.add(\"IJulia\") to open notebooks in Jupyter, and download the .ipynb file from the links below."
+    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud:\n\nRead online — click the notebook link; it renders as a webpage with all code and output.\nRun in Google Colab — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.\nRun locally — install Anaconda (includes Python, Jupyter, NumPy, and Matplotlib), then download the .ipynb file from the links below and open it in Jupyter."
   },
   {
     "objectID": "courses/pnm/index.html#materials",
     "href": "courses/pnm/index.html#materials",
     "title": "Programming & Numerical Methods for Economics",
     "section": "Materials",
-    "text": "Materials\n\n\n\nWeek\nTopic\nNotebook\nSlides\nColab\n\n\n\n\n1\nIntroduction to Julia for Economists\nView · Download\nSlides\n\n\n\n\n\nMore weeks will be posted as the course progresses."
+    "text": "Materials\n\n\n\nWeek\nTopic\nNotebook\nSlides\nProblem Set\nLab\nColab\n\n\n\n\n1\nIntroduction to Programming\nView · Download\nPDF\nPS0 — Python refresher\n—\n\n\n\n2\nFundamentals of Programming in Python\nView · Download\nPDF\nPS1\nLab 1\n\n\n\n\n\nNotebooks include interactive exercises with hidden solutions — try first, then click to check. More weeks will be posted as the course progresses."
   },
   {
-    "objectID": "courses/pnm/index.html#suggested-outline",
-    "href": "courses/pnm/index.html#suggested-outline",
+    "objectID": "courses/pnm/index.html#syllabus",
+    "href": "courses/pnm/index.html#syllabus",
     "title": "Programming & Numerical Methods for Economics",
-    "section": "Suggested outline",
-    "text": "Suggested outline\n\nIntroduction to Julia for economists\nArrays, linear algebra, and performance\nRoot-finding and optimisation\nInterpolation and function approximation\nDynamic programming: value function iteration\nSimulation and random numbers\nSolving a small macro model end-to-end"
+    "section": "Syllabus",
+    "text": "Syllabus\n\nIntroduction to programming\nFundamentals of programming in Python\nData manipulation and data analysis\nFrom data to models\nNumerical Methods I\nNumerical Methods II\nNumerical Methods III\nEconomic models\nModel estimation\nAdvanced topics"
+  },
+  {
+    "objectID": "courses/pnm/index.html#references",
+    "href": "courses/pnm/index.html#references",
+    "title": "Programming & Numerical Methods for Economics",
+    "section": "References",
+    "text": "References\n\nNumerical Methods in Economics, Kenneth L. Judd (1998) — main reference for the numerical-methods weeks\nQuantEcon — T. Sargent and J. Stachurski’s open lectures, main reference\nAdvanced: Jesús Fernández-Villaverde’s Computational Methods for Economists lecture notes"
   },
   {
     "objectID": "courses/pnm/index.html#questions",
@@ -231,53 +322,165 @@
     "text": "Questions\nFound an error in a notebook, or stuck on setup? Email juan.zurita@ed.ac.uk — see For Students for how to get a fast answer."
   },
   {
-    "objectID": "courses/pnm/slides/week01.html#why-learn-to-program",
-    "href": "courses/pnm/slides/week01.html#why-learn-to-program",
-    "title": "Week 1 — Introduction to Julia",
-    "section": "Why learn to program?",
-    "text": "Why learn to program?\n\nModern economics is computational: models without closed-form solutions, large datasets, simulations\nOne skill, many uses: research, central banks, consulting, data science\nThis course: Julia — reads like maths, runs like C\n\n\nEDIT: these are template slides — replace with your actual lecture content. Speaker notes go in blocks like this one (press S in the browser to see them)."
+    "objectID": "courses/pnm/notebooks/week01_intro.html",
+    "href": "courses/pnm/notebooks/week01_intro.html",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "",
+    "text": "Programming and Numerical Methods for Economics (ECNM10115) · The University of Edinburgh\nPython Essentials\nLearning goals. After this notebook you can: create lists and NumPy arrays; use loops, conditionals, and functions; and solve your first real exercises from QuantEcon.\nIf you’ve never used Python before, start with the Python refresher (PS0) on the course page."
   },
   {
-    "objectID": "courses/pnm/slides/week01.html#why-julia",
-    "href": "courses/pnm/slides/week01.html#why-julia",
-    "title": "Week 1 — Introduction to Julia",
-    "section": "Why Julia?",
-    "text": "Why Julia?\n\n\n\n\nPython\nMATLAB\nJulia\n\n\n\n\nSpeed\nslow loops\nlicensed\nfast\n\n\nSyntax\ngood\nmaths-like\nmaths-like\n\n\nCost\nfree\n££\nfree\n\n\nUsed at\neverywhere\nlegacy\ncentral banks, QuantEcon"
+    "objectID": "courses/pnm/notebooks/week01_intro.html#import-libraries",
+    "href": "courses/pnm/notebooks/week01_intro.html#import-libraries",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Import libraries",
+    "text": "Import libraries\nBy convention, numpy (numerical computing) is imported as np and matplotlib.pyplot (plotting) as plt.\n\nimport numpy as np\nimport matplotlib.pyplot as plt"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#on-good-coding-practices",
+    "href": "courses/pnm/notebooks/week01_intro.html#on-good-coding-practices",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "On good coding practices",
+    "text": "On good coding practices\nPython has a philosophy — run this:\n\nimport this\n\nThe Zen of Python, by Tim Peters\n\nBeautiful is better than ugly.\nExplicit is better than implicit.\nSimple is better than complex.\nComplex is better than complicated.\nFlat is better than nested.\nSparse is better than dense.\nReadability counts.\nSpecial cases aren't special enough to break the rules.\nAlthough practicality beats purity.\nErrors should never pass silently.\nUnless explicitly silenced.\nIn the face of ambiguity, refuse the temptation to guess.\nThere should be one-- and preferably only one --obvious way to do it.\nAlthough that way may not be obvious at first unless you're Dutch.\nNow is better than never.\nAlthough never is often better than *right* now.\nIf the implementation is hard to explain, it's a bad idea.\nIf the implementation is easy to explain, it may be a good idea.\nNamespaces are one honking great idea -- let's do more of those!"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#lists",
+    "href": "courses/pnm/notebooks/week01_intro.html#lists",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Lists",
+    "text": "Lists\nA list holds an ordered collection of items — numbers, strings, anything.\n\nlist_1 = [1, 2, 3]\nlist_2 = ['Boris', 'Laura', 'Robert']\n\nprint(list_1)\nprint(list_2)\nprint(list_1[0])     # indexing starts at ZERO in Python!\n\n[1, 2, 3]\n['Boris', 'Laura', 'Robert']\n1\n\n\nQuick check ✋ — before you run the next cell: what will list_1[0] print, 1 or 2?\n\n\nAnswer\n\n1 — Python indexes from zero, unlike MATLAB or R. This will bite you at least once this semester."
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#arrays",
+    "href": "courses/pnm/notebooks/week01_intro.html#arrays",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Arrays",
+    "text": "Arrays\nNumPy arrays are how we do maths. A 2-D array is a matrix:\n\\[\n\\begin{bmatrix}\n0 & 1 & 0 \\\\\n0 & 1 & 1 \\\\\n\\end{bmatrix}\n\\]\n\nA = np.array([[0,1,0],[0,1,1]])  # create the 2-D array — i.e. matrix\n\n# Procedural approach: call the np.mean function on A.\nm1_A = np.mean(A)\n\n# Object-oriented approach: call the array's own .mean() method.\nm2_A = A.mean()\n\n# Python does not automatically display everything we compute (as Stata does) —\n# we call print() when we want to see something.\nprint(m1_A)\nprint(m2_A)\n\n0.5\n0.5"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#some-operations",
+    "href": "courses/pnm/notebooks/week01_intro.html#some-operations",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Some operations",
+    "text": "Some operations\n\nx = [4.6, 10, 2]\nprint(max(x))          # the largest element\nprint(list(range(3)))  # range(n) generates 0, 1, ..., n-1\n\n10\n[0, 1, 2]"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#boolean-values",
+    "href": "courses/pnm/notebooks/week01_intro.html#boolean-values",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Boolean values",
+    "text": "Boolean values\nTrue/False values power all the logic in your programs — and they behave like 1/0 in arithmetic, which is a trick we use constantly.\n\nbools = True, False, True\nprint(all(bools))   # are ALL of them True?\nprint(any(bools))   # is ANY of them True?\nprint(True + True)  # booleans behave like 1 and 0!\n\nFalse\nTrue\n2"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#exercise-1-inner-product",
+    "href": "courses/pnm/notebooks/week01_intro.html#exercise-1-inner-product",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Exercise 1 — Inner product",
+    "text": "Exercise 1 — Inner product\nCompute the inner product of x_vals and y_vals using a loop: multiply the lists element by element and collect the results.\nPredict first: what is 2×10 + 4×3 + ...? Roughly what numbers should appear in your list?\n\nx_vals = [2, 4, 3, 5, 0]\ny_vals = [10, 3, 2, 9, 8]\n\n# Your attempt here:\n\n\n\n💡 Click to reveal the solution — but try it yourself first!\n\ninner_vals = []\nfor x, y in zip(x_vals, y_vals):   # zip loops through the two lists in tandem\n    inner = x * y\n    inner_vals.append(inner)       # appending (storing) results in a list\nprint(inner_vals)\nExpected output: [20, 12, 6, 45, 0]"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#exercise-2-count-the-even-numbers-in-099",
+    "href": "courses/pnm/notebooks/week01_intro.html#exercise-2-count-the-even-numbers-in-099",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Exercise 2 — Count the even numbers in 0–99",
+    "text": "Exercise 2 — Count the even numbers in 0–99\nHint: % is the remainder operator, so x % 2 == 0 tests whether x is even. Remember booleans add like 1s and 0s.\n\n# Your attempt here:\n\n\n\n💡 Click to reveal the solution — but try it yourself first!\n\ncount = 0\nfor x in range(100):          # for-loop over 0..99\n    even_yes = (x % 2 == 0)   # remainder operator + comparison\n    count += even_yes         # booleans add as 1/0\nprint(count)\nExpected output: 50"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#exercise-3-count-pairs-where-both-numbers-are-even",
+    "href": "courses/pnm/notebooks/week01_intro.html#exercise-3-count-pairs-where-both-numbers-are-even",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Exercise 3 — Count pairs where both numbers are even",
+    "text": "Exercise 3 — Count pairs where both numbers are even\nGiven pairs = ((2,5), (4,2), (9,8), (12,10)), count how many pairs have both numbers even.\n\npairs = ((2,5), (4,2), (9,8), (12,10))\n\n# Your attempt here:\n\n\n\n💡 Click to reveal the solution — but try it yourself first!\n\ncount = 0\nfor x, y in pairs:\n    count += (x % 2 == 0 and y % 2 == 0)   # 'and' logical operator\nprint(count)\nExpected output: 2 — the pairs (4,2) and (12,10)."
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#exercise-4-compute-int_02-x3-dx",
+    "href": "courses/pnm/notebooks/week01_intro.html#exercise-4-compute-int_02-x3-dx",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Exercise 4 — Compute \\(\\int_0^2 x^3 \\, dx\\)",
+    "text": "Exercise 4 — Compute \\(\\int_0^2 x^3 \\, dx\\)\nYour first taste of numerical methods! Use quad from SciPy, the main library for numerical analysis. (Check yourself with the analytical answer: \\(\\frac{x^4}{4}\\Big|_0^2 = 4\\).)\n\nfrom scipy.integrate import quad   # SciPy's definite-integral routine\n\n# Your attempt here:\n\n\n\n💡 Click to reveal the solution — but try it yourself first!\n\nfx = lambda x: x**3          # lambda creates a one-line function\n                             # in Python, the power operator is **\nfx_area = quad(fx, 0, 2)     # compute the definite integral\n\nprint('The area of x^3 on [0,2] is', fx_area[0])\nExpected output: 4.0 — matching the analytical answer."
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#exercise-5-evaluate-a-polynomial",
+    "href": "courses/pnm/notebooks/week01_intro.html#exercise-5-evaluate-a-polynomial",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Exercise 5 — Evaluate a polynomial",
+    "text": "Exercise 5 — Evaluate a polynomial\nWrite a function polynomial(x, coeff) that computes \\(a_0 + a_1 x + a_2 x^2 + \\dots\\) for a list of coefficients. Test it with coeff = [1, 2, 1] (that is, \\(1 + 2x + x^2\\)) at \\(x = 2\\).\n\n# Your attempt here:\n\n\n\n💡 Click to reveal the solution — but try it yourself first!\n\ndef polynomial(x, coeff):\n    poly = 0\n    for i, a in enumerate(coeff):   # enumerate gives you (index, value) pairs\n        poly += a * x**i\n    return poly\n\nprint(polynomial(2, [1, 1]))        # 1 + x        -&gt; 3\nprint(polynomial(2, [1, 2, 1]))     # 1 + 2x + x^2 -&gt; 9\nprint(polynomial(2, [1, 2, 2, 1]))  # 1 + 2x + 2x^2 + x^3 -&gt; 21"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#exercise-6-count-capital-letters",
+    "href": "courses/pnm/notebooks/week01_intro.html#exercise-6-count-capital-letters",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Exercise 6 — Count capital letters",
+    "text": "Exercise 6 — Count capital letters\nWrite a function that counts the number of capital letters in a string. Test it on 'The Rain in Spain is Wet'.\nHint: letter.upper() turns a letter into upper case, and letter.isalpha() tells you whether a character is a letter at all.\n\n# Your attempt here:\n\n\n\n💡 Click to reveal the solution — but try it yourself first!\n\ndef count_capitals(string):\n    count = 0\n    for letter in string:\n        if letter == letter.upper() and letter.isalpha():\n            count += 1\n    return count\n\nprint(count_capitals('The Rain in Spain is Wet'))\nExpected output: 4 — T, R, S, W."
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#self-check-quiz",
+    "href": "courses/pnm/notebooks/week01_intro.html#self-check-quiz",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Self-check quiz",
+    "text": "Self-check quiz\nAnswer in your head, then click to check.\nQ1. What does range(5) produce?\n\n\nAnswer\n\n0, 1, 2, 3, 4 — five numbers, starting at zero, stopping before 5.\n\nQ2. What is True + False + True?\n\n\nAnswer\n\n2 — booleans behave like 1 and 0 in arithmetic.\n\nQ3. A.mean() and np.mean(A) — which one is the object-oriented style?\n\n\nAnswer\n\nA.mean() — you call the method that belongs to the array object itself."
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#before-next-week",
+    "href": "courses/pnm/notebooks/week01_intro.html#before-next-week",
+    "title": "Week 1 — Introduction to Programming",
+    "section": "Before next week",
+    "text": "Before next week\n\nFinish any exercise you didn’t complete — bring questions to the lab.\nIf Python is new to you, work through PS0 (the Python refresher) on the course page.\nSkim the QuantEcon Python programming lectures — lectures 1–3 mirror what we did today.\n\nNext week: fundamentals of programming in Python — data types, control flow, and writing serious functions."
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#why-learn-to-program",
+    "href": "courses/pnm/slides/week01.html#why-learn-to-program",
+    "title": "Week 1 — Introduction to Python",
+    "section": "Why learn to program?",
+    "text": "Why learn to program?\n\nModern economics is computational: models without closed-form solutions, large datasets, simulations\nOne skill, many uses: research, central banks, consulting, data science\nThis course: Python — the most widely used language in economics and industry\n\n\nEDIT: these are template slides — replace with your actual lecture content. Speaker notes go in blocks like this one (press S in the browser to see them)."
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#why-python",
+    "href": "courses/pnm/slides/week01.html#why-python",
+    "title": "Week 1 — Introduction to Python",
+    "section": "Why Python?",
+    "text": "Why Python?\n\nFree and open source — no licence, works everywhere\nThe scientific stack: NumPy, Matplotlib, pandas, statsmodels\nUsed at central banks, the IMF, tech firms, and hedge funds\nHuge community: almost every question you’ll have has an answer online"
   },
   {
     "objectID": "courses/pnm/slides/week01.html#today",
     "href": "courses/pnm/slides/week01.html#today",
-    "title": "Week 1 — Introduction to Julia",
+    "title": "Week 1 — Introduction to Python",
     "section": "Today",
-    "text": "Today\n\nVariables and types\nVectors and matrices\nFunctions and control flow\nPlotting\nApplication: the Solow growth model"
+    "text": "Today\n\nVariables and types\nArrays with NumPy\nFunctions and control flow\nPlotting with Matplotlib\nApplication: the Solow growth model"
   },
   {
     "objectID": "courses/pnm/slides/week01.html#variables",
     "href": "courses/pnm/slides/week01.html#variables",
-    "title": "Week 1 — Introduction to Julia",
+    "title": "Week 1 — Introduction to Python",
     "section": "Variables",
-    "text": "Variables\ngdp = 2.85e12\nα = 0.3          # Unicode! type \\alpha + TAB\nβ = 0.96\n\nNo type declarations needed — Julia infers them\nUnderscores in big numbers: 68_350_000"
+    "text": "Variables\ngdp = 2.85e12\npopulation = 68_350_000       # underscores for readability\nα = 0.3                       # Greek letters work too!\nprint(f\"GDP per capita: ${gdp/population:,.2f}\")\n\nNo type declarations — Python infers them\nf-strings format output cleanly"
   },
   {
-    "objectID": "courses/pnm/slides/week01.html#the-solow-model-in-six-lines",
-    "href": "courses/pnm/slides/week01.html#the-solow-model-in-six-lines",
-    "title": "Week 1 — Introduction to Julia",
-    "section": "The Solow model in six lines",
-    "text": "The Solow model in six lines\nfunction solow_path(; s=0.25, α=0.3, δ=0.05, k0=1.0, T=100)\n    k = zeros(T); k[1] = k0\n    for t in 1:T-1\n        k[t+1] = s*k[t]^α + (1-δ)*k[t]\n    end\n    return k\nend\n\\[k_{t+1} = s\\,k_t^{\\alpha} + (1-\\delta)k_t\\]"
+    "objectID": "courses/pnm/slides/week01.html#numpy-in-one-slide",
+    "href": "courses/pnm/slides/week01.html#numpy-in-one-slide",
+    "title": "Week 1 — Introduction to Python",
+    "section": "NumPy in one slide",
+    "text": "NumPy in one slide\nimport numpy as np\n\ngrowth = np.array([2.1, 1.7, -9.3, 7.6, 4.1, 0.3, 0.9])\ngrowth.mean()          # methods on arrays\ngrowth - 2.0           # vectorised: whole array at once\nA @ x                  # matrix multiplication"
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#the-solow-model-in-seven-lines",
+    "href": "courses/pnm/slides/week01.html#the-solow-model-in-seven-lines",
+    "title": "Week 1 — Introduction to Python",
+    "section": "The Solow model in seven lines",
+    "text": "The Solow model in seven lines\ndef solow_path(s=0.25, alpha=0.3, delta=0.05, k0=1.0, T=100):\n    k = np.zeros(T)\n    k[0] = k0\n    for t in range(T - 1):\n        k[t + 1] = s * k[t]**alpha + (1 - delta) * k[t]\n    return k\n\\[k_{t+1} = s\\,k_t^{\\alpha} + (1-\\delta)k_t\\]"
   },
   {
     "objectID": "courses/pnm/slides/week01.html#your-turn",
     "href": "courses/pnm/slides/week01.html#your-turn",
-    "title": "Week 1 — Introduction to Julia",
+    "title": "Week 1 — Introduction to Python",
     "section": "Your turn",
     "text": "Your turn\nOpen the Week 1 notebook and work through Exercises 1.1 → 5.2\nGolden rule question: which saving rate maximises long-run consumption?"
   },
   {
     "objectID": "courses/pnm/slides/week01.html#next-week",
     "href": "courses/pnm/slides/week01.html#next-week",
-    "title": "Week 1 — Introduction to Julia",
+    "title": "Week 1 — Introduction to Python",
     "section": "Next week",
-    "text": "Next week\n\nPerformance: why Julia loops are fast\nLinear algebra for economists\nReading: QuantEcon lectures 1–3"
+    "text": "Next week\n\nNumPy and linear algebra in depth\nWorking with real economic data\nReading: QuantEcon Python lectures 1–3"
   },
   {
     "objectID": "index.html",
