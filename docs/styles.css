@@ -396,6 +396,13 @@ iframe {
   max-height: 220px;
 }
 
+/* Centre the subtitle (role + affiliation) under the name */
+.home-page .subtitle,
+.home-page .quarto-title .subtitle,
+.home-page .description {
+  text-align: center !important;
+}
+
 /* =====================================================
    TITLE
 ===================================================== */

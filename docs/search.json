@@ -88,7 +88,7 @@
     "href": "students.html#course-materials",
     "title": "Juan Zurita",
     "section": "Course Materials",
-    "text": "Course Materials\nMaterials for my current courses are distributed through the University’s Learn pages. Selected public materials will be posted here:\n\nDeep Learning for Macroeconomics — coming soon &lt;!– EDIT: add links to slides / notebooks as you make them public, e.g.:\nProgramming and Numerical Methods — Julia notebooks –&gt;\n\nIn the meantime, the Resources page lists the tools and readings I recommend most often to students."
+    "text": "Course Materials\nMaterials for my current courses are distributed through the University’s Learn pages. Selected public materials are posted here:\n\nProgramming & Numerical Methods for Economics — notebooks you can run in your browser, plus slides\nDeep Learning for Macroeconomics — coming soon &lt;!– EDIT: add links to slides / notebooks as you make them public, e.g.:\nProgramming and Numerical Methods — Julia notebooks –&gt;\n\nIn the meantime, the Resources page lists the tools and readings I recommend most often to students."
   },
   {
     "objectID": "opencollaborations.html",
@@ -110,6 +110,48 @@
     "title": "CV",
     "section": "",
     "text": "Download PDF"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html",
+    "href": "courses/pnm/notebooks/week01_intro.html",
+    "title": "Week 1 — Introduction to Julia for Economists",
+    "section": "",
+    "text": "Programming & Numerical Methods for Economics · The University of Edinburgh · Juan Zurita\nLearning goals. By the end of this notebook you can:"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#variables-and-typesjulia-is-fast-like-c-but-reads-like-maths.-assign-variables-with-julia-infers-the-type.",
+    "href": "courses/pnm/notebooks/week01_intro.html#variables-and-typesjulia-is-fast-like-c-but-reads-like-maths.-assign-variables-with-julia-infers-the-type.",
+    "title": "Week 1 — Introduction to Julia for Economists",
+    "section": "1. Variables and typesJulia is fast like C but reads like maths. Assign variables with =; Julia infers the type.",
+    "text": "1. Variables and typesJulia is fast like C but reads like maths. Assign variables with =; Julia infers the type.\n\n# Economic variablesgdp = 2.85e12        # UK GDP in dollars (Float64)population = 68_350_000   # underscores make big numbers readable (Int64)country = \"United Kingdom\"gdp_per_capita = gdp / populationprintln(\"GDP per capita: \", round(gdp_per_capita, digits=2))\n\n\n# Julia supports Unicode — write economics like economicsα = 0.3          # capital share  (type \\alpha then press TAB)β = 0.96         # discount factorprintln(\"α + β = \", α + β)\n\nExercise 1.1 — Create variables for an economy: consumption C = 1.8e12, investment I = 0.5e12, government spending G = 0.6e12, and net exports NX = -0.05e12. Compute GDP with the expenditure identity and print it.\n\n# Your answer here"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#vectors-and-matriceseconomic-data-lives-in-arrays-time-series-are-vectors-panel-data-are-matrices.",
+    "href": "courses/pnm/notebooks/week01_intro.html#vectors-and-matriceseconomic-data-lives-in-arrays-time-series-are-vectors-panel-data-are-matrices.",
+    "title": "Week 1 — Introduction to Julia for Economists",
+    "section": "2. Vectors and matricesEconomic data lives in arrays: time series are vectors, panel data are matrices.",
+    "text": "2. Vectors and matricesEconomic data lives in arrays: time series are vectors, panel data are matrices.\n\n# A time series of annual growth rates (percent)growth = [2.1, 1.7, -9.3, 7.6, 4.1, 0.3, 0.9]years  = 2018:2024      # a rangeprintln(\"Mean growth: \", sum(growth)/length(growth))println(\"Worst year: \", years[argmin(growth)])\n\n\n# Matrices: an input-output style exampleA = [0.2 0.3;     0.1 0.4]x = [100.0, 50.0]A * x        # matrix-vector product — no special syntax needed\n\n\n# Broadcasting: apply an operation element-wise with a dotreal_growth = growth .- 2.0      # subtract 2% inflation from every entrypositive_years = growth .&gt; 0     # element-wise comparisonprintln(real_growth)println(positive_years)\n\nExercise 2.1 — Using growth above, compute the cumulative level of GDP relative to 2017 (=100). Hint: cumprod(1 .+ growth ./ 100).\n\n# Your answer here"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#functions-and-control-flowfunctions-are-the-building-blocks-of-every-model-you-will-write-in-this-course.",
+    "href": "courses/pnm/notebooks/week01_intro.html#functions-and-control-flowfunctions-are-the-building-blocks-of-every-model-you-will-write-in-this-course.",
+    "title": "Week 1 — Introduction to Julia for Economists",
+    "section": "3. Functions and control flowFunctions are the building blocks of every model you will write in this course.",
+    "text": "3. Functions and control flowFunctions are the building blocks of every model you will write in this course.\n\n# Cobb-Douglas production function — three equivalent definitionsfunction production(K, L, α)    return K^α * L^(1-α)endproduce(K, L; α=0.3) = K^α * L^(1-α)     # one-liner with a keyword argumentY = production(100.0, 50.0, 0.3)println(\"Output: \", round(Y, digits=2))\n\n\n# Control flow: a simple progressive taxfunction tax(income)    if income &lt;= 12_570        return 0.0    elseif income &lt;= 50_270        return 0.20 * (income - 12_570)    else        return 0.20 * (50_270 - 12_570) + 0.40 * (income - 50_270)    endendfor inc in [10_000, 30_000, 80_000]    println(\"Income £\", inc, \" → tax £\", round(tax(inc), digits=0))end\n\nExercise 3.1 — Write a function present_value(payment, r, T) that returns the present value of receiving payment every year for T years at interest rate r. Check: present_value(100, 0.05, 10) ≈ 772.17.\n\n# Your answer here"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#plottingwe-use-plots.jl.-the-first-plot-takes-a-moment-to-compile-that-is-normal.",
+    "href": "courses/pnm/notebooks/week01_intro.html#plottingwe-use-plots.jl.-the-first-plot-takes-a-moment-to-compile-that-is-normal.",
+    "title": "Week 1 — Introduction to Julia for Economists",
+    "section": "4. PlottingWe use Plots.jl. The first plot takes a moment to compile — that is normal.",
+    "text": "4. PlottingWe use Plots.jl. The first plot takes a moment to compile — that is normal.\n\nusing Plotsplot(years, growth,     marker = :circle,     linewidth = 2,     label = \"GDP growth\",     xlabel = \"Year\",     ylabel = \"Percent\",     title = \"Annual GDP growth\")hline!([0], linestyle = :dash, color = :gray, label = \"\")"
+  },
+  {
+    "objectID": "courses/pnm/notebooks/week01_intro.html#application-the-solow-growth-modeleverything-together.-capital-evolves-ask_t1-s-k_talpha-1---delta-k_twhere-s-is-the-saving-rate-alpha-the-capital-share-and-delta-depreciation.-we-simulate-the-path-of-capital-from-a-low-starting-point-and-watch-convergence-to-the-steady-state.",
+    "href": "courses/pnm/notebooks/week01_intro.html#application-the-solow-growth-modeleverything-together.-capital-evolves-ask_t1-s-k_talpha-1---delta-k_twhere-s-is-the-saving-rate-alpha-the-capital-share-and-delta-depreciation.-we-simulate-the-path-of-capital-from-a-low-starting-point-and-watch-convergence-to-the-steady-state.",
+    "title": "Week 1 — Introduction to Julia for Economists",
+    "section": "5. Application: the Solow growth modelEverything together. Capital evolves as\\[k_{t+1} = s \\, k_t^{\\alpha} + (1 - \\delta) k_t\\]where \\(s\\) is the saving rate, \\(\\alpha\\) the capital share, and \\(\\delta\\) depreciation. We simulate the path of capital from a low starting point and watch convergence to the steady state.",
+    "text": "5. Application: the Solow growth modelEverything together. Capital evolves as\\[k_{t+1} = s \\, k_t^{\\alpha} + (1 - \\delta) k_t\\]where \\(s\\) is the saving rate, \\(\\alpha\\) the capital share, and \\(\\delta\\) depreciation. We simulate the path of capital from a low starting point and watch convergence to the steady state.\n\nfunction solow_path(; s=0.25, α=0.3, δ=0.05, k0=1.0, T=100)    k = zeros(T)    k[1] = k0    for t in 1:T-1        k[t+1] = s * k[t]^α + (1 - δ) * k[t]    end    return kendk = solow_path()k_star = (0.25/0.05)^(1/(1-0.3))    # analytical steady state: (s/δ)^(1/(1-α))plot(k, linewidth=2, label=\"capital path\", xlabel=\"t\", ylabel=\"k\")hline!([k_star], linestyle=:dash, label=\"steady state\")\n\nExercise 5.1 — Simulate two economies, one with s = 0.20 and one with s = 0.30, and plot both capital paths on the same figure. Which converges to a higher steady state, and does it converge faster or slower?Exercise 5.2 (harder) — Extend solow_path to also return the path of output \\(y_t = k_t^\\alpha\\) and consumption \\(c_t = (1-s) y_t\\). Plot consumption for s ∈ [0.1, 0.2, ..., 0.9] at \\(t = 100\\). Which saving rate maximises long-run consumption? (You have just discovered the golden rule.)\n\n# Your answers here\n\n—## SummaryYou can now write Julia code with variables, arrays, functions, loops, and plots — and you have simulated your first growth model. Next week: performance, linear algebra, and why Julia loops are fast.Further reading: QuantEcon Julia lectures 1–3 · Julia documentation"
   },
   {
     "objectID": "consulting.html",
@@ -154,6 +196,90 @@
     "text": "Get in touch\nEmail juan.zurita@ed.ac.uk with a short description of your question and your timeline, or connect on LinkedIn. I reply to serious enquiries within a few working days."
   },
   {
+    "objectID": "courses/pnm/index.html",
+    "href": "courses/pnm/index.html",
+    "title": "Programming & Numerical Methods for Economics",
+    "section": "",
+    "text": "This course teaches you to solve economic problems with code: writing clean programs in Julia, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements."
+  },
+  {
+    "objectID": "courses/pnm/index.html#how-to-use-these-materials",
+    "href": "courses/pnm/index.html#how-to-use-these-materials",
+    "title": "Programming & Numerical Methods for Economics",
+    "section": "How to use these materials",
+    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud:\n\nRead online — click the notebook link; it renders as a webpage with all code.\nRun in Google Colab — click the Colab badge; then set the runtime to Julia via Runtime → Change runtime type → Julia. Nothing to install.\nRun locally — install Julia, then using Pkg; Pkg.add(\"IJulia\") to open notebooks in Jupyter, and download the .ipynb file from the links below."
+  },
+  {
+    "objectID": "courses/pnm/index.html#materials",
+    "href": "courses/pnm/index.html#materials",
+    "title": "Programming & Numerical Methods for Economics",
+    "section": "Materials",
+    "text": "Materials\n\n\n\nWeek\nTopic\nNotebook\nSlides\nColab\n\n\n\n\n1\nIntroduction to Julia for Economists\nView · Download\nSlides\n\n\n\n\n\nMore weeks will be posted as the course progresses."
+  },
+  {
+    "objectID": "courses/pnm/index.html#suggested-outline",
+    "href": "courses/pnm/index.html#suggested-outline",
+    "title": "Programming & Numerical Methods for Economics",
+    "section": "Suggested outline",
+    "text": "Suggested outline\n\nIntroduction to Julia for economists\nArrays, linear algebra, and performance\nRoot-finding and optimisation\nInterpolation and function approximation\nDynamic programming: value function iteration\nSimulation and random numbers\nSolving a small macro model end-to-end"
+  },
+  {
+    "objectID": "courses/pnm/index.html#questions",
+    "href": "courses/pnm/index.html#questions",
+    "title": "Programming & Numerical Methods for Economics",
+    "section": "Questions",
+    "text": "Questions\nFound an error in a notebook, or stuck on setup? Email juan.zurita@ed.ac.uk — see For Students for how to get a fast answer."
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#why-learn-to-program",
+    "href": "courses/pnm/slides/week01.html#why-learn-to-program",
+    "title": "Week 1 — Introduction to Julia",
+    "section": "Why learn to program?",
+    "text": "Why learn to program?\n\nModern economics is computational: models without closed-form solutions, large datasets, simulations\nOne skill, many uses: research, central banks, consulting, data science\nThis course: Julia — reads like maths, runs like C\n\n\nEDIT: these are template slides — replace with your actual lecture content. Speaker notes go in blocks like this one (press S in the browser to see them)."
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#why-julia",
+    "href": "courses/pnm/slides/week01.html#why-julia",
+    "title": "Week 1 — Introduction to Julia",
+    "section": "Why Julia?",
+    "text": "Why Julia?\n\n\n\n\nPython\nMATLAB\nJulia\n\n\n\n\nSpeed\nslow loops\nlicensed\nfast\n\n\nSyntax\ngood\nmaths-like\nmaths-like\n\n\nCost\nfree\n££\nfree\n\n\nUsed at\neverywhere\nlegacy\ncentral banks, QuantEcon"
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#today",
+    "href": "courses/pnm/slides/week01.html#today",
+    "title": "Week 1 — Introduction to Julia",
+    "section": "Today",
+    "text": "Today\n\nVariables and types\nVectors and matrices\nFunctions and control flow\nPlotting\nApplication: the Solow growth model"
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#variables",
+    "href": "courses/pnm/slides/week01.html#variables",
+    "title": "Week 1 — Introduction to Julia",
+    "section": "Variables",
+    "text": "Variables\ngdp = 2.85e12\nα = 0.3          # Unicode! type \\alpha + TAB\nβ = 0.96\n\nNo type declarations needed — Julia infers them\nUnderscores in big numbers: 68_350_000"
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#the-solow-model-in-six-lines",
+    "href": "courses/pnm/slides/week01.html#the-solow-model-in-six-lines",
+    "title": "Week 1 — Introduction to Julia",
+    "section": "The Solow model in six lines",
+    "text": "The Solow model in six lines\nfunction solow_path(; s=0.25, α=0.3, δ=0.05, k0=1.0, T=100)\n    k = zeros(T); k[1] = k0\n    for t in 1:T-1\n        k[t+1] = s*k[t]^α + (1-δ)*k[t]\n    end\n    return k\nend\n\\[k_{t+1} = s\\,k_t^{\\alpha} + (1-\\delta)k_t\\]"
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#your-turn",
+    "href": "courses/pnm/slides/week01.html#your-turn",
+    "title": "Week 1 — Introduction to Julia",
+    "section": "Your turn",
+    "text": "Your turn\nOpen the Week 1 notebook and work through Exercises 1.1 → 5.2\nGolden rule question: which saving rate maximises long-run consumption?"
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#next-week",
+    "href": "courses/pnm/slides/week01.html#next-week",
+    "title": "Week 1 — Introduction to Julia",
+    "section": "Next week",
+    "text": "Next week\n\nPerformance: why Julia loops are fast\nLinear algebra for economists\nReading: QuantEcon lectures 1–3"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Juan Zurita",
@@ -165,7 +291,7 @@
     "href": "index.html#research-interest",
     "title": "Juan Zurita",
     "section": "Research Interest",
-    "text": "Research Interest\nMacroeconomics\n\nWelcome to my personal website\n\nI am a fixed-term Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy."
+    "text": "Research Interest\nMacroeconomics\n\nWelcome to my personal website\n\nI am a Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy."
   },
   {
     "objectID": "index.html#research-statement",
@@ -235,7 +361,7 @@
     "href": "teaching.html#courses",
     "title": "Juan Zurita",
     "section": "Courses",
-    "text": "Courses\n\nApplications of Econometrics (Honours)\nThe University of Edinburgh, United Kingdom — 2026\n\n\n\nEconomics 2 (Undergraduate)\nThe University of Edinburgh, United Kingdom — 2024–2026 \n\n\n\nProgramming and Numerical Methods (Honours)\nThe University of Edinburgh, United Kingdom — 2024–2026\n\n\n\nMacroeconomics 2 (PhD Students)\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nAdvanced Macroeconomics (Honours)\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nIntermediate Macroeconomics\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nCentral Banking and Monetary Policy\nUniversity of Technology Sydney, Australia — 2024 \n\n\n\nEconomic and Business Forecasting\nThe Australian National University, Australia — 2023 \n\n\n\nEconomics for Business\nUniversity of Technology Sydney, Australia — 2022 \n\n\n\nHistory of Economic Thought\nUniversidad Católica Argentina, Argentina — 2011–2015"
+    "text": "Courses\n\nApplications of Econometrics (Honours)\nThe University of Edinburgh, United Kingdom — 2026\n\n\n\nEconomics 2 (Undergraduate)\nThe University of Edinburgh, United Kingdom — 2024–2026 \n\n\n\nProgramming and Numerical Methods (Honours)\nThe University of Edinburgh, United Kingdom — 2024–2026 Course Materials — notebooks, slides, and Colab links\n\n\n\nMacroeconomics 2 (PhD Students)\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nAdvanced Macroeconomics (Honours)\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nIntermediate Macroeconomics\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nCentral Banking and Monetary Policy\nUniversity of Technology Sydney, Australia — 2024 \n\n\n\nEconomic and Business Forecasting\nThe Australian National University, Australia — 2023 \n\n\n\nEconomics for Business\nUniversity of Technology Sydney, Australia — 2022 \n\n\n\nHistory of Economic Thought\nUniversidad Católica Argentina, Argentina — 2011–2015"
   },
   {
     "objectID": "teaching.html#lectures",

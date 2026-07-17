@@ -1,0 +1,75 @@
+---
+title: "Week 1 — Introduction to Julia"
+subtitle: "Programming & Numerical Methods for Economics"
+author: "Juan Zurita · The University of Edinburgh"
+format:
+  revealjs:
+    theme: [default]
+    slide-number: true
+    footer: "Programming & Numerical Methods for Economics"
+---
+
+## Why learn to program?
+
+- Modern economics **is** computational: models without closed-form solutions, large datasets, simulations
+- One skill, many uses: research, central banks, consulting, data science
+- This course: **Julia** — reads like maths, runs like C
+
+::: {.notes}
+EDIT: these are template slides — replace with your actual lecture content.
+Speaker notes go in blocks like this one (press S in the browser to see them).
+:::
+
+## Why Julia?
+
+| | Python | MATLAB | Julia |
+|---|---|---|---|
+| Speed | slow loops | licensed | fast |
+| Syntax | good | maths-like | maths-like |
+| Cost | free | ££ | free |
+| Used at | everywhere | legacy | central banks, QuantEcon |
+
+## Today
+
+1. Variables and types
+2. Vectors and matrices
+3. Functions and control flow
+4. Plotting
+5. **Application:** the Solow growth model
+
+## Variables
+
+```{.julia}
+gdp = 2.85e12
+α = 0.3          # Unicode! type \alpha + TAB
+β = 0.96
+```
+
+- No type declarations needed — Julia infers them
+- Underscores in big numbers: `68_350_000`
+
+## The Solow model in six lines
+
+```{.julia}
+function solow_path(; s=0.25, α=0.3, δ=0.05, k0=1.0, T=100)
+    k = zeros(T); k[1] = k0
+    for t in 1:T-1
+        k[t+1] = s*k[t]^α + (1-δ)*k[t]
+    end
+    return k
+end
+```
+
+$$k_{t+1} = s\,k_t^{\alpha} + (1-\delta)k_t$$
+
+## Your turn
+
+Open the Week 1 notebook and work through Exercises 1.1 → 5.2
+
+**Golden rule question:** which saving rate maximises long-run consumption?
+
+## Next week
+
+- Performance: why Julia loops are fast
+- Linear algebra for economists
+- Reading: QuantEcon lectures 1–3

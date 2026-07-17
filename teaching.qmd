@@ -26,6 +26,7 @@ The University of Edinburgh, United Kingdom — 2024–2026
 
 #### Programming and Numerical Methods *(Honours)*
 The University of Edinburgh, United Kingdom — 2024–2026
+[**Course Materials** — notebooks, slides, and Colab links](courses/pnm/index.qmd)
 
 ---
 

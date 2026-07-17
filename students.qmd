@@ -62,8 +62,9 @@ Several of my ongoing projects are open to student contributors — data work, l
 
 ## Course Materials
 
-Materials for my current courses are distributed through the University's Learn pages. Selected public materials will be posted here:
+Materials for my current courses are distributed through the University's Learn pages. Selected public materials are posted here:
 
+- [**Programming & Numerical Methods for Economics**](courses/pnm/index.qmd) — notebooks you can run in your browser, plus slides
 - Deep Learning for Macroeconomics — *coming soon*
 <!-- EDIT: add links to slides / notebooks as you make them public, e.g.:
 - [Programming and Numerical Methods — Julia notebooks](files/pnm-notebooks.zip)
