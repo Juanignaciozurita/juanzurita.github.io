@@ -20,6 +20,10 @@ about:
       text: Github
       href: https://github.com/Juanignaciozurita
 
+    - icon: instagram
+      text: Instagram
+      href: https://www.instagram.com/juanignaciozurita/
+
     # Verify this is your Google Scholar profile before enabling:
     # - icon: mortarboard-fill
     #   text: Google Scholar
@@ -84,7 +88,7 @@ I am a fixed-term Lecturer in Economics at the School of Economics at the Univer
 ## Beyond Economics
 
 <p style="text-align: justify;">
-Away from macroeconomics, I am building an arboretum at **La Constancia de Biocca** — a long-term project of planting and caring for trees, one season at a time. You can follow its progress [here](ADD-PROJECT-LINK).
+Away from macroeconomics, I am building an arboretum at **La Constancia de Biocca** — a long-term project of planting and caring for trees, one season at a time. You can follow its progress on [Instagram](https://www.instagram.com/juanignaciozurita/).
 <!-- EDIT: replace ADD-PROJECT-LINK with your Instagram/website URL for the project.
      If you'd rather show a photo instead of (or alongside) the link, add an image
      to the repo (e.g. arboretum.jpg) and insert:

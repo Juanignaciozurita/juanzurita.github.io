@@ -46,6 +46,9 @@ website:
       - icon: linkedin
         href: https://www.linkedin.com/in/juan-ignacio-z-4b345425/
         aria-label: LinkedIn
+      - icon: instagram
+        href: https://www.instagram.com/juanignaciozurita/
+        aria-label: Instagram
       - icon: envelope-fill
         href: mailto:juan.zurita@ed.ac.uk
         aria-label: Email
