@@ -88,7 +88,7 @@ I am a Lecturer in Economics at the School of Economics at the University of Edi
 ## Beyond Economics
 
 <p style="text-align: justify;">
-Away from macroeconomics, I am building a botanical garden at **[La Constancia](https://estancialaconstanciamdq.com)** — a long-term project of planting and caring for trees on a farm in Argentina, one season at a time. If you are interested in contributing to green projects, this is a great opportunity: contributors can stay on the farm while working on the garden's development. [Email me](mailto:juan.zurita@ed.ac.uk) for details, or follow the progress on [Instagram](https://www.instagram.com/juanignaciozurita/).
+Away from macroeconomics, I am building a botanical garden at **[La Constancia](https://estancialaconstanciamdq.com)** — a long-term project of planting and caring for trees on a farm in Argentina, one season at a time. [Email me](mailto:juan.zurita@ed.ac.uk) for details, or follow the progress on [Instagram](https://www.instagram.com/juanignaciozurita/).
 <!-- EDIT: replace ADD-PROJECT-LINK with your Instagram/website URL for the project.
      If you'd rather show a photo instead of (or alongside) the link, add an image
      to the repo (e.g. arboretum.jpg) and insert:
