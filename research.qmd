@@ -20,7 +20,7 @@ My research focuses on macroeconomic policy and credit markets. My work combines
 
 
 ::: {.paper-links}
-[Journal Link](https://doi.org/10.1016/j.iref.2026.104921) \  [Slides](https://drive.google.com/file/d/1Dby9pZ6fk5J3uGjtT9oqn7JmWJp9CwQq/view?usp=sharing)
+[Journal Link](https://doi.org/10.1016/j.iref.2026.104921) \  [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4339446) \  [Slides](https://drive.google.com/file/d/1Dby9pZ6fk5J3uGjtT9oqn7JmWJp9CwQq/view?usp=sharing)
 :::
 
 <details>

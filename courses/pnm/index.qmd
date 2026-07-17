@@ -17,6 +17,8 @@ Each week has a **notebook** you can read online, download, or run in the cloud:
 - **Run in Google Colab** — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.
 - **Run locally** — install [Anaconda](https://www.anaconda.com/download) (includes Python, Jupyter, NumPy, and Matplotlib), then download the `.ipynb` file from the links below and open it in Jupyter.
 
+**New to Python?** Start with the [Python Refresher repository](https://github.com/Juanignaciozurita/Python-Refresher) alongside PS0.
+
 ## Materials
 
 | Week | Topic | Notebook | Slides | Problem Set | Lab | Colab |

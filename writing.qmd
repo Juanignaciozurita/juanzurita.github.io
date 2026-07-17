@@ -1,0 +1,42 @@
+---
+# title: "Public Writing"
+title-block-banner: true
+---
+
+<!-- ## Public Writing -->
+
+<p style="text-align: justify;">
+Occasional short pieces explaining my research for a general audience.
+</p>
+
+---
+
+## Why Size Matters: Lending Growth Rates in the US Banking Sector
+
+*May 2023*
+
+<!-- NOTE: this is a reconstruction of the article from your Google Site — please review
+the text against your original and edit freely. The two figures (average lending growth
+rates by bank size, 2009–2019, from US Call Reports) need to be added: export them from
+your original article as PNG files (e.g. lending_by_size.png), drop them in this folder,
+and uncomment the image lines below. -->
+
+<p style="text-align: justify;">
+The failure of Silicon Valley Bank put bank size back at the centre of the policy conversation. Economists usually study bank size in the context of crises — but size matters for credit supply even when the economy is not experiencing financial turmoil.
+</p>
+
+<p style="text-align: justify;">
+Two pieces of evidence make the point. First, research by Peter Paz shows that larger banks reduce lending by more than smaller banks after interest-rate increases. Second, in my own work on banking heterogeneity, I find that small banks are more likely to experience a contraction in their credit supply, while medium and large banks tend to experience positive average lending growth.
+</p>
+
+<!-- ![Average lending growth rates by bank size, US commercial banks 2009–2019](lending_by_size.png) -->
+
+<p style="text-align: justify;">
+Using Call Report data for US commercial banks between 2009 and 2019, the patterns differ sharply across the size distribution — and they differ again between the mortgage and business credit channels. The implication is that aggregate credit numbers hide as much as they reveal: <em>who</em> is lending matters for what credit does to the economy.
+</p>
+
+<p style="text-align: justify;">
+For the full analysis, see the published version of the underlying research: [Banking Heterogeneity, Credit Supply and Economic Growth](https://doi.org/10.1016/j.iref.2026.104921) (*International Review of Economics and Finance*, 2026; [SSRN preprint](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4339446)).
+</p>
+
+---

@@ -25,6 +25,8 @@ website:
         menu:
           - text: Publications & Working Papers
             href: research.qmd
+          - text: Public Writing
+            href: writing.qmd
           - text: Open Collaborations
             href: opencollaborations.qmd
       - text: Teaching
