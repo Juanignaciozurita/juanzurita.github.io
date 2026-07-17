@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://juanignaciozurita.github.io/juanzurita.github.io/usefullinks.html</loc>
-    <lastmod>2026-07-16T22:07:46.275Z</lastmod>
+    <lastmod>2026-07-17T12:05:36.035Z</lastmod>
   </url>
   <url>
     <loc>https://juanignaciozurita.github.io/juanzurita.github.io/students.html</loc>
-    <lastmod>2026-07-17T08:53:19.789Z</lastmod>
+    <lastmod>2026-07-17T12:27:05.464Z</lastmod>
   </url>
   <url>
     <loc>https://juanignaciozurita.github.io/juanzurita.github.io/opencollaborations.html</loc>
@@ -17,24 +17,68 @@
     <lastmod>2026-05-18T12:20:11.348Z</lastmod>
   </url>
   <url>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/week08_growth_julia.html</loc>
+    <lastmod>2026-07-17T12:14:11.986Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/week07_examples.html</loc>
+    <lastmod>2026-07-17T12:14:10.754Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/week05_numerical1.html</loc>
+    <lastmod>2026-07-17T12:14:06.690Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/week03_pandas.html</loc>
+    <lastmod>2026-07-17T12:14:01.735Z</lastmod>
+  </url>
+  <url>
     <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/week02_fundamentals.html</loc>
     <lastmod>2026-07-17T09:12:01.792Z</lastmod>
   </url>
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/lab01.html</loc>
-    <lastmod>2026-07-17T09:12:02.536Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/lab04.html</loc>
+    <lastmod>2026-07-17T12:14:07.209Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/lab02.html</loc>
+    <lastmod>2026-07-17T12:14:03.575Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/index.html</loc>
+    <lastmod>2026-07-17T12:14:01.183Z</lastmod>
   </url>
   <url>
     <loc>https://juanignaciozurita.github.io/juanzurita.github.io/consulting.html</loc>
     <lastmod>2026-07-16T22:12:45.493Z</lastmod>
   </url>
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/index.html</loc>
-    <lastmod>2026-07-17T09:12:03.434Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/lab01.html</loc>
+    <lastmod>2026-07-17T09:12:02.536Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/lab03.html</loc>
+    <lastmod>2026-07-17T12:14:05.472Z</lastmod>
   </url>
   <url>
     <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/week01_intro.html</loc>
     <lastmod>2026-07-17T09:06:12.932Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/week03_casestudy.html</loc>
+    <lastmod>2026-07-17T12:14:02.956Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/week04_models.html</loc>
+    <lastmod>2026-07-17T12:14:04.341Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/week06_optimization.html</loc>
+    <lastmod>2026-07-17T12:14:08.031Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/notebooks/week07_funcapprox.html</loc>
+    <lastmod>2026-07-17T12:14:09.497Z</lastmod>
   </url>
   <url>
     <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/slides/week01.html</loc>

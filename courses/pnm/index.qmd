@@ -23,12 +23,24 @@ Each week has a **notebook** you can read online, download, or run in the cloud:
 |:----:|:------|:---------|:-------|:------------|:----|:------|
 | 1 | Introduction to Programming | [View](notebooks/week01_intro.ipynb) · [Download](https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week01_intro.ipynb) | [PDF](slides/Lecture1.pdf) | [PS0 — Python refresher](psets/PS0_ECNM10115.pdf) | — | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week01_intro.ipynb) |
 | 2 | Fundamentals of Programming in Python | [View](notebooks/week02_fundamentals.ipynb) · [Download](https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week02_fundamentals.ipynb) | [PDF](slides/Lecture2.pdf) | [PS1](psets/PS1_ECNM10115.pdf) | [Lab 1](notebooks/lab01.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week02_fundamentals.ipynb) |
+| 3 | Data Manipulation with pandas | [pandas](notebooks/week03_pandas.ipynb) · [Case study](notebooks/week03_casestudy.ipynb) | [PDF](slides/Lecture3.pdf) | [PS2](psets/PS2_ECNM10115.pdf) | [Lab 2](notebooks/lab02.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week03_pandas.ipynb) |
+| 4 | From Data to Models | [View](notebooks/week04_models.ipynb) | [PDF](slides/Lecture4.pdf) | [PS3](psets/PS3_ECNM10115.pdf) | [Lab 3](notebooks/lab03.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week04_models.ipynb) |
+| 5 | Numerical Methods I — Root-Finding & Optimisation | [View](notebooks/week05_numerical1.ipynb) | [PDF](slides/Lecture5.pdf) · [Optimisation](slides/Optimization_Autumn2025.pdf) · [VF Approx.](slides/ValueFunctionApproximation.pdf) | [PS4](psets/PS4_ECNM10115.pdf) | [Lab 4](notebooks/lab04.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week05_numerical1.ipynb) |
+| 6 | Numerical Methods II — Optimisation in Economics | [View](notebooks/week06_optimization.ipynb) | [PDF](slides/Lecture6_optimization.pdf) | [PS5](psets/PS5.pdf) | — | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week06_optimization.ipynb) |
+| 7 | Numerical Methods III — Function Approximation | [View](notebooks/week07_funcapprox.ipynb) · [Examples](notebooks/week07_examples.ipynb) | [PDF](slides/Lecture7_function_approximation.pdf) | [PS6](psets/PS6.pdf) | — | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week07_funcapprox.ipynb) |
+| 8 | Economic Models — Value Function Iteration | [View (Julia)](notebooks/week08_growth_julia.ipynb) | [PDF](slides/Lecture8_vfi.pdf) | [PS7](psets/PS7.pdf) | — | — |
+| 9 | Model Estimation — Simulation & Inference | — | [PDF](slides/Lecture9_simulation_inference.pdf) | [PS8](psets/PS8.pdf) | — | — |
+| 10 | Advanced Topics — Heterogeneous Agents | — | [PDF](slides/Lecture10_heterogeneous_agents.pdf) | — | — | — |
 
 <!-- TEMPLATE for adding a week — copy the row above and adjust week number/topic/filenames.
 NOTE: if you rename the GitHub repo, update the Download and Colab URLs to match.
 POLICY: problem-set QUESTIONS only — solutions are never published here. -->
 
-*Notebooks include interactive exercises with hidden solutions — try first, then click to check. More weeks will be posted as the course progresses.*
+*Notebooks include interactive exercises with hidden solutions — try first, then click to check.*
+
+**Datasets:** the survey datasets used in the Week 3 case study, labs, and problem sets (UNPS and related microdata) are distributed through **Learn**, not this website, for licensing reasons. Notebooks are published with their outputs embedded, so you can follow everything here.
+
+**Extra reading:** [pandas cheat sheet](files/DataWrangling_Pandas_Cheat_Sheet.pdf) · [Quadrature Methods](files/Quadrature_Methods.pdf) · [Math Review](files/Math_Review.pdf)
 
 ## Syllabus
 

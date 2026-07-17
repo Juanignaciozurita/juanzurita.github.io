@@ -36,6 +36,30 @@ Tutorials for when you need serious speed (structural models, large simulations)
 🔗 [Link](https://www.learncpp.com)
 :::
 
+::: {.card}
+### 📗 Coding for Economists
+
+Arthur Turrell's free book: Python, data, and good practice — written for economists.
+
+🔗 [Link](https://aeturrell.github.io/coding-for-economists/intro.html)
+:::
+
+::: {.card}
+### 🧰 Code and Data for the Social Sciences
+
+Gentzkow & Shapiro's classic guide to organising code and data so your project doesn't collapse.
+
+🔗 [Link](https://www.brown.edu/Research/Shapiro/pdfs/CodeAndData.pdf)
+:::
+
+::: {.card}
+### 🖥️ The Missing Semester
+
+MIT's crash course in the computing skills nobody teaches: shell, git, editors.
+
+🔗 [Link](https://missing.csail.mit.edu/)
+:::
+
 :::
 
 ---
@@ -168,6 +192,160 @@ Discover and map academic papers.
 
 ---
 
+## Writing Economics
+
+Essential reading before you write a dissertation, thesis, or paper.
+
+::: {.card-grid}
+
+::: {.card}
+### ✒️ Economical Writing
+
+Deirdre McCloskey's principles of clear economics writing, in a short PDF.
+
+🔗 [Link](https://www.deirdremccloskey.com/docs/pdf/Article_309.pdf)
+:::
+
+::: {.card}
+### 📝 Writing Tips for PhD Students
+
+John Cochrane's famous guide — blunt, practical, and just as useful for a dissertation.
+
+🔗 [Link](https://static1.squarespace.com/static/5e6033a4ea02d801f37e15bb/t/5eda74919c44fa5f87452697/1591374993570/phd_paper_writing.pdf)
+:::
+
+::: {.card}
+### 🎯 The Introduction Formula
+
+Keith Head's recipe for the hardest part of any paper: the introduction.
+
+🔗 [Link](http://blogs.ubc.ca/khead/research/research-advice/formula)
+:::
+
+::: {.card}
+### 🪜 Four Steps to an Applied Micro Paper
+
+Jesse Shapiro's systematic method for going from question to paper.
+
+🔗 [Link](https://www.brown.edu/Research/Shapiro/pdfs/foursteps.pdf)
+:::
+
+:::
+
+---
+
+## Presenting Your Work
+
+::: {.card-grid}
+
+::: {.card}
+### 🎤 Academic Presenting: How to Get It Right
+
+David Ubilava's practical guide to presenting a paper.
+
+🔗 [Link](https://davidubilava.com/misc/paper-presentation.html)
+:::
+
+::: {.card}
+### 📊 Ten Guidelines for Better Tables
+
+Jon Schwabish on turning unreadable tables into convincing ones.
+
+🔗 [Link](https://www.cambridge.org/core/journals/journal-of-benefit-cost-analysis/article/ten-guidelines-for-better-tables/74C6FD9FEB12038A52A95B9FBCA05A12)
+:::
+
+::: {.card}
+### 📈 Data Visualization
+
+Kieran Healy's free book on making figures that actually communicate.
+
+🔗 [Link](https://socviz.co/)
+:::
+
+::: {.card}
+### 🖼️ Best Figures in Economics
+
+Paul Goldsmith-Pinkham's gallery of great figures — steal ideas from the best.
+
+🔗 [Link](https://paulgp.github.io/best_figures.html)
+:::
+
+:::
+
+---
+
+## Doing Research
+
+::: {.card-grid}
+
+::: {.card}
+### 🔍 An Unofficial Guide to Empirical Work
+
+Amy Finkelstein on how empirical research actually gets done — false starts included.
+
+🔗 [Link](http://wenxingxiang.weebly.com/uploads/6/0/5/1/60518841/an_unofficial_guide_to_trying_to_doempirical_work.pdf)
+:::
+
+::: {.card}
+### 🔧 The Economist as Plumber
+
+Esther Duflo on economics as practical problem-solving.
+
+🔗 [Link](https://www.aeaweb.org/articles?id=10.1257/aer.p20171153)
+:::
+
+::: {.card}
+### 🧭 Tips for Economists
+
+Masayuki Kudamatsu's encyclopedic collection of advice for every stage.
+
+🔗 [Link](https://sites.google.com/site/mkudamatsu/tips4economists)
+:::
+
+::: {.card}
+### 🎓 Econ Grad Advice
+
+Curated guidance if you are considering or starting a PhD in economics.
+
+🔗 [Link](https://sites.google.com/view/econgradadvice/)
+:::
+
+:::
+
+---
+
+## AI for Research
+
+::: {.card-grid}
+
+::: {.card}
+### 🤖 Guides to AI Coding Agents
+
+Claes Bäckman's hands-on guides to Claude Code, Codex, and agentic workflows for research.
+
+🔗 [Link](https://claesbackman.com/resources.html)
+:::
+
+::: {.card}
+### 🚀 Getting Started with Claude Code
+
+Paul Goldsmith-Pinkham's introduction for economists — from empty folder to figure.
+
+🔗 [Link](https://paulgp.substack.com/p/getting-started-with-claude-code)
+:::
+
+::: {.card}
+### 🛠️ AI, Git, and LaTeX Tech Stack
+
+Kevin Bryan's guide to a modern research toolkit.
+
+🔗 [Link](https://kevinbryanecon.com/techstack.html)
+:::
+
+:::
+
+---
+
 ## Funding, Jobs & Research Opportunities
 
 ::: {.card-grid}
@@ -198,6 +376,6 @@ Funding and research opportunities database.
 
 :::
 
-<!-- NOTE: the previous "AI for Research" section (aiandme.com, refine.ai) was removed
-because the URLs could not be verified. Restore it with checked links if you use
-specific AI tools you want to recommend. -->
+---
+
+*Several links on this page are drawn from [Claes Bäckman's excellent resources collection](https://claesbackman.com/resources.html), which is worth exploring in full.*
