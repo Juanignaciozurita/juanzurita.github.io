@@ -1,23 +1,71 @@
 ---
-# title: "Useful Links"
+# title: "Resources"
 title-block-banner: true
 body-classes: usefullinks
 ---
 
-Here I list some links that I find useful during my research or learning activities.
+A collection of tools, data sources, and learning materials I recommend to students and use in my own research. **Students starting out:** begin with the *Learn to Code* and *Economics Data* sections.
 
 ---
 
-## Julia
+## Learn to Code
 
 ::: {.card-grid}
 
 ::: {.card}
 ### 🟣 Julia Academy
 
-Free courses for programming, machine learning, and data science.
+Free courses for programming, machine learning, and data science. Start here if you have never coded before.
 
 🔗 [Link](https://juliaacademy.com/courses)
+:::
+
+::: {.card}
+### 📘 QuantEcon
+
+Open lectures on quantitative economics with Julia and Python — the single best bridge between economics and programming.
+
+🔗 [Link](https://quantecon.org)
+:::
+
+::: {.card}
+### 💻 Learn C++
+
+Tutorials for when you need serious speed (structural models, large simulations).
+
+🔗 [Link](https://www.learncpp.com)
+:::
+
+:::
+
+---
+
+## Economics Data
+
+::: {.card-grid}
+
+::: {.card}
+### 🇺🇸 FRED
+
+Federal Reserve Economic Data — the first stop for macro time series. Free, with API access.
+
+🔗 [Link](https://fred.stlouisfed.org)
+:::
+
+::: {.card}
+### 🇬🇧 ONS & Bank of England
+
+UK official statistics and the Bank's interactive statistical database.
+
+🔗 [ONS](https://www.ons.gov.uk) · [BoE Database](https://www.bankofengland.co.uk/boeapps/database/)
+:::
+
+::: {.card}
+### 🌍 World Bank Open Data
+
+Cross-country development and macro indicators.
+
+🔗 [Link](https://data.worldbank.org)
 :::
 
 :::
@@ -31,7 +79,7 @@ Free courses for programming, machine learning, and data science.
 ::: {.card}
 ### 📊 Math & Probability Notes
 
-Oliver Knill’s lecture materials and notes.
+Lecture materials and notes on probability theory.
 
 🔗 [Link](https://math.dartmouth.edu/~prob/prob/prob.pdf)
 :::
@@ -39,25 +87,9 @@ Oliver Knill’s lecture materials and notes.
 ::: {.card}
 ### 📈 Bayesian Econometrics
 
-Applied Bayesian Econometrics for Central Bankers. 
+Applied Bayesian Econometrics for Central Bankers — practical and code-driven.
 
 🔗 [Link](https://www.bankofengland.co.uk/ccbs/applied-bayesian-econometrics-for-central-bankers-updated-2017)
-:::
-
-:::
-
----
-
-## C++
-
-::: {.card-grid}
-
-::: {.card}
-### 💻 Learn C++
-
-Coding Ninjas C++ tutorials.
-
-🔗 [Link](https://www.codingninjas.com/studio/library/learn-c-plus-plus)
 :::
 
 :::
@@ -71,7 +103,7 @@ Coding Ninjas C++ tutorials.
 ::: {.card}
 ### ✍️ Overleaf
 
-Online LaTeX editor.
+Online LaTeX editor — what you will write your dissertation in.
 
 🔗 [Link](https://www.overleaf.com)
 :::
@@ -136,40 +168,24 @@ Discover and map academic papers.
 
 ---
 
-## AI for Research
-
-::: {.card-grid}
-
-::: {.card}
-### 🤖 AI & Me
-
-AI tools for research workflows.
-
-🔗 [Link](https://aiandme.com)
-:::
-
-::: {.card}
-### ⚙️ Refine AI
-
-Research assistance and paper refinement tools.
-
-🔗 [Link](https://refine.ai)
-:::
-
-:::
-
----
-
-## Funding & Research Opportunities
+## Funding, Jobs & Research Opportunities
 
 ::: {.card-grid}
 
 ::: {.card}
 ### 💰 INOMICS
 
-Economics jobs, funding, and summer schools.
+Economics jobs, funding, and summer schools — useful for MSc students planning a PhD.
 
 🔗 [Link](https://inomics.com)
+:::
+
+::: {.card}
+### 🌐 EconJobMarket
+
+The central platform for academic economics job applications.
+
+🔗 [Link](https://econjobmarket.org)
 :::
 
 ::: {.card}
@@ -181,3 +197,7 @@ Funding and research opportunities database.
 :::
 
 :::
+
+<!-- NOTE: the previous "AI for Research" section (aiandme.com, refine.ai) was removed
+because the URLs could not be verified. Restore it with checked links if you use
+specific AI tools you want to recommend. -->

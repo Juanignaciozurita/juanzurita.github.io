@@ -4,6 +4,18 @@ project:
 
 website:
   title: "Juan Zurita"
+  description: "Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking."
+  # NOTE: this is the project-page URL implied by your GitHub remote
+  # (github.com/Juanignaciozurita/juanzurita.github.io).
+  # If you rename the repo to Juanignaciozurita.github.io (recommended for a
+  # shorter address) or add a custom domain, update this line to match.
+  site-url: https://juanignaciozurita.github.io/juanzurita.github.io/
+  favicon: favicon.png
+  image: Profile.jpg
+  open-graph: true
+  twitter-card: true
+  # Uncomment and add your Google Analytics ID to enable analytics:
+  # google-analytics: "G-XXXXXXXXXX"
   navbar:
     left:
       - href: index.qmd
@@ -12,12 +24,26 @@ website:
         href: research.qmd
       - text: Teaching
         href: teaching.qmd
+      - text: For Students
+        href: students.qmd
+      - text: Consulting & Policy
+        href: consulting.qmd
       - text: CV
         href: cv.qmd
       - text: Open Collaborations
         href: opencollaborations.qmd
-      - text: Useful Links
+      - text: Resources
         href: usefullinks.qmd
+    right:
+      - icon: github
+        href: https://github.com/Juanignaciozurita
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/juan-ignacio-z-4b345425/
+        aria-label: LinkedIn
+      - icon: envelope-fill
+        href: mailto:juan.zurita@ed.ac.uk
+        aria-label: Email
 
 format:
   html:
@@ -26,5 +52,3 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
-    
-    

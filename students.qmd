@@ -1,0 +1,72 @@
+---
+# title: "For Students"
+title-block-banner: true
+---
+
+<!-- ## For Students -->
+
+<p style="text-align: justify;">
+This page collects everything students most often ask me about: how to contact me, letters of recommendation, dissertation supervision, and opportunities to get involved in research. If your question is not answered here, email me at [juan.zurita@ed.ac.uk](mailto:juan.zurita@ed.ac.uk).
+</p>
+
+---
+
+## Office Hours & Contact
+
+Office hours are **by appointment** — email me and suggest two or three times that work for you.
+<!-- EDIT: if you hold fixed office hours, replace the line above, e.g.:
+Office hours: Tuesdays 14:00–16:00, Room X.XX, 30 Buccleuch Place. -->
+
+When you email, it helps if you include:
+
+- Your **course and year** (e.g., Economics 2, Year 2; MSc Economics).
+- A **specific question** — the more precise you are, the faster and more useful my answer will be.
+- For coursework questions, what you have **already tried**.
+
+I normally reply within two working days during the semester.
+
+---
+
+## Letters of Recommendation
+
+I am happy to write letters for students who have taken a course with me or worked with me on research. To make a request, email me **at least three weeks before the deadline** with:
+
+1. Your **CV** and **transcript**.
+2. The **programme or position** you are applying to, and why you chose it (two or three sentences are enough).
+3. The **deadline** and how the letter is submitted (upload link, email, etc.).
+4. A reminder of **which course you took with me**, when, and — if you can — a piece of work you are proud of (essay, problem set, dissertation chapter). This makes the letter concrete rather than generic.
+
+If I do not know your work well enough to write a strong letter, I will tell you honestly — a lukewarm letter helps no one.
+
+---
+
+## Dissertation & Thesis Supervision
+
+I supervise undergraduate and MSc dissertations in areas close to my research:
+
+- **Household debt** and its effects on consumption, labour supply, and policy transmission
+- **Monetary policy**: transmission mechanisms, bank profitability, interest-rate pass-through
+- **Fiscal policy**: multipliers, fiscal sustainability, productivity and public finances
+- **Banking and credit markets**: credit supply, capital requirements, bank heterogeneity
+- **Applied macro-econometrics**: VAR/local projection methods, forecasting
+
+A good proposal, at any level, answers three questions: What is the question? Why does it matter? What data or method could answer it? One page is plenty — email it to me and we can take it from there.
+
+---
+
+## Research Opportunities
+
+Several of my ongoing projects are open to student contributors — data work, literature reviews, visualization, and empirical analysis. This is the best way to learn how research is actually done, and strong contributions are acknowledged (and, where the contribution merits it, can lead to co-authorship). See [Open Collaborations](opencollaborations.qmd) for the current list of projects.
+
+---
+
+## Course Materials
+
+Materials for my current courses are distributed through the University's Learn pages. Selected public materials will be posted here:
+
+- Deep Learning for Macroeconomics — *coming soon*
+<!-- EDIT: add links to slides / notebooks as you make them public, e.g.:
+- [Programming and Numerical Methods — Julia notebooks](files/pnm-notebooks.zip)
+-->
+
+In the meantime, the [Resources](usefullinks.qmd) page lists the tools and readings I recommend most often to students.

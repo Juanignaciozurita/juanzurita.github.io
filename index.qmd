@@ -1,25 +1,35 @@
 ---
-# title-block-banner: true   
+# title-block-banner: true
 title: "Juan Zurita"
 subtitle: |
   <div style="font-size:1em; text-align:center;">
-  Fix-Term Lecturer <br>
+  Fixed-Term Lecturer <br>
   School of Economics, The University of Edinburgh
   </div>
-  
+
 
 about:
   template: jolla
   image: Profile.jpg
   links:
-    - icon: linkedin   
+    - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/juan-ignacio-z-4b345425/
 
     - icon: github
       text: Github
       href: https://github.com/Juanignaciozurita
-      
+
+    # Verify this is your Google Scholar profile before enabling:
+    # - icon: mortarboard-fill
+    #   text: Google Scholar
+    #   href: https://scholar.google.com/citations?user=Qc8UdnEAAAAJ
+
+    # Add your ORCID iD when ready:
+    # - icon: person-badge
+    #   text: ORCID
+    #   href: https://orcid.org/0000-0000-0000-0000
+
 toc: false
 body-classes: home-page
 ---
@@ -34,13 +44,11 @@ body-classes: home-page
 <!-- 📄 [CV](https://drive.google.com/file/d/1DlbczDUbWkBIWiaEBQGoVwmb0AAtj5Dn/view) -->
 :::
 
-< \br >
 
- 
 ## Research Interest
 Macroeconomics
 
- 
+
 ####  <span style="color:#b22222;">Welcome to my personal website</span>
 
 <p style="text-align: justify;">
@@ -67,9 +75,19 @@ I am a fixed-term Lecturer in Economics at the School of Economics at the Univer
 ## Research Highlights
 ::: {.justified-list}
 - **May 2026**: My paper ["*Does Household Debt affect the Transmission Mechanism of Monetary Policy*"](https://drive.google.com/file/d/1vWuFSW6Wn0GZTiBAaC-48kA-jwidCV2u/view?usp=sharing) has been accepted at _Macroeconomic Dynamics_
-- **March 2026**: New Working Paper: ["*The Bank Profit Channel of Monetary Policy*"](https://drive.google.com/file/d/1diD_WeOjfIid2flkEFpJnEuftlgbH2H8/view?usp=sharing) with Jiening Le  
-- **February 2026**: My project [“*Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom*”](https://drive.google.com/file/d/1JgVkmJzz4pxLuUIiWGliRyAgdT616lJh/view?usp=sharing) has received funding from the Royal Society of Edinburgh.  
-- **January 2026**: My paper [*Banking Heterogeneity, Credit Supply and Economic Growth*](https://doi.org/10.1016/j.iref.2026.104921), Slides, has been published at the International Review of Economics and Finance.
+- **March 2026**: New Working Paper: ["*The Bank Profit Channel of Monetary Policy*"](https://drive.google.com/file/d/1diD_WeOjfIid2flkEFpJnEuftlgbH2H8/view?usp=sharing) with Jiening Le
+- **February 2026**: My project [“*Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom*”](https://drive.google.com/file/d/1JgVkmJzz4pxLuUIiWGliRyAgdT616lJh/view?usp=sharing) has received funding from the Royal Society of Edinburgh.
+- **January 2026**: My paper [*Banking Heterogeneity, Credit Supply and Economic Growth*](https://doi.org/10.1016/j.iref.2026.104921) ([Slides](https://drive.google.com/file/d/1Dby9pZ6fk5J3uGjtT9oqn7JmWJp9CwQq/view?usp=sharing)) has been published at the International Review of Economics and Finance.
 :::
 
+
+## Beyond Economics
+
+<p style="text-align: justify;">
+Away from macroeconomics, I am building an arboretum at **La Constancia de Biocca** — a long-term project of planting and caring for trees, one season at a time. You can follow its progress [here](ADD-PROJECT-LINK).
+<!-- EDIT: replace ADD-PROJECT-LINK with your Instagram/website URL for the project.
+     If you'd rather show a photo instead of (or alongside) the link, add an image
+     to the repo (e.g. arboretum.jpg) and insert:
+     ![La Constancia de Biocca](arboretum.jpg){width=70% fig-align="center"} -->
+</p>
 

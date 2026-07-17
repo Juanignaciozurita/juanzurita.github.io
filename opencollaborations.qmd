@@ -8,42 +8,46 @@ title-block-banner: true
 <p style="text-align: justify;">
 Here you will find a list of ongoing research collaborations open to new contributors. Please feel free to contact me if you are interested in participating in any of the following projects.
 </p>
+
+::: {.callout-note title="Students: this means you too"}
+Motivated Honours and MSc students are welcome to join these projects as research contributors — no prior research experience required, just reliability and curiosity. Typical involvement is a few hours per week on data work, literature reviews, or visualization. You will learn how research is actually produced, receive a reference that speaks to real work, and substantial contributions are credited (and can merit co-authorship). Email me at [juan.zurita@ed.ac.uk](mailto:juan.zurita@ed.ac.uk) with the project you are interested in and a sentence or two about your background. See also [For Students](students.qmd).
+:::
+
 ---
 
-#### **Sectoral Wage Dynamics during Periods of Low and High Inflation** *(Open)*  
-##### Co-author: Emiliano Carlevaro  
+#### **Sectoral Wage Dynamics during Periods of Low and High Inflation** *(Open)*
+##### Co-author: Emiliano Carlevaro
 
 ##### <span class="journal-tag">**Type of Collaboration:** Data cleaning, Data visualization, Literature review </span>
 
 ---
 
-#### **The Heterogeneous Effects of Capital Requirements on Credit Supply** *(Open)*  
+#### **The Heterogeneous Effects of Capital Requirements on Credit Supply** *(Open)*
 
-##### <span class="journal-tag">**Type of Collaboration:** Research analysis, Data visualization </span> 
+##### <span class="journal-tag">**Type of Collaboration:** Research analysis, Data visualization </span>
 
 ---
 
-#### **Household Debt and Low Labour Productivity: Implications for Labour Supply** *(Open)*   
+#### **Household Debt and Low Labour Productivity: Implications for Labour Supply** *(Open)*
 
 <!-- <span class="journal-tag">  </span>   -->
 
-##### <span class="journal-tag">**Type of Collaboration:**  Data analysis, Research analysis, Data visualization, Literature review </span>  
+##### <span class="journal-tag">**Type of Collaboration:**  Data analysis, Research analysis, Data visualization, Literature review </span>
 
 ---
 
-#### **Shock Therapy and Wages: Sectoral Effects of Fiscal Consolidation in Argentina** *(Open)*  
+#### **Shock Therapy and Wages: Sectoral Effects of Fiscal Consolidation in Argentina** *(Open)*
 
 ##### <span class="journal-tag">**Type of Collaboration:** Research analysis, Literature review, Data work, Data visualization </span>
 
 ---
 
-<!-- ## Collaborations on Supply -->
+## For Firms & Institutions: Data Partnerships
 
-<!-- I am also open to collaborating on research projects that require expertise in the following areas: -->
+<p style="text-align: justify;">
+I am also open to research partnerships with banks, fintechs, and policy institutions that hold proprietary data on **lending, wages, or household finances**. I have extensive experience working with large administrative and financial datasets — U.S. Call Reports, HMDA mortgage data, HILDA household panel data, and individual wage records — and can turn your data into rigorous, independent analysis of questions you care about: credit conditions, interest-rate exposure, household resilience, wage dynamics.
+</p>
 
-<!-- #### Data Sets -->
-<!-- - Individual wage data from Argentina   -->
-<!-- - HILDA (Household, Income and Labour Dynamics in Australia)   -->
-<!-- - U.S. Call Reports Data   -->
-<!-- - HMDA data   -->
-<!-- - Monthly wage data from Argentina   -->
+<p style="text-align: justify;">
+What you get: peer-review-quality analysis, co-branded or independently published research, and findings you can use internally. What I need: data access under an appropriate agreement and a genuine question. If this sounds interesting, email [juan.zurita@ed.ac.uk](mailto:juan.zurita@ed.ac.uk) — see also [Consulting & Policy](consulting.qmd) for commissioned work.
+</p>

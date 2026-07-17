@@ -1,0 +1,73 @@
+---
+# title: "Consulting & Policy"
+title-block-banner: true
+---
+
+<!-- ## Consulting & Policy -->
+
+<p style="text-align: justify;">
+I work with financial institutions, policy bodies, and businesses that need rigorous, independent analysis of how monetary policy, fiscal policy, and credit conditions affect the economy — and their balance sheets. This page describes what I can help with and how to engage me. For my academic work, see [Research](research.qmd).
+</p>
+
+---
+
+## What I can help with
+
+::: {.card-grid}
+
+::: {.card}
+### 🏦 Bank profitability & interest-rate risk
+
+How rate changes feed through to net interest income, and why the impact differs sharply by bank size and funding model. My recent work shows mid-sized banks can lose up to 19% of net interest income after contractionary shocks — relevant for earnings stress-testing and ALM strategy.
+:::
+
+::: {.card}
+### 🏠 Household debt & policy transmission
+
+How household indebtedness changes the impact of interest-rate moves and fiscal stimulus on spending and output — essential context for forecasting in high-debt economies like the UK and Australia.
+:::
+
+::: {.card}
+### 📊 Credit supply & regional growth
+
+How bank lending shapes local economic activity, and why lender characteristics matter for assessing credit conditions, consolidation, and regional policy.
+:::
+
+::: {.card}
+### 📈 Macroeconomic forecasting & methods
+
+Applied forecasting and scenario analysis using modern time-series methods (VARs, local projections, Bayesian techniques) — as analysis, or as hands-on training for your team.
+:::
+
+:::
+
+---
+
+## Types of engagement
+
+- **Commissioned analysis** — a defined question, answered with data and a clear write-up for a non-technical audience.
+- **Advisory work** — ongoing input on macro-financial questions: rate-cycle exposure, credit conditions, fiscal outlook.
+- **Training & workshops** — practical courses for analyst teams on forecasting, Bayesian econometrics, and programming for economics (Julia/numerical methods). I have taught these methods to undergraduates, PhD students, and practitioners.
+- **Expert commentary** — I am happy to speak with journalists and policy audiences about monetary policy, household debt, banking, and the UK fiscal outlook.
+
+---
+
+## Why me
+
+My research on these questions is published in peer-reviewed journals (*International Review of Economics and Finance*, *Macroeconomic Dynamics*) and my current project on productivity and the UK's fiscal sustainability is funded by the **Royal Society of Edinburgh**. I hold a Lectureship at the University of Edinburgh's School of Economics, and I have taught macroeconomics, forecasting, and quantitative methods at universities in the UK and Australia.
+
+---
+
+## Data partnerships
+
+If your organisation holds proprietary data on lending, wages, or household finances, a research partnership can turn it into credible, independent insight — see [Open Collaborations](opencollaborations.qmd) for what I offer and what I would need.
+
+---
+
+## Get in touch
+
+Email [juan.zurita@ed.ac.uk](mailto:juan.zurita@ed.ac.uk) with a short description of your question and your timeline, or connect on [LinkedIn](https://www.linkedin.com/in/juan-ignacio-z-4b345425/). I reply to serious enquiries within a few working days.
+
+<!-- EDIT: consider adding a one-page expertise profile PDF here once you create one:
+[Download expertise profile (PDF)](files/expertise-profile.pdf){.btn .btn-primary}
+-->

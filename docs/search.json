@@ -1,10 +1,164 @@
 [
   {
+    "objectID": "usefullinks.html",
+    "href": "usefullinks.html",
+    "title": "Juan Zurita",
+    "section": "",
+    "text": "A collection of tools, data sources, and learning materials I recommend to students and use in my own research. Students starting out: begin with the Learn to Code and Economics Data sections."
+  },
+  {
+    "objectID": "usefullinks.html#learn-to-code",
+    "href": "usefullinks.html#learn-to-code",
+    "title": "Juan Zurita",
+    "section": "Learn to Code",
+    "text": "Learn to Code\n\n\n🟣 Julia Academy\nFree courses for programming, machine learning, and data science. Start here if you have never coded before.\n🔗 Link\n\n\n📘 QuantEcon\nOpen lectures on quantitative economics with Julia and Python — the single best bridge between economics and programming.\n🔗 Link\n\n\n💻 Learn C++\nTutorials for when you need serious speed (structural models, large simulations).\n🔗 Link"
+  },
+  {
+    "objectID": "usefullinks.html#economics-data",
+    "href": "usefullinks.html#economics-data",
+    "title": "Juan Zurita",
+    "section": "Economics Data",
+    "text": "Economics Data\n\n\n🇺🇸 FRED\nFederal Reserve Economic Data — the first stop for macro time series. Free, with API access.\n🔗 Link\n\n\n🇬🇧 ONS & Bank of England\nUK official statistics and the Bank’s interactive statistical database.\n🔗 ONS · BoE Database\n\n\n🌍 World Bank Open Data\nCross-country development and macro indicators.\n🔗 Link"
+  },
+  {
+    "objectID": "usefullinks.html#math-and-statistics-notes",
+    "href": "usefullinks.html#math-and-statistics-notes",
+    "title": "Juan Zurita",
+    "section": "Math and Statistics Notes",
+    "text": "Math and Statistics Notes\n\n\n📊 Math & Probability Notes\nLecture materials and notes on probability theory.\n🔗 Link\n\n\n📈 Bayesian Econometrics\nApplied Bayesian Econometrics for Central Bankers — practical and code-driven.\n🔗 Link"
+  },
+  {
+    "objectID": "usefullinks.html#latex-writing",
+    "href": "usefullinks.html#latex-writing",
+    "title": "Juan Zurita",
+    "section": "LaTeX & Writing",
+    "text": "LaTeX & Writing\n\n\n✍️ Overleaf\nOnline LaTeX editor — what you will write your dissertation in.\n🔗 Link\n\n\n📐 LaTeX Table Generator\nEasy table builder for LaTeX.\n🔗 Link\n\n\n✏️ Hemingway Editor\nImprove clarity and readability of writing.\n🔗 Link\n\n\n🤖 QuillBot\nParaphrasing and writing assistant.\n🔗 Link"
+  },
+  {
+    "objectID": "usefullinks.html#references-tools",
+    "href": "usefullinks.html#references-tools",
+    "title": "Juan Zurita",
+    "section": "References Tools",
+    "text": "References Tools\n\n\n🔗 DOI / BibTeX\nFind and format DOIs for references.\n🔗 Link\n\n\n🧠 Litmaps\nVisual literature mapping tool.\n🔗 Link\n\n\n🔍 ResearchRabbit\nDiscover and map academic papers.\n🔗 Link"
+  },
+  {
+    "objectID": "usefullinks.html#funding-jobs-research-opportunities",
+    "href": "usefullinks.html#funding-jobs-research-opportunities",
+    "title": "Juan Zurita",
+    "section": "Funding, Jobs & Research Opportunities",
+    "text": "Funding, Jobs & Research Opportunities\n\n\n💰 INOMICS\nEconomics jobs, funding, and summer schools — useful for MSc students planning a PhD.\n🔗 Link\n\n\n🌐 EconJobMarket\nThe central platform for academic economics job applications.\n🔗 Link\n\n\n🎓 Research Professional\nFunding and research opportunities database.\n🔗 Link"
+  },
+  {
+    "objectID": "students.html",
+    "href": "students.html",
+    "title": "Juan Zurita",
+    "section": "",
+    "text": "This page collects everything students most often ask me about: how to contact me, letters of recommendation, dissertation supervision, and opportunities to get involved in research. If your question is not answered here, email me at juan.zurita@ed.ac.uk."
+  },
+  {
+    "objectID": "students.html#office-hours-contact",
+    "href": "students.html#office-hours-contact",
+    "title": "Juan Zurita",
+    "section": "Office Hours & Contact",
+    "text": "Office Hours & Contact\nOffice hours are by appointment — email me and suggest two or three times that work for you. \nWhen you email, it helps if you include:\n\nYour course and year (e.g., Economics 2, Year 2; MSc Economics).\nA specific question — the more precise you are, the faster and more useful my answer will be.\nFor coursework questions, what you have already tried.\n\nI normally reply within two working days during the semester."
+  },
+  {
+    "objectID": "students.html#letters-of-recommendation",
+    "href": "students.html#letters-of-recommendation",
+    "title": "Juan Zurita",
+    "section": "Letters of Recommendation",
+    "text": "Letters of Recommendation\nI am happy to write letters for students who have taken a course with me or worked with me on research. To make a request, email me at least three weeks before the deadline with:\n\nYour CV and transcript.\nThe programme or position you are applying to, and why you chose it (two or three sentences are enough).\nThe deadline and how the letter is submitted (upload link, email, etc.).\nA reminder of which course you took with me, when, and — if you can — a piece of work you are proud of (essay, problem set, dissertation chapter). This makes the letter concrete rather than generic.\n\nIf I do not know your work well enough to write a strong letter, I will tell you honestly — a lukewarm letter helps no one."
+  },
+  {
+    "objectID": "students.html#dissertation-thesis-supervision",
+    "href": "students.html#dissertation-thesis-supervision",
+    "title": "Juan Zurita",
+    "section": "Dissertation & Thesis Supervision",
+    "text": "Dissertation & Thesis Supervision\nI supervise undergraduate and MSc dissertations in areas close to my research:\n\nHousehold debt and its effects on consumption, labour supply, and policy transmission\nMonetary policy: transmission mechanisms, bank profitability, interest-rate pass-through\nFiscal policy: multipliers, fiscal sustainability, productivity and public finances\nBanking and credit markets: credit supply, capital requirements, bank heterogeneity\nApplied macro-econometrics: VAR/local projection methods, forecasting\n\nA good proposal, at any level, answers three questions: What is the question? Why does it matter? What data or method could answer it? One page is plenty — email it to me and we can take it from there."
+  },
+  {
+    "objectID": "students.html#research-opportunities",
+    "href": "students.html#research-opportunities",
+    "title": "Juan Zurita",
+    "section": "Research Opportunities",
+    "text": "Research Opportunities\nSeveral of my ongoing projects are open to student contributors — data work, literature reviews, visualization, and empirical analysis. This is the best way to learn how research is actually done, and strong contributions are acknowledged (and, where the contribution merits it, can lead to co-authorship). See Open Collaborations for the current list of projects."
+  },
+  {
+    "objectID": "students.html#course-materials",
+    "href": "students.html#course-materials",
+    "title": "Juan Zurita",
+    "section": "Course Materials",
+    "text": "Course Materials\nMaterials for my current courses are distributed through the University’s Learn pages. Selected public materials will be posted here:\n\nDeep Learning for Macroeconomics — coming soon &lt;!– EDIT: add links to slides / notebooks as you make them public, e.g.:\nProgramming and Numerical Methods — Julia notebooks –&gt;\n\nIn the meantime, the Resources page lists the tools and readings I recommend most often to students."
+  },
+  {
+    "objectID": "opencollaborations.html",
+    "href": "opencollaborations.html",
+    "title": "Juan Zurita",
+    "section": "",
+    "text": "Here you will find a list of ongoing research collaborations open to new contributors. Please feel free to contact me if you are interested in participating in any of the following projects."
+  },
+  {
+    "objectID": "opencollaborations.html#for-firms-institutions-data-partnerships",
+    "href": "opencollaborations.html#for-firms-institutions-data-partnerships",
+    "title": "Juan Zurita",
+    "section": "For Firms & Institutions: Data Partnerships",
+    "text": "For Firms & Institutions: Data Partnerships\n\nI am also open to research partnerships with banks, fintechs, and policy institutions that hold proprietary data on lending, wages, or household finances. I have extensive experience working with large administrative and financial datasets — U.S. Call Reports, HMDA mortgage data, HILDA household panel data, and individual wage records — and can turn your data into rigorous, independent analysis of questions you care about: credit conditions, interest-rate exposure, household resilience, wage dynamics.\n\n\nWhat you get: peer-review-quality analysis, co-branded or independently published research, and findings you can use internally. What I need: data access under an appropriate agreement and a genuine question. If this sounds interesting, email juan.zurita@ed.ac.uk — see also Consulting & Policy for commissioned work."
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "CV",
+    "section": "",
+    "text": "Download PDF"
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Juan Zurita",
+    "section": "",
+    "text": "I work with financial institutions, policy bodies, and businesses that need rigorous, independent analysis of how monetary policy, fiscal policy, and credit conditions affect the economy — and their balance sheets. This page describes what I can help with and how to engage me. For my academic work, see Research."
+  },
+  {
+    "objectID": "consulting.html#what-i-can-help-with",
+    "href": "consulting.html#what-i-can-help-with",
+    "title": "Juan Zurita",
+    "section": "What I can help with",
+    "text": "What I can help with\n\n\n🏦 Bank profitability & interest-rate risk\nHow rate changes feed through to net interest income, and why the impact differs sharply by bank size and funding model. My recent work shows mid-sized banks can lose up to 19% of net interest income after contractionary shocks — relevant for earnings stress-testing and ALM strategy.\n\n\n🏠 Household debt & policy transmission\nHow household indebtedness changes the impact of interest-rate moves and fiscal stimulus on spending and output — essential context for forecasting in high-debt economies like the UK and Australia.\n\n\n📊 Credit supply & regional growth\nHow bank lending shapes local economic activity, and why lender characteristics matter for assessing credit conditions, consolidation, and regional policy.\n\n\n📈 Macroeconomic forecasting & methods\nApplied forecasting and scenario analysis using modern time-series methods (VARs, local projections, Bayesian techniques) — as analysis, or as hands-on training for your team."
+  },
+  {
+    "objectID": "consulting.html#types-of-engagement",
+    "href": "consulting.html#types-of-engagement",
+    "title": "Juan Zurita",
+    "section": "Types of engagement",
+    "text": "Types of engagement\n\nCommissioned analysis — a defined question, answered with data and a clear write-up for a non-technical audience.\nAdvisory work — ongoing input on macro-financial questions: rate-cycle exposure, credit conditions, fiscal outlook.\nTraining & workshops — practical courses for analyst teams on forecasting, Bayesian econometrics, and programming for economics (Julia/numerical methods). I have taught these methods to undergraduates, PhD students, and practitioners.\nExpert commentary — I am happy to speak with journalists and policy audiences about monetary policy, household debt, banking, and the UK fiscal outlook."
+  },
+  {
+    "objectID": "consulting.html#why-me",
+    "href": "consulting.html#why-me",
+    "title": "Juan Zurita",
+    "section": "Why me",
+    "text": "Why me\nMy research on these questions is published in peer-reviewed journals (International Review of Economics and Finance, Macroeconomic Dynamics) and my current project on productivity and the UK’s fiscal sustainability is funded by the Royal Society of Edinburgh. I hold a Lectureship at the University of Edinburgh’s School of Economics, and I have taught macroeconomics, forecasting, and quantitative methods at universities in the UK and Australia."
+  },
+  {
+    "objectID": "consulting.html#data-partnerships",
+    "href": "consulting.html#data-partnerships",
+    "title": "Juan Zurita",
+    "section": "Data partnerships",
+    "text": "Data partnerships\nIf your organisation holds proprietary data on lending, wages, or household finances, a research partnership can turn it into credible, independent insight — see Open Collaborations for what I offer and what I would need."
+  },
+  {
+    "objectID": "consulting.html#get-in-touch",
+    "href": "consulting.html#get-in-touch",
+    "title": "Juan Zurita",
+    "section": "Get in touch",
+    "text": "Get in touch\nEmail juan.zurita@ed.ac.uk with a short description of your question and your timeline, or connect on LinkedIn. I reply to serious enquiries within a few working days."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Juan Zurita",
     "section": "",
-    "text": "juan.zurita@ed.ac.uk\n&lt; &gt;"
+    "text": "juan.zurita@ed.ac.uk"
   },
   {
     "objectID": "index.html#research-interest",
@@ -32,63 +186,14 @@
     "href": "index.html#research-highlights",
     "title": "Juan Zurita",
     "section": "Research Highlights",
-    "text": "Research Highlights\n\n\nMay 2026: My paper “Does Household Debt affect the Transmission Mechanism of Monetary Policy” has been accepted at Macroeconomic Dynamics\nMarch 2026: New Working Paper: “The Bank Profit Channel of Monetary Policy” with Jiening Le\n\nFebruary 2026: My project “Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom” has received funding from the Royal Society of Edinburgh.\n\nJanuary 2026: My paper Banking Heterogeneity, Credit Supply and Economic Growth, Slides, has been published at the International Review of Economics and Finance."
+    "text": "Research Highlights\n\n\nMay 2026: My paper “Does Household Debt affect the Transmission Mechanism of Monetary Policy” has been accepted at Macroeconomic Dynamics\nMarch 2026: New Working Paper: “The Bank Profit Channel of Monetary Policy” with Jiening Le\nFebruary 2026: My project “Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom” has received funding from the Royal Society of Edinburgh.\nJanuary 2026: My paper Banking Heterogeneity, Credit Supply and Economic Growth (Slides) has been published at the International Review of Economics and Finance."
   },
   {
-    "objectID": "usefullinks.html",
-    "href": "usefullinks.html",
+    "objectID": "index.html#beyond-economics",
+    "href": "index.html#beyond-economics",
     "title": "Juan Zurita",
-    "section": "",
-    "text": "Here I list some links that I find useful during my research or learning activities."
-  },
-  {
-    "objectID": "usefullinks.html#julia",
-    "href": "usefullinks.html#julia",
-    "title": "Juan Zurita",
-    "section": "Julia",
-    "text": "Julia\n\n\n🟣 Julia Academy\nFree courses for programming, machine learning, and data science.\n🔗 Link"
-  },
-  {
-    "objectID": "usefullinks.html#math-and-statistics-notes",
-    "href": "usefullinks.html#math-and-statistics-notes",
-    "title": "Juan Zurita",
-    "section": "Math and Statistics Notes",
-    "text": "Math and Statistics Notes\n\n\n📊 Math & Probability Notes\nOliver Knill’s lecture materials and notes.\n🔗 Link\n\n\n📈 Bayesian Econometrics\nApplied Bayesian Econometrics for Central Bankers.\n🔗 Link"
-  },
-  {
-    "objectID": "usefullinks.html#c",
-    "href": "usefullinks.html#c",
-    "title": "Juan Zurita",
-    "section": "C++",
-    "text": "C++\n\n\n💻 Learn C++\nCoding Ninjas C++ tutorials.\n🔗 Link"
-  },
-  {
-    "objectID": "usefullinks.html#latex-writing",
-    "href": "usefullinks.html#latex-writing",
-    "title": "Juan Zurita",
-    "section": "LaTeX & Writing",
-    "text": "LaTeX & Writing\n\n\n✍️ Overleaf\nOnline LaTeX editor.\n🔗 Link\n\n\n📐 LaTeX Table Generator\nEasy table builder for LaTeX.\n🔗 Link\n\n\n✏️ Hemingway Editor\nImprove clarity and readability of writing.\n🔗 Link\n\n\n🤖 QuillBot\nParaphrasing and writing assistant.\n🔗 Link"
-  },
-  {
-    "objectID": "usefullinks.html#references-tools",
-    "href": "usefullinks.html#references-tools",
-    "title": "Juan Zurita",
-    "section": "References Tools",
-    "text": "References Tools\n\n\n🔗 DOI / BibTeX\nFind and format DOIs for references.\n🔗 Link\n\n\n🧠 Litmaps\nVisual literature mapping tool.\n🔗 Link\n\n\n🔍 ResearchRabbit\nDiscover and map academic papers.\n🔗 Link"
-  },
-  {
-    "objectID": "usefullinks.html#ai-for-research",
-    "href": "usefullinks.html#ai-for-research",
-    "title": "Juan Zurita",
-    "section": "AI for Research",
-    "text": "AI for Research\n\n\n🤖 AI & Me\nAI tools for research workflows.\n🔗 Link\n\n\n⚙️ Refine AI\nResearch assistance and paper refinement tools.\n🔗 Link"
-  },
-  {
-    "objectID": "usefullinks.html#funding-research-opportunities",
-    "href": "usefullinks.html#funding-research-opportunities",
-    "title": "Juan Zurita",
-    "section": "Funding & Research Opportunities",
-    "text": "Funding & Research Opportunities\n\n\n💰 INOMICS\nEconomics jobs, funding, and summer schools.\n🔗 Link\n\n\n🎓 Research Professional\nFunding and research opportunities database.\n🔗 Link"
+    "section": "Beyond Economics",
+    "text": "Beyond Economics\n\nAway from macroeconomics, I am building an arboretum at La Constancia de Biocca — a long-term project of planting and caring for trees, one season at a time. You can follow its progress here."
   },
   {
     "objectID": "research.html",
@@ -102,14 +207,14 @@
     "href": "research.html#publications",
     "title": "Juan Zurita",
     "section": "Publications",
-    "text": "Publications\n\nBanking Heterogeneity, Credit Supply and Economic Growth\nInternational Review of Economics and Finance, 2026\n\nJournal Link   Slides\n\n\n\nAbstract\n\nThis paper demonstrates the significance of heterogeneity in bank equity size as a key dimension for quantifying the effects of local credit supply on local economic outcomes. Using newly compiled datasets from over 5000 bank balance sheets, and mortgage and business loans in the United States, we offer novel empirical evidence on the role of bank equity size heterogeneity in how local bank lending impacts local economic activity. Our results show that accounting for the features of the lender, in particular, bank equity size heterogeneity, significantly amplifies the estimated economic effects of credit supply. The impact of mortgage lending on GDP growth can be up to 60 times larger compared to models that ignore lender heterogeneity, while the effect of business lending can be up to 18 times greater when bank equity size heterogeneity is taken into account. This difference in the size of the impact between business and mortgage lending may arise because credit allocation in the business lending channel is more influenced by risk-return trade-offs than by bank equity size.\n\n\n\nDoes household debt affect the size of the fiscal multiplier?\nMacroeconomic Dynamics, 2024\n\nJournal Link\n\n\n\nAbstract\n\nDoes household debt affect the size of the fiscal multiplier? We investigate the effects of household debt on government spending multipliers using a smooth transition vector autoregression model. Through generalized impulse response functions, we measure whether the effect of government spending on GDP is conditioned by different levels of household debt in Australia, Sweden, and Norway, three countries with high levels of household indebtedness, and in the world’s seven largest economies. Our results indicate that the short-term effects of government spending tend to be higher if fiscal expansion takes place during periods of low household debt. On average, the fiscal multiplier (on impact) is 0.70, 0.61, and 0.79 (percent of GDP) larger when the increase in government spending takes place during periods of low household debt for Australia, Norway, and the United States."
+    "text": "Publications\n\nBanking Heterogeneity, Credit Supply and Economic Growth\nInternational Review of Economics and Finance, 2026\n\nJournal Link   Slides\n\n\n\nAbstract\n\nThis paper demonstrates the significance of heterogeneity in bank equity size as a key dimension for quantifying the effects of local credit supply on local economic outcomes. Using newly compiled datasets from over 5000 bank balance sheets, and mortgage and business loans in the United States, we offer novel empirical evidence on the role of bank equity size heterogeneity in how local bank lending impacts local economic activity. Our results show that accounting for the features of the lender, in particular, bank equity size heterogeneity, significantly amplifies the estimated economic effects of credit supply. The impact of mortgage lending on GDP growth can be up to 60 times larger compared to models that ignore lender heterogeneity, while the effect of business lending can be up to 18 times greater when bank equity size heterogeneity is taken into account. This difference in the size of the impact between business and mortgage lending may arise because credit allocation in the business lending channel is more influenced by risk-return trade-offs than by bank equity size.\n\n\nIn practice: It is not just how much banks lend that drives local growth — it matters which banks are lending. Standard models that ignore lender size can understate the economic impact of credit by an order of magnitude. This matters for anyone assessing regional credit conditions, bank consolidation, or the local consequences of lending pullbacks.\n\n\n\nDoes household debt affect the transmission mechanism of monetary policy?\nForthcoming, Macroeconomic Dynamics\n\nPDF\n\n\n\nAbstract\n\nWe investigate the effects of household debt on a monetary policy easing shock using a smooth transition vector autoregression model. Using generalized impulse response functions, we measure whether the effect of a reduction in interest rate on output is conditioned by different levels of household debt. We focus on Australia, Sweden and Norway, three developed economies with high levels of household indebtedness, and in the world’s seven largest economies. Our findings show that the short-term effects of a negative monetary policy shock are generally stronger during periods of high household debt. On average, the monetary stimulus (on impact) is 0.06% (percent of GDP) larger in Norway and the United States during periods of high household debt. Our findings also suggest high levels of household debt may diminish the persistence of monetary policy shocks in the medium term ( 4 - 8 quarters).\n\n\nIn practice: In economies where households carry a lot of debt — the UK, Australia, the Nordics — a rate cut delivers a bigger initial boost to output, but the effect fades faster. Forecasts of how rate moves feed through to spending should account for the household balance sheet, not just the size of the rate change.\n\n\n\nDoes household debt affect the size of the fiscal multiplier?\nMacroeconomic Dynamics, 2024\n\nJournal Link\n\n\n\nAbstract\n\nDoes household debt affect the size of the fiscal multiplier? We investigate the effects of household debt on government spending multipliers using a smooth transition vector autoregression model. Through generalized impulse response functions, we measure whether the effect of government spending on GDP is conditioned by different levels of household debt in Australia, Sweden, and Norway, three countries with high levels of household indebtedness, and in the world’s seven largest economies. Our results indicate that the short-term effects of government spending tend to be higher if fiscal expansion takes place during periods of low household debt. On average, the fiscal multiplier (on impact) is 0.70, 0.61, and 0.79 (percent of GDP) larger when the increase in government spending takes place during periods of low household debt for Australia, Norway, and the United States.\n\n\nIn practice: Fiscal stimulus buys less GDP per pound when households are already heavily leveraged — indebted households save rather than spend the extra income. The timing of stimulus relative to the household debt cycle is a first-order consideration for its effectiveness."
   },
   {
     "objectID": "research.html#working-papers",
     "href": "research.html#working-papers",
     "title": "Juan Zurita",
     "section": "Working Papers",
-    "text": "Working Papers\n\nDoes household debt affect the transmission mechanism of monetary policy?\nAccepted at Macroeconomic Dynamics - August 2025\n\nPDF\n\n\n\nAbstract\n\nWe investigate the effects of household debt on a monetary policy easing shock using a smooth transition vector autoregression model. Using generalized impulse response functions, we measure whether the effect of a reduction in interest rate on output is conditioned by different levels of household debt. We focus on Australia, Sweden and Norway, three developed economies with high levels of household indebtedness, and in the world’s seven largest economies. Our findings show that the short-term effects of a negative monetary policy shock are generally stronger during periods of high household debt. On average, the monetary stimulus (on impact) is 0.06% (percent of GDP) larger in Norway and the United States during periods of high household debt. Our findings also suggest high levels of household debt may diminish the persistence of monetary policy shocks in the medium term ( 4 - 8 quarters).\n\n\n\nThe Bank Profit Channel of Monetary Policy with Jiening Le\nSubmitted 2026\n\nPDF   Slides\n\n\n\nAbstract\n\nHow does bank-level heterogeneity in balance-sheet flexibility shape the transmission of monetary policy to bank profitability? Using high-frequency monetary policy surprises and U.S. Call Report data, we identify a pronounced heterogeneity: contractionary shocks compress net interest income significantly more for medium-sized and small banks than for large, market-funded institutions. This result is consistent with a liability-substitution channel: as policy rates rise, a shift from zero-cost deposits to interest-bearing accounts forces banks to replace cheap funding with expensive alternatives faster than assets reprice. We find this effect is non-linear: a one-standard-deviation increase in expense-channel exposure reduces net interest income by 9% for small banks and 11% for large banks, peaking at 19% for medium-sized banks. Local projection estimates show these profitability effects persist over several quarters. Our results demonstrate that the strength and distribution of funding frictions across the banking sector are key determinants of the macro-financial transmission mechanism.\n\n\n\nLabour Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom\nFirst Draft August 2025\n\nPDF\n\n\n\nAbstract\n\nThis paper investigates whether higher labour productivity can support long-term fiscal consolidations in the United Kingdom. Using a dynamic stochastic general equilibrium (DSGE) framework, we study how productivity-driven growth interacts with fiscal policy choices. The results show that maintaining government spending per worker without increasing the debt-to-output ratio requires higher taxation to satisfy the intertemporal budget constraint. Capital income tax increases, while effective in restoring fiscal balance, hinder capital accumulation and long-term growth. Consumption tax hikes generate substantial short-term volatility in the spending-to-output ratio, whereas labour tax increases create fewer distortions, as households adjust labour supply. This paper shows that productivity gains cannot replace fiscal discipline. Sustainable growth and stable debt depend on the careful design of tax policy.\n\n\n\nHousehold Debt and Low Labour Productivity: Implications for Labour Supply\nLast Draft February 2025\n\nPDF\n\n\n\nAbstract\n\nThis paper investigates the labour supply response of households under high debt burdens in the context of declining labour productivity. Using microdata from the Australian economy, we show that middle-aged individuals whose annual mortgage repayments exceed 20% of household income significantly increase their labour supply in response to rising repayment obligations. Furthermore, employing an incomplete market model, we analyze the transition between steady states under productivity shocks, revealing that higher debt amplifies household reliance on labour income, potentially reducing economic resilience. Our findings provide critical insights into the interplay between household finance and labour supply decisions, particularly in highly indebted economies with stagnant productivity growth, contributing to ongoing debates in labour economics and macroeconomic stability."
+    "text": "Working Papers\n\nThe Bank Profit Channel of Monetary Policy with Jiening Le\nSubmitted 2026\n\nPDF   Slides\n\n\n\nAbstract\n\nHow does bank-level heterogeneity in balance-sheet flexibility shape the transmission of monetary policy to bank profitability? Using high-frequency monetary policy surprises and U.S. Call Report data, we identify a pronounced heterogeneity: contractionary shocks compress net interest income significantly more for medium-sized and small banks than for large, market-funded institutions. This result is consistent with a liability-substitution channel: as policy rates rise, a shift from zero-cost deposits to interest-bearing accounts forces banks to replace cheap funding with expensive alternatives faster than assets reprice. We find this effect is non-linear: a one-standard-deviation increase in expense-channel exposure reduces net interest income by 9% for small banks and 11% for large banks, peaking at 19% for medium-sized banks. Local projection estimates show these profitability effects persist over several quarters. Our results demonstrate that the strength and distribution of funding frictions across the banking sector are key determinants of the macro-financial transmission mechanism.\n\n\nIn practice: When central banks raise rates, mid-sized banks lose the most — up to 19% of net interest income — because they must replace cheap deposits with expensive funding faster than their loans reprice, and the hit persists for several quarters. Directly relevant for stress-testing bank earnings and anticipating where credit tightens first in a hiking cycle.\n\n\n\nLabour Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom\nFirst Draft August 2025\n\nPDF\n\n\n\nAbstract\n\nThis paper investigates whether higher labour productivity can support long-term fiscal consolidations in the United Kingdom. Using a dynamic stochastic general equilibrium (DSGE) framework, we study how productivity-driven growth interacts with fiscal policy choices. The results show that maintaining government spending per worker without increasing the debt-to-output ratio requires higher taxation to satisfy the intertemporal budget constraint. Capital income tax increases, while effective in restoring fiscal balance, hinder capital accumulation and long-term growth. Consumption tax hikes generate substantial short-term volatility in the spending-to-output ratio, whereas labour tax increases create fewer distortions, as households adjust labour supply. This paper shows that productivity gains cannot replace fiscal discipline. Sustainable growth and stable debt depend on the careful design of tax policy.\n\n\nIn practice: For the UK fiscal debate: productivity growth alone will not stabilise the public finances — the tax mix does the heavy lifting. Capital taxes repair the budget but damage long-run growth; consumption taxes create volatility; labour taxes are the least distortive of the three.\n\n\n\nHousehold Debt and Low Labour Productivity: Implications for Labour Supply\nLast Draft February 2025\n\nPDF\n\n\n\nAbstract\n\nThis paper investigates the labour supply response of households under high debt burdens in the context of declining labour productivity. Using microdata from the Australian economy, we show that middle-aged individuals whose annual mortgage repayments exceed 20% of household income significantly increase their labour supply in response to rising repayment obligations. Furthermore, employing an incomplete market model, we analyze the transition between steady states under productivity shocks, revealing that higher debt amplifies household reliance on labour income, potentially reducing economic resilience. Our findings provide critical insights into the interplay between household finance and labour supply decisions, particularly in highly indebted economies with stagnant productivity growth, contributing to ongoing debates in labour economics and macroeconomic stability.\n\n\nIn practice: Households under mortgage pressure — repayments above 20% of income — respond by working more, not cutting back elsewhere. High household debt therefore makes labour supply more sensitive to repayment shocks, and leaves indebted economies with less slack to absorb downturns."
   },
   {
     "objectID": "research.html#ongoing-projects",
@@ -117,20 +222,6 @@
     "title": "Juan Zurita",
     "section": "Ongoing Projects",
     "text": "Ongoing Projects\n\n‘Heterogeneous Effect of Capital Requirements on Credit Supply’\n\n\n‘Sectorial Wage Dynamics and Firm Productivity’ with Emiliano Carlevaro."
-  },
-  {
-    "objectID": "cv.html",
-    "href": "cv.html",
-    "title": "CV",
-    "section": "",
-    "text": "Download PDF"
-  },
-  {
-    "objectID": "opencollaborations.html",
-    "href": "opencollaborations.html",
-    "title": "Juan Zurita",
-    "section": "",
-    "text": "Here you will find a list of ongoing research collaborations open to new contributors. Please feel free to contact me if you are interested in participating in any of the following projects.\n\n\n\nSectoral Wage Dynamics during Periods of Low and High Inflation (Open)\n\nCo-author: Emiliano Carlevaro\n\n\nType of Collaboration: Data cleaning, Data visualization, Literature review \n\n\n\n\nThe Heterogeneous Effects of Capital Requirements on Credit Supply (Open)\n\nType of Collaboration: Research analysis, Data visualization \n\n\n\n\nHousehold Debt and Low Labour Productivity: Implications for Labour Supply (Open)\n\n\nType of Collaboration: Data analysis, Research analysis, Data visualization, Literature review \n\n\n\n\nShock Therapy and Wages: Sectoral Effects of Fiscal Consolidation in Argentina (Open)\n\nType of Collaboration: Research analysis, Literature review, Data work, Data visualization"
   },
   {
     "objectID": "teaching.html",
@@ -144,13 +235,13 @@
     "href": "teaching.html#courses",
     "title": "Juan Zurita",
     "section": "Courses",
-    "text": "Courses\n\nApplications of Econometrics (Honours)\nThe University of Edinburgh, United Kingdom — 2026\n\n\n\nEconomics 2 (Undergraduate)\nThe University of Edinburgh, United Kingdom — 2024–2026\nTeaching Evaluation Reports\n\n\n\nProgramming and Numerical Methods (Honours)\nThe University of Edinburgh, United Kingdom — 2024–2026\n\n\n\n\nMacroeconomics 2 (PhD Students)\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nAdvanced Macroeconomics (Honours)\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nIntermediate Macroeconomics\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nCentral Banking and Monetary Policy\nUniversity of Technology Sydney, Australia — 2024\nTeaching Evaluation Reports\n\n\n\nEconomic and Business Forecasting\nThe Australian National University, Australia — 2023\nTeaching Evaluation Reports\n\n\n\nEconomics for Business\nUniversity of Technology Sydney, Australia — 2022\nTeaching Evaluation Reports\n\n\n\nHistory of Economic Thought\nUniversidad Católica Argentina, Argentina — 2011–2015\nTeaching Evaluation Reports"
+    "text": "Courses\n\nApplications of Econometrics (Honours)\nThe University of Edinburgh, United Kingdom — 2026\n\n\n\nEconomics 2 (Undergraduate)\nThe University of Edinburgh, United Kingdom — 2024–2026 \n\n\n\nProgramming and Numerical Methods (Honours)\nThe University of Edinburgh, United Kingdom — 2024–2026\n\n\n\nMacroeconomics 2 (PhD Students)\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nAdvanced Macroeconomics (Honours)\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nIntermediate Macroeconomics\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nCentral Banking and Monetary Policy\nUniversity of Technology Sydney, Australia — 2024 \n\n\n\nEconomic and Business Forecasting\nThe Australian National University, Australia — 2023 \n\n\n\nEconomics for Business\nUniversity of Technology Sydney, Australia — 2022 \n\n\n\nHistory of Economic Thought\nUniversidad Católica Argentina, Argentina — 2011–2015"
   },
   {
     "objectID": "teaching.html#lectures",
     "href": "teaching.html#lectures",
     "title": "Juan Zurita",
     "section": "Lectures",
-    "text": "Lectures\n\nDeep Learning for Macroeconomics\n\n\n\n\n\n\nLetters of Recommendation\nFor undergraduate recommendation letters, please follow these instructions:\nClick here"
+    "text": "Lectures\n\nDeep Learning for Macroeconomics (materials coming soon) \n\n\n\n\n\n\nLetters of Recommendation\nIf you would like to request a letter of recommendation, please see the instructions on the For Students page."
   }
 ]

@@ -15,8 +15,8 @@ My research focuses on macroeconomic policy and credit markets. My work combines
 
 ::: {.paper}
 
-#### Banking Heterogeneity, Credit Supply and Economic Growth  
-<span class="journal-tag">_International Review of Economics and Finance_, 2026</span>  
+#### Banking Heterogeneity, Credit Supply and Economic Growth
+<span class="journal-tag">_International Review of Economics and Finance_, 2026</span>
 
 
 ::: {.paper-links}
@@ -30,41 +30,16 @@ This paper demonstrates the significance of heterogeneity in bank equity size as
 
 </details>
 
+::: {.practice}
+**In practice:** It is not just *how much* banks lend that drives local growth — it matters *which* banks are lending. Standard models that ignore lender size can understate the economic impact of credit by an order of magnitude. This matters for anyone assessing regional credit conditions, bank consolidation, or the local consequences of lending pullbacks.
+:::
+
 :::
 
 ::: {.paper}
 
-#### Does household debt affect the size of the fiscal multiplier?  
-<span class="journal-tag">_Macroeconomic Dynamics_, 2024</span>  
-  
-
-::: {.paper-links}
-[Journal Link](https://www.cambridge.org/core/journals/macroeconomic-dynamics/article/does-household-debt-affect-the-size-of-the-fiscal-multiplier/E0085C862359FAD3151EAB5ED42606E7)
-:::
-
-<details>
-<summary>Abstract</summary>
-Does household debt affect the size of the fiscal multiplier? We investigate the effects of household debt on government spending multipliers using a smooth transition vector autoregression model. Through generalized impulse response functions, we measure whether the effect of government spending on GDP is conditioned by different levels of household debt in Australia, Sweden, and Norway, three countries with high levels of household indebtedness, and in the world’s seven largest economies. Our results indicate that the short-term effects of government spending tend to be higher if fiscal expansion takes place during periods of low household debt. On average, the fiscal multiplier (on impact) is 0.70, 0.61, and 0.79 (percent of GDP) larger when the increase in government spending takes place during periods of low household debt for Australia, Norway, and the United States.
-
-</details>
-
-:::
-
-
-
-
-
-
-
-
-## Working Papers
-
-
-
-::: {.paper}
-
-#### Does household debt affect the transmission mechanism of monetary policy?  
-<span class="journal-tag">Accepted at _Macroeconomic Dynamics_ - August 2025</span>  
+#### Does household debt affect the transmission mechanism of monetary policy?
+<span class="journal-tag">Forthcoming, _Macroeconomic Dynamics_</span>
 
 
 ::: {.paper-links}
@@ -77,18 +52,43 @@ We investigate the effects of household debt on a monetary policy easing shock u
 household debt. We focus on Australia, Sweden and Norway, three developed economies with high levels of household indebtedness, and in the world’s seven largest economies. Our findings show that the short-term effects of a negative monetary policy shock are generally stronger during periods of high household debt. On average, the monetary stimulus (on impact) is 0.06% (percent of GDP) larger in Norway and the United States during periods of high household debt. Our findings also suggest high levels of household debt may diminish the persistence of monetary policy shocks in the medium term ( 4 - 8 quarters).
 </details>
 
+::: {.practice}
+**In practice:** In economies where households carry a lot of debt — the UK, Australia, the Nordics — a rate cut delivers a *bigger* initial boost to output, but the effect *fades faster*. Forecasts of how rate moves feed through to spending should account for the household balance sheet, not just the size of the rate change.
+:::
+
+:::
+
+::: {.paper}
+
+#### Does household debt affect the size of the fiscal multiplier?
+<span class="journal-tag">_Macroeconomic Dynamics_, 2024</span>
+
+
+::: {.paper-links}
+[Journal Link](https://www.cambridge.org/core/journals/macroeconomic-dynamics/article/does-household-debt-affect-the-size-of-the-fiscal-multiplier/E0085C862359FAD3151EAB5ED42606E7)
+:::
+
+<details>
+<summary>Abstract</summary>
+Does household debt affect the size of the fiscal multiplier? We investigate the effects of household debt on government spending multipliers using a smooth transition vector autoregression model. Through generalized impulse response functions, we measure whether the effect of government spending on GDP is conditioned by different levels of household debt in Australia, Sweden, and Norway, three countries with high levels of household indebtedness, and in the world’s seven largest economies. Our results indicate that the short-term effects of government spending tend to be higher if fiscal expansion takes place during periods of low household debt. On average, the fiscal multiplier (on impact) is 0.70, 0.61, and 0.79 (percent of GDP) larger when the increase in government spending takes place during periods of low household debt for Australia, Norway, and the United States.
+
+</details>
+
+::: {.practice}
+**In practice:** Fiscal stimulus buys less GDP per pound when households are already heavily leveraged — indebted households save rather than spend the extra income. The *timing* of stimulus relative to the household debt cycle is a first-order consideration for its effectiveness.
+:::
+
 :::
 
 
-
-
+## Working Papers
 
 
 ::: {.paper}
 
 #### The Bank Profit Channel of Monetary Policy with Jiening Le
-<span class="journal-tag">Submitted 2026</span>  
-  
+<span class="journal-tag">Submitted 2026</span>
+
 
 ::: {.paper-links}
 [PDF](https://drive.google.com/file/d/1diD_WeOjfIid2flkEFpJnEuftlgbH2H8/view?usp=sharing) \   [Slides](https://drive.google.com/file/d/1ArLDHrfQR1W1FEnfML1mB3eVsLFM2sXD/view?usp=sharing)
@@ -103,6 +103,10 @@ banks, peaking at 19% for medium-sized banks. Local projection estimates show th
 mechanism.
 </details>
 
+::: {.practice}
+**In practice:** When central banks raise rates, mid-sized banks lose the most — up to 19% of net interest income — because they must replace cheap deposits with expensive funding faster than their loans reprice, and the hit persists for several quarters. Directly relevant for stress-testing bank earnings and anticipating where credit tightens first in a hiking cycle.
+:::
+
 :::
 
 
@@ -110,8 +114,8 @@ mechanism.
 ::: {.paper}
 
 #### Labour Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom
-<span class="journal-tag">First Draft August 2025</span>  
- 
+<span class="journal-tag">First Draft August 2025</span>
+
 
 ::: {.paper-links}
 [PDF](https://drive.google.com/file/d/1JgVkmJzz4pxLuUIiWGliRyAgdT616lJh/view?usp=sharing)
@@ -122,14 +126,18 @@ mechanism.
 This paper investigates whether higher labour productivity can support long-term fiscal consolidations in the United Kingdom. Using a dynamic stochastic general equilibrium (DSGE) framework, we study how productivity-driven growth interacts with fiscal policy choices. The results show that maintaining government spending per worker without increasing the debt-to-output ratio requires higher taxation to satisfy the intertemporal budget constraint. Capital income tax increases, while effective in restoring fiscal balance, hinder capital accumulation and long-term growth. Consumption tax hikes generate substantial short-term volatility in the spending-to-output ratio, whereas labour tax increases create fewer distortions, as households adjust labour supply. This paper shows that productivity gains cannot replace fiscal discipline. Sustainable growth and stable debt depend on the careful design of tax policy.
 </details>
 
+::: {.practice}
+**In practice:** For the UK fiscal debate: productivity growth alone will not stabilise the public finances — the tax mix does the heavy lifting. Capital taxes repair the budget but damage long-run growth; consumption taxes create volatility; labour taxes are the least distortive of the three.
+:::
+
 :::
 
 
 
 ::: {.paper}
 
-#### Household Debt and Low Labour Productivity: Implications for Labour Supply   
-<span class="journal-tag">Last Draft February 2025</span>  
+#### Household Debt and Low Labour Productivity: Implications for Labour Supply
+<span class="journal-tag">Last Draft February 2025</span>
 
 
 ::: {.paper-links}
@@ -138,16 +146,20 @@ This paper investigates whether higher labour productivity can support long-term
 
 <details>
 <summary>Abstract</summary>
-This paper investigates the labour supply response of households under high debt burdens in the context of declining labour productivity. Using microdata from the Australian economy, we show that middle-aged individuals whose annual mortgage repayments exceed 20% of household income significantly increase their labour supply in response to rising repayment obligations. Furthermore, employing an incomplete market model, we analyze the transition between steady states under productivity shocks, revealing that higher debt amplifies household reliance on labour income, potentially reducing economic resilience. Our findings provide critical insights into the interplay between household finance and labour supply decisions, particularly in highly 
+This paper investigates the labour supply response of households under high debt burdens in the context of declining labour productivity. Using microdata from the Australian economy, we show that middle-aged individuals whose annual mortgage repayments exceed 20% of household income significantly increase their labour supply in response to rising repayment obligations. Furthermore, employing an incomplete market model, we analyze the transition between steady states under productivity shocks, revealing that higher debt amplifies household reliance on labour income, potentially reducing economic resilience. Our findings provide critical insights into the interplay between household finance and labour supply decisions, particularly in highly
 indebted economies with stagnant productivity growth, contributing to ongoing debates in labour economics and macroeconomic stability.
 </details>
+
+::: {.practice}
+**In practice:** Households under mortgage pressure — repayments above 20% of income — respond by working *more*, not cutting back elsewhere. High household debt therefore makes labour supply more sensitive to repayment shocks, and leaves indebted economies with less slack to absorb downturns.
+:::
 
 :::
 
 
 ## Ongoing Projects
 
-#### ‘Heterogeneous Effect of Capital Requirements on Credit Supply’ 
+#### ‘Heterogeneous Effect of Capital Requirements on Credit Supply’
 
 #### ‘Sectorial Wage Dynamics and Firm Productivity’ with Emiliano Carlevaro.
 
