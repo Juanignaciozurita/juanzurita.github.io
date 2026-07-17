@@ -306,13 +306,13 @@ iframe {
 .home-page {
 
   background-image:
-    linear-gradient(rgba(0,0,0,0.45),
-                    rgba(0,0,0,0.45)),
+    linear-gradient(rgba(0,0,0,0.35),
+                    rgba(0,0,0,0.35)),
     url("Profile.jpg");
 
-  background-size: 115%;
+  background-size: cover;
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
 
   background-attachment: fixed;
 
@@ -324,7 +324,24 @@ iframe {
 ===================================================== */
 
 .home-page #quarto-content {
-  padding-top: 6rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* White content panel so text is readable over the photo */
+.home-page main.content {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  padding: 2.5rem 3rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 768px) {
+  .home-page main.content {
+    padding: 1.5rem 1.2rem;
+  }
 }
 
 /* =====================================================
@@ -332,7 +349,7 @@ iframe {
 ===================================================== */
 
 .home-page h1.title {
-  color: white !important;
+  color: #212529 !important;
   text-align: center;
   font-size: 3.2rem;
   font-weight: 700;
@@ -343,7 +360,7 @@ iframe {
 ===================================================== */
 
 .hero-subtitle {
-  color: white;
+  color: #212529;
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.6;
@@ -366,7 +383,7 @@ iframe {
 
 .home-page .about-entity,
 .home-page .about-links {
-  color: white !important;
+  color: #212529 !important;
 }
 
 /* =====================================================
@@ -374,9 +391,12 @@ iframe {
 ===================================================== */
 
 .home-page .about-links a {
-  color: white !important;
+  color: #a33a2a !important;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .home-page .about-links a:hover {
   opacity: 0.8;
+  text-decoration: underline;
 }
