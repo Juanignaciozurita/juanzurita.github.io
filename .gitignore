@@ -13,3 +13,6 @@ _course-material/
 # Safety net: raw week folders must never reach GitHub, wherever they sit
 **/Week */
 docs/courses/Week */
+
+# Private working notes (drafts, post series, etc.) — never published
+_notes/

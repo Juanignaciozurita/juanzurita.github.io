@@ -1,0 +1,74 @@
+---
+title: "Job Market"
+subtitle: "Academic Job Market Candidate, 2026–27"
+title-block-banner: true
+toc: true
+---
+
+<p style="text-align: justify;">
+I am on the 2026–27 academic job market. My research sits at the intersection of macroeconomics, credit markets, and banking — combining theory with empirical analysis to understand how household and bank balance sheets shape the transmission of monetary and fiscal policy. Below you will find everything a committee needs; please [email me](mailto:juan.zurita@ed.ac.uk) with any questions.
+</p>
+
+<!-- EDIT: confirm/adjust the market line above (e.g. add "and policy-institution" if applying to central banks). -->
+
+## Job Market Paper
+
+#### [EDIT: Job Market Paper Title]
+
+<span class="journal-tag">Job Market Paper</span>
+
+::: {.paper-links}
+[Download PDF](files/jmp.pdf) <!-- EDIT: drop the JMP PDF into files/ as jmp.pdf -->
+:::
+
+<details>
+<summary>Abstract</summary>
+[EDIT: paste the JMP abstract here.]
+</details>
+
+::: {.practice}
+**In one paragraph:** [EDIT: a three-sentence, plain-English summary of the JMP — what question, what you find, why it matters. Committees read this even when they skip the abstract.]
+:::
+
+## Application Materials
+
+- [Curriculum Vitae](cv.qmd) <!-- EDIT: point to files/cv.pdf once self-hosted -->
+- [Research Statement](https://drive.google.com/file/d/1tWsicZ2M4dt5BGN5eYs_M9gSFJi06CT2/view?usp=sharing) <!-- EDIT: move to files/ -->
+- [Teaching Statement](https://drive.google.com/file/d/1MlIbBB82C9jQIq8BS_OEGIp93ZXj7W0v/view?usp=sharing) <!-- EDIT: move to files/ -->
+- [Publications & Working Papers](research.qmd)
+
+## References {#references}
+
+<!-- EDIT: fill in your actual letter writers. Delete rows you don't need. -->
+
+| | |
+|---|---|
+| **[EDIT: Name]** | [Title], [Institution] · [email] |
+| **[EDIT: Name]** | [Title], [Institution] · [email] |
+| **[EDIT: Name]** | [Title], [Institution] · [email] |
+
+## Teaching
+
+I have taught macroeconomics, econometrics, forecasting, and programming/numerical methods at the University of Edinburgh, UTS, ANU, and UCA — see [Teaching](teaching.qmd) for the full list and my open [course materials](courses/pnm/index.qmd) (interactive notebooks used by my current students).
+
+<!-- EDIT: add evaluation evidence when ready, e.g.:
+**Teaching evaluations:** overall X.X/5 (Economics 2, 2025) · X.X/5 (Programming & Numerical Methods, 2025) — [full reports](files/teaching-evaluations.pdf)
+-->
+
+## Research Communication
+
+Beyond the papers: plain-English summaries of every paper on the [Research](research.qmd) page, an [interactive explorer](explorer.qmd) of my household-debt results, and [public writing](writing.qmd) for general audiences.
+
+## Where to Find Me This Season
+
+<!-- EDIT: fill in your actual conference/market plans, e.g.:
+- Presenting at [Conference], [City], [Month 2026]
+- Available for interviews at the EEA European Job Market (Dec 2026) and ASSA (Jan 2027)
+-->
+
+- [EDIT: conferences where you'll present this autumn]
+- [EDIT: which job markets you'll attend for interviews]
+
+---
+
+*Last updated: July 2026. For the most recent versions of all papers, see [Research](research.qmd).*

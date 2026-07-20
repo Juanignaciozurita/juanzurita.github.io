@@ -16,11 +16,18 @@ website:
   twitter-card: true
   # Uncomment and add your Google Analytics ID to enable analytics:
   # google-analytics: "G-XXXXXXXXXX"
+  page-footer:
+    background: "#7a2318"
+    left: "Juan Zurita · School of Economics, The University of Edinburgh"
+    center: "[Job Market](jobmarket.qmd) · [CV](cv.qmd) · [Research](research.qmd)"
+    right: "[juan.zurita@ed.ac.uk](mailto:juan.zurita@ed.ac.uk)"
   navbar:
     background: "#7a2318"
     left:
       - href: index.qmd
         text: Home
+      - text: Job Market
+        href: jobmarket.qmd
       - text: Research
         menu:
           - text: Publications & Working Papers
