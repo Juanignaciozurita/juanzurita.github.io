@@ -63,46 +63,25 @@
     "text": "Ongoing Projects\n\n‘Heterogeneous Effect of Capital Requirements on Credit Supply’\n\n\n‘Sectorial Wage Dynamics and Firm Productivity’ with Emiliano Carlevaro."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "opencollaborations.html",
+    "href": "opencollaborations.html",
     "title": "Juan Zurita",
     "section": "",
-    "text": "juan.zurita@ed.ac.uk"
+    "text": "Here you will find a list of ongoing research collaborations open to new contributors. Please feel free to contact me if you are interested in participating in any of the following projects."
   },
   {
-    "objectID": "index.html#research-interest",
-    "href": "index.html#research-interest",
+    "objectID": "opencollaborations.html#for-firms-institutions-data-partnerships",
+    "href": "opencollaborations.html#for-firms-institutions-data-partnerships",
     "title": "Juan Zurita",
-    "section": "Research Interest",
-    "text": "Research Interest\nMacroeconomics\n\nWelcome to my personal website\n\nI am a Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy."
+    "section": "For Firms & Institutions: Data Partnerships",
+    "text": "For Firms & Institutions: Data Partnerships\n\nI am also open to research partnerships with banks, fintechs, and policy institutions that hold proprietary data on lending, wages, or household finances. I have extensive experience working with large administrative and financial datasets — U.S. Call Reports, HMDA mortgage data, HILDA household panel data, and individual wage records — and can turn your data into rigorous, independent analysis of questions you care about: credit conditions, interest-rate exposure, household resilience, wage dynamics.\n\n\nWhat you get: peer-review-quality analysis, co-branded or independently published research, and findings you can use internally. What I need: data access under an appropriate agreement and a genuine question. If this sounds interesting, email juan.zurita@ed.ac.uk — see also Consulting & Policy for commissioned work."
   },
   {
-    "objectID": "index.html#research-statement",
-    "href": "index.html#research-statement",
-    "title": "Juan Zurita",
-    "section": "Research Statement",
-    "text": "Research Statement"
-  },
-  {
-    "objectID": "index.html#teaching-statement",
-    "href": "index.html#teaching-statement",
-    "title": "Juan Zurita",
-    "section": "Teaching Statement",
-    "text": "Teaching Statement"
-  },
-  {
-    "objectID": "index.html#research-highlights",
-    "href": "index.html#research-highlights",
-    "title": "Juan Zurita",
-    "section": "Research Highlights",
-    "text": "Research Highlights\n\n\nMay 2026: My paper “Does Household Debt affect the Transmission Mechanism of Monetary Policy” has been accepted at Macroeconomic Dynamics\nMarch 2026: New Working Paper: “The Bank Profit Channel of Monetary Policy” with Jiening Le\nFebruary 2026: My project “Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom” has received funding from the Royal Society of Edinburgh.\nJanuary 2026: My paper Banking Heterogeneity, Credit Supply and Economic Growth (Slides) has been published at the International Review of Economics and Finance."
-  },
-  {
-    "objectID": "index.html#beyond-economics",
-    "href": "index.html#beyond-economics",
-    "title": "Juan Zurita",
-    "section": "Beyond Economics",
-    "text": "Beyond Economics\n\nAway from macroeconomics, I am building a botanical garden at La Constancia — a long-term project of planting and caring for trees on a farm in Argentina, one season at a time. Email me for details, or follow the progress on Instagram."
+    "objectID": "explorer.html",
+    "href": "explorer.html",
+    "title": "Explore: Household Debt & Policy Effectiveness",
+    "section": "",
+    "text": "Two of my papers in Macroeconomic Dynamics reach a striking pair of conclusions: fiscal stimulus works better when households carry little debt, while rate cuts hit harder — but fade faster — when they carry a lot. Use the controls below to switch between the two policies and across countries, and watch how the level of household debt changes the response of output.\n\n\n\n\n  \n    \n      Government spending ↑\n      Interest rate cut\n    \n    \n      United States\n      Australia\n      Norway\n    \n  \n\n  \n    \n       Low household debt\n      —\n      output response on impact\n    \n    \n       High household debt\n      —\n      output response on impact\n    \n    \n      Published estimate\n      —\n      difference on impact\n    \n  \n\n  \n    \n    \n  \n\n  \n    View as table\n    \n\n\n\nQuarter\nLow debt (% of GDP)\nHigh debt (% of GDP)\n\n\n\n\n\n\n  \n\n  \n\n\n\n\nThe underlying research: Does household debt affect the size of the fiscal multiplier? (Macroeconomic Dynamics, 2024) and Does household debt affect the transmission mechanism of monetary policy? (forthcoming, Macroeconomic Dynamics). For what these results mean in practice, see the summaries on the Research page — and if your institution needs this kind of analysis, see Consulting & Policy."
   },
   {
     "objectID": "courses/pnm/slides/week01.html#why-learn-to-program",
@@ -466,7 +445,7 @@
     "href": "courses/pnm/index.html#how-to-use-these-materials",
     "title": "Programming & Numerical Methods for Economics",
     "section": "How to use these materials",
-    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud:\n\nRead online — click the notebook link; it renders as a webpage with all code and output.\nRun in Google Colab — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.\nRun locally — install Anaconda (includes Python, Jupyter, NumPy, and Matplotlib), then download the .ipynb file from the links below and open it in Jupyter.\n\nNew to Python? Start with the Python Refresher repository alongside PS0."
+    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud:\n\nRead online — click the notebook link; it renders as a webpage with all code and output.\nRun in Google Colab — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.\nRun locally — install Anaconda (includes Python, Jupyter, NumPy, and Matplotlib), then download the .ipynb file from the links below and open it in Jupyter.\n\nNew to Python? Start with the Python Refresher repository alongside PS0.\nQuick experiments: try the Python Playground — run and edit course code directly in your browser, nothing to install."
   },
   {
     "objectID": "courses/pnm/index.html#materials",
@@ -798,18 +777,53 @@
     "text": "Download PDF"
   },
   {
-    "objectID": "opencollaborations.html",
-    "href": "opencollaborations.html",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "Juan Zurita",
     "section": "",
-    "text": "Here you will find a list of ongoing research collaborations open to new contributors. Please feel free to contact me if you are interested in participating in any of the following projects."
+    "text": "juan.zurita@ed.ac.uk"
   },
   {
-    "objectID": "opencollaborations.html#for-firms-institutions-data-partnerships",
-    "href": "opencollaborations.html#for-firms-institutions-data-partnerships",
+    "objectID": "index.html#research-interest",
+    "href": "index.html#research-interest",
     "title": "Juan Zurita",
-    "section": "For Firms & Institutions: Data Partnerships",
-    "text": "For Firms & Institutions: Data Partnerships\n\nI am also open to research partnerships with banks, fintechs, and policy institutions that hold proprietary data on lending, wages, or household finances. I have extensive experience working with large administrative and financial datasets — U.S. Call Reports, HMDA mortgage data, HILDA household panel data, and individual wage records — and can turn your data into rigorous, independent analysis of questions you care about: credit conditions, interest-rate exposure, household resilience, wage dynamics.\n\n\nWhat you get: peer-review-quality analysis, co-branded or independently published research, and findings you can use internally. What I need: data access under an appropriate agreement and a genuine question. If this sounds interesting, email juan.zurita@ed.ac.uk — see also Consulting & Policy for commissioned work."
+    "section": "Research Interest",
+    "text": "Research Interest\nMacroeconomics\n\nWelcome to my personal website\n\nI am a Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy."
+  },
+  {
+    "objectID": "index.html#research-statement",
+    "href": "index.html#research-statement",
+    "title": "Juan Zurita",
+    "section": "Research Statement",
+    "text": "Research Statement"
+  },
+  {
+    "objectID": "index.html#teaching-statement",
+    "href": "index.html#teaching-statement",
+    "title": "Juan Zurita",
+    "section": "Teaching Statement",
+    "text": "Teaching Statement"
+  },
+  {
+    "objectID": "index.html#research-highlights",
+    "href": "index.html#research-highlights",
+    "title": "Juan Zurita",
+    "section": "Research Highlights",
+    "text": "Research Highlights\n\n\nMay 2026: My paper “Does Household Debt affect the Transmission Mechanism of Monetary Policy” has been accepted at Macroeconomic Dynamics\nMarch 2026: New Working Paper: “The Bank Profit Channel of Monetary Policy” with Jiening Le\nFebruary 2026: My project “Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom” has received funding from the Royal Society of Edinburgh.\nJanuary 2026: My paper Banking Heterogeneity, Credit Supply and Economic Growth (Slides) has been published at the International Review of Economics and Finance."
+  },
+  {
+    "objectID": "index.html#beyond-economics",
+    "href": "index.html#beyond-economics",
+    "title": "Juan Zurita",
+    "section": "Beyond Economics",
+    "text": "Beyond Economics\n\nAway from macroeconomics, I am building a botanical garden at La Constancia — a long-term project of planting and caring for trees on a farm in Argentina, one season at a time. Email me for details, or follow the progress on Instagram."
+  },
+  {
+    "objectID": "playground.html",
+    "href": "playground.html",
+    "title": "Python Playground",
+    "section": "",
+    "text": "This page runs real Python — with NumPy and Matplotlib — entirely inside your browser. Pick an example from the course, edit it, and press Run. It is perfect for quick experiments between lectures; for full weekly notebooks, use the course page and its Colab links.\n\n\n\n\n  \n    \n      Example: first steps\n      Exercise: present value (Week 1)\n      Example: Solow growth model (Week 1)\n      Exercise: even numbers (Week 1)\n      Exercise: CES production (Week 2)\n      Blank editor\n    \n    ▶ Run\n    Loading Python… (first load takes ~10s)\n  \n  \n  Output will appear here.\n  \n  Runs entirely in your browser via Pyodide (Python 3 + NumPy + Matplotlib compiled to WebAssembly). Nothing is sent to a server. Keyboard: Ctrl/Cmd + Enter to run. For full notebooks, use the Colab links on the course page."
   },
   {
     "objectID": "students.html",

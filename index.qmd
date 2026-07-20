@@ -24,15 +24,14 @@ about:
       text: Instagram
       href: https://www.instagram.com/juanignaciozurita/
 
+    - icon: person-badge
+      text: ORCID
+      href: https://orcid.org/0000-0002-1209-3246
+
     # Verify this is your Google Scholar profile before enabling:
     # - icon: mortarboard-fill
     #   text: Google Scholar
     #   href: https://scholar.google.com/citations?user=Qc8UdnEAAAAJ
-
-    # Add your ORCID iD when ready:
-    # - icon: person-badge
-    #   text: ORCID
-    #   href: https://orcid.org/0000-0000-0000-0000
 
 toc: false
 body-classes: home-page

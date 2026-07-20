@@ -1,0 +1,226 @@
+---
+title: "Python Playground"
+subtitle: "Run course code directly in your browser — nothing to install"
+title-block-banner: true
+toc: false
+---
+
+<p style="text-align: justify;">
+This page runs real Python — with NumPy and Matplotlib — entirely inside your browser. Pick an example from the course, edit it, and press <strong>Run</strong>. It is perfect for quick experiments between lectures; for full weekly notebooks, use the [course page](courses/pnm/index.qmd) and its Colab links.
+</p>
+
+```{=html}
+<style>
+.pg-root {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #ffffff; border: 1px solid rgba(11,11,11,0.10); border-radius: 14px;
+  padding: 1.1rem 1.25rem 1.25rem; margin: 1rem 0 1.5rem;
+}
+.pg-toolbar { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; margin-bottom: 0.7rem; }
+.pg-toolbar select {
+  font-family: inherit; font-size: 0.9rem; padding: 0.4rem 0.6rem;
+  border: 1px solid #e1e0d9; border-radius: 9px; background: #fff; color: #0b0b0b;
+}
+.pg-run {
+  background: #7a2318; color: #f5efe6; border: none; border-radius: 9px;
+  padding: 0.45rem 1.1rem; font-size: 0.92rem; font-weight: 600; cursor: pointer; font-family: inherit;
+}
+.pg-run:disabled { background: #b9a9a5; cursor: wait; }
+.pg-status { font-size: 0.82rem; color: #898781; }
+.pg-editor {
+  width: 100%; min-height: 240px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88rem; line-height: 1.5; border: 1px solid #e1e0d9; border-radius: 10px;
+  padding: 0.8rem 1rem; background: #fcfcfb; color: #0b0b0b; resize: vertical; white-space: pre; overflow-x: auto;
+}
+.pg-editor:focus { outline: 2px solid rgba(163,58,42,0.35); }
+.pg-out {
+  margin-top: 0.7rem; background: #1f1e1c; color: #e8e6e0; border-radius: 10px;
+  padding: 0.8rem 1rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem; line-height: 1.5; white-space: pre-wrap; min-height: 2.2rem; max-height: 340px; overflow: auto;
+}
+.pg-out .err { color: #ff9f8a; }
+.pg-fig { margin-top: 0.7rem; text-align: center; }
+.pg-fig img { max-width: 100%; border-radius: 10px; border: 1px solid #e1e0d9; }
+.pg-note { font-size: 0.8rem; color: #52514e; margin-top: 0.7rem; }
+</style>
+
+<div class="pg-root" id="pg">
+  <div class="pg-toolbar">
+    <select id="pg-example" aria-label="Load an example">
+      <option value="hello">Example: first steps</option>
+      <option value="pv">Exercise: present value (Week 1)</option>
+      <option value="solow">Example: Solow growth model (Week 1)</option>
+      <option value="loops">Exercise: even numbers (Week 1)</option>
+      <option value="ces">Exercise: CES production (Week 2)</option>
+      <option value="blank">Blank editor</option>
+    </select>
+    <button class="pg-run" id="pg-run" disabled>▶ Run</button>
+    <span class="pg-status" id="pg-status">Loading Python… (first load takes ~10s)</span>
+  </div>
+  <textarea class="pg-editor" id="pg-code" spellcheck="false" aria-label="Python code editor"></textarea>
+  <div class="pg-out" id="pg-out">Output will appear here.</div>
+  <div class="pg-fig" id="pg-fig"></div>
+  <p class="pg-note">Runs entirely in your browser via <a href="https://pyodide.org">Pyodide</a> (Python 3 + NumPy + Matplotlib compiled to WebAssembly). Nothing is sent to a server. Keyboard: <b>Ctrl/Cmd + Enter</b> to run. For full notebooks, use the Colab links on the course page.</p>
+</div>
+
+<script>
+const PG_EXAMPLES = {
+hello: `# Welcome! Edit this code and press Run (or Ctrl+Enter).
+gdp = 2.85e12
+population = 68_350_000
+print(f"GDP per capita: {gdp/population:,.2f}")
+
+# Greek letters work:
+α, β = 0.3, 0.96
+print("α + β =", α + β)`,
+pv: `# Exercise (Week 1): write present_value(payment, r, T)
+# PV = sum of payment/(1+r)**t for t = 1..T
+# Check: present_value(100, 0.05, 10) should be ≈ 772.17
+
+def present_value(payment, r, T):
+    ...  # your code here
+
+print(present_value(100, 0.05, 10))`,
+solow: `# The Solow growth model — k(t+1) = s*k(t)**α + (1-δ)*k(t)
+import numpy as np
+import matplotlib.pyplot as plt
+
+def solow_path(s=0.25, alpha=0.3, delta=0.05, k0=1.0, T=100):
+    k = np.zeros(T); k[0] = k0
+    for t in range(T-1):
+        k[t+1] = s*k[t]**alpha + (1-delta)*k[t]
+    return k
+
+k = solow_path()
+k_star = (0.25/0.05)**(1/(1-0.3))
+
+plt.figure(figsize=(7,3.5))
+plt.plot(k, lw=2, label="capital path")
+plt.axhline(k_star, ls="--", c="tab:red", label="steady state")
+plt.xlabel("t"); plt.ylabel("k"); plt.legend()
+plt.title("Try changing s or delta and re-running!")
+plt.show()`,
+loops: `# Exercise (Week 1): count the even numbers in 0–99
+# Hint: x % 2 == 0 tests evenness; booleans add as 1/0.
+
+count = 0
+# your loop here
+
+print(count)   # should print 50`,
+ces: `# Exercise (Week 2): CES production function
+# Y = A*(α*K**ρ + (1-α)*L**ρ)**(1/ρ),  ρ = (σ-1)/σ
+# ces(4, 9) with defaults should be ≈ 6.25
+
+def ces(K, L, alpha=0.5, sigma=2.0, A=1.0):
+    ...  # your code here
+
+print(ces(4, 9))`,
+blank: `# Your Python scratchpad — numpy and matplotlib are available.
+`};
+
+(function(){
+  const runBtn = document.getElementById('pg-run');
+  const status = document.getElementById('pg-status');
+  const codeEl = document.getElementById('pg-code');
+  const outEl  = document.getElementById('pg-out');
+  const figEl  = document.getElementById('pg-fig');
+  const exSel  = document.getElementById('pg-example');
+
+  codeEl.value = PG_EXAMPLES.hello;
+  exSel.addEventListener('change', () => { codeEl.value = PG_EXAMPLES[exSel.value]; outEl.textContent = 'Output will appear here.'; figEl.innerHTML=''; });
+  codeEl.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter'){ e.preventDefault(); if(!runBtn.disabled) run(); }
+    if (e.key === 'Tab'){ e.preventDefault();
+      const s = codeEl.selectionStart; codeEl.setRangeText('    ', s, codeEl.selectionEnd, 'end'); }
+  });
+
+  let pyodide = null, loading = null;
+
+  async function ensurePyodide(){
+    if (pyodide) return pyodide;
+    if (!loading){
+      loading = (async () => {
+        const CDNS = [
+          "https://cdn.jsdelivr.net/pyodide/v0.26.4/full/",
+          "https://cdnjs.cloudflare.com/ajax/libs/pyodide/0.26.4/"
+        ];
+        let mod = null, base = null;
+        for (const c of CDNS){
+          try { mod = await import(c + "pyodide.mjs"); base = c; break; } catch(e){ console.warn("CDN failed:", c); }
+        }
+        if (!mod) throw new Error("no CDN reachable");
+        const py = await mod.loadPyodide({indexURL: base});
+        status.textContent = "Loading NumPy + Matplotlib…";
+        await py.loadPackage(["numpy", "matplotlib"]);
+        await py.runPythonAsync(`
+import matplotlib
+matplotlib.use("AGG")
+import sys, io, base64
+`);
+        return py;
+      })();
+    }
+    pyodide = await loading;
+    return pyodide;
+  }
+
+  // start loading immediately
+  ensurePyodide().then(() => {
+    runBtn.disabled = false;
+    status.textContent = "Python ready ✓";
+  }).catch(e => {
+    status.textContent = "Could not load Python (check your connection).";
+    console.error(e);
+  });
+
+  async function run(){
+    runBtn.disabled = true; status.textContent = "Running…";
+    outEl.textContent = ""; figEl.innerHTML = "";
+    try {
+      const py = await ensurePyodide();
+      py.globals.set("__code__", codeEl.value);
+      const result = await py.runPythonAsync(`
+import sys, io, base64, traceback
+import matplotlib.pyplot as plt
+_buf = io.StringIO()
+_old = sys.stdout
+sys.stdout = _buf
+_err = None
+try:
+    exec(compile(__code__, "<playground>", "exec"), {})
+except Exception:
+    _err = traceback.format_exc(limit=3)
+finally:
+    sys.stdout = _old
+_figs = []
+for _n in plt.get_fignums():
+    _f = plt.figure(_n)
+    _b = io.BytesIO()
+    _f.savefig(_b, format="png", dpi=110, bbox_inches="tight")
+    _figs.append(base64.b64encode(_b.getvalue()).decode())
+plt.close("all")
+import json
+json.dumps({"out": _buf.getvalue(), "err": _err, "figs": _figs})
+`);
+      const r = JSON.parse(result);
+      if (r.out) outEl.textContent = r.out;
+      if (r.err){ const s = document.createElement('span'); s.className='err'; s.textContent = r.err; outEl.appendChild(s); }
+      if (!r.out && !r.err) outEl.textContent = "(no output — use print())";
+      for (const f of r.figs){
+        const img = document.createElement('img');
+        img.src = "data:image/png;base64," + f;
+        img.alt = "Matplotlib figure";
+        figEl.appendChild(img);
+      }
+      status.textContent = "Python ready ✓";
+    } catch(e){
+      outEl.innerHTML = '<span class="err">' + String(e) + '</span>';
+      status.textContent = "Python ready ✓";
+    }
+    runBtn.disabled = false;
+  }
+  runBtn.addEventListener('click', run);
+})();
+</script>
+
+```

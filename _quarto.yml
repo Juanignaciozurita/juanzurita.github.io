@@ -27,6 +27,8 @@ website:
             href: research.qmd
           - text: Public Writing
             href: writing.qmd
+          - text: "Interactive: Debt & Policy"
+            href: explorer.qmd
           - text: Open Collaborations
             href: opencollaborations.qmd
       - text: Teaching
@@ -35,6 +37,8 @@ website:
             href: teaching.qmd
           - text: For Students
             href: students.qmd
+          - text: Python Playground
+            href: playground.qmd
           - text: Resources
             href: usefullinks.qmd
       - text: Consulting & Policy
