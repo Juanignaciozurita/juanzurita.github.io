@@ -9,25 +9,23 @@ toc: true
 I am on the 2026–27 academic job market. My research sits at the intersection of macroeconomics, credit markets, and banking — combining theory with empirical analysis to understand how household and bank balance sheets shape the transmission of monetary and fiscal policy. Below you will find everything a committee needs; please [email me](mailto:juan.zurita@ed.ac.uk) with any questions.
 </p>
 
-<!-- EDIT: confirm/adjust the market line above (e.g. add "and policy-institution" if applying to central banks). -->
-
 ## Job Market Paper
 
-#### [EDIT: Job Market Paper Title]
+#### Who Bears the Burden of Bank Capital Regulation? Buffers, Risk Weights, and the Supply of Credit
 
 <span class="journal-tag">Job Market Paper</span>
 
 ::: {.paper-links}
-[Download PDF](files/jmp.pdf) <!-- EDIT: drop the JMP PDF into files/ as jmp.pdf -->
+[Download PDF](files/jmp.pdf)
 :::
 
 <details>
 <summary>Abstract</summary>
-[EDIT: paste the JMP abstract here.]
+Who bears the burden of bank capital regulation? Using a quarterly panel of U.S. banks (1994–2019) and narratively identified capital-requirement shocks, we document a sectoral lending channel: within banks, commercial and industrial lending — which carries the higher regulatory risk weight — contracts significantly more than real estate lending, while consumer and credit-card lending do not respond. The intensity of the contraction is governed by a bank's distance to its regulatory frontier: institutions with thin voluntary capital buffers cut lending most, whereas well-buffered banks absorb historical policy innovations with attenuated credit responses. We rationalise these facts with a heterogeneous macro-banking model in which banks facing funding-market frictions hoard precautionary capital buffers, solved globally with deep-learning methods and estimated by simulated method of moments on the within-bank impulse responses. A permanent one-percentage-point tightening carries a welfare cost of 2.4–2.9% of steady-state credit-market surplus, almost entirely through the contraction in the scale of intermediation; differentiated risk weights determine which sectors and which banks bear the contraction, but contribute little to its aggregate cost. These figures are gross transition costs of tightening — the framework prices the credit contraction, not the offsetting stability benefits of capital — so they measure the incidence and burden of regulation, not its optimal level. The model implies that the muted historical response of well-buffered banks is a latent vulnerability: shocks large enough to erode voluntary buffers trigger sharply non-linear credit contractions.
 </details>
 
 ::: {.practice}
-**In one paragraph:** [EDIT: a three-sentence, plain-English summary of the JMP — what question, what you find, why it matters. Committees read this even when they skip the abstract.]
+**In one paragraph:** When regulators raise bank capital requirements, who actually pays the price? Using data on roughly 4,800 U.S. banks over twenty-five years, this paper shows that the burden falls unevenly: business lending — which carries a higher risk weight — contracts about forty percent more than mortgage lending, while consumer credit barely responds, and banks with the thinnest capital buffers cut lending 1.29 times more than the best-capitalised institutions. A heterogeneous macro-banking model, solved with deep-learning methods, quantifies the welfare cost at 2.4–2.9% of credit-market surplus per percentage point of tightening and reveals a hidden vulnerability — the voluntary buffers that insulated most banks historically are a finite resource, and sufficiently large shocks trigger sharply non-linear credit contractions.
 :::
 
 ## Application Materials

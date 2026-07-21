@@ -88,6 +88,28 @@ Does household debt affect the size of the fiscal multiplier? We investigate the
 
 ::: {.paper}
 
+#### Who Bears the Burden of Bank Capital Regulation? Buffers, Risk Weights, and the Supply of Credit
+<span class="journal-tag">Job Market Paper · July 2026</span>
+
+
+::: {.paper-links}
+[PDF](files/jmp.pdf) \  [Job Market Page](jobmarket.qmd)
+:::
+
+<details>
+<summary>Abstract</summary>
+Who bears the burden of bank capital regulation? Using a quarterly panel of U.S. banks (1994–2019) and narratively identified capital-requirement shocks, we document a sectoral lending channel: within banks, commercial and industrial lending — which carries the higher regulatory risk weight — contracts significantly more than real estate lending, while consumer and credit-card lending do not respond. The intensity of the contraction is governed by a bank's distance to its regulatory frontier: institutions with thin voluntary capital buffers cut lending most, whereas well-buffered banks absorb historical policy innovations with attenuated credit responses. We rationalise these facts with a heterogeneous macro-banking model in which banks facing funding-market frictions hoard precautionary capital buffers, solved globally with deep-learning methods and estimated by simulated method of moments on the within-bank impulse responses. A permanent one-percentage-point tightening carries a welfare cost of 2.4–2.9% of steady-state credit-market surplus, almost entirely through the contraction in the scale of intermediation; differentiated risk weights determine which sectors and which banks bear the contraction, but contribute little to its aggregate cost.
+</details>
+
+::: {.practice}
+**In practice:** When regulators raise bank capital requirements, business lending — carrying the higher risk weight — contracts about forty percent more than mortgage lending, while consumer credit barely responds. Banks with the thinnest capital buffers absorb the largest share of the contraction. The welfare cost is 2.4–2.9% of credit-market surplus per percentage point of tightening, and the voluntary buffers that insulated most banks historically are a finite resource — large enough shocks trigger sharply non-linear credit contractions.
+:::
+
+:::
+
+
+::: {.paper}
+
 #### The Bank Profit Channel of Monetary Policy with Jiening Le
 <span class="journal-tag">Submitted 2026</span>
 
@@ -160,8 +182,6 @@ indebted economies with stagnant productivity growth, contributing to ongoing de
 
 
 ## Ongoing Projects
-
-#### ‘Heterogeneous Effect of Capital Requirements on Credit Supply’
 
 #### ‘Sectorial Wage Dynamics and Firm Productivity’ with Emiliano Carlevaro.
 
