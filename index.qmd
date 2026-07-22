@@ -67,11 +67,11 @@ I am a Lecturer in Economics at the School of Economics at the University of Edi
 ::: {.columns}
 
 ::: {.column width="50%"}
-## [Research Statement](https://drive.google.com/file/d/1tWsicZ2M4dt5BGN5eYs_M9gSFJi06CT2/view?usp=sharing)
+## [Research Statement](files/Research_Statement - Juan Zurita - 2026.pdf)
 :::
 
 ::: {.column width="50%"}
-## [Teaching Statement](https://drive.google.com/file/d/1MlIbBB82C9jQIq8BS_OEGIp93ZXj7W0v/view?usp=sharing)
+## [Teaching Statement](files/Juan Zurita Teaching Statement - 2026.pdf)
 :::
 
 :::

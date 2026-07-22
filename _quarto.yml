@@ -44,6 +44,8 @@ website:
             href: teaching.qmd
           - text: For Students
             href: students.qmd
+          - text: Numerical Methods Quiz
+            href: quiz.qmd
           - text: Python Playground
             href: playground.qmd
           - text: Resources

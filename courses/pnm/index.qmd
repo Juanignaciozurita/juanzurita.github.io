@@ -44,6 +44,8 @@ POLICY: problem-set QUESTIONS only — solutions are never published here. -->
 
 **Datasets:** the survey datasets used in the Week 3 case study, labs, and problem sets (UNPS and related microdata) are distributed through **Learn**, not this website, for licensing reasons. Notebooks are published with their outputs embedded, so you can follow everything here.
 
+**Test yourself:** take the [Numerical Methods Quiz](../../quiz.qmd) — 14 multiple-choice questions covering root-finding, optimisation, and function approximation (Weeks 5–8) with instant feedback.
+
 **Extra reading:** [pandas cheat sheet](files/DataWrangling_Pandas_Cheat_Sheet.pdf) · [Quadrature Methods](files/Quadrature_Methods.pdf) · [Math Review](files/Math_Review.pdf)
 
 ## Syllabus
