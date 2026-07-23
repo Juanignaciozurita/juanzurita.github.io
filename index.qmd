@@ -91,9 +91,9 @@ I am a Lecturer in Economics at the School of Economics at the University of Edi
 
 ## Explore My Work
 
-::: {.homepage-cards}
-
-<a href="research.qmd" class="homepage-card">
+```{=html}
+<div class="homepage-cards">
+<a href="research.html" class="homepage-card">
 <div class="homepage-card-img">
 <img src="img/card_research.png" alt="Research — network visualisation" />
 </div>
@@ -102,28 +102,26 @@ I am a Lecturer in Economics at the School of Economics at the University of Edi
 <p>Macroeconomic policy, credit markets, household debt, and banking — publications, working papers, and an interactive explorer.</p>
 </div>
 </a>
-
-<a href="teaching.qmd" class="homepage-card">
+<a href="teaching.html" class="homepage-card">
 <div class="homepage-card-img">
 <img src="img/card_teaching.png" alt="Teaching — code and neural networks" />
 </div>
 <div class="homepage-card-body">
 <h3>Teaching</h3>
-<p>Open course materials in Programming & Numerical Methods and Deep Learning for Macroeconomics — interactive notebooks and Colab links.</p>
+<p>Open course materials in Programming &amp; Numerical Methods and Deep Learning for Macroeconomics — interactive notebooks and Colab links.</p>
 </div>
 </a>
-
-<a href="consulting.qmd" class="homepage-card">
+<a href="consulting.html" class="homepage-card">
 <div class="homepage-card-img">
 <img src="img/card_consulting.png" alt="Consulting — policy and growth" />
 </div>
 <div class="homepage-card-body">
-<h3>Consulting & Policy</h3>
+<h3>Consulting &amp; Policy</h3>
 <p>Applied research for central banks, regulators, and government — fiscal sustainability, macro modelling, and data strategy.</p>
 </div>
 </a>
-
-:::
+</div>
+```
 
 
 ## Beyond Economics

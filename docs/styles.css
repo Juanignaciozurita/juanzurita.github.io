@@ -587,6 +587,11 @@ iframe {
   width: 100% !important;
 }
 
+.home-page main.content {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
 /* The grid itself */
 .homepage-cards {
   display: grid;
