@@ -1,15 +1,68 @@
 /* css styles */
+
+/* Warm paper-tone background on all content pages (the homepage keeps its
+   photo background via the .home-page rules further down). */
+body {
+  background-color: #f9f6ef;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
 .research-page h1 {
   color: #1b4332;
 }
 
-
-.research-page {
-  background-color: #f8fff8;
+h1, h2, h3, h4 {
+  line-height: 1.25;
 }
 
-body {
-  font-size: 22px;
+h2 {
+  margin-top: 2.2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid rgba(122, 35, 24, 0.15);
+}
+
+/* =====================================================
+   SIDEBAR TABLE OF CONTENTS ("On this page")
+===================================================== */
+
+#quarto-margin-sidebar {
+  padding-top: 1.5rem;
+}
+
+nav[role="doc-toc"] > h2,
+#toc-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7a2318;
+  font-weight: 700;
+  border-bottom: none;
+  margin-top: 0;
+}
+
+nav[role="doc-toc"] ul {
+  font-size: 0.9rem;
+}
+
+nav[role="doc-toc"] a {
+  display: block;
+  color: #6b6b6b;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  padding: 0.18rem 0.4rem 0.18rem 0.75rem;
+}
+
+nav[role="doc-toc"] a:hover {
+  color: #7a2318;
+}
+
+nav[role="doc-toc"] a.active {
+  color: #7a2318;
+  font-weight: 600;
+  border-left-color: #a33a2a;
+  background: rgba(163, 58, 42, 0.07);
+  border-radius: 0 6px 6px 0;
 }
 
 
@@ -145,9 +198,9 @@ summary:hover {
   text-decoration: underline;
 }
 
-/* ABSTRACT BOX WHEN OPEN */
+/* ABSTRACT BOX WHEN OPEN — white card floating on the paper background */
 details[open] {
-  background: #eef4ff;
+  background: #ffffff;
   padding: 1rem;
   border-radius: 10px;
   border-left: 4px solid #2c7be5;
@@ -168,10 +221,31 @@ details p {
 }
 
 
+/* PLAIN-ENGLISH "IN PRACTICE" SUMMARY */
+.practice {
+  background: #fffdf8;
+  border-left: 4px solid #a33a2a;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  margin-top: 0.8rem;
+  font-size: 0.95em;
+  text-align: justify;
+}
+
+.practice p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.practice strong:first-child {
+  color: #a33a2a;
+}
+
+
 .journal-tag {
   display: inline-block;
   padding: 0.2rem 0.6rem;
-  background: #f1f3f5;
+  background: #efe9dc;
   border-radius: 12px;
   font-size: 0.9rem;
   font-weight: 500;
@@ -197,22 +271,61 @@ details p {
   color: white !important;
 }
 
-.navbar .container-fluid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* =====================================================
+   NAVBAR — brand left, links right, clean spacing
+===================================================== */
+
+.navbar {
+  padding: 0.55rem 1.25rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
 }
 
-/* Center title in normal flow */
 .navbar-brand {
-  position: static;
-  margin: 0 auto;
+  font-family: serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+  color: #f5efe6 !important;
 }
 
-/* Center navigation links */
-.navbar-nav {
-  margin: 0 auto;
-  justify-content: center;
+.navbar .nav-link {
+  color: rgba(245, 239, 230, 0.9) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.45rem 0.85rem !important;
+  white-space: nowrap;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #ffffff !important;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+}
+
+/* Dropdown menus */
+.navbar .dropdown-menu {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  padding: 0.4rem 0;
+}
+
+.navbar .dropdown-item {
+  font-size: 0.95rem;
+  padding: 0.45rem 1.1rem;
+}
+
+.navbar .dropdown-item:hover {
+  background: #fdf6ec;
+  color: #7a2318;
+}
+
+/* Right-side icon links */
+.navbar .quarto-navbar-tools .quarto-navigation-tool,
+.navbar-nav .bi {
+  color: rgba(245, 239, 230, 0.9);
 }
 
 iframe {
@@ -285,13 +398,13 @@ iframe {
 .home-page {
 
   background-image:
-    linear-gradient(rgba(0,0,0,0.45),
-                    rgba(0,0,0,0.45)),
+    linear-gradient(rgba(0,0,0,0.35),
+                    rgba(0,0,0,0.35)),
     url("Profile.jpg");
 
-  background-size: 115%;
+  background-size: cover;
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
 
   background-attachment: fixed;
 
@@ -302,8 +415,94 @@ iframe {
    ABOUT BLOCK CONTAINER
 ===================================================== */
 
+/* White content panel so text is readable over the photo.
+   #quarto-content is present on every Quarto page, so this cannot miss. */
 .home-page #quarto-content {
-  padding-top: 6rem;
+  background: rgba(255, 255, 255, 0.95);
+  max-width: 1150px;
+  margin: 2.5rem auto 3rem auto;
+  padding: 2.5rem 3rem;
+  border-radius: 18px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+  .home-page #quarto-content {
+    margin: 1rem 0.5rem 1.5rem 0.5rem;
+    padding: 1.5rem 1.2rem;
+  }
+}
+
+/* Keep the profile picture a sensible size */
+.home-page .about-image {
+  max-width: 220px;
+  max-height: 220px;
+}
+
+/* Centre the subtitle (role + affiliation) under the name */
+.home-page .subtitle,
+.home-page .quarto-title .subtitle,
+.home-page .description {
+  text-align: center !important;
+}
+
+/* =====================================================
+   JOB MARKET BANNER (homepage)
+===================================================== */
+
+.jm-banner {
+  background: #7a2318;
+  color: #f5efe6;
+  text-align: center;
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  margin: 1.2rem auto;
+  max-width: 620px;
+  font-size: 1.02rem;
+  box-shadow: 0 6px 18px rgba(122, 35, 24, 0.25);
+}
+
+.jm-banner strong {
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.jm-banner a.jm-btn {
+  display: inline-block;
+  background: #f5efe6;
+  color: #7a2318 !important;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 8px;
+  margin: 0.15rem 0.25rem;
+  text-decoration: none;
+}
+
+.jm-banner a.jm-btn:hover {
+  background: #ffffff;
+  text-decoration: none;
+}
+
+/* =====================================================
+   PAGE FOOTER
+===================================================== */
+
+.nav-footer {
+  background: #7a2318;
+  color: rgba(245, 239, 230, 0.9);
+  font-size: 0.88rem;
+  padding: 1rem 1.25rem;
+}
+
+.nav-footer a {
+  color: #f5efe6;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-footer a:hover {
+  text-decoration: underline;
 }
 
 /* =====================================================
@@ -311,7 +510,7 @@ iframe {
 ===================================================== */
 
 .home-page h1.title {
-  color: white !important;
+  color: #212529 !important;
   text-align: center;
   font-size: 3.2rem;
   font-weight: 700;
@@ -322,7 +521,7 @@ iframe {
 ===================================================== */
 
 .hero-subtitle {
-  color: white;
+  color: #212529;
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.6;
@@ -345,7 +544,7 @@ iframe {
 
 .home-page .about-entity,
 .home-page .about-links {
-  color: white !important;
+  color: #212529 !important;
 }
 
 /* =====================================================
@@ -353,32 +552,50 @@ iframe {
 ===================================================== */
 
 .home-page .about-links a {
-  color: white !important;
+  color: #a33a2a !important;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .home-page .about-links a:hover {
   opacity: 0.8;
+  text-decoration: underline;
 }
 
 /* =====================================================
    HOMEPAGE CARDS — Research / Teaching / Consulting
+   Widen every jolla-template ancestor so the 3-col grid
+   has room. The chain is:
+     #quarto-content (already 1150px)
+       .quarto-about-jolla
+         .about-contents
+   Both inner containers default to ~600px in jolla.
 ===================================================== */
 
-/* Break out of the narrow jolla content column */
+.home-page .quarto-about-jolla {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.home-page .about-contents {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+.home-page .about-body {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* The grid itself */
 .homepage-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Override Quarto's about-body width so cards have room */
-.home-page .about-body {
-  max-width: 1100px !important;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
@@ -387,6 +604,7 @@ iframe {
   }
 }
 
+/* Individual card */
 .homepage-card {
   display: block;
   background: #ffffff;
@@ -394,16 +612,17 @@ iframe {
   overflow: hidden;
   text-decoration: none !important;
   color: #333 !important;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .homepage-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
   text-decoration: none !important;
 }
 
+/* Card image area */
 .homepage-card-img {
   width: 100%;
   overflow: hidden;
@@ -422,6 +641,7 @@ iframe {
   transform: scale(1.05);
 }
 
+/* Card text area */
 .homepage-card-body {
   padding: 1rem 1.2rem 1.3rem;
   text-align: center;
@@ -432,6 +652,7 @@ iframe {
   font-size: 1.1rem;
   font-weight: 700;
   color: #7a2318 !important;
+  border-bottom: none;
 }
 
 .homepage-card-body p {
@@ -439,9 +660,4 @@ iframe {
   font-size: 0.82rem;
   line-height: 1.5;
   color: #444 !important;
-}
-
-/* Ensure "Explore My Work" heading is visible on dark bg */
-.home-page h2 {
-  color: white !important;
 }
