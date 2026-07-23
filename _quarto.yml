@@ -42,6 +42,10 @@ website:
         menu:
           - text: Courses
             href: teaching.qmd
+          - text: "Programming & Numerical Methods"
+            href: courses/pnm/index.qmd
+          - text: "Deep Learning for Macroeconomics"
+            href: courses/dlmacro/index.qmd
           - text: For Students
             href: students.qmd
           - text: Numerical Methods Quiz

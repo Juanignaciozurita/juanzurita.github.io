@@ -71,8 +71,7 @@ Universidad Católica Argentina, Argentina — 2011–2015
 
 ## Lectures
 
-- Deep Learning for Macroeconomics *(materials coming soon)*
-<!-- Restore as a link once the materials are hosted: [Deep Learning for Macroeconomics](ADD-LINK) -->
+- [**Deep Learning for Macroeconomics** — notebooks, slides, and Colab links](courses/dlmacro/index.qmd)
 
 <!-- --- -->
 

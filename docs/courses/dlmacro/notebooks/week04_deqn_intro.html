@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Week 4: Deep Equilibrium Networks I — The Idea – Juan Zurita</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-befc92836a82f2ebff21c48b720c4121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Week 4: Deep Equilibrium Networks I — The Idea – Juan Zurita">
+<meta property="og:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/dlmacro/notebooks/Profile.jpg">
+<meta property="og:site_name" content="Juan Zurita">
+<meta name="twitter:title" content="Week 4: Deep Equilibrium Networks I — The Idea – Juan Zurita">
+<meta name="twitter:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/dlmacro/notebooks/Profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Juan Zurita</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../jobmarket.html"> 
+<span class="menu-text">Job Market</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Research</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
+        <li>
+    <a class="dropdown-item" href="../../../research.html">
+ <span class="dropdown-text">Publications &amp; Working Papers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../writing.html">
+ <span class="dropdown-text">Public Writing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../explorer.html">
+ <span class="dropdown-text">Interactive: Debt &amp; Policy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../opencollaborations.html">
+ <span class="dropdown-text">Open Collaborations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teaching" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teaching</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teaching">    
+        <li>
+    <a class="dropdown-item" href="../../../teaching.html">
+ <span class="dropdown-text">Courses</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../courses/pnm/index.html">
+ <span class="dropdown-text">Programming &amp; Numerical Methods</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../courses/dlmacro/index.html">
+ <span class="dropdown-text">Deep Learning for Macroeconomics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../students.html">
+ <span class="dropdown-text">For Students</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../quiz.html">
+ <span class="dropdown-text">Numerical Methods Quiz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../playground.html">
+ <span class="dropdown-text">Python Playground</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../usefullinks.html">
+ <span class="dropdown-text">Resources</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../../consulting.html"> 
+<span class="menu-text">Consulting &amp; Policy</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Juanignaciozurita"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/juan-ignacio-z-4b345425/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/juanignaciozurita/"> <i class="bi bi-instagram" role="img" aria-label="Instagram">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:juan.zurita@ed.ac.uk"> <i class="bi bi-envelope-fill" role="img" aria-label="Email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link" data-scroll-target="#why-this-matters">Why this matters</a></li>
+  <li><a href="#from-vfi-to-deqns-the-conceptual-shift" id="toc-from-vfi-to-deqns-the-conceptual-shift" class="nav-link" data-scroll-target="#from-vfi-to-deqns-the-conceptual-shift">1. From VFI to DEQNs — the conceptual shift</a>
+  <ul class="collapse">
+  <li><a href="#what-you-did-in-pnm-week-8-value-function-iteration" id="toc-what-you-did-in-pnm-week-8-value-function-iteration" class="nav-link" data-scroll-target="#what-you-did-in-pnm-week-8-value-function-iteration">What you did in PNM (Week 8): Value-Function Iteration</a></li>
+  <li><a href="#what-we-do-now-deep-equilibrium-networks" id="toc-what-we-do-now-deep-equilibrium-networks" class="nav-link" data-scroll-target="#what-we-do-now-deep-equilibrium-networks">What we do now: Deep Equilibrium Networks</a></li>
+  </ul></li>
+  <li><a href="#the-brockmirman-growth-model" id="toc-the-brockmirman-growth-model" class="nav-link" data-scroll-target="#the-brockmirman-growth-model">2. The Brock–Mirman growth model</a>
+  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#euler-equation" id="toc-euler-equation" class="nav-link" data-scroll-target="#euler-equation">Euler equation</a></li>
+  <li><a href="#analytical-solution" id="toc-analytical-solution" class="nav-link" data-scroll-target="#analytical-solution">Analytical solution</a></li>
+  </ul></li>
+  <li><a href="#building-the-deqn-step-by-step" id="toc-building-the-deqn-step-by-step" class="nav-link" data-scroll-target="#building-the-deqn-step-by-step">3. Building the DEQN — step by step</a>
+  <ul class="collapse">
+  <li><a href="#step-1-define-the-policy-network" id="toc-step-1-define-the-policy-network" class="nav-link" data-scroll-target="#step-1-define-the-policy-network">Step 1: Define the policy network</a></li>
+  <li><a href="#step-2-define-the-euler-equation-loss" id="toc-step-2-define-the-euler-equation-loss" class="nav-link" data-scroll-target="#step-2-define-the-euler-equation-loss">Step 2: Define the Euler-equation loss</a></li>
+  <li><a href="#step-3-train-the-deqn" id="toc-step-3-train-the-deqn" class="nav-link" data-scroll-target="#step-3-train-the-deqn">Step 3: Train the DEQN</a></li>
+  </ul></li>
+  <li><a href="#verifying-the-solution" id="toc-verifying-the-solution" class="nav-link" data-scroll-target="#verifying-the-solution">4. Verifying the solution</a>
+  <ul class="collapse">
+  <li><a href="#euler-equation-residuals-the-economists-error-metric" id="toc-euler-equation-residuals-the-economists-error-metric" class="nav-link" data-scroll-target="#euler-equation-residuals-the-economists-error-metric">Euler-equation residuals: the economist’s error metric</a></li>
+  </ul></li>
+  <li><a href="#under-the-hood-what-the-deqn-is-actually-doing" id="toc-under-the-hood-what-the-deqn-is-actually-doing" class="nav-link" data-scroll-target="#under-the-hood-what-the-deqn-is-actually-doing">5. Under the hood — what the DEQN is actually doing</a></li>
+  <li><a href="#deqn-vs-vfi-head-to-head" id="toc-deqn-vs-vfi-head-to-head" class="nav-link" data-scroll-target="#deqn-vs-vfi-head-to-head">6. DEQN vs VFI — head to head</a>
+  <ul class="collapse">
+  <li><a href="#when-does-each-method-win" id="toc-when-does-each-method-win" class="nav-link" data-scroll-target="#when-does-each-method-win">When does each method win?</a></li>
+  </ul></li>
+  <li><a href="#exercise-1-effect-of-network-size" id="toc-exercise-1-effect-of-network-size" class="nav-link" data-scroll-target="#exercise-1-effect-of-network-size">Exercise 1: Effect of network size</a></li>
+  <li><a href="#exercise-2-different-preference-parameter" id="toc-exercise-2-different-preference-parameter" class="nav-link" data-scroll-target="#exercise-2-different-preference-parameter">Exercise 2: Different preference parameter</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key takeaways</a></li>
+  <li><a href="#whats-next" id="toc-whats-next" class="nav-link" data-scroll-target="#whats-next">What’s next</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 4: Deep Equilibrium Networks I — The Idea</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Deep Learning for Macroeconomics</strong> — Honours, The University of Edinburgh<br>
+Instructor: Juan Zurita · <a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a></p>
+<hr>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this notebook you will be able to:</p>
+<ol type="1">
+<li>Explain the <strong>DEQN principle</strong>: solve economic models by minimising equilibrium-condition residuals</li>
+<li>Contrast DEQNs with <strong>VFI</strong> and <strong>projection methods</strong> from PNM</li>
+<li>Implement a DEQN to solve the <strong>deterministic Brock–Mirman growth model</strong></li>
+<li>Verify the neural-network solution against the <strong>closed-form answer</strong></li>
+<li>Diagnose convergence using <strong>Euler-equation residuals</strong></li>
+</ol>
+</section>
+<section id="why-this-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters">Why this matters</h2>
+<p>In Week 1, we trained a neural network to <em>match</em> a known policy function. That’s supervised learning — we needed the answer to generate training data.</p>
+<p><strong>Deep Equilibrium Networks</strong> (Azinovic, Gaegauf &amp; Scheidegger, 2022) flip this around: we don’t need the answer. Instead, we train the network to satisfy the model’s <strong>equilibrium conditions</strong>. The loss function comes from economics, not from data.</p>
+<p>This is the central idea of the course. Everything that follows — stochastic models, constraints, PINNs, heterogeneous agents — is a variation on this theme.</p>
+<hr>
+<div id="78add7ac" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">42</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> <span class="st">'cuda'</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">'cpu'</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"PyTorch </span><span class="sc">{</span>torch<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss"> on </span><span class="sc">{</span>device<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="from-vfi-to-deqns-the-conceptual-shift" class="level2">
+<h2 class="anchored" data-anchor-id="from-vfi-to-deqns-the-conceptual-shift">1. From VFI to DEQNs — the conceptual shift</h2>
+<section id="what-you-did-in-pnm-week-8-value-function-iteration" class="level3">
+<h3 class="anchored" data-anchor-id="what-you-did-in-pnm-week-8-value-function-iteration">What you did in PNM (Week 8): Value-Function Iteration</h3>
+<ol type="1">
+<li>Define a <strong>grid</strong> over the state space <span class="math inline">\(\{k_1, k_2, \ldots, k_N\}\)</span></li>
+<li>Guess <span class="math inline">\(V^0(k)\)</span></li>
+<li>For each grid point, solve: <span class="math display">\[V^{n+1}(k_i) = \max_{c} \Big\{ u(c) + \beta V^n\big(k_i^\alpha - c\big) \Big\}\]</span></li>
+<li>Repeat until <span class="math inline">\(\|V^{n+1} - V^n\| &lt; \varepsilon\)</span></li>
+</ol>
+<p><strong>Limitations:</strong> requires a grid (curse of dimensionality), iterates over all grid points (slow in high-D), and interpolates between points (error accumulates).</p>
+</section>
+<section id="what-we-do-now-deep-equilibrium-networks" class="level3">
+<h3 class="anchored" data-anchor-id="what-we-do-now-deep-equilibrium-networks">What we do now: Deep Equilibrium Networks</h3>
+<ol type="1">
+<li>Parameterise the <strong>policy function</strong> as a neural network: <span class="math inline">\(c(k; \theta)\)</span></li>
+<li>Write down the <strong>Euler equation</strong> (the equilibrium condition the policy must satisfy): <span class="math display">\[u'(c_t) = \beta \, u'(c_{t+1}) \, f'(k_{t+1})\]</span></li>
+<li>Define the <strong>loss</strong> as the squared Euler-equation residual: <span class="math display">\[\mathcal{L}(\theta) = \mathbb{E}_k \Big[ \big| u'(c(k;\theta)) - \beta \, u'\big(c(k';\theta)\big) \, f'(k') \big|^2 \Big]\]</span> where <span class="math inline">\(k' = f(k) - c(k;\theta)\)</span></li>
+<li>Minimise <span class="math inline">\(\mathcal{L}(\theta)\)</span> using gradient descent</li>
+</ol>
+<p><strong>No grid. No iteration over the value function. No interpolation.</strong></p>
+<p>The neural network finds the policy function that makes the Euler equation hold as closely as possible everywhere.</p>
+<blockquote class="blockquote">
+<p><strong>Key insight:</strong> The loss function encodes <em>economics</em>, not data. We don’t need training labels — the model’s own equilibrium conditions tell the network what to learn.</p>
+</blockquote>
+</section>
+</section>
+<section id="the-brockmirman-growth-model" class="level2">
+<h2 class="anchored" data-anchor-id="the-brockmirman-growth-model">2. The Brock–Mirman growth model</h2>
+<p>We start with the simplest possible dynamic model, because it has a <strong>closed-form solution</strong> — letting us verify that the DEQN works.</p>
+<section id="setup" class="level3">
+<h3 class="anchored" data-anchor-id="setup">Setup</h3>
+<p>A representative agent solves: <span class="math display">\[\max_{\{c_t\}_{t=0}^\infty} \sum_{t=0}^{\infty} \beta^t \ln c_t\]</span></p>
+<p>subject to: <span class="math display">\[k_{t+1} = k_t^\alpha - c_t, \quad k_0 \text{ given}\]</span></p>
+<p>where <span class="math inline">\(c_t\)</span> is consumption, <span class="math inline">\(k_t\)</span> is capital, <span class="math inline">\(\alpha \in (0,1)\)</span> is the capital share, and <span class="math inline">\(\beta \in (0,1)\)</span> is the discount factor. Full depreciation is assumed (<span class="math inline">\(\delta = 1\)</span>).</p>
+</section>
+<section id="euler-equation" class="level3">
+<h3 class="anchored" data-anchor-id="euler-equation">Euler equation</h3>
+<p>The first-order condition gives: <span class="math display">\[\frac{1}{c_t} = \beta \, \frac{\alpha k_{t+1}^{\alpha - 1}}{c_{t+1}}\]</span></p>
+<p>Rearranging: <span class="math display">\[\frac{1}{c_t} - \beta \, \frac{\alpha k_{t+1}^{\alpha - 1}}{c_{t+1}} = 0\]</span></p>
+<p>This is the <strong>equilibrium condition</strong> that the DEQN will learn to satisfy.</p>
+</section>
+<section id="analytical-solution" class="level3">
+<h3 class="anchored" data-anchor-id="analytical-solution">Analytical solution</h3>
+<p>With log utility and Cobb–Douglas production, the optimal policy is: <span class="math display">\[c^*(k) = (1 - \alpha\beta) \, k^\alpha\]</span></p>
+<p>We’ll use this to check our neural-network solution.</p>
+</section>
+</section>
+<section id="building-the-deqn-step-by-step" class="level2">
+<h2 class="anchored" data-anchor-id="building-the-deqn-step-by-step">3. Building the DEQN — step by step</h2>
+<section id="step-1-define-the-policy-network" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-define-the-policy-network">Step 1: Define the policy network</h3>
+<p>The neural network takes capital <span class="math inline">\(k\)</span> as input and outputs consumption <span class="math inline">\(c\)</span>. We need <span class="math inline">\(c &gt; 0\)</span> and <span class="math inline">\(c &lt; k^\alpha\)</span> (can’t consume more than output), so we use a <strong>softplus</strong> output activation to ensure positivity and scale appropriately.</p>
+<div id="01f89f43" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model parameters</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ALPHA <span class="op">=</span> <span class="fl">0.33</span>    <span class="co"># capital share</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>BETA <span class="op">=</span> <span class="fl">0.95</span>     <span class="co"># discount factor</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> production(k):</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""f(k) = k^α"""</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> k <span class="op">**</span> ALPHA</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> marginal_product(k):</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""f'(k) = α k^(α-1)"""</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ALPHA <span class="op">*</span> k <span class="op">**</span> (ALPHA <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> true_policy(k):</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Analytical solution: c*(k) = (1 - αβ) k^α"""</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">1</span> <span class="op">-</span> ALPHA <span class="op">*</span> BETA) <span class="op">*</span> k <span class="op">**</span> ALPHA</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Parameters: α = </span><span class="sc">{</span>ALPHA<span class="sc">}</span><span class="ss">, β = </span><span class="sc">{</span>BETA<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Steady-state capital: k* = (αβ)^(1/(1-α)) = </span><span class="sc">{</span>(ALPHA <span class="op">*</span> BETA) <span class="op">**</span> (<span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> ALPHA))<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Steady-state consumption: c* = (1-αβ)(αβ)^(α/(1-α)) = </span><span class="sc">{</span>true_policy((ALPHA <span class="op">*</span> BETA) <span class="op">**</span> (<span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> ALPHA)))<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="0d2a0fae" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> PolicyNetwork(nn.Module):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Neural network that maps capital k → consumption c.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Architecture: k → [Linear → Tanh] × 2 → Linear → Softplus</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    The Softplus output ensures c &gt; 0 always.</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">    We also scale the output so it stays below k^α (total output).</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, hidden_dim<span class="op">=</span><span class="dv">64</span>):</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.net <span class="op">=</span> nn.Sequential(</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>            nn.Linear(<span class="dv">1</span>, hidden_dim),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>            nn.Tanh(),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>            nn.Linear(hidden_dim, hidden_dim),</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>            nn.Tanh(),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            nn.Linear(hidden_dim, <span class="dv">1</span>),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Initialise weights small so initial policy is moderate</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> layer <span class="kw">in</span> <span class="va">self</span>.net:</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="bu">isinstance</span>(layer, nn.Linear):</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>                nn.init.xavier_normal_(layer.weight, gain<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>                nn.init.zeros_(layer.bias)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, k):</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">        Returns consumption c ∈ (0, k^α).</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co">        We use sigmoid to map to (0, 1), then multiply by output k^α.</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">        This guarantees 0 &lt; c &lt; k^α (budget feasibility).</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">        """</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>        raw <span class="op">=</span> <span class="va">self</span>.net(k)</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Map to (0, 1) via sigmoid, then scale to (0, k^α)</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>        share <span class="op">=</span> torch.sigmoid(raw)   <span class="co"># consumption share of output</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>        output <span class="op">=</span> k <span class="op">**</span> ALPHA           <span class="co"># total output</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>        c <span class="op">=</span> share <span class="op">*</span> output <span class="op">*</span> <span class="fl">0.99</span>     <span class="co"># small buffer to avoid c = k^α exactly</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> c</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the policy network</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>policy_net <span class="op">=</span> PolicyNetwork(hidden_dim<span class="op">=</span><span class="dv">64</span>).to(device)</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>n_params <span class="op">=</span> <span class="bu">sum</span>(p.numel() <span class="cf">for</span> p <span class="kw">in</span> policy_net.parameters())</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Policy network: 1 → 64 → 64 → 1"</span>)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Total parameters: </span><span class="sc">{</span>n_params<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Output: c ∈ (0, k^α) — always feasible"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="step-2-define-the-euler-equation-loss" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-define-the-euler-equation-loss">Step 2: Define the Euler-equation loss</h3>
+<p>This is the heart of the DEQN. The loss measures how badly the Euler equation is violated:</p>
+<p><span class="math display">\[\mathcal{L}(\theta) = \frac{1}{N} \sum_{i=1}^{N} \left( \frac{1}{c(k_i; \theta)} - \beta \, \frac{\alpha \, [k_i']^{\alpha-1}}{c(k_i'; \theta)} \right)^2\]</span></p>
+<p>where <span class="math inline">\(k_i' = k_i^\alpha - c(k_i; \theta)\)</span> is next-period capital.</p>
+<p>Notice: <strong>no training labels appear.</strong> The loss comes entirely from the model’s own equations.</p>
+<div id="318c0725" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> euler_residual(policy_net, k):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Compute the Euler-equation residual for a batch of capital values.</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Euler equation: 1/c_t = β · α · k_{t+1}^{α-1} / c_{t+1}</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Residual:       1/c_t - β · α · k_{t+1}^{α-1} / c_{t+1}</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">        policy_net: neural network mapping k → c</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">        k: tensor of current capital values, shape (N, 1)</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">        residual: tensor of Euler residuals, shape (N, 1)</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Current period</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    c_t <span class="op">=</span> policy_net(k)                    <span class="co"># consumption today</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    k_next <span class="op">=</span> k <span class="op">**</span> ALPHA <span class="op">-</span> c_t             <span class="co"># capital tomorrow (budget constraint)</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Next period — feed k' THROUGH THE SAME NETWORK</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    c_next <span class="op">=</span> policy_net(k_next)            <span class="co"># consumption tomorrow</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Euler equation: marginal utility today = β × MPK × marginal utility tomorrow</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># With log utility: u'(c) = 1/c</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    lhs <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> c_t                       <span class="co"># u'(c_t)</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    rhs <span class="op">=</span> BETA <span class="op">*</span> ALPHA <span class="op">*</span> k_next <span class="op">**</span> (ALPHA <span class="op">-</span> <span class="dv">1</span>) <span class="op">/</span> c_next  <span class="co"># β f'(k') u'(c')</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    residual <span class="op">=</span> lhs <span class="op">-</span> rhs</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> residual</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> euler_loss(policy_net, k):</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Mean squared Euler-equation residual — the DEQN loss function."""</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>    residual <span class="op">=</span> euler_residual(policy_net, k)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> torch.mean(residual <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Test with random capital values</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>k_test_batch <span class="op">=</span> torch.FloatTensor(<span class="dv">10</span>, <span class="dv">1</span>).uniform_(<span class="fl">0.5</span>, <span class="fl">3.0</span>).to(device)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>test_residual <span class="op">=</span> euler_residual(policy_net, k_test_batch)</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Initial Euler residuals (should be large — network is untrained):"</span>)</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(test_residual.detach().cpu().numpy().flatten().<span class="bu">round</span>(<span class="dv">3</span>))</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Initial loss: </span><span class="sc">{</span>euler_loss(policy_net, k_test_batch)<span class="sc">.</span>item()<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="step-3-train-the-deqn" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-train-the-deqn">Step 3: Train the DEQN</h3>
+<p>The training loop is almost identical to Week 1, except: - The <strong>loss is the Euler-equation residual</strong> (no training labels) - We sample <strong>fresh capital values</strong> each epoch (no fixed dataset) - We train until the residual is small enough (convergence)</p>
+<p>Sampling fresh <span class="math inline">\(k\)</span> each epoch is important: it prevents the network from memorising specific capital values and forces it to learn the <em>function</em> <span class="math inline">\(c(k)\)</span>.</p>
+<div id="0f81874d" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Training the DEQN</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Domain for capital</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>K_MIN, K_MAX <span class="op">=</span> <span class="fl">0.1</span>, <span class="fl">5.0</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>N_SAMPLE <span class="op">=</span> <span class="dv">512</span>  <span class="co"># batch size</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Optimiser</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> torch.optim.Adam(policy_net.parameters(), lr<span class="op">=</span><span class="fl">1e-3</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Learning rate scheduler (reduce lr when progress stalls)</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>scheduler <span class="op">=</span> torch.optim.lr_scheduler.ReduceLROnPlateau(</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    optimizer, patience<span class="op">=</span><span class="dv">500</span>, factor<span class="op">=</span><span class="fl">0.5</span>, verbose<span class="op">=</span><span class="va">False</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Training loop</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>n_epochs <span class="op">=</span> <span class="dv">8000</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>losses <span class="op">=</span> []</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>best_loss <span class="op">=</span> <span class="bu">float</span>(<span class="st">'inf'</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(n_epochs):</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Sample FRESH capital values each epoch</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    k_batch <span class="op">=</span> torch.FloatTensor(N_SAMPLE, <span class="dv">1</span>).uniform_(K_MIN, K_MAX).to(device)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute Euler-equation loss</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> euler_loss(policy_net, k_batch)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gradient step</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    optimizer.zero_grad()</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    loss.backward()</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    optimizer.step()</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    scheduler.step(loss)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Record</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    loss_val <span class="op">=</span> loss.item()</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    losses.append(loss_val)</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> loss_val <span class="op">&lt;</span> best_loss:</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        best_loss <span class="op">=</span> loss_val</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (epoch <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">2000</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>        lr <span class="op">=</span> optimizer.param_groups[<span class="dv">0</span>][<span class="st">'lr'</span>]</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Epoch </span><span class="sc">{</span>epoch<span class="op">+</span><span class="dv">1</span><span class="sc">:5d}</span><span class="ss">  |  Loss: </span><span class="sc">{</span>loss_val<span class="sc">:.2e}</span><span class="ss">  |  LR: </span><span class="sc">{</span>lr<span class="sc">:.1e}</span><span class="ss">"</span>)</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Final loss (Euler residual²): </span><span class="sc">{</span>losses[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.2e}</span><span class="ss">"</span>)</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Best loss:                     </span><span class="sc">{</span>best_loss<span class="sc">:.2e}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="verifying-the-solution" class="level2">
+<h2 class="anchored" data-anchor-id="verifying-the-solution">4. Verifying the solution</h2>
+<p>This is the moment of truth. We have the analytical solution <span class="math inline">\(c^*(k) = (1 - \alpha\beta) k^\alpha\)</span>. Let’s compare it to what the DEQN found.</p>
+<p>Three checks: 1. <strong>Visual comparison</strong> of policy functions 2. <strong>Pointwise error</strong> across the domain 3. <strong>Euler-equation residuals</strong> (the economist’s gold standard for solution accuracy)</p>
+<div id="a2c46841" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the trained policy network</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>policy_net.<span class="bu">eval</span>()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>k_eval <span class="op">=</span> torch.linspace(K_MIN, K_MAX, <span class="dv">500</span>).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>).to(device)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    c_nn <span class="op">=</span> policy_net(k_eval).cpu().numpy().flatten()</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>k_np <span class="op">=</span> k_eval.cpu().numpy().flatten()</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>c_true <span class="op">=</span> true_policy(k_np)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Figure 1: Policy function comparison ---</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="fl">4.5</span>))</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel A: Policy functions</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(k_np, c_true, <span class="st">'k-'</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>, label<span class="op">=</span><span class="st">'Analytical: $(1-</span><span class="ch">\\</span><span class="st">alpha</span><span class="ch">\\</span><span class="st">beta)k^{</span><span class="ch">\\</span><span class="st">alpha}$'</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(k_np, c_nn, <span class="st">'--'</span>, color<span class="op">=</span><span class="st">'#7a2318'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'DEQN (neural network)'</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">'Capital $k$'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'Consumption $c$'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'A. Policy Functions'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel B: Absolute error</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>error <span class="op">=</span> np.<span class="bu">abs</span>(c_nn <span class="op">-</span> c_true)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(k_np, error, color<span class="op">=</span><span class="st">'#7a2318'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'Capital $k$'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'$|c_</span><span class="sc">{NN}</span><span class="st">(k) - c^*(k)|$'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'B. Absolute Error'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].ticklabel_format(axis<span class="op">=</span><span class="st">'y'</span>, style<span class="op">=</span><span class="st">'scientific'</span>, scilimits<span class="op">=</span>(<span class="dv">0</span>,<span class="dv">0</span>))</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel C: Training loss</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].semilogy(losses, color<span class="op">=</span><span class="st">'#2a6e3f'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Smooth version</span></span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>window <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>smoothed <span class="op">=</span> np.convolve(losses, np.ones(window)<span class="op">/</span>window, mode<span class="op">=</span><span class="st">'valid'</span>)</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].semilogy(<span class="bu">range</span>(window<span class="op">-</span><span class="dv">1</span>, <span class="bu">len</span>(losses)), smoothed, color<span class="op">=</span><span class="st">'#2a6e3f'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_xlabel(<span class="st">'Epoch'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_ylabel(<span class="st">'Euler residual² (loss)'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">'C. Convergence'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary statistics</span></span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>rel_error <span class="op">=</span> error <span class="op">/</span> c_true</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Maximum absolute error:  </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(error)<span class="sc">:.6f}</span><span class="ss">"</span>)</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean absolute error:     </span><span class="sc">{</span>np<span class="sc">.</span>mean(error)<span class="sc">:.6f}</span><span class="ss">"</span>)</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Maximum relative error:  </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(rel_error)<span class="sc">:.4%}</span><span class="ss">"</span>)</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean relative error:     </span><span class="sc">{</span>np<span class="sc">.</span>mean(rel_error)<span class="sc">:.4%}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="euler-equation-residuals-the-economists-error-metric" class="level3">
+<h3 class="anchored" data-anchor-id="euler-equation-residuals-the-economists-error-metric">Euler-equation residuals: the economist’s error metric</h3>
+<p>In computational economics, the standard way to assess solution quality is the <strong>Euler-equation error</strong> (Judd, 1992):</p>
+<p><span class="math display">\[\text{EE}(k) = \log_{10}\left| 1 - \frac{\beta \, u'(c(k';\theta)) \, f'(k')}{u'(c(k;\theta))} \right|\]</span></p>
+<p>Interpretation: - <span class="math inline">\(\text{EE} = -3\)</span> means the agent makes a $1 error per $1,000 of consumption - <span class="math inline">\(\text{EE} = -6\)</span> means $1 per $1,000,000 — excellent - <span class="math inline">\(\text{EE} &lt; -4\)</span> is generally considered acceptable for economic research</p>
+<div id="dfbc5d86" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Euler-equation errors (log10 scale)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>policy_net.<span class="bu">eval</span>()</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>k_ee <span class="op">=</span> torch.linspace(K_MIN <span class="op">+</span> <span class="fl">0.1</span>, K_MAX <span class="op">-</span> <span class="fl">0.1</span>, <span class="dv">400</span>).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>).to(device)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>k_ee.requires_grad_(<span class="va">False</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    c_t <span class="op">=</span> policy_net(k_ee)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    k_next <span class="op">=</span> k_ee <span class="op">**</span> ALPHA <span class="op">-</span> c_t</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    c_next <span class="op">=</span> policy_net(k_next)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Euler equation: u'(c_t) = β f'(k') u'(c_{t+1})</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># With log utility: 1/c_t = β α k'^(α-1) / c_{t+1}</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    lhs <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> c_t</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    rhs <span class="op">=</span> BETA <span class="op">*</span> ALPHA <span class="op">*</span> k_next <span class="op">**</span> (ALPHA <span class="op">-</span> <span class="dv">1</span>) <span class="op">/</span> c_next</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># EE error in log10</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    ee_error <span class="op">=</span> torch.log10(torch.<span class="bu">abs</span>(<span class="dv">1</span> <span class="op">-</span> rhs <span class="op">/</span> lhs) <span class="op">+</span> <span class="fl">1e-16</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>k_ee_np <span class="op">=</span> k_ee.cpu().numpy().flatten()</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>ee_np <span class="op">=</span> ee_error.cpu().numpy().flatten()</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="fl">4.5</span>))</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>ax.plot(k_ee_np, ee_np, color<span class="op">=</span><span class="st">'#7a2318'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=-</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="st">'$10^{-3}$: </span><span class="er">\</span><span class="st">$1 per </span><span class="er">\</span><span class="st">$1,000'</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=-</span><span class="dv">6</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="st">'$10^{-6}$: </span><span class="er">\</span><span class="st">$1 per </span><span class="er">\</span><span class="st">$1,000,000'</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Capital $k$'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$</span><span class="er">\</span><span class="st">log_</span><span class="sc">{10}</span><span class="st">$ Euler-equation error'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Euler-Equation Residuals — DEQN Solution Quality'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Mean EE error (log10): </span><span class="sc">{</span>np<span class="sc">.</span>mean(ee_np)<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Max EE error (log10):  </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(ee_np)<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"→ The DEQN solution is </span><span class="sc">{</span><span class="st">'excellent'</span> <span class="cf">if</span> np<span class="sc">.</span><span class="bu">max</span>(ee_np) <span class="op">&lt;</span> <span class="op">-</span><span class="dv">3</span> <span class="cf">else</span> <span class="st">'good'</span> <span class="cf">if</span> np<span class="sc">.</span><span class="bu">max</span>(ee_np) <span class="op">&lt;</span> <span class="op">-</span><span class="dv">2</span> <span class="cf">else</span> <span class="st">'needs more training'</span><span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="under-the-hood-what-the-deqn-is-actually-doing" class="level2">
+<h2 class="anchored" data-anchor-id="under-the-hood-what-the-deqn-is-actually-doing">5. Under the hood — what the DEQN is actually doing</h2>
+<p>Let’s trace through one training step to demystify the process:</p>
+<ol type="1">
+<li><strong>Sample</strong> <span class="math inline">\(k = 2.0\)</span></li>
+<li><strong>Forward pass:</strong> $c(2.0; ) = $ the network’s current guess for consumption</li>
+<li><strong>Budget constraint:</strong> $k’ = 2.0^{0.33} - c(2.0; ) = $ next-period capital</li>
+<li><strong>Forward pass again:</strong> $c(k’; ) = $ next-period consumption (same network!)</li>
+<li><strong>Euler residual:</strong> <span class="math inline">\(\frac{1}{c_t} - \beta \frac{\alpha [k']^{\alpha-1}}{c_{t+1}}\)</span></li>
+<li><strong>Loss:</strong> square of the residual, averaged over the batch</li>
+<li><strong>Backpropagation:</strong> compute how each weight should change to reduce the residual</li>
+<li><strong>Update:</strong> adjust weights</li>
+</ol>
+<p>The crucial step is (4): we feed the network’s own output back through itself. This is what makes the solution self-consistent — the policy at time <span class="math inline">\(t\)</span> must be consistent with the policy at time <span class="math inline">\(t+1\)</span>.</p>
+<div id="1020c4d6" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trace through one step for a single capital value</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>k_example <span class="op">=</span> torch.tensor([[<span class="fl">2.0</span>]], device<span class="op">=</span>device)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>policy_net.<span class="bu">eval</span>()</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    c_t <span class="op">=</span> policy_net(k_example)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    y_t <span class="op">=</span> k_example <span class="op">**</span> ALPHA</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    k_next <span class="op">=</span> y_t <span class="op">-</span> c_t</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    c_next <span class="op">=</span> policy_net(k_next)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    mpk <span class="op">=</span> ALPHA <span class="op">*</span> k_next <span class="op">**</span> (ALPHA <span class="op">-</span> <span class="dv">1</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    lhs <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> c_t</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    rhs <span class="op">=</span> BETA <span class="op">*</span> mpk <span class="op">/</span> c_next</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    residual <span class="op">=</span> lhs <span class="op">-</span> rhs</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=== DEQN: One Step Trace ==="</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f""</span>)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Current capital:         k  = </span><span class="sc">{</span>k_example<span class="sc">.</span>item()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Output:                  y  = k^α = </span><span class="sc">{</span>y_t<span class="sc">.</span>item()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"NN consumption:          c  = </span><span class="sc">{</span>c_t<span class="sc">.</span>item()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"True consumption:        c* = </span><span class="sc">{</span>true_policy(k_example.item())<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f""</span>)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Next-period capital:     k' = y - c = </span><span class="sc">{</span>k_next<span class="sc">.</span>item()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Next-period consumption: c' = NN(k') = </span><span class="sc">{</span>c_next<span class="sc">.</span>item()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Marginal product:        αk'^(α-1) = </span><span class="sc">{</span>mpk<span class="sc">.</span>item()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f""</span>)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Euler LHS (1/c):         </span><span class="sc">{</span>lhs<span class="sc">.</span>item()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Euler RHS (β·MPK/c'):    </span><span class="sc">{</span>rhs<span class="sc">.</span>item()<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Residual (should be ≈0): </span><span class="sc">{</span>residual<span class="sc">.</span>item()<span class="sc">:.6f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="deqn-vs-vfi-head-to-head" class="level2">
+<h2 class="anchored" data-anchor-id="deqn-vs-vfi-head-to-head">6. DEQN vs VFI — head to head</h2>
+<p>Let’s solve the same model with VFI (as you learned in PNM) and compare:</p>
+<div id="8e546645" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># VFI solution (from PNM Week 8)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Grid for VFI</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>N_GRID <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>k_grid <span class="op">=</span> np.linspace(K_MIN, K_MAX, N_GRID)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> np.zeros(N_GRID)  <span class="co"># initial guess</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># VFI iteration</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> iteration <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">500</span>):</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    V_new <span class="op">=</span> np.zeros(N_GRID)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    c_vfi <span class="op">=</span> np.zeros(N_GRID)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i, k <span class="kw">in</span> <span class="bu">enumerate</span>(k_grid):</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> k <span class="op">**</span> ALPHA</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Candidate consumption values</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>        c_candidates <span class="op">=</span> np.linspace(<span class="fl">0.01</span>, y <span class="op">-</span> <span class="fl">0.01</span>, <span class="dv">200</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>        k_next_candidates <span class="op">=</span> y <span class="op">-</span> c_candidates</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Interpolate V at k' values</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>        V_next <span class="op">=</span> np.interp(k_next_candidates, k_grid, V)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Bellman equation</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>        values <span class="op">=</span> np.log(c_candidates) <span class="op">+</span> BETA <span class="op">*</span> V_next</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Optimal consumption</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>        best_idx <span class="op">=</span> np.argmax(values)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>        V_new[i] <span class="op">=</span> values[best_idx]</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>        c_vfi[i] <span class="op">=</span> c_candidates[best_idx]</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> np.<span class="bu">max</span>(np.<span class="bu">abs</span>(V_new <span class="op">-</span> V)) <span class="op">&lt;</span> <span class="fl">1e-8</span>:</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"VFI converged in </span><span class="sc">{</span>iteration<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss"> iterations"</span>)</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>    V <span class="op">=</span> V_new.copy()</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare VFI, DEQN, and analytical solution</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="fl">4.5</span>))</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(k_np, c_true, <span class="st">'k-'</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>, label<span class="op">=</span><span class="st">'Analytical'</span>)</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(k_np, c_nn, <span class="st">'--'</span>, color<span class="op">=</span><span class="st">'#7a2318'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'DEQN'</span>)</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(k_grid, c_vfi, <span class="st">':'</span>, color<span class="op">=</span><span class="st">'#2a6e3f'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="ss">f'VFI (</span><span class="sc">{</span>N_GRID<span class="sc">}</span><span class="ss"> points)'</span>)</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">'Capital $k$'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'Consumption $c$'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Policy Functions: Three Methods'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Errors</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>c_vfi_interp <span class="op">=</span> np.interp(k_np, k_grid, c_vfi)</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>err_vfi <span class="op">=</span> np.<span class="bu">abs</span>(c_vfi_interp <span class="op">-</span> c_true) <span class="op">/</span> c_true <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>err_deqn <span class="op">=</span> np.<span class="bu">abs</span>(c_nn <span class="op">-</span> c_true) <span class="op">/</span> c_true <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(k_np, err_vfi, color<span class="op">=</span><span class="st">'#2a6e3f'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="st">'VFI'</span>)</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(k_np, err_deqn, color<span class="op">=</span><span class="st">'#7a2318'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="st">'DEQN'</span>)</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'Capital $k$'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Relative error (%)'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Relative Error Comparison'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"VFI  — max relative error: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(err_vfi)<span class="sc">:.4f}</span><span class="ss">%"</span>)</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"DEQN — max relative error: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">max</span>(err_deqn)<span class="sc">:.4f}</span><span class="ss">%"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="when-does-each-method-win" class="level3">
+<h3 class="anchored" data-anchor-id="when-does-each-method-win">When does each method win?</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 22%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: center;">VFI</th>
+<th style="text-align: center;">DEQN</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Low dimensions (1-2 states)</td>
+<td style="text-align: center;">✅ Fast, reliable</td>
+<td style="text-align: center;">Works but overkill</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">High dimensions (10+ states)</td>
+<td style="text-align: center;">❌ Curse of dimensionality</td>
+<td style="text-align: center;">✅ Scales gracefully</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Occasionally binding constraints</td>
+<td style="text-align: center;">✅ Easy (just check)</td>
+<td style="text-align: center;">Requires special treatment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Continuous-time models</td>
+<td style="text-align: center;">❌ Needs discretisation</td>
+<td style="text-align: center;">✅ Natural with PINNs</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Guaranteed convergence</td>
+<td style="text-align: center;">✅ (contraction mapping)</td>
+<td style="text-align: center;">❌ (gradient descent)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Accuracy for a given compute time</td>
+<td style="text-align: center;">✅ in 1-D</td>
+<td style="text-align: center;">✅ in high-D</td>
+</tr>
+</tbody>
+</table>
+<blockquote class="blockquote">
+<p><strong>Bottom line:</strong> DEQNs are not a replacement for VFI — they are a complement. Use VFI when you can, DEQNs when you must (high dimensions, continuous time, complex constraints).</p>
+</blockquote>
+</section>
+</section>
+<section id="exercise-1-effect-of-network-size" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-effect-of-network-size">Exercise 1: Effect of network size</h2>
+<p>Train DEQNs with different architectures on the same Brock–Mirman model and compare their Euler-equation errors.</p>
+<p><strong>Tasks:</strong></p>
+<ol type="1">
+<li>Train networks with hidden layers: 1×16, 1×64, 2×32, 2×64</li>
+<li>Plot the Euler-equation errors for each architecture</li>
+<li>Which architecture gives the best accuracy for its parameter count?</li>
+</ol>
+<details>
+<summary>
+Click for solution
+</summary>
+<div id="66486c3d" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 1 solution</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> DEQNPolicy(nn.Module):</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, layers):</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>()</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        modules <span class="op">=</span> []</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(layers) <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>            modules.append(nn.Linear(layers[i], layers[i<span class="op">+</span><span class="dv">1</span>]))</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> i <span class="op">&lt;</span> <span class="bu">len</span>(layers) <span class="op">-</span> <span class="dv">2</span>:</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>                modules.append(nn.Tanh())</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.net <span class="op">=</span> nn.Sequential(<span class="op">*</span>modules)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> m <span class="kw">in</span> <span class="va">self</span>.net:</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="bu">isinstance</span>(m, nn.Linear):</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>                nn.init.xavier_normal_(m.weight, gain<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>                nn.init.zeros_(m.bias)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, k):</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>        raw <span class="op">=</span> <span class="va">self</span>.net(k)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>        share <span class="op">=</span> torch.sigmoid(raw)</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> share <span class="op">*</span> k <span class="op">**</span> ALPHA <span class="op">*</span> <span class="fl">0.99</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>architectures <span class="op">=</span> {</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">'1×16'</span>:  [<span class="dv">1</span>, <span class="dv">16</span>, <span class="dv">1</span>],</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">'1×64'</span>:  [<span class="dv">1</span>, <span class="dv">64</span>, <span class="dv">1</span>],</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2×32'</span>:  [<span class="dv">1</span>, <span class="dv">32</span>, <span class="dv">32</span>, <span class="dv">1</span>],</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2×64'</span>:  [<span class="dv">1</span>, <span class="dv">64</span>, <span class="dv">64</span>, <span class="dv">1</span>],</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> {}</span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, layers <span class="kw">in</span> architectures.items():</span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> DEQNPolicy(layers).to(device)</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>    opt <span class="op">=</span> torch.optim.Adam(model.parameters(), lr<span class="op">=</span><span class="fl">1e-3</span>)</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>    sched <span class="op">=</span> torch.optim.lr_scheduler.ReduceLROnPlateau(opt, patience<span class="op">=</span><span class="dv">500</span>, factor<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> ep <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">6000</span>):</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>        k_b <span class="op">=</span> torch.FloatTensor(<span class="dv">512</span>, <span class="dv">1</span>).uniform_(K_MIN, K_MAX).to(device)</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>        loss <span class="op">=</span> euler_loss(model, k_b)</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>        opt.zero_grad()<span class="op">;</span> loss.backward()<span class="op">;</span> opt.step()</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>        sched.step(loss)</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Compute EE errors</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>    model.<span class="bu">eval</span>()</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> torch.no_grad():</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>        k_ee <span class="op">=</span> torch.linspace(K_MIN <span class="op">+</span> <span class="fl">0.1</span>, K_MAX <span class="op">-</span> <span class="fl">0.1</span>, <span class="dv">300</span>).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>).to(device)</span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>        c_t <span class="op">=</span> model(k_ee)<span class="op">;</span> k_n <span class="op">=</span> k_ee<span class="op">**</span>ALPHA <span class="op">-</span> c_t<span class="op">;</span> c_n <span class="op">=</span> model(k_n)</span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>        ee <span class="op">=</span> torch.log10(torch.<span class="bu">abs</span>(<span class="dv">1</span> <span class="op">-</span> (BETA <span class="op">*</span> ALPHA <span class="op">*</span> k_n<span class="op">**</span>(ALPHA<span class="op">-</span><span class="dv">1</span>) <span class="op">/</span> c_n) <span class="op">/</span> (<span class="dv">1</span><span class="op">/</span>c_t)) <span class="op">+</span> <span class="fl">1e-16</span>)</span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>    n_p <span class="op">=</span> <span class="bu">sum</span>(p.numel() <span class="cf">for</span> p <span class="kw">in</span> model.parameters())</span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>    mean_ee <span class="op">=</span> ee.cpu().numpy().mean()</span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>    results[name] <span class="op">=</span> {<span class="st">'params'</span>: n_p, <span class="st">'ee'</span>: ee.cpu().numpy(), <span class="st">'mean_ee'</span>: mean_ee}</span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">:6s}</span><span class="ss"> | params: </span><span class="sc">{</span>n_p<span class="sc">:5d}</span><span class="ss"> | mean EE: </span><span class="sc">{</span>mean_ee<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="fl">4.5</span>))</span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a>k_plot <span class="op">=</span> torch.linspace(K_MIN <span class="op">+</span> <span class="fl">0.1</span>, K_MAX <span class="op">-</span> <span class="fl">0.1</span>, <span class="dv">300</span>).numpy()</span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, res <span class="kw">in</span> results.items():</span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a>    ax.plot(k_plot, res[<span class="st">'ee'</span>].flatten(), linewidth<span class="op">=</span><span class="fl">1.5</span>,</span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a>            label<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>res[<span class="st">'params'</span>]<span class="sc">}</span><span class="ss"> params, mean EE: </span><span class="sc">{</span>res[<span class="st">'mean_ee'</span>]<span class="sc">:.1f}</span><span class="ss">)"</span>)</span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a>ax.axhline(y<span class="op">=-</span><span class="dv">3</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Capital $k$'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'$</span><span class="er">\</span><span class="st">log_</span><span class="sc">{10}</span><span class="st">$ Euler-equation error'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Euler-Equation Errors by Architecture'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<hr>
+</section>
+<section id="exercise-2-different-preference-parameter" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-different-preference-parameter">Exercise 2: Different preference parameter</h2>
+<p>Solve the Brock–Mirman model for CRRA utility <span class="math inline">\(u(c) = \frac{c^{1-\gamma}}{1-\gamma}\)</span> with <span class="math inline">\(\gamma = 2\)</span> instead of log utility.</p>
+<p><strong>Note:</strong> With CRRA utility and <span class="math inline">\(\gamma \neq 1\)</span>, the model no longer has a closed-form solution — this is exactly the kind of problem where DEQNs shine.</p>
+<p><strong>Tasks:</strong></p>
+<ol type="1">
+<li>Modify the Euler-equation residual for CRRA utility: <span class="math inline">\(u'(c) = c^{-\gamma}\)</span></li>
+<li>Train a DEQN and plot the resulting policy function</li>
+<li>Compare to the log-utility policy (which we know is <span class="math inline">\((1 - \alpha\beta) k^\alpha\)</span>)</li>
+</ol>
+<details>
+<summary>
+Click for solution
+</summary>
+<div id="e16046af" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exercise 2 solution</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>GAMMA <span class="op">=</span> <span class="fl">2.0</span>  <span class="co"># risk aversion</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> euler_loss_crra(policy_net, k, gamma<span class="op">=</span>GAMMA):</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Euler-equation loss with CRRA utility: u'(c) = c^(-γ)"""</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    c_t <span class="op">=</span> policy_net(k)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    k_next <span class="op">=</span> k <span class="op">**</span> ALPHA <span class="op">-</span> c_t</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    c_next <span class="op">=</span> policy_net(k_next)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    lhs <span class="op">=</span> c_t <span class="op">**</span> (<span class="op">-</span>gamma)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    rhs <span class="op">=</span> BETA <span class="op">*</span> ALPHA <span class="op">*</span> k_next <span class="op">**</span> (ALPHA <span class="op">-</span> <span class="dv">1</span>) <span class="op">*</span> c_next <span class="op">**</span> (<span class="op">-</span>gamma)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    residual <span class="op">=</span> lhs <span class="op">-</span> rhs</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> torch.mean(residual <span class="op">**</span> <span class="dv">2</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Train</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>model_crra <span class="op">=</span> PolicyNetwork(hidden_dim<span class="op">=</span><span class="dv">64</span>).to(device)</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>opt_crra <span class="op">=</span> torch.optim.Adam(model_crra.parameters(), lr<span class="op">=</span><span class="fl">1e-3</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>sched_crra <span class="op">=</span> torch.optim.lr_scheduler.ReduceLROnPlateau(opt_crra, patience<span class="op">=</span><span class="dv">500</span>, factor<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ep <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">8000</span>):</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    k_b <span class="op">=</span> torch.FloatTensor(<span class="dv">512</span>, <span class="dv">1</span>).uniform_(K_MIN, K_MAX).to(device)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    loss <span class="op">=</span> euler_loss_crra(model_crra, k_b)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    opt_crra.zero_grad()<span class="op">;</span> loss.backward()<span class="op">;</span> opt_crra.step()</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    sched_crra.step(loss)</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (ep <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">2000</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Epoch </span><span class="sc">{</span>ep<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">: loss = </span><span class="sc">{</span>loss<span class="sc">.</span>item()<span class="sc">:.2e}</span><span class="ss">"</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare CRRA and log-utility policies</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>model_crra.<span class="bu">eval</span>()</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    c_crra <span class="op">=</span> model_crra(k_eval).cpu().numpy().flatten()</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">5</span>))</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>ax.plot(k_np, c_true, <span class="st">'k-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Log utility (analytical)'</span>)</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>ax.plot(k_np, c_nn, <span class="st">'--'</span>, color<span class="op">=</span><span class="st">'#7a2318'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Log utility (DEQN)'</span>)</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>ax.plot(k_np, c_crra, <span class="st">'-.'</span>, color<span class="op">=</span><span class="st">'#2a6e3f'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="ss">f'CRRA γ=</span><span class="sc">{</span>GAMMA<span class="sc">}</span><span class="ss"> (DEQN)'</span>)</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Capital $k$'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Consumption $c$'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Policy Functions: Log vs CRRA Utility'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"With higher risk aversion (γ=2), the agent saves more (consumes less)"</span>)</span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"at any given capital level — exactly what economic intuition predicts."</span>)</span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">→ This solution has NO closed form. The DEQN found it directly from the Euler equation."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</details>
+<hr>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key takeaways</h2>
+<ol type="1">
+<li><p><strong>DEQNs solve models by minimising equilibrium-condition residuals.</strong> No training labels, no grid, no value-function iteration. The loss function comes from economics.</p></li>
+<li><p><strong>The Euler equation becomes the loss function.</strong> <span class="math inline">\(\mathcal{L}(\theta) = \mathbb{E}[\text{Euler residual}^2]\)</span>. When <span class="math inline">\(\mathcal{L} \approx 0\)</span>, the policy function satisfies the model’s optimality conditions.</p></li>
+<li><p><strong>The network feeds its output back through itself.</strong> Today’s policy determines tomorrow’s state, and tomorrow’s policy comes from the <em>same</em> network. This self-consistency is what makes the solution an equilibrium.</p></li>
+<li><p><strong>Euler-equation errors</strong> are the standard way to assess solution quality. <span class="math inline">\(\log_{10}|\text{EE}| &lt; -3\)</span> is acceptable; <span class="math inline">\(&lt; -6\)</span> is excellent.</p></li>
+<li><p><strong>DEQNs scale to problems where grids fail.</strong> The same approach works in 1, 10, or 100 dimensions — the network doesn’t know or care about the dimensionality.</p></li>
+</ol>
+<hr>
+</section>
+<section id="whats-next" class="level2">
+<h2 class="anchored" data-anchor-id="whats-next">What’s next</h2>
+<p><strong>Week 5:</strong> We add <strong>stochastic productivity shocks</strong> — the model becomes an actual RBC framework. This requires: - Gauss–Hermite quadrature for computing expectations in the Euler equation - Modified loss functions that average over tomorrow’s uncertainty - Verification against Kydland &amp; Prescott-style simulations</p>
+<p><strong>Week 6:</strong> We tackle <strong>occasionally binding constraints</strong> (borrowing limits) — a feature that makes models much harder to solve with traditional methods but is natural with DEQNs.</p>
+<hr>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ul>
+<li>Azinovic, M., Gaegauf, L., &amp; Scheidegger, S. (2022). “Deep Equilibrium Nets.” <em>International Economic Review</em>, 63(4), 1471–1525.</li>
+<li>Scheidegger, S. (2025). <a href="https://github.com/sischei/Deep_Learning_for_Solving_And_Estimating_Dynamic_Economic_Models">Deep Learning for Solving and Estimating Dynamic Economic Models</a> — Lectures 3–4.</li>
+<li>Judd, K. (1992). “Projection Methods for Solving Aggregate Growth Models.” <em>Journal of Economic Theory</em>, 58(2), 410–452.</li>
+</ul>
+<p><em>Next week: Deep Equilibrium Networks II — Stochastic Models ⚡</em></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/juanignaciozurita\.github\.io\/juanzurita\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Juan Zurita · School of Economics, The University of Edinburgh</p>
+</div>   
+    <div class="nav-footer-center">
+<p><a href="jobmarket.qmd">Job Market</a> · <a href="cv.qmd">CV</a> · <a href="research.qmd">Research</a></p>
+</div>
+    <div class="nav-footer-right">
+<p><a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

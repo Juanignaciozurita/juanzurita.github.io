@@ -45,7 +45,7 @@ Who bears the burden of bank capital regulation? Using narratively identified ca
 
 ## Teaching
 
-I have taught macroeconomics, econometrics, forecasting, and programming/numerical methods at the University of Edinburgh, UTS, ANU, and UCA — see [Teaching](teaching.qmd) for the full list and my open [course materials](courses/pnm/index.qmd) (interactive notebooks used by my current students).
+I have taught macroeconomics, econometrics, forecasting, and programming/numerical methods at the University of Edinburgh, UTS, ANU, and UCA — see [Teaching](teaching.qmd) for the full list and my open course materials: [Programming & Numerical Methods](courses/pnm/index.qmd) and [Deep Learning for Macroeconomics](courses/dlmacro/index.qmd) (interactive notebooks used by my students).
 
 <!-- EDIT: add evaluation evidence when ready, e.g.:
 **Teaching evaluations:** overall X.X/5 (Economics 2, 2025) · X.X/5 (Programming & Numerical Methods, 2025) — [full reports](files/teaching-evaluations.pdf)

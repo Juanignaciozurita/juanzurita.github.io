@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>research – Juan Zurita</title>
+<title>Week 10: Frontiers and Course Synthesis – Juan Zurita</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,27 +23,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-befc92836a82f2ebff21c48b720c4121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-befc92836a82f2ebff21c48b720c4121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,26 +107,55 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Juan Zurita">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Week 10: Frontiers and Course Synthesis – Juan Zurita">
 <meta property="og:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/Profile.jpg">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/dlmacro/notebooks/Profile.jpg">
 <meta property="og:site_name" content="Juan Zurita">
-<meta name="twitter:title" content="Juan Zurita">
+<meta name="twitter:title" content="Week 10: Frontiers and Course Synthesis – Juan Zurita">
 <meta name="twitter:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/Profile.jpg">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/dlmacro/notebooks/Profile.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed research-page quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Juan Zurita</span>
     </a>
   </div>
@@ -102,11 +166,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./jobmarket.html"> 
+    <a class="nav-link" href="../../../jobmarket.html"> 
 <span class="menu-text">Job Market</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -115,19 +179,19 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
         <li>
-    <a class="dropdown-item" href="./research.html">
+    <a class="dropdown-item" href="../../../research.html">
  <span class="dropdown-text">Publications &amp; Working Papers</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./writing.html">
+    <a class="dropdown-item" href="../../../writing.html">
  <span class="dropdown-text">Public Writing</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./explorer.html">
+    <a class="dropdown-item" href="../../../explorer.html">
  <span class="dropdown-text">Interactive: Debt &amp; Policy</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./opencollaborations.html">
+    <a class="dropdown-item" href="../../../opencollaborations.html">
  <span class="dropdown-text">Open Collaborations</span></a>
   </li>  
     </ul>
@@ -138,41 +202,41 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-teaching">    
         <li>
-    <a class="dropdown-item" href="./teaching.html">
+    <a class="dropdown-item" href="../../../teaching.html">
  <span class="dropdown-text">Courses</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./courses/pnm/index.html">
+    <a class="dropdown-item" href="../../../courses/pnm/index.html">
  <span class="dropdown-text">Programming &amp; Numerical Methods</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./courses/dlmacro/index.html">
+    <a class="dropdown-item" href="../../../courses/dlmacro/index.html">
  <span class="dropdown-text">Deep Learning for Macroeconomics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./students.html">
+    <a class="dropdown-item" href="../../../students.html">
  <span class="dropdown-text">For Students</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./quiz.html">
+    <a class="dropdown-item" href="../../../quiz.html">
  <span class="dropdown-text">Numerical Methods Quiz</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./playground.html">
+    <a class="dropdown-item" href="../../../playground.html">
  <span class="dropdown-text">Python Playground</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./usefullinks.html">
+    <a class="dropdown-item" href="../../../usefullinks.html">
  <span class="dropdown-text">Resources</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./consulting.html"> 
+    <a class="nav-link" href="../../../consulting.html"> 
 <span class="menu-text">Consulting &amp; Policy</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html"> 
+    <a class="nav-link" href="../../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -205,166 +269,243 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Papers on this page</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#publications" id="toc-publications" class="nav-link active" data-scroll-target="#publications">Publications</a>
-  <ul>
-  <li><a href="#banking-heterogeneity-credit-supply-and-economic-growth" id="toc-banking-heterogeneity-credit-supply-and-economic-growth" class="nav-link" data-scroll-target="#banking-heterogeneity-credit-supply-and-economic-growth">Banking Heterogeneity, Credit Supply and Economic Growth</a></li>
-  <li><a href="#does-household-debt-affect-the-transmission-mechanism-of-monetary-policy" id="toc-does-household-debt-affect-the-transmission-mechanism-of-monetary-policy" class="nav-link" data-scroll-target="#does-household-debt-affect-the-transmission-mechanism-of-monetary-policy">Does household debt affect the transmission mechanism of monetary policy?</a></li>
-  <li><a href="#does-household-debt-affect-the-size-of-the-fiscal-multiplier" id="toc-does-household-debt-affect-the-size-of-the-fiscal-multiplier" class="nav-link" data-scroll-target="#does-household-debt-affect-the-size-of-the-fiscal-multiplier">Does household debt affect the size of the fiscal multiplier?</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#sequence-space-methods" id="toc-sequence-space-methods" class="nav-link" data-scroll-target="#sequence-space-methods">1. Sequence-space methods</a>
+  <ul class="collapse">
+  <li><a href="#deqns-in-sequence-space" id="toc-deqns-in-sequence-space" class="nav-link" data-scroll-target="#deqns-in-sequence-space">DEQNs in sequence space</a></li>
   </ul></li>
-  <li><a href="#working-papers" id="toc-working-papers" class="nav-link" data-scroll-target="#working-papers">Working Papers</a>
-  <ul>
-  <li><a href="#who-bears-the-burden-of-bank-capital-regulation-buffers-risk-weights-and-the-supply-of-credit" id="toc-who-bears-the-burden-of-bank-capital-regulation-buffers-risk-weights-and-the-supply-of-credit" class="nav-link" data-scroll-target="#who-bears-the-burden-of-bank-capital-regulation-buffers-risk-weights-and-the-supply-of-credit">Who Bears the Burden of Bank Capital Regulation? Buffers, Risk Weights, and the Supply of Credit</a></li>
-  <li><a href="#the-bank-profit-channel-of-monetary-policy-with-jiening-le" id="toc-the-bank-profit-channel-of-monetary-policy-with-jiening-le" class="nav-link" data-scroll-target="#the-bank-profit-channel-of-monetary-policy-with-jiening-le">The Bank Profit Channel of Monetary Policy with Jiening Le</a></li>
-  <li><a href="#labour-productivity-growth-and-the-fiscal-sustainability-programme-in-the-united-kingdom" id="toc-labour-productivity-growth-and-the-fiscal-sustainability-programme-in-the-united-kingdom" class="nav-link" data-scroll-target="#labour-productivity-growth-and-the-fiscal-sustainability-programme-in-the-united-kingdom">Labour Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom</a></li>
-  <li><a href="#household-debt-and-low-labour-productivity-implications-for-labour-supply" id="toc-household-debt-and-low-labour-productivity-implications-for-labour-supply" class="nav-link" data-scroll-target="#household-debt-and-low-labour-productivity-implications-for-labour-supply">Household Debt and Low Labour Productivity: Implications for Labour Supply</a></li>
+  <li><a href="#continuous-time-heterogeneous-agents" id="toc-continuous-time-heterogeneous-agents" class="nav-link" data-scroll-target="#continuous-time-heterogeneous-agents">2. Continuous-time heterogeneous agents</a></li>
+  <li><a href="#decision-guide-which-method-when" id="toc-decision-guide-which-method-when" class="nav-link" data-scroll-target="#decision-guide-which-method-when">3. Decision guide: which method when?</a></li>
+  <li><a href="#open-questions-and-research-frontiers" id="toc-open-questions-and-research-frontiers" class="nav-link" data-scroll-target="#open-questions-and-research-frontiers">4. Open questions and research frontiers</a></li>
+  <li><a href="#course-synthesis" id="toc-course-synthesis" class="nav-link" data-scroll-target="#course-synthesis">5. Course synthesis</a>
+  <ul class="collapse">
+  <li><a href="#the-unifying-idea" id="toc-the-unifying-idea" class="nav-link" data-scroll-target="#the-unifying-idea">The unifying idea</a></li>
   </ul></li>
-  <li><a href="#ongoing-projects" id="toc-ongoing-projects" class="nav-link" data-scroll-target="#ongoing-projects">Ongoing Projects</a>
-  <ul>
-  <li><a href="#sectorial-wage-dynamics-and-firm-productivity-with-emiliano-carlevaro." id="toc-sectorial-wage-dynamics-and-firm-productivity-with-emiliano-carlevaro." class="nav-link" data-scroll-target="#sectorial-wage-dynamics-and-firm-productivity-with-emiliano-carlevaro.">‘Sectorial Wage Dynamics and Firm Productivity’ with Emiliano Carlevaro.</a></li>
+  <li><a href="#final-exercise-choose-your-own-model" id="toc-final-exercise-choose-your-own-model" class="nav-link" data-scroll-target="#final-exercise-choose-your-own-model">Final exercise: choose your own model</a>
+  <ul class="collapse">
+  <li><a href="#course-references" id="toc-course-references" class="nav-link" data-scroll-target="#course-references">Course references</a></li>
   </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 10: Frontiers and Course Synthesis</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<p style="text-align: justify;">
-My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy.
-</p>
-<section id="publications" class="level2">
-<h2 class="anchored" data-anchor-id="publications">Publications</h2>
-<section id="banking-heterogeneity-credit-supply-and-economic-growth" class="level4 paper">
-<h4 class="anchored" data-anchor-id="banking-heterogeneity-credit-supply-and-economic-growth">Banking Heterogeneity, Credit Supply and Economic Growth</h4>
-<p><span class="journal-tag"><em>International Review of Economics and Finance</em>, 2026</span></p>
-<div class="paper-links">
-<p><a href="https://doi.org/10.1016/j.iref.2026.104921">Journal Link</a> &nbsp; <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4339446">SSRN</a> &nbsp; <a href="https://drive.google.com/file/d/1Dby9pZ6fk5J3uGjtT9oqn7JmWJp9CwQq/view?usp=sharing">Slides</a></p>
-</div>
-<details>
-<summary>
-Abstract
-</summary>
-<p>This paper demonstrates the significance of heterogeneity in bank equity size as a key dimension for quantifying the effects of local credit supply on local economic outcomes. Using newly compiled datasets from over 5000 bank balance sheets, and mortgage and business loans in the United States, we offer novel empirical evidence on the role of bank equity size heterogeneity in how local bank lending impacts local economic activity. Our results show that accounting for the features of the lender, in particular, bank equity size heterogeneity, significantly amplifies the estimated economic effects of credit supply. The impact of mortgage lending on GDP growth can be up to 60 times larger compared to models that ignore lender heterogeneity, while the effect of business lending can be up to 18 times greater when bank equity size heterogeneity is taken into account. This difference in the size of the impact between business and mortgage lending may arise because credit allocation in the business lending channel is more influenced by risk-return trade-offs than by bank equity size.</p>
-</details>
-<div class="practice">
-<p><strong>In practice:</strong> It is not just <em>how much</em> banks lend that drives local growth — it matters <em>which</em> banks are lending. Standard models that ignore lender size can understate the economic impact of credit by an order of magnitude. This matters for anyone assessing regional credit conditions, bank consolidation, or the local consequences of lending pullbacks.</p>
-</div>
-</section>
-<section id="does-household-debt-affect-the-transmission-mechanism-of-monetary-policy" class="level4 paper">
-<h4 class="anchored" data-anchor-id="does-household-debt-affect-the-transmission-mechanism-of-monetary-policy">Does household debt affect the transmission mechanism of monetary policy?</h4>
-<p><span class="journal-tag">Forthcoming, <em>Macroeconomic Dynamics</em></span></p>
-<div class="paper-links">
-<p><a href="https://drive.google.com/file/d/1vWuFSW6Wn0GZTiBAaC-48kA-jwidCV2u/view?usp=sharing">PDF</a></p>
-</div>
-<details>
-<summary>
-Abstract
-</summary>
-We investigate the effects of household debt on a monetary policy easing shock using a smooth transition vector autoregression model. Using generalized impulse response functions, we measure whether the effect of a reduction in interest rate on output is conditioned by different levels of household debt. We focus on Australia, Sweden and Norway, three developed economies with high levels of household indebtedness, and in the world’s seven largest economies. Our findings show that the short-term effects of a negative monetary policy shock are generally stronger during periods of high household debt. On average, the monetary stimulus (on impact) is 0.06% (percent of GDP) larger in Norway and the United States during periods of high household debt. Our findings also suggest high levels of household debt may diminish the persistence of monetary policy shocks in the medium term ( 4 - 8 quarters).
-</details>
-<div class="practice">
-<p><strong>In practice:</strong> In economies where households carry a lot of debt — the UK, Australia, the Nordics — a rate cut delivers a <em>bigger</em> initial boost to output, but the effect <em>fades faster</em>. Forecasts of how rate moves feed through to spending should account for the household balance sheet, not just the size of the rate change.</p>
-</div>
-</section>
-<section id="does-household-debt-affect-the-size-of-the-fiscal-multiplier" class="level4 paper">
-<h4 class="anchored" data-anchor-id="does-household-debt-affect-the-size-of-the-fiscal-multiplier">Does household debt affect the size of the fiscal multiplier?</h4>
-<p><span class="journal-tag"><em>Macroeconomic Dynamics</em>, 2024</span></p>
-<div class="paper-links">
-<p><a href="https://www.cambridge.org/core/journals/macroeconomic-dynamics/article/does-household-debt-affect-the-size-of-the-fiscal-multiplier/E0085C862359FAD3151EAB5ED42606E7">Journal Link</a></p>
-</div>
-<details>
-<summary>
-Abstract
-</summary>
-<p>Does household debt affect the size of the fiscal multiplier? We investigate the effects of household debt on government spending multipliers using a smooth transition vector autoregression model. Through generalized impulse response functions, we measure whether the effect of government spending on GDP is conditioned by different levels of household debt in Australia, Sweden, and Norway, three countries with high levels of household indebtedness, and in the world’s seven largest economies. Our results indicate that the short-term effects of government spending tend to be higher if fiscal expansion takes place during periods of low household debt. On average, the fiscal multiplier (on impact) is 0.70, 0.61, and 0.79 (percent of GDP) larger when the increase in government spending takes place during periods of low household debt for Australia, Norway, and the United States.</p>
-</details>
-<div class="practice">
-<p><strong>In practice:</strong> Fiscal stimulus buys less GDP per pound when households are already heavily leveraged — indebted households save rather than spend the extra income. The <em>timing</em> of stimulus relative to the household debt cycle is a first-order consideration for its effectiveness.</p>
-</div>
-</section>
-</section>
-<section id="working-papers" class="level2">
-<h2 class="anchored" data-anchor-id="working-papers">Working Papers</h2>
-<section id="who-bears-the-burden-of-bank-capital-regulation-buffers-risk-weights-and-the-supply-of-credit" class="level4 paper">
-<h4 class="anchored" data-anchor-id="who-bears-the-burden-of-bank-capital-regulation-buffers-risk-weights-and-the-supply-of-credit">Who Bears the Burden of Bank Capital Regulation? Buffers, Risk Weights, and the Supply of Credit</h4>
-<p><span class="journal-tag">Job Market Paper · July 2026</span></p>
-<div class="paper-links">
-<p><a href="files/jmp.pdf">PDF</a> &nbsp; <a href="./jobmarket.html">Job Market Page</a></p>
-</div>
-<details>
-<summary>
-Abstract
-</summary>
-Who bears the burden of bank capital regulation? Using narratively identified capital-requirement shocks and a quarterly panel of U.S. banks (1994–2019), we document two cross-sectional facts: within banks, commercial lending contracts more than real estate lending, reflecting differential risk weights; across banks, institutions with thin voluntary buffers cut lending most. A heterogeneous macro-banking model with precautionary buffers, solved globally and estimated on within-bank impulse responses, rationalises both facts. A one-percentage-point tightening costs 2.4–2.9 percent of credit-market surplus. Risk weights and size tiers redistribute this burden but barely change its aggregate magnitude — a gross transition cost excluding the stability benefits of capital.
-</details>
-<div class="practice">
-<p><strong>In practice:</strong> When regulators raise bank capital requirements, business lending — carrying the higher risk weight — contracts about forty percent more than mortgage lending, while consumer credit barely responds. Banks with the thinnest capital buffers absorb the largest share of the contraction. The welfare cost is 2.4–2.9% of credit-market surplus per percentage point of tightening, and the voluntary buffers that insulated most banks historically are a finite resource — large enough shocks trigger sharply non-linear credit contractions.</p>
-</div>
-</section>
-<section id="the-bank-profit-channel-of-monetary-policy-with-jiening-le" class="level4 paper">
-<h4 class="anchored" data-anchor-id="the-bank-profit-channel-of-monetary-policy-with-jiening-le">The Bank Profit Channel of Monetary Policy with Jiening Le</h4>
-<p><span class="journal-tag">Submitted 2026</span></p>
-<div class="paper-links">
-<p><a href="https://drive.google.com/file/d/1diD_WeOjfIid2flkEFpJnEuftlgbH2H8/view?usp=sharing">PDF</a> &nbsp; <a href="https://drive.google.com/file/d/1ArLDHrfQR1W1FEnfML1mB3eVsLFM2sXD/view?usp=sharing">Slides</a></p>
-</div>
-<details>
-<summary>
-Abstract
-</summary>
-How does bank-level heterogeneity in balance-sheet flexibility shape the transmission of monetary policy to bank profitability? Using high-frequency monetary policy surprises and U.S. Call Report data, we identify a pronounced heterogeneity: contractionary shocks compress net interest income significantly more for medium-sized and small banks than for large, market-funded institutions. This result is consistent with a liability-substitution channel: as policy rates rise, a shift from zero-cost deposits to interest-bearing accounts forces banks to replace cheap funding with expensive alternatives faster than assets reprice. We find this effect is non-linear: a one-standard-deviation increase in expense-channel exposure reduces net interest income by 9% for small banks and 11% for large banks, peaking at 19% for medium-sized banks. Local projection estimates show these profitability effects persist over several quarters. Our results demonstrate that the strength and distribution of funding frictions across the banking sector are key determinants of the macro-financial transmission mechanism.
-</details>
-<div class="practice">
-<p><strong>In practice:</strong> When central banks raise rates, mid-sized banks lose the most — up to 19% of net interest income — because they must replace cheap deposits with expensive funding faster than their loans reprice, and the hit persists for several quarters. Directly relevant for stress-testing bank earnings and anticipating where credit tightens first in a hiking cycle.</p>
-</div>
-</section>
-<section id="labour-productivity-growth-and-the-fiscal-sustainability-programme-in-the-united-kingdom" class="level4 paper">
-<h4 class="anchored" data-anchor-id="labour-productivity-growth-and-the-fiscal-sustainability-programme-in-the-united-kingdom">Labour Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom</h4>
-<p><span class="journal-tag">First Draft August 2025</span></p>
-<div class="paper-links">
-<p><a href="https://drive.google.com/file/d/1JgVkmJzz4pxLuUIiWGliRyAgdT616lJh/view?usp=sharing">PDF</a></p>
-</div>
-<details>
-<summary>
-Abstract
-</summary>
-This paper investigates whether higher labour productivity can support long-term fiscal consolidations in the United Kingdom. Using a dynamic stochastic general equilibrium (DSGE) framework, we study how productivity-driven growth interacts with fiscal policy choices. The results show that maintaining government spending per worker without increasing the debt-to-output ratio requires higher taxation to satisfy the intertemporal budget constraint. Capital income tax increases, while effective in restoring fiscal balance, hinder capital accumulation and long-term growth. Consumption tax hikes generate substantial short-term volatility in the spending-to-output ratio, whereas labour tax increases create fewer distortions, as households adjust labour supply. This paper shows that productivity gains cannot replace fiscal discipline. Sustainable growth and stable debt depend on the careful design of tax policy.
-</details>
-<div class="practice">
-<p><strong>In practice:</strong> For the UK fiscal debate: productivity growth alone will not stabilise the public finances — the tax mix does the heavy lifting. Capital taxes repair the budget but damage long-run growth; consumption taxes create volatility; labour taxes are the least distortive of the three.</p>
-</div>
-</section>
-<section id="household-debt-and-low-labour-productivity-implications-for-labour-supply" class="level4 paper">
-<h4 class="anchored" data-anchor-id="household-debt-and-low-labour-productivity-implications-for-labour-supply">Household Debt and Low Labour Productivity: Implications for Labour Supply</h4>
-<p><span class="journal-tag">Last Draft February 2025</span></p>
-<div class="paper-links">
-<p><a href="https://drive.google.com/file/d/1bk0tOJG1OltBlP65bNc36uaxvYBBRnR6/view?usp=sharing">PDF</a></p>
-</div>
-<details>
-<summary>
-Abstract
-</summary>
-This paper investigates the labour supply response of households under high debt burdens in the context of declining labour productivity. Using microdata from the Australian economy, we show that middle-aged individuals whose annual mortgage repayments exceed 20% of household income significantly increase their labour supply in response to rising repayment obligations. Furthermore, employing an incomplete market model, we analyze the transition between steady states under productivity shocks, revealing that higher debt amplifies household reliance on labour income, potentially reducing economic resilience. Our findings provide critical insights into the interplay between household finance and labour supply decisions, particularly in highly indebted economies with stagnant productivity growth, contributing to ongoing debates in labour economics and macroeconomic stability.
-</details>
-<div class="practice">
-<p><strong>In practice:</strong> Households under mortgage pressure — repayments above 20% of income — respond by working <em>more</em>, not cutting back elsewhere. High household debt therefore makes labour supply more sensitive to repayment shocks, and leaves indebted economies with less slack to absorb downturns.</p>
-</div>
-</section>
-</section>
-<section id="ongoing-projects" class="level2">
-<h2 class="anchored" data-anchor-id="ongoing-projects">Ongoing Projects</h2>
-<section id="sectorial-wage-dynamics-and-firm-productivity-with-emiliano-carlevaro." class="level4">
-<h4 class="anchored" data-anchor-id="sectorial-wage-dynamics-and-firm-productivity-with-emiliano-carlevaro.">‘Sectorial Wage Dynamics and Firm Productivity’ with Emiliano Carlevaro.</h4>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Deep Learning for Macroeconomics</strong> — Honours, The University of Edinburgh<br>
+Instructor: Juan Zurita · <a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a></p>
 <hr>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<p>By the end of this notebook you will be able to:</p>
+<ol type="1">
+<li>Describe <strong>sequence-space methods</strong> and how they relate to DEQNs</li>
+<li>Understand the basics of <strong>continuous-time heterogeneous-agent models</strong></li>
+<li>Choose the <strong>right computational method</strong> for a given economic model</li>
+<li>Identify <strong>open research questions</strong> at the frontier of computational macro</li>
+</ol>
+<hr>
+<div id="ee77c3c8" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>torch.manual_seed(<span class="dv">42</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> <span class="st">'cuda'</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">'cpu'</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"PyTorch </span><span class="sc">{</span>torch<span class="sc">.</span>__version__<span class="sc">}</span><span class="ss"> on </span><span class="sc">{</span>device<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="sequence-space-methods" class="level2">
+<h2 class="anchored" data-anchor-id="sequence-space-methods">1. Sequence-space methods</h2>
+<p>An alternative to recursive methods: solve for the entire <strong>sequence</strong> of equilibrium objects <span class="math inline">\(\{c_t, k_t\}_{t=0}^T\)</span> simultaneously.</p>
+<p><strong>Auclert et al.&nbsp;(2021)</strong> showed that many HA models can be solved efficiently in sequence space using Jacobians — and neural networks can represent these Jacobians.</p>
+<section id="deqns-in-sequence-space" class="level3">
+<h3 class="anchored" data-anchor-id="deqns-in-sequence-space">DEQNs in sequence space</h3>
+<p>Instead of parameterising <span class="math inline">\(c(k, z; \theta)\)</span> recursively, parameterise the <em>history-dependent</em> policy: <span class="math display">\[c_t = \text{NN}(k_0, z_0, z_1, \ldots, z_t; \theta)\]</span></p>
+<p>This is what Scheidegger calls <strong>Sequence-Space DEQNs</strong> (Lecture 10).</p>
+</section>
+</section>
+<section id="continuous-time-heterogeneous-agents" class="level2">
+<h2 class="anchored" data-anchor-id="continuous-time-heterogeneous-agents">2. Continuous-time heterogeneous agents</h2>
+<p>The HJB-KFE system for continuous-time HA models:</p>
+<p><span class="math display">\[\rho V(a, z) = \max_c \big\{ u(c) + V_a(a,z) [ra + wz - c] \big\} + \text{(shock transition terms)}\]</span></p>
+<p><span class="math display">\[0 = -\frac{\partial}{\partial a}[s(a,z) g(a,z)] + \text{(shock transition terms)}\]</span></p>
+<p>where <span class="math inline">\(g(a,z)\)</span> is the stationary distribution. PINNs solve both equations simultaneously — a powerful approach pioneered by Fernández-Villaverde, Hurtado &amp; Nuño (2023).</p>
+</section>
+<section id="decision-guide-which-method-when" class="level2">
+<h2 class="anchored" data-anchor-id="decision-guide-which-method-when">3. Decision guide: which method when?</h2>
+<pre><code>START
+  │
+  ├─ Dimensions ≤ 3? ──── YES ──→ VFI or projection (PNM methods)
+  │                                 Fast, well-understood, guaranteed convergence
+  │
+  ├─ Continuous time? ──── YES ──→ PINNs (Week 7)
+  │                                 Natural for HJB/KFE systems
+  │
+  ├─ Occasionally binding constraints? ── YES ──→ DEQNs + Fischer-Burmeister (Week 6)
+  │                                               Handles kinks naturally
+  │
+  ├─ Heterogeneous agents? ── YES ──→ DEQNs + Young's method (Week 8)
+  │                                    Scales beyond Krusell-Smith moments
+  │
+  ├─ Need estimation? ── YES ──→ Surrogates + SMM (Week 9)
+  │                               Fast gradient-based optimisation
+  │
+  └─ High-dimensional (10+ states)? ── YES ──→ DEQNs (Weeks 4-5)
+                                                Only feasible approach</code></pre>
+</section>
+<section id="open-questions-and-research-frontiers" class="level2">
+<h2 class="anchored" data-anchor-id="open-questions-and-research-frontiers">4. Open questions and research frontiers</h2>
+<ol type="1">
+<li><p><strong>Convergence guarantees for DEQNs</strong> — gradient descent can get stuck in local minima. When can we guarantee global convergence?</p></li>
+<li><p><strong>Transfer learning across models</strong> — can a network trained on one calibration be fine-tuned for another? (Huge speed-up for estimation)</p></li>
+<li><p><strong>Real-time model solving</strong> — can we solve DSGE models fast enough for nowcasting and real-time policy analysis?</p></li>
+<li><p><strong>Interpretability</strong> — can we extract economic insights from trained networks? (Feature importance, attention maps)</p></li>
+<li><p><strong>Multi-agent deep learning</strong> — can we solve game-theoretic models (multiple interacting agents) with neural networks?</p></li>
+</ol>
+</section>
+<section id="course-synthesis" class="level2">
+<h2 class="anchored" data-anchor-id="course-synthesis">5. Course synthesis</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 19%">
+<col style="width: 33%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Week</th>
+<th style="text-align: left;">Topic</th>
+<th style="text-align: left;">Key method</th>
+<th style="text-align: left;">Key model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Neural networks as approximators</td>
+<td style="text-align: left;">MLP, PyTorch</td>
+<td style="text-align: left;">Brock–Mirman (supervised)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Deep learning fundamentals</td>
+<td style="text-align: left;">Backprop, Adam</td>
+<td style="text-align: left;">Function approximation</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Automatic differentiation</td>
+<td style="text-align: left;">Autograd</td>
+<td style="text-align: left;">Economic derivatives</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><strong>DEQNs I</strong></td>
+<td style="text-align: left;">Euler residual loss</td>
+<td style="text-align: left;">Deterministic growth</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><strong>DEQNs II</strong></td>
+<td style="text-align: left;">Quadrature for expectations</td>
+<td style="text-align: left;">Stochastic RBC</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Constraints</td>
+<td style="text-align: left;">Fischer–Burmeister</td>
+<td style="text-align: left;">Consumption–savings</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><strong>PINNs</strong></td>
+<td style="text-align: left;">PDE residual loss</td>
+<td style="text-align: left;">Cake-eating HJB</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">Heterogeneous agents</td>
+<td style="text-align: left;">Young’s method + DEQN</td>
+<td style="text-align: left;">Aiyagari / Krusell–Smith</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Surrogates &amp; estimation</td>
+<td style="text-align: left;">GP, SMM</td>
+<td style="text-align: left;">DICE climate model</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Frontiers</td>
+<td style="text-align: left;">Sequence-space, continuous-time HA</td>
+<td style="text-align: left;">Research directions</td>
+</tr>
+</tbody>
+</table>
+<section id="the-unifying-idea" class="level3">
+<h3 class="anchored" data-anchor-id="the-unifying-idea">The unifying idea</h3>
+<p>Every method in this course follows the same pattern:</p>
+<ol type="1">
+<li><strong>Parameterise</strong> the unknown function (policy, value, distribution) as a neural network</li>
+<li><strong>Define a loss</strong> from the model’s own equations (Euler, HJB, complementarity, PDE residual)</li>
+<li><strong>Minimise</strong> the loss using gradient descent + automatic differentiation</li>
+<li><strong>Verify</strong> using Euler-equation errors, simulation, or comparison to known solutions</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="final-exercise-choose-your-own-model" class="level2">
+<h2 class="anchored" data-anchor-id="final-exercise-choose-your-own-model">Final exercise: choose your own model</h2>
+<p>Pick a dynamic economic model from your macroeconomics courses (or from research papers) and:</p>
+<ol type="1">
+<li>Write down the equilibrium conditions</li>
+<li>Identify which method from this course is most appropriate</li>
+<li>Implement a DEQN (or PINN) solution</li>
+<li>Verify your solution and compute Euler-equation errors</li>
+</ol>
+<p>This could be the start of a dissertation chapter or an Honours thesis project.</p>
+<hr>
+<section id="course-references" class="level3">
+<h3 class="anchored" data-anchor-id="course-references">Course references</h3>
+<ul>
+<li>Azinovic, M., Gaegauf, L., &amp; Scheidegger, S. (2022). “Deep Equilibrium Nets.” <em>International Economic Review</em>, 63(4).</li>
+<li>Scheidegger, S. (2025). <a href="https://github.com/sischei/Deep_Learning_for_Solving_And_Estimating_Dynamic_Economic_Models">Deep Learning for Solving and Estimating Dynamic Economic Models</a>.</li>
+<li>Fernández-Villaverde, J., Hurtado, S., &amp; Nuño, G. (2023). “Financial Frictions and the Wealth Distribution.” <em>Econometrica</em>, 91(4).</li>
+<li>Auclert, A., Bardóczy, B., Rognlie, M., &amp; Straub, L. (2021). “Using the Sequence-Space Jacobian to Solve and Estimate Heterogeneous-Agent Models.” <em>Econometrica</em>, 89(5).</li>
+<li>Nordhaus, W. (2017). “Revisiting the Social Cost of Carbon.” <em>PNAS</em>, 114(7).</li>
+</ul>
+<p><em>Thank you for taking this course. Good luck with your research!</em></p>
 
 
 </section>
@@ -778,7 +919,7 @@ This paper investigates the labour supply response of households under high debt
 <p>Juan Zurita · School of Economics, The University of Edinburgh</p>
 </div>   
     <div class="nav-footer-center">
-<p><a href="./jobmarket.html">Job Market</a> · <a href="./cv.html">CV</a> · <a href="./research.html">Research</a></p>
+<p><a href="jobmarket.qmd">Job Market</a> · <a href="cv.qmd">CV</a> · <a href="research.qmd">Research</a></p>
 </div>
     <div class="nav-footer-right">
 <p><a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a></p>
