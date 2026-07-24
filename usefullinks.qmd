@@ -41,7 +41,7 @@ Tutorials for when you need serious speed (structural models, large simulations)
 
 Arthur Turrell's free book: Python, data, and good practice — written for economists.
 
-🔗 [Link](https://aeturrell.github.io/coding-for-economists/intro.html)
+🔗 [Link](https://aeturrell.github.io/coding-for-economists/)
 :::
 
 ::: {.card}
@@ -49,7 +49,7 @@ Arthur Turrell's free book: Python, data, and good practice — written for econ
 
 Gentzkow & Shapiro's classic guide to organising code and data so your project doesn't collapse.
 
-🔗 [Link](https://www.brown.edu/Research/Shapiro/pdfs/CodeAndData.pdf)
+🔗 [Link](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf)
 :::
 
 ::: {.card}
@@ -211,7 +211,7 @@ Deirdre McCloskey's principles of clear economics writing, in a short PDF.
 
 John Cochrane's famous guide — blunt, practical, and just as useful for a dissertation.
 
-🔗 [Link](https://static1.squarespace.com/static/5e6033a4ea02d801f37e15bb/t/5eda74919c44fa5f87452697/1591374993570/phd_paper_writing.pdf)
+🔗 [Link](https://www.johnhcochrane.com/research-all/writing-tips-for-phd-studentsnbsp)
 :::
 
 ::: {.card}
@@ -219,7 +219,7 @@ John Cochrane's famous guide — blunt, practical, and just as useful for a diss
 
 Keith Head's recipe for the hardest part of any paper: the introduction.
 
-🔗 [Link](http://blogs.ubc.ca/khead/research/research-advice/formula)
+🔗 [Link](https://blogs.ubc.ca/khead/research/research-advice/formula)
 :::
 
 ::: {.card}
@@ -227,7 +227,7 @@ Keith Head's recipe for the hardest part of any paper: the introduction.
 
 Jesse Shapiro's systematic method for going from question to paper.
 
-🔗 [Link](https://www.brown.edu/Research/Shapiro/pdfs/foursteps.pdf)
+🔗 [Link](https://scholar.harvard.edu/files/shapiro/files/foursteps.pdf)
 :::
 
 :::
@@ -267,7 +267,7 @@ Kieran Healy's free book on making figures that actually communicate.
 
 Paul Goldsmith-Pinkham's gallery of great figures — steal ideas from the best.
 
-🔗 [Link](https://paulgp.github.io/best_figures.html)
+🔗 [Link](https://paulgp.github.io/blog.html)
 :::
 
 :::
@@ -283,7 +283,7 @@ Paul Goldsmith-Pinkham's gallery of great figures — steal ideas from the best.
 
 Amy Finkelstein on how empirical research actually gets done — false starts included.
 
-🔗 [Link](http://wenxingxiang.weebly.com/uploads/6/0/5/1/60518841/an_unofficial_guide_to_trying_to_doempirical_work.pdf)
+🔗 [Link](http://econ.lse.ac.uk/staff/spischke/phds/)
 :::
 
 ::: {.card}
