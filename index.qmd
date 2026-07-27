@@ -82,7 +82,7 @@ I am a Lecturer in Economics at the School of Economics at the University of Edi
 ## Research Highlights
 ::: {.justified-list}
 - **July 2026**: Job Market Paper: ["*Who Bears the Burden of Bank Capital Regulation? Buffers, Risk Weights, and the Supply of Credit*"](jobmarket.qmd) — new draft circulated
-- **May 2026**: My paper ["*Does Household Debt affect the Transmission Mechanism of Monetary Policy*"](https://drive.google.com/file/d/1vWuFSW6Wn0GZTiBAaC-48kA-jwidCV2u/view?usp=sharing) has been accepted at _Macroeconomic Dynamics_
+- **May 2026**: My paper ["*Does Household Debt affect the Transmission Mechanism of Monetary Policy*"](https://drive.google.com/file/d/1vWuFSW6Wn0GZTiBAaC-48kA-jwidCV2u/view?usp=sharing) has been published in _Macroeconomic Dynamics_
 - **March 2026**: New Working Paper: ["*The Bank Profit Channel of Monetary Policy*"](https://drive.google.com/file/d/1diD_WeOjfIid2flkEFpJnEuftlgbH2H8/view?usp=sharing) with Jiening Le
 - **February 2026**: My project [“*Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom*”](https://drive.google.com/file/d/1JgVkmJzz4pxLuUIiWGliRyAgdT616lJh/view?usp=sharing) has received funding from the Royal Society of Edinburgh.
 - **January 2026**: My paper [*Banking Heterogeneity, Credit Supply and Economic Growth*](https://doi.org/10.1016/j.iref.2026.104921) ([Slides](https://drive.google.com/file/d/1Dby9pZ6fk5J3uGjtT9oqn7JmWJp9CwQq/view?usp=sharing)) has been published at the International Review of Economics and Finance.

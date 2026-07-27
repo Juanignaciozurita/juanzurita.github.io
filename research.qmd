@@ -41,7 +41,7 @@ This paper demonstrates the significance of heterogeneity in bank equity size as
 ::: {.paper}
 
 #### Does household debt affect the transmission mechanism of monetary policy?
-<span class="journal-tag">Forthcoming, _Macroeconomic Dynamics_</span>
+<span class="journal-tag">_Macroeconomic Dynamics_, 2026</span>
 
 
 ::: {.paper-links}
@@ -183,7 +183,7 @@ indebted economies with stagnant productivity growth, contributing to ongoing de
 
 ## Ongoing Projects
 
-#### ‘Sectorial Wage Dynamics and Firm Productivity’ with Emiliano Carlevaro.
+#### ‘Earnings Risk and Business Cycles in a Volatile Economy’ with Emiliano Carlevaro.
 
 
 
