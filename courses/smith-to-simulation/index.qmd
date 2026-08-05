@@ -1,0 +1,69 @@
+---
+title: "From Smith to Simulation"
+subtitle: "Computing the Ideas that Built Economics — The University of Edinburgh"
+title-block-banner: true
+toc: true
+---
+
+<p style="text-align: justify;">
+A 10-week course pairing the **history of economic thought** with **computational exercises in Python**. Each module tells the story of a transformative idea — from Adam Smith's invisible hand to Piketty's inequality dynamics — then teaches you to build, solve, and simulate the model behind it. No prior programming experience is assumed; the course teaches Python as it goes. All materials are open access.
+</p>
+
+## How to use these materials
+
+Each week has a **notebook** you can read online, download, or run in the cloud, plus a **slide deck** for the lecture:
+
+- **Read online** — click the notebook link; it renders as a webpage with all code and output.
+- **Run in Google Colab** — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.
+- **Run locally** — install [Anaconda](https://www.anaconda.com/download) (includes Python, Jupyter, NumPy, and Matplotlib), then download the `.ipynb` file and open it in Jupyter.
+
+## Materials
+
+| Week | Topic | Notebook | Slides | Colab |
+|:----:|:------|:---------|:-------|:------|
+| 1 | The Invisible Hand — Adam Smith & Market Equilibrium | [View](Module_01_Invisible_Hand.ipynb) | [PDF](slides/Module_01_Invisible_Hand.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_01_Invisible_Hand.ipynb) |
+| 2 | The Pin Factory — Division of Labour & Comparative Advantage | [View](Module_02_Pin_Factory.ipynb) | [PDF](slides/Module_02_Pin_Factory.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_02_Pin_Factory.ipynb) |
+| 3 | Malthus & Ricardo — Population, Land, and the Limits to Growth | [View](Module_02_Malthus_Ricardo.ipynb) | [PDF](slides/Module_03_Malthus_Ricardo.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_02_Malthus_Ricardo.ipynb) |
+| 4 | Marx & the Machinery Question — Capital and the Labour Share | [View](Module_04_Marx.ipynb) | [PDF](slides/Module_04_Marx.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_04_Marx.ipynb) |
+| 5 | The Marginalist Revolution — Utility, Optimisation & Neoclassical Economics | [View](Module_05_Marginalists.ipynb) | [PDF](slides/Module_05_Marginalists.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_05_Marginalists.ipynb) |
+| 6 | Keynes & the Multiplier — Aggregate Demand and Fiscal Policy | [View](Module_03_Keynes_Multiplier.ipynb) | [PDF](slides/Module_06_Keynes.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_03_Keynes_Multiplier.ipynb) |
+| 7 | The Solow Growth Model — Capital Accumulation and Steady States | [View](Module_07_Solow.ipynb) | [PDF](slides/Module_07_Solow.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_07_Solow.ipynb) |
+| 8 | Expectations & the Lucas Critique — Why Policy Rules Matter | [View](Module_08_Expectations.ipynb) | [PDF](slides/Module_08_Expectations.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_08_Expectations.ipynb) |
+| 9 | Inequality & Distribution — Piketty, Markov Chains & the Wealth Distribution | [View](Module_09_Inequality.ipynb) | [PDF](slides/Module_09_Inequality.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_09_Inequality.ipynb) |
+| 10 | Edinburgh's Legacy — Market Failures, Externalities & the Future | [View](Module_10_Edinburgh_Legacy.ipynb) | [PDF](slides/Module_10_Edinburgh_Legacy.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_10_Edinburgh_Legacy.ipynb) |
+
+*Each notebook includes interactive exercises with hidden solutions — try first, then click to check.*
+
+**Full syllabus:** [View](syllabus.ipynb) · [PDF](syllabus.pdf)
+
+## Syllabus
+
+1. The Invisible Hand — Adam Smith and market equilibrium
+2. The Pin Factory — division of labour, specialisation, and trade
+3. Malthus & Ricardo — population, diminishing returns, and the Malthusian trap
+4. Marx & the Machinery Question — surplus value, capital, and the labour share
+5. The Marginalist Revolution — marginal utility, consumer choice, and demand
+6. Keynes & the Multiplier — the Great Depression, aggregate demand, and fiscal policy
+7. The Solow Growth Model — capital accumulation, steady states, and the sources of growth
+8. Expectations & the Lucas Critique — adaptive vs rational expectations
+9. Inequality & Distribution — Markov chains, wealth simulation, and the Gini coefficient
+10. Edinburgh's Legacy — externalities, information asymmetry, and the future of economics
+
+## Assessment
+
+- Weekly quizzes: 20%
+- Computational essays (3 over the term): 40%
+- Final project: 30%
+- Participation: 10%
+
+## References
+
+- Smith, A. *The Wealth of Nations* (1776) — available free at [econlib.org](https://www.econlib.org/library/Smith/smWN.html)
+- Heilbroner, R. *The Worldly Philosophers* — the narrative backbone for the course
+- Broadie, A. *The Scottish Enlightenment* — intellectual context for Edinburgh's role
+- Romer, D. *Advanced Macroeconomics* — reference for Solow, expectations, and growth
+- Piketty, T. *Capital in the Twenty-First Century* — inequality and distribution
+
+## Questions
+
+Found an error in a notebook, or stuck on setup? Email [juan.zurita@ed.ac.uk](mailto:juan.zurita@ed.ac.uk).
