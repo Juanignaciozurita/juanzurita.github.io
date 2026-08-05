@@ -1,6 +1,20 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "courses/dlmacro/**"
+    - "courses/pnm/index.qmd"
+    - "courses/smith-to-simulation/index.qmd"
+    - "courses/smith-to-simulation/*.ipynb"
+  resources:
+    - "courses/pnm/files/**"
+    - "courses/pnm/psets/**"
+    - "courses/pnm/slides/**"
+    - "courses/pnm/notebooks/**"
+    - "courses/pnm/New Problem Sets/**"
+    - "courses/smith-to-simulation/slides/**"
+    - "courses/smith-to-simulation/*.pdf"
 
 website:
   title: "Juan Zurita"
@@ -46,6 +60,8 @@ website:
             href: courses/pnm/index.qmd
           - text: "Deep Learning for Macroeconomics"
             href: courses/dlmacro/index.qmd
+          - text: "From Smith to Simulation"
+            href: courses/smith-to-simulation/index.qmd
           - text: For Students
             href: students.qmd
           - text: Numerical Methods Quiz

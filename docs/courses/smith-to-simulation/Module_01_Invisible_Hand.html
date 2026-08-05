@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Module 1 — The Invisible Hand – Juan Zurita</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-befc92836a82f2ebff21c48b720c4121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Module 1 — The Invisible Hand – Juan Zurita">
+<meta property="og:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/smith-to-simulation/Profile.jpg">
+<meta property="og:site_name" content="Juan Zurita">
+<meta name="twitter:title" content="Module 1 — The Invisible Hand – Juan Zurita">
+<meta name="twitter:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/smith-to-simulation/Profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Juan Zurita</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../jobmarket.html"> 
+<span class="menu-text">Job Market</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Research</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
+        <li>
+    <a class="dropdown-item" href="../../research.html">
+ <span class="dropdown-text">Publications &amp; Working Papers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../writing.html">
+ <span class="dropdown-text">Public Writing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../explorer.html">
+ <span class="dropdown-text">Interactive: Debt &amp; Policy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../opencollaborations.html">
+ <span class="dropdown-text">Open Collaborations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teaching" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teaching</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teaching">    
+        <li>
+    <a class="dropdown-item" href="../../teaching.html">
+ <span class="dropdown-text">Courses</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../courses/pnm/index.html">
+ <span class="dropdown-text">Programming &amp; Numerical Methods</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../courses/dlmacro/index.html">
+ <span class="dropdown-text">Deep Learning for Macroeconomics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../courses/smith-to-simulation/index.html">
+ <span class="dropdown-text">From Smith to Simulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../students.html">
+ <span class="dropdown-text">For Students</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../quiz.html">
+ <span class="dropdown-text">Numerical Methods Quiz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../playground.html">
+ <span class="dropdown-text">Python Playground</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usefullinks.html">
+ <span class="dropdown-text">Resources</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../consulting.html"> 
+<span class="menu-text">Consulting &amp; Policy</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Juanignaciozurita"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/juan-ignacio-z-4b345425/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/juanignaciozurita/"> <i class="bi bi-instagram" role="img" aria-label="Instagram">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:juan.zurita@ed.ac.uk"> <i class="bi bi-envelope-fill" role="img" aria-label="Email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#adam-smith-and-market-equilibrium" id="toc-adam-smith-and-market-equilibrium" class="nav-link active" data-scroll-target="#adam-smith-and-market-equilibrium">Adam Smith and Market Equilibrium</a></li>
+  <li><a href="#part-i-the-history" id="toc-part-i-the-history" class="nav-link" data-scroll-target="#part-i-the-history">Part I — The History</a>
+  <ul class="collapse">
+  <li><a href="#edinburgh-1776" id="toc-edinburgh-1776" class="nav-link" data-scroll-target="#edinburgh-1776">Edinburgh, 1776</a></li>
+  <li><a href="#the-world-smith-lived-in" id="toc-the-world-smith-lived-in" class="nav-link" data-scroll-target="#the-world-smith-lived-in">The World Smith Lived In</a></li>
+  <li><a href="#the-scottish-enlightenment" id="toc-the-scottish-enlightenment" class="nav-link" data-scroll-target="#the-scottish-enlightenment">The Scottish Enlightenment</a></li>
+  <li><a href="#how-markets-work-supply-and-demand" id="toc-how-markets-work-supply-and-demand" class="nav-link" data-scroll-target="#how-markets-work-supply-and-demand">How Markets Work: Supply and Demand</a></li>
+  </ul></li>
+  <li><a href="#part-ii-the-computation" id="toc-part-ii-the-computation" class="nav-link" data-scroll-target="#part-ii-the-computation">Part II — The Computation</a>
+  <ul class="collapse">
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up">Setting Up</a></li>
+  <li><a href="#supply-and-demand-as-functions" id="toc-supply-and-demand-as-functions" class="nav-link" data-scroll-target="#supply-and-demand-as-functions">Supply and Demand as Functions</a></li>
+  <li><a href="#plotting-the-market" id="toc-plotting-the-market" class="nav-link" data-scroll-target="#plotting-the-market">Plotting the Market</a></li>
+  <li><a href="#excess-demand" id="toc-excess-demand" class="nav-link" data-scroll-target="#excess-demand">Excess Demand</a></li>
+  <li><a href="#finding-equilibrium-with-fsolve" id="toc-finding-equilibrium-with-fsolve" class="nav-link" data-scroll-target="#finding-equilibrium-with-fsolve">Finding Equilibrium with <code>fsolve</code></a></li>
+  <li><a href="#what-happens-when-the-government-intervenes-price-floors" id="toc-what-happens-when-the-government-intervenes-price-floors" class="nav-link" data-scroll-target="#what-happens-when-the-government-intervenes-price-floors">What Happens When the Government Intervenes? Price Floors</a></li>
+  <li><a href="#a-nonlinear-market-why-we-need-computers" id="toc-a-nonlinear-market-why-we-need-computers" class="nav-link" data-scroll-target="#a-nonlinear-market-why-we-need-computers">A Nonlinear Market: Why We Need Computers</a></li>
+  <li><a href="#simulating-the-invisible-hand-convergence-to-equilibrium" id="toc-simulating-the-invisible-hand-convergence-to-equilibrium" class="nav-link" data-scroll-target="#simulating-the-invisible-hand-convergence-to-equilibrium">Simulating the Invisible Hand: Convergence to Equilibrium</a></li>
+  </ul></li>
+  <li><a href="#part-iii-exercises" id="toc-part-iii-exercises" class="nav-link" data-scroll-target="#part-iii-exercises">Part III — Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1-a-tax-on-oats" id="toc-exercise-1-a-tax-on-oats" class="nav-link" data-scroll-target="#exercise-1-a-tax-on-oats">Exercise 1 — A Tax on Oats</a></li>
+  <li><a href="#exercise-2-the-corn-laws" id="toc-exercise-2-the-corn-laws" class="nav-link" data-scroll-target="#exercise-2-the-corn-laws">Exercise 2 — The Corn Laws</a></li>
+  <li><a href="#exercise-3-does-the-starting-guess-matter" id="toc-exercise-3-does-the-starting-guess-matter" class="nav-link" data-scroll-target="#exercise-3-does-the-starting-guess-matter">Exercise 3 — Does the Starting Guess Matter?</a></li>
+  </ul></li>
+  <li><a href="#part-iv-quiz" id="toc-part-iv-quiz" class="nav-link" data-scroll-target="#part-iv-quiz">Part IV — Quiz</a>
+  <ul class="collapse">
+  <li><a href="#conceptual-questions" id="toc-conceptual-questions" class="nav-link" data-scroll-target="#conceptual-questions">Conceptual Questions</a></li>
+  <li><a href="#computational-questions" id="toc-computational-questions" class="nav-link" data-scroll-target="#computational-questions">Computational Questions</a></li>
+  <li><a href="#quiz-answers" id="toc-quiz-answers" class="nav-link" data-scroll-target="#quiz-answers">Quiz Answers</a></li>
+  </ul></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Module 1 — The Invisible Hand</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="adam-smith-and-market-equilibrium" class="level2">
+<h2 class="anchored" data-anchor-id="adam-smith-and-market-equilibrium">Adam Smith and Market Equilibrium</h2>
+<p><strong>From Smith to Simulation: Computing the Ideas that Built Economics</strong><br>
+The University of Edinburgh · School of Economics</p>
+<hr>
+</section>
+<section id="part-i-the-history" class="level2">
+<h2 class="anchored" data-anchor-id="part-i-the-history">Part I — The History</h2>
+<section id="edinburgh-1776" class="level3">
+<h3 class="anchored" data-anchor-id="edinburgh-1776">Edinburgh, 1776</h3>
+<p>In March 1776, a retired professor of moral philosophy published a book in London. He had spent ten years writing it — mostly in his mother’s house in Kirkcaldy, a small fishing town across the Firth of Forth from Edinburgh. The book was called <em>An Inquiry into the Nature and Causes of the Wealth of Nations</em>, and it changed everything.</p>
+<p>The professor was <strong>Adam Smith</strong> (1723–1790), and the book we now call <em>The Wealth of Nations</em> is the founding text of modern economics.</p>
+</section>
+<section id="the-world-smith-lived-in" class="level3">
+<h3 class="anchored" data-anchor-id="the-world-smith-lived-in">The World Smith Lived In</h3>
+<p>To understand what Smith was doing, you need to understand what he was arguing <em>against</em>. In 1776, most European governments practised <strong>mercantilism</strong> — the belief that national wealth meant hoarding gold and silver. Governments set tariffs, granted monopolies, banned exports of raw materials, and micro-managed trade. The economy was something to be <em>directed</em> from above.</p>
+<p>Smith’s radical claim was that this was not only unnecessary but counterproductive. He argued that when individuals are left to pursue their own self-interest in competitive markets, they end up — almost by accident — producing outcomes that benefit society as a whole.</p>
+<blockquote class="blockquote">
+<p><em>“It is not from the benevolence of the butcher, the brewer, or the baker that we expect our dinner, but from their regard to their own interest.”</em><br>
+— Adam Smith, <em>The Wealth of Nations</em>, Book I, Chapter 2</p>
+</blockquote>
+<p>This is the idea of the <strong>invisible hand</strong>: no one plans the economy, yet bread gets baked, shoes get made, and goods reach the people who want them — all through the decentralised mechanism of prices and markets.</p>
+</section>
+<section id="the-scottish-enlightenment" class="level3">
+<h3 class="anchored" data-anchor-id="the-scottish-enlightenment">The Scottish Enlightenment</h3>
+<p>Smith was not working in isolation. He was part of the <strong>Scottish Enlightenment</strong>, one of the most extraordinary periods of intellectual creativity in European history. In 18th-century Edinburgh, Smith’s circle included:</p>
+<ul>
+<li><strong>David Hume</strong> — philosopher, historian, and Smith’s closest friend. Hume’s radical empiricism (“we can only know what we observe”) shaped Smith’s method.</li>
+<li><strong>Joseph Black</strong> — chemist who discovered latent heat, right here at the University of Edinburgh.</li>
+<li><strong>James Hutton</strong> — geologist who realised the Earth was unimaginably old.</li>
+<li><strong>Adam Ferguson</strong> — philosopher who coined the phrase “civil society.”</li>
+</ul>
+<p>What these thinkers shared was a commitment to understanding the world through careful observation and systematic reasoning — not through appeals to authority or tradition. Smith applied this empirical method to the economy: he walked through factories, studied trade records, and talked to merchants. The pin factory that opens <em>The Wealth of Nations</em> (which we’ll explore in Week 2) was a real place he visited.</p>
+<p><strong>Edinburgh connection.</strong> Smith attended the University of Edinburgh before going to Oxford (which he found vastly inferior — he said the professors at Oxford had “given up altogether even the pretence of teaching”). He later returned to Edinburgh and lived the last years of his life at Panmure House on the Canongate, just off the Royal Mile. You can still visit it today.</p>
+</section>
+<section id="how-markets-work-supply-and-demand" class="level3">
+<h3 class="anchored" data-anchor-id="how-markets-work-supply-and-demand">How Markets Work: Supply and Demand</h3>
+<p>Smith didn’t use supply and demand curves — those came later, with Alfred Marshall in the 1890s. But the <em>logic</em> is already in Smith’s writing. He distinguished between:</p>
+<ul>
+<li>The <strong>natural price</strong> — what a good costs to produce (including wages, rent, and profit at their “ordinary” rates).</li>
+<li>The <strong>market price</strong> — what the good actually sells for, determined by the balance of supply and demand.</li>
+</ul>
+<p>When the market price is above the natural price, sellers earn extra profits, which attracts new sellers into the market, which increases supply, which pushes the price back down. When the market price is below the natural price, sellers leave, supply falls, and the price rises. The market gravitates toward the natural price — without anyone directing it.</p>
+<blockquote class="blockquote">
+<p><em>“The natural price, therefore, is, as it were, the central price, to which the prices of all commodities are continually gravitating.”</em><br>
+— Adam Smith, <em>The Wealth of Nations</em>, Book I, Chapter 7</p>
+</blockquote>
+<p>This is the invisible hand at work. And in this module, we are going to <em>compute</em> it.</p>
+<hr>
+</section>
+</section>
+<section id="part-ii-the-computation" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii-the-computation">Part II — The Computation</h2>
+<section id="setting-up" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up">Setting Up</h3>
+<p>We need two Python libraries: <code>numpy</code> for numerical work and <code>matplotlib</code> for plotting. We’ll also use <code>scipy.optimize</code> to find equilibria numerically — the computational equivalent of Smith’s “gravitating” market price.</p>
+<div id="cell-3" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="supply-and-demand-as-functions" class="level3">
+<h3 class="anchored" data-anchor-id="supply-and-demand-as-functions">Supply and Demand as Functions</h3>
+<p>Let’s start with the simplest possible model of a market — say, the market for oats in 18th-century Edinburgh.</p>
+<p><strong>Demand</strong> tells us how much buyers want at each price. When the price is high, fewer people buy; when the price is low, demand rises. We’ll model this as a straight line:</p>
+<p><span class="math display">\[Q^D(P) = a - bP\]</span></p>
+<p><strong>Supply</strong> tells us how much sellers are willing to produce. When the price is high, it’s worth producing more; when the price is low, fewer sellers bother. Again, a straight line:</p>
+<p><span class="math display">\[Q^S(P) = c + dP\]</span></p>
+<p>Here <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, <span class="math inline">\(c\)</span>, <span class="math inline">\(d\)</span> are positive parameters. Let’s define these in Python:</p>
+<div id="cell-5" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters for Edinburgh's oat market</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">200</span>    <span class="co"># maximum demand (bushels per week) when price is zero</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">4</span>      <span class="co"># how much demand falls per shilling increase in price</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> <span class="dv">20</span>     <span class="co"># minimum supply</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">3</span>      <span class="co"># how much supply rises per shilling increase in price</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> demand(P):</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Quantity demanded at price P."""</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">-</span> b <span class="op">*</span> P</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> supply(P):</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Quantity supplied at price P."""</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c <span class="op">+</span> d <span class="op">*</span> P</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Test: at a price of 20 shillings, how much is demanded and supplied?</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>P_test <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"At P = </span><span class="sc">{</span>P_test<span class="sc">}</span><span class="ss"> shillings:"</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Demand = </span><span class="sc">{</span>demand(P_test)<span class="sc">}</span><span class="ss"> bushels"</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Supply = </span><span class="sc">{</span>supply(P_test)<span class="sc">}</span><span class="ss"> bushels"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="plotting-the-market" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-the-market">Plotting the Market</h3>
+<p>Economists plot supply and demand with price on the vertical axis and quantity on the horizontal axis (a tradition that goes back to Marshall — and which confuses every student, since we’re treating price as the independent variable but plotting it on the y-axis). Let’s follow convention:</p>
+<div id="cell-7" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>P_range <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">50</span>, <span class="dv">200</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>ax.plot(demand(P_range), P_range, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Demand'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ax.plot(supply(P_range), P_range, color<span class="op">=</span><span class="st">'coral'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Supply'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Quantity (bushels per week)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Price (shillings)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Edinburgh's Oat Market, c. 1770"</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">220</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">55</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The curves cross — that’s where supply equals demand. That crossing point is the <strong>market equilibrium</strong>, and finding it is our computational task.</p>
+</section>
+<section id="excess-demand" class="level3">
+<h3 class="anchored" data-anchor-id="excess-demand">Excess Demand</h3>
+<p>The key idea is <strong>excess demand</strong>: the gap between what buyers want and what sellers offer at a given price.</p>
+<p><span class="math display">\[ED(P) = Q^D(P) - Q^S(P)\]</span></p>
+<ul>
+<li>If <span class="math inline">\(ED(P) &gt; 0\)</span>: there’s a shortage — buyers want more than sellers offer. Prices tend to rise.</li>
+<li>If <span class="math inline">\(ED(P) &lt; 0\)</span>: there’s a surplus — sellers offer more than buyers want. Prices tend to fall.</li>
+<li>If <span class="math inline">\(ED(P) = 0\)</span>: the market is in equilibrium.</li>
+</ul>
+<p>This is exactly Smith’s gravitational logic, expressed as a function whose <strong>root</strong> gives us the equilibrium price.</p>
+<div id="cell-9" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> excess_demand(P):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Excess demand: positive means shortage, negative means surplus."""</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> demand(P) <span class="op">-</span> supply(P)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot excess demand</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>ax.plot(P_range, excess_demand(P_range), color<span class="op">=</span><span class="st">'darkgreen'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>ax.fill_between(P_range, excess_demand(P_range), <span class="dv">0</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                where<span class="op">=</span>excess_demand(P_range) <span class="op">&gt;</span> <span class="dv">0</span>, alpha<span class="op">=</span><span class="fl">0.15</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, label<span class="op">=</span><span class="st">'Shortage'</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ax.fill_between(P_range, excess_demand(P_range), <span class="dv">0</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                where<span class="op">=</span>excess_demand(P_range) <span class="op">&lt;</span> <span class="dv">0</span>, alpha<span class="op">=</span><span class="fl">0.15</span>, color<span class="op">=</span><span class="st">'coral'</span>, label<span class="op">=</span><span class="st">'Surplus'</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Price (shillings)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Excess demand (bushels)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Excess Demand Function'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="finding-equilibrium-with-fsolve" class="level3">
+<h3 class="anchored" data-anchor-id="finding-equilibrium-with-fsolve">Finding Equilibrium with <code>fsolve</code></h3>
+<p>For this simple linear model, we could solve by hand:</p>
+<p><span class="math display">\[a - bP = c + dP \implies P^* = \frac{a - c}{b + d}\]</span></p>
+<p>But in more complex models — with nonlinear demand, multiple goods, taxes — an analytical solution may not exist. So we’ll use a <strong>numerical root-finder</strong>: <code>scipy.optimize.fsolve</code>.</p>
+<p><code>fsolve</code> takes a function and a starting guess, and finds a value where the function equals zero.</p>
+<div id="cell-11" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Numerical solution</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>P_star <span class="op">=</span> fsolve(excess_demand, x0<span class="op">=</span><span class="dv">10</span>)[<span class="dv">0</span>]  <span class="co"># x0=10 is our initial guess</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>Q_star <span class="op">=</span> demand(P_star)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Analytical solution for comparison</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>P_analytical <span class="op">=</span> (a <span class="op">-</span> c) <span class="op">/</span> (b <span class="op">+</span> d)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>Q_analytical <span class="op">=</span> demand(P_analytical)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Numerical solution:"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  P* = </span><span class="sc">{</span>P_star<span class="sc">:.4f}</span><span class="ss"> shillings"</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Q* = </span><span class="sc">{</span>Q_star<span class="sc">:.4f}</span><span class="ss"> bushels"</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Analytical solution:"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  P* = </span><span class="sc">{</span>P_analytical<span class="sc">:.4f}</span><span class="ss"> shillings"</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Q* = </span><span class="sc">{</span>Q_analytical<span class="sc">:.4f}</span><span class="ss"> bushels"</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Difference: </span><span class="sc">{</span><span class="bu">abs</span>(P_star <span class="op">-</span> P_analytical)<span class="sc">:.2e}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The numerical solution matches the analytical one (to machine precision). Now let’s visualise it:</p>
+<div id="cell-13" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>ax.plot(demand(P_range), P_range, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Demand'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ax.plot(supply(P_range), P_range, color<span class="op">=</span><span class="st">'coral'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Supply'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>ax.plot(Q_star, P_star, <span class="st">'ko'</span>, markersize<span class="op">=</span><span class="dv">10</span>, zorder<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="ss">f'Equilibrium</span><span class="ch">\n</span><span class="ss">P* = </span><span class="sc">{</span>P_star<span class="sc">:.1f}</span><span class="ss">, Q* = </span><span class="sc">{</span>Q_star<span class="sc">:.1f}</span><span class="ss">'</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>            xy<span class="op">=</span>(Q_star, P_star), xytext<span class="op">=</span>(Q_star <span class="op">+</span> <span class="dv">30</span>, P_star <span class="op">+</span> <span class="dv">8</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">11</span>, arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span><span class="st">'black'</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            bbox<span class="op">=</span><span class="bu">dict</span>(boxstyle<span class="op">=</span><span class="st">'round,pad=0.3'</span>, facecolor<span class="op">=</span><span class="st">'lightyellow'</span>, edgecolor<span class="op">=</span><span class="st">'gray'</span>))</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Quantity (bushels per week)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Price (shillings)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Smith's Invisible Hand: the Market Finds Equilibrium"</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">220</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">55</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="what-happens-when-the-government-intervenes-price-floors" class="level3">
+<h3 class="anchored" data-anchor-id="what-happens-when-the-government-intervenes-price-floors">What Happens When the Government Intervenes? Price Floors</h3>
+<p>Smith was deeply sceptical of government interference in markets. Let’s see what happens when Edinburgh’s town council sets a <strong>price floor</strong> — a minimum legal price — for oats, perhaps to protect farmers.</p>
+<p>If the floor is set <em>above</em> the equilibrium price, it creates a surplus: more is supplied than demanded.</p>
+<div id="cell-15" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>P_floor <span class="op">=</span> <span class="dv">35</span>  <span class="co"># price floor at 35 shillings (above equilibrium)</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>Q_demanded_at_floor <span class="op">=</span> demand(P_floor)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>Q_supplied_at_floor <span class="op">=</span> supply(P_floor)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>surplus <span class="op">=</span> Q_supplied_at_floor <span class="op">-</span> Q_demanded_at_floor</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Equilibrium price:   P* = </span><span class="sc">{</span>P_star<span class="sc">:.1f}</span><span class="ss"> shillings"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Price floor:         P  = </span><span class="sc">{</span>P_floor<span class="sc">}</span><span class="ss"> shillings"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Quantity demanded:   </span><span class="sc">{</span>Q_demanded_at_floor<span class="sc">:.1f}</span><span class="ss"> bushels"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Quantity supplied:   </span><span class="sc">{</span>Q_supplied_at_floor<span class="sc">:.1f}</span><span class="ss"> bushels"</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Surplus (unsold):    </span><span class="sc">{</span>surplus<span class="sc">:.1f}</span><span class="ss"> bushels"</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>ax.plot(demand(P_range), P_range, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Demand'</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>ax.plot(supply(P_range), P_range, color<span class="op">=</span><span class="st">'coral'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Supply'</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>ax.axhline(P_floor, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="ss">f'Price floor = </span><span class="sc">{</span>P_floor<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>ax.plot(Q_star, P_star, <span class="st">'ko'</span>, markersize<span class="op">=</span><span class="dv">8</span>, zorder<span class="op">=</span><span class="dv">5</span>, label<span class="op">=</span><span class="st">'Free-market equilibrium'</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the surplus as a bracket</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">''</span>, xy<span class="op">=</span>(Q_supplied_at_floor, P_floor <span class="op">-</span> <span class="dv">1</span>),</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>            xytext<span class="op">=</span>(Q_demanded_at_floor, P_floor <span class="op">-</span> <span class="dv">1</span>),</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>            arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'&lt;-&gt;'</span>, color<span class="op">=</span><span class="st">'red'</span>, lw<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>ax.text((Q_demanded_at_floor <span class="op">+</span> Q_supplied_at_floor) <span class="op">/</span> <span class="dv">2</span>, P_floor <span class="op">-</span> <span class="fl">3.5</span>,</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f'Surplus = </span><span class="sc">{</span>surplus<span class="sc">:.0f}</span><span class="ss">'</span>, ha<span class="op">=</span><span class="st">'center'</span>, fontsize<span class="op">=</span><span class="dv">11</span>, color<span class="op">=</span><span class="st">'red'</span>, fontweight<span class="op">=</span><span class="st">'bold'</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Quantity (bushels per week)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Price (shillings)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Effect of a Price Floor: Unsold Oats'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">220</span>)</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">55</span>)</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">10</span>, loc<span class="op">=</span><span class="st">'upper right'</span>)</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>This is precisely what Smith warned about: the government, trying to help farmers by guaranteeing a high price, instead creates a pile of unsold oats and reduces the quantity actually traded. The invisible hand has been overruled — and the result is waste.</p>
+</section>
+<section id="a-nonlinear-market-why-we-need-computers" class="level3">
+<h3 class="anchored" data-anchor-id="a-nonlinear-market-why-we-need-computers">A Nonlinear Market: Why We Need Computers</h3>
+<p>The linear model above is useful for building intuition, but real markets are rarely linear. Let’s make things more interesting with a market where demand and supply are nonlinear:</p>
+<p><span class="math display">\[Q^D(P) = \frac{500}{1 + 0.1P^{1.5}}\]</span></p>
+<p><span class="math display">\[Q^S(P) = 10 \cdot \ln(1 + P)\]</span></p>
+<p>Now there’s no neat algebraic solution — but <code>fsolve</code> handles it without breaking a sweat.</p>
+<div id="cell-17" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> demand_nonlinear(P):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">500</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> <span class="fl">0.1</span> <span class="op">*</span> P<span class="op">**</span><span class="fl">1.5</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> supply_nonlinear(P):</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">10</span> <span class="op">*</span> np.log(<span class="dv">1</span> <span class="op">+</span> P)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> excess_demand_nonlinear(P):</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> demand_nonlinear(P) <span class="op">-</span> supply_nonlinear(P)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Solve</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>P_star_nl <span class="op">=</span> fsolve(excess_demand_nonlinear, x0<span class="op">=</span><span class="dv">20</span>)[<span class="dv">0</span>]</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>Q_star_nl <span class="op">=</span> demand_nonlinear(P_star_nl)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Nonlinear equilibrium:"</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  P* = </span><span class="sc">{</span>P_star_nl<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Q* = </span><span class="sc">{</span>Q_star_nl<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify: excess demand at P* should be (essentially) zero</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Excess demand at P*: </span><span class="sc">{</span>excess_demand_nonlinear(P_star_nl)<span class="sc">:.2e}</span><span class="ss">"</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>P_vals <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="dv">80</span>, <span class="dv">300</span>)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>ax.plot(demand_nonlinear(P_vals), P_vals, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Demand (nonlinear)'</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>ax.plot(supply_nonlinear(P_vals), P_vals, color<span class="op">=</span><span class="st">'coral'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Supply (nonlinear)'</span>)</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>ax.plot(Q_star_nl, P_star_nl, <span class="st">'ko'</span>, markersize<span class="op">=</span><span class="dv">10</span>, zorder<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="ss">f'P* = </span><span class="sc">{</span>P_star_nl<span class="sc">:.1f}</span><span class="ss">, Q* = </span><span class="sc">{</span>Q_star_nl<span class="sc">:.1f}</span><span class="ss">'</span>,</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>            xy<span class="op">=</span>(Q_star_nl, P_star_nl), xytext<span class="op">=</span>(Q_star_nl <span class="op">+</span> <span class="dv">25</span>, P_star_nl <span class="op">+</span> <span class="dv">10</span>),</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">11</span>, arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span><span class="st">'black'</span>),</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>            bbox<span class="op">=</span><span class="bu">dict</span>(boxstyle<span class="op">=</span><span class="st">'round,pad=0.3'</span>, facecolor<span class="op">=</span><span class="st">'lightyellow'</span>, edgecolor<span class="op">=</span><span class="st">'gray'</span>))</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Quantity'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Price'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'A Nonlinear Market — No Closed-Form Solution'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>This is the power of computational thinking: Smith’s invisible hand works the same way whether the curves are straight lines or complicated nonlinear functions. The computer doesn’t care — it just finds the root.</p>
+</section>
+<section id="simulating-the-invisible-hand-convergence-to-equilibrium" class="level3">
+<h3 class="anchored" data-anchor-id="simulating-the-invisible-hand-convergence-to-equilibrium">Simulating the Invisible Hand: Convergence to Equilibrium</h3>
+<p>Smith described the market price “gravitating” toward the natural price. Let’s simulate that process. We’ll use a simple rule: if there’s excess demand (shortage), the price rises; if there’s excess supply (surplus), the price falls. The speed of adjustment is governed by a parameter <span class="math inline">\(\lambda\)</span>.</p>
+<p><span class="math display">\[P_{t+1} = P_t + \lambda \cdot ED(P_t)\]</span></p>
+<div id="cell-19" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_market(P0, lam, T, ed_func):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Simulate price adjustment toward equilibrium.</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">    P0    : initial price</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">    lam   : adjustment speed</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">    T     : number of periods</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">    ed_func: excess demand function</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    prices <span class="op">=</span> np.empty(T)</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    prices[<span class="dv">0</span>] <span class="op">=</span> P0</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, T):</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        prices[t] <span class="op">=</span> prices[t<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> lam <span class="op">*</span> ed_func(prices[t<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> prices</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Try different starting prices</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>lam <span class="op">=</span> <span class="fl">0.05</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">9</span>, <span class="dv">5</span>))</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> P0, color <span class="kw">in</span> [(<span class="dv">5</span>, <span class="st">'steelblue'</span>), (<span class="dv">40</span>, <span class="st">'coral'</span>), (<span class="dv">15</span>, <span class="st">'seagreen'</span>)]:</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> simulate_market(P0, lam, T, excess_demand)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    ax.plot(path, linewidth<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span>color, label<span class="op">=</span><span class="ss">f'Start P = </span><span class="sc">{</span>P0<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>ax.axhline(P_star, color<span class="op">=</span><span class="st">'black'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>, label<span class="op">=</span><span class="ss">f'Equilibrium P* = </span><span class="sc">{</span>P_star<span class="sc">:.1f}</span><span class="ss">'</span>)</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Time period'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Price (shillings)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"The Invisible Hand at Work: Prices Gravitate to Equilibrium"</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>No matter where the price starts, it converges to the equilibrium. This is Smith’s insight, now visible as a computational simulation. The market corrects itself — shortages drive prices up, surpluses drive them down, and the invisible hand guides the economy toward balance.</p>
+<hr>
+</section>
+</section>
+<section id="part-iii-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="part-iii-exercises">Part III — Exercises</h2>
+<p>Now it’s your turn. These exercises ask you to apply the tools from Part II to new situations.</p>
+<section id="exercise-1-a-tax-on-oats" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1-a-tax-on-oats">Exercise 1 — A Tax on Oats</h3>
+<p>The Scottish Parliament imposes a <strong>per-unit tax</strong> of <span class="math inline">\(\tau = 5\)</span> shillings on each bushel of oats, paid by sellers. This shifts the supply curve up: sellers now need a price that is 5 shillings higher to supply the same quantity. The new supply function is:</p>
+<p><span class="math display">\[Q^S_{\text{tax}}(P) = c + d(P - \tau)\]</span></p>
+<p><strong>(a)</strong> Define a new function <code>supply_tax(P, tau=5)</code> and a new excess demand function incorporating the tax.</p>
+<p><strong>(b)</strong> Use <code>fsolve</code> to find the new equilibrium price and quantity.</p>
+<p><strong>(c)</strong> Who bears more of the tax burden — buyers or sellers? Compute the price increase paid by buyers (<span class="math inline">\(P^*_{\text{tax}} - P^*\)</span>) and the effective price decrease received by sellers (<span class="math inline">\(P^* - (P^*_{\text{tax}} - \tau)\)</span>).</p>
+<p><strong>(d)</strong> Plot the old and new supply curves together with the demand curve, marking both equilibria.</p>
+<div id="cell-22" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answer here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercise-2-the-corn-laws" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-the-corn-laws">Exercise 2 — The Corn Laws</h3>
+<p>One of the great economic debates in British history concerned the <strong>Corn Laws</strong> — tariffs on imported grain that kept prices high, benefiting landowners but hurting urban workers and manufacturers. The Corn Laws were finally repealed in 1846, but the arguments for and against are pure Adam Smith.</p>
+<p>Model two countries — <strong>Britain</strong> and <strong>France</strong> — each with a domestic oat market:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Britain</th>
+<th>France</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Demand</td>
+<td><span class="math inline">\(Q^D = 300 - 5P\)</span></td>
+<td><span class="math inline">\(Q^D = 200 - 3P\)</span></td>
+</tr>
+<tr class="even">
+<td>Supply</td>
+<td><span class="math inline">\(Q^S = 50 + 2P\)</span></td>
+<td><span class="math inline">\(Q^S = 30 + 4P\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>(a)</strong> Find the equilibrium price in each country separately (in autarky — no trade).</p>
+<p><strong>(b)</strong> Which country has the lower equilibrium price? What does Smith’s logic say should happen when trade is allowed?</p>
+<p><strong>(c)</strong> Now suppose trade is allowed and a single world price prevails. The world excess demand is the sum of both countries’ excess demands. Find the world equilibrium price using <code>fsolve</code>.</p>
+<p><strong>(d)</strong> At the world price, how much does each country import or export? Does trade make both countries better off in terms of total quantity traded?</p>
+<div id="cell-24" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answer here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercise-3-does-the-starting-guess-matter" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3-does-the-starting-guess-matter">Exercise 3 — Does the Starting Guess Matter?</h3>
+<p>Numerical methods need a starting point. For well-behaved functions this doesn’t matter much, but for complicated ones it can.</p>
+<p><strong>(a)</strong> Using the <strong>nonlinear</strong> excess demand function from Part II (<code>excess_demand_nonlinear</code>), try <code>fsolve</code> with starting guesses <span class="math inline">\(P_0 = 1, 10, 50, 100, 500\)</span>. Do all of them converge to the same solution? Print the result and the number of function evaluations for each (use <code>fsolve(..., full_output=True)</code>).</p>
+<p><strong>(b)</strong> Now try this pathological excess demand function:</p>
+<p><span class="math display">\[ED(P) = \sin(P) - 0.1P + 1\]</span></p>
+<p>Plot it for <span class="math inline">\(P \in [0, 30]\)</span>. How many roots does it have? Try <code>fsolve</code> from <span class="math inline">\(P_0 = 1, 5, 15, 25\)</span> and report which root each finds.</p>
+<p><strong>(c)</strong> What lesson does this hold for computational economics? Write 2–3 sentences connecting this to Smith’s idea of the “natural price” — is there always just one?</p>
+<div id="cell-26" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answer here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="part-iv-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="part-iv-quiz">Part IV — Quiz</h2>
+<p>Test your understanding of both the history and the computation.</p>
+<section id="conceptual-questions" class="level3">
+<h3 class="anchored" data-anchor-id="conceptual-questions">Conceptual Questions</h3>
+<p><strong>Q1.</strong> What economic system was Adam Smith arguing against in <em>The Wealth of Nations</em>?</p>
+<ol type="a">
+<li>Socialism<br>
+</li>
+<li>Feudalism<br>
+</li>
+<li>Mercantilism<br>
+</li>
+<li>Communism</li>
+</ol>
+<p><strong>Q2.</strong> In Smith’s metaphor, the “invisible hand” refers to:</p>
+<ol type="a">
+<li>Government regulation guiding the economy<br>
+</li>
+<li>The tendency of self-interested actions to produce socially beneficial outcomes through markets<br>
+</li>
+<li>The role of religious institutions in economic life<br>
+</li>
+<li>The hidden power of banks and financial institutions</li>
+</ol>
+<p><strong>Q3.</strong> Smith’s “natural price” is closest in meaning to which modern concept?</p>
+<ol type="a">
+<li>The GDP deflator<br>
+</li>
+<li>The long-run equilibrium price<br>
+</li>
+<li>The consumer price index<br>
+</li>
+<li>The spot price on a commodity exchange</li>
+</ol>
+<p><strong>Q4.</strong> The Scottish Enlightenment was characterised by:</p>
+<ol type="a">
+<li>A return to classical Greek philosophy<br>
+</li>
+<li>An emphasis on empirical observation, scepticism, and systematic reasoning<br>
+</li>
+<li>Rejection of all forms of commercial activity<br>
+</li>
+<li>A focus on theological debate above all other inquiry</li>
+</ol>
+<p><strong>Q5.</strong> David Hume’s relationship to Adam Smith was that of:</p>
+<ol type="a">
+<li>His doctoral supervisor<br>
+</li>
+<li>His closest intellectual companion and friend<br>
+</li>
+<li>His political opponent<br>
+</li>
+<li>His publisher</li>
+</ol>
+</section>
+<section id="computational-questions" class="level3">
+<h3 class="anchored" data-anchor-id="computational-questions">Computational Questions</h3>
+<p><strong>Q6.</strong> If demand is <span class="math inline">\(Q^D = 100 - 2P\)</span> and supply is <span class="math inline">\(Q^S = 20 + 3P\)</span>, the equilibrium price is:</p>
+<ol type="a">
+<li>12<br>
+</li>
+<li>16<br>
+</li>
+<li>20<br>
+</li>
+<li>25</li>
+</ol>
+<p><strong>Q7.</strong> Excess demand is defined as <span class="math inline">\(ED(P) = Q^D(P) - Q^S(P)\)</span>. At equilibrium:</p>
+<ol type="a">
+<li><span class="math inline">\(ED(P) &gt; 0\)</span><br>
+</li>
+<li><span class="math inline">\(ED(P) &lt; 0\)</span><br>
+</li>
+<li><span class="math inline">\(ED(P) = 0\)</span><br>
+</li>
+<li><span class="math inline">\(ED(P)\)</span> is undefined</li>
+</ol>
+<p><strong>Q8.</strong> <code>scipy.optimize.fsolve</code> finds a value where:</p>
+<ol type="a">
+<li>A function reaches its maximum<br>
+</li>
+<li>A function reaches its minimum<br>
+</li>
+<li>A function equals zero<br>
+</li>
+<li>A function’s derivative equals zero</li>
+</ol>
+<p><strong>Q9.</strong> A price floor set <em>below</em> the equilibrium price will:</p>
+<ol type="a">
+<li>Create a shortage<br>
+</li>
+<li>Create a surplus<br>
+</li>
+<li>Have no effect on the market<br>
+</li>
+<li>Eliminate all trade</li>
+</ol>
+<p><strong>Q10.</strong> When we simulate the invisible hand with <span class="math inline">\(P_{t+1} = P_t + \lambda \cdot ED(P_t)\)</span>, a larger <span class="math inline">\(\lambda\)</span> means:</p>
+<ol type="a">
+<li>The market adjusts more slowly<br>
+</li>
+<li>The market adjusts more quickly<br>
+</li>
+<li>The equilibrium price changes<br>
+</li>
+<li>The demand curve shifts</li>
+</ol>
+</section>
+<section id="quiz-answers" class="level3">
+<h3 class="anchored" data-anchor-id="quiz-answers">Quiz Answers</h3>
+<details>
+<summary>
+Click to reveal answers
+</summary>
+<p><strong>Q1.</strong> (c) Mercantilism — the dominant economic doctrine of Smith’s time, based on hoarding precious metals and government control of trade.</p>
+<p><strong>Q2.</strong> (b) The invisible hand describes how self-interested actions, channelled through competitive markets, produce outcomes that benefit society without any central planner.</p>
+<p><strong>Q3.</strong> (b) The long-run equilibrium price — the price determined by costs of production, to which the market price continually “gravitates.”</p>
+<p><strong>Q4.</strong> (b) Empirical observation, scepticism, and systematic reasoning were the hallmarks of Hume, Smith, and their Edinburgh contemporaries.</p>
+<p><strong>Q5.</strong> (b) Hume and Smith were lifelong friends and intellectual companions. Hume’s philosophy deeply influenced Smith’s economic thinking.</p>
+<p><strong>Q6.</strong> (b) 16 — Setting <span class="math inline">\(100 - 2P = 20 + 3P\)</span> gives <span class="math inline">\(80 = 5P\)</span>, so <span class="math inline">\(P = 16\)</span>.</p>
+<p><strong>Q7.</strong> (c) <span class="math inline">\(ED(P) = 0\)</span> — equilibrium is defined as the price where quantity demanded equals quantity supplied.</p>
+<p><strong>Q8.</strong> (c) <code>fsolve</code> is a root-finder: it finds where a function equals zero. (For minima/maxima, you’d use <code>minimize</code>.)</p>
+<p><strong>Q9.</strong> (c) A price floor below the equilibrium is not binding — the market price is already above the floor, so it has no effect.</p>
+<p><strong>Q10.</strong> (b) A larger <span class="math inline">\(\lambda\)</span> means the price responds more strongly to excess demand in each period, so the market reaches equilibrium faster (though if <span class="math inline">\(\lambda\)</span> is too large, the process can overshoot).</p>
+</details>
+<hr>
+</section>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further Reading</h2>
+<ul>
+<li>Smith, A. <em>The Wealth of Nations</em> (1776), Book I, Chapters 1–7. Available free online via <a href="https://www.econlib.org/library/Smith/smWN.html">econlib.org</a>.</li>
+<li>Heilbroner, R. <em>The Worldly Philosophers</em>, Chapter 3 (“The Wonderful World of Adam Smith”).</li>
+<li>Broadie, A. <em>The Scottish Enlightenment</em> — for the intellectual world Smith inhabited.</li>
+<li>Phillipson, N. <em>Adam Smith: An Enlightened Life</em> — the best modern biography.</li>
+</ul>
+<hr>
+<p><em>Next week: The Division of Labour and the Pin Factory — Smith’s most famous example, and the logic of specialisation and trade.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/juanignaciozurita\.github\.io\/juanzurita\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Juan Zurita · School of Economics, The University of Edinburgh</p>
+</div>   
+    <div class="nav-footer-center">
+<p><a href="jobmarket.qmd">Job Market</a> · <a href="cv.qmd">CV</a> · <a href="research.qmd">Research</a></p>
+</div>
+    <div class="nav-footer-right">
+<p><a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
