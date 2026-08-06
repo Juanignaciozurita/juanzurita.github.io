@@ -34,11 +34,9 @@ body-classes: home-page
 <!-- 📄 [CV](https://drive.google.com/file/d/1DlbczDUbWkBIWiaEBQGoVwmb0AAtj5Dn/view) -->
 :::
 
-::: {.jm-banner}
-**On the 2026–27 academic job market** &nbsp; [Job Market Paper](jobmarket.qmd){.jm-btn} [CV](cv.qmd){.jm-btn}
-<span class="jm-secondary">[Research Statement](https://drive.google.com/file/d/1tWsicZ2M4dt5BGN5eYs_M9gSFJi06CT2/view?usp=sharing) · [Teaching Statement](https://drive.google.com/file/d/1MlIbBB82C9jQIq8BS_OEGIp93ZXj7W0v/view?usp=sharing)</span>
-:::
+< \br >
 
+ 
 ## Research Interest
 Macroeconomics
 
@@ -48,6 +46,23 @@ Macroeconomics
 <p style="text-align: justify;">
 I am a fixed-term Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy.
 </p>
+
+::: {.statement-frame}
+
+::: {.columns}
+
+::: {.column width="50%"}
+## [Research Statement](https://drive.google.com/file/d/1tWsicZ2M4dt5BGN5eYs_M9gSFJi06CT2/view?usp=sharing)
+:::
+
+::: {.column width="50%"}
+## [Teaching Statement](https://drive.google.com/file/d/1MlIbBB82C9jQIq8BS_OEGIp93ZXj7W0v/view?usp=sharing)
+:::
+
+:::
+
+:::
+
 
 ## Research Highlights
 ::: {.justified-list}
