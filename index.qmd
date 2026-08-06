@@ -1,45 +1,28 @@
 ---
-# title-block-banner: true
+# title-block-banner: true   
 title: "Juan Zurita"
 subtitle: |
   <div style="font-size:1em; text-align:center;">
-  Lecturer in Economics <br>
+  Fix-Term Lecturer <br>
   School of Economics, The University of Edinburgh
   </div>
-
+  
 
 about:
   template: jolla
   image: Profile.jpg
   links:
-    - icon: linkedin
+    - icon: linkedin   
       text: LinkedIn
       href: https://www.linkedin.com/in/juan-ignacio-z-4b345425/
 
     - icon: github
       text: Github
       href: https://github.com/Juanignaciozurita
-
-    - icon: instagram
-      text: Instagram
-      href: https://www.instagram.com/juanignaciozurita/
-
-    - icon: person-badge
-      text: ORCID
-      href: https://orcid.org/0000-0002-1209-3246
-
-    # Verify this is your Google Scholar profile before enabling:
-    # - icon: mortarboard-fill
-    #   text: Google Scholar
-    #   href: https://scholar.google.com/citations?user=Qc8UdnEAAAAJ
-
+      
 toc: false
 body-classes: home-page
 ---
-
-::: {.jm-banner}
-**On the 2026–27 academic job market** &nbsp; [Job Market Paper](jobmarket.qmd){.jm-btn} [CV](cv.qmd){.jm-btn}
-:::
 
 ::: {.contact}
 <span style="color:#a33a2a;">
@@ -51,49 +34,35 @@ body-classes: home-page
 <!-- 📄 [CV](https://drive.google.com/file/d/1DlbczDUbWkBIWiaEBQGoVwmb0AAtj5Dn/view) -->
 :::
 
+::: {.jm-banner}
+**On the 2026–27 academic job market** &nbsp; [Job Market Paper](jobmarket.qmd){.jm-btn} [CV](cv.qmd){.jm-btn}
+<span class="jm-secondary">[Research Statement](https://drive.google.com/file/d/1tWsicZ2M4dt5BGN5eYs_M9gSFJi06CT2/view?usp=sharing) · [Teaching Statement](https://drive.google.com/file/d/1MlIbBB82C9jQIq8BS_OEGIp93ZXj7W0v/view?usp=sharing)</span>
+:::
 
 ## Research Interest
 Macroeconomics
 
-
+ 
 ####  <span style="color:#b22222;">Welcome to my personal website</span>
 
 <p style="text-align: justify;">
-I am a Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy.
+I am a fixed-term Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy.
 </p>
-
-::: {.statement-frame}
-
-::: {.columns}
-
-::: {.column width="50%"}
-## [Research Statement](files/Research_Statement - Juan Zurita - 2026.pdf)
-:::
-
-::: {.column width="50%"}
-## [Teaching Statement](files/Juan Zurita Teaching Statement - 2026.pdf)
-:::
-
-:::
-
-:::
-
 
 ## Research Highlights
 ::: {.justified-list}
-- **July 2026**: Job Market Paper: ["*Who Bears the Burden of Bank Capital Regulation? Buffers, Risk Weights, and the Supply of Credit*"](jobmarket.qmd) — new draft circulated
-- **May 2026**: My paper ["*Does Household Debt affect the Transmission Mechanism of Monetary Policy*"](https://drive.google.com/file/d/1vWuFSW6Wn0GZTiBAaC-48kA-jwidCV2u/view?usp=sharing) has been published in _Macroeconomic Dynamics_
-- **March 2026**: New Working Paper: ["*The Bank Profit Channel of Monetary Policy*"](https://drive.google.com/file/d/1diD_WeOjfIid2flkEFpJnEuftlgbH2H8/view?usp=sharing) with Jiening Le
-- **February 2026**: My project [“*Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom*”](https://drive.google.com/file/d/1JgVkmJzz4pxLuUIiWGliRyAgdT616lJh/view?usp=sharing) has received funding from the Royal Society of Edinburgh.
-- **January 2026**: My paper [*Banking Heterogeneity, Credit Supply and Economic Growth*](https://doi.org/10.1016/j.iref.2026.104921) ([Slides](https://drive.google.com/file/d/1Dby9pZ6fk5J3uGjtT9oqn7JmWJp9CwQq/view?usp=sharing)) has been published at the International Review of Economics and Finance.
+- **May 2026**: My paper ["*Does Household Debt affect the Transmission Mechanism of Monetary Policy*"](https://drive.google.com/file/d/1vWuFSW6Wn0GZTiBAaC-48kA-jwidCV2u/view?usp=sharing) has been accepted at _Macroeconomic Dynamics_
+- **March 2026**: New Working Paper: ["*The Bank Profit Channel of Monetary Policy*"](https://drive.google.com/file/d/1diD_WeOjfIid2flkEFpJnEuftlgbH2H8/view?usp=sharing) with Jiening Le  
+- **February 2026**: My project [“*Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom*”](https://drive.google.com/file/d/1JgVkmJzz4pxLuUIiWGliRyAgdT616lJh/view?usp=sharing) has received funding from the Royal Society of Edinburgh.  
+- **January 2026**: My paper [*Banking Heterogeneity, Credit Supply and Economic Growth*](https://doi.org/10.1016/j.iref.2026.104921), Slides, has been published at the International Review of Economics and Finance.
 :::
 
 
 ## Explore My Work
 
-```{=html}
-<div class="homepage-cards">
-<a href="research.html" class="homepage-card">
+::: {.homepage-cards}
+
+<a href="research.qmd" class="homepage-card">
 <div class="homepage-card-img">
 <img src="img/card_research.png" alt="Research — network visualisation" />
 </div>
@@ -102,35 +71,27 @@ I am a Lecturer in Economics at the School of Economics at the University of Edi
 <p>Macroeconomic policy, credit markets, household debt, and banking — publications, working papers, and an interactive explorer.</p>
 </div>
 </a>
-<a href="teaching.html" class="homepage-card">
+
+<a href="teaching.qmd" class="homepage-card">
 <div class="homepage-card-img">
 <img src="img/card_teaching.png" alt="Teaching — code and neural networks" />
 </div>
 <div class="homepage-card-body">
 <h3>Teaching</h3>
-<p>Open course materials in Programming &amp; Numerical Methods and Deep Learning for Macroeconomics — interactive notebooks and Colab links.</p>
+<p>Open course materials in Programming & Numerical Methods and Deep Learning for Macroeconomics — interactive notebooks and Colab links.</p>
 </div>
 </a>
-<a href="consulting.html" class="homepage-card">
+
+<a href="consulting.qmd" class="homepage-card">
 <div class="homepage-card-img">
 <img src="img/card_consulting.png" alt="Consulting — policy and growth" />
 </div>
 <div class="homepage-card-body">
-<h3>Consulting &amp; Policy</h3>
+<h3>Consulting & Policy</h3>
 <p>Applied research for central banks, regulators, and government — fiscal sustainability, macro modelling, and data strategy.</p>
 </div>
 </a>
-</div>
-```
 
+:::
 
-## Beyond Economics
-
-<p style="text-align: justify;">
-Away from macroeconomics, I am building a botanical garden at **[La Constancia](https://estancialaconstanciamdq.com)** — a long-term project of planting and caring for trees on a farm in Argentina, one season at a time. [Email me](mailto:juan.zurita@ed.ac.uk) for details, or follow the progress on [Instagram](https://www.instagram.com/laconstanciadebiocca/).
-<!-- EDIT: replace ADD-PROJECT-LINK with your Instagram/website URL for the project.
-     If you'd rather show a photo instead of (or alongside) the link, add an image
-     to the repo (e.g. arboretum.jpg) and insert:
-     ![La Constancia de Biocca](arboretum.jpg){width=70% fig-align="center"} -->
-</p>
 
