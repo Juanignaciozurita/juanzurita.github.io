@@ -1,0 +1,84 @@
+---
+title: "Week 1 — Introduction to Python"
+subtitle: "Programming & Numerical Methods for Economics"
+author: "Juan Zurita · The University of Edinburgh"
+format:
+  revealjs:
+    theme: [default]
+    slide-number: true
+    footer: "Programming & Numerical Methods for Economics"
+---
+
+## Why learn to program?
+
+- Modern economics **is** computational: models without closed-form solutions, large datasets, simulations
+- One skill, many uses: research, central banks, consulting, data science
+- This course: **Python** — the most widely used language in economics and industry
+
+::: {.notes}
+EDIT: these are template slides — replace with your actual lecture content.
+Speaker notes go in blocks like this one (press S in the browser to see them).
+:::
+
+## Why Python?
+
+- **Free and open source** — no licence, works everywhere
+- **The scientific stack**: NumPy, Matplotlib, pandas, statsmodels
+- Used at central banks, the IMF, tech firms, and hedge funds
+- Huge community: almost every question you'll have has an answer online
+
+## Today
+
+1. Variables and types
+2. Arrays with NumPy
+3. Functions and control flow
+4. Plotting with Matplotlib
+5. **Application:** the Solow growth model
+
+## Variables
+
+```{.python}
+gdp = 2.85e12
+population = 68_350_000       # underscores for readability
+α = 0.3                       # Greek letters work too!
+print(f"GDP per capita: ${gdp/population:,.2f}")
+```
+
+- No type declarations — Python infers them
+- f-strings format output cleanly
+
+## NumPy in one slide
+
+```{.python}
+import numpy as np
+
+growth = np.array([2.1, 1.7, -9.3, 7.6, 4.1, 0.3, 0.9])
+growth.mean()          # methods on arrays
+growth - 2.0           # vectorised: whole array at once
+A @ x                  # matrix multiplication
+```
+
+## The Solow model in seven lines
+
+```{.python}
+def solow_path(s=0.25, alpha=0.3, delta=0.05, k0=1.0, T=100):
+    k = np.zeros(T)
+    k[0] = k0
+    for t in range(T - 1):
+        k[t + 1] = s * k[t]**alpha + (1 - delta) * k[t]
+    return k
+```
+
+$$k_{t+1} = s\,k_t^{\alpha} + (1-\delta)k_t$$
+
+## Your turn
+
+Open the Week 1 notebook and work through Exercises 1.1 → 5.2
+
+**Golden rule question:** which saving rate maximises long-run consumption?
+
+## Next week
+
+- NumPy and linear algebra in depth
+- Working with real economic data
+- Reading: QuantEcon Python lectures 1–3

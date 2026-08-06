@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Module 3 — Keynes and the Multiplier – Juan Zurita</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-cdfd0cc769c71205c17cfb73cc6016cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Juan Zurita</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../opencollaborations.html"> 
+<span class="menu-text">Open Collaborations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../usefullinks.html"> 
+<span class="menu-text">Useful Links</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-great-depression-and-the-birth-of-macroeconomics" id="toc-the-great-depression-and-the-birth-of-macroeconomics" class="nav-link active" data-scroll-target="#the-great-depression-and-the-birth-of-macroeconomics">The Great Depression and the Birth of Macroeconomics</a></li>
+  <li><a href="#part-i-the-history" id="toc-part-i-the-history" class="nav-link" data-scroll-target="#part-i-the-history">Part I — The History</a>
+  <ul class="collapse">
+  <li><a href="#october-1929" id="toc-october-1929" class="nav-link" data-scroll-target="#october-1929">October 1929</a></li>
+  <li><a href="#john-maynard-keynes-18831946" id="toc-john-maynard-keynes-18831946" class="nav-link" data-scroll-target="#john-maynard-keynes-18831946">John Maynard Keynes (1883–1946)</a></li>
+  <li><a href="#the-key-ideas" id="toc-the-key-ideas" class="nav-link" data-scroll-target="#the-key-ideas">The Key Ideas</a></li>
+  <li><a href="#edinburgh-connection" id="toc-edinburgh-connection" class="nav-link" data-scroll-target="#edinburgh-connection">Edinburgh Connection</a></li>
+  </ul></li>
+  <li><a href="#part-ii-the-computation" id="toc-part-ii-the-computation" class="nav-link" data-scroll-target="#part-ii-the-computation">Part II — The Computation</a>
+  <ul class="collapse">
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up">Setting Up</a></li>
+  <li><a href="#the-keynesian-cross" id="toc-the-keynesian-cross" class="nav-link" data-scroll-target="#the-keynesian-cross">The Keynesian Cross</a></li>
+  <li><a href="#visualising-the-keynesian-cross" id="toc-visualising-the-keynesian-cross" class="nav-link" data-scroll-target="#visualising-the-keynesian-cross">Visualising the Keynesian Cross</a></li>
+  <li><a href="#the-fiscal-multiplier" id="toc-the-fiscal-multiplier" class="nav-link" data-scroll-target="#the-fiscal-multiplier">The Fiscal Multiplier</a></li>
+  <li><a href="#the-multiplier-round-by-round" id="toc-the-multiplier-round-by-round" class="nav-link" data-scroll-target="#the-multiplier-round-by-round">The Multiplier Round by Round</a></li>
+  <li><a href="#how-the-mpc-changes-the-multiplier" id="toc-how-the-mpc-changes-the-multiplier" class="nav-link" data-scroll-target="#how-the-mpc-changes-the-multiplier">How the MPC Changes the Multiplier</a></li>
+  <li><a href="#the-is-curve-adding-interest-rates" id="toc-the-is-curve-adding-interest-rates" class="nav-link" data-scroll-target="#the-is-curve-adding-interest-rates">The IS Curve: Adding Interest Rates</a></li>
+  <li><a href="#fiscal-policy-shifts-the-is-curve" id="toc-fiscal-policy-shifts-the-is-curve" class="nav-link" data-scroll-target="#fiscal-policy-shifts-the-is-curve">Fiscal Policy Shifts the IS Curve</a></li>
+  <li><a href="#animal-spirits-what-happens-when-confidence-collapses" id="toc-animal-spirits-what-happens-when-confidence-collapses" class="nav-link" data-scroll-target="#animal-spirits-what-happens-when-confidence-collapses">Animal Spirits: What Happens When Confidence Collapses?</a></li>
+  </ul></li>
+  <li><a href="#part-iii-exercises" id="toc-part-iii-exercises" class="nav-link" data-scroll-target="#part-iii-exercises">Part III — Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1-the-paradox-of-thrift" id="toc-exercise-1-the-paradox-of-thrift" class="nav-link" data-scroll-target="#exercise-1-the-paradox-of-thrift">Exercise 1 — The Paradox of Thrift</a></li>
+  <li><a href="#exercise-2-balanced-budget-multiplier" id="toc-exercise-2-balanced-budget-multiplier" class="nav-link" data-scroll-target="#exercise-2-balanced-budget-multiplier">Exercise 2 — Balanced-Budget Multiplier</a></li>
+  <li><a href="#exercise-3-a-progressive-tax-system" id="toc-exercise-3-a-progressive-tax-system" class="nav-link" data-scroll-target="#exercise-3-a-progressive-tax-system">Exercise 3 — A Progressive Tax System</a></li>
+  </ul></li>
+  <li><a href="#part-iv-quiz" id="toc-part-iv-quiz" class="nav-link" data-scroll-target="#part-iv-quiz">Part IV — Quiz</a>
+  <ul class="collapse">
+  <li><a href="#conceptual-questions" id="toc-conceptual-questions" class="nav-link" data-scroll-target="#conceptual-questions">Conceptual Questions</a></li>
+  <li><a href="#computational-questions" id="toc-computational-questions" class="nav-link" data-scroll-target="#computational-questions">Computational Questions</a></li>
+  <li><a href="#quiz-answers" id="toc-quiz-answers" class="nav-link" data-scroll-target="#quiz-answers">Quiz Answers</a></li>
+  </ul></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Module 3 — Keynes and the Multiplier</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="the-great-depression-and-the-birth-of-macroeconomics" class="level2">
+<h2 class="anchored" data-anchor-id="the-great-depression-and-the-birth-of-macroeconomics">The Great Depression and the Birth of Macroeconomics</h2>
+<p><strong>From Smith to Simulation: Computing the Ideas that Built Economics</strong><br>
+The University of Edinburgh · School of Economics</p>
+<hr>
+</section>
+<section id="part-i-the-history" class="level2">
+<h2 class="anchored" data-anchor-id="part-i-the-history">Part I — The History</h2>
+<section id="october-1929" class="level3">
+<h3 class="anchored" data-anchor-id="october-1929">October 1929</h3>
+<p>On October 29, 1929 — “Black Tuesday” — the New York Stock Exchange crashed. Within weeks, billions of dollars in wealth had evaporated. But the crash itself was only the beginning. What followed was the <strong>Great Depression</strong>: the most severe economic catastrophe of the modern era.</p>
+<p>Between 1929 and 1933, US GDP fell by nearly 30%. Unemployment rose to 25%. World trade collapsed by two-thirds. Factories stood idle. Millions who wanted to work could not find jobs. And the prevailing economic orthodoxy — the classical economics descended from Smith and Ricardo — had no good explanation for why, and no good prescription for what to do about it.</p>
+<p>Classical economists believed in <strong>Say’s Law</strong>: “supply creates its own demand.” In this view, a general glut — an economy-wide shortage of demand — was impossible. If people saved more, interest rates would fall, investment would rise, and equilibrium would be restored. The prescription was patience: the market would sort itself out.</p>
+<p>But as the Depression dragged on year after year, patience began to look less like wisdom and more like indifference.</p>
+</section>
+<section id="john-maynard-keynes-18831946" class="level3">
+<h3 class="anchored" data-anchor-id="john-maynard-keynes-18831946">John Maynard Keynes (1883–1946)</h3>
+<p>Into this crisis stepped <strong>John Maynard Keynes</strong>, a Cambridge economist, investor, patron of the arts, and one of the most brilliant minds of the 20th century. In 1936, he published <em>The General Theory of Employment, Interest, and Money</em>, which turned classical economics upside down.</p>
+<p>Keynes’s central argument was simple but revolutionary: <strong>demand matters</strong>. An economy can get stuck in a state where people want to work but firms won’t hire them, because firms don’t expect enough demand for their products. And this isn’t a temporary glitch — it can persist indefinitely.</p>
+<blockquote class="blockquote">
+<p><em>“The outstanding faults of the economic society in which we live are its failure to provide for full employment and its arbitrary and inequitable distribution of wealth and incomes.”</em><br>
+— J.M. Keynes, <em>The General Theory</em> (1936), Chapter 24</p>
+</blockquote>
+</section>
+<section id="the-key-ideas" class="level3">
+<h3 class="anchored" data-anchor-id="the-key-ideas">The Key Ideas</h3>
+<p><strong>1. The Paradox of Thrift.</strong> If everyone tries to save more during a recession (a perfectly rational individual response to uncertainty), total spending falls, firms cut production, workers lose their jobs, incomes fall — and total saving actually <em>decreases</em>. What is rational for each individual is disastrous for the economy as a whole. Smith’s invisible hand, which harmonises self-interest and social welfare in the market for oats, breaks down at the level of the whole economy.</p>
+<p><strong>2. Animal Spirits.</strong> Investment depends not just on interest rates (as the classics assumed) but on business confidence — what Keynes called “animal spirits.” When entrepreneurs are optimistic, they invest; when they’re pessimistic, they don’t. And pessimism can be self-fulfilling: if firms expect a recession, they cut investment, which <em>causes</em> the recession.</p>
+<p><strong>3. The Multiplier.</strong> This is the idea we’ll compute today. When the government spends an extra pound, it doesn’t just add one pound to the economy. That pound becomes someone’s income; they spend part of it; that spending becomes someone else’s income; they spend part of <em>that</em>; and so on. The total effect on GDP is a <em>multiple</em> of the original spending. The size of this multiplier depends on how much of each pound of income people spend (the <strong>marginal propensity to consume</strong>).</p>
+</section>
+<section id="edinburgh-connection" class="level3">
+<h3 class="anchored" data-anchor-id="edinburgh-connection">Edinburgh Connection</h3>
+<p>Keynes’s ideas were fiercely debated in Edinburgh. The University’s economics department in the 1930s and 40s included several economists who were sceptical of Keynes — they belonged more to the classical tradition that Keynes was attacking. This tension between Keynesian macroeconomics and classical market-clearing models remains alive today, and Edinburgh’s department has contributed to both sides of the argument.</p>
+<hr>
+</section>
+</section>
+<section id="part-ii-the-computation" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii-the-computation">Part II — The Computation</h2>
+<section id="setting-up" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up">Setting Up</h3>
+<div id="cell-3" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="the-keynesian-cross" class="level3">
+<h3 class="anchored" data-anchor-id="the-keynesian-cross">The Keynesian Cross</h3>
+<p>The simplest Keynesian model is the <strong>Keynesian cross</strong>. The economy has three sources of spending:</p>
+<ol type="1">
+<li><p><strong>Consumption</strong> by households: <span class="math inline">\(C = c_0 + c_1(Y - T)\)</span></p>
+<ul>
+<li><span class="math inline">\(c_0\)</span> is autonomous consumption (what people spend even if income is zero — drawing down savings, borrowing)</li>
+<li><span class="math inline">\(c_1\)</span> is the <strong>marginal propensity to consume (MPC)</strong>: the fraction of each additional pound of disposable income that gets spent</li>
+<li><span class="math inline">\(Y - T\)</span> is disposable income (income minus taxes)</li>
+</ul></li>
+<li><p><strong>Investment</strong> by firms: <span class="math inline">\(I = \bar{I}\)</span> (for now, we treat this as fixed — determined by animal spirits)</p></li>
+<li><p><strong>Government spending</strong>: <span class="math inline">\(G\)</span> (also fixed — a policy choice)</p></li>
+</ol>
+<p><strong>Equilibrium</strong> requires that total output equals total spending:</p>
+<p><span class="math display">\[Y = C + I + G\]</span></p>
+<p><span class="math display">\[Y = c_0 + c_1(Y - T) + \bar{I} + G\]</span></p>
+<p>This looks like a simple equation, and it is — we can solve it by hand. But setting it up computationally lets us explore variations that are much harder analytically.</p>
+<div id="cell-5" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Parameters</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>c0 <span class="op">=</span> <span class="dv">100</span>    <span class="co"># autonomous consumption</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>c1 <span class="op">=</span> <span class="fl">0.6</span>    <span class="co"># marginal propensity to consume (MPC)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>I_bar <span class="op">=</span> <span class="dv">200</span> <span class="co"># investment (animal spirits)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> <span class="dv">150</span>     <span class="co"># government spending</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="dv">100</span>     <span class="co"># taxes</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> consumption(Y, c0<span class="op">=</span>c0, c1<span class="op">=</span>c1, T<span class="op">=</span>T):</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Household consumption as a function of income."""</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> c0 <span class="op">+</span> c1 <span class="op">*</span> (Y <span class="op">-</span> T)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> total_spending(Y, c0<span class="op">=</span>c0, c1<span class="op">=</span>c1, I_bar<span class="op">=</span>I_bar, G<span class="op">=</span>G, T<span class="op">=</span>T):</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Total planned spending: C + I + G."""</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> consumption(Y, c0, c1, T) <span class="op">+</span> I_bar <span class="op">+</span> G</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> equilibrium_condition(Y, c0<span class="op">=</span>c0, c1<span class="op">=</span>c1, I_bar<span class="op">=</span>I_bar, G<span class="op">=</span>G, T<span class="op">=</span>T):</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Returns zero when Y = C + I + G (equilibrium)."""</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Y <span class="op">-</span> total_spending(Y, c0, c1, I_bar, G, T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-6" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find equilibrium</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Y_star <span class="op">=</span> fsolve(equilibrium_condition, x0<span class="op">=</span><span class="dv">500</span>)[<span class="dv">0</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>C_star <span class="op">=</span> consumption(Y_star)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Analytical solution for comparison</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>Y_analytical <span class="op">=</span> (c0 <span class="op">-</span> c1 <span class="op">*</span> T <span class="op">+</span> I_bar <span class="op">+</span> G) <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> c1)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Equilibrium output:      Y* = </span><span class="sc">{</span>Y_star<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Equilibrium consumption: C* = </span><span class="sc">{</span>C_star<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Investment:              I  = </span><span class="sc">{</span>I_bar<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Government spending:     G  = </span><span class="sc">{</span>G<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Check: C + I + G =       </span><span class="sc">{</span>C_star <span class="op">+</span> I_bar <span class="op">+</span> G<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Analytical solution:     Y* = </span><span class="sc">{</span>Y_analytical<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="visualising-the-keynesian-cross" class="level3">
+<h3 class="anchored" data-anchor-id="visualising-the-keynesian-cross">Visualising the Keynesian Cross</h3>
+<p>The Keynesian cross plots total spending against total output. The 45-degree line shows where <span class="math inline">\(Y = \text{Spending}\)</span> — equilibrium is where the spending line crosses the 45-degree line.</p>
+<div id="cell-8" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Y_range <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2000</span>, <span class="dv">300</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 45-degree line</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ax.plot(Y_range, Y_range, <span class="st">'k--'</span>, linewidth<span class="op">=</span><span class="dv">1</span>, label<span class="op">=</span><span class="st">'45° line (Y = Spending)'</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Total spending line</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>spending <span class="op">=</span> total_spending(Y_range)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>ax.plot(Y_range, spending, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>, label<span class="op">=</span><span class="st">'Planned spending (C + I + G)'</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Mark equilibrium</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>ax.plot(Y_star, Y_star, <span class="st">'ro'</span>, markersize<span class="op">=</span><span class="dv">10</span>, zorder<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="ss">f'Equilibrium</span><span class="ch">\n</span><span class="ss">Y* = </span><span class="sc">{</span>Y_star<span class="sc">:.0f}</span><span class="ss">'</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            xy<span class="op">=</span>(Y_star, Y_star), xytext<span class="op">=</span>(Y_star <span class="op">+</span> <span class="dv">200</span>, Y_star <span class="op">-</span> <span class="dv">150</span>),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>            fontsize<span class="op">=</span><span class="dv">11</span>, arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span><span class="st">'red'</span>),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            bbox<span class="op">=</span><span class="bu">dict</span>(boxstyle<span class="op">=</span><span class="st">'round,pad=0.3'</span>, facecolor<span class="op">=</span><span class="st">'lightyellow'</span>, edgecolor<span class="op">=</span><span class="st">'gray'</span>))</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Mark components</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>ax.axhline(c0 <span class="op">+</span> I_bar <span class="op">+</span> G <span class="op">-</span> c1 <span class="op">*</span> T, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="dv">50</span>, c0 <span class="op">+</span> I_bar <span class="op">+</span> G <span class="op">-</span> c1 <span class="op">*</span> T <span class="op">+</span> <span class="dv">20</span>,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f'Autonomous spending = </span><span class="sc">{</span>c0 <span class="op">+</span> I_bar <span class="op">+</span> G <span class="op">-</span> c1<span class="op">*</span>T<span class="sc">:.0f}</span><span class="ss">'</span>, fontsize<span class="op">=</span><span class="dv">9</span>, color<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Output (Y)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Planned Spending'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'The Keynesian Cross'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">10</span>, loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">1800</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">1800</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>ax.set_aspect(<span class="st">'equal'</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="the-fiscal-multiplier" class="level3">
+<h3 class="anchored" data-anchor-id="the-fiscal-multiplier">The Fiscal Multiplier</h3>
+<p>Now for Keynes’s most powerful policy insight. What happens when the government increases spending by <span class="math inline">\(\Delta G\)</span>?</p>
+<p>The theoretical multiplier is:</p>
+<p><span class="math display">\[\text{Multiplier} = \frac{\Delta Y}{\Delta G} = \frac{1}{1 - c_1}\]</span></p>
+<p>With <span class="math inline">\(c_1 = 0.6\)</span>, the multiplier is <span class="math inline">\(1 / (1 - 0.6) = 2.5\)</span>. Every pound the government spends generates £2.50 in total output. Let’s verify this computationally and see the round-by-round mechanics.</p>
+<div id="cell-10" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Increase government spending by 50</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>delta_G <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>G_new <span class="op">=</span> G <span class="op">+</span> delta_G</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># New equilibrium</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>Y_star_new <span class="op">=</span> fsolve(equilibrium_condition, x0<span class="op">=</span><span class="dv">500</span>, args<span class="op">=</span>(c0, c1, I_bar, G_new, T))[<span class="dv">0</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>delta_Y <span class="op">=</span> Y_star_new <span class="op">-</span> Y_star</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>multiplier_numerical <span class="op">=</span> delta_Y <span class="op">/</span> delta_G</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>multiplier_theoretical <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> c1)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Original Y*:          </span><span class="sc">{</span>Y_star<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"New Y* (G + </span><span class="sc">{</span>delta_G<span class="sc">}</span><span class="ss">):    </span><span class="sc">{</span>Y_star_new<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Change in output:     ΔY = </span><span class="sc">{</span>delta_Y<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Change in spending:   ΔG = </span><span class="sc">{</span>delta_G<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Numerical multiplier:   </span><span class="sc">{</span>multiplier_numerical<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Theoretical multiplier: </span><span class="sc">{</span>multiplier_theoretical<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="the-multiplier-round-by-round" class="level3">
+<h3 class="anchored" data-anchor-id="the-multiplier-round-by-round">The Multiplier Round by Round</h3>
+<p>The multiplier works through a chain of spending. Let’s trace it explicitly:</p>
+<ul>
+<li><strong>Round 1:</strong> The government spends £50 (say, building a road). This is £50 of new income for road builders.</li>
+<li><strong>Round 2:</strong> Road builders spend 60% of their £50 = £30 at shops. Shopkeepers earn £30.</li>
+<li><strong>Round 3:</strong> Shopkeepers spend 60% of £30 = £18. Their suppliers earn £18.</li>
+<li><strong>Round 4:</strong> Suppliers spend 60% of £18 = £10.80. And so on…</li>
+</ul>
+<p>Total effect: <span class="math inline">\(50 + 50 \times 0.6 + 50 \times 0.6^2 + 50 \times 0.6^3 + \cdots = \frac{50}{1 - 0.6} = 125\)</span></p>
+<div id="cell-12" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trace the multiplier round by round</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>n_rounds <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>spending_per_round <span class="op">=</span> np.array([delta_G <span class="op">*</span> c1<span class="op">**</span>r <span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(n_rounds)])</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>cumulative <span class="op">=</span> np.cumsum(spending_per_round)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Round | New spending | Cumulative effect"</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> <span class="dv">45</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">min</span>(<span class="dv">10</span>, n_rounds)):</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>r<span class="op">+</span><span class="dv">1</span><span class="sc">:&gt;2}</span><span class="ss">  |    £</span><span class="sc">{</span>spending_per_round[r]<span class="sc">:&gt;7.2f}</span><span class="ss">  |    £</span><span class="sc">{</span>cumulative[r]<span class="sc">:&gt;7.2f}</span><span class="ss">"</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  ... |     ...      |    ..."</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"   ∞  |    £</span><span class="sc">{</span><span class="dv">0</span><span class="sc">:&gt;7.2f}</span><span class="ss">  |    £</span><span class="sc">{</span>delta_G <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> c1)<span class="sc">:&gt;7.2f}</span><span class="ss">"</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="fl">4.5</span>))</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].bar(<span class="bu">range</span>(<span class="dv">1</span>, n_rounds <span class="op">+</span> <span class="dv">1</span>), spending_per_round, color<span class="op">=</span><span class="st">'steelblue'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">'Round'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'New spending (£)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Spending per Round'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>, axis<span class="op">=</span><span class="st">'y'</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(<span class="bu">range</span>(<span class="dv">1</span>, n_rounds <span class="op">+</span> <span class="dv">1</span>), cumulative, <span class="st">'o-'</span>, color<span class="op">=</span><span class="st">'coral'</span>, markersize<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axhline(delta_G <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> c1), color<span class="op">=</span><span class="st">'black'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>,</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>                label<span class="op">=</span><span class="ss">f'Limit = ΔG/(1-c₁) = £</span><span class="sc">{</span>delta_G<span class="op">/</span>(<span class="dv">1</span><span class="op">-</span>c1)<span class="sc">:.0f}</span><span class="ss">'</span>)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'Round'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Cumulative effect on Y (£)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Cumulative Multiplier Effect'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="how-the-mpc-changes-the-multiplier" class="level3">
+<h3 class="anchored" data-anchor-id="how-the-mpc-changes-the-multiplier">How the MPC Changes the Multiplier</h3>
+<p>The marginal propensity to consume <span class="math inline">\(c_1\)</span> is the engine of the multiplier. When people spend more of each additional pound, the multiplier is larger. Let’s see how the multiplier varies with <span class="math inline">\(c_1\)</span>.</p>
+<div id="cell-14" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>c1_values <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="fl">0.95</span>, <span class="dv">200</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>multipliers <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> c1_values)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ax.plot(c1_values, multipliers, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Mark a few key values</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> c1_mark, name <span class="kw">in</span> [(<span class="fl">0.5</span>, <span class="st">'Cautious'</span>), (<span class="fl">0.6</span>, <span class="st">'Moderate'</span>), (<span class="fl">0.8</span>, <span class="st">'Confident'</span>), (<span class="fl">0.9</span>, <span class="st">'Exuberant'</span>)]:</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    m <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> (<span class="dv">1</span> <span class="op">-</span> c1_mark)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    ax.plot(c1_mark, m, <span class="st">'o'</span>, markersize<span class="op">=</span><span class="dv">8</span>, zorder<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    ax.annotate(<span class="ss">f'</span><span class="sc">{</span>name<span class="sc">}</span><span class="ch">\n</span><span class="ss">c₁=</span><span class="sc">{</span>c1_mark<span class="sc">}</span><span class="ss">, m=</span><span class="sc">{</span>m<span class="sc">:.1f}</span><span class="ss">'</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                xy<span class="op">=</span>(c1_mark, m), xytext<span class="op">=</span>(c1_mark <span class="op">-</span> <span class="fl">0.08</span>, m <span class="op">+</span> <span class="fl">1.5</span>),</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                fontsize<span class="op">=</span><span class="dv">9</span>, ha<span class="op">=</span><span class="st">'center'</span>,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                bbox<span class="op">=</span><span class="bu">dict</span>(boxstyle<span class="op">=</span><span class="st">'round,pad=0.2'</span>, facecolor<span class="op">=</span><span class="st">'lightyellow'</span>, edgecolor<span class="op">=</span><span class="st">'gray'</span>))</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Marginal Propensity to Consume (c₁)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Fiscal Multiplier = 1/(1 - c₁)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'The Multiplier Depends on How Much People Spend'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="fl">0.05</span>, <span class="fl">1.0</span>)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">22</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"As c₁ approaches 1 (people spend everything), the multiplier explodes."</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"As c₁ approaches 0 (people save everything), the multiplier shrinks to 1."</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This is why Keynes argued the MPC is the crucial behavioural parameter."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="the-is-curve-adding-interest-rates" class="level3">
+<h3 class="anchored" data-anchor-id="the-is-curve-adding-interest-rates">The IS Curve: Adding Interest Rates</h3>
+<p>In the real economy, investment isn’t fixed — it depends on the interest rate <span class="math inline">\(r\)</span>. When interest rates are low, borrowing is cheap and firms invest more. We model this as:</p>
+<p><span class="math display">\[I(r) = \bar{I} - d \cdot r\]</span></p>
+<p>where <span class="math inline">\(d\)</span> measures how sensitive investment is to the interest rate.</p>
+<p>Now equilibrium depends on <span class="math inline">\(r\)</span>: for each interest rate, there’s a different equilibrium output. The set of all <span class="math inline">\((Y, r)\)</span> pairs where the goods market is in equilibrium is called the <strong>IS curve</strong> (“Investment = Saving”).</p>
+<div id="cell-16" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>d <span class="op">=</span> <span class="dv">500</span>  <span class="co"># investment sensitivity to interest rate</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> investment(r, I_bar<span class="op">=</span>I_bar, d<span class="op">=</span>d):</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> I_bar <span class="op">-</span> d <span class="op">*</span> r</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_equation(Y, r, c0<span class="op">=</span>c0, c1<span class="op">=</span>c1, I_bar<span class="op">=</span>I_bar, d<span class="op">=</span>d, G<span class="op">=</span>G, T<span class="op">=</span>T):</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Returns zero at goods-market equilibrium for given r."""</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    C <span class="op">=</span> c0 <span class="op">+</span> c1 <span class="op">*</span> (Y <span class="op">-</span> T)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    I <span class="op">=</span> I_bar <span class="op">-</span> d <span class="op">*</span> r</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Y <span class="op">-</span> C <span class="op">-</span> I <span class="op">-</span> G</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the IS curve: for each r, find Y*</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>r_values <span class="op">=</span> np.linspace(<span class="fl">0.01</span>, <span class="fl">0.15</span>, <span class="dv">50</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>Y_is <span class="op">=</span> np.array([fsolve(is_equation, x0<span class="op">=</span><span class="dv">500</span>, args<span class="op">=</span>(r,))[<span class="dv">0</span>] <span class="cf">for</span> r <span class="kw">in</span> r_values])</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>ax.plot(Y_is, r_values <span class="op">*</span> <span class="dv">100</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>)  <span class="co"># r in percent</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Output (Y)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Interest rate (%)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'The IS Curve: Goods-Market Equilibrium'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()  <span class="co"># convention: high Y to the right, high r up</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">16</span>, <span class="dv">0</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The IS curve slopes downward: lower interest rates → more investment → higher output."</span>)</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This is one of the fundamental relationships in macroeconomics."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="fiscal-policy-shifts-the-is-curve" class="level3">
+<h3 class="anchored" data-anchor-id="fiscal-policy-shifts-the-is-curve">Fiscal Policy Shifts the IS Curve</h3>
+<p>When the government increases spending, the IS curve shifts to the right — at every interest rate, equilibrium output is higher. This is the graphical version of the multiplier.</p>
+<div id="cell-18" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> G_val, color, label <span class="kw">in</span> [(<span class="dv">150</span>, <span class="st">'steelblue'</span>, <span class="ss">f'G = 150 (original)'</span>),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                             (<span class="dv">200</span>, <span class="st">'coral'</span>, <span class="ss">f'G = 200 (fiscal expansion)'</span>),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                             (<span class="dv">100</span>, <span class="st">'seagreen'</span>, <span class="ss">f'G = 100 (austerity)'</span>)]:</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    Y_is_shift <span class="op">=</span> np.array([</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        fsolve(is_equation, x0<span class="op">=</span><span class="dv">500</span>, args<span class="op">=</span>(r, c0, c1, I_bar, d, G_val, T))[<span class="dv">0</span>]</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> r <span class="kw">in</span> r_values</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    ])</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    ax.plot(Y_is_shift, r_values <span class="op">*</span> <span class="dv">100</span>, color<span class="op">=</span>color, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span>label)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Output (Y)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Interest rate (%)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Fiscal Policy Shifts the IS Curve'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">16</span>, <span class="dv">0</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Keynes's prescription for the Great Depression: shift the IS curve right"</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"by increasing G. The government spends what the private sector won't."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="animal-spirits-what-happens-when-confidence-collapses" class="level3">
+<h3 class="anchored" data-anchor-id="animal-spirits-what-happens-when-confidence-collapses">Animal Spirits: What Happens When Confidence Collapses?</h3>
+<p>Keynes argued that investment is driven partly by rational calculation and partly by “animal spirits” — waves of optimism and pessimism. Let’s simulate what happens when a confidence shock hits the economy.</p>
+<div id="cell-20" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate the economy over time with a confidence shock</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>T_sim <span class="op">=</span> <span class="dv">40</span>  <span class="co"># periods (quarters)</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Animal spirits: investment confidence over time</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>I_bar_path <span class="op">=</span> np.ones(T_sim) <span class="op">*</span> <span class="dv">200</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># At period 10, a confidence crash: investment drops by 30%</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>I_bar_path[<span class="dv">10</span>:] <span class="op">=</span> <span class="dv">140</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute equilibrium Y in each period</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>r_fixed <span class="op">=</span> <span class="fl">0.05</span>  <span class="co"># fixed interest rate for this exercise</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>Y_path <span class="op">=</span> np.empty(T_sim)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(T_sim):</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    Y_path[t] <span class="op">=</span> fsolve(</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>        is_equation, x0<span class="op">=</span><span class="dv">500</span>,</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>        args<span class="op">=</span>(r_fixed, c0, c1, I_bar_path[t], d, G, T)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    )[<span class="dv">0</span>]</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Now simulate WITH fiscal response: G increases to offset the shock</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>G_response <span class="op">=</span> np.ones(T_sim) <span class="op">*</span> G</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>G_response[<span class="dv">12</span>:] <span class="op">=</span> G <span class="op">+</span> <span class="dv">40</span>  <span class="co"># government responds 2 quarters later with extra spending</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>Y_path_response <span class="op">=</span> np.empty(T_sim)</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(T_sim):</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>    Y_path_response[t] <span class="op">=</span> fsolve(</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>        is_equation, x0<span class="op">=</span><span class="dv">500</span>,</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>        args<span class="op">=</span>(r_fixed, c0, c1, I_bar_path[t], d, G_response[t], T)</span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>    )[<span class="dv">0</span>]</span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>quarters <span class="op">=</span> np.arange(T_sim)</span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">5</span>))</span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(quarters, I_bar_path, <span class="st">'o-'</span>, color<span class="op">=</span><span class="st">'coral'</span>, markersize<span class="op">=</span><span class="dv">4</span>, label<span class="op">=</span><span class="st">'Investment confidence'</span>)</span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].axvline(<span class="dv">10</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">'Confidence shock'</span>)</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">'Quarter'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'Autonomous investment (Ī)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Animal Spirits: Confidence Collapse'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(quarters, Y_path, <span class="st">'o-'</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, markersize<span class="op">=</span><span class="dv">4</span>, label<span class="op">=</span><span class="st">'No policy response'</span>)</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(quarters, Y_path_response, <span class="st">'s-'</span>, color<span class="op">=</span><span class="st">'seagreen'</span>, markersize<span class="op">=</span><span class="dv">4</span>, label<span class="op">=</span><span class="st">'Fiscal stimulus (G↑)'</span>)</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axvline(<span class="dv">10</span>, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axvline(<span class="dv">12</span>, color<span class="op">=</span><span class="st">'green'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">'Policy kicks in'</span>)</span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'Quarter'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Output (Y)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Keynes vs. Doing Nothing'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Output drop without intervention: </span><span class="sc">{</span>Y_path[<span class="dv">0</span>] <span class="op">-</span> Y_path[<span class="dv">15</span>]<span class="sc">:.0f}</span><span class="ss">"</span>)</span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Output drop with fiscal stimulus:  </span><span class="sc">{</span>Y_path[<span class="dv">0</span>] <span class="op">-</span> Y_path_response[<span class="dv">15</span>]<span class="sc">:.0f}</span><span class="ss">"</span>)</span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Government spending partially offsets the confidence crash."</span>)</span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"This is Keynes's core policy argument: when animal spirits fail,"</span>)</span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"the government must step in to maintain demand."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="part-iii-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="part-iii-exercises">Part III — Exercises</h2>
+<section id="exercise-1-the-paradox-of-thrift" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1-the-paradox-of-thrift">Exercise 1 — The Paradox of Thrift</h3>
+<p>Keynes argued that if everyone tries to save more, total output falls and saving may actually decrease. Let’s test this.</p>
+<p>When the MPC <span class="math inline">\(c_1\)</span> falls (people save more), the multiplier shrinks. Starting from baseline (<span class="math inline">\(c_0 = 100\)</span>, <span class="math inline">\(c_1 = 0.6\)</span>, <span class="math inline">\(\bar{I} = 200\)</span>, <span class="math inline">\(G = 150\)</span>, <span class="math inline">\(T = 100\)</span>):</p>
+<p><strong>(a)</strong> Compute equilibrium <span class="math inline">\(Y^*\)</span> for <span class="math inline">\(c_1 = 0.6, 0.5, 0.4, 0.3\)</span>. Show that output falls as people save more.</p>
+<p><strong>(b)</strong> Compute total saving <span class="math inline">\(S = Y - C - T\)</span> at each equilibrium. Does saving actually increase when people try to save more?</p>
+<p><strong>(c)</strong> Plot <span class="math inline">\(Y^*\)</span> and <span class="math inline">\(S\)</span> against <span class="math inline">\(c_1\)</span>. This is the paradox of thrift in action.</p>
+<p><strong>(d)</strong> In 2–3 sentences, explain why what is rational for each individual (saving more in uncertain times) can be harmful for the economy as a whole. How does this relate to Smith’s invisible hand?</p>
+<div id="cell-22" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answer here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercise-2-balanced-budget-multiplier" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-balanced-budget-multiplier">Exercise 2 — Balanced-Budget Multiplier</h3>
+<p>A politician proposes increasing government spending by £100, financed entirely by a £100 tax increase (so the budget stays balanced: <span class="math inline">\(\Delta G = \Delta T = 100\)</span>).</p>
+<p>Classical economists might argue this has no effect — the government takes a pound and gives it back. Keynes disagrees.</p>
+<p><strong>(a)</strong> Starting from the baseline, compute <span class="math inline">\(Y^*\)</span> with <span class="math inline">\(G = 150\)</span>, <span class="math inline">\(T = 100\)</span>.</p>
+<p><strong>(b)</strong> Now compute <span class="math inline">\(Y^*\)</span> with <span class="math inline">\(G = 250\)</span>, <span class="math inline">\(T = 200\)</span> (balanced-budget increase of 100).</p>
+<p><strong>(c)</strong> What is <span class="math inline">\(\Delta Y\)</span>? Is the balanced-budget multiplier equal to 0, 1, or something else?</p>
+<p><strong>(d)</strong> Explain intuitively why a balanced-budget fiscal expansion still increases output. (Hint: the government spends 100% of the extra revenue, but taxpayers only reduce spending by <span class="math inline">\(c_1 \times 100\)</span>.)</p>
+<div id="cell-24" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answer here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercise-3-a-progressive-tax-system" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3-a-progressive-tax-system">Exercise 3 — A Progressive Tax System</h3>
+<p>In our model so far, taxes <span class="math inline">\(T\)</span> are a fixed lump sum. In reality, taxes depend on income. Let’s make the model more realistic.</p>
+<p>Replace the fixed tax <span class="math inline">\(T\)</span> with a <strong>proportional income tax</strong>: <span class="math inline">\(T(Y) = \tau \cdot Y\)</span>, where <span class="math inline">\(\tau\)</span> is the tax rate.</p>
+<p>The consumption function becomes: <span class="math inline">\(C = c_0 + c_1 (Y - \tau Y) = c_0 + c_1(1 - \tau)Y\)</span></p>
+<p><strong>(a)</strong> Write a new equilibrium condition function for this model. Use <span class="math inline">\(\tau = 0.25\)</span>.</p>
+<p><strong>(b)</strong> Find <span class="math inline">\(Y^*\)</span> using <code>fsolve</code>. Compare to the fixed-tax model.</p>
+<p><strong>(c)</strong> What is the fiscal multiplier now? Derive the formula: <span class="math inline">\(\text{Multiplier} = \frac{1}{1 - c_1(1-\tau)}\)</span>. Verify numerically by increasing <span class="math inline">\(G\)</span> by 50.</p>
+<p><strong>(d)</strong> Compare the multiplier with <span class="math inline">\(\tau = 0\)</span> vs <span class="math inline">\(\tau = 0.25\)</span> vs <span class="math inline">\(\tau = 0.5\)</span>. How does the tax rate affect the multiplier? Keynes’s followers called the income tax an “automatic stabiliser” — explain why.</p>
+<div id="cell-26" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answer here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="part-iv-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="part-iv-quiz">Part IV — Quiz</h2>
+<section id="conceptual-questions" class="level3">
+<h3 class="anchored" data-anchor-id="conceptual-questions">Conceptual Questions</h3>
+<p><strong>Q1.</strong> Before Keynes, classical economists believed that a general glut (economy-wide shortage of demand) was impossible because of:</p>
+<ol type="a">
+<li>The quantity theory of money<br>
+</li>
+<li>Say’s Law (“supply creates its own demand”)<br>
+</li>
+<li>The labour theory of value<br>
+</li>
+<li>Ricardo’s theory of comparative advantage</li>
+</ol>
+<p><strong>Q2.</strong> Keynes’s “paradox of thrift” states that:</p>
+<ol type="a">
+<li>People who save more end up wealthier<br>
+</li>
+<li>If everyone tries to save more, total income falls and aggregate saving may not increase<br>
+</li>
+<li>Thrift is always beneficial for the economy<br>
+</li>
+<li>Saving and investment are always equal</li>
+</ol>
+<p><strong>Q3.</strong> “Animal spirits” in Keynes’s framework refers to:</p>
+<ol type="a">
+<li>Consumer demand for luxury goods<br>
+</li>
+<li>Waves of business optimism and pessimism that drive investment decisions<br>
+</li>
+<li>The instinct of workers to demand higher wages<br>
+</li>
+<li>International currency speculation</li>
+</ol>
+<p><strong>Q4.</strong> Keynes’s policy prescription for the Great Depression was:</p>
+<ol type="a">
+<li>Cut government spending to balance the budget<br>
+</li>
+<li>Wait for the market to self-correct<br>
+</li>
+<li>Increase government spending to replace lost private demand<br>
+</li>
+<li>Return to the gold standard</li>
+</ol>
+<p><strong>Q5.</strong> The IS curve shows all combinations of <span class="math inline">\((Y, r)\)</span> where:</p>
+<ol type="a">
+<li>The money market is in equilibrium<br>
+</li>
+<li>The goods market is in equilibrium (output = planned spending)<br>
+</li>
+<li>Unemployment is zero<br>
+</li>
+<li>Inflation is stable</li>
+</ol>
+</section>
+<section id="computational-questions" class="level3">
+<h3 class="anchored" data-anchor-id="computational-questions">Computational Questions</h3>
+<p><strong>Q6.</strong> If the MPC is 0.8, the fiscal multiplier <span class="math inline">\(1/(1-c_1)\)</span> equals:</p>
+<ol type="a">
+<li>1.25<br>
+</li>
+<li>2.5<br>
+</li>
+<li>5.0<br>
+</li>
+<li>8.0</li>
+</ol>
+<p><strong>Q7.</strong> In the Keynesian cross, equilibrium occurs where:</p>
+<ol type="a">
+<li>The spending line has slope 1<br>
+</li>
+<li>The spending line crosses the horizontal axis<br>
+</li>
+<li>The spending line crosses the 45-degree line<br>
+</li>
+<li>Consumption equals zero</li>
+</ol>
+<p><strong>Q8.</strong> If government spending increases by £100 and the MPC is 0.6, the total change in output is:</p>
+<ol type="a">
+<li>£100<br>
+</li>
+<li>£160<br>
+</li>
+<li>£250<br>
+</li>
+<li>£600</li>
+</ol>
+<p><strong>Q9.</strong> The IS curve slopes downward because:</p>
+<ol type="a">
+<li>Higher output causes lower interest rates<br>
+</li>
+<li>Lower interest rates stimulate investment, which increases equilibrium output<br>
+</li>
+<li>Higher interest rates increase consumption<br>
+</li>
+<li>Government spending falls when interest rates rise</li>
+</ol>
+<p><strong>Q10.</strong> A fiscal expansion (increase in <span class="math inline">\(G\)</span>) shifts the IS curve:</p>
+<ol type="a">
+<li>Leftward<br>
+</li>
+<li>Rightward<br>
+</li>
+<li>Upward along the same curve<br>
+</li>
+<li>It doesn’t affect the IS curve</li>
+</ol>
+</section>
+<section id="quiz-answers" class="level3">
+<h3 class="anchored" data-anchor-id="quiz-answers">Quiz Answers</h3>
+<details>
+<summary>
+Click to reveal answers
+</summary>
+<p><strong>Q1.</strong> (b) Say’s Law — the classical belief that production of goods automatically generates enough income to buy those goods, making a general demand deficiency impossible.</p>
+<p><strong>Q2.</strong> (b) The paradox is that individual rationality (save more when times are bad) produces a collectively irrational outcome (lower total income). The fallacy of composition.</p>
+<p><strong>Q3.</strong> (b) Animal spirits are the irrational waves of confidence and pessimism that drive business investment, beyond what can be justified by cold calculation of expected returns.</p>
+<p><strong>Q4.</strong> (c) Keynes argued that when private demand collapses, the government must fill the gap by increasing its own spending — the fiscal multiplier ensures the effect is magnified.</p>
+<p><strong>Q5.</strong> (b) The IS curve shows combinations of output <span class="math inline">\(Y\)</span> and interest rate <span class="math inline">\(r\)</span> where the goods market clears: <span class="math inline">\(Y = C + I(r) + G\)</span>.</p>
+<p><strong>Q6.</strong> (c) <span class="math inline">\(1/(1 - 0.8) = 1/0.2 = 5.0\)</span>. Each pound of government spending generates £5 of output.</p>
+<p><strong>Q7.</strong> (c) The 45-degree line represents <span class="math inline">\(Y = \text{Spending}\)</span>. Where the spending function crosses it, output equals planned spending — that’s equilibrium.</p>
+<p><strong>Q8.</strong> (c) <span class="math inline">\(\Delta Y = \Delta G \times \frac{1}{1-c_1} = 100 \times \frac{1}{0.4} = 250\)</span>.</p>
+<p><strong>Q9.</strong> (b) Lower <span class="math inline">\(r\)</span> → cheaper borrowing → more investment → higher total spending → higher equilibrium <span class="math inline">\(Y\)</span>. So low <span class="math inline">\(r\)</span> pairs with high <span class="math inline">\(Y\)</span>: a downward slope.</p>
+<p><strong>Q10.</strong> (b) Higher <span class="math inline">\(G\)</span> increases autonomous spending, raising equilibrium <span class="math inline">\(Y\)</span> at every <span class="math inline">\(r\)</span>, so the IS curve shifts right.</p>
+</details>
+<hr>
+</section>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further Reading</h2>
+<ul>
+<li>Keynes, J.M. <em>The General Theory of Employment, Interest, and Money</em> (1936), Chapters 1–3, 10 (the multiplier).</li>
+<li>Skidelsky, R. <em>Keynes: A Very Short Introduction</em> — an excellent 150-page overview of Keynes’s life and ideas.</li>
+<li>Heilbroner, R. <em>The Worldly Philosophers</em>, Chapter 9 (“The Heresies of John Maynard Keynes”).</li>
+<li>Hicks, J.R. “Mr.&nbsp;Keynes and the ‘Classics’” (1937) — the paper that invented the IS-LM model.</li>
+</ul>
+<hr>
+<p><em>Next week: Marx and the Machinery Question — capital accumulation, the labour share of income, and the debate over whether technology helps or hurts workers.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/juanignaciozurita\.github\.io\/personalwebsite\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

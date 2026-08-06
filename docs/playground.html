@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Programming &amp; Numerical Methods for Economics – Juan Zurita</title>
+<title>Python Playground – Juan Zurita</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,23 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-cdfd0cc769c71205c17cfb73cc6016cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-cdfd0cc769c71205c17cfb73cc6016cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,17 +72,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Juan Zurita</span>
     </a>
   </div>
@@ -93,27 +93,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../research.html"> 
+    <a class="nav-link" href="./research.html"> 
 <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../teaching.html"> 
+    <a class="nav-link" href="./teaching.html"> 
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv.html"> 
+    <a class="nav-link" href="./cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../opencollaborations.html"> 
+    <a class="nav-link" href="./opencollaborations.html"> 
 <span class="menu-text">Open Collaborations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../usefullinks.html"> 
+    <a class="nav-link" href="./usefullinks.html"> 
 <span class="menu-text">Useful Links</span></a>
   </li>  
 </ul>
@@ -127,8 +127,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Programming &amp; Numerical Methods for Economics</h1>
-            <p class="subtitle lead">Honours — The University of Edinburgh</p>
+      <h1 class="title">Python Playground</h1>
+            <p class="subtitle lead">Run course code directly in your browser — nothing to install</p>
                       </div>
   </div>
     
@@ -144,19 +144,7 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#how-to-use-these-materials" id="toc-how-to-use-these-materials" class="nav-link active" data-scroll-target="#how-to-use-these-materials">How to use these materials</a></li>
-  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
-  <li><a href="#syllabus" id="toc-syllabus" class="nav-link" data-scroll-target="#syllabus">Syllabus</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -165,164 +153,223 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p style="text-align: justify;">
-This course teaches you to solve economic problems with code: writing clean programs in <strong>Python</strong>, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements.
+This page runs real Python — with NumPy and Matplotlib — entirely inside your browser. Pick an example from the course, edit it, and press <strong>Run</strong>. It is perfect for quick experiments between lectures; for full weekly notebooks, use the <a href="./courses/pnm/index.html">course page</a> and its Colab links.
 </p>
-<section id="how-to-use-these-materials" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-these-materials">How to use these materials</h2>
-<p>Each week has a <strong>notebook</strong> you can read online, download, or run in the cloud:</p>
-<ul>
-<li><strong>Read online</strong> — click the notebook link; it renders as a webpage with all code and output.</li>
-<li><strong>Run in Google Colab</strong> — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.</li>
-<li><strong>Run locally</strong> — install <a href="https://www.anaconda.com/download">Anaconda</a> (includes Python, Jupyter, NumPy, and Matplotlib), then download the <code>.ipynb</code> file from the links below and open it in Jupyter.</li>
-<li><strong>Browse the Jupyter Book</strong> — all notebooks are also collected in a <a href="book/intro.html">Jupyter Book</a> with a navigable sidebar and search.</li>
-</ul>
-<p><strong>New to Python?</strong> Start with the <a href="https://github.com/Juanignaciozurita/Python-Refresher">Python Refresher repository</a> alongside PS0.</p>
-<p><strong>Quick experiments:</strong> try the <a href="../../playground.html">Python Playground</a> — run and edit course code directly in your browser, nothing to install.</p>
-</section>
-<section id="materials" class="level2">
-<h2 class="anchored" data-anchor-id="materials">Materials</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Week</th>
-<th style="text-align: left;">Topic</th>
-<th style="text-align: left;">Notebook</th>
-<th style="text-align: left;">Slides</th>
-<th style="text-align: left;">Problem Set</th>
-<th style="text-align: left;">Lab</th>
-<th style="text-align: left;">Colab</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">Introduction to Programming</td>
-<td style="text-align: left;"><a href="notebooks/week01_intro.ipynb">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week01_intro.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/Lecture1.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS0_ECNM10115.pdf">PS0 — Python refresher</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week01_intro.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">Fundamentals of Programming in Python</td>
-<td style="text-align: left;"><a href="notebooks/week02_fundamentals.ipynb">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week02_fundamentals.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/Lecture2.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS1_ECNM10115.pdf">PS1</a></td>
-<td style="text-align: left;"><a href="notebooks/lab01.ipynb">Lab 1</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week02_fundamentals.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">Data Manipulation with pandas</td>
-<td style="text-align: left;"><a href="notebooks/week03_pandas.ipynb">pandas</a> · <a href="notebooks/week03_casestudy.ipynb">Case study</a></td>
-<td style="text-align: left;"><a href="slides/Lecture3.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS2_ECNM10115.pdf">PS2</a></td>
-<td style="text-align: left;"><a href="notebooks/lab02.ipynb">Lab 2</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week03_pandas.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">From Data to Models</td>
-<td style="text-align: left;"><a href="notebooks/week04_models.ipynb">View</a></td>
-<td style="text-align: left;"><a href="slides/Lecture4.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS3_ECNM10115.pdf">PS3</a></td>
-<td style="text-align: left;"><a href="notebooks/lab03.ipynb">Lab 3</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week04_models.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: left;">Numerical Methods I — Root-Finding &amp; Optimisation</td>
-<td style="text-align: left;"><a href="notebooks/week05_numerical1.ipynb">View</a></td>
-<td style="text-align: left;"><a href="slides/Lecture5.pdf">PDF</a> · <a href="slides/Optimization_Autumn2025.pdf">Optimisation</a> · <a href="slides/ValueFunctionApproximation.pdf">VF Approx.</a></td>
-<td style="text-align: left;"><a href="psets/PS4_ECNM10115.pdf">PS4</a></td>
-<td style="text-align: left;"><a href="notebooks/lab04.ipynb">Lab 4</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week05_numerical1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td style="text-align: left;">Numerical Methods II — Optimisation in Economics</td>
-<td style="text-align: left;"><a href="notebooks/week06_optimization.ipynb">View</a></td>
-<td style="text-align: left;"><a href="slides/Lecture6_optimization.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS5.pdf">PS5</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week06_optimization.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td style="text-align: left;">Numerical Methods III — Function Approximation</td>
-<td style="text-align: left;"><a href="notebooks/week07_funcapprox.ipynb">View</a> · <a href="notebooks/week07_examples.ipynb">Examples</a></td>
-<td style="text-align: left;"><a href="slides/Lecture7_function_approximation.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS6.pdf">PS6</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week07_funcapprox.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">8</td>
-<td style="text-align: left;">Economic Models — Value Function Iteration</td>
-<td style="text-align: left;"><a href="notebooks/week08_growth_julia.ipynb">View (Julia)</a></td>
-<td style="text-align: left;"><a href="slides/Lecture8_vfi.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS7.pdf">PS7</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">9</td>
-<td style="text-align: left;">Model Estimation — Simulation &amp; Inference</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="slides/Lecture9_simulation_inference.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS8.pdf">PS8</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-<td style="text-align: left;">Advanced Topics — Heterogeneous Agents</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="slides/Lecture10_heterogeneous_agents.pdf">PDF</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
-</tr>
-</tbody>
-</table>
-<!-- TEMPLATE for adding a week — copy the row above and adjust week number/topic/filenames.
-NOTE: if you rename the GitHub repo, update the Download and Colab URLs to match.
-POLICY: problem-set QUESTIONS only — solutions are never published here. -->
-<p><em>Notebooks include interactive exercises with hidden solutions — try first, then click to check.</em></p>
-<p><strong>Datasets:</strong> the survey datasets used in the Week 3 case study, labs, and problem sets (UNPS and related microdata) are distributed through <strong>Learn</strong>, not this website, for licensing reasons. Notebooks are published with their outputs embedded, so you can follow everything here.</p>
-<p><strong>Test yourself:</strong> take the <a href="../../quiz.html">Numerical Methods Quiz</a> — 14 multiple-choice questions covering root-finding, optimisation, and function approximation (Weeks 5–8) with instant feedback.</p>
-<p><strong>Extra reading:</strong> <a href="files/DataWrangling_Pandas_Cheat_Sheet.pdf">pandas cheat sheet</a> · <a href="files/Quadrature_Methods.pdf">Quadrature Methods</a> · <a href="files/Math_Review.pdf">Math Review</a></p>
-</section>
-<section id="syllabus" class="level2">
-<h2 class="anchored" data-anchor-id="syllabus">Syllabus</h2>
-<ol type="1">
-<li>Introduction to programming</li>
-<li>Fundamentals of programming in Python</li>
-<li>Data manipulation and data analysis</li>
-<li>From data to models</li>
-<li>Numerical Methods I</li>
-<li>Numerical Methods II</li>
-<li>Numerical Methods III</li>
-<li>Economic models</li>
-<li>Model estimation</li>
-<li>Advanced topics</li>
-</ol>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<ul>
-<li><strong>Numerical Methods in Economics</strong>, Kenneth L. Judd (1998) — main reference for the numerical-methods weeks</li>
-<li><a href="https://quantecon.org"><strong>QuantEcon</strong></a> — T. Sargent and J. Stachurski’s open lectures, main reference</li>
-<li>Advanced: <a href="https://www.sas.upenn.edu/~jesusfv/teaching.html">Jesús Fernández-Villaverde’s Computational Methods for Economists</a> lecture notes</li>
-</ul>
-</section>
-<section id="questions" class="level2">
-<h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>Found an error in a notebook, or stuck on setup? Email <a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a> — see <a href="../../students.html">For Students</a> for how to get a fast answer.</p>
+<style>
+.pg-root {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #ffffff; border: 1px solid rgba(11,11,11,0.10); border-radius: 14px;
+  padding: 1.1rem 1.25rem 1.25rem; margin: 1rem 0 1.5rem;
+}
+.pg-toolbar { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; margin-bottom: 0.7rem; }
+.pg-toolbar select {
+  font-family: inherit; font-size: 0.9rem; padding: 0.4rem 0.6rem;
+  border: 1px solid #e1e0d9; border-radius: 9px; background: #fff; color: #0b0b0b;
+}
+.pg-run {
+  background: #7a2318; color: #f5efe6; border: none; border-radius: 9px;
+  padding: 0.45rem 1.1rem; font-size: 0.92rem; font-weight: 600; cursor: pointer; font-family: inherit;
+}
+.pg-run:disabled { background: #b9a9a5; cursor: wait; }
+.pg-status { font-size: 0.82rem; color: #898781; }
+.pg-editor {
+  width: 100%; min-height: 240px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88rem; line-height: 1.5; border: 1px solid #e1e0d9; border-radius: 10px;
+  padding: 0.8rem 1rem; background: #fcfcfb; color: #0b0b0b; resize: vertical; white-space: pre; overflow-x: auto;
+}
+.pg-editor:focus { outline: 2px solid rgba(163,58,42,0.35); }
+.pg-out {
+  margin-top: 0.7rem; background: #1f1e1c; color: #e8e6e0; border-radius: 10px;
+  padding: 0.8rem 1rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem; line-height: 1.5; white-space: pre-wrap; min-height: 2.2rem; max-height: 340px; overflow: auto;
+}
+.pg-out .err { color: #ff9f8a; }
+.pg-fig { margin-top: 0.7rem; text-align: center; }
+.pg-fig img { max-width: 100%; border-radius: 10px; border: 1px solid #e1e0d9; }
+.pg-note { font-size: 0.8rem; color: #52514e; margin-top: 0.7rem; }
+</style>
+
+<div class="pg-root" id="pg">
+  <div class="pg-toolbar">
+    <select id="pg-example" aria-label="Load an example">
+      <option value="hello">Example: first steps</option>
+      <option value="pv">Exercise: present value (Week 1)</option>
+      <option value="solow">Example: Solow growth model (Week 1)</option>
+      <option value="loops">Exercise: even numbers (Week 1)</option>
+      <option value="ces">Exercise: CES production (Week 2)</option>
+      <option value="blank">Blank editor</option>
+    </select>
+    <button class="pg-run" id="pg-run" disabled="">▶ Run</button>
+    <span class="pg-status" id="pg-status">Loading Python… (first load takes ~10s)</span>
+  </div>
+  <textarea class="pg-editor" id="pg-code" spellcheck="false" aria-label="Python code editor"></textarea>
+  <div class="pg-out" id="pg-out">Output will appear here.</div>
+  <div class="pg-fig" id="pg-fig"></div>
+  <p class="pg-note">Runs entirely in your browser via <a href="https://pyodide.org">Pyodide</a> (Python 3 + NumPy + Matplotlib compiled to WebAssembly). Nothing is sent to a server. Keyboard: <b>Ctrl/Cmd + Enter</b> to run. For full notebooks, use the Colab links on the course page.</p>
+</div>
+
+<script>
+const PG_EXAMPLES = {
+hello: `# Welcome! Edit this code and press Run (or Ctrl+Enter).
+gdp = 2.85e12
+population = 68_350_000
+print(f"GDP per capita: {gdp/population:,.2f}")
+
+# Greek letters work:
+α, β = 0.3, 0.96
+print("α + β =", α + β)`,
+pv: `# Exercise (Week 1): write present_value(payment, r, T)
+# PV = sum of payment/(1+r)**t for t = 1..T
+# Check: present_value(100, 0.05, 10) should be ≈ 772.17
+
+def present_value(payment, r, T):
+    ...  # your code here
+
+print(present_value(100, 0.05, 10))`,
+solow: `# The Solow growth model — k(t+1) = s*k(t)**α + (1-δ)*k(t)
+import numpy as np
+import matplotlib.pyplot as plt
+
+def solow_path(s=0.25, alpha=0.3, delta=0.05, k0=1.0, T=100):
+    k = np.zeros(T); k[0] = k0
+    for t in range(T-1):
+        k[t+1] = s*k[t]**alpha + (1-delta)*k[t]
+    return k
+
+k = solow_path()
+k_star = (0.25/0.05)**(1/(1-0.3))
+
+plt.figure(figsize=(7,3.5))
+plt.plot(k, lw=2, label="capital path")
+plt.axhline(k_star, ls="--", c="tab:red", label="steady state")
+plt.xlabel("t"); plt.ylabel("k"); plt.legend()
+plt.title("Try changing s or delta and re-running!")
+plt.show()`,
+loops: `# Exercise (Week 1): count the even numbers in 0–99
+# Hint: x % 2 == 0 tests evenness; booleans add as 1/0.
+
+count = 0
+# your loop here
+
+print(count)   # should print 50`,
+ces: `# Exercise (Week 2): CES production function
+# Y = A*(α*K**ρ + (1-α)*L**ρ)**(1/ρ),  ρ = (σ-1)/σ
+# ces(4, 9) with defaults should be ≈ 6.25
+
+def ces(K, L, alpha=0.5, sigma=2.0, A=1.0):
+    ...  # your code here
+
+print(ces(4, 9))`,
+blank: `# Your Python scratchpad — numpy and matplotlib are available.
+`};
+
+(function(){
+  const runBtn = document.getElementById('pg-run');
+  const status = document.getElementById('pg-status');
+  const codeEl = document.getElementById('pg-code');
+  const outEl  = document.getElementById('pg-out');
+  const figEl  = document.getElementById('pg-fig');
+  const exSel  = document.getElementById('pg-example');
+
+  codeEl.value = PG_EXAMPLES.hello;
+  exSel.addEventListener('change', () => { codeEl.value = PG_EXAMPLES[exSel.value]; outEl.textContent = 'Output will appear here.'; figEl.innerHTML=''; });
+  codeEl.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter'){ e.preventDefault(); if(!runBtn.disabled) run(); }
+    if (e.key === 'Tab'){ e.preventDefault();
+      const s = codeEl.selectionStart; codeEl.setRangeText('    ', s, codeEl.selectionEnd, 'end'); }
+  });
+
+  let pyodide = null, loading = null;
+
+  async function ensurePyodide(){
+    if (pyodide) return pyodide;
+    if (!loading){
+      loading = (async () => {
+        const CDNS = [
+          "https://cdn.jsdelivr.net/pyodide/v0.26.4/full/",
+          "https://cdnjs.cloudflare.com/ajax/libs/pyodide/0.26.4/"
+        ];
+        let mod = null, base = null;
+        for (const c of CDNS){
+          try { mod = await import(c + "pyodide.mjs"); base = c; break; } catch(e){ console.warn("CDN failed:", c); }
+        }
+        if (!mod) throw new Error("no CDN reachable");
+        const py = await mod.loadPyodide({indexURL: base});
+        status.textContent = "Loading NumPy + Matplotlib…";
+        await py.loadPackage(["numpy", "matplotlib"]);
+        await py.runPythonAsync(`
+import matplotlib
+matplotlib.use("AGG")
+import sys, io, base64
+`);
+        return py;
+      })();
+    }
+    pyodide = await loading;
+    return pyodide;
+  }
+
+  // start loading immediately
+  ensurePyodide().then(() => {
+    runBtn.disabled = false;
+    status.textContent = "Python ready ✓";
+  }).catch(e => {
+    status.textContent = "Could not load Python (check your connection).";
+    console.error(e);
+  });
+
+  async function run(){
+    runBtn.disabled = true; status.textContent = "Running…";
+    outEl.textContent = ""; figEl.innerHTML = "";
+    try {
+      const py = await ensurePyodide();
+      py.globals.set("__code__", codeEl.value);
+      const result = await py.runPythonAsync(`
+import sys, io, base64, traceback
+import matplotlib.pyplot as plt
+_buf = io.StringIO()
+_old = sys.stdout
+sys.stdout = _buf
+_err = None
+try:
+    exec(compile(__code__, "<playground>", "exec"), {})
+except Exception:
+    _err = traceback.format_exc(limit=3)
+finally:
+    sys.stdout = _old
+_figs = []
+for _n in plt.get_fignums():
+    _f = plt.figure(_n)
+    _b = io.BytesIO()
+    _f.savefig(_b, format="png", dpi=110, bbox_inches="tight")
+    _figs.append(base64.b64encode(_b.getvalue()).decode())
+plt.close("all")
+import json
+json.dumps({"out": _buf.getvalue(), "err": _err, "figs": _figs})
+`);
+      const r = JSON.parse(result);
+      if (r.out) outEl.textContent = r.out;
+      if (r.err){ const s = document.createElement('span'); s.className='err'; s.textContent = r.err; outEl.appendChild(s); }
+      if (!r.out && !r.err) outEl.textContent = "(no output — use print())";
+      for (const f of r.figs){
+        const img = document.createElement('img');
+        img.src = "data:image/png;base64," + f;
+        img.alt = "Matplotlib figure";
+        figEl.appendChild(img);
+      }
+      status.textContent = "Python ready ✓";
+    } catch(e){
+      outEl.innerHTML = '<span class="err">' + String(e) + '</span>';
+      status.textContent = "Python ready ✓";
+    }
+    runBtn.disabled = false;
+  }
+  runBtn.addEventListener('click', run);
+})();
+</script>
 
 
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

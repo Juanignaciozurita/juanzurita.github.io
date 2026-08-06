@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Programming &amp; Numerical Methods for Economics – Juan Zurita</title>
+<title>From Adam Smith to Simulation – Juan Zurita</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -127,8 +127,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Programming &amp; Numerical Methods for Economics</h1>
-            <p class="subtitle lead">Honours — The University of Edinburgh</p>
+      <h1 class="title">From Adam Smith to Simulation</h1>
+            <p class="subtitle lead">Computing the Ideas that Built Economics — The University of Edinburgh</p>
                       </div>
   </div>
     
@@ -149,11 +149,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-to-use-these-materials" id="toc-how-to-use-these-materials" class="nav-link active" data-scroll-target="#how-to-use-these-materials">How to use these materials</a></li>
-  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
-  <li><a href="#syllabus" id="toc-syllabus" class="nav-link" data-scroll-target="#syllabus">Syllabus</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#the-economists" id="toc-the-economists" class="nav-link active" data-scroll-target="#the-economists">The Economists</a></li>
   </ul>
 </nav>
     </div>
@@ -165,19 +161,107 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p style="text-align: justify;">
-This course teaches you to solve economic problems with code: writing clean programs in <strong>Python</strong>, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements.
+A 10-week course pairing the <strong>history of economic thought</strong> with <strong>computational exercises in Python</strong>. Each module tells the story of a transformative idea — from Adam Smith’s invisible hand to Piketty’s inequality dynamics — then teaches you to build, solve, and simulate the model behind it. No prior programming experience is assumed; the course teaches Python as it goes. All materials are open access.
+</p>
+<section id="the-economists" class="level2">
+<h2 class="anchored" data-anchor-id="the-economists">The Economists</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin: 24px 0 32px 0;">
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Adam_Smith_The_Muir_portrait.jpg/300px-Adam_Smith_The_Muir_portrait.jpg" alt="Adam Smith" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+Adam Smith
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1723–1790
+</p>
+</div>
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Thomas_Robert_Malthus.jpg/300px-Thomas_Robert_Malthus.jpg" alt="Thomas Malthus" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+Thomas Malthus
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1766–1834
+</p>
+</div>
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Portrait_of_David_Ricardo_by_Thomas_Phillips.jpg/300px-Portrait_of_David_Ricardo_by_Thomas_Phillips.jpg" alt="David Ricardo" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+David Ricardo
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1772–1823
+</p>
+</div>
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Karl_Marx_001.jpg/300px-Karl_Marx_001.jpg" alt="Karl Marx" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+Karl Marx
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1818–1883
+</p>
+</div>
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/William_Stanley_Jevons.jpg/300px-William_Stanley_Jevons.jpg" alt="William Stanley Jevons" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+W. S. Jevons
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1835–1882
+</p>
+</div>
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/John_Maynard_Keynes.jpg/300px-John_Maynard_Keynes.jpg" alt="John Maynard Keynes" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+J. M. Keynes
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1883–1946
+</p>
+</div>
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Robert_Solow_by_Olaf_Storbeck.jpg/300px-Robert_Solow_by_Olaf_Storbeck.jpg" alt="Robert Solow" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+Robert Solow
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1924–2023
+</p>
+</div>
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Robert_Lucas.jpg/300px-Robert_Lucas.jpg" alt="Robert Lucas" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+Robert Lucas
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1937–2023
+</p>
+</div>
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Thomas_Piketty%2C_2015_%28cropped%29.jpg/300px-Thomas_Piketty%2C_2015_%28cropped%29.jpg" alt="Thomas Piketty" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+Thomas Piketty
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+</p><ol start="2" type="a">
+<li>1971
+<p></p>
+</li></ol></div>
+
+</div>
+<p style="text-align: center; font-size: 0.75em; color: #999; margin-top: -16px;">
+Portraits from <a href="https://commons.wikimedia.org" style="color: #999;">Wikimedia Commons</a> (public domain / CC-BY-SA).
 </p>
 <section id="how-to-use-these-materials" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-use-these-materials">How to use these materials</h2>
-<p>Each week has a <strong>notebook</strong> you can read online, download, or run in the cloud:</p>
+<p>Each week has a <strong>notebook</strong> you can read online, download, or run in the cloud, plus a <strong>slide deck</strong> for the lecture:</p>
 <ul>
 <li><strong>Read online</strong> — click the notebook link; it renders as a webpage with all code and output.</li>
 <li><strong>Run in Google Colab</strong> — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.</li>
-<li><strong>Run locally</strong> — install <a href="https://www.anaconda.com/download">Anaconda</a> (includes Python, Jupyter, NumPy, and Matplotlib), then download the <code>.ipynb</code> file from the links below and open it in Jupyter.</li>
+<li><strong>Run locally</strong> — install <a href="https://www.anaconda.com/download">Anaconda</a> (includes Python, Jupyter, NumPy, and Matplotlib), then download the <code>.ipynb</code> file and open it in Jupyter.</li>
 <li><strong>Browse the Jupyter Book</strong> — all notebooks are also collected in a <a href="book/intro.html">Jupyter Book</a> with a navigable sidebar and search.</li>
 </ul>
-<p><strong>New to Python?</strong> Start with the <a href="https://github.com/Juanignaciozurita/Python-Refresher">Python Refresher repository</a> alongside PS0.</p>
-<p><strong>Quick experiments:</strong> try the <a href="../../playground.html">Python Playground</a> — run and edit course code directly in your browser, nothing to install.</p>
 </section>
 <section id="materials" class="level2">
 <h2 class="anchored" data-anchor-id="materials">Materials</h2>
@@ -188,143 +272,130 @@ This course teaches you to solve economic problems with code: writing clean prog
 <th style="text-align: left;">Topic</th>
 <th style="text-align: left;">Notebook</th>
 <th style="text-align: left;">Slides</th>
-<th style="text-align: left;">Problem Set</th>
-<th style="text-align: left;">Lab</th>
 <th style="text-align: left;">Colab</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">Introduction to Programming</td>
-<td style="text-align: left;"><a href="notebooks/week01_intro.ipynb">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week01_intro.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/Lecture1.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS0_ECNM10115.pdf">PS0 — Python refresher</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week01_intro.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
+<td style="text-align: left;">The Invisible Hand — Adam Smith &amp; Market Equilibrium</td>
+<td style="text-align: left;"><a href="../../courses/smith-to-simulation/Module_01_Invisible_Hand.html">View</a></td>
+<td style="text-align: left;"><a href="slides/Module_01_Invisible_Hand.pdf">PDF</a></td>
+<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_01_Invisible_Hand.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2</td>
-<td style="text-align: left;">Fundamentals of Programming in Python</td>
-<td style="text-align: left;"><a href="notebooks/week02_fundamentals.ipynb">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week02_fundamentals.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/Lecture2.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS1_ECNM10115.pdf">PS1</a></td>
-<td style="text-align: left;"><a href="notebooks/lab01.ipynb">Lab 1</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week02_fundamentals.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
+<td style="text-align: left;">The Pin Factory — Division of Labour &amp; Comparative Advantage</td>
+<td style="text-align: left;"><a href="../../courses/smith-to-simulation/Module_02_Pin_Factory.html">View</a></td>
+<td style="text-align: left;"><a href="slides/Module_02_Pin_Factory.pdf">PDF</a></td>
+<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_02_Pin_Factory.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">3</td>
-<td style="text-align: left;">Data Manipulation with pandas</td>
-<td style="text-align: left;"><a href="notebooks/week03_pandas.ipynb">pandas</a> · <a href="notebooks/week03_casestudy.ipynb">Case study</a></td>
-<td style="text-align: left;"><a href="slides/Lecture3.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS2_ECNM10115.pdf">PS2</a></td>
-<td style="text-align: left;"><a href="notebooks/lab02.ipynb">Lab 2</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week03_pandas.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
+<td style="text-align: left;">Malthus &amp; Ricardo — Population, Land, and the Limits to Growth</td>
+<td style="text-align: left;"><a href="../../courses/smith-to-simulation/Module_02_Malthus_Ricardo.html">View</a></td>
+<td style="text-align: left;"><a href="slides/Module_03_Malthus_Ricardo.pdf">PDF</a></td>
+<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_02_Malthus_Ricardo.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">4</td>
-<td style="text-align: left;">From Data to Models</td>
-<td style="text-align: left;"><a href="notebooks/week04_models.ipynb">View</a></td>
-<td style="text-align: left;"><a href="slides/Lecture4.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS3_ECNM10115.pdf">PS3</a></td>
-<td style="text-align: left;"><a href="notebooks/lab03.ipynb">Lab 3</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week04_models.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
+<td style="text-align: left;">Marx &amp; the Machinery Question — Capital and the Labour Share</td>
+<td style="text-align: left;"><a href="../../courses/smith-to-simulation/Module_04_Marx.html">View</a></td>
+<td style="text-align: left;"><a href="slides/Module_04_Marx.pdf">PDF</a></td>
+<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_04_Marx.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">5</td>
-<td style="text-align: left;">Numerical Methods I — Root-Finding &amp; Optimisation</td>
-<td style="text-align: left;"><a href="notebooks/week05_numerical1.ipynb">View</a></td>
-<td style="text-align: left;"><a href="slides/Lecture5.pdf">PDF</a> · <a href="slides/Optimization_Autumn2025.pdf">Optimisation</a> · <a href="slides/ValueFunctionApproximation.pdf">VF Approx.</a></td>
-<td style="text-align: left;"><a href="psets/PS4_ECNM10115.pdf">PS4</a></td>
-<td style="text-align: left;"><a href="notebooks/lab04.ipynb">Lab 4</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week05_numerical1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
+<td style="text-align: left;">The Marginalist Revolution — Utility, Optimisation &amp; Neoclassical Economics</td>
+<td style="text-align: left;"><a href="../../courses/smith-to-simulation/Module_05_Marginalists.html">View</a></td>
+<td style="text-align: left;"><a href="slides/Module_05_Marginalists.pdf">PDF</a></td>
+<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_05_Marginalists.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">6</td>
-<td style="text-align: left;">Numerical Methods II — Optimisation in Economics</td>
-<td style="text-align: left;"><a href="notebooks/week06_optimization.ipynb">View</a></td>
-<td style="text-align: left;"><a href="slides/Lecture6_optimization.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS5.pdf">PS5</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week06_optimization.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
+<td style="text-align: left;">Keynes &amp; the Multiplier — Aggregate Demand and Fiscal Policy</td>
+<td style="text-align: left;"><a href="../../courses/smith-to-simulation/Module_03_Keynes_Multiplier.html">View</a></td>
+<td style="text-align: left;"><a href="slides/Module_06_Keynes.pdf">PDF</a></td>
+<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_03_Keynes_Multiplier.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">7</td>
-<td style="text-align: left;">Numerical Methods III — Function Approximation</td>
-<td style="text-align: left;"><a href="notebooks/week07_funcapprox.ipynb">View</a> · <a href="notebooks/week07_examples.ipynb">Examples</a></td>
-<td style="text-align: left;"><a href="slides/Lecture7_function_approximation.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS6.pdf">PS6</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week07_funcapprox.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
+<td style="text-align: left;">The Solow Growth Model — Capital Accumulation and Steady States</td>
+<td style="text-align: left;"><a href="../../courses/smith-to-simulation/Module_07_Solow.html">View</a></td>
+<td style="text-align: left;"><a href="slides/Module_07_Solow.pdf">PDF</a></td>
+<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_07_Solow.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">8</td>
-<td style="text-align: left;">Economic Models — Value Function Iteration</td>
-<td style="text-align: left;"><a href="notebooks/week08_growth_julia.ipynb">View (Julia)</a></td>
-<td style="text-align: left;"><a href="slides/Lecture8_vfi.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS7.pdf">PS7</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
+<td style="text-align: left;">Expectations &amp; the Lucas Critique — Why Policy Rules Matter</td>
+<td style="text-align: left;"><a href="../../courses/smith-to-simulation/Module_08_Expectations.html">View</a></td>
+<td style="text-align: left;"><a href="slides/Module_08_Expectations.pdf">PDF</a></td>
+<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_08_Expectations.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">9</td>
-<td style="text-align: left;">Model Estimation — Simulation &amp; Inference</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="slides/Lecture9_simulation_inference.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS8.pdf">PS8</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
+<td style="text-align: left;">Inequality &amp; Distribution — Piketty, Markov Chains &amp; the Wealth Distribution</td>
+<td style="text-align: left;"><a href="../../courses/smith-to-simulation/Module_09_Inequality.html">View</a></td>
+<td style="text-align: left;"><a href="slides/Module_09_Inequality.pdf">PDF</a></td>
+<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_09_Inequality.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">10</td>
-<td style="text-align: left;">Advanced Topics — Heterogeneous Agents</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="slides/Lecture10_heterogeneous_agents.pdf">PDF</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
+<td style="text-align: left;">Edinburgh’s Legacy — Market Failures, Externalities &amp; the Future</td>
+<td style="text-align: left;"><a href="../../courses/smith-to-simulation/Module_10_Edinburgh_Legacy.html">View</a></td>
+<td style="text-align: left;"><a href="slides/Module_10_Edinburgh_Legacy.pdf">PDF</a></td>
+<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/smith-to-simulation/Module_10_Edinburgh_Legacy.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
 </tr>
 </tbody>
 </table>
-<!-- TEMPLATE for adding a week — copy the row above and adjust week number/topic/filenames.
-NOTE: if you rename the GitHub repo, update the Download and Colab URLs to match.
-POLICY: problem-set QUESTIONS only — solutions are never published here. -->
-<p><em>Notebooks include interactive exercises with hidden solutions — try first, then click to check.</em></p>
-<p><strong>Datasets:</strong> the survey datasets used in the Week 3 case study, labs, and problem sets (UNPS and related microdata) are distributed through <strong>Learn</strong>, not this website, for licensing reasons. Notebooks are published with their outputs embedded, so you can follow everything here.</p>
-<p><strong>Test yourself:</strong> take the <a href="../../quiz.html">Numerical Methods Quiz</a> — 14 multiple-choice questions covering root-finding, optimisation, and function approximation (Weeks 5–8) with instant feedback.</p>
-<p><strong>Extra reading:</strong> <a href="files/DataWrangling_Pandas_Cheat_Sheet.pdf">pandas cheat sheet</a> · <a href="files/Quadrature_Methods.pdf">Quadrature Methods</a> · <a href="files/Math_Review.pdf">Math Review</a></p>
+<p><em>Each notebook includes interactive exercises with hidden solutions — try first, then click to check.</em></p>
+<p><strong>Full syllabus:</strong> <a href="../../courses/smith-to-simulation/syllabus.html">View</a> · <a href="syllabus.pdf">PDF</a></p>
 </section>
 <section id="syllabus" class="level2">
 <h2 class="anchored" data-anchor-id="syllabus">Syllabus</h2>
 <ol type="1">
-<li>Introduction to programming</li>
-<li>Fundamentals of programming in Python</li>
-<li>Data manipulation and data analysis</li>
-<li>From data to models</li>
-<li>Numerical Methods I</li>
-<li>Numerical Methods II</li>
-<li>Numerical Methods III</li>
-<li>Economic models</li>
-<li>Model estimation</li>
-<li>Advanced topics</li>
+<li>The Invisible Hand — Adam Smith and market equilibrium</li>
+<li>The Pin Factory — division of labour, specialisation, and trade</li>
+<li>Malthus &amp; Ricardo — population, diminishing returns, and the Malthusian trap</li>
+<li>Marx &amp; the Machinery Question — surplus value, capital, and the labour share</li>
+<li>The Marginalist Revolution — marginal utility, consumer choice, and demand</li>
+<li>Keynes &amp; the Multiplier — the Great Depression, aggregate demand, and fiscal policy</li>
+<li>The Solow Growth Model — capital accumulation, steady states, and the sources of growth</li>
+<li>Expectations &amp; the Lucas Critique — adaptive vs rational expectations</li>
+<li>Inequality &amp; Distribution — Markov chains, wealth simulation, and the Gini coefficient</li>
+<li>Edinburgh’s Legacy — externalities, information asymmetry, and the future of economics</li>
 </ol>
+</section>
+<section id="assessment" class="level2">
+<h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
+<ul>
+<li>Weekly quizzes: 20%</li>
+<li>Computational essays (3 over the term): 40%</li>
+<li>Final project: 30%</li>
+<li>Participation: 10%</li>
+</ul>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
-<li><strong>Numerical Methods in Economics</strong>, Kenneth L. Judd (1998) — main reference for the numerical-methods weeks</li>
-<li><a href="https://quantecon.org"><strong>QuantEcon</strong></a> — T. Sargent and J. Stachurski’s open lectures, main reference</li>
-<li>Advanced: <a href="https://www.sas.upenn.edu/~jesusfv/teaching.html">Jesús Fernández-Villaverde’s Computational Methods for Economists</a> lecture notes</li>
+<li>Smith, A. <em>The Wealth of Nations</em> (1776) — available free at <a href="https://www.econlib.org/library/Smith/smWN.html">econlib.org</a></li>
+<li>Heilbroner, R. <em>The Worldly Philosophers</em> — the narrative backbone for the course</li>
+<li>Broadie, A. <em>The Scottish Enlightenment</em> — intellectual context for Edinburgh’s role</li>
+<li>Romer, D. <em>Advanced Macroeconomics</em> — reference for Solow, expectations, and growth</li>
+<li>Piketty, T. <em>Capital in the Twenty-First Century</em> — inequality and distribution</li>
 </ul>
 </section>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>Found an error in a notebook, or stuck on setup? Email <a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a> — see <a href="../../students.html">For Students</a> for how to get a fast answer.</p>
+<p>Found an error in a notebook, or stuck on setup? Email <a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a>.</p>
 
 
 </section>
+</section></main></div>
 
-</main> <!-- /main -->
+
+
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -725,7 +796,7 @@ POLICY: problem-set QUESTIONS only — solutions are never published here. -->
     }
   });
   </script>
-</div> <!-- /content -->
+ <!-- /content -->
 
 
 

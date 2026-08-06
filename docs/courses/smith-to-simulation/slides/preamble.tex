@@ -1,0 +1,86 @@
+% ============================================================
+%  From Smith to Simulation — Shared Beamer Preamble
+%  The University of Edinburgh · School of Economics
+% ============================================================
+
+\documentclass[aspectratio=169, 10pt]{beamer}
+
+% --- Metropolis theme (clean, modern academic look) ----------
+\usetheme{metropolis}
+
+% --- Edinburgh dark-red accent colour -----------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{UoELinen}{HTML}{F5EFE6}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Fonts ---------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% --- Maths ---------------------------------------------------
+\usepackage{amsmath, amssymb, mathtools}
+
+% --- Code listings -------------------------------------------
+\usepackage{listings}
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none,
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=4,
+  xleftmargin=4pt,
+  xrightmargin=4pt,
+  aboveskip=6pt,
+  belowskip=4pt,
+}
+
+% --- Graphics & tables ---------------------------------------
+\usepackage{graphicx, booktabs, multicol}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+
+% --- Quote environment styling --------------------------------
+\setbeamercolor{quotation}{fg=UoERed!80!black}
+\renewenvironment{quote}
+  {\begin{beamercolorbox}[wd=\textwidth,rounded=true,shadow=false]{quotation}%
+   \itshape\small}
+  {\end{beamercolorbox}}
+
+% --- Misc ----------------------------------------------------
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+
+% --- Footer / title info (set per module) --------------------
+\newcommand{\modulenum}{}
+\newcommand{\moduletitle}{}
+\newcommand{\modulesubtitle}{}
+
+% Convenience: section-title frame at each \section
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill
+    \centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+% --- Remove navigation symbols --------------------------------
+\setbeamertemplate{navigation symbols}{}

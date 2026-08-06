@@ -1,6 +1,22 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "courses/dlmacro/**"
+    - "courses/pnm/index.qmd"
+    - "courses/smith-to-simulation/index.qmd"
+    - "courses/smith-to-simulation/*.ipynb"
+  resources:
+    - "courses/pnm/files/**"
+    - "courses/pnm/psets/**"
+    - "courses/pnm/slides/**"
+    - "courses/pnm/notebooks/**"
+    - "courses/smith-to-simulation/slides/**"
+    - "courses/smith-to-simulation/*.pdf"
+    - "courses/smith-to-simulation/book/**"
+    - "courses/pnm/book/**"
+    - "courses/dlmacro/book/**"
 
 website:
   title: "Juan Zurita"

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Programming &amp; Numerical Methods for Economics – Juan Zurita</title>
+<title>From Smith to Simulation – Juan Zurita</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -78,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -124,24 +153,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Programming &amp; Numerical Methods for Economics</h1>
-            <p class="subtitle lead">Honours — The University of Edinburgh</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -149,179 +161,204 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-to-use-these-materials" id="toc-how-to-use-these-materials" class="nav-link active" data-scroll-target="#how-to-use-these-materials">How to use these materials</a></li>
-  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
-  <li><a href="#syllabus" id="toc-syllabus" class="nav-link" data-scroll-target="#syllabus">Syllabus</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#computing-the-ideas-that-built-economics" id="toc-computing-the-ideas-that-built-economics" class="nav-link active" data-scroll-target="#computing-the-ideas-that-built-economics">Computing the Ideas that Built Economics</a>
+  <ul class="collapse">
+  <li><a href="#course-description" id="toc-course-description" class="nav-link" data-scroll-target="#course-description">Course description</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">Learning outcomes</a></li>
+  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#weekly-schedule" id="toc-weekly-schedule" class="nav-link" data-scroll-target="#weekly-schedule">Weekly schedule</a></li>
+  <li><a href="#recommended-general-texts" id="toc-recommended-general-texts" class="nav-link" data-scroll-target="#recommended-general-texts">Recommended general texts</a></li>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">From Smith to Simulation</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<p style="text-align: justify;">
-This course teaches you to solve economic problems with code: writing clean programs in <strong>Python</strong>, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements.
-</p>
-<section id="how-to-use-these-materials" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-these-materials">How to use these materials</h2>
-<p>Each week has a <strong>notebook</strong> you can read online, download, or run in the cloud:</p>
-<ul>
-<li><strong>Read online</strong> — click the notebook link; it renders as a webpage with all code and output.</li>
-<li><strong>Run in Google Colab</strong> — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.</li>
-<li><strong>Run locally</strong> — install <a href="https://www.anaconda.com/download">Anaconda</a> (includes Python, Jupyter, NumPy, and Matplotlib), then download the <code>.ipynb</code> file from the links below and open it in Jupyter.</li>
-<li><strong>Browse the Jupyter Book</strong> — all notebooks are also collected in a <a href="book/intro.html">Jupyter Book</a> with a navigable sidebar and search.</li>
-</ul>
-<p><strong>New to Python?</strong> Start with the <a href="https://github.com/Juanignaciozurita/Python-Refresher">Python Refresher repository</a> alongside PS0.</p>
-<p><strong>Quick experiments:</strong> try the <a href="../../playground.html">Python Playground</a> — run and edit course code directly in your browser, nothing to install.</p>
+</header>
+
+
+<section id="computing-the-ideas-that-built-economics" class="level2">
+<h2 class="anchored" data-anchor-id="computing-the-ideas-that-built-economics">Computing the Ideas that Built Economics</h2>
+<p><strong>The University of Edinburgh · School of Economics</strong></p>
+<p><strong>Instructor:</strong> Dr Juan Zurita</p>
+<hr>
+<section id="course-description" class="level3">
+<h3 class="anchored" data-anchor-id="course-description">Course description</h3>
+<p>Edinburgh gave the world Adam Smith, David Hume, and the intellectual tradition that became modern economics. This course traces that journey — from the moral philosophy of the Scottish Enlightenment to the computational models that drive policy today — and asks students to <em>build</em> each idea in code.</p>
+<p>Each week pairs a turning point in the history of economic thought with a hands-on computational exercise. Students read Smith on the invisible hand, then write the code that finds a market equilibrium. They study Keynes on the Great Depression, then simulate the fiscal multiplier. They learn how Solow formalised growth theory, then solve for steady states numerically. No prior programming experience is assumed; Python and the necessary numerical tools are taught as we go.</p>
+<p>The result is a course that is simultaneously a history of ideas and an introduction to computational economics — each side making the other more vivid.</p>
+<hr>
 </section>
-<section id="materials" class="level2">
-<h2 class="anchored" data-anchor-id="materials">Materials</h2>
+<section id="learning-outcomes" class="level3">
+<h3 class="anchored" data-anchor-id="learning-outcomes">Learning outcomes</h3>
+<p>By the end of this course, students will be able to:</p>
+<ol type="1">
+<li>Explain the key ideas and debates that shaped economics from Smith to the present day, placing each in its historical and intellectual context.</li>
+<li>Write Python programs that formalise and explore classical economic models (equilibrium, growth, business cycles, inequality).</li>
+<li>Use numerical methods — root-finding, optimisation, simulation — to investigate questions that the original thinkers could only reason about verbally.</li>
+<li>Critically assess how mathematical formalisation changes (and sometimes distorts) the original economic argument.</li>
+<li>Connect Edinburgh’s intellectual heritage to the practice of modern economics.</li>
+</ol>
+<hr>
+</section>
+<section id="assessment" class="level3">
+<h3 class="anchored" data-anchor-id="assessment">Assessment</h3>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;">Week</th>
-<th style="text-align: left;">Topic</th>
-<th style="text-align: left;">Notebook</th>
-<th style="text-align: left;">Slides</th>
-<th style="text-align: left;">Problem Set</th>
-<th style="text-align: left;">Lab</th>
-<th style="text-align: left;">Colab</th>
+<th>Component</th>
+<th>Weight</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">Introduction to Programming</td>
-<td style="text-align: left;"><a href="notebooks/week01_intro.ipynb">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week01_intro.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/Lecture1.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS0_ECNM10115.pdf">PS0 — Python refresher</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week01_intro.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
+<td>Weekly quizzes</td>
+<td>20%</td>
+<td>Short quizzes (conceptual + computational) released each week</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">Fundamentals of Programming in Python</td>
-<td style="text-align: left;"><a href="notebooks/week02_fundamentals.ipynb">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week02_fundamentals.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/Lecture2.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS1_ECNM10115.pdf">PS1</a></td>
-<td style="text-align: left;"><a href="notebooks/lab01.ipynb">Lab 1</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week02_fundamentals.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
+<td>Computational essays (×2)</td>
+<td>40%</td>
+<td>Take a historical debate, build a model, write up the argument</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">Data Manipulation with pandas</td>
-<td style="text-align: left;"><a href="notebooks/week03_pandas.ipynb">pandas</a> · <a href="notebooks/week03_casestudy.ipynb">Case study</a></td>
-<td style="text-align: left;"><a href="slides/Lecture3.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS2_ECNM10115.pdf">PS2</a></td>
-<td style="text-align: left;"><a href="notebooks/lab02.ipynb">Lab 2</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week03_pandas.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
+<td>Final project</td>
+<td>30%</td>
+<td>Choose an economist or idea not covered in class; build and present the model</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">From Data to Models</td>
-<td style="text-align: left;"><a href="notebooks/week04_models.ipynb">View</a></td>
-<td style="text-align: left;"><a href="slides/Lecture4.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS3_ECNM10115.pdf">PS3</a></td>
-<td style="text-align: left;"><a href="notebooks/lab03.ipynb">Lab 3</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week04_models.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: left;">Numerical Methods I — Root-Finding &amp; Optimisation</td>
-<td style="text-align: left;"><a href="notebooks/week05_numerical1.ipynb">View</a></td>
-<td style="text-align: left;"><a href="slides/Lecture5.pdf">PDF</a> · <a href="slides/Optimization_Autumn2025.pdf">Optimisation</a> · <a href="slides/ValueFunctionApproximation.pdf">VF Approx.</a></td>
-<td style="text-align: left;"><a href="psets/PS4_ECNM10115.pdf">PS4</a></td>
-<td style="text-align: left;"><a href="notebooks/lab04.ipynb">Lab 4</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week05_numerical1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td style="text-align: left;">Numerical Methods II — Optimisation in Economics</td>
-<td style="text-align: left;"><a href="notebooks/week06_optimization.ipynb">View</a></td>
-<td style="text-align: left;"><a href="slides/Lecture6_optimization.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS5.pdf">PS5</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week06_optimization.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td style="text-align: left;">Numerical Methods III — Function Approximation</td>
-<td style="text-align: left;"><a href="notebooks/week07_funcapprox.ipynb">View</a> · <a href="notebooks/week07_examples.ipynb">Examples</a></td>
-<td style="text-align: left;"><a href="slides/Lecture7_function_approximation.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS6.pdf">PS6</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week07_funcapprox.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">8</td>
-<td style="text-align: left;">Economic Models — Value Function Iteration</td>
-<td style="text-align: left;"><a href="notebooks/week08_growth_julia.ipynb">View (Julia)</a></td>
-<td style="text-align: left;"><a href="slides/Lecture8_vfi.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS7.pdf">PS7</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">9</td>
-<td style="text-align: left;">Model Estimation — Simulation &amp; Inference</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="slides/Lecture9_simulation_inference.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="psets/PS8.pdf">PS8</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-<td style="text-align: left;">Advanced Topics — Heterogeneous Agents</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;"><a href="slides/Lecture10_heterogeneous_agents.pdf">PDF</a></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: left;">—</td>
+<td>Participation</td>
+<td>10%</td>
+<td>Lab attendance and engagement</td>
 </tr>
 </tbody>
 </table>
-<!-- TEMPLATE for adding a week — copy the row above and adjust week number/topic/filenames.
-NOTE: if you rename the GitHub repo, update the Download and Colab URLs to match.
-POLICY: problem-set QUESTIONS only — solutions are never published here. -->
-<p><em>Notebooks include interactive exercises with hidden solutions — try first, then click to check.</em></p>
-<p><strong>Datasets:</strong> the survey datasets used in the Week 3 case study, labs, and problem sets (UNPS and related microdata) are distributed through <strong>Learn</strong>, not this website, for licensing reasons. Notebooks are published with their outputs embedded, so you can follow everything here.</p>
-<p><strong>Test yourself:</strong> take the <a href="../../quiz.html">Numerical Methods Quiz</a> — 14 multiple-choice questions covering root-finding, optimisation, and function approximation (Weeks 5–8) with instant feedback.</p>
-<p><strong>Extra reading:</strong> <a href="files/DataWrangling_Pandas_Cheat_Sheet.pdf">pandas cheat sheet</a> · <a href="files/Quadrature_Methods.pdf">Quadrature Methods</a> · <a href="files/Math_Review.pdf">Math Review</a></p>
+<hr>
 </section>
-<section id="syllabus" class="level2">
-<h2 class="anchored" data-anchor-id="syllabus">Syllabus</h2>
-<ol type="1">
-<li>Introduction to programming</li>
-<li>Fundamentals of programming in Python</li>
-<li>Data manipulation and data analysis</li>
-<li>From data to models</li>
-<li>Numerical Methods I</li>
-<li>Numerical Methods II</li>
-<li>Numerical Methods III</li>
-<li>Economic models</li>
-<li>Model estimation</li>
-<li>Advanced topics</li>
-</ol>
+<section id="prerequisites" class="level3">
+<h3 class="anchored" data-anchor-id="prerequisites">Prerequisites</h3>
+<p>None beyond curiosity. The course assumes no prior programming and no economics beyond what you already know from reading the news. Mathematics is kept to algebra; anything beyond that is handled by the computer.</p>
+<hr>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+<section id="weekly-schedule" class="level3">
+<h3 class="anchored" data-anchor-id="weekly-schedule">Weekly schedule</h3>
+<hr>
+<section id="week-1-the-invisible-hand-adam-smith-and-market-equilibrium" class="level4">
+<h4 class="anchored" data-anchor-id="week-1-the-invisible-hand-adam-smith-and-market-equilibrium">Week 1 — The Invisible Hand: Adam Smith and Market Equilibrium</h4>
+<p><strong>Historical context.</strong> The Scottish Enlightenment. Smith’s life in Edinburgh and Kirkcaldy. <em>The Wealth of Nations</em> (1776) and the idea that self-interest, channelled through markets, produces social order without a planner.</p>
+<p><strong>Computational exercise.</strong> Supply and demand as functions. Excess demand. Finding equilibrium with <code>scipy.optimize.fsolve</code>. What happens when the government sets a price floor?</p>
+<p><strong>Reading.</strong> Smith, <em>Wealth of Nations</em>, Book I, Chapters 1–7 (selections). Heilbroner, <em>The Worldly Philosophers</em>, Ch. 3.</p>
+<p><strong>Edinburgh connection.</strong> Smith studied at Edinburgh under Francis Hutcheson’s moral philosophy tradition; Hume was his closest intellectual companion. The Old Town’s markets and trade networks were the world Smith observed.</p>
+<hr>
+</section>
+<section id="week-2-the-division-of-labour-and-the-pin-factory" class="level4">
+<h4 class="anchored" data-anchor-id="week-2-the-division-of-labour-and-the-pin-factory">Week 2 — The Division of Labour and the Pin Factory</h4>
+<p><strong>Historical context.</strong> Smith’s famous pin factory example. Specialisation, productivity, and the extent of the market. Why nations trade.</p>
+<p><strong>Computational exercise.</strong> Simulating production with and without specialisation. Comparative advantage with two goods and two countries. Computing gains from trade.</p>
+<p><strong>Reading.</strong> Smith, <em>WN</em>, Book I, Chapters 1–3. Ricardo, <em>Principles</em>, Chapter 7 (on foreign trade).</p>
+<hr>
+</section>
+<section id="week-3-malthus-ricardo-and-the-limits-to-growth" class="level4">
+<h4 class="anchored" data-anchor-id="week-3-malthus-ricardo-and-the-limits-to-growth">Week 3 — Malthus, Ricardo, and the Limits to Growth</h4>
+<p><strong>Historical context.</strong> Malthus’s <em>Essay on Population</em> (1798): geometric population growth vs arithmetic food growth. Ricardo on diminishing returns and the distribution of income between workers, landlords, and capitalists. Why classical economists were called “dismal.”</p>
+<p><strong>Computational exercise.</strong> Coding the Malthusian model: population dynamics, subsistence wages, the Malthusian trap. Simulating what happens when productivity improves — does the economy escape?</p>
+<p><strong>Reading.</strong> Malthus, <em>Essay on Population</em>, Chapter 1. Clark, <em>A Farewell to Alms</em>, Ch. 1–2.</p>
+<hr>
+</section>
+<section id="week-4-marx-and-the-machinery-question" class="level4">
+<h4 class="anchored" data-anchor-id="week-4-marx-and-the-machinery-question">Week 4 — Marx and the Machinery Question</h4>
+<p><strong>Historical context.</strong> The Industrial Revolution. Marx’s critique of capitalism: surplus value, exploitation, and the tendency of the rate of profit to fall. The “machinery question” — does technology help or hurt workers?</p>
+<p><strong>Computational exercise.</strong> A simple model of capital accumulation and labour share. Simulating how the labour share of income evolves when firms invest in capital. Plotting historical labour share data.</p>
+<p><strong>Reading.</strong> Marx, <em>Capital</em>, Vol. I, Chapters 1, 7, 15 (selections). Heilbroner, <em>The Worldly Philosophers</em>, Ch. 6.</p>
+<hr>
+</section>
+<section id="week-5-the-marginalist-revolution-choosing-at-the-margin" class="level4">
+<h4 class="anchored" data-anchor-id="week-5-the-marginalist-revolution-choosing-at-the-margin">Week 5 — The Marginalist Revolution: Choosing at the Margin</h4>
+<p><strong>Historical context.</strong> The 1870s revolution: Jevons, Menger, and Walras independently develop marginal utility theory. Economics shifts from class-based analysis to individual optimisation. Marshall synthesises it all.</p>
+<p><strong>Computational exercise.</strong> Consumer optimisation: maximising utility <span class="math inline">\(u(x_1, x_2)\)</span> subject to a budget constraint. Solving with <code>scipy.optimize.minimize</code> and constraints. Deriving demand curves computationally.</p>
+<p><strong>Reading.</strong> Backhouse, <em>The Penguin History of Economics</em>, Ch. 7. Jevons, <em>Theory of Political Economy</em>, Chapter 3 (selections).</p>
+<hr>
+</section>
+<section id="week-6-keynes-and-the-great-depression" class="level4">
+<h4 class="anchored" data-anchor-id="week-6-keynes-and-the-great-depression">Week 6 — Keynes and the Great Depression</h4>
+<p><strong>Historical context.</strong> The 1929 crash and the failure of classical remedies. Keynes’s <em>General Theory</em> (1936): aggregate demand, the paradox of thrift, the multiplier, animal spirits. Why governments should spend in recessions.</p>
+<p><strong>Computational exercise.</strong> The Keynesian cross and the IS curve. Computing the fiscal multiplier numerically. Simulating how changes in confidence (animal spirits) propagate through the economy.</p>
+<p><strong>Reading.</strong> Keynes, <em>General Theory</em>, Chapters 1–3, 10 (selections). Skidelsky, <em>Keynes: A Very Short Introduction</em>, Chapters 3–4.</p>
+<p><strong>Edinburgh connection.</strong> Keynes’s debates with the “Edinburgh school” of classical economists who resisted his ideas.</p>
+<hr>
+</section>
+<section id="week-7-solow-and-the-sources-of-growth" class="level4">
+<h4 class="anchored" data-anchor-id="week-7-solow-and-the-sources-of-growth">Week 7 — Solow and the Sources of Growth</h4>
+<p><strong>Historical context.</strong> Post-war prosperity and the question: where does growth come from? Solow’s model (1956): capital accumulation, diminishing returns, and the steady state. The “residual” — technology as the real engine of growth.</p>
+<p><strong>Computational exercise.</strong> Coding the Solow model. Finding the steady state with root-finding. Comparative statics: what happens when saving rates, depreciation, or productivity change? The Golden Rule.</p>
+<p><strong>Reading.</strong> Solow, “A Contribution to the Theory of Economic Growth” (1956), first 5 pages. Warsh, <em>Knowledge and the Wealth of Nations</em>, Ch. 1–3.</p>
+<hr>
+</section>
+<section id="week-8-friedman-lucas-and-the-expectations-revolution" class="level4">
+<h4 class="anchored" data-anchor-id="week-8-friedman-lucas-and-the-expectations-revolution">Week 8 — Friedman, Lucas, and the Expectations Revolution</h4>
+<p><strong>Historical context.</strong> Stagflation and the collapse of the Phillips curve. Friedman’s monetarism and the natural rate. Lucas’s rational expectations: why systematic policy can’t fool people. The end of old-style Keynesianism.</p>
+<p><strong>Computational exercise.</strong> Simulating AR(1) processes for inflation and output. Coding adaptive vs rational expectations. Showing how an expected policy change has no real effect under rational expectations.</p>
+<p><strong>Reading.</strong> Friedman, “The Role of Monetary Policy” (AER, 1968). Lucas, “Econometric Policy Evaluation: A Critique” (1976), introduction.</p>
+<hr>
+</section>
+<section id="week-9-inequality-and-heterogeneous-agents" class="level4">
+<h4 class="anchored" data-anchor-id="week-9-inequality-and-heterogeneous-agents">Week 9 — Inequality and Heterogeneous Agents</h4>
+<p><strong>Historical context.</strong> Piketty and the return of inequality to economics. The Aiyagari model: identical people, different luck, endogenous inequality. Why some households accumulate wealth and others don’t.</p>
+<p><strong>Computational exercise.</strong> Simulating income processes with Markov chains. Computing stationary wealth distributions via Monte Carlo. Plotting Lorenz curves and computing Gini coefficients.</p>
+<p><strong>Reading.</strong> Piketty, <em>Capital in the Twenty-First Century</em>, Introduction. Deaton, <em>The Great Escape</em>, Ch. 1.</p>
+<hr>
+</section>
+<section id="week-10-edinburghs-legacy-from-moral-philosophy-to-computational-economics" class="level4">
+<h4 class="anchored" data-anchor-id="week-10-edinburghs-legacy-from-moral-philosophy-to-computational-economics">Week 10 — Edinburgh’s Legacy: From Moral Philosophy to Computational Economics</h4>
+<p><strong>Historical context.</strong> Full circle: from Hume and Smith’s empirical moral philosophy to modern computational economics. How the Scottish Enlightenment’s emphasis on evidence, scepticism, and systematic thinking laid the groundwork for quantitative social science. Where the field is going: climate economics, AI, and the new frontiers.</p>
+<p><strong>Computational exercise.</strong> Student presentations of final projects. A group exercise: can Smith’s “invisible hand” result survive when we add real-world frictions (information asymmetry, externalities, market power)?</p>
+<p><strong>Reading.</strong> Broadie, <em>The Scottish Enlightenment</em>, selected chapters. Sen, “Rational Fools” (1977).</p>
+<hr>
+</section>
+</section>
+<section id="recommended-general-texts" class="level3">
+<h3 class="anchored" data-anchor-id="recommended-general-texts">Recommended general texts</h3>
 <ul>
-<li><strong>Numerical Methods in Economics</strong>, Kenneth L. Judd (1998) — main reference for the numerical-methods weeks</li>
-<li><a href="https://quantecon.org"><strong>QuantEcon</strong></a> — T. Sargent and J. Stachurski’s open lectures, main reference</li>
-<li>Advanced: <a href="https://www.sas.upenn.edu/~jesusfv/teaching.html">Jesús Fernández-Villaverde’s Computational Methods for Economists</a> lecture notes</li>
+<li>Heilbroner, R. <em>The Worldly Philosophers</em> (7th ed.) — the classic accessible history of economic thought.</li>
+<li>Backhouse, R. <em>The Penguin History of Economics</em> — more detail, still very readable.</li>
+<li>Blaug, M. <em>Economic Theory in Retrospect</em> — for students who want to go deeper.</li>
+<li>Broadie, A. <em>The Scottish Enlightenment</em> — Edinburgh’s intellectual context.</li>
 </ul>
 </section>
-<section id="questions" class="level2">
-<h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>Found an error in a notebook, or stuck on setup? Email <a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a> — see <a href="../../students.html">For Students</a> for how to get a fast answer.</p>
+<section id="software" class="level3">
+<h3 class="anchored" data-anchor-id="software">Software</h3>
+<p>All coding is done in Python via Jupyter notebooks. No installation required — we use Google Colab in class. Students wanting a local setup should install Anaconda.</p>
+<hr>
+<p><em>“The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.”</em> — Marcel Proust</p>
+<p><em>…or in having new code.</em></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

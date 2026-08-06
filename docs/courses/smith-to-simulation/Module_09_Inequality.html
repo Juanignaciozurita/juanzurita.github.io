@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Module 9 — Inequality and Heterogeneous Agents – Juan Zurita</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-cdfd0cc769c71205c17cfb73cc6016cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Juan Zurita</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../opencollaborations.html"> 
+<span class="menu-text">Open Collaborations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../usefullinks.html"> 
+<span class="menu-text">Useful Links</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#when-identical-people-face-different-luck-wealth-distribution-and-piketty" id="toc-when-identical-people-face-different-luck-wealth-distribution-and-piketty" class="nav-link active" data-scroll-target="#when-identical-people-face-different-luck-wealth-distribution-and-piketty">When Identical People Face Different Luck: Wealth, Distribution, and Piketty</a></li>
+  <li><a href="#part-i-the-history" id="toc-part-i-the-history" class="nav-link" data-scroll-target="#part-i-the-history">Part I — The History</a>
+  <ul class="collapse">
+  <li><a href="#the-return-of-inequality" id="toc-the-return-of-inequality" class="nav-link" data-scroll-target="#the-return-of-inequality">The Return of Inequality</a></li>
+  <li><a href="#the-historical-arc-of-inequality" id="toc-the-historical-arc-of-inequality" class="nav-link" data-scroll-target="#the-historical-arc-of-inequality">The Historical Arc of Inequality</a></li>
+  <li><a href="#the-aiyagari-model-inequality-from-identical-people" id="toc-the-aiyagari-model-inequality-from-identical-people" class="nav-link" data-scroll-target="#the-aiyagari-model-inequality-from-identical-people">The Aiyagari Model: Inequality from Identical People</a></li>
+  <li><a href="#edinburgh-connection-angus-deaton-and-the-great-escape" id="toc-edinburgh-connection-angus-deaton-and-the-great-escape" class="nav-link" data-scroll-target="#edinburgh-connection-angus-deaton-and-the-great-escape">Edinburgh Connection: Angus Deaton and “The Great Escape”</a></li>
+  </ul></li>
+  <li><a href="#part-ii-the-computation" id="toc-part-ii-the-computation" class="nav-link" data-scroll-target="#part-ii-the-computation">Part II — The Computation</a>
+  <ul class="collapse">
+  <li><a href="#setting-up" id="toc-setting-up" class="nav-link" data-scroll-target="#setting-up">Setting Up</a></li>
+  <li><a href="#income-as-a-markov-chain" id="toc-income-as-a-markov-chain" class="nav-link" data-scroll-target="#income-as-a-markov-chain">Income as a Markov Chain</a></li>
+  <li><a href="#the-stationary-distribution-of-income" id="toc-the-stationary-distribution-of-income" class="nav-link" data-scroll-target="#the-stationary-distribution-of-income">The Stationary Distribution of Income</a></li>
+  <li><a href="#simulating-income-paths-for-many-agents" id="toc-simulating-income-paths-for-many-agents" class="nav-link" data-scroll-target="#simulating-income-paths-for-many-agents">Simulating Income Paths for Many Agents</a></li>
+  <li><a href="#from-income-to-wealth-the-accumulation-equation" id="toc-from-income-to-wealth-the-accumulation-equation" class="nav-link" data-scroll-target="#from-income-to-wealth-the-accumulation-equation">From Income to Wealth: The Accumulation Equation</a></li>
+  <li><a href="#the-stationary-wealth-distribution" id="toc-the-stationary-wealth-distribution" class="nav-link" data-scroll-target="#the-stationary-wealth-distribution">The Stationary Wealth Distribution</a></li>
+  <li><a href="#the-lorenz-curve" id="toc-the-lorenz-curve" class="nav-link" data-scroll-target="#the-lorenz-curve">The Lorenz Curve</a></li>
+  <li><a href="#the-gini-coefficient" id="toc-the-gini-coefficient" class="nav-link" data-scroll-target="#the-gini-coefficient">The Gini Coefficient</a></li>
+  <li><a href="#comparative-statics-how-parameters-shape-inequality" id="toc-comparative-statics-how-parameters-shape-inequality" class="nav-link" data-scroll-target="#comparative-statics-how-parameters-shape-inequality">Comparative Statics: How Parameters Shape Inequality</a></li>
+  <li><a href="#how-the-gini-evolves-over-time" id="toc-how-the-gini-evolves-over-time" class="nav-link" data-scroll-target="#how-the-gini-evolves-over-time">How the Gini Evolves Over Time</a></li>
+  </ul></li>
+  <li><a href="#part-iii-exercises" id="toc-part-iii-exercises" class="nav-link" data-scroll-target="#part-iii-exercises">Part III — Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1-the-effect-of-income-mobility" id="toc-exercise-1-the-effect-of-income-mobility" class="nav-link" data-scroll-target="#exercise-1-the-effect-of-income-mobility">Exercise 1 — The Effect of Income Mobility</a></li>
+  <li><a href="#exercise-2-progressive-taxation" id="toc-exercise-2-progressive-taxation" class="nav-link" data-scroll-target="#exercise-2-progressive-taxation">Exercise 2 — Progressive Taxation</a></li>
+  <li><a href="#exercise-3-pikettys-r-g" id="toc-exercise-3-pikettys-r-g" class="nav-link" data-scroll-target="#exercise-3-pikettys-r-g">Exercise 3 — Piketty’s r &gt; g</a></li>
+  </ul></li>
+  <li><a href="#part-iv-quiz" id="toc-part-iv-quiz" class="nav-link" data-scroll-target="#part-iv-quiz">Part IV — Quiz</a>
+  <ul class="collapse">
+  <li><a href="#conceptual-questions" id="toc-conceptual-questions" class="nav-link" data-scroll-target="#conceptual-questions">Conceptual Questions</a></li>
+  <li><a href="#computational-questions" id="toc-computational-questions" class="nav-link" data-scroll-target="#computational-questions">Computational Questions</a></li>
+  <li><a href="#quiz-answers" id="toc-quiz-answers" class="nav-link" data-scroll-target="#quiz-answers">Quiz Answers</a></li>
+  </ul></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further Reading</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Module 9 — Inequality and Heterogeneous Agents</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="when-identical-people-face-different-luck-wealth-distribution-and-piketty" class="level2">
+<h2 class="anchored" data-anchor-id="when-identical-people-face-different-luck-wealth-distribution-and-piketty">When Identical People Face Different Luck: Wealth, Distribution, and Piketty</h2>
+<p><strong>From Smith to Simulation: Computing the Ideas that Built Economics</strong><br>
+The University of Edinburgh · School of Economics</p>
+<hr>
+</section>
+<section id="part-i-the-history" class="level2">
+<h2 class="anchored" data-anchor-id="part-i-the-history">Part I — The History</h2>
+<section id="the-return-of-inequality" class="level3">
+<h3 class="anchored" data-anchor-id="the-return-of-inequality">The Return of Inequality</h3>
+<p>For most of the twentieth century, mainstream economics had surprisingly little to say about inequality. The profession was busy with other things — growth models, business cycles, game theory — and the prevailing view, following <strong>Simon Kuznets</strong> (1955), was that inequality would take care of itself. As countries industrialised, inequality would first rise and then fall, tracing an inverted U-shape. The data seemed to support this: income inequality in the United States and Europe declined steadily from the 1930s through the 1970s.</p>
+<p>Then something changed. Starting around 1980, inequality began rising sharply in the English-speaking world. The top 1% income share in the United States, which had fallen from about 24% in 1928 to under 9% in the 1970s, climbed back to over 20% by 2012. The comfortable Kuznets narrative broke down.</p>
+<p>In 2014, a French economist published a 700-page book that became an unlikely global bestseller. <strong>Thomas Piketty’s</strong> <em>Capital in the Twenty-First Century</em> marshalled two centuries of tax data from over twenty countries to tell a dramatic story: the mid-twentieth-century decline in inequality was the exception, not the rule. The natural tendency of capitalism, Piketty argued, is toward <em>increasing</em> concentration of wealth.</p>
+<blockquote class="blockquote">
+<p><em>“When the rate of return on capital exceeds the rate of growth of output and income, as it did in the nineteenth century and seems quite likely to do again in the twenty-first, capitalism automatically generates arbitrary and unsustainable inequalities that radically undermine the meritocratic values on which democratic societies are based.”</em><br>
+— Thomas Piketty, <em>Capital in the Twenty-First Century</em> (2014)</p>
+</blockquote>
+</section>
+<section id="the-historical-arc-of-inequality" class="level3">
+<h3 class="anchored" data-anchor-id="the-historical-arc-of-inequality">The Historical Arc of Inequality</h3>
+<p>Piketty and his collaborators — notably <strong>Emmanuel Saez</strong> and <strong>Gabriel Zucman</strong> — documented three distinct eras:</p>
+<ol type="1">
+<li><p><strong>The Gilded Age (1870–1914).</strong> Extreme concentration of wealth in the hands of industrial magnates — the Rockefellers, Carnegies, and Vanderbilts. The top 10% owned over 80% of total wealth in both Europe and America.</p></li>
+<li><p><strong>The Great Compression (1930–1975).</strong> Two world wars, the Great Depression, progressive taxation, and the rise of the welfare state dramatically compressed the wealth distribution. This was the anomaly that Kuznets mistook for an iron law.</p></li>
+<li><p><strong>The Great Divergence (1980–present).</strong> Tax cuts, financial deregulation, globalisation, and skill-biased technological change reversed the compression. Wealth concentration approached Gilded Age levels.</p></li>
+</ol>
+<p>Piketty’s central formula was deceptively simple: <strong>r &gt; g</strong>. When the rate of return on capital (<span class="math inline">\(r\)</span>) exceeds the growth rate of the economy (<span class="math inline">\(g\)</span>), inherited wealth grows faster than earned income, and inequality widens inexorably. The wars and policy interventions of the twentieth century temporarily pushed <span class="math inline">\(r\)</span> below <span class="math inline">\(g\)</span>, but that era may be ending.</p>
+</section>
+<section id="the-aiyagari-model-inequality-from-identical-people" class="level3">
+<h3 class="anchored" data-anchor-id="the-aiyagari-model-inequality-from-identical-people">The Aiyagari Model: Inequality from Identical People</h3>
+<p>Even before Piketty’s empirical revolution, theorists had been asking: can we explain inequality without assuming that people are fundamentally different? In 1994, <strong>S. Rao Aiyagari</strong> published a landmark paper showing that the answer is yes.</p>
+<p>In the <strong>Aiyagari model</strong>, all agents are <em>identical</em> — same preferences, same abilities, same initial conditions. The only difference is <em>luck</em>: each period, agents receive random income shocks (modelled as a Markov chain). Some are lucky for several periods in a row and accumulate wealth; others face bad luck and deplete their savings. Even though everyone is identical <em>ex ante</em>, the wealth distribution that emerges in the long run is highly unequal and right-skewed — a few agents become very rich while many remain poor.</p>
+<p>This was a profound insight: <strong>inequality is an emergent property</strong> of an economy with incomplete markets and idiosyncratic risk, not necessarily the result of differences in talent, effort, or inheritance.</p>
+</section>
+<section id="edinburgh-connection-angus-deaton-and-the-great-escape" class="level3">
+<h3 class="anchored" data-anchor-id="edinburgh-connection-angus-deaton-and-the-great-escape">Edinburgh Connection: Angus Deaton and “The Great Escape”</h3>
+<p><strong>Angus Deaton</strong> (1945–2025), born in Edinburgh and educated at Fettes College and then the University of Cambridge, won the Nobel Prize in Economics in 2015 — one year after Piketty’s book appeared. Deaton’s life work centred on how to <em>measure</em> living standards and inequality, particularly in the developing world.</p>
+<p>His book <em>The Great Escape: Health, Wealth, and the Origins of Inequality</em> (2013) told a story both hopeful and cautionary. On one hand, humanity has made extraordinary progress: billions have escaped poverty, life expectancy has doubled, and material living standards have risen spectacularly. On the other hand, this progress has been deeply uneven — both across and within countries. Deaton warned that extreme inequality can undermine the very institutions that make growth possible.</p>
+<p>Deaton’s Scottish roots show in his work: the same empirical rigour and moral seriousness that characterised the Scottish Enlightenment — the insistence that economics must grapple with real data about real lives, not just elegant abstractions. His development of household survey methods and consumption-based measures of welfare gave economists the tools to see inequality where GDP averages hid it.</p>
+<hr>
+</section>
+</section>
+<section id="part-ii-the-computation" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii-the-computation">Part II — The Computation</h2>
+<section id="setting-up" class="level3">
+<h3 class="anchored" data-anchor-id="setting-up">Setting Up</h3>
+<div id="cell-3" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)  <span class="co"># for reproducibility</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="income-as-a-markov-chain" class="level3">
+<h3 class="anchored" data-anchor-id="income-as-a-markov-chain">Income as a Markov Chain</h3>
+<p>In the Aiyagari model, each agent’s income follows a <strong>Markov chain</strong> — a stochastic process where next period’s income depends only on this period’s income, not on the full history. We define three income states:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>State</th>
+<th>Label</th>
+<th>Income (<span class="math inline">\(y\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Low</td>
+<td>0.5</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Medium</td>
+<td>1.0</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>High</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>transition matrix</strong> <span class="math inline">\(P\)</span> specifies the probability of moving between states. Entry <span class="math inline">\(P_{ij}\)</span> is the probability of moving from state <span class="math inline">\(i\)</span> to state <span class="math inline">\(j\)</span>. Each row sums to 1.</p>
+<p>We choose a matrix with moderate persistence — agents tend to stay in their current state but can move up or down.</p>
+<div id="cell-5" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Income levels for three states</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>income_levels <span class="op">=</span> np.array([<span class="fl">0.5</span>, <span class="fl">1.0</span>, <span class="fl">2.0</span>])</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Transition matrix: P[i, j] = Prob(state j next period | state i this period)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> np.array([</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.6</span>, <span class="fl">0.3</span>, <span class="fl">0.1</span>],   <span class="co"># from Low:    60% stay, 30% -&gt; Med, 10% -&gt; High</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.2</span>, <span class="fl">0.6</span>, <span class="fl">0.2</span>],   <span class="co"># from Medium: 20% -&gt; Low, 60% stay, 20% -&gt; High</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.1</span>, <span class="fl">0.3</span>, <span class="fl">0.6</span>],   <span class="co"># from High:   10% -&gt; Low, 30% -&gt; Med, 60% stay</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify rows sum to 1</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Transition matrix P:"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(P)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Row sums: </span><span class="sc">{</span>P<span class="sc">.</span><span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Interpretation: a low-income agent has a 60</span><span class="sc">% c</span><span class="st">hance of staying low,"</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"a 30</span><span class="sc">% c</span><span class="st">hance of moving to medium, and a 10</span><span class="sc">% c</span><span class="st">hance of jumping to high income."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="the-stationary-distribution-of-income" class="level3">
+<h3 class="anchored" data-anchor-id="the-stationary-distribution-of-income">The Stationary Distribution of Income</h3>
+<p>A Markov chain has a <strong>stationary distribution</strong> <span class="math inline">\(\pi\)</span> such that <span class="math inline">\(\pi P = \pi\)</span>. This tells us, in the long run, what fraction of the population is in each income state. We find it by computing the left eigenvector of <span class="math inline">\(P\)</span> with eigenvalue 1.</p>
+<div id="cell-7" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find stationary distribution by solving pi @ P = pi</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Equivalently, pi is the left eigenvector of P with eigenvalue 1</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>eigenvalues, eigenvectors <span class="op">=</span> np.linalg.eig(P.T)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Find the eigenvector corresponding to eigenvalue 1</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>idx <span class="op">=</span> np.argmin(np.<span class="bu">abs</span>(eigenvalues <span class="op">-</span> <span class="fl">1.0</span>))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> np.real(eigenvectors[:, idx])</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>pi <span class="op">=</span> pi <span class="op">/</span> pi.<span class="bu">sum</span>()  <span class="co"># normalise to sum to 1</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Stationary distribution of income:"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, (state, prob) <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">zip</span>([<span class="st">'Low'</span>, <span class="st">'Medium'</span>, <span class="st">'High'</span>], pi)):</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>state<span class="sc">}</span><span class="ss"> (y = </span><span class="sc">{</span>income_levels[i]<span class="sc">}</span><span class="ss">): </span><span class="sc">{</span>prob<span class="sc">:.4f}</span><span class="ss"> (</span><span class="sc">{</span>prob<span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">%)"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>mean_income <span class="op">=</span> np.dot(pi, income_levels)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Long-run mean income: </span><span class="sc">{</span>mean_income<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="simulating-income-paths-for-many-agents" class="level3">
+<h3 class="anchored" data-anchor-id="simulating-income-paths-for-many-agents">Simulating Income Paths for Many Agents</h3>
+<p>Now we simulate the Markov chain forward for a large number of agents. Each agent starts in a randomly assigned state and transitions according to <span class="math inline">\(P\)</span> each period.</p>
+<div id="cell-9" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_markov(P, n_agents, n_periods, seed<span class="op">=</span><span class="dv">42</span>):</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Simulate a Markov chain for many agents over many periods.</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns an array of shape (n_agents, n_periods) with state indices.</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    rng <span class="op">=</span> np.random.default_rng(seed)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    n_states <span class="op">=</span> P.shape[<span class="dv">0</span>]</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    states <span class="op">=</span> np.zeros((n_agents, n_periods), dtype<span class="op">=</span><span class="bu">int</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Initial state: draw from stationary distribution</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    states[:, <span class="dv">0</span>] <span class="op">=</span> rng.choice(n_states, size<span class="op">=</span>n_agents, p<span class="op">=</span>pi)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Simulate transitions</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n_periods):</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        u <span class="op">=</span> rng.random(n_agents)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(n_states):</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            mask <span class="op">=</span> (states[:, t<span class="op">-</span><span class="dv">1</span>] <span class="op">==</span> s)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>            cum_probs <span class="op">=</span> np.cumsum(P[s])</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>            states[mask, t] <span class="op">=</span> np.searchsorted(cum_probs, u[mask])</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> states</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>n_agents <span class="op">=</span> <span class="dv">5000</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>n_periods <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>state_paths <span class="op">=</span> simulate_markov(P, n_agents, n_periods)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>income_paths <span class="op">=</span> income_levels[state_paths]  <span class="co"># convert state indices to income values</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Simulated </span><span class="sc">{</span>n_agents<span class="sc">}</span><span class="ss"> agents over </span><span class="sc">{</span>n_periods<span class="sc">}</span><span class="ss"> periods."</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Income path shape: </span><span class="sc">{</span>income_paths<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a few sample income paths</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>))</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    ax.step(<span class="bu">range</span>(<span class="dv">50</span>), income_paths[i, :<span class="dv">50</span>], alpha<span class="op">=</span><span class="fl">0.7</span>, linewidth<span class="op">=</span><span class="fl">1.2</span>, label<span class="op">=</span><span class="ss">f'Agent </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Period'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Income'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Sample Income Paths (First 50 Periods)'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>ax.set_yticks(income_levels)</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>ax.set_yticklabels([<span class="st">'Low (0.5)'</span>, <span class="st">'Med (1.0)'</span>, <span class="st">'High (2.0)'</span>])</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">9</span>, loc<span class="op">=</span><span class="st">'upper right'</span>)</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Each agent follows the same Markov chain — the only difference is luck."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="from-income-to-wealth-the-accumulation-equation" class="level3">
+<h3 class="anchored" data-anchor-id="from-income-to-wealth-the-accumulation-equation">From Income to Wealth: The Accumulation Equation</h3>
+<p>Agents accumulate wealth according to:</p>
+<p><span class="math display">\[w_{t+1} = (1 + r) \cdot w_t + y_t - c_t\]</span></p>
+<p>where: - <span class="math inline">\(w_t\)</span> is wealth at time <span class="math inline">\(t\)</span> - <span class="math inline">\(r\)</span> is the interest rate (return on savings) - <span class="math inline">\(y_t\)</span> is income at time <span class="math inline">\(t\)</span> (drawn from the Markov chain) - <span class="math inline">\(c_t\)</span> is consumption at time <span class="math inline">\(t\)</span></p>
+<p>We use a simple <strong>consumption rule</strong>: agents consume a fixed fraction of their available resources (wealth plus income):</p>
+<p><span class="math display">\[c_t = \alpha \cdot \bigl((1+r) \cdot w_t + y_t\bigr)\]</span></p>
+<p>where <span class="math inline">\(\alpha \in (0, 1)\)</span> is the consumption rate. We also impose a <strong>borrowing constraint</strong>: wealth cannot fall below zero (<span class="math inline">\(w_t \geq 0\)</span>). This is the key friction in the Aiyagari model — agents cannot perfectly insure themselves against bad income shocks.</p>
+<div id="cell-11" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_wealth(income_paths, r<span class="op">=</span><span class="fl">0.02</span>, alpha<span class="op">=</span><span class="fl">0.9</span>, w0<span class="op">=</span><span class="fl">1.0</span>):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Simulate wealth accumulation for all agents.</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters:</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">        income_paths: array of shape (n_agents, n_periods) with income values</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co">        r: interest rate (return on savings)</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">        alpha: consumption rate (fraction of resources consumed)</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">        w0: initial wealth for all agents</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">        wealth: array of shape (n_agents, n_periods)</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    n_agents, n_periods <span class="op">=</span> income_paths.shape</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    wealth <span class="op">=</span> np.zeros((n_agents, n_periods))</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    wealth[:, <span class="dv">0</span>] <span class="op">=</span> w0</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(n_periods <span class="op">-</span> <span class="dv">1</span>):</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        resources <span class="op">=</span> (<span class="dv">1</span> <span class="op">+</span> r) <span class="op">*</span> wealth[:, t] <span class="op">+</span> income_paths[:, t]</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>        consumption <span class="op">=</span> alpha <span class="op">*</span> resources</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        wealth[:, t<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> np.maximum(resources <span class="op">-</span> consumption, <span class="fl">0.0</span>)  <span class="co"># borrowing constraint</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> wealth</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulate wealth with baseline parameters</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="fl">0.02</span>       <span class="co"># 2% interest rate</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> <span class="fl">0.9</span>    <span class="co"># consume 90% of resources, save 10%</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>wealth <span class="op">=</span> simulate_wealth(income_paths, r<span class="op">=</span>r, alpha<span class="op">=</span>alpha, w0<span class="op">=</span><span class="fl">1.0</span>)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Wealth simulation complete."</span>)</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Final period — Mean wealth: </span><span class="sc">{</span>wealth[:, <span class="op">-</span><span class="dv">1</span>]<span class="sc">.</span>mean()<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Final period — Median wealth: </span><span class="sc">{</span>np<span class="sc">.</span>median(wealth[:, <span class="op">-</span><span class="dv">1</span>])<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Final period — Max wealth: </span><span class="sc">{</span>wealth[:, <span class="op">-</span><span class="dv">1</span>]<span class="sc">.</span><span class="bu">max</span>()<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Final period — Min wealth: </span><span class="sc">{</span>wealth[:, <span class="op">-</span><span class="dv">1</span>]<span class="sc">.</span><span class="bu">min</span>()<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Note: mean &gt; median indicates a right-skewed distribution."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="the-stationary-wealth-distribution" class="level3">
+<h3 class="anchored" data-anchor-id="the-stationary-wealth-distribution">The Stationary Wealth Distribution</h3>
+<p>After enough periods, the wealth distribution converges to a <strong>stationary distribution</strong>. Let’s look at how wealth evolves over time and then examine the final distribution.</p>
+<div id="cell-13" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot evolution of wealth distribution over time</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="fl">4.5</span>))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax, t <span class="kw">in</span> <span class="bu">zip</span>(axes, [<span class="dv">10</span>, <span class="dv">50</span>, n_periods <span class="op">-</span> <span class="dv">1</span>]):</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    ax.hist(wealth[:, t], bins<span class="op">=</span><span class="dv">50</span>, density<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, edgecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'Wealth'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">'Density'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    ax.set_title(<span class="ss">f'Period </span><span class="sc">{</span>t<span class="sc">}</span><span class="ss">'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    ax.axvline(np.mean(wealth[:, t]), color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="st">'Mean'</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    ax.axvline(np.median(wealth[:, t]), color<span class="op">=</span><span class="st">'orange'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="st">'Median'</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    ax.legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'Evolution of the Wealth Distribution'</span>, fontsize<span class="op">=</span><span class="dv">14</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The distribution is RIGHT-SKEWED: a long tail of wealthy agents."</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The mean exceeds the median — pulled up by a few very rich agents."</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This emerges from identical agents facing different luck — Aiyagari's insight."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-14" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detailed histogram of the final wealth distribution</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>final_wealth <span class="op">=</span> wealth[:, <span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ax.hist(final_wealth, bins<span class="op">=</span><span class="dv">80</span>, density<span class="op">=</span><span class="va">True</span>, color<span class="op">=</span><span class="st">'steelblue'</span>, edgecolor<span class="op">=</span><span class="st">'white'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ax.axvline(np.mean(final_wealth), color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="ss">f'Mean = </span><span class="sc">{</span>np<span class="sc">.</span>mean(final_wealth)<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>ax.axvline(np.median(final_wealth), color<span class="op">=</span><span class="st">'orange'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="ss">f'Median = </span><span class="sc">{</span>np<span class="sc">.</span>median(final_wealth)<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Mark the top 10% threshold</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>p90 <span class="op">=</span> np.percentile(final_wealth, <span class="dv">90</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>ax.axvline(p90, color<span class="op">=</span><span class="st">'darkred'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="ss">f'Top 10% threshold = </span><span class="sc">{</span>p90<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Wealth'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Density'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Stationary Wealth Distribution (Final Period)'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Wealth shares</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>total_w <span class="op">=</span> final_wealth.<span class="bu">sum</span>()</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>sorted_w <span class="op">=</span> np.sort(final_wealth)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>top10_share <span class="op">=</span> sorted_w[<span class="bu">int</span>(<span class="fl">0.9</span> <span class="op">*</span> n_agents):].<span class="bu">sum</span>() <span class="op">/</span> total_w</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>top1_share <span class="op">=</span> sorted_w[<span class="bu">int</span>(<span class="fl">0.99</span> <span class="op">*</span> n_agents):].<span class="bu">sum</span>() <span class="op">/</span> total_w</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>bottom50_share <span class="op">=</span> sorted_w[:<span class="bu">int</span>(<span class="fl">0.5</span> <span class="op">*</span> n_agents)].<span class="bu">sum</span>() <span class="op">/</span> total_w</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Wealth shares:"</span>)</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Top 1% own:    </span><span class="sc">{</span>top1_share<span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">% of total wealth"</span>)</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Top 10% own:   </span><span class="sc">{</span>top10_share<span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">% of total wealth"</span>)</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Bottom 50% own: </span><span class="sc">{</span>bottom50_share<span class="op">*</span><span class="dv">100</span><span class="sc">:.1f}</span><span class="ss">% of total wealth"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="the-lorenz-curve" class="level3">
+<h3 class="anchored" data-anchor-id="the-lorenz-curve">The Lorenz Curve</h3>
+<p>The <strong>Lorenz curve</strong> is the standard graphical tool for visualising inequality. It plots the cumulative share of wealth (y-axis) against the cumulative share of the population (x-axis), with agents sorted from poorest to richest.</p>
+<ul>
+<li>If wealth were perfectly equal, the Lorenz curve would be the 45-degree line (the “line of equality”).</li>
+<li>The more unequal the distribution, the more the Lorenz curve bows below the 45-degree line.</li>
+</ul>
+<div id="cell-16" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lorenz_curve(wealth_array):</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Compute the Lorenz curve from an array of wealth values.</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">        pop_share: cumulative population share (0 to 1)</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">        wealth_share: cumulative wealth share (0 to 1)</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    sorted_wealth <span class="op">=</span> np.sort(wealth_array)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(sorted_wealth)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    cumulative_wealth <span class="op">=</span> np.cumsum(sorted_wealth)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    total_wealth <span class="op">=</span> sorted_wealth.<span class="bu">sum</span>()</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Prepend zero for the origin</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    pop_share <span class="op">=</span> np.concatenate(([<span class="dv">0</span>], np.arange(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>) <span class="op">/</span> n))</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    wealth_share <span class="op">=</span> np.concatenate(([<span class="dv">0</span>], cumulative_wealth <span class="op">/</span> total_wealth))</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pop_share, wealth_share</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute and plot the Lorenz curve</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>pop_share, wealth_share <span class="op">=</span> lorenz_curve(final_wealth)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">7</span>))</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="dv">1</span>], <span class="st">'k--'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="st">'Perfect equality'</span>)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>ax.plot(pop_share, wealth_share, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>, label<span class="op">=</span><span class="st">'Lorenz curve'</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>ax.fill_between(pop_share, wealth_share, pop_share, color<span class="op">=</span><span class="st">'steelblue'</span>, alpha<span class="op">=</span><span class="fl">0.15</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Cumulative share of population (poorest to richest)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Cumulative share of wealth'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Lorenz Curve of the Simulated Wealth Distribution'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">11</span>, loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>ax.set_aspect(<span class="st">'equal'</span>)</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Annotate</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>ax.annotate(<span class="st">'The shaded area between</span><span class="ch">\n</span><span class="st">the curves measures inequality'</span>,</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>            xy<span class="op">=</span>(<span class="fl">0.55</span>, <span class="fl">0.35</span>), fontsize<span class="op">=</span><span class="dv">10</span>, color<span class="op">=</span><span class="st">'steelblue'</span>,</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>            bbox<span class="op">=</span><span class="bu">dict</span>(boxstyle<span class="op">=</span><span class="st">'round,pad=0.3'</span>, facecolor<span class="op">=</span><span class="st">'lightyellow'</span>, edgecolor<span class="op">=</span><span class="st">'gray'</span>))</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="the-gini-coefficient" class="level3">
+<h3 class="anchored" data-anchor-id="the-gini-coefficient">The Gini Coefficient</h3>
+<p>The <strong>Gini coefficient</strong> is a single number that summarises the degree of inequality:</p>
+<p><span class="math display">\[G = \frac{A}{A + B}\]</span></p>
+<p>where <span class="math inline">\(A\)</span> is the area between the line of equality and the Lorenz curve, and <span class="math inline">\(A + B\)</span> is the total area under the line of equality (which equals 0.5).</p>
+<p>Equivalently:</p>
+<p><span class="math display">\[G = 1 - 2 \int_0^1 L(p) \, dp\]</span></p>
+<p>where <span class="math inline">\(L(p)\)</span> is the Lorenz curve function.</p>
+<ul>
+<li><span class="math inline">\(G = 0\)</span> means perfect equality (everyone has the same wealth).</li>
+<li><span class="math inline">\(G = 1\)</span> means perfect inequality (one person has everything).</li>
+<li>Real-world Gini coefficients for wealth range from about 0.5 (Scandinavia) to 0.85 (the United States).</li>
+</ul>
+<div id="cell-18" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gini_coefficient(wealth_array):</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Compute the Gini coefficient from an array of wealth values.</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Uses the trapezoidal approximation of the area under the Lorenz curve.</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    pop_share, wealth_share <span class="op">=</span> lorenz_curve(wealth_array)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Area under Lorenz curve using the trapezoidal rule</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    area_under_lorenz <span class="op">=</span> np.trapz(wealth_share, pop_share)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gini = 1 - 2 * (area under Lorenz curve)</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span> <span class="op">-</span> <span class="dv">2</span> <span class="op">*</span> area_under_lorenz</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>gini <span class="op">=</span> gini_coefficient(final_wealth)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Gini coefficient of simulated wealth distribution: </span><span class="sc">{</span>gini<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">For reference:"</span>)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Perfect equality:     G = 0"</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Sweden (wealth):      G ≈ 0.50"</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Germany (wealth):     G ≈ 0.67"</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  United States (wealth): G ≈ 0.85"</span>)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Perfect inequality:   G = 1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="comparative-statics-how-parameters-shape-inequality" class="level3">
+<h3 class="anchored" data-anchor-id="comparative-statics-how-parameters-shape-inequality">Comparative Statics: How Parameters Shape Inequality</h3>
+<p>Now we explore how changing the model’s parameters affects the wealth distribution. This is the computational equivalent of Piketty’s historical analysis: what forces drive inequality up or down?</p>
+<p>We compare three scenarios: 1. <strong>Baseline</strong>: <span class="math inline">\(r = 0.02\)</span>, income spread <span class="math inline">\([0.5, 1.0, 2.0]\)</span> 2. <strong>Higher interest rate</strong>: <span class="math inline">\(r = 0.05\)</span> (capital earns more — Piketty’s <span class="math inline">\(r &gt; g\)</span>) 3. <strong>Higher income volatility</strong>: income spread <span class="math inline">\([0.2, 1.0, 3.0]\)</span> (wider gap between low and high)</p>
+<div id="cell-20" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scenario 1: Baseline (already computed)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>gini_baseline <span class="op">=</span> gini</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Scenario 2: Higher interest rate</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>wealth_high_r <span class="op">=</span> simulate_wealth(income_paths, r<span class="op">=</span><span class="fl">0.05</span>, alpha<span class="op">=</span><span class="fl">0.9</span>, w0<span class="op">=</span><span class="fl">1.0</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>gini_high_r <span class="op">=</span> gini_coefficient(wealth_high_r[:, <span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Scenario 3: Higher income volatility</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>income_levels_volatile <span class="op">=</span> np.array([<span class="fl">0.2</span>, <span class="fl">1.0</span>, <span class="fl">3.0</span>])</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>income_paths_volatile <span class="op">=</span> income_levels_volatile[state_paths]</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>wealth_volatile <span class="op">=</span> simulate_wealth(income_paths_volatile, r<span class="op">=</span><span class="fl">0.02</span>, alpha<span class="op">=</span><span class="fl">0.9</span>, w0<span class="op">=</span><span class="fl">1.0</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>gini_volatile <span class="op">=</span> gini_coefficient(wealth_volatile[:, <span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"=== Comparative Statics ==="</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'Scenario'</span><span class="sc">:&lt;30}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Gini'</span><span class="sc">:&gt;8}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Mean Wealth'</span><span class="sc">:&gt;14}</span><span class="ss"> </span><span class="sc">{</span><span class="st">'Median Wealth'</span><span class="sc">:&gt;14}</span><span class="ss">"</span>)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"-"</span> <span class="op">*</span> <span class="dv">68</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'Baseline (r=0.02)'</span><span class="sc">:&lt;30}</span><span class="ss"> </span><span class="sc">{</span>gini_baseline<span class="sc">:&gt;8.4f}</span><span class="ss"> </span><span class="sc">{</span>wealth[:,<span class="op">-</span><span class="dv">1</span>]<span class="sc">.</span>mean()<span class="sc">:&gt;14.2f}</span><span class="ss"> </span><span class="sc">{</span>np<span class="sc">.</span>median(wealth[:,<span class="op">-</span><span class="dv">1</span>])<span class="sc">:&gt;14.2f}</span><span class="ss">"</span>)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'Higher r (r=0.05)'</span><span class="sc">:&lt;30}</span><span class="ss"> </span><span class="sc">{</span>gini_high_r<span class="sc">:&gt;8.4f}</span><span class="ss"> </span><span class="sc">{</span>wealth_high_r[:,<span class="op">-</span><span class="dv">1</span>]<span class="sc">.</span>mean()<span class="sc">:&gt;14.2f}</span><span class="ss"> </span><span class="sc">{</span>np<span class="sc">.</span>median(wealth_high_r[:,<span class="op">-</span><span class="dv">1</span>])<span class="sc">:&gt;14.2f}</span><span class="ss">"</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="st">'Higher volatility'</span><span class="sc">:&lt;30}</span><span class="ss"> </span><span class="sc">{</span>gini_volatile<span class="sc">:&gt;8.4f}</span><span class="ss"> </span><span class="sc">{</span>wealth_volatile[:,<span class="op">-</span><span class="dv">1</span>]<span class="sc">.</span>mean()<span class="sc">:&gt;14.2f}</span><span class="ss"> </span><span class="sc">{</span>np<span class="sc">.</span>median(wealth_volatile[:,<span class="op">-</span><span class="dv">1</span>])<span class="sc">:&gt;14.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-21" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot all three distributions and their Lorenz curves</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>scenarios <span class="op">=</span> [</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Baseline (r=0.02)'</span>, wealth[:, <span class="op">-</span><span class="dv">1</span>], <span class="st">'steelblue'</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Higher r (r=0.05)'</span>, wealth_high_r[:, <span class="op">-</span><span class="dv">1</span>], <span class="st">'coral'</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Higher volatility'</span>, wealth_volatile[:, <span class="op">-</span><span class="dv">1</span>], <span class="st">'seagreen'</span>),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Left panel: wealth distributions</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label, w, color <span class="kw">in</span> scenarios:</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].hist(w, bins<span class="op">=</span><span class="dv">60</span>, density<span class="op">=</span><span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.4</span>, color<span class="op">=</span>color, edgecolor<span class="op">=</span><span class="st">'white'</span>, label<span class="op">=</span>label)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">'Wealth'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'Density'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Wealth Distributions under Different Parameters'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Right panel: Lorenz curves</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot([<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="dv">1</span>], <span class="st">'k--'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, label<span class="op">=</span><span class="st">'Perfect equality'</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label, w, color <span class="kw">in</span> scenarios:</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    ps, ws <span class="op">=</span> lorenz_curve(w)</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    g <span class="op">=</span> gini_coefficient(w)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">1</span>].plot(ps, ws, color<span class="op">=</span>color, linewidth<span class="op">=</span><span class="fl">2.5</span>, label<span class="op">=</span><span class="ss">f'</span><span class="sc">{</span>label<span class="sc">}</span><span class="ss"> (Gini=</span><span class="sc">{</span>g<span class="sc">:.3f}</span><span class="ss">)'</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'Cumulative population share'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Cumulative wealth share'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Lorenz Curves'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">10</span>, loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_aspect(<span class="st">'equal'</span>)</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Key findings:"</span>)</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"  - A higher interest rate increases inequality (the rich earn more on their savings)."</span>)</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"  - Greater income volatility increases inequality (bigger shocks, harder to insure)."</span>)</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"  - Both push the Lorenz curve further from the line of equality."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="how-the-gini-evolves-over-time" class="level3">
+<h3 class="anchored" data-anchor-id="how-the-gini-evolves-over-time">How the Gini Evolves Over Time</h3>
+<div id="cell-23" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Track the Gini coefficient over time for the baseline model</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>gini_over_time <span class="op">=</span> []</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>time_points <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, n_periods, <span class="dv">5</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> time_points:</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    gini_over_time.append(gini_coefficient(wealth[:, t]))</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="bu">list</span>(time_points), gini_over_time, color<span class="op">=</span><span class="st">'steelblue'</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Period'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Gini Coefficient'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Evolution of the Gini Coefficient Over Time'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>ax.axhline(gini_over_time[<span class="op">-</span><span class="dv">1</span>], color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>           label<span class="op">=</span><span class="ss">f'Converged value ≈ </span><span class="sc">{</span>gini_over_time[<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.3f}</span><span class="ss">'</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All agents start with the same wealth (w0 = 1), so Gini starts near 0."</span>)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"As idiosyncratic shocks accumulate, inequality rises and converges to a steady state."</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"This is the Aiyagari insight: inequality is endogenous, emerging from luck alone."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="part-iii-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="part-iii-exercises">Part III — Exercises</h2>
+<section id="exercise-1-the-effect-of-income-mobility" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-1-the-effect-of-income-mobility">Exercise 1 — The Effect of Income Mobility</h3>
+<p>The transition matrix <span class="math inline">\(P\)</span> determines how persistent income shocks are. High persistence (staying in the same state for many periods) means income luck has lasting effects on wealth. Low persistence (frequent switching between states) means shocks wash out quickly.</p>
+<p><strong>(a)</strong> Create a <strong>high-persistence</strong> transition matrix where each state has a 0.8 probability of remaining and transitions are split equally between the other two states. Simulate 5,000 agents for 200 periods with baseline parameters (<span class="math inline">\(r = 0.02\)</span>, <span class="math inline">\(\alpha = 0.9\)</span>). Compute the Gini coefficient of the final wealth distribution.</p>
+<p><strong>(b)</strong> Create a <strong>low-persistence</strong> transition matrix where each state has a 0.4 probability of remaining. Again, split the remaining probability equally between the other two states. Simulate and compute the Gini.</p>
+<p><strong>(c)</strong> Plot the Lorenz curves for the high-persistence, low-persistence, and baseline cases on a single figure. Which has the most inequality? Which has the least? Explain intuitively why persistence matters.</p>
+<p><strong>(d)</strong> Compute the Gini coefficient for persistence values of 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, and 0.9 (where persistence is the diagonal element of the transition matrix). Plot Gini against persistence. What is the relationship?</p>
+<div id="cell-25" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answer here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercise-2-progressive-taxation" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-progressive-taxation">Exercise 2 — Progressive Taxation</h3>
+<p>One of the key policy tools against inequality is <strong>progressive taxation</strong>: taxing higher incomes at higher rates and redistributing the revenue.</p>
+<p><strong>(a)</strong> Implement a progressive tax-and-transfer system. Define a tax function that taxes income above a threshold at a higher rate:</p>
+<p><span class="math display">\[\text{tax}(y) = \begin{cases} 0.1 \cdot y &amp; \text{if } y \leq 1.0 \\ 0.1 + 0.4 \cdot (y - 1.0) &amp; \text{if } y &gt; 1.0 \end{cases}\]</span></p>
+<p>Compute total tax revenue per period and redistribute it equally as a lump-sum transfer to all agents. The post-tax-and-transfer income is <span class="math inline">\(y_t^{\text{net}} = y_t - \text{tax}(y_t) + \text{transfer}\)</span>. Simulate wealth accumulation using <span class="math inline">\(y_t^{\text{net}}\)</span> instead of <span class="math inline">\(y_t\)</span>.</p>
+<p><strong>(b)</strong> Compare the Gini coefficient with and without the tax system. Plot both Lorenz curves.</p>
+<p><strong>(c)</strong> Experiment with a more aggressive progressive tax: raise the top rate from 0.4 to 0.6. How much further does the Gini fall? Is there a point of diminishing returns?</p>
+<p><strong>(d)</strong> Plot the wealth distributions (histograms) for the no-tax, moderate-tax, and high-tax scenarios on a single figure. In 2-3 sentences, discuss the trade-off between equality and the total wealth generated.</p>
+<div id="cell-27" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answer here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercise-3-pikettys-r-g" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3-pikettys-r-g">Exercise 3 — Piketty’s r &gt; g</h3>
+<p>Piketty argued that when the return on capital (<span class="math inline">\(r\)</span>) exceeds the growth rate (<span class="math inline">\(g\)</span>), wealth inequality tends to increase without bound. Let’s test this computationally.</p>
+<p><strong>(a)</strong> Modify the wealth accumulation equation to include economic growth. Income grows at rate <span class="math inline">\(g\)</span> per period: <span class="math inline">\(y_t = y_0 \cdot (1 + g)^t\)</span> (multiply the Markov chain income by a growth factor). Simulate with <span class="math inline">\(r = 0.04\)</span> and <span class="math inline">\(g = 0.02\)</span> (so <span class="math inline">\(r &gt; g\)</span>). Track the Gini over time for 500 periods.</p>
+<p><strong>(b)</strong> Now simulate with <span class="math inline">\(r = 0.02\)</span> and <span class="math inline">\(g = 0.04\)</span> (so <span class="math inline">\(r &lt; g\)</span>). Track the Gini over time. Compare the two trajectories on a single plot.</p>
+<p><strong>(c)</strong> For the <span class="math inline">\(r &gt; g\)</span> case, compute the wealth share of the top 10% over time. Does it stabilise or keep growing? Plot it.</p>
+<p><strong>(d)</strong> Piketty argued that the mid-twentieth century was exceptional because wars and progressive taxation temporarily pushed the effective <span class="math inline">\(r\)</span> below <span class="math inline">\(g\)</span>. Simulate a scenario where <span class="math inline">\(r &gt; g\)</span> for the first 200 periods, then <span class="math inline">\(r &lt; g\)</span> for periods 200-350 (the “Great Compression”), then <span class="math inline">\(r &gt; g\)</span> again for periods 350-500. Plot the Gini over all 500 periods. Does the pattern resemble the historical U-shape of inequality?</p>
+<div id="cell-29" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your answer here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="part-iv-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="part-iv-quiz">Part IV — Quiz</h2>
+<section id="conceptual-questions" class="level3">
+<h3 class="anchored" data-anchor-id="conceptual-questions">Conceptual Questions</h3>
+<p><strong>Q1.</strong> Piketty’s central inequality, <span class="math inline">\(r &gt; g\)</span>, states that when the return on capital exceeds the growth rate:</p>
+<ol type="a">
+<li>The economy enters recession<br>
+</li>
+<li>Inherited wealth grows faster than earned income, increasing inequality<br>
+</li>
+<li>Inflation accelerates<br>
+</li>
+<li>Government debt becomes unsustainable</li>
+</ol>
+<p><strong>Q2.</strong> A Gini coefficient of 0 means:</p>
+<ol type="a">
+<li>Everyone has zero wealth<br>
+</li>
+<li>One person has all the wealth<br>
+</li>
+<li>Wealth is perfectly equally distributed<br>
+</li>
+<li>The economy is in autarky</li>
+</ol>
+<p><strong>Q3.</strong> The Lorenz curve plots:</p>
+<ol type="a">
+<li>Income over time<br>
+</li>
+<li>Cumulative wealth share against cumulative population share<br>
+</li>
+<li>GDP growth against inflation<br>
+</li>
+<li>Supply against demand</li>
+</ol>
+<p><strong>Q4.</strong> In the Aiyagari model, inequality arises because:</p>
+<ol type="a">
+<li>Agents have different preferences and abilities<br>
+</li>
+<li>Some agents are inherently smarter than others<br>
+</li>
+<li>Identical agents face different idiosyncratic income shocks and cannot perfectly insure<br>
+</li>
+<li>The government redistributes from poor to rich</li>
+</ol>
+<p><strong>Q5.</strong> Piketty’s <em>Capital in the Twenty-First Century</em> argued that the mid-twentieth-century decline in inequality was:</p>
+<ol type="a">
+<li>The natural and permanent tendency of capitalism<br>
+</li>
+<li>An anomaly caused by wars, depression, and progressive taxation<br>
+</li>
+<li>The result of superior economic theory<br>
+</li>
+<li>A statistical illusion caused by measurement error</li>
+</ol>
+</section>
+<section id="computational-questions" class="level3">
+<h3 class="anchored" data-anchor-id="computational-questions">Computational Questions</h3>
+<p><strong>Q6.</strong> If the Lorenz curve passes through the point (0.5, 0.2), this means:</p>
+<ol type="a">
+<li>The poorest 50% of the population holds 20% of total wealth<br>
+</li>
+<li>The richest 20% holds 50% of total wealth<br>
+</li>
+<li>Average wealth is 0.2<br>
+</li>
+<li>The Gini coefficient is 0.5</li>
+</ol>
+<p><strong>Q7.</strong> A Gini coefficient of 0.85 (approximately the US wealth Gini) indicates:</p>
+<ol type="a">
+<li>Moderate inequality<br>
+</li>
+<li>Nearly perfect equality<br>
+</li>
+<li>Very high inequality — the Lorenz curve bows far below the line of equality<br>
+</li>
+<li>That 85% of people have equal wealth</li>
+</ol>
+<p><strong>Q8.</strong> In a Markov chain with transition matrix <span class="math inline">\(P\)</span>, the stationary distribution <span class="math inline">\(\pi\)</span> satisfies:</p>
+<ol type="a">
+<li><span class="math inline">\(\pi = P\)</span><br>
+</li>
+<li><span class="math inline">\(\pi P = \pi\)</span> (it is unchanged by one application of the transition matrix)<br>
+</li>
+<li><span class="math inline">\(\pi + P = 1\)</span><br>
+</li>
+<li><span class="math inline">\(\pi P = 0\)</span></li>
+</ol>
+<p><strong>Q9.</strong> Increasing the persistence of the income Markov chain (higher diagonal elements in <span class="math inline">\(P\)</span>) will:</p>
+<ol type="a">
+<li>Decrease inequality because income is more stable<br>
+</li>
+<li>Increase inequality because long runs of bad (or good) luck have lasting effects on wealth<br>
+</li>
+<li>Have no effect on the wealth distribution<br>
+</li>
+<li>Make the Gini coefficient exactly 1</li>
+</ol>
+<p><strong>Q10.</strong> In the wealth accumulation equation <span class="math inline">\(w_{t+1} = (1+r) \cdot w_t + y_t - c_t\)</span>, the borrowing constraint <span class="math inline">\(w_t \geq 0\)</span> matters because:</p>
+<ol type="a">
+<li>It prevents agents from saving<br>
+</li>
+<li>It ensures all agents have the same wealth<br>
+</li>
+<li>It prevents agents from perfectly insuring against bad shocks, which generates inequality<br>
+</li>
+<li>It makes the interest rate irrelevant</li>
+</ol>
+</section>
+<section id="quiz-answers" class="level3">
+<h3 class="anchored" data-anchor-id="quiz-answers">Quiz Answers</h3>
+<details>
+<summary>
+Click to reveal answers
+</summary>
+<p><strong>Q1.</strong> (b) When <span class="math inline">\(r &gt; g\)</span>, those who already own capital see their wealth grow faster than the overall economy, meaning inherited wealth outpaces earned income and inequality widens.</p>
+<p><strong>Q2.</strong> (c) A Gini of 0 means the Lorenz curve coincides with the 45-degree line — every person has exactly the same wealth.</p>
+<p><strong>Q3.</strong> (b) The Lorenz curve plots the cumulative share of total wealth (y-axis) held by the cumulative share of the population (x-axis), sorted from poorest to richest.</p>
+<p><strong>Q4.</strong> (c) The Aiyagari model’s key insight is that identical agents facing uninsurable idiosyncratic shocks generate an unequal wealth distribution as an emergent property — inequality without innate differences.</p>
+<p><strong>Q5.</strong> (b) Piketty argued that the “Great Compression” of 1930-1975 was a historical anomaly driven by the destruction of capital in two world wars, the Great Depression, and deliberate policy choices (progressive taxation, welfare states), not the natural tendency of capitalism.</p>
+<p><strong>Q6.</strong> (a) The Lorenz curve point (0.5, 0.2) means that when the population is sorted from poorest to richest, the bottom half collectively holds only 20% of total wealth.</p>
+<p><strong>Q7.</strong> (c) A Gini of 0.85 is very close to 1 (perfect inequality). The Lorenz curve bows dramatically below the diagonal, indicating extreme concentration of wealth.</p>
+<p><strong>Q8.</strong> (b) The stationary distribution <span class="math inline">\(\pi\)</span> is a fixed point of the transition: applying <span class="math inline">\(P\)</span> once leaves it unchanged. It represents the long-run fraction of time spent in each state.</p>
+<p><strong>Q9.</strong> (b) Higher persistence means agents who draw a low income state stay there longer, depleting their savings, while high-income agents accumulate more. This amplifies wealth differences and increases the Gini.</p>
+<p><strong>Q10.</strong> (c) Without the borrowing constraint, agents could borrow against future good income to smooth consumption perfectly. The constraint prevents this, so agents hit by bad shocks cannot offset them by borrowing — this is the market incompleteness that generates inequality in the Aiyagari model.</p>
+</details>
+<hr>
+</section>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further Reading</h2>
+<ul>
+<li>Piketty, T. <em>Capital in the Twenty-First Century</em> (2014), especially the Introduction and Chapters 1, 7-12.</li>
+<li>Aiyagari, S.R. “Uninsured Idiosyncratic Risk and Aggregate Saving,” <em>Quarterly Journal of Economics</em> (1994).</li>
+<li>Deaton, A. <em>The Great Escape: Health, Wealth, and the Origins of Inequality</em> (2013).</li>
+<li>Piketty, T. and Saez, E. “Income Inequality in the United States, 1913-1998,” <em>Quarterly Journal of Economics</em> (2003).</li>
+<li>Kuznets, S. “Economic Growth and Income Inequality,” <em>American Economic Review</em> (1955).</li>
+</ul>
+<hr>
+<p><em>Next week: we move from the distribution of wealth within countries to the dynamics of growth between them — convergence, divergence, and the puzzle of why some nations are rich and others poor.</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/juanignaciozurita\.github\.io\/personalwebsite\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
