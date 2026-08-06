@@ -1,0 +1,101 @@
+/* University of Edinburgh branding for Jupyter Book */
+
+:root {
+  --color-primary: #7A2318;          /* UoE dark red */
+  --color-primary-light: #9e3a2d;
+  --color-secondary: #B8860B;        /* UoE gold */
+  --color-primary-rgb: 122, 35, 24;
+}
+
+/* ---- Navbar / header ---- */
+
+.navbar,
+.header-bar,
+header.primary-header,
+nav.bd-header {
+  background-color: #7A2318 !important;
+  border-bottom: 3px solid #B8860B;
+}
+
+.navbar a,
+.header-bar a,
+header.primary-header a,
+nav.bd-header a {
+  color: #ffffff !important;
+}
+
+.navbar a:hover,
+nav.bd-header a:hover {
+  color: #B8860B !important;
+}
+
+/* ---- Sidebar ---- */
+
+nav.bd-links a.reference,
+.sidebar-primary a {
+  color: #333333;
+}
+
+nav.bd-links a.reference:hover,
+.sidebar-primary a:hover {
+  color: #7A2318;
+}
+
+nav.bd-links a.reference.active,
+.sidebar-primary a.active {
+  color: #7A2318;
+  font-weight: 600;
+  border-left: 3px solid #7A2318;
+}
+
+/* ---- Content links ---- */
+
+.content a,
+article a {
+  color: #7A2318;
+}
+
+.content a:hover,
+article a:hover {
+  color: #9e3a2d;
+}
+
+/* ---- Headings ---- */
+
+h1, h2, h3 {
+  color: #2c2c2c;
+}
+
+h1 {
+  border-bottom: 2px solid #B8860B;
+  padding-bottom: 0.3em;
+}
+
+/* ---- Admonitions ---- */
+
+.admonition.note {
+  border-left-color: #7A2318;
+}
+
+.admonition.tip {
+  border-left-color: #B8860B;
+}
+
+/* ---- Footer ---- */
+
+footer.bd-footer {
+  border-top: 2px solid #B8860B;
+}
+
+/* ---- Code blocks ---- */
+
+div.highlight {
+  border-left: 3px solid #7A2318;
+}
+
+/* ---- General polish ---- */
+
+body {
+  font-family: "Source Sans Pro", "Segoe UI", Roboto, sans-serif;
+  line-height: 1.7;
+}

@@ -1,0 +1,22 @@
+format: jb-book
+root: intro
+
+parts:
+  - caption: Foundations
+    chapters:
+      - file: notebooks/week01_nn_intro
+      - file: notebooks/week02_deep_learning
+      - file: notebooks/week03_autodiff
+
+  - caption: Deep Equilibrium Networks
+    chapters:
+      - file: notebooks/week04_deqn_intro
+      - file: notebooks/week05_deqn_stochastic
+      - file: notebooks/week06_constraints
+
+  - caption: Advanced Methods
+    chapters:
+      - file: notebooks/week07_pinns
+      - file: notebooks/week08_hetagents
+      - file: notebooks/week09_surrogates
+      - file: notebooks/week10_frontiers

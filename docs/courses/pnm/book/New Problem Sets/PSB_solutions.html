@@ -1,0 +1,965 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Problem Set B — Data and Simulation (Weeks 3–4) &#8212; Programming &amp; Numerical Methods for Economics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a6909eaf" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'New Problem Sets/PSB_solutions';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/logo.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Programming & Numerical Methods for Economics - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="Programming & Numerical Methods for Economics - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/week01_intro.html">Week 1 — Introduction to Programming</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/week02_fundamentals.html">Week 2 — Fundamentals of Programming in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/week03_pandas.html">Week 3 — Data Manipulation with pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/week03_casestudy.html"><center> Programming and Numerical Methods for Economics</center></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/week04_models.html">Week 4 — From Data to Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/week05_numerical1.html">Week 5 — Numerical Methods I — Root-Finding and Optimisation</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/week06_optimization.html">Week 6 — Numerical Methods II — Optimisation in Economics</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/week07_funcapprox.html">Week 7 — Numerical Methods III — Function Approximation</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/week07_examples.html">Week 7 — Function Approximation — Additional Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/week08_growth_julia.html">Week 8 — Economic Models — Neoclassical Growth via Value Function Iteration</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/lab01.html">Marking Scheme</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/lab02.html">File from Learn - Course Material - Week 3</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/lab03.html"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/lab04.html"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/New Problem Sets/PSB_solutions.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Problem Set B — Data and Simulation (Weeks 3–4)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-building-and-exploring-a-dataframe">Question 1 — Building and exploring a DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-dummies-missing-values-and-data-cleaning">Question 2 — Dummies, missing values, and data cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-random-numbers-and-distributions">Question 3 — Random numbers and distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-monte-carlo-integration">Question 4 — Monte Carlo integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-ar-1-processes">Question 5 — AR(1) processes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-markov-chains">Question 6 — Markov chains</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-set-b-data-and-simulation-weeks-34">
+<h1>Problem Set B — Data and Simulation (Weeks 3–4)<a class="headerlink" href="#problem-set-b-data-and-simulation-weeks-34" title="Link to this heading">#</a></h1>
+<p><strong>Programming and Numerical Methods for Economics (ECNM10115)</strong><br />
+The University of Edinburgh · School of Economics</p>
+<hr class="docutils" />
+<p><strong>Instructions.</strong> This problem set covers material from Weeks 3 and 4: pandas DataFrames, indexing, conditional subsetting, dummy variables, missing values, random number generation, distributions, Monte Carlo integration, AR(1) processes, and Markov chains.</p>
+<p><strong>This version includes solutions.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<section id="question-1-building-and-exploring-a-dataframe">
+<h2>Question 1 — Building and exploring a DataFrame<a class="headerlink" href="#question-1-building-and-exploring-a-dataframe" title="Link to this heading">#</a></h2>
+<p>The table below shows data on six European economies:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Country</p></th>
+<th class="head"><p>GDP (bn €)</p></th>
+<th class="head"><p>Population (m)</p></th>
+<th class="head"><p>Unemployment (%)</p></th>
+<th class="head"><p>Year</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Germany</p></td>
+<td><p>3870</p></td>
+<td><p>83.2</p></td>
+<td><p>3.1</p></td>
+<td><p>2023</p></td>
+</tr>
+<tr class="row-odd"><td><p>France</p></td>
+<td><p>2780</p></td>
+<td><p>67.8</p></td>
+<td><p>7.3</p></td>
+<td><p>2023</p></td>
+</tr>
+<tr class="row-even"><td><p>Italy</p></td>
+<td><p>2010</p></td>
+<td><p>59.0</p></td>
+<td><p>7.6</p></td>
+<td><p>2023</p></td>
+</tr>
+<tr class="row-odd"><td><p>Spain</p></td>
+<td><p>1400</p></td>
+<td><p>47.4</p></td>
+<td><p>12.9</p></td>
+<td><p>2023</p></td>
+</tr>
+<tr class="row-even"><td><p>Netherlands</p></td>
+<td><p>1010</p></td>
+<td><p>17.6</p></td>
+<td><p>3.5</p></td>
+<td><p>2023</p></td>
+</tr>
+<tr class="row-odd"><td><p>Greece</p></td>
+<td><p>220</p></td>
+<td><p>10.4</p></td>
+<td><p>11.2</p></td>
+<td><p>2023</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>(a)</strong> Create a DataFrame <code class="docutils literal notranslate"><span class="pre">eu</span></code> from this data (use any method you prefer).</p>
+<p><strong>(b)</strong> Add a new column <code class="docutils literal notranslate"><span class="pre">gdp_pc</span></code> equal to GDP per capita (GDP / Population). Note the units.</p>
+<p><strong>(c)</strong> Select only the countries where unemployment is <strong>above 7%</strong>. Which countries appear?</p>
+<p><strong>(d)</strong> Select countries with GDP per capita <strong>above the median</strong> AND unemployment <strong>below 7%</strong>. Show only the <code class="docutils literal notranslate"><span class="pre">Country</span></code> and <code class="docutils literal notranslate"><span class="pre">gdp_pc</span></code> columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Solution ---</span>
+
+<span class="c1"># (a)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Germany&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">,</span> <span class="s1">&#39;Italy&#39;</span><span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">,</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;Greece&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;GDP&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3870</span><span class="p">,</span> <span class="mi">2780</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">1400</span><span class="p">,</span> <span class="mi">1010</span><span class="p">,</span> <span class="mi">220</span><span class="p">],</span>
+    <span class="s1">&#39;Population&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">83.2</span><span class="p">,</span> <span class="mf">67.8</span><span class="p">,</span> <span class="mf">59.0</span><span class="p">,</span> <span class="mf">47.4</span><span class="p">,</span> <span class="mf">17.6</span><span class="p">,</span> <span class="mf">10.4</span><span class="p">],</span>
+    <span class="s1">&#39;Unemployment&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">3.1</span><span class="p">,</span> <span class="mf">7.3</span><span class="p">,</span> <span class="mf">7.6</span><span class="p">,</span> <span class="mf">12.9</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">11.2</span><span class="p">],</span>
+    <span class="s1">&#39;Year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">2023</span><span class="p">,</span> <span class="mi">2023</span><span class="p">,</span> <span class="mi">2023</span><span class="p">,</span> <span class="mi">2023</span><span class="p">,</span> <span class="mi">2023</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">eu</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eu</span><span class="p">)</span>
+
+<span class="c1"># (b)</span>
+<span class="n">eu</span><span class="p">[</span><span class="s1">&#39;gdp_pc&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">eu</span><span class="p">[</span><span class="s1">&#39;GDP&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">eu</span><span class="p">[</span><span class="s1">&#39;Population&#39;</span><span class="p">]</span>  <span class="c1"># bn € per million people = thousands € per person</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">With GDP per capita (thousands €):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eu</span><span class="p">[[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;gdp_pc&#39;</span><span class="p">]])</span>
+
+<span class="c1"># (c)</span>
+<span class="n">high_unemp</span> <span class="o">=</span> <span class="n">eu</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">eu</span><span class="p">[</span><span class="s1">&#39;Unemployment&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Countries with unemployment &gt; 7%:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">high_unemp</span><span class="p">[[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Unemployment&#39;</span><span class="p">]])</span>
+<span class="c1"># France, Italy, Spain, Greece</span>
+
+<span class="c1"># (d)</span>
+<span class="n">median_gdppc</span> <span class="o">=</span> <span class="n">eu</span><span class="p">[</span><span class="s1">&#39;gdp_pc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">eu</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">eu</span><span class="p">[</span><span class="s1">&#39;gdp_pc&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">median_gdppc</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">eu</span><span class="p">[</span><span class="s1">&#39;Unemployment&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">),</span>
+                <span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;gdp_pc&#39;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Median GDP per capita: </span><span class="si">{</span><span class="n">median_gdppc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> thousand €&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Above-median GDP/cap AND unemployment &lt; 7%:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="c1"># Germany and Netherlands</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="question-2-dummies-missing-values-and-data-cleaning">
+<h2>Question 2 — Dummies, missing values, and data cleaning<a class="headerlink" href="#question-2-dummies-missing-values-and-data-cleaning" title="Link to this heading">#</a></h2>
+<p>The DataFrame below records households in a survey:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">survey</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;hh_id&#39;</span><span class="p">:</span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span>    <span class="mi">2</span><span class="p">,</span>    <span class="mi">3</span><span class="p">,</span>     <span class="mi">4</span><span class="p">,</span>     <span class="mi">5</span><span class="p">,</span>     <span class="mi">6</span><span class="p">,</span>     <span class="mi">7</span><span class="p">],</span>
+    <span class="s1">&#39;income&#39;</span><span class="p">:</span>   <span class="p">[</span><span class="mi">2500</span><span class="p">,</span> <span class="mi">4100</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1800</span><span class="p">,</span> <span class="mi">3200</span><span class="p">,</span>  <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">5500</span><span class="p">],</span>
+    <span class="s1">&#39;region&#39;</span><span class="p">:</span>   <span class="p">[</span><span class="s1">&#39;urban&#39;</span><span class="p">,</span> <span class="s1">&#39;rural&#39;</span><span class="p">,</span> <span class="s1">&#39;urban&#39;</span><span class="p">,</span> <span class="s1">&#39;rural&#39;</span><span class="p">,</span> <span class="s1">&#39;urban&#39;</span><span class="p">,</span> <span class="s1">&#39;rural&#39;</span><span class="p">,</span> <span class="s1">&#39;urban&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;children&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>    <span class="mi">1</span><span class="p">,</span>     <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>     <span class="mi">1</span><span class="p">,</span>     <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p><strong>(a)</strong> Create this DataFrame. How many missing values does each variable have?</p>
+<p><strong>(b)</strong> Drop all rows where <code class="docutils literal notranslate"><span class="pre">income</span></code> is missing. How many rows survive?</p>
+<p><strong>(c)</strong> On the surviving data, fill missing <code class="docutils literal notranslate"><span class="pre">children</span></code> with the <strong>median</strong> number of children (computed from non-missing values).</p>
+<p><strong>(d)</strong> Create a dummy variable <code class="docutils literal notranslate"><span class="pre">urban</span></code> equal to 1 if region is <code class="docutils literal notranslate"><span class="pre">'urban'</span></code>, 0 otherwise.</p>
+<p><strong>(e)</strong> Compute the mean income separately for urban and rural households (use the cleaned data). Which group has a higher average?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Solution ---</span>
+
+<span class="c1"># (a)</span>
+<span class="n">survey</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;hh_id&#39;</span><span class="p">:</span>    <span class="p">[</span><span class="mi">1</span><span class="p">,</span>    <span class="mi">2</span><span class="p">,</span>    <span class="mi">3</span><span class="p">,</span>     <span class="mi">4</span><span class="p">,</span>     <span class="mi">5</span><span class="p">,</span>     <span class="mi">6</span><span class="p">,</span>     <span class="mi">7</span><span class="p">],</span>
+    <span class="s1">&#39;income&#39;</span><span class="p">:</span>   <span class="p">[</span><span class="mi">2500</span><span class="p">,</span> <span class="mi">4100</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1800</span><span class="p">,</span> <span class="mi">3200</span><span class="p">,</span>  <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">5500</span><span class="p">],</span>
+    <span class="s1">&#39;region&#39;</span><span class="p">:</span>   <span class="p">[</span><span class="s1">&#39;urban&#39;</span><span class="p">,</span> <span class="s1">&#39;rural&#39;</span><span class="p">,</span> <span class="s1">&#39;urban&#39;</span><span class="p">,</span> <span class="s1">&#39;rural&#39;</span><span class="p">,</span> <span class="s1">&#39;urban&#39;</span><span class="p">,</span> <span class="s1">&#39;rural&#39;</span><span class="p">,</span> <span class="s1">&#39;urban&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;children&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span>    <span class="mi">0</span><span class="p">,</span>    <span class="mi">1</span><span class="p">,</span>     <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>     <span class="mi">1</span><span class="p">,</span>     <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Missing values per variable:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">survey</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="c1"># (b)</span>
+<span class="n">clean</span> <span class="o">=</span> <span class="n">survey</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;income&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Rows surviving after dropping missing income: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">clean</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># (c)</span>
+<span class="n">med_children</span> <span class="o">=</span> <span class="n">clean</span><span class="p">[</span><span class="s1">&#39;children&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Median children (non-missing): </span><span class="si">{</span><span class="n">med_children</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">clean</span><span class="p">[</span><span class="s1">&#39;children&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">clean</span><span class="p">[</span><span class="s1">&#39;children&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">med_children</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clean</span><span class="p">[[</span><span class="s1">&#39;hh_id&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">]])</span>
+
+<span class="c1"># (d)</span>
+<span class="n">clean</span><span class="p">[</span><span class="s1">&#39;urban&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">clean</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;urban&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">With urban dummy:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clean</span><span class="p">[[</span><span class="s1">&#39;hh_id&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="s1">&#39;urban&#39;</span><span class="p">]])</span>
+
+<span class="c1"># (e)</span>
+<span class="n">mean_by_region</span> <span class="o">=</span> <span class="n">clean</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;region&#39;</span><span class="p">)[</span><span class="s1">&#39;income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Mean income by region:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mean_by_region</span><span class="p">)</span>
+<span class="c1"># Urban households have higher average income.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="question-3-random-numbers-and-distributions">
+<h2>Question 3 — Random numbers and distributions<a class="headerlink" href="#question-3-random-numbers-and-distributions" title="Link to this heading">#</a></h2>
+<p><strong>(a)</strong> Set the seed to 2024. Draw 10,000 observations from a Normal distribution with <span class="math notranslate nohighlight">\(\mu = 5\)</span> and <span class="math notranslate nohighlight">\(\sigma = 2\)</span>. Store them in <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p><strong>(b)</strong> Draw 10,000 observations from a <strong>log-normal</strong> distribution by computing <code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">np.exp(x)</span></code>. Plot histograms of both <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> side by side (use <code class="docutils literal notranslate"><span class="pre">plt.subplots(1,</span> <span class="pre">2)</span></code>). Title each panel.</p>
+<p><strong>(c)</strong> Create your own discrete distribution with support <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> and probabilities <code class="docutils literal notranslate"><span class="pre">[0.5,</span> <span class="pre">0.2,</span> <span class="pre">0.2,</span> <span class="pre">0.1]</span></code>. Draw 10,000 samples from it. Verify empirically that the sample mean is close to the theoretical mean <span class="math notranslate nohighlight">\(E[X] = \sum_i x_i \, p_i\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Solution ---</span>
+
+<span class="c1"># (a)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2024</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sample mean of x: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> (should be close to 5)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sample std of x:  </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> (should be close to 2)&quot;</span><span class="p">)</span>
+
+<span class="c1"># (b)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Normal distribution (mu=5, sigma=2)&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Density&#39;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Log-normal distribution&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;z = exp(x)&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Density&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="mi">99</span><span class="p">))</span>  <span class="c1"># trim extreme tail for visibility</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># (c)</span>
+<span class="n">support</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">probs</span>   <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
+
+<span class="n">draws</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">support</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">probs</span><span class="p">)</span>
+
+<span class="n">theoretical_mean</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x_i</span> <span class="o">*</span> <span class="n">p_i</span> <span class="k">for</span> <span class="n">x_i</span><span class="p">,</span> <span class="n">p_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">support</span><span class="p">,</span> <span class="n">probs</span><span class="p">))</span>
+<span class="n">sample_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">draws</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Theoretical E[X] = </span><span class="si">{</span><span class="n">theoretical_mean</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sample mean      = </span><span class="si">{</span><span class="n">sample_mean</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="question-4-monte-carlo-integration">
+<h2>Question 4 — Monte Carlo integration<a class="headerlink" href="#question-4-monte-carlo-integration" title="Link to this heading">#</a></h2>
+<p>Suppose <span class="math notranslate nohighlight">\(X \sim N(0,1)\)</span> and we want to compute <span class="math notranslate nohighlight">\(E[g(X)]\)</span> where <span class="math notranslate nohighlight">\(g(x) = e^{-x^2/2} \cdot x^2\)</span>.</p>
+<p><strong>(a)</strong> Write a function <code class="docutils literal notranslate"><span class="pre">g(x)</span></code> implementing the expression above.</p>
+<p><strong>(b)</strong> Estimate <span class="math notranslate nohighlight">\(E[g(X)]\)</span> by Monte Carlo with <span class="math notranslate nohighlight">\(N = 1{,}000{,}000\)</span> draws. Print the result.</p>
+<p><strong>(c)</strong> Investigate convergence: compute the Monte Carlo estimate for <span class="math notranslate nohighlight">\(N = 100, 1000, 10{,}000, 100{,}000, 1{,}000{,}000\)</span>. Store the estimates in a list and plot them against <span class="math notranslate nohighlight">\(N\)</span> (use a log scale on the x-axis). Does the estimate stabilise?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Solution ---</span>
+
+<span class="c1"># (a)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># (b)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2024</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1_000_000</span><span class="p">)</span>
+<span class="n">mc_estimate</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Monte Carlo estimate of E[g(X)] with N=1,000,000: </span><span class="si">{</span><span class="n">mc_estimate</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># (c)</span>
+<span class="n">N_values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">10_000</span><span class="p">,</span> <span class="mi">100_000</span><span class="p">,</span> <span class="mi">1_000_000</span><span class="p">]</span>
+<span class="n">estimates</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2024</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">N</span> <span class="ow">in</span> <span class="n">N_values</span><span class="p">:</span>
+    <span class="n">draws</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">estimates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="n">draws</span><span class="p">)))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogx</span><span class="p">(</span><span class="n">N_values</span><span class="p">,</span> <span class="n">estimates</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mc_estimate</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;N=1M estimate (</span><span class="si">{</span><span class="n">mc_estimate</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Number of draws (N)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;E[g(X)] estimate&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Monte Carlo convergence&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># The estimate stabilises as N grows — the law of large numbers at work.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="question-5-ar-1-processes">
+<h2>Question 5 — AR(1) processes<a class="headerlink" href="#question-5-ar-1-processes" title="Link to this heading">#</a></h2>
+<p>Consider the AR(1) process: <span class="math notranslate nohighlight">\(y_{t+1} = a + \rho \, y_t + \varepsilon_t\)</span>, where <span class="math notranslate nohighlight">\(\varepsilon_t \sim N(0, \sigma^2)\)</span>.</p>
+<p><strong>(a)</strong> Write a function <code class="docutils literal notranslate"><span class="pre">simulate_ar1(T,</span> <span class="pre">rho,</span> <span class="pre">a=0,</span> <span class="pre">sigma=1,</span> <span class="pre">y0=0)</span></code> that returns a NumPy array of length <span class="math notranslate nohighlight">\(T\)</span> containing the simulated path.</p>
+<p><strong>(b)</strong> Set <code class="docutils literal notranslate"><span class="pre">rho=0.9</span></code>, <code class="docutils literal notranslate"><span class="pre">a=1</span></code>, <code class="docutils literal notranslate"><span class="pre">sigma=0.5</span></code>, <code class="docutils literal notranslate"><span class="pre">T=200</span></code>. Simulate and plot the process. Add a horizontal line at the <strong>unconditional mean</strong> <span class="math notranslate nohighlight">\(\mu^* = a/(1-\rho)\)</span>. Does the process fluctuate around this value?</p>
+<p><strong>(c)</strong> Now set <code class="docutils literal notranslate"><span class="pre">rho=1.01</span></code> (keeping the other parameters). Simulate 200 periods and plot. What happens? Is this process stationary? Explain in one sentence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Solution ---</span>
+
+<span class="c1"># (a)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate_ar1</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+        <span class="n">eps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">rho</span> <span class="o">*</span> <span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">eps</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="c1"># (b)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2024</span><span class="p">)</span>
+<span class="n">rho</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">200</span>
+<span class="n">y_stat</span> <span class="o">=</span> <span class="n">simulate_ar1</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+<span class="n">mu_star</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_stat</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">mu_star</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mu^* = </span><span class="si">{</span><span class="n">mu_star</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$y_t$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;AR(1) with $</span><span class="se">\\</span><span class="s1">rho=</span><span class="si">{</span><span class="n">rho</span><span class="si">}</span><span class="s1">$, $a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">$ (stationary)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sample mean: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_stat</span><span class="p">)</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, Unconditional mean: </span><span class="si">{</span><span class="n">mu_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Yes, the process fluctuates around mu*.</span>
+
+<span class="c1"># (c)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2024</span><span class="p">)</span>
+<span class="n">y_nonstat</span> <span class="o">=</span> <span class="n">simulate_ar1</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="n">rho</span><span class="o">=</span><span class="mf">1.01</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y_nonstat</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$y_t$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;AR(1) with $</span><span class="se">\\</span><span class="s1">rho=1.01$ (non-stationary)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># The process explodes — it is non-stationary because |rho| &gt; 1,</span>
+<span class="c1"># so shocks accumulate rather than decay.</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="question-6-markov-chains">
+<h2>Question 6 — Markov chains<a class="headerlink" href="#question-6-markov-chains" title="Link to this heading">#</a></h2>
+<p>An economy has three states of the business cycle: <strong>Recession</strong>, <strong>Normal</strong>, and <strong>Boom</strong>. The quarterly transition matrix is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P = \begin{pmatrix}
+0.70 &amp; 0.25 &amp; 0.05 \\
+0.10 &amp; 0.80 &amp; 0.10 \\
+0.05 &amp; 0.30 &amp; 0.65
+\end{pmatrix}
+\end{split}\]</div>
+<p>where rows are current states (Recession, Normal, Boom) and columns are next-period states.</p>
+<p><strong>(a)</strong> Use <code class="docutils literal notranslate"><span class="pre">quantecon.MarkovChain</span></code> to create this Markov chain with state labels <code class="docutils literal notranslate"><span class="pre">['Recession',</span> <span class="pre">'Normal',</span> <span class="pre">'Boom']</span></code>.</p>
+<p><strong>(b)</strong> Simulate 10,000 periods starting from <code class="docutils literal notranslate"><span class="pre">'Normal'</span></code>. Compute the fraction of time spent in each state.</p>
+<p><strong>(c)</strong> Compute the <strong>stationary distribution</strong> using <code class="docutils literal notranslate"><span class="pre">mc.stationary_distributions</span></code>. Compare it to your simulation fractions from (b).</p>
+<p><strong>(d)</strong> Suppose GDP growth in each state is: Recession = −1%, Normal = 2%, Boom = 4%. Using the stationary distribution, what is the <strong>long-run average</strong> GDP growth rate for this economy?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Solution ---</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">quantecon</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">qe</span>
+
+<span class="c1"># (a)</span>
+<span class="n">P</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.70</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.10</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">],</span>
+     <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">]]</span>
+
+<span class="n">mc</span> <span class="o">=</span> <span class="n">qe</span><span class="o">.</span><span class="n">MarkovChain</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">state_values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Recession&#39;</span><span class="p">,</span> <span class="s1">&#39;Normal&#39;</span><span class="p">,</span> <span class="s1">&#39;Boom&#39;</span><span class="p">])</span>
+
+<span class="c1"># (b)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2024</span><span class="p">)</span>
+<span class="n">sim</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="n">ts_length</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;Normal&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Simulation fractions (10,000 periods):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Recession&#39;</span><span class="p">,</span> <span class="s1">&#39;Normal&#39;</span><span class="p">,</span> <span class="s1">&#39;Boom&#39;</span><span class="p">]:</span>
+    <span class="n">frac</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sim</span> <span class="o">==</span> <span class="n">state</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">frac</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># (c)</span>
+<span class="n">psi_star</span> <span class="o">=</span> <span class="n">mc</span><span class="o">.</span><span class="n">stationary_distributions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Stationary distribution:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">state</span><span class="p">,</span> <span class="n">prob</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;Recession&#39;</span><span class="p">,</span> <span class="s1">&#39;Normal&#39;</span><span class="p">,</span> <span class="s1">&#39;Boom&#39;</span><span class="p">],</span> <span class="n">psi_star</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">state</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">prob</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># The simulation fractions closely match the stationary distribution.</span>
+
+<span class="c1"># (d)</span>
+<span class="n">gdp_growth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>  <span class="c1"># percent</span>
+<span class="n">long_run_avg</span> <span class="o">=</span> <span class="n">psi_star</span> <span class="o">@</span> <span class="n">gdp_growth</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Long-run average GDP growth: </span><span class="si">{</span><span class="n">long_run_avg</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<p><em>End of Problem Set B.</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./New Problem Sets"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-building-and-exploring-a-dataframe">Question 1 — Building and exploring a DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-dummies-missing-values-and-data-cleaning">Question 2 — Dummies, missing values, and data cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-random-numbers-and-distributions">Question 3 — Random numbers and distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4-monte-carlo-integration">Question 4 — Monte Carlo integration</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5-ar-1-processes">Question 5 — AR(1) processes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6-markov-chains">Question 6 — Markov chains</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Juan Zurita
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

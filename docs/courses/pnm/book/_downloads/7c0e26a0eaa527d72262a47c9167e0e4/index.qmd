@@ -1,0 +1,72 @@
+---
+title: "Programming & Numerical Methods for Economics"
+subtitle: "Honours — The University of Edinburgh"
+title-block-banner: true
+toc: true
+---
+
+<p style="text-align: justify;">
+This course teaches you to solve economic problems with code: writing clean programs in **Python**, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements.
+</p>
+
+## How to use these materials
+
+Each week has a **notebook** you can read online, download, or run in the cloud:
+
+- **Read online** — click the notebook link; it renders as a webpage with all code and output.
+- **Run in Google Colab** — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.
+- **Run locally** — install [Anaconda](https://www.anaconda.com/download) (includes Python, Jupyter, NumPy, and Matplotlib), then download the `.ipynb` file from the links below and open it in Jupyter.
+
+**New to Python?** Start with the [Python Refresher repository](https://github.com/Juanignaciozurita/Python-Refresher) alongside PS0.
+
+**Quick experiments:** try the [Python Playground](../../playground.qmd) — run and edit course code directly in your browser, nothing to install.
+
+## Materials
+
+| Week | Topic | Notebook | Slides | Problem Set | Lab | Colab |
+|:----:|:------|:---------|:-------|:------------|:----|:------|
+| 1 | Introduction to Programming | [View](notebooks/week01_intro.ipynb) · [Download](https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week01_intro.ipynb) | [PDF](slides/Lecture1.pdf) | [PS0 — Python refresher](psets/PS0_ECNM10115.pdf) | — | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week01_intro.ipynb) |
+| 2 | Fundamentals of Programming in Python | [View](notebooks/week02_fundamentals.ipynb) · [Download](https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/pnm/notebooks/week02_fundamentals.ipynb) | [PDF](slides/Lecture2.pdf) | [PS1](psets/PS1_ECNM10115.pdf) | [Lab 1](notebooks/lab01.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week02_fundamentals.ipynb) |
+| 3 | Data Manipulation with pandas | [pandas](notebooks/week03_pandas.ipynb) · [Case study](notebooks/week03_casestudy.ipynb) | [PDF](slides/Lecture3.pdf) | [PS2](psets/PS2_ECNM10115.pdf) | [Lab 2](notebooks/lab02.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week03_pandas.ipynb) |
+| 4 | From Data to Models | [View](notebooks/week04_models.ipynb) | [PDF](slides/Lecture4.pdf) | [PS3](psets/PS3_ECNM10115.pdf) | [Lab 3](notebooks/lab03.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week04_models.ipynb) |
+| 5 | Numerical Methods I — Root-Finding & Optimisation | [View](notebooks/week05_numerical1.ipynb) | [PDF](slides/Lecture5.pdf) · [Optimisation](slides/Optimization_Autumn2025.pdf) · [VF Approx.](slides/ValueFunctionApproximation.pdf) | [PS4](psets/PS4_ECNM10115.pdf) | [Lab 4](notebooks/lab04.ipynb) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week05_numerical1.ipynb) |
+| 6 | Numerical Methods II — Optimisation in Economics | [View](notebooks/week06_optimization.ipynb) | [PDF](slides/Lecture6_optimization.pdf) | [PS5](psets/PS5.pdf) | — | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week06_optimization.ipynb) |
+| 7 | Numerical Methods III — Function Approximation | [View](notebooks/week07_funcapprox.ipynb) · [Examples](notebooks/week07_examples.ipynb) | [PDF](slides/Lecture7_function_approximation.pdf) | [PS6](psets/PS6.pdf) | — | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/pnm/notebooks/week07_funcapprox.ipynb) |
+| 8 | Economic Models — Value Function Iteration | [View (Julia)](notebooks/week08_growth_julia.ipynb) | [PDF](slides/Lecture8_vfi.pdf) | [PS7](psets/PS7.pdf) | — | — |
+| 9 | Model Estimation — Simulation & Inference | — | [PDF](slides/Lecture9_simulation_inference.pdf) | [PS8](psets/PS8.pdf) | — | — |
+| 10 | Advanced Topics — Heterogeneous Agents | — | [PDF](slides/Lecture10_heterogeneous_agents.pdf) | — | — | — |
+
+<!-- TEMPLATE for adding a week — copy the row above and adjust week number/topic/filenames.
+NOTE: if you rename the GitHub repo, update the Download and Colab URLs to match.
+POLICY: problem-set QUESTIONS only — solutions are never published here. -->
+
+*Notebooks include interactive exercises with hidden solutions — try first, then click to check.*
+
+**Datasets:** the survey datasets used in the Week 3 case study, labs, and problem sets (UNPS and related microdata) are distributed through **Learn**, not this website, for licensing reasons. Notebooks are published with their outputs embedded, so you can follow everything here.
+
+**Test yourself:** take the [Numerical Methods Quiz](../../quiz.qmd) — 14 multiple-choice questions covering root-finding, optimisation, and function approximation (Weeks 5–8) with instant feedback.
+
+**Extra reading:** [pandas cheat sheet](files/DataWrangling_Pandas_Cheat_Sheet.pdf) · [Quadrature Methods](files/Quadrature_Methods.pdf) · [Math Review](files/Math_Review.pdf)
+
+## Syllabus
+
+1. Introduction to programming
+2. Fundamentals of programming in Python
+3. Data manipulation and data analysis
+4. From data to models
+5. Numerical Methods I
+6. Numerical Methods II
+7. Numerical Methods III
+8. Economic models
+9. Model estimation
+10. Advanced topics
+
+## References
+
+- **Numerical Methods in Economics**, Kenneth L. Judd (1998) — main reference for the numerical-methods weeks
+- [**QuantEcon**](https://quantecon.org) — T. Sargent and J. Stachurski's open lectures, main reference
+- Advanced: [Jesús Fernández-Villaverde's Computational Methods for Economists](https://www.sas.upenn.edu/~jesusfv/teaching.html) lecture notes
+
+## Questions
+
+Found an error in a notebook, or stuck on setup? Email [juan.zurita@ed.ac.uk](mailto:juan.zurita@ed.ac.uk) — see [For Students](../../students.qmd) for how to get a fast answer.

@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 200 60">
+  <rect x="0" y="0" width="200" height="60" rx="8" ry="8" fill="#7A2318"/>
+  <text x="100" y="38" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="bold" fill="#ffffff">Smith &#x2192; Sim</text>
+</svg>

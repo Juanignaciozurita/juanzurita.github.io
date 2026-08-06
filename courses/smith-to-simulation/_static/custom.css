@@ -1,0 +1,107 @@
+/* ==========================================================================
+   University of Edinburgh -- course branding
+   From Smith to Simulation
+   ========================================================================== */
+
+:root {
+  --color-primary: #7A2318;          /* UoE dark red */
+  --color-primary-light: #9e3a2d;
+  --color-secondary: #B8860B;        /* UoE gold */
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #faf8f5;
+}
+
+/* --- Navbar / Header ---------------------------------------------------- */
+
+.header-bar,
+header.bd-header,
+.topbar,
+nav.navbar {
+  background-color: var(--color-primary) !important;
+  border-bottom: 3px solid var(--color-secondary);
+}
+
+.header-bar a,
+header.bd-header a,
+nav.navbar a {
+  color: #ffffff !important;
+}
+
+.header-bar a:hover,
+header.bd-header a:hover,
+nav.navbar a:hover {
+  color: var(--color-secondary) !important;
+}
+
+/* --- Sidebar ------------------------------------------------------------- */
+
+nav.bd-links .active > a,
+.sidebar-primary .active > a {
+  color: var(--color-primary) !important;
+  border-left: 3px solid var(--color-primary);
+}
+
+nav.bd-links a:hover,
+.sidebar-primary a:hover {
+  color: var(--color-primary-light) !important;
+}
+
+/* --- Body links ---------------------------------------------------------- */
+
+article a {
+  color: var(--color-primary);
+}
+
+article a:hover {
+  color: var(--color-primary-light);
+}
+
+/* --- Headings ------------------------------------------------------------ */
+
+article h1 {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-secondary);
+  padding-bottom: 0.3em;
+}
+
+article h2 {
+  color: var(--color-primary);
+}
+
+/* --- Tables -------------------------------------------------------------- */
+
+table thead {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+table thead th {
+  color: #ffffff;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: var(--color-background-secondary);
+}
+
+/* --- Code blocks --------------------------------------------------------- */
+
+div.highlight {
+  border-left: 3px solid var(--color-secondary);
+}
+
+/* --- Footer -------------------------------------------------------------- */
+
+footer.bd-footer {
+  border-top: 2px solid var(--color-secondary);
+}
+
+/* --- General polish ------------------------------------------------------ */
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+article {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}

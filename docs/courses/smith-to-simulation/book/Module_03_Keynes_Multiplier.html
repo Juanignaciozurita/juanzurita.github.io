@@ -1,0 +1,1138 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 3 — Keynes and the Multiplier &#8212; From Smith to Simulation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=bcdf9603" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module_03_Keynes_Multiplier';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="_static/logo.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 7 — Solow and the Sources of Growth" href="Module_07_Solow.html" />
+    <link rel="prev" title="Module 5 — The Marginalist Revolution" href="Module_05_Marginalists.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="From Smith to Simulation - Home"/>
+    <img src="_static/logo.svg" class="logo__image only-dark pst-js-only" alt="From Smith to Simulation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I — Classical Economics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_01_Invisible_Hand.html">Module 1 — The Invisible Hand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_02_Pin_Factory.html">Module 2 — The Division of Labour and the Pin Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_02_Malthus_Ricardo.html">Module 2 — Malthus, Ricardo, and the Limits to Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_04_Marx.html">Module 4 — Marx and the Machinery Question</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II — Modern Economics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_05_Marginalists.html">Module 5 — The Marginalist Revolution</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 3 — Keynes and the Multiplier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_07_Solow.html">Module 7 — Solow and the Sources of Growth</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part III — Contemporary Economics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_08_Expectations.html">Module 8 — Friedman, Lucas, and the Expectations Revolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_09_Inequality.html">Module 9 — Inequality and Heterogeneous Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_10_Edinburgh_Legacy.html">Module 10 — Edinburgh’s Legacy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="syllabus.html">From Smith to Simulation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module_03_Keynes_Multiplier.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 3 — Keynes and the Multiplier</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-great-depression-and-the-birth-of-macroeconomics">The Great Depression and the Birth of Macroeconomics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-the-history">Part I — The History</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#october-1929">October 1929</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#john-maynard-keynes-18831946">John Maynard Keynes (1883–1946)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-key-ideas">The Key Ideas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edinburgh-connection">Edinburgh Connection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-the-computation">Part II — The Computation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting Up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-keynesian-cross">The Keynesian Cross</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-the-keynesian-cross">Visualising the Keynesian Cross</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fiscal-multiplier">The Fiscal Multiplier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-multiplier-round-by-round">The Multiplier Round by Round</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-mpc-changes-the-multiplier">How the MPC Changes the Multiplier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-is-curve-adding-interest-rates">The IS Curve: Adding Interest Rates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fiscal-policy-shifts-the-is-curve">Fiscal Policy Shifts the IS Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#animal-spirits-what-happens-when-confidence-collapses">Animal Spirits: What Happens When Confidence Collapses?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-exercises">Part III — Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-the-paradox-of-thrift">Exercise 1 — The Paradox of Thrift</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-balanced-budget-multiplier">Exercise 2 — Balanced-Budget Multiplier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-a-progressive-tax-system">Exercise 3 — A Progressive Tax System</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-quiz">Part IV — Quiz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-questions">Conceptual Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-questions">Computational Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz-answers">Quiz Answers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-3-keynes-and-the-multiplier">
+<h1>Module 3 — Keynes and the Multiplier<a class="headerlink" href="#module-3-keynes-and-the-multiplier" title="Link to this heading">#</a></h1>
+<section id="the-great-depression-and-the-birth-of-macroeconomics">
+<h2>The Great Depression and the Birth of Macroeconomics<a class="headerlink" href="#the-great-depression-and-the-birth-of-macroeconomics" title="Link to this heading">#</a></h2>
+<p><strong>From Smith to Simulation: Computing the Ideas that Built Economics</strong><br />
+The University of Edinburgh · School of Economics</p>
+</section>
+<hr class="docutils" />
+<section id="part-i-the-history">
+<h2>Part I — The History<a class="headerlink" href="#part-i-the-history" title="Link to this heading">#</a></h2>
+<section id="october-1929">
+<h3>October 1929<a class="headerlink" href="#october-1929" title="Link to this heading">#</a></h3>
+<p>On October 29, 1929 — “Black Tuesday” — the New York Stock Exchange crashed. Within weeks, billions of dollars in wealth had evaporated. But the crash itself was only the beginning. What followed was the <strong>Great Depression</strong>: the most severe economic catastrophe of the modern era.</p>
+<p>Between 1929 and 1933, US GDP fell by nearly 30%. Unemployment rose to 25%. World trade collapsed by two-thirds. Factories stood idle. Millions who wanted to work could not find jobs. And the prevailing economic orthodoxy — the classical economics descended from Smith and Ricardo — had no good explanation for why, and no good prescription for what to do about it.</p>
+<p>Classical economists believed in <strong>Say’s Law</strong>: “supply creates its own demand.” In this view, a general glut — an economy-wide shortage of demand — was impossible. If people saved more, interest rates would fall, investment would rise, and equilibrium would be restored. The prescription was patience: the market would sort itself out.</p>
+<p>But as the Depression dragged on year after year, patience began to look less like wisdom and more like indifference.</p>
+</section>
+<section id="john-maynard-keynes-18831946">
+<h3>John Maynard Keynes (1883–1946)<a class="headerlink" href="#john-maynard-keynes-18831946" title="Link to this heading">#</a></h3>
+<p>Into this crisis stepped <strong>John Maynard Keynes</strong>, a Cambridge economist, investor, patron of the arts, and one of the most brilliant minds of the 20th century. In 1936, he published <em>The General Theory of Employment, Interest, and Money</em>, which turned classical economics upside down.</p>
+<p>Keynes’s central argument was simple but revolutionary: <strong>demand matters</strong>. An economy can get stuck in a state where people want to work but firms won’t hire them, because firms don’t expect enough demand for their products. And this isn’t a temporary glitch — it can persist indefinitely.</p>
+<blockquote>
+<div><p><em>“The outstanding faults of the economic society in which we live are its failure to provide for full employment and its arbitrary and inequitable distribution of wealth and incomes.”</em><br />
+— J.M. Keynes, <em>The General Theory</em> (1936), Chapter 24</p>
+</div></blockquote>
+</section>
+<section id="the-key-ideas">
+<h3>The Key Ideas<a class="headerlink" href="#the-key-ideas" title="Link to this heading">#</a></h3>
+<p><strong>1. The Paradox of Thrift.</strong> If everyone tries to save more during a recession (a perfectly rational individual response to uncertainty), total spending falls, firms cut production, workers lose their jobs, incomes fall — and total saving actually <em>decreases</em>. What is rational for each individual is disastrous for the economy as a whole. Smith’s invisible hand, which harmonises self-interest and social welfare in the market for oats, breaks down at the level of the whole economy.</p>
+<p><strong>2. Animal Spirits.</strong> Investment depends not just on interest rates (as the classics assumed) but on business confidence — what Keynes called “animal spirits.” When entrepreneurs are optimistic, they invest; when they’re pessimistic, they don’t. And pessimism can be self-fulfilling: if firms expect a recession, they cut investment, which <em>causes</em> the recession.</p>
+<p><strong>3. The Multiplier.</strong> This is the idea we’ll compute today. When the government spends an extra pound, it doesn’t just add one pound to the economy. That pound becomes someone’s income; they spend part of it; that spending becomes someone else’s income; they spend part of <em>that</em>; and so on. The total effect on GDP is a <em>multiple</em> of the original spending. The size of this multiplier depends on how much of each pound of income people spend (the <strong>marginal propensity to consume</strong>).</p>
+</section>
+<section id="edinburgh-connection">
+<h3>Edinburgh Connection<a class="headerlink" href="#edinburgh-connection" title="Link to this heading">#</a></h3>
+<p>Keynes’s ideas were fiercely debated in Edinburgh. The University’s economics department in the 1930s and 40s included several economists who were sceptical of Keynes — they belonged more to the classical tradition that Keynes was attacking. This tension between Keynesian macroeconomics and classical market-clearing models remains alive today, and Edinburgh’s department has contributed to both sides of the argument.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-ii-the-computation">
+<h2>Part II — The Computation<a class="headerlink" href="#part-ii-the-computation" title="Link to this heading">#</a></h2>
+<section id="setting-up">
+<h3>Setting Up<a class="headerlink" href="#setting-up" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">fsolve</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-keynesian-cross">
+<h3>The Keynesian Cross<a class="headerlink" href="#the-keynesian-cross" title="Link to this heading">#</a></h3>
+<p>The simplest Keynesian model is the <strong>Keynesian cross</strong>. The economy has three sources of spending:</p>
+<ol class="arabic simple">
+<li><p><strong>Consumption</strong> by households: <span class="math notranslate nohighlight">\(C = c_0 + c_1(Y - T)\)</span></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(c_0\)</span> is autonomous consumption (what people spend even if income is zero — drawing down savings, borrowing)</p></li>
+<li><p><span class="math notranslate nohighlight">\(c_1\)</span> is the <strong>marginal propensity to consume (MPC)</strong>: the fraction of each additional pound of disposable income that gets spent</p></li>
+<li><p><span class="math notranslate nohighlight">\(Y - T\)</span> is disposable income (income minus taxes)</p></li>
+</ul>
+</li>
+<li><p><strong>Investment</strong> by firms: <span class="math notranslate nohighlight">\(I = \bar{I}\)</span> (for now, we treat this as fixed — determined by animal spirits)</p></li>
+<li><p><strong>Government spending</strong>: <span class="math notranslate nohighlight">\(G\)</span> (also fixed — a policy choice)</p></li>
+</ol>
+<p><strong>Equilibrium</strong> requires that total output equals total spending:</p>
+<div class="math notranslate nohighlight">
+\[Y = C + I + G\]</div>
+<div class="math notranslate nohighlight">
+\[Y = c_0 + c_1(Y - T) + \bar{I} + G\]</div>
+<p>This looks like a simple equation, and it is — we can solve it by hand. But setting it up computationally lets us explore variations that are much harder analytically.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
+<span class="n">c0</span> <span class="o">=</span> <span class="mi">100</span>    <span class="c1"># autonomous consumption</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="mf">0.6</span>    <span class="c1"># marginal propensity to consume (MPC)</span>
+<span class="n">I_bar</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># investment (animal spirits)</span>
+<span class="n">G</span> <span class="o">=</span> <span class="mi">150</span>     <span class="c1"># government spending</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">100</span>     <span class="c1"># taxes</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">consumption</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">c0</span><span class="o">=</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="o">=</span><span class="n">c1</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Household consumption as a function of income.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">c0</span> <span class="o">+</span> <span class="n">c1</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">T</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">total_spending</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">c0</span><span class="o">=</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="o">=</span><span class="n">c1</span><span class="p">,</span> <span class="n">I_bar</span><span class="o">=</span><span class="n">I_bar</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="n">G</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Total planned spending: C + I + G.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">consumption</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="n">I_bar</span> <span class="o">+</span> <span class="n">G</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">equilibrium_condition</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">c0</span><span class="o">=</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="o">=</span><span class="n">c1</span><span class="p">,</span> <span class="n">I_bar</span><span class="o">=</span><span class="n">I_bar</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="n">G</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns zero when Y = C + I + G (equilibrium).&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">Y</span> <span class="o">-</span> <span class="n">total_spending</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">I_bar</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find equilibrium</span>
+<span class="n">Y_star</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">equilibrium_condition</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">500</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">C_star</span> <span class="o">=</span> <span class="n">consumption</span><span class="p">(</span><span class="n">Y_star</span><span class="p">)</span>
+
+<span class="c1"># Analytical solution for comparison</span>
+<span class="n">Y_analytical</span> <span class="o">=</span> <span class="p">(</span><span class="n">c0</span> <span class="o">-</span> <span class="n">c1</span> <span class="o">*</span> <span class="n">T</span> <span class="o">+</span> <span class="n">I_bar</span> <span class="o">+</span> <span class="n">G</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">c1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Equilibrium output:      Y* = </span><span class="si">{</span><span class="n">Y_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Equilibrium consumption: C* = </span><span class="si">{</span><span class="n">C_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Investment:              I  = </span><span class="si">{</span><span class="n">I_bar</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Government spending:     G  = </span><span class="si">{</span><span class="n">G</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Check: C + I + G =       </span><span class="si">{</span><span class="n">C_star</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">I_bar</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">G</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Analytical solution:     Y* = </span><span class="si">{</span><span class="n">Y_analytical</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualising-the-keynesian-cross">
+<h3>Visualising the Keynesian Cross<a class="headerlink" href="#visualising-the-keynesian-cross" title="Link to this heading">#</a></h3>
+<p>The Keynesian cross plots total spending against total output. The 45-degree line shows where <span class="math notranslate nohighlight">\(Y = \text{Spending}\)</span> — equilibrium is where the spending line crosses the 45-degree line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Y_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># 45-degree line</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y_range</span><span class="p">,</span> <span class="n">Y_range</span><span class="p">,</span> <span class="s1">&#39;k--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;45° line (Y = Spending)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Total spending line</span>
+<span class="n">spending</span> <span class="o">=</span> <span class="n">total_spending</span><span class="p">(</span><span class="n">Y_range</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y_range</span><span class="p">,</span> <span class="n">spending</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Planned spending (C + I + G)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mark equilibrium</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y_star</span><span class="p">,</span> <span class="n">Y_star</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Equilibrium</span><span class="se">\n</span><span class="s1">Y* = </span><span class="si">{</span><span class="n">Y_star</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">Y_star</span><span class="p">,</span> <span class="n">Y_star</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Y_star</span> <span class="o">+</span> <span class="mi">200</span><span class="p">,</span> <span class="n">Y_star</span> <span class="o">-</span> <span class="mi">150</span><span class="p">),</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">),</span>
+            <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round,pad=0.3&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightyellow&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">))</span>
+
+<span class="c1"># Mark components</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">c0</span> <span class="o">+</span> <span class="n">I_bar</span> <span class="o">+</span> <span class="n">G</span> <span class="o">-</span> <span class="n">c1</span> <span class="o">*</span> <span class="n">T</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">c0</span> <span class="o">+</span> <span class="n">I_bar</span> <span class="o">+</span> <span class="n">G</span> <span class="o">-</span> <span class="n">c1</span> <span class="o">*</span> <span class="n">T</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;Autonomous spending = </span><span class="si">{</span><span class="n">c0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">I_bar</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">G</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c1</span><span class="o">*</span><span class="n">T</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Output (Y)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Planned Spending&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;The Keynesian Cross&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1800</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1800</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-fiscal-multiplier">
+<h3>The Fiscal Multiplier<a class="headerlink" href="#the-fiscal-multiplier" title="Link to this heading">#</a></h3>
+<p>Now for Keynes’s most powerful policy insight. What happens when the government increases spending by <span class="math notranslate nohighlight">\(\Delta G\)</span>?</p>
+<p>The theoretical multiplier is:</p>
+<div class="math notranslate nohighlight">
+\[\text{Multiplier} = \frac{\Delta Y}{\Delta G} = \frac{1}{1 - c_1}\]</div>
+<p>With <span class="math notranslate nohighlight">\(c_1 = 0.6\)</span>, the multiplier is <span class="math notranslate nohighlight">\(1 / (1 - 0.6) = 2.5\)</span>. Every pound the government spends generates £2.50 in total output. Let’s verify this computationally and see the round-by-round mechanics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Increase government spending by 50</span>
+<span class="n">delta_G</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">G_new</span> <span class="o">=</span> <span class="n">G</span> <span class="o">+</span> <span class="n">delta_G</span>
+
+<span class="c1"># New equilibrium</span>
+<span class="n">Y_star_new</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">equilibrium_condition</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">I_bar</span><span class="p">,</span> <span class="n">G_new</span><span class="p">,</span> <span class="n">T</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">delta_Y</span> <span class="o">=</span> <span class="n">Y_star_new</span> <span class="o">-</span> <span class="n">Y_star</span>
+<span class="n">multiplier_numerical</span> <span class="o">=</span> <span class="n">delta_Y</span> <span class="o">/</span> <span class="n">delta_G</span>
+<span class="n">multiplier_theoretical</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">c1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Original Y*:          </span><span class="si">{</span><span class="n">Y_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;New Y* (G + </span><span class="si">{</span><span class="n">delta_G</span><span class="si">}</span><span class="s2">):    </span><span class="si">{</span><span class="n">Y_star_new</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Change in output:     ΔY = </span><span class="si">{</span><span class="n">delta_Y</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Change in spending:   ΔG = </span><span class="si">{</span><span class="n">delta_G</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Numerical multiplier:   </span><span class="si">{</span><span class="n">multiplier_numerical</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Theoretical multiplier: </span><span class="si">{</span><span class="n">multiplier_theoretical</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-multiplier-round-by-round">
+<h3>The Multiplier Round by Round<a class="headerlink" href="#the-multiplier-round-by-round" title="Link to this heading">#</a></h3>
+<p>The multiplier works through a chain of spending. Let’s trace it explicitly:</p>
+<ul class="simple">
+<li><p><strong>Round 1:</strong> The government spends £50 (say, building a road). This is £50 of new income for road builders.</p></li>
+<li><p><strong>Round 2:</strong> Road builders spend 60% of their £50 = £30 at shops. Shopkeepers earn £30.</p></li>
+<li><p><strong>Round 3:</strong> Shopkeepers spend 60% of £30 = £18. Their suppliers earn £18.</p></li>
+<li><p><strong>Round 4:</strong> Suppliers spend 60% of £18 = £10.80. And so on…</p></li>
+</ul>
+<p>Total effect: <span class="math notranslate nohighlight">\(50 + 50 \times 0.6 + 50 \times 0.6^2 + 50 \times 0.6^3 + \cdots = \frac{50}{1 - 0.6} = 125\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Trace the multiplier round by round</span>
+<span class="n">n_rounds</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">spending_per_round</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">delta_G</span> <span class="o">*</span> <span class="n">c1</span><span class="o">**</span><span class="n">r</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_rounds</span><span class="p">)])</span>
+<span class="n">cumulative</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">spending_per_round</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Round | New spending | Cumulative effect&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">45</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_rounds</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">r</span><span class="o">+</span><span class="mi">1</span><span class="si">:</span><span class="s2">&gt;2</span><span class="si">}</span><span class="s2">  |    £</span><span class="si">{</span><span class="n">spending_per_round</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;7.2f</span><span class="si">}</span><span class="s2">  |    £</span><span class="si">{</span><span class="n">cumulative</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="si">:</span><span class="s2">&gt;7.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  ... |     ...      |    ...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   ∞  |    £</span><span class="si">{</span><span class="mi">0</span><span class="si">:</span><span class="s2">&gt;7.2f</span><span class="si">}</span><span class="s2">  |    £</span><span class="si">{</span><span class="n">delta_G</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">c1</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;7.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualise</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">))</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_rounds</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">spending_per_round</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Round&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;New spending (£)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Spending per Round&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_rounds</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">cumulative</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">delta_G</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">c1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span>
+                <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Limit = ΔG/(1-c₁) = £</span><span class="si">{</span><span class="n">delta_G</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">c1</span><span class="p">)</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Round&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Cumulative effect on Y (£)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Cumulative Multiplier Effect&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-the-mpc-changes-the-multiplier">
+<h3>How the MPC Changes the Multiplier<a class="headerlink" href="#how-the-mpc-changes-the-multiplier" title="Link to this heading">#</a></h3>
+<p>The marginal propensity to consume <span class="math notranslate nohighlight">\(c_1\)</span> is the engine of the multiplier. When people spend more of each additional pound, the multiplier is larger. Let’s see how the multiplier varies with <span class="math notranslate nohighlight">\(c_1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c1_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">multipliers</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">c1_values</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">c1_values</span><span class="p">,</span> <span class="n">multipliers</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+
+<span class="c1"># Mark a few key values</span>
+<span class="k">for</span> <span class="n">c1_mark</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[(</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;Cautious&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="s1">&#39;Moderate&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="s1">&#39;Confident&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="s1">&#39;Exuberant&#39;</span><span class="p">)]:</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">c1_mark</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">c1_mark</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s1">c₁=</span><span class="si">{</span><span class="n">c1_mark</span><span class="si">}</span><span class="s1">, m=</span><span class="si">{</span><span class="n">m</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+                <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">c1_mark</span><span class="p">,</span> <span class="n">m</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">c1_mark</span> <span class="o">-</span> <span class="mf">0.08</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="mf">1.5</span><span class="p">),</span>
+                <span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round,pad=0.2&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightyellow&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Marginal Propensity to Consume (c₁)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Fiscal Multiplier = 1/(1 - c₁)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;The Multiplier Depends on How Much People Spend&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;As c₁ approaches 1 (people spend everything), the multiplier explodes.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;As c₁ approaches 0 (people save everything), the multiplier shrinks to 1.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is why Keynes argued the MPC is the crucial behavioural parameter.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-is-curve-adding-interest-rates">
+<h3>The IS Curve: Adding Interest Rates<a class="headerlink" href="#the-is-curve-adding-interest-rates" title="Link to this heading">#</a></h3>
+<p>In the real economy, investment isn’t fixed — it depends on the interest rate <span class="math notranslate nohighlight">\(r\)</span>. When interest rates are low, borrowing is cheap and firms invest more. We model this as:</p>
+<div class="math notranslate nohighlight">
+\[I(r) = \bar{I} - d \cdot r\]</div>
+<p>where <span class="math notranslate nohighlight">\(d\)</span> measures how sensitive investment is to the interest rate.</p>
+<p>Now equilibrium depends on <span class="math notranslate nohighlight">\(r\)</span>: for each interest rate, there’s a different equilibrium output. The set of all <span class="math notranslate nohighlight">\((Y, r)\)</span> pairs where the goods market is in equilibrium is called the <strong>IS curve</strong> (“Investment = Saving”).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># investment sensitivity to interest rate</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">investment</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">I_bar</span><span class="o">=</span><span class="n">I_bar</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">d</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">I_bar</span> <span class="o">-</span> <span class="n">d</span> <span class="o">*</span> <span class="n">r</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">is_equation</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">c0</span><span class="o">=</span><span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="o">=</span><span class="n">c1</span><span class="p">,</span> <span class="n">I_bar</span><span class="o">=</span><span class="n">I_bar</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="n">G</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns zero at goods-market equilibrium for given r.&quot;&quot;&quot;</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">c0</span> <span class="o">+</span> <span class="n">c1</span> <span class="o">*</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="n">T</span><span class="p">)</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">I_bar</span> <span class="o">-</span> <span class="n">d</span> <span class="o">*</span> <span class="n">r</span>
+    <span class="k">return</span> <span class="n">Y</span> <span class="o">-</span> <span class="n">C</span> <span class="o">-</span> <span class="n">I</span> <span class="o">-</span> <span class="n">G</span>
+
+<span class="c1"># Compute the IS curve: for each r, find Y*</span>
+<span class="n">r_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">Y_is</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">fsolve</span><span class="p">(</span><span class="n">is_equation</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">r</span><span class="p">,))[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">r_values</span><span class="p">])</span>
+
+<span class="c1"># Plot</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y_is</span><span class="p">,</span> <span class="n">r_values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>  <span class="c1"># r in percent</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Output (Y)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Interest rate (%)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;The IS Curve: Goods-Market Equilibrium&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>  <span class="c1"># convention: high Y to the right, high r up</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The IS curve slopes downward: lower interest rates → more investment → higher output.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is one of the fundamental relationships in macroeconomics.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fiscal-policy-shifts-the-is-curve">
+<h3>Fiscal Policy Shifts the IS Curve<a class="headerlink" href="#fiscal-policy-shifts-the-is-curve" title="Link to this heading">#</a></h3>
+<p>When the government increases spending, the IS curve shifts to the right — at every interest rate, equilibrium output is higher. This is the graphical version of the multiplier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">G_val</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">150</span><span class="p">,</span> <span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;G = 150 (original)&#39;</span><span class="p">),</span>
+                             <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;G = 200 (fiscal expansion)&#39;</span><span class="p">),</span>
+                             <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;seagreen&#39;</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;G = 100 (austerity)&#39;</span><span class="p">)]:</span>
+    <span class="n">Y_is_shift</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="n">fsolve</span><span class="p">(</span><span class="n">is_equation</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">I_bar</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">G_val</span><span class="p">,</span> <span class="n">T</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">r_values</span>
+    <span class="p">])</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y_is_shift</span><span class="p">,</span> <span class="n">r_values</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Output (Y)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Interest rate (%)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Fiscal Policy Shifts the IS Curve&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Keynes&#39;s prescription for the Great Depression: shift the IS curve right&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;by increasing G. The government spends what the private sector won&#39;t.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="animal-spirits-what-happens-when-confidence-collapses">
+<h3>Animal Spirits: What Happens When Confidence Collapses?<a class="headerlink" href="#animal-spirits-what-happens-when-confidence-collapses" title="Link to this heading">#</a></h3>
+<p>Keynes argued that investment is driven partly by rational calculation and partly by “animal spirits” — waves of optimism and pessimism. Let’s simulate what happens when a confidence shock hits the economy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simulate the economy over time with a confidence shock</span>
+<span class="n">T_sim</span> <span class="o">=</span> <span class="mi">40</span>  <span class="c1"># periods (quarters)</span>
+
+<span class="c1"># Animal spirits: investment confidence over time</span>
+<span class="n">I_bar_path</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">T_sim</span><span class="p">)</span> <span class="o">*</span> <span class="mi">200</span>
+<span class="c1"># At period 10, a confidence crash: investment drops by 30%</span>
+<span class="n">I_bar_path</span><span class="p">[</span><span class="mi">10</span><span class="p">:]</span> <span class="o">=</span> <span class="mi">140</span>
+
+<span class="c1"># Compute equilibrium Y in each period</span>
+<span class="n">r_fixed</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># fixed interest rate for this exercise</span>
+<span class="n">Y_path</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">T_sim</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T_sim</span><span class="p">):</span>
+    <span class="n">Y_path</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span>
+        <span class="n">is_equation</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">r_fixed</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">I_bar_path</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="n">d</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+    <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Now simulate WITH fiscal response: G increases to offset the shock</span>
+<span class="n">G_response</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">T_sim</span><span class="p">)</span> <span class="o">*</span> <span class="n">G</span>
+<span class="n">G_response</span><span class="p">[</span><span class="mi">12</span><span class="p">:]</span> <span class="o">=</span> <span class="n">G</span> <span class="o">+</span> <span class="mi">40</span>  <span class="c1"># government responds 2 quarters later with extra spending</span>
+
+<span class="n">Y_path_response</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">T_sim</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T_sim</span><span class="p">):</span>
+    <span class="n">Y_path_response</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span>
+        <span class="n">is_equation</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+        <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">r_fixed</span><span class="p">,</span> <span class="n">c0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">I_bar_path</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="n">d</span><span class="p">,</span> <span class="n">G_response</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="n">T</span><span class="p">)</span>
+    <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Plot</span>
+<span class="n">quarters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">T_sim</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">quarters</span><span class="p">,</span> <span class="n">I_bar_path</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Investment confidence&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Confidence shock&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Autonomous investment (Ī)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Animal Spirits: Confidence Collapse&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">quarters</span><span class="p">,</span> <span class="n">Y_path</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;No policy response&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">quarters</span><span class="p">,</span> <span class="n">Y_path_response</span><span class="p">,</span> <span class="s1">&#39;s-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;seagreen&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Fiscal stimulus (G↑)&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Policy kicks in&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Output (Y)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Keynes vs. Doing Nothing&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output drop without intervention: </span><span class="si">{</span><span class="n">Y_path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Y_path</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output drop with fiscal stimulus:  </span><span class="si">{</span><span class="n">Y_path</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Y_path_response</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Government spending partially offsets the confidence crash.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;This is Keynes&#39;s core policy argument: when animal spirits fail,&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;the government must step in to maintain demand.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-iii-exercises">
+<h2>Part III — Exercises<a class="headerlink" href="#part-iii-exercises" title="Link to this heading">#</a></h2>
+<section id="exercise-1-the-paradox-of-thrift">
+<h3>Exercise 1 — The Paradox of Thrift<a class="headerlink" href="#exercise-1-the-paradox-of-thrift" title="Link to this heading">#</a></h3>
+<p>Keynes argued that if everyone tries to save more, total output falls and saving may actually decrease. Let’s test this.</p>
+<p>When the MPC <span class="math notranslate nohighlight">\(c_1\)</span> falls (people save more), the multiplier shrinks. Starting from baseline (<span class="math notranslate nohighlight">\(c_0 = 100\)</span>, <span class="math notranslate nohighlight">\(c_1 = 0.6\)</span>, <span class="math notranslate nohighlight">\(\bar{I} = 200\)</span>, <span class="math notranslate nohighlight">\(G = 150\)</span>, <span class="math notranslate nohighlight">\(T = 100\)</span>):</p>
+<p><strong>(a)</strong> Compute equilibrium <span class="math notranslate nohighlight">\(Y^*\)</span> for <span class="math notranslate nohighlight">\(c_1 = 0.6, 0.5, 0.4, 0.3\)</span>. Show that output falls as people save more.</p>
+<p><strong>(b)</strong> Compute total saving <span class="math notranslate nohighlight">\(S = Y - C - T\)</span> at each equilibrium. Does saving actually increase when people try to save more?</p>
+<p><strong>(c)</strong> Plot <span class="math notranslate nohighlight">\(Y^*\)</span> and <span class="math notranslate nohighlight">\(S\)</span> against <span class="math notranslate nohighlight">\(c_1\)</span>. This is the paradox of thrift in action.</p>
+<p><strong>(d)</strong> In 2–3 sentences, explain why what is rational for each individual (saving more in uncertain times) can be harmful for the economy as a whole. How does this relate to Smith’s invisible hand?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-balanced-budget-multiplier">
+<h3>Exercise 2 — Balanced-Budget Multiplier<a class="headerlink" href="#exercise-2-balanced-budget-multiplier" title="Link to this heading">#</a></h3>
+<p>A politician proposes increasing government spending by £100, financed entirely by a £100 tax increase (so the budget stays balanced: <span class="math notranslate nohighlight">\(\Delta G = \Delta T = 100\)</span>).</p>
+<p>Classical economists might argue this has no effect — the government takes a pound and gives it back. Keynes disagrees.</p>
+<p><strong>(a)</strong> Starting from the baseline, compute <span class="math notranslate nohighlight">\(Y^*\)</span> with <span class="math notranslate nohighlight">\(G = 150\)</span>, <span class="math notranslate nohighlight">\(T = 100\)</span>.</p>
+<p><strong>(b)</strong> Now compute <span class="math notranslate nohighlight">\(Y^*\)</span> with <span class="math notranslate nohighlight">\(G = 250\)</span>, <span class="math notranslate nohighlight">\(T = 200\)</span> (balanced-budget increase of 100).</p>
+<p><strong>(c)</strong> What is <span class="math notranslate nohighlight">\(\Delta Y\)</span>? Is the balanced-budget multiplier equal to 0, 1, or something else?</p>
+<p><strong>(d)</strong> Explain intuitively why a balanced-budget fiscal expansion still increases output. (Hint: the government spends 100% of the extra revenue, but taxpayers only reduce spending by <span class="math notranslate nohighlight">\(c_1 \times 100\)</span>.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-a-progressive-tax-system">
+<h3>Exercise 3 — A Progressive Tax System<a class="headerlink" href="#exercise-3-a-progressive-tax-system" title="Link to this heading">#</a></h3>
+<p>In our model so far, taxes <span class="math notranslate nohighlight">\(T\)</span> are a fixed lump sum. In reality, taxes depend on income. Let’s make the model more realistic.</p>
+<p>Replace the fixed tax <span class="math notranslate nohighlight">\(T\)</span> with a <strong>proportional income tax</strong>: <span class="math notranslate nohighlight">\(T(Y) = \tau \cdot Y\)</span>, where <span class="math notranslate nohighlight">\(\tau\)</span> is the tax rate.</p>
+<p>The consumption function becomes: <span class="math notranslate nohighlight">\(C = c_0 + c_1 (Y - \tau Y) = c_0 + c_1(1 - \tau)Y\)</span></p>
+<p><strong>(a)</strong> Write a new equilibrium condition function for this model. Use <span class="math notranslate nohighlight">\(\tau = 0.25\)</span>.</p>
+<p><strong>(b)</strong> Find <span class="math notranslate nohighlight">\(Y^*\)</span> using <code class="docutils literal notranslate"><span class="pre">fsolve</span></code>. Compare to the fixed-tax model.</p>
+<p><strong>(c)</strong> What is the fiscal multiplier now? Derive the formula: <span class="math notranslate nohighlight">\(\text{Multiplier} = \frac{1}{1 - c_1(1-\tau)}\)</span>. Verify numerically by increasing <span class="math notranslate nohighlight">\(G\)</span> by 50.</p>
+<p><strong>(d)</strong> Compare the multiplier with <span class="math notranslate nohighlight">\(\tau = 0\)</span> vs <span class="math notranslate nohighlight">\(\tau = 0.25\)</span> vs <span class="math notranslate nohighlight">\(\tau = 0.5\)</span>. How does the tax rate affect the multiplier? Keynes’s followers called the income tax an “automatic stabiliser” — explain why.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-iv-quiz">
+<h2>Part IV — Quiz<a class="headerlink" href="#part-iv-quiz" title="Link to this heading">#</a></h2>
+<section id="conceptual-questions">
+<h3>Conceptual Questions<a class="headerlink" href="#conceptual-questions" title="Link to this heading">#</a></h3>
+<p><strong>Q1.</strong> Before Keynes, classical economists believed that a general glut (economy-wide shortage of demand) was impossible because of:</p>
+<p>(a) The quantity theory of money<br />
+(b) Say’s Law (“supply creates its own demand”)<br />
+(c) The labour theory of value<br />
+(d) Ricardo’s theory of comparative advantage</p>
+<p><strong>Q2.</strong> Keynes’s “paradox of thrift” states that:</p>
+<p>(a) People who save more end up wealthier<br />
+(b) If everyone tries to save more, total income falls and aggregate saving may not increase<br />
+(c) Thrift is always beneficial for the economy<br />
+(d) Saving and investment are always equal</p>
+<p><strong>Q3.</strong> “Animal spirits” in Keynes’s framework refers to:</p>
+<p>(a) Consumer demand for luxury goods<br />
+(b) Waves of business optimism and pessimism that drive investment decisions<br />
+(c) The instinct of workers to demand higher wages<br />
+(d) International currency speculation</p>
+<p><strong>Q4.</strong> Keynes’s policy prescription for the Great Depression was:</p>
+<p>(a) Cut government spending to balance the budget<br />
+(b) Wait for the market to self-correct<br />
+(c) Increase government spending to replace lost private demand<br />
+(d) Return to the gold standard</p>
+<p><strong>Q5.</strong> The IS curve shows all combinations of <span class="math notranslate nohighlight">\((Y, r)\)</span> where:</p>
+<p>(a) The money market is in equilibrium<br />
+(b) The goods market is in equilibrium (output = planned spending)<br />
+(c) Unemployment is zero<br />
+(d) Inflation is stable</p>
+</section>
+<section id="computational-questions">
+<h3>Computational Questions<a class="headerlink" href="#computational-questions" title="Link to this heading">#</a></h3>
+<p><strong>Q6.</strong> If the MPC is 0.8, the fiscal multiplier <span class="math notranslate nohighlight">\(1/(1-c_1)\)</span> equals:</p>
+<p>(a) 1.25<br />
+(b) 2.5<br />
+(c) 5.0<br />
+(d) 8.0</p>
+<p><strong>Q7.</strong> In the Keynesian cross, equilibrium occurs where:</p>
+<p>(a) The spending line has slope 1<br />
+(b) The spending line crosses the horizontal axis<br />
+(c) The spending line crosses the 45-degree line<br />
+(d) Consumption equals zero</p>
+<p><strong>Q8.</strong> If government spending increases by £100 and the MPC is 0.6, the total change in output is:</p>
+<p>(a) £100<br />
+(b) £160<br />
+(c) £250<br />
+(d) £600</p>
+<p><strong>Q9.</strong> The IS curve slopes downward because:</p>
+<p>(a) Higher output causes lower interest rates<br />
+(b) Lower interest rates stimulate investment, which increases equilibrium output<br />
+(c) Higher interest rates increase consumption<br />
+(d) Government spending falls when interest rates rise</p>
+<p><strong>Q10.</strong> A fiscal expansion (increase in <span class="math notranslate nohighlight">\(G\)</span>) shifts the IS curve:</p>
+<p>(a) Leftward<br />
+(b) Rightward<br />
+(c) Upward along the same curve<br />
+(d) It doesn’t affect the IS curve</p>
+</section>
+<section id="quiz-answers">
+<h3>Quiz Answers<a class="headerlink" href="#quiz-answers" title="Link to this heading">#</a></h3>
+<details>
+<summary>Click to reveal answers</summary>
+<p><strong>Q1.</strong> (b) Say’s Law — the classical belief that production of goods automatically generates enough income to buy those goods, making a general demand deficiency impossible.</p>
+<p><strong>Q2.</strong> (b) The paradox is that individual rationality (save more when times are bad) produces a collectively irrational outcome (lower total income). The fallacy of composition.</p>
+<p><strong>Q3.</strong> (b) Animal spirits are the irrational waves of confidence and pessimism that drive business investment, beyond what can be justified by cold calculation of expected returns.</p>
+<p><strong>Q4.</strong> (c) Keynes argued that when private demand collapses, the government must fill the gap by increasing its own spending — the fiscal multiplier ensures the effect is magnified.</p>
+<p><strong>Q5.</strong> (b) The IS curve shows combinations of output <span class="math notranslate nohighlight">\(Y\)</span> and interest rate <span class="math notranslate nohighlight">\(r\)</span> where the goods market clears: <span class="math notranslate nohighlight">\(Y = C + I(r) + G\)</span>.</p>
+<p><strong>Q6.</strong> (c) <span class="math notranslate nohighlight">\(1/(1 - 0.8) = 1/0.2 = 5.0\)</span>. Each pound of government spending generates £5 of output.</p>
+<p><strong>Q7.</strong> (c) The 45-degree line represents <span class="math notranslate nohighlight">\(Y = \text{Spending}\)</span>. Where the spending function crosses it, output equals planned spending — that’s equilibrium.</p>
+<p><strong>Q8.</strong> (c) <span class="math notranslate nohighlight">\(\Delta Y = \Delta G \times \frac{1}{1-c_1} = 100 \times \frac{1}{0.4} = 250\)</span>.</p>
+<p><strong>Q9.</strong> (b) Lower <span class="math notranslate nohighlight">\(r\)</span> → cheaper borrowing → more investment → higher total spending → higher equilibrium <span class="math notranslate nohighlight">\(Y\)</span>. So low <span class="math notranslate nohighlight">\(r\)</span> pairs with high <span class="math notranslate nohighlight">\(Y\)</span>: a downward slope.</p>
+<p><strong>Q10.</strong> (b) Higher <span class="math notranslate nohighlight">\(G\)</span> increases autonomous spending, raising equilibrium <span class="math notranslate nohighlight">\(Y\)</span> at every <span class="math notranslate nohighlight">\(r\)</span>, so the IS curve shifts right.</p>
+</details></section>
+</section>
+<hr class="docutils" />
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Keynes, J.M. <em>The General Theory of Employment, Interest, and Money</em> (1936), Chapters 1–3, 10 (the multiplier).</p></li>
+<li><p>Skidelsky, R. <em>Keynes: A Very Short Introduction</em> — an excellent 150-page overview of Keynes’s life and ideas.</p></li>
+<li><p>Heilbroner, R. <em>The Worldly Philosophers</em>, Chapter 9 (“The Heresies of John Maynard Keynes”).</p></li>
+<li><p>Hicks, J.R. “Mr. Keynes and the ‘Classics’” (1937) — the paper that invented the IS-LM model.</p></li>
+</ul>
+<hr class="docutils" />
+<p><em>Next week: Marx and the Machinery Question — capital accumulation, the labour share of income, and the debate over whether technology helps or hurts workers.</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module_05_Marginalists.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 5 — The Marginalist Revolution</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Module_07_Solow.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 7 — Solow and the Sources of Growth</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-great-depression-and-the-birth-of-macroeconomics">The Great Depression and the Birth of Macroeconomics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-the-history">Part I — The History</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#october-1929">October 1929</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#john-maynard-keynes-18831946">John Maynard Keynes (1883–1946)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-key-ideas">The Key Ideas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edinburgh-connection">Edinburgh Connection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-the-computation">Part II — The Computation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting Up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-keynesian-cross">The Keynesian Cross</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-the-keynesian-cross">Visualising the Keynesian Cross</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fiscal-multiplier">The Fiscal Multiplier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-multiplier-round-by-round">The Multiplier Round by Round</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-mpc-changes-the-multiplier">How the MPC Changes the Multiplier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-is-curve-adding-interest-rates">The IS Curve: Adding Interest Rates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fiscal-policy-shifts-the-is-curve">Fiscal Policy Shifts the IS Curve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#animal-spirits-what-happens-when-confidence-collapses">Animal Spirits: What Happens When Confidence Collapses?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-exercises">Part III — Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-the-paradox-of-thrift">Exercise 1 — The Paradox of Thrift</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-balanced-budget-multiplier">Exercise 2 — Balanced-Budget Multiplier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-a-progressive-tax-system">Exercise 3 — A Progressive Tax System</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-quiz">Part IV — Quiz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-questions">Conceptual Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-questions">Computational Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz-answers">Quiz Answers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Juan Zurita
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

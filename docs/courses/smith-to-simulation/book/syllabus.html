@@ -1,0 +1,700 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>From Smith to Simulation &#8212; From Smith to Simulation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=bcdf9603" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'syllabus';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="_static/logo.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Module 10 — Edinburgh’s Legacy" href="Module_10_Edinburgh_Legacy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="From Smith to Simulation - Home"/>
+    <img src="_static/logo.svg" class="logo__image only-dark pst-js-only" alt="From Smith to Simulation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I — Classical Economics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_01_Invisible_Hand.html">Module 1 — The Invisible Hand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_02_Pin_Factory.html">Module 2 — The Division of Labour and the Pin Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_02_Malthus_Ricardo.html">Module 2 — Malthus, Ricardo, and the Limits to Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_04_Marx.html">Module 4 — Marx and the Machinery Question</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II — Modern Economics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_05_Marginalists.html">Module 5 — The Marginalist Revolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_03_Keynes_Multiplier.html">Module 3 — Keynes and the Multiplier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_07_Solow.html">Module 7 — Solow and the Sources of Growth</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part III — Contemporary Economics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_08_Expectations.html">Module 8 — Friedman, Lucas, and the Expectations Revolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_09_Inequality.html">Module 9 — Inequality and Heterogeneous Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_10_Edinburgh_Legacy.html">Module 10 — Edinburgh’s Legacy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">From Smith to Simulation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/syllabus.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>From Smith to Simulation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-ideas-that-built-economics">Computing the Ideas that Built Economics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-description">Course description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment">Assessment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weekly-schedule">Weekly schedule</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-1-the-invisible-hand-adam-smith-and-market-equilibrium">Week 1 — The Invisible Hand: Adam Smith and Market Equilibrium</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-2-the-division-of-labour-and-the-pin-factory">Week 2 — The Division of Labour and the Pin Factory</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-3-malthus-ricardo-and-the-limits-to-growth">Week 3 — Malthus, Ricardo, and the Limits to Growth</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-4-marx-and-the-machinery-question">Week 4 — Marx and the Machinery Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-5-the-marginalist-revolution-choosing-at-the-margin">Week 5 — The Marginalist Revolution: Choosing at the Margin</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-6-keynes-and-the-great-depression">Week 6 — Keynes and the Great Depression</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-7-solow-and-the-sources-of-growth">Week 7 — Solow and the Sources of Growth</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-8-friedman-lucas-and-the-expectations-revolution">Week 8 — Friedman, Lucas, and the Expectations Revolution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-9-inequality-and-heterogeneous-agents">Week 9 — Inequality and Heterogeneous Agents</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-10-edinburgh-s-legacy-from-moral-philosophy-to-computational-economics">Week 10 — Edinburgh’s Legacy: From Moral Philosophy to Computational Economics</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-general-texts">Recommended general texts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="from-smith-to-simulation">
+<h1>From Smith to Simulation<a class="headerlink" href="#from-smith-to-simulation" title="Link to this heading">#</a></h1>
+<section id="computing-the-ideas-that-built-economics">
+<h2>Computing the Ideas that Built Economics<a class="headerlink" href="#computing-the-ideas-that-built-economics" title="Link to this heading">#</a></h2>
+<p><strong>The University of Edinburgh · School of Economics</strong></p>
+<p><strong>Instructor:</strong> Dr Juan Zurita</p>
+<hr class="docutils" />
+<section id="course-description">
+<h3>Course description<a class="headerlink" href="#course-description" title="Link to this heading">#</a></h3>
+<p>Edinburgh gave the world Adam Smith, David Hume, and the intellectual tradition that became modern economics. This course traces that journey — from the moral philosophy of the Scottish Enlightenment to the computational models that drive policy today — and asks students to <em>build</em> each idea in code.</p>
+<p>Each week pairs a turning point in the history of economic thought with a hands-on computational exercise. Students read Smith on the invisible hand, then write the code that finds a market equilibrium. They study Keynes on the Great Depression, then simulate the fiscal multiplier. They learn how Solow formalised growth theory, then solve for steady states numerically. No prior programming experience is assumed; Python and the necessary numerical tools are taught as we go.</p>
+<p>The result is a course that is simultaneously a history of ideas and an introduction to computational economics — each side making the other more vivid.</p>
+</section>
+<hr class="docutils" />
+<section id="learning-outcomes">
+<h3>Learning outcomes<a class="headerlink" href="#learning-outcomes" title="Link to this heading">#</a></h3>
+<p>By the end of this course, students will be able to:</p>
+<ol class="arabic simple">
+<li><p>Explain the key ideas and debates that shaped economics from Smith to the present day, placing each in its historical and intellectual context.</p></li>
+<li><p>Write Python programs that formalise and explore classical economic models (equilibrium, growth, business cycles, inequality).</p></li>
+<li><p>Use numerical methods — root-finding, optimisation, simulation — to investigate questions that the original thinkers could only reason about verbally.</p></li>
+<li><p>Critically assess how mathematical formalisation changes (and sometimes distorts) the original economic argument.</p></li>
+<li><p>Connect Edinburgh’s intellectual heritage to the practice of modern economics.</p></li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="assessment">
+<h3>Assessment<a class="headerlink" href="#assessment" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Weight</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Weekly quizzes</p></td>
+<td><p>20%</p></td>
+<td><p>Short quizzes (conceptual + computational) released each week</p></td>
+</tr>
+<tr class="row-odd"><td><p>Computational essays (×2)</p></td>
+<td><p>40%</p></td>
+<td><p>Take a historical debate, build a model, write up the argument</p></td>
+</tr>
+<tr class="row-even"><td><p>Final project</p></td>
+<td><p>30%</p></td>
+<td><p>Choose an economist or idea not covered in class; build and present the model</p></td>
+</tr>
+<tr class="row-odd"><td><p>Participation</p></td>
+<td><p>10%</p></td>
+<td><p>Lab attendance and engagement</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h3>
+<p>None beyond curiosity. The course assumes no prior programming and no economics beyond what you already know from reading the news. Mathematics is kept to algebra; anything beyond that is handled by the computer.</p>
+</section>
+<hr class="docutils" />
+<section id="weekly-schedule">
+<h3>Weekly schedule<a class="headerlink" href="#weekly-schedule" title="Link to this heading">#</a></h3>
+<hr class="docutils" />
+<section id="week-1-the-invisible-hand-adam-smith-and-market-equilibrium">
+<h4>Week 1 — The Invisible Hand: Adam Smith and Market Equilibrium<a class="headerlink" href="#week-1-the-invisible-hand-adam-smith-and-market-equilibrium" title="Link to this heading">#</a></h4>
+<p><strong>Historical context.</strong> The Scottish Enlightenment. Smith’s life in Edinburgh and Kirkcaldy. <em>The Wealth of Nations</em> (1776) and the idea that self-interest, channelled through markets, produces social order without a planner.</p>
+<p><strong>Computational exercise.</strong> Supply and demand as functions. Excess demand. Finding equilibrium with <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fsolve</span></code>. What happens when the government sets a price floor?</p>
+<p><strong>Reading.</strong> Smith, <em>Wealth of Nations</em>, Book I, Chapters 1–7 (selections). Heilbroner, <em>The Worldly Philosophers</em>, Ch. 3.</p>
+<p><strong>Edinburgh connection.</strong> Smith studied at Edinburgh under Francis Hutcheson’s moral philosophy tradition; Hume was his closest intellectual companion. The Old Town’s markets and trade networks were the world Smith observed.</p>
+</section>
+<hr class="docutils" />
+<section id="week-2-the-division-of-labour-and-the-pin-factory">
+<h4>Week 2 — The Division of Labour and the Pin Factory<a class="headerlink" href="#week-2-the-division-of-labour-and-the-pin-factory" title="Link to this heading">#</a></h4>
+<p><strong>Historical context.</strong> Smith’s famous pin factory example. Specialisation, productivity, and the extent of the market. Why nations trade.</p>
+<p><strong>Computational exercise.</strong> Simulating production with and without specialisation. Comparative advantage with two goods and two countries. Computing gains from trade.</p>
+<p><strong>Reading.</strong> Smith, <em>WN</em>, Book I, Chapters 1–3. Ricardo, <em>Principles</em>, Chapter 7 (on foreign trade).</p>
+</section>
+<hr class="docutils" />
+<section id="week-3-malthus-ricardo-and-the-limits-to-growth">
+<h4>Week 3 — Malthus, Ricardo, and the Limits to Growth<a class="headerlink" href="#week-3-malthus-ricardo-and-the-limits-to-growth" title="Link to this heading">#</a></h4>
+<p><strong>Historical context.</strong> Malthus’s <em>Essay on Population</em> (1798): geometric population growth vs arithmetic food growth. Ricardo on diminishing returns and the distribution of income between workers, landlords, and capitalists. Why classical economists were called “dismal.”</p>
+<p><strong>Computational exercise.</strong> Coding the Malthusian model: population dynamics, subsistence wages, the Malthusian trap. Simulating what happens when productivity improves — does the economy escape?</p>
+<p><strong>Reading.</strong> Malthus, <em>Essay on Population</em>, Chapter 1. Clark, <em>A Farewell to Alms</em>, Ch. 1–2.</p>
+</section>
+<hr class="docutils" />
+<section id="week-4-marx-and-the-machinery-question">
+<h4>Week 4 — Marx and the Machinery Question<a class="headerlink" href="#week-4-marx-and-the-machinery-question" title="Link to this heading">#</a></h4>
+<p><strong>Historical context.</strong> The Industrial Revolution. Marx’s critique of capitalism: surplus value, exploitation, and the tendency of the rate of profit to fall. The “machinery question” — does technology help or hurt workers?</p>
+<p><strong>Computational exercise.</strong> A simple model of capital accumulation and labour share. Simulating how the labour share of income evolves when firms invest in capital. Plotting historical labour share data.</p>
+<p><strong>Reading.</strong> Marx, <em>Capital</em>, Vol. I, Chapters 1, 7, 15 (selections). Heilbroner, <em>The Worldly Philosophers</em>, Ch. 6.</p>
+</section>
+<hr class="docutils" />
+<section id="week-5-the-marginalist-revolution-choosing-at-the-margin">
+<h4>Week 5 — The Marginalist Revolution: Choosing at the Margin<a class="headerlink" href="#week-5-the-marginalist-revolution-choosing-at-the-margin" title="Link to this heading">#</a></h4>
+<p><strong>Historical context.</strong> The 1870s revolution: Jevons, Menger, and Walras independently develop marginal utility theory. Economics shifts from class-based analysis to individual optimisation. Marshall synthesises it all.</p>
+<p><strong>Computational exercise.</strong> Consumer optimisation: maximising utility <span class="math notranslate nohighlight">\(u(x_1, x_2)\)</span> subject to a budget constraint. Solving with <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code> and constraints. Deriving demand curves computationally.</p>
+<p><strong>Reading.</strong> Backhouse, <em>The Penguin History of Economics</em>, Ch. 7. Jevons, <em>Theory of Political Economy</em>, Chapter 3 (selections).</p>
+</section>
+<hr class="docutils" />
+<section id="week-6-keynes-and-the-great-depression">
+<h4>Week 6 — Keynes and the Great Depression<a class="headerlink" href="#week-6-keynes-and-the-great-depression" title="Link to this heading">#</a></h4>
+<p><strong>Historical context.</strong> The 1929 crash and the failure of classical remedies. Keynes’s <em>General Theory</em> (1936): aggregate demand, the paradox of thrift, the multiplier, animal spirits. Why governments should spend in recessions.</p>
+<p><strong>Computational exercise.</strong> The Keynesian cross and the IS curve. Computing the fiscal multiplier numerically. Simulating how changes in confidence (animal spirits) propagate through the economy.</p>
+<p><strong>Reading.</strong> Keynes, <em>General Theory</em>, Chapters 1–3, 10 (selections). Skidelsky, <em>Keynes: A Very Short Introduction</em>, Chapters 3–4.</p>
+<p><strong>Edinburgh connection.</strong> Keynes’s debates with the “Edinburgh school” of classical economists who resisted his ideas.</p>
+</section>
+<hr class="docutils" />
+<section id="week-7-solow-and-the-sources-of-growth">
+<h4>Week 7 — Solow and the Sources of Growth<a class="headerlink" href="#week-7-solow-and-the-sources-of-growth" title="Link to this heading">#</a></h4>
+<p><strong>Historical context.</strong> Post-war prosperity and the question: where does growth come from? Solow’s model (1956): capital accumulation, diminishing returns, and the steady state. The “residual” — technology as the real engine of growth.</p>
+<p><strong>Computational exercise.</strong> Coding the Solow model. Finding the steady state with root-finding. Comparative statics: what happens when saving rates, depreciation, or productivity change? The Golden Rule.</p>
+<p><strong>Reading.</strong> Solow, “A Contribution to the Theory of Economic Growth” (1956), first 5 pages. Warsh, <em>Knowledge and the Wealth of Nations</em>, Ch. 1–3.</p>
+</section>
+<hr class="docutils" />
+<section id="week-8-friedman-lucas-and-the-expectations-revolution">
+<h4>Week 8 — Friedman, Lucas, and the Expectations Revolution<a class="headerlink" href="#week-8-friedman-lucas-and-the-expectations-revolution" title="Link to this heading">#</a></h4>
+<p><strong>Historical context.</strong> Stagflation and the collapse of the Phillips curve. Friedman’s monetarism and the natural rate. Lucas’s rational expectations: why systematic policy can’t fool people. The end of old-style Keynesianism.</p>
+<p><strong>Computational exercise.</strong> Simulating AR(1) processes for inflation and output. Coding adaptive vs rational expectations. Showing how an expected policy change has no real effect under rational expectations.</p>
+<p><strong>Reading.</strong> Friedman, “The Role of Monetary Policy” (AER, 1968). Lucas, “Econometric Policy Evaluation: A Critique” (1976), introduction.</p>
+</section>
+<hr class="docutils" />
+<section id="week-9-inequality-and-heterogeneous-agents">
+<h4>Week 9 — Inequality and Heterogeneous Agents<a class="headerlink" href="#week-9-inequality-and-heterogeneous-agents" title="Link to this heading">#</a></h4>
+<p><strong>Historical context.</strong> Piketty and the return of inequality to economics. The Aiyagari model: identical people, different luck, endogenous inequality. Why some households accumulate wealth and others don’t.</p>
+<p><strong>Computational exercise.</strong> Simulating income processes with Markov chains. Computing stationary wealth distributions via Monte Carlo. Plotting Lorenz curves and computing Gini coefficients.</p>
+<p><strong>Reading.</strong> Piketty, <em>Capital in the Twenty-First Century</em>, Introduction. Deaton, <em>The Great Escape</em>, Ch. 1.</p>
+</section>
+<hr class="docutils" />
+<section id="week-10-edinburgh-s-legacy-from-moral-philosophy-to-computational-economics">
+<h4>Week 10 — Edinburgh’s Legacy: From Moral Philosophy to Computational Economics<a class="headerlink" href="#week-10-edinburgh-s-legacy-from-moral-philosophy-to-computational-economics" title="Link to this heading">#</a></h4>
+<p><strong>Historical context.</strong> Full circle: from Hume and Smith’s empirical moral philosophy to modern computational economics. How the Scottish Enlightenment’s emphasis on evidence, scepticism, and systematic thinking laid the groundwork for quantitative social science. Where the field is going: climate economics, AI, and the new frontiers.</p>
+<p><strong>Computational exercise.</strong> Student presentations of final projects. A group exercise: can Smith’s “invisible hand” result survive when we add real-world frictions (information asymmetry, externalities, market power)?</p>
+<p><strong>Reading.</strong> Broadie, <em>The Scottish Enlightenment</em>, selected chapters. Sen, “Rational Fools” (1977).</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="recommended-general-texts">
+<h3>Recommended general texts<a class="headerlink" href="#recommended-general-texts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Heilbroner, R. <em>The Worldly Philosophers</em> (7th ed.) — the classic accessible history of economic thought.</p></li>
+<li><p>Backhouse, R. <em>The Penguin History of Economics</em> — more detail, still very readable.</p></li>
+<li><p>Blaug, M. <em>Economic Theory in Retrospect</em> — for students who want to go deeper.</p></li>
+<li><p>Broadie, A. <em>The Scottish Enlightenment</em> — Edinburgh’s intellectual context.</p></li>
+</ul>
+</section>
+<section id="software">
+<h3>Software<a class="headerlink" href="#software" title="Link to this heading">#</a></h3>
+<p>All coding is done in Python via Jupyter notebooks. No installation required — we use Google Colab in class. Students wanting a local setup should install Anaconda.</p>
+<hr class="docutils" />
+<p><em>“The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.”</em> — Marcel Proust</p>
+<p><em>…or in having new code.</em></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module_10_Edinburgh_Legacy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 10 — Edinburgh’s Legacy</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-ideas-that-built-economics">Computing the Ideas that Built Economics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#course-description">Course description</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-outcomes">Learning outcomes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment">Assessment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#weekly-schedule">Weekly schedule</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-1-the-invisible-hand-adam-smith-and-market-equilibrium">Week 1 — The Invisible Hand: Adam Smith and Market Equilibrium</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-2-the-division-of-labour-and-the-pin-factory">Week 2 — The Division of Labour and the Pin Factory</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-3-malthus-ricardo-and-the-limits-to-growth">Week 3 — Malthus, Ricardo, and the Limits to Growth</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-4-marx-and-the-machinery-question">Week 4 — Marx and the Machinery Question</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-5-the-marginalist-revolution-choosing-at-the-margin">Week 5 — The Marginalist Revolution: Choosing at the Margin</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-6-keynes-and-the-great-depression">Week 6 — Keynes and the Great Depression</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-7-solow-and-the-sources-of-growth">Week 7 — Solow and the Sources of Growth</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-8-friedman-lucas-and-the-expectations-revolution">Week 8 — Friedman, Lucas, and the Expectations Revolution</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-9-inequality-and-heterogeneous-agents">Week 9 — Inequality and Heterogeneous Agents</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#week-10-edinburgh-s-legacy-from-moral-philosophy-to-computational-economics">Week 10 — Edinburgh’s Legacy: From Moral Philosophy to Computational Economics</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-general-texts">Recommended general texts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Juan Zurita
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

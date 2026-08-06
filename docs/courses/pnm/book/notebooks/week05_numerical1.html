@@ -1,0 +1,1304 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Week 5 — Numerical Methods I — Root-Finding and Optimisation &#8212; Programming &amp; Numerical Methods for Economics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a6909eaf" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/week05_numerical1';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/logo.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Week 6 — Numerical Methods II — Optimisation in Economics" href="week06_optimization.html" />
+    <link rel="prev" title="Week 4 — From Data to Models" href="week04_models.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Programming & Numerical Methods for Economics - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="Programming & Numerical Methods for Economics - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week01_intro.html">Week 1 — Introduction to Programming</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="week02_fundamentals.html">Week 2 — Fundamentals of Programming in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week03_pandas.html">Week 3 — Data Manipulation with pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week03_casestudy.html"><center> Programming and Numerical Methods for Economics</center></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week04_models.html">Week 4 — From Data to Models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 5 — Numerical Methods I — Root-Finding and Optimisation</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="week06_optimization.html">Week 6 — Numerical Methods II — Optimisation in Economics</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="week07_funcapprox.html">Week 7 — Numerical Methods III — Function Approximation</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="week07_examples.html">Week 7 — Function Approximation — Additional Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week08_growth_julia.html">Week 8 — Economic Models — Neoclassical Growth via Value Function Iteration</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lab01.html">Marking Scheme</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="lab02.html">File from Learn - Course Material - Week 3</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="lab03.html"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="lab04.html"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/week05_numerical1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Week 5 — Numerical Methods I — Root-Finding and Optimisation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Week 5 — Numerical Methods I — Root-Finding and Optimisation</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-and-numerical-methods-for-economics"><center> Programming and Numerical Methods for Economics</center></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-5-root-finding-and-optimization"><center> Lecture 5: Root Finding and Optimization</center></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-non-linear-equations">Solving non-linear equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-univariate-root-solving-find-the-root-s-of-f-x">Example 1: univariate root-solving. Find the root(s) of f(x):</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-x-log-x-e-x"><center> $<span class="math notranslate nohighlight">\({f}(x)= log(x) - e^{(-x)}\)</span>$</center></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-solow-model-non-linear-system-of-3-equations">Example 2: Solow-Model (non-linear system of 3 equations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-system-of-equations">Define the system of equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-the-system-of-equations-for-a-single-input-the-vector-s-s1-s2-s3-of-saving-rates">Set the system of equations for a single input: the vector s=s1,s2,s3 of saving rates</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-that-this-exercise-is-tricky-in-the-sense-that-s-i-are-bounded-between-0-1-however-we-were-lucky-and-the-results-are-between-0-1">Note that this exercise is tricky in the sense that s_i are bounded between (0,1). However, we were lucky and the results are between (0,1)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-optimization"><center>Numerical Optimization</center></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-work-with-the-rosenbrock-function-in-2-d-to-compare-algorithms">Let’s work with the rosenbrock function in 2-D to compare algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-equation">$$    \begin{equation*}</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-minimization-our-function-needs-to-be-defined-in-terms-of-a-single-input-the-vector-of-control-variables-our-old-x">For minimization our function needs to be defined in terms of a single input: the vector of control variables (our old x)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-methods">Search Methods:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimization-using-brute-force">1. Minimization using brute-force</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-methods">Iterative Methods:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimization-using-quasi-newton-methods-bfgs">2. Minimization using Quasi-Newton methods: BFGS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimization-using-derivative-free-methods-nelder-mead">3. Minimization using derivative-free methods: Nelder-Mead</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rosenbrock-function-in-5-d">Rosenbrock function in 5-D</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-1-1-x-i-2-x-i-1-x-i-2-2">$<span class="math notranslate nohighlight">\(\sum_{i=1}^{N-1} (1-x_i)^2+(x_{i+1}-x_i^2)^2\)</span>$</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-minimization-of-the-rosenbrock-function">Bounded minimization of the Rosenbrock function ——————–</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-bfgs-b">L-BFGS-B</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powell">Powell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-minimization-of-the-rosenbrock-function-in-n-2-constraint">Constrained minimization of the Rosenbrock function in N=2, constraint:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-align">$$\begin{align*}</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-constraint">Define the constraint</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cobyla-method">COBYLA method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#slsqp-method">SLSQP method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trust-region-constrained-algoritm">Trust Region constrained algoritm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-the-lab">Before the lab</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="week-5-numerical-methods-i-root-finding-and-optimisation">
+<h1>Week 5 — Numerical Methods I — Root-Finding and Optimisation<a class="headerlink" href="#week-5-numerical-methods-i-root-finding-and-optimisation" title="Link to this heading">#</a></h1>
+<p><strong>Programming and Numerical Methods for Economics (ECNM10115)</strong> · The University of Edinburgh</p>
+<p><strong>Learning goals.</strong> Solving non-linear equations (<code class="docutils literal notranslate"><span class="pre">fsolve</span></code>, <code class="docutils literal notranslate"><span class="pre">optimize.root</span></code>) including a 3-country Solow system; unconstrained minimisation of the Rosenbrock function with brute force, BFGS, and Nelder–Mead; bounded (L-BFGS-B, Powell) and constrained (COBYLA) optimisation.</p>
+<blockquote>
+<div><p><strong>How to work through this notebook:</strong> run every cell in order (<code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code>). When you reach a result, pause and predict it before running — that habit is what turns reading into learning. Experiment: change parameters, break things, re-run.</p>
+</div></blockquote>
+<section id="programming-and-numerical-methods-for-economics">
+<h2><center> Programming and Numerical Methods for Economics<a class="headerlink" href="#programming-and-numerical-methods-for-economics" title="Link to this heading">#</a></h2>
+<section id="lecture-5-root-finding-and-optimization">
+<h3><center> Lecture 5: Root Finding and Optimization<a class="headerlink" href="#lecture-5-root-finding-and-optimization" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">quantecon</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">qe</span>  <span class="c1"># I will use qe.tic(), qe.toc() from the quantecon library to time the different algorithms.</span>
+                        <span class="c1"># If you do not have the library, just delete all the qe.tic(), qe.toc()</span>
+                        <span class="c1"># Or install the library</span>
+
+<span class="c1"># The main library for root-finding and optimization</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="solving-non-linear-equations">
+<h3>Solving non-linear equations<a class="headerlink" href="#solving-non-linear-equations" title="Link to this heading">#</a></h3>
+<section id="example-1-univariate-root-solving-find-the-root-s-of-f-x">
+<h4>Example 1: univariate root-solving. Find the root(s) of f(x):<a class="headerlink" href="#example-1-univariate-root-solving-find-the-root-s-of-f-x" title="Link to this heading">#</a></h4>
+</section>
+</section>
+</section>
+<section id="f-x-log-x-e-x">
+<h2><center> $<span class="math notranslate nohighlight">\({f}(x)= log(x) - e^{(-x)}\)</span>$<a class="headerlink" href="#f-x-log-x-e-x" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f1_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f1_func</span><span class="p">(</span><span class="n">grid_x</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid_x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid_x</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">grid_x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span> <span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;the roof of f(x)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d972ea265a21fd60fab0ced53c6ba6f9cf9d601aa6e28217721f8d2771850b49.png" src="../_images/d972ea265a21fd60fab0ced53c6ba6f9cf9d601aa6e28217721f8d2771850b49.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Set an initial value</span>
+<span class="n">x0</span><span class="o">=</span> <span class="mf">0.5</span>  <span class="c1"># initial value: we need to give an initial guess such </span>
+         <span class="c1"># the algorithm can start iterating to find the solution.</span>
+
+<span class="n">root_f1</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">fsolve</span><span class="p">(</span><span class="n">f1_func</span><span class="p">,</span> <span class="n">x0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the root of the function is x*=&#39;</span><span class="p">,</span> <span class="n">root_f1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the root of the function is x*= [1.30979959]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="example-2-solow-model-non-linear-system-of-3-equations">
+<h3>Example 2: Solow-Model (non-linear system of 3 equations)<a class="headerlink" href="#example-2-solow-model-non-linear-system-of-3-equations" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameter values</span>
+<span class="n">A</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">delta</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="define-the-system-of-equations">
+<h3>Define the system of equations<a class="headerlink" href="#define-the-system-of-equations" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">steady_state_ex2</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+    <span class="c1"># note that s is a vector with size 3: the three saving rates for each country.</span>
+    <span class="n">A</span><span class="p">,</span><span class="n">alpha</span><span class="p">,</span><span class="n">delta</span> <span class="o">=</span> <span class="n">params</span>
+    <span class="c1"># from the Solow model we know that k* for each country k* is.</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="o">/</span><span class="n">delta</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span>
+    <span class="n">k2</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="o">/</span><span class="n">delta</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span>
+    <span class="n">k3</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="o">/</span><span class="n">delta</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">))</span>
+    
+    <span class="c1"># From the calibration, we know these equations need to be equal to 0 given s</span>
+    <span class="n">eq_1</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">k2</span><span class="o">**</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">-</span><span class="mf">1.2</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">k1</span><span class="o">**</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+    <span class="n">eq_2</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">k3</span><span class="o">**</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span> <span class="o">-</span><span class="mf">1.35</span><span class="o">*</span><span class="n">A</span><span class="o">*</span><span class="n">k1</span><span class="o">**</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+    <span class="n">eq_3</span> <span class="o">=</span> <span class="n">k3</span><span class="o">/</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">k3</span><span class="o">**</span><span class="p">(</span><span class="n">alpha</span><span class="p">))</span>  <span class="o">-</span> <span class="mi">3</span>
+    
+    <span class="k">return</span>  <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">eq_1</span><span class="p">,</span> <span class="n">eq_2</span><span class="p">,</span> <span class="n">eq_3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="set-the-system-of-equations-for-a-single-input-the-vector-s-s1-s2-s3-of-saving-rates">
+<h4>Set the system of equations for a single input: the vector s=s1,s2,s3 of saving rates<a class="headerlink" href="#set-the-system-of-equations-for-a-single-input-the-vector-s-s1-s2-s3-of-saving-rates" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ss_func_ex2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">steady_state_ex2</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Solve the system using fsolve. You might also try the routine optimize.root with the different methods.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s0</span><span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>  <span class="c1"># initial value:   </span>
+<span class="n">root_savings</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">fsolve</span><span class="p">(</span><span class="n">ss_func_ex2</span><span class="p">,</span> <span class="n">s0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;the saving rates s* of the 3 countries are&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;s1 =&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">root_savings</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;s2 =&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">root_savings</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;s3 =&#39;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">root_savings</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>the saving rates s* of the 3 countries are
+s1 = 0.15
+s2 = 0.23
+s3 = 0.3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="note-that-this-exercise-is-tricky-in-the-sense-that-s-i-are-bounded-between-0-1-however-we-were-lucky-and-the-results-are-between-0-1">
+<h3>Note that this exercise is tricky in the sense that s_i are bounded between (0,1). However, we were lucky and the results are between (0,1)<a class="headerlink" href="#note-that-this-exercise-is-tricky-in-the-sense-that-s-i-are-bounded-between-0-1-however-we-were-lucky-and-the-results-are-between-0-1" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># trying for a different s0 ---you can check and observe that for some x0 the algorithm doesnt converge to the true solution</span>
+<span class="n">s0</span><span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>  <span class="c1"># initial value</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">root_savings</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">fsolve</span><span class="p">(</span><span class="n">ss_func_ex2</span><span class="p">,</span> <span class="n">s0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The saving rates s* of each of the countries are&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">root_savings</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The saving rates s* of each of the countries are
+[0.14893924 0.22791104 0.3       ]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="numerical-optimization">
+<h1><center>Numerical Optimization<a class="headerlink" href="#numerical-optimization" title="Link to this heading">#</a></h1>
+<section id="let-s-work-with-the-rosenbrock-function-in-2-d-to-compare-algorithms">
+<h2>Let’s work with the rosenbrock function in 2-D to compare algorithms<a class="headerlink" href="#let-s-work-with-the-rosenbrock-function-in-2-d-to-compare-algorithms" title="Link to this heading">#</a></h2>
+</section>
+<section id="begin-equation">
+<h2>$$    \begin{equation*}<a class="headerlink" href="#begin-equation" title="Link to this heading">#</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>            f(\mathbf{x}) = f(x_1,x_2) = (1-x_1)^2+(x_2-x_1^2)^2
+        \end{equation*}$$
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rosen_func_2d</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For a visual inspection, plot the function</span>
+<span class="n">x1_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x2_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">X1</span><span class="p">,</span> <span class="n">X2</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x1_grid</span><span class="p">,</span><span class="n">x2_grid</span><span class="p">)</span>
+<span class="n">f_values</span> <span class="o">=</span> <span class="n">rosen_func_2d</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="s2">&quot;3d&quot;</span><span class="p">})</span>
+<span class="n">surf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">,</span> <span class="n">f_values</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">hsv</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_1$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x_2$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;The Rosenbrock function&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">surf</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9e49ab8377d66d0d76d21d6bf75c798bb1ce1c1585031221f6b5538a7575ae4e.png" src="../_images/9e49ab8377d66d0d76d21d6bf75c798bb1ce1c1585031221f6b5538a7575ae4e.png" />
+</div>
+</div>
+<section id="for-minimization-our-function-needs-to-be-defined-in-terms-of-a-single-input-the-vector-of-control-variables-our-old-x">
+<h3>For minimization our function needs to be defined in terms of a single input: the vector of control variables (our old x)<a class="headerlink" href="#for-minimization-our-function-needs-to-be-defined-in-terms-of-a-single-input-the-vector-of-control-variables-our-old-x" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rosen_func</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="search-methods">
+<h3>Search Methods:<a class="headerlink" href="#search-methods" title="Link to this heading">#</a></h3>
+</section>
+<section id="minimization-using-brute-force">
+<h3>1. Minimization using brute-force<a class="headerlink" href="#minimization-using-brute-force" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## we need to set the range of x1 and x2whre we want to create the grid.</span>
+<span class="n">ranges_X</span> <span class="o">=</span> <span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="c1">#ranges_X = ((-10,10),(-10,10))  #try with another range.</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Brute-force method ---------&#39;</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<span class="n">res1</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">brute</span><span class="p">(</span><span class="n">rosen_func</span><span class="p">,</span> <span class="n">ranges_X</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Brute-force method ---------
+TOC: Elapsed: 0:00:0.00
+[1.0000081  1.00002356]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="iterative-methods">
+<h3>Iterative Methods:<a class="headerlink" href="#iterative-methods" title="Link to this heading">#</a></h3>
+</section>
+<section id="minimization-using-quasi-newton-methods-bfgs">
+<h3>2. Minimization using Quasi-Newton methods: BFGS<a class="headerlink" href="#minimization-using-quasi-newton-methods-bfgs" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;BFGS method ---------&#39;</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<span class="n">res2</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">rosen_func</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span> <span class="c1"># also optimize.minimize(rosen_func,x0,method=&#39;BFGS&#39;) </span>
+<span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># Not bad neither</span>
+
+<span class="c1"># minimize provides us with a battery of outcomes including the jacobian, number of iterations, or</span>
+<span class="c1"># whether the minimization was succesful.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS method ---------
+TOC: Elapsed: 0:00:0.00
+[0.99999995 0.99999991]
+  message: Optimization terminated successfully.
+  success: True
+   status: 0
+      fun: 2.9986375725184793e-15
+        x: [ 1.000e+00  1.000e+00]
+      nit: 8
+      jac: [-9.182e-08  4.548e-08]
+ hess_inv: [[ 5.001e-01  9.993e-01]
+            [ 9.993e-01  2.499e+00]]
+     nfev: 30
+     njev: 10
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="minimization-using-derivative-free-methods-nelder-mead">
+<h3>3. Minimization using derivative-free methods: Nelder-Mead<a class="headerlink" href="#minimization-using-derivative-free-methods-nelder-mead" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nelder-Mead method ---------&#39;</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<span class="n">res3</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">rosen_func</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nelder-mead&#39;</span><span class="p">)</span> <span class="c1"># also optimize.minimize(rosen_func,x0,method=&#39;BFGS&#39;) </span>
+<span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">res3</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># Not bad neither</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">res3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nelder-Mead method ---------
+TOC: Elapsed: 0:00:0.01
+[1.00001608 1.0000338 ]
+       message: Optimization terminated successfully.
+       success: True
+        status: 0
+           fun: 2.613059385742404e-10
+             x: [ 1.000e+00  1.000e+00]
+           nit: 67
+          nfev: 129
+ final_simplex: (array([[ 1.000e+00,  1.000e+00],
+                       [ 1.000e+00,  1.000e+00],
+                       [ 1.000e+00,  1.000e+00]]), array([ 2.613e-10,  3.308e-10,  5.691e-10]))
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rosenbrock-function-in-5-d">
+<h3>Rosenbrock function in 5-D<a class="headerlink" href="#rosenbrock-function-in-5-d" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="sum-i-1-n-1-1-x-i-2-x-i-1-x-i-2-2">
+<h2>$<span class="math notranslate nohighlight">\(\sum_{i=1}^{N-1} (1-x_i)^2+(x_{i+1}-x_i^2)^2\)</span>$<a class="headerlink" href="#sum-i-1-n-1-1-x-i-2-x-i-1-x-i-2-2" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This function is quite ugly and can be simplified with a loop. You&#39;ll need to do that for PS4. </span>
+<span class="k">def</span><span class="w"> </span><span class="nf">rosen_5d</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>    
+    <span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span><span class="p">,</span><span class="n">x4</span><span class="p">,</span><span class="n">x5</span> <span class="o">=</span> <span class="n">X</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>  <span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>  <span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">-</span><span class="n">X</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Brute-force</span>
+<span class="n">ranges_X</span> <span class="o">=</span> <span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Brute-force method ---------&#39;</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<span class="n">res1</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">brute</span><span class="p">(</span><span class="n">rosen_5d</span><span class="p">,</span> <span class="n">ranges_X</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span>
+<span class="c1"># takes a bit of time</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Brute-force method ---------
+TOC: Elapsed: 0:00:17.16
+[1.00002079 1.00002544 1.00002247 1.00002408 0.99997355]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># BFGS</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;BFGS method ---------&#39;</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<span class="n">res2</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">rosen_5d</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span>  
+<span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="c1"># quite fast despite N=5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BFGS method ---------
+TOC: Elapsed: 0:00:0.01
+[1.00000009 1.00000017 1.0000001  0.99999985 0.99999952]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nelder-Mead</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Nelder-Mead method ---------&#39;</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<span class="n">res3</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">rosen_5d</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nelder-mead&#39;</span><span class="p">)</span>  
+<span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nelder-Mead method ---------
+TOC: Elapsed: 0:00:0.02
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.025703907012939453
+</pre></div>
+</div>
+</div>
+</div>
+<section id="bounded-minimization-of-the-rosenbrock-function">
+<h3>Bounded minimization of the Rosenbrock function ——————–<a class="headerlink" href="#bounded-minimization-of-the-rosenbrock-function" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bnds</span> <span class="o">=</span> <span class="p">((</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="l-bfgs-b">
+<h3>L-BFGS-B<a class="headerlink" href="#l-bfgs-b" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;L-BFGS-B method ---------&#39;</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<span class="n">res4</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">rosen_5d</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;L-BFGS-B&#39;</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bnds</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">res4</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>L-BFGS-B method ---------
+[0.99999988 0.99999977 1.00000012 0.99999977 0.99999919]
+TOC: Elapsed: 0:00:0.02
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.02037525177001953
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="powell">
+<h3>Powell<a class="headerlink" href="#powell" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Powell method ---------&#39;</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<span class="n">res5</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">rosen_5d</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;powell&#39;</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bnds</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">res5</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Powell method ---------
+[1.00000004 1.00000034 1.         1.00000017 0.99999979]
+TOC: Elapsed: 0:00:0.11
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.11064839363098145
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="constrained-minimization-of-the-rosenbrock-function-in-n-2-constraint">
+<h3>Constrained minimization of the Rosenbrock function in N=2, constraint:<a class="headerlink" href="#constrained-minimization-of-the-rosenbrock-function-in-n-2-constraint" title="Link to this heading">#</a></h3>
+</section>
+<section id="begin-align">
+<h3>$$\begin{align*}<a class="headerlink" href="#begin-align" title="Link to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>          \underset{x_1,x_2}{\text{Min }} &amp; (1-x_1)^2+(x_2-x_1^2)^2\\
+            &amp; \text{st: }  \\
+           &amp;  x_1^2+x_2^2 \leq 1
+        \end{align*}$$
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we already computed the N=2 Rosenbrock function before: rosen_func</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">rosen_func</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">x2</span><span class="o">-</span><span class="n">x1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="define-the-constraint">
+<h4>Define the constraint<a class="headerlink" href="#define-the-constraint" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ineq_con</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>   
+    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>   
+<span class="c1"># inequality constraints are expressed in the form g(x)-b &gt;= 0</span>
+<span class="c1"># Thus we need to mulptiply by -1 our constraint.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the constraint</span>
+<span class="n">cons</span> <span class="o">=</span> <span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ineq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="n">ineq_con</span>  <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cobyla-method">
+<h4>COBYLA method<a class="headerlink" href="#cobyla-method" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<span class="n">res1</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">rosen_func</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;COBYLA&#39;</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">cons</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">res1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+<span class="c1"># Succesful?</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">res1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.80810667 0.58903619 0.48694279 0.50067708 0.55461313]
+TOC: Elapsed: 0:00:0.00
+ message: Optimization terminated successfully.
+ success: True
+  status: 1
+     fun: 0.0409190763312341
+       x: [ 8.081e-01  5.890e-01  4.869e-01  5.007e-01  5.546e-01]
+    nfev: 81
+   maxcv: 1.7527397311312143e-08
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="slsqp-method">
+<h4>SLSQP method<a class="headerlink" href="#slsqp-method" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SLSQP method ---------&#39;</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<span class="n">res2</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">rosen_func</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;SLSQP&#39;</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">cons</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">res2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SLSQP method ---------
+[0.80816799 0.58895205]
+TOC: Elapsed: 0:00:0.00
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0030519962310791016
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="trust-region-constrained-algoritm">
+<h4>Trust Region constrained algoritm<a class="headerlink" href="#trust-region-constrained-algoritm" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;trust-constr method ---------&#39;</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">tic</span><span class="p">()</span>
+<span class="n">res3</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">rosen_func</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;trust-constr&#39;</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">cons</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">res3</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<span class="n">qe</span><span class="o">.</span><span class="n">toc</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trust-constr method ---------
+[0.80816657 0.58894402]
+TOC: Elapsed: 0:00:0.04
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0463261604309082
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="before-the-lab">
+<h2>Before the lab<a class="headerlink" href="#before-the-lab" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Try it:</strong> start BFGS and Nelder–Mead from <code class="docutils literal notranslate"><span class="pre">x0</span> <span class="pre">=</span> <span class="pre">[-3,</span> <span class="pre">3]</span></code> instead of <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0]</span></code>. Which is more robust to a bad starting point? Count function evaluations.</p></li>
+<li><p>The 5-D Rosenbrock function written out by hand is ugly — rewriting it with a loop is part of <a class="reference download internal" download="" href="../_downloads/839689b02a44e10bdd59007d8fb48d07/PS4_ECNM10115.pdf"><span class="xref download myst">PS4</span></a>.</p></li>
+<li><p>Deeper slides: <a class="reference download internal" download="" href="../_downloads/7811f9bc5606409e6fda247be05b0f04/Optimization_Autumn2025.pdf"><span class="xref download myst">Optimisation</span></a> and <a class="reference download internal" download="" href="../_downloads/b5dd76c6433e17c7fe63f7b666fd2fa8/ValueFunctionApproximation.pdf"><span class="xref download myst">Value Function Approximation</span></a>.</p></li>
+</ul>
+<p><em>Next week: Numerical Methods II — optimisation in economic applications.</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="week04_models.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Week 4 — From Data to Models</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="week06_optimization.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Week 6 — Numerical Methods II — Optimisation in Economics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Week 5 — Numerical Methods I — Root-Finding and Optimisation</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-and-numerical-methods-for-economics"><center> Programming and Numerical Methods for Economics</center></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-5-root-finding-and-optimization"><center> Lecture 5: Root Finding and Optimization</center></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-non-linear-equations">Solving non-linear equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-univariate-root-solving-find-the-root-s-of-f-x">Example 1: univariate root-solving. Find the root(s) of f(x):</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#f-x-log-x-e-x"><center> $<span class="math notranslate nohighlight">\({f}(x)= log(x) - e^{(-x)}\)</span>$</center></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-solow-model-non-linear-system-of-3-equations">Example 2: Solow-Model (non-linear system of 3 equations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-system-of-equations">Define the system of equations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-the-system-of-equations-for-a-single-input-the-vector-s-s1-s2-s3-of-saving-rates">Set the system of equations for a single input: the vector s=s1,s2,s3 of saving rates</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-that-this-exercise-is-tricky-in-the-sense-that-s-i-are-bounded-between-0-1-however-we-were-lucky-and-the-results-are-between-0-1">Note that this exercise is tricky in the sense that s_i are bounded between (0,1). However, we were lucky and the results are between (0,1)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-optimization"><center>Numerical Optimization</center></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-work-with-the-rosenbrock-function-in-2-d-to-compare-algorithms">Let’s work with the rosenbrock function in 2-D to compare algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-equation">$$    \begin{equation*}</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-minimization-our-function-needs-to-be-defined-in-terms-of-a-single-input-the-vector-of-control-variables-our-old-x">For minimization our function needs to be defined in terms of a single input: the vector of control variables (our old x)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-methods">Search Methods:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimization-using-brute-force">1. Minimization using brute-force</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-methods">Iterative Methods:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimization-using-quasi-newton-methods-bfgs">2. Minimization using Quasi-Newton methods: BFGS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimization-using-derivative-free-methods-nelder-mead">3. Minimization using derivative-free methods: Nelder-Mead</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rosenbrock-function-in-5-d">Rosenbrock function in 5-D</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sum-i-1-n-1-1-x-i-2-x-i-1-x-i-2-2">$<span class="math notranslate nohighlight">\(\sum_{i=1}^{N-1} (1-x_i)^2+(x_{i+1}-x_i^2)^2\)</span>$</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bounded-minimization-of-the-rosenbrock-function">Bounded minimization of the Rosenbrock function ——————–</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#l-bfgs-b">L-BFGS-B</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#powell">Powell</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constrained-minimization-of-the-rosenbrock-function-in-n-2-constraint">Constrained minimization of the Rosenbrock function in N=2, constraint:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-align">$$\begin{align*}</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-constraint">Define the constraint</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cobyla-method">COBYLA method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#slsqp-method">SLSQP method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trust-region-constrained-algoritm">Trust Region constrained algoritm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#before-the-lab">Before the lab</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Juan Zurita
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

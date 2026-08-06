@@ -1,0 +1,1140 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 2 — The Division of Labour and the Pin Factory &#8212; From Smith to Simulation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=bcdf9603" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module_02_Pin_Factory';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="_static/logo.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 2 — Malthus, Ricardo, and the Limits to Growth" href="Module_02_Malthus_Ricardo.html" />
+    <link rel="prev" title="Module 1 — The Invisible Hand" href="Module_01_Invisible_Hand.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="From Smith to Simulation - Home"/>
+    <img src="_static/logo.svg" class="logo__image only-dark pst-js-only" alt="From Smith to Simulation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I — Classical Economics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_01_Invisible_Hand.html">Module 1 — The Invisible Hand</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 2 — The Division of Labour and the Pin Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_02_Malthus_Ricardo.html">Module 2 — Malthus, Ricardo, and the Limits to Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_04_Marx.html">Module 4 — Marx and the Machinery Question</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II — Modern Economics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_05_Marginalists.html">Module 5 — The Marginalist Revolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_03_Keynes_Multiplier.html">Module 3 — Keynes and the Multiplier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_07_Solow.html">Module 7 — Solow and the Sources of Growth</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part III — Contemporary Economics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_08_Expectations.html">Module 8 — Friedman, Lucas, and the Expectations Revolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_09_Inequality.html">Module 9 — Inequality and Heterogeneous Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_10_Edinburgh_Legacy.html">Module 10 — Edinburgh’s Legacy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="syllabus.html">From Smith to Simulation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module_02_Pin_Factory.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 2 — The Division of Labour and the Pin Factory</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specialisation-productivity-and-the-gains-from-trade">Specialisation, Productivity, and the Gains from Trade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-the-history">Part I — The History</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-most-famous-factory-in-economics">The Most Famous Factory in Economics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-specialisation-work">Why Does Specialisation Work?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-pin-factories-to-nations-comparative-advantage">From Pin Factories to Nations: Comparative Advantage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edinburgh-connection">Edinburgh Connection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-the-computation">Part II — The Computation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting Up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-pin-factory">Simulating the Pin Factory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-productivity-grows-with-the-number-of-specialists">How Productivity Grows with the Number of Specialists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-advantage-ricardo-s-great-insight">Comparative Advantage: Ricardo’s Great Insight</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-production-possibility-frontier">The Production Possibility Frontier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-gains-from-trade">Computing the Gains from Trade</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terms-of-trade-splitting-the-gains">Terms of Trade: Splitting the Gains</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-exercises">Part III — Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-the-extent-of-the-market">Exercise 1 — The Extent of the Market</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-three-country-comparative-advantage">Exercise 2 — Three-Country Comparative Advantage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-learning-by-doing">Exercise 3 — Learning by Doing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-quiz">Part IV — Quiz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-questions">Conceptual Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-questions">Computational Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz-answers">Quiz Answers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-2-the-division-of-labour-and-the-pin-factory">
+<h1>Module 2 — The Division of Labour and the Pin Factory<a class="headerlink" href="#module-2-the-division-of-labour-and-the-pin-factory" title="Link to this heading">#</a></h1>
+<section id="specialisation-productivity-and-the-gains-from-trade">
+<h2>Specialisation, Productivity, and the Gains from Trade<a class="headerlink" href="#specialisation-productivity-and-the-gains-from-trade" title="Link to this heading">#</a></h2>
+<p><strong>From Smith to Simulation: Computing the Ideas that Built Economics</strong><br />
+The University of Edinburgh · School of Economics</p>
+</section>
+<hr class="docutils" />
+<section id="part-i-the-history">
+<h2>Part I — The History<a class="headerlink" href="#part-i-the-history" title="Link to this heading">#</a></h2>
+<section id="the-most-famous-factory-in-economics">
+<h3>The Most Famous Factory in Economics<a class="headerlink" href="#the-most-famous-factory-in-economics" title="Link to this heading">#</a></h3>
+<p><em>The Wealth of Nations</em> opens not with grand theory but with a visit to a <strong>pin factory</strong>. Smith describes watching workers make pins — the thin metal fasteners used in clothing and textiles — and marvels at how dividing the work into separate tasks transforms productivity:</p>
+<blockquote>
+<div><p><em>“One man draws out the wire, another straights it, a third cuts it, a fourth points it, a fifth grinds it at the top for receiving the head; to make the head requires two or three distinct operations…”</em><br />
+— Adam Smith, <em>The Wealth of Nations</em>, Book I, Chapter 1</p>
+</div></blockquote>
+<p>Smith counted <strong>eighteen distinct operations</strong> in making a pin. Ten workers, each specialising in a few tasks, could produce about <strong>48,000 pins per day</strong> — roughly 4,800 per worker. But if each worker tried to do everything alone, Smith estimated they could make at most <strong>20 pins per day</strong>, perhaps not even one.</p>
+<p>That is a <strong>240-fold increase</strong> in productivity from specialisation alone.</p>
+</section>
+<section id="why-does-specialisation-work">
+<h3>Why Does Specialisation Work?<a class="headerlink" href="#why-does-specialisation-work" title="Link to this heading">#</a></h3>
+<p>Smith identified three reasons:</p>
+<ol class="arabic simple">
+<li><p><strong>Skill improvement.</strong> A worker who performs one task all day becomes extraordinarily good at it — faster, more precise, more consistent.</p></li>
+<li><p><strong>Time saving.</strong> Workers don’t waste time switching between tasks, moving between workstations, or picking up different tools.</p></li>
+<li><p><strong>Innovation.</strong> Workers focused on a single task are more likely to invent machines or methods that improve it. Smith noted that many early industrial machines were invented by workers themselves, not by scientists.</p></li>
+</ol>
+</section>
+<section id="from-pin-factories-to-nations-comparative-advantage">
+<h3>From Pin Factories to Nations: Comparative Advantage<a class="headerlink" href="#from-pin-factories-to-nations-comparative-advantage" title="Link to this heading">#</a></h3>
+<p>Smith extended the logic of specialisation from factories to countries. Just as workers should specialise in what they do best, nations should trade with each other rather than trying to produce everything domestically.</p>
+<p>This idea was refined forty years later by <strong>David Ricardo</strong> (1772–1823), who proved something remarkable: even if one country is better at producing <em>everything</em>, both countries still gain from trade. What matters is not <strong>absolute advantage</strong> (who’s better overall) but <strong>comparative advantage</strong> (who gives up less to produce each good).</p>
+<blockquote>
+<div><p><em>“Under a system of perfectly free commerce, each country naturally devotes its capital and labour to such employments as are most beneficial to each.”</em><br />
+— David Ricardo, <em>Principles of Political Economy and Taxation</em> (1817), Chapter 7</p>
+</div></blockquote>
+<p>This is one of the most counterintuitive and important results in all of economics, and we’ll compute it in this module.</p>
+</section>
+<section id="edinburgh-connection">
+<h3>Edinburgh Connection<a class="headerlink" href="#edinburgh-connection" title="Link to this heading">#</a></h3>
+<p>The pin factory Smith described was likely based on factories he observed in or near Edinburgh and Kirkcaldy. In the 1760s, Scotland’s manufacturing was booming — linen, iron, and metalwork — and Edinburgh’s merchants were deeply embedded in international trade networks. The Old Town’s closes and wynds were full of workshops where the division of labour was already visible in miniature. Smith’s genius was to see in these ordinary workshops a universal principle.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-ii-the-computation">
+<h2>Part II — The Computation<a class="headerlink" href="#part-ii-the-computation" title="Link to this heading">#</a></h2>
+<section id="setting-up">
+<h3>Setting Up<a class="headerlink" href="#setting-up" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="simulating-the-pin-factory">
+<h3>Simulating the Pin Factory<a class="headerlink" href="#simulating-the-pin-factory" title="Link to this heading">#</a></h3>
+<p>Let’s start by simulating Smith’s pin factory. We’ll compare two modes of production:</p>
+<ol class="arabic simple">
+<li><p><strong>No specialisation:</strong> Each worker performs all 18 steps to make a complete pin.</p></li>
+<li><p><strong>Division of labour:</strong> Workers specialise in a subset of steps.</p></li>
+</ol>
+<p>We’ll model this simply: each step takes some amount of time. Without specialisation, a worker moves through all steps slowly (switching costs, less skill). With specialisation, each step takes less time (practice, no switching).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pin factory simulation</span>
+<span class="n">n_steps</span> <span class="o">=</span> <span class="mi">18</span>  <span class="c1"># number of distinct operations</span>
+
+<span class="c1"># Time per step (minutes) WITHOUT specialisation</span>
+<span class="c1"># A generalist is slow at everything</span>
+<span class="n">time_per_step_generalist</span> <span class="o">=</span> <span class="mf">3.0</span>  <span class="c1"># 3 minutes per step</span>
+<span class="n">switching_cost</span> <span class="o">=</span> <span class="mf">1.0</span>            <span class="c1"># 1 minute lost switching between tasks</span>
+
+<span class="c1"># Time per step WITH specialisation (practice makes perfect)</span>
+<span class="n">time_per_step_specialist</span> <span class="o">=</span> <span class="mf">0.5</span>  <span class="c1"># 30 seconds per step — 6x faster through practice</span>
+<span class="n">switching_cost_specialist</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># no switching — one task all day</span>
+
+<span class="c1"># Working day: 10 hours = 600 minutes</span>
+<span class="n">working_day</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="c1"># GENERALIST: time to make one pin = all steps + switching</span>
+<span class="n">time_per_pin_generalist</span> <span class="o">=</span> <span class="n">n_steps</span> <span class="o">*</span> <span class="n">time_per_step_generalist</span> <span class="o">+</span> <span class="p">(</span><span class="n">n_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">switching_cost</span>
+<span class="n">pins_per_day_generalist</span> <span class="o">=</span> <span class="n">working_day</span> <span class="o">/</span> <span class="n">time_per_pin_generalist</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== No Specialisation (Generalist) ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time per pin: </span><span class="si">{</span><span class="n">time_per_pin_generalist</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> minutes&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pins per worker per day: </span><span class="si">{</span><span class="n">pins_per_day_generalist</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># SPECIALIST: 10 workers, each handles ~2 steps</span>
+<span class="n">n_workers</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">steps_per_worker</span> <span class="o">=</span> <span class="n">n_steps</span> <span class="o">/</span> <span class="n">n_workers</span>
+
+<span class="c1"># The bottleneck is the slowest worker (worker with the most steps)</span>
+<span class="c1"># With 18 steps and 10 workers, some handle 2, some handle 1</span>
+<span class="c1"># But in a pipeline, throughput = 1 pin per bottleneck_time</span>
+<span class="n">bottleneck_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">steps_per_worker</span><span class="p">)</span> <span class="o">*</span> <span class="n">time_per_step_specialist</span>
+<span class="n">pins_per_day_total</span> <span class="o">=</span> <span class="n">working_day</span> <span class="o">/</span> <span class="n">bottleneck_time</span>
+<span class="n">pins_per_day_specialist</span> <span class="o">=</span> <span class="n">pins_per_day_total</span>  <span class="c1"># total output of the team</span>
+<span class="n">pins_per_worker_specialist</span> <span class="o">=</span> <span class="n">pins_per_day_total</span> <span class="o">/</span> <span class="n">n_workers</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Division of Labour (</span><span class="si">{</span><span class="n">n_workers</span><span class="si">}</span><span class="s2"> Specialist Workers) ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bottleneck time per pin: </span><span class="si">{</span><span class="n">bottleneck_time</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> minutes&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total pins per day: </span><span class="si">{</span><span class="n">pins_per_day_total</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pins per worker per day: </span><span class="si">{</span><span class="n">pins_per_worker_specialist</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Productivity Gain ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Specialisation multiplier: </span><span class="si">{</span><span class="n">pins_per_worker_specialist</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">pins_per_day_generalist</span><span class="si">:</span><span class="s2">.0f</span><span class="si">}</span><span class="s2">x&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Smith&#39;s estimate: 240x&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-productivity-grows-with-the-number-of-specialists">
+<h3>How Productivity Grows with the Number of Specialists<a class="headerlink" href="#how-productivity-grows-with-the-number-of-specialists" title="Link to this heading">#</a></h3>
+<p>Smith noted that the division of labour is “limited by the extent of the market.” A tiny village can’t support 10 specialist pin-makers — there aren’t enough customers. Specialisation only works at scale. Let’s see how output per worker changes as we add more workers to the factory:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pins_per_worker</span><span class="p">(</span><span class="n">n_workers</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">t_specialist</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">t_generalist</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span>
+                    <span class="n">switch_cost</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">600</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute output per worker as the workforce grows.</span>
+<span class="sd">    With 1 worker: generalist.</span>
+<span class="sd">    With n workers: divide steps among them (pipeline).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n_workers</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">time_per_pin</span> <span class="o">=</span> <span class="n">n_steps</span> <span class="o">*</span> <span class="n">t_generalist</span> <span class="o">+</span> <span class="p">(</span><span class="n">n_steps</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">switch_cost</span>
+        <span class="k">return</span> <span class="n">day</span> <span class="o">/</span> <span class="n">time_per_pin</span>
+    
+    <span class="c1"># Each worker handles ceil(n_steps / n_workers) steps</span>
+    <span class="c1"># But no worker handles more than n_steps</span>
+    <span class="n">steps_each</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">/</span> <span class="nb">min</span><span class="p">(</span><span class="n">n_workers</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">))</span>
+    
+    <span class="c1"># Specialist speed improves with focus (fewer steps = more practice)</span>
+    <span class="c1"># Model: time per step = t_specialist * (steps_each / 1)^0.3 (learning curve)</span>
+    <span class="n">effective_time</span> <span class="o">=</span> <span class="n">t_specialist</span> <span class="o">*</span> <span class="n">steps_each</span><span class="o">**</span><span class="mf">0.3</span>
+    
+    <span class="n">bottleneck</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">steps_each</span><span class="p">)</span> <span class="o">*</span> <span class="n">effective_time</span>
+    <span class="n">total_pins</span> <span class="o">=</span> <span class="n">day</span> <span class="o">/</span> <span class="n">bottleneck</span>
+    <span class="k">return</span> <span class="n">total_pins</span> <span class="o">/</span> <span class="n">n_workers</span>
+
+<span class="n">workers_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">51</span><span class="p">)</span>
+<span class="n">output</span> <span class="o">=</span> <span class="p">[</span><span class="n">pins_per_worker</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">workers_range</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">workers_range</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;18 workers (one per step)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Number of workers&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Pins per worker per day&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Smith&#39;s Insight: Productivity Rises with Specialisation&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Output per worker rises steeply as workers specialise in fewer steps.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Beyond 18 workers (one per step), gains plateau — the division of labour&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;is limited by the number of distinct tasks.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparative-advantage-ricardo-s-great-insight">
+<h3>Comparative Advantage: Ricardo’s Great Insight<a class="headerlink" href="#comparative-advantage-ricardo-s-great-insight" title="Link to this heading">#</a></h3>
+<p>Now let’s move from factories to nations. Ricardo’s theory of <strong>comparative advantage</strong> shows that trade benefits both countries even when one is better at producing everything.</p>
+<p>Consider two countries — <strong>Scotland</strong> and <strong>Portugal</strong> — producing two goods: <strong>cloth</strong> and <strong>wine</strong>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Hours to produce 1 unit of cloth</p></th>
+<th class="head"><p>Hours to produce 1 unit of wine</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Scotland</p></td>
+<td><p>100</p></td>
+<td><p>120</p></td>
+</tr>
+<tr class="row-odd"><td><p>Portugal</p></td>
+<td><p>90</p></td>
+<td><p>80</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Portugal is better at producing <em>both</em> goods (absolute advantage in everything). A naive analysis might suggest Portugal has nothing to gain from trading with Scotland. Ricardo proved this wrong.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Labour costs (hours per unit)</span>
+<span class="n">scotland_cloth</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">scotland_wine</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">portugal_cloth</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="n">portugal_wine</span> <span class="o">=</span> <span class="mi">80</span>
+
+<span class="c1"># Opportunity cost: to make 1 unit of cloth, how much wine do you give up?</span>
+<span class="n">opp_cost_cloth_scotland</span> <span class="o">=</span> <span class="n">scotland_cloth</span> <span class="o">/</span> <span class="n">scotland_wine</span>  <span class="c1"># cloth in terms of wine</span>
+<span class="n">opp_cost_cloth_portugal</span> <span class="o">=</span> <span class="n">portugal_cloth</span> <span class="o">/</span> <span class="n">portugal_wine</span>
+
+<span class="n">opp_cost_wine_scotland</span> <span class="o">=</span> <span class="n">scotland_wine</span> <span class="o">/</span> <span class="n">scotland_cloth</span>  <span class="c1"># wine in terms of cloth</span>
+<span class="n">opp_cost_wine_portugal</span> <span class="o">=</span> <span class="n">portugal_wine</span> <span class="o">/</span> <span class="n">portugal_cloth</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Opportunity costs:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  Scotland: 1 cloth costs </span><span class="si">{</span><span class="n">opp_cost_cloth_scotland</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> wine&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Portugal: 1 cloth costs </span><span class="si">{</span><span class="n">opp_cost_cloth_portugal</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> wine&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">  Scotland: 1 wine costs </span><span class="si">{</span><span class="n">opp_cost_wine_scotland</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> cloth&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Portugal: 1 wine costs </span><span class="si">{</span><span class="n">opp_cost_wine_portugal</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> cloth&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Scotland has comparative advantage in: &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">opp_cost_cloth_scotland</span> <span class="o">&lt;</span> <span class="n">opp_cost_cloth_portugal</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CLOTH (lower opportunity cost)&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WINE (lower opportunity cost)&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Portugal has comparative advantage in: &quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">opp_cost_wine_portugal</span> <span class="o">&lt;</span> <span class="n">opp_cost_wine_scotland</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;WINE (lower opportunity cost)&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;CLOTH (lower opportunity cost)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Scotland gives up less wine to produce cloth (0.833 vs 1.125 units), so Scotland has a comparative advantage in cloth. Portugal gives up less cloth to produce wine, so Portugal has a comparative advantage in wine.</p>
+</section>
+<section id="the-production-possibility-frontier">
+<h3>The Production Possibility Frontier<a class="headerlink" href="#the-production-possibility-frontier" title="Link to this heading">#</a></h3>
+<p>Each country has a fixed amount of labour. The <strong>Production Possibility Frontier (PPF)</strong> shows all combinations of cloth and wine a country can produce. Let’s say each country has 1,000 hours of labour available.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total_hours</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># each country has 1000 labour hours</span>
+
+<span class="c1"># PPF: if you produce Q_cloth units of cloth, you can produce at most:</span>
+<span class="c1"># Q_wine = (total_hours - cost_cloth * Q_cloth) / cost_wine</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ppf</span><span class="p">(</span><span class="n">Q_cloth</span><span class="p">,</span> <span class="n">cost_cloth</span><span class="p">,</span> <span class="n">cost_wine</span><span class="p">,</span> <span class="n">hours</span><span class="o">=</span><span class="n">total_hours</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Maximum wine given cloth production.&quot;&quot;&quot;</span>
+    <span class="n">hours_left</span> <span class="o">=</span> <span class="n">hours</span> <span class="o">-</span> <span class="n">cost_cloth</span> <span class="o">*</span> <span class="n">Q_cloth</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">hours_left</span> <span class="o">/</span> <span class="n">cost_wine</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Maximum production of each good</span>
+<span class="n">scot_max_cloth</span> <span class="o">=</span> <span class="n">total_hours</span> <span class="o">/</span> <span class="n">scotland_cloth</span>
+<span class="n">scot_max_wine</span> <span class="o">=</span> <span class="n">total_hours</span> <span class="o">/</span> <span class="n">scotland_wine</span>
+<span class="n">port_max_cloth</span> <span class="o">=</span> <span class="n">total_hours</span> <span class="o">/</span> <span class="n">portugal_cloth</span>
+<span class="n">port_max_wine</span> <span class="o">=</span> <span class="n">total_hours</span> <span class="o">/</span> <span class="n">portugal_wine</span>
+
+<span class="n">cloth_range_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">scot_max_cloth</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">cloth_range_p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">port_max_cloth</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cloth_range_s</span><span class="p">,</span> <span class="n">ppf</span><span class="p">(</span><span class="n">cloth_range_s</span><span class="p">,</span> <span class="n">scotland_cloth</span><span class="p">,</span> <span class="n">scotland_wine</span><span class="p">),</span>
+             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">cloth_range_s</span><span class="p">,</span> <span class="n">ppf</span><span class="p">(</span><span class="n">cloth_range_s</span><span class="p">,</span> <span class="n">scotland_cloth</span><span class="p">,</span> <span class="n">scotland_wine</span><span class="p">),</span>
+                     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Cloth&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Wine&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Scotland</span><span class="se">\&#39;</span><span class="s1">s PPF&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cloth_range_p</span><span class="p">,</span> <span class="n">ppf</span><span class="p">(</span><span class="n">cloth_range_p</span><span class="p">,</span> <span class="n">portugal_cloth</span><span class="p">,</span> <span class="n">portugal_wine</span><span class="p">),</span>
+             <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">cloth_range_p</span><span class="p">,</span> <span class="n">ppf</span><span class="p">(</span><span class="n">cloth_range_p</span><span class="p">,</span> <span class="n">portugal_cloth</span><span class="p">,</span> <span class="n">portugal_wine</span><span class="p">),</span>
+                     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Cloth&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Wine&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Portugal</span><span class="se">\&#39;</span><span class="s1">s PPF&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Production Possibility Frontiers&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.02</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scotland can produce at most </span><span class="si">{</span><span class="n">scot_max_cloth</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> cloth or </span><span class="si">{</span><span class="n">scot_max_wine</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> wine.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Portugal can produce at most </span><span class="si">{</span><span class="n">port_max_cloth</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> cloth or </span><span class="si">{</span><span class="n">port_max_wine</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> wine.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="computing-the-gains-from-trade">
+<h3>Computing the Gains from Trade<a class="headerlink" href="#computing-the-gains-from-trade" title="Link to this heading">#</a></h3>
+<p>Without trade (autarky), suppose each country splits its labour equally between the two goods. With trade, each specialises in its comparative advantage and they exchange.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># AUTARKY: each country splits labour 50/50</span>
+<span class="n">half_hours</span> <span class="o">=</span> <span class="n">total_hours</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="n">scot_cloth_autarky</span> <span class="o">=</span> <span class="n">half_hours</span> <span class="o">/</span> <span class="n">scotland_cloth</span>
+<span class="n">scot_wine_autarky</span> <span class="o">=</span> <span class="n">half_hours</span> <span class="o">/</span> <span class="n">scotland_wine</span>
+<span class="n">port_cloth_autarky</span> <span class="o">=</span> <span class="n">half_hours</span> <span class="o">/</span> <span class="n">portugal_cloth</span>
+<span class="n">port_wine_autarky</span> <span class="o">=</span> <span class="n">half_hours</span> <span class="o">/</span> <span class="n">portugal_wine</span>
+
+<span class="n">world_cloth_autarky</span> <span class="o">=</span> <span class="n">scot_cloth_autarky</span> <span class="o">+</span> <span class="n">port_cloth_autarky</span>
+<span class="n">world_wine_autarky</span> <span class="o">=</span> <span class="n">scot_wine_autarky</span> <span class="o">+</span> <span class="n">port_wine_autarky</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== AUTARKY (no trade, 50/50 split) ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scotland: </span><span class="si">{</span><span class="n">scot_cloth_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> cloth, </span><span class="si">{</span><span class="n">scot_wine_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> wine&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Portugal: </span><span class="si">{</span><span class="n">port_cloth_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> cloth, </span><span class="si">{</span><span class="n">port_wine_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> wine&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;World:    </span><span class="si">{</span><span class="n">world_cloth_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> cloth, </span><span class="si">{</span><span class="n">world_wine_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> wine&quot;</span><span class="p">)</span>
+
+<span class="c1"># SPECIALISATION: Scotland produces only cloth, Portugal produces only wine</span>
+<span class="n">scot_cloth_trade</span> <span class="o">=</span> <span class="n">total_hours</span> <span class="o">/</span> <span class="n">scotland_cloth</span>  <span class="c1"># all labour on cloth</span>
+<span class="n">scot_wine_trade</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">port_cloth_trade</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">port_wine_trade</span> <span class="o">=</span> <span class="n">total_hours</span> <span class="o">/</span> <span class="n">portugal_wine</span>  <span class="c1"># all labour on wine</span>
+
+<span class="n">world_cloth_trade</span> <span class="o">=</span> <span class="n">scot_cloth_trade</span> <span class="o">+</span> <span class="n">port_cloth_trade</span>
+<span class="n">world_wine_trade</span> <span class="o">=</span> <span class="n">scot_wine_trade</span> <span class="o">+</span> <span class="n">port_wine_trade</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== SPECIALISATION + TRADE ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scotland produces: </span><span class="si">{</span><span class="n">scot_cloth_trade</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> cloth, </span><span class="si">{</span><span class="n">scot_wine_trade</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> wine&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Portugal produces: </span><span class="si">{</span><span class="n">port_cloth_trade</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> cloth, </span><span class="si">{</span><span class="n">port_wine_trade</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> wine&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;World total:       </span><span class="si">{</span><span class="n">world_cloth_trade</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> cloth, </span><span class="si">{</span><span class="n">world_wine_trade</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> wine&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== GAINS FROM TRADE ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Extra cloth: </span><span class="si">{</span><span class="n">world_cloth_trade</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">world_cloth_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> units&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Extra wine:  </span><span class="si">{</span><span class="n">world_wine_trade</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">world_wine_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> units&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Specialisation creates MORE of BOTH goods — the world is richer.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualise: combined PPF vs autarky</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Individual PPFs in autarky</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cloth_range_s</span><span class="p">,</span> <span class="n">ppf</span><span class="p">(</span><span class="n">cloth_range_s</span><span class="p">,</span> <span class="n">scotland_cloth</span><span class="p">,</span> <span class="n">scotland_wine</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Scotland PPF&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cloth_range_p</span><span class="p">,</span> <span class="n">ppf</span><span class="p">(</span><span class="n">cloth_range_p</span><span class="p">,</span> <span class="n">portugal_cloth</span><span class="p">,</span> <span class="n">portugal_wine</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Portugal PPF&#39;</span><span class="p">)</span>
+
+<span class="c1"># World PPF with trade (kinked line)</span>
+<span class="c1"># First: Portugal makes all wine (up to 12.5), Scotland transitions from wine to cloth</span>
+<span class="c1"># Then: Scotland makes all cloth</span>
+<span class="n">world_cloth</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">scot_max_cloth</span><span class="p">,</span> <span class="n">scot_max_cloth</span> <span class="o">+</span> <span class="n">port_max_cloth</span><span class="p">])</span>
+<span class="n">world_wine</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">scot_max_wine</span> <span class="o">+</span> <span class="n">port_max_wine</span><span class="p">,</span> <span class="n">port_max_wine</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">world_cloth</span><span class="p">,</span> <span class="n">world_wine</span><span class="p">,</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;World PPF (with trade)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mark autarky and trade points</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">world_cloth_autarky</span><span class="p">,</span> <span class="n">world_wine_autarky</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+        <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;World output (autarky)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">world_cloth_trade</span><span class="p">,</span> <span class="n">world_wine_trade</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span>
+        <span class="n">markeredgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;World output (trade)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Total cloth&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Total wine&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Gains from Trade: The World Produces More of Both Goods&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="terms-of-trade-splitting-the-gains">
+<h3>Terms of Trade: Splitting the Gains<a class="headerlink" href="#terms-of-trade-splitting-the-gains" title="Link to this heading">#</a></h3>
+<p>Specialisation creates a surplus. But who gets it? That depends on the <strong>terms of trade</strong> — the price at which cloth is exchanged for wine. Both countries benefit as long as the exchange rate lies between their opportunity costs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;For trade to benefit BOTH countries, the price of cloth (in wine) must lie between:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Scotland&#39;s opportunity cost: </span><span class="si">{</span><span class="n">opp_cost_cloth_scotland</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> wine per cloth&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Portugal&#39;s opportunity cost: </span><span class="si">{</span><span class="n">opp_cost_cloth_portugal</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> wine per cloth&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Any price between </span><span class="si">{</span><span class="n">opp_cost_cloth_scotland</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">opp_cost_cloth_portugal</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> works.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example: trade at 1 cloth = 1 wine</span>
+<span class="n">terms_of_trade</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># 1 cloth exchanges for 1 wine</span>
+
+<span class="c1"># Scotland exports cloth, imports wine</span>
+<span class="c1"># Scotland produces 10 cloth, keeps 5, trades 5 for 5 wine</span>
+<span class="n">scot_keeps_cloth</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">scot_exports_cloth</span> <span class="o">=</span> <span class="n">scot_cloth_trade</span> <span class="o">-</span> <span class="n">scot_keeps_cloth</span>
+<span class="n">scot_gets_wine</span> <span class="o">=</span> <span class="n">scot_exports_cloth</span> <span class="o">*</span> <span class="n">terms_of_trade</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Trade at </span><span class="si">{</span><span class="n">terms_of_trade</span><span class="si">}</span><span class="s2"> wine per cloth ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scotland: has </span><span class="si">{</span><span class="n">scot_keeps_cloth</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> cloth + </span><span class="si">{</span><span class="n">scot_gets_wine</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> wine&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  (vs autarky: </span><span class="si">{</span><span class="n">scot_cloth_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> cloth + </span><span class="si">{</span><span class="n">scot_wine_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> wine)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Gain: +</span><span class="si">{</span><span class="n">scot_keeps_cloth</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">scot_cloth_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> cloth, +</span><span class="si">{</span><span class="n">scot_gets_wine</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">scot_wine_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> wine&quot;</span><span class="p">)</span>
+
+<span class="n">port_gets_cloth</span> <span class="o">=</span> <span class="n">scot_exports_cloth</span>
+<span class="n">port_keeps_wine</span> <span class="o">=</span> <span class="n">port_wine_trade</span> <span class="o">-</span> <span class="n">scot_gets_wine</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Portugal: has </span><span class="si">{</span><span class="n">port_gets_cloth</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> cloth + </span><span class="si">{</span><span class="n">port_keeps_wine</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> wine&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  (vs autarky: </span><span class="si">{</span><span class="n">port_cloth_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> cloth + </span><span class="si">{</span><span class="n">port_wine_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> wine)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Gain: +</span><span class="si">{</span><span class="n">port_gets_cloth</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">port_cloth_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> cloth, +</span><span class="si">{</span><span class="n">port_keeps_wine</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">port_wine_autarky</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> wine&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Both countries are better off — Ricardo&#39;s comparative advantage in action.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-iii-exercises">
+<h2>Part III — Exercises<a class="headerlink" href="#part-iii-exercises" title="Link to this heading">#</a></h2>
+<section id="exercise-1-the-extent-of-the-market">
+<h3>Exercise 1 — The Extent of the Market<a class="headerlink" href="#exercise-1-the-extent-of-the-market" title="Link to this heading">#</a></h3>
+<p>Smith wrote that “the division of labour is limited by the extent of the market.” A village of 100 people can’t sustain a specialist pin-maker.</p>
+<p><strong>(a)</strong> Suppose a town consumes <span class="math notranslate nohighlight">\(D = 0.5 \times \text{population}\)</span> pins per day. A generalist worker makes 10 pins/day; a specialist in a team of 10 makes 480 pins/day per team (4,800 total). If the minimum team for specialisation is 10 workers, what is the minimum population that justifies a specialist pin factory?</p>
+<p><strong>(b)</strong> Plot the cost per pin under each mode (generalist cost = wage / 10; specialist cost = 10 × wage / 4800) as a function of daily demand. At what demand level does specialisation become cheaper? Assume wage = 1.</p>
+<p><strong>(c)</strong> Smith observed that specialisation is most extreme in large cities and near seaports. Explain why in 2–3 sentences using the model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-three-country-comparative-advantage">
+<h3>Exercise 2 — Three-Country Comparative Advantage<a class="headerlink" href="#exercise-2-three-country-comparative-advantage" title="Link to this heading">#</a></h3>
+<p>Extend Ricardo’s model to three countries and two goods:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Hours per cloth</p></th>
+<th class="head"><p>Hours per wine</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Scotland</p></td>
+<td><p>100</p></td>
+<td><p>120</p></td>
+</tr>
+<tr class="row-odd"><td><p>Portugal</p></td>
+<td><p>90</p></td>
+<td><p>80</p></td>
+</tr>
+<tr class="row-even"><td><p>France</p></td>
+<td><p>110</p></td>
+<td><p>90</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Each country has 1,000 hours of labour.</p>
+<p><strong>(a)</strong> Compute the opportunity cost of cloth (in terms of wine) for all three countries. Which has the strongest comparative advantage in cloth? In wine?</p>
+<p><strong>(b)</strong> Under autarky (50/50 split), what is world output of each good?</p>
+<p><strong>(c)</strong> Under full specialisation (each country produces only its comparative-advantage good — but with three countries and two goods, one country must split), find the allocation that maximises world output. (Hint: rank countries by opportunity cost of cloth.)</p>
+<p><strong>(d)</strong> Compute the gains from trade.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-learning-by-doing">
+<h3>Exercise 3 — Learning by Doing<a class="headerlink" href="#exercise-3-learning-by-doing" title="Link to this heading">#</a></h3>
+<p>Smith’s first reason for the benefits of specialisation is that practice improves skill. Model this with a <strong>learning curve</strong>: the time to perform a task falls with repetition.</p>
+<div class="math notranslate nohighlight">
+\[t(n) = t_0 \cdot n^{-\beta}\]</div>
+<p>where <span class="math notranslate nohighlight">\(t(n)\)</span> is the time for the <span class="math notranslate nohighlight">\(n\)</span>-th repetition, <span class="math notranslate nohighlight">\(t_0\)</span> is the time for the first attempt, and <span class="math notranslate nohighlight">\(\beta &gt; 0\)</span> is the learning rate.</p>
+<p><strong>(a)</strong> A generalist performs each of 18 tasks 30 times per day. A specialist performs 1 task 540 times per day. Using <span class="math notranslate nohighlight">\(t_0 = 5\)</span> minutes and <span class="math notranslate nohighlight">\(\beta = 0.3\)</span>, compute the average time per task for each worker.</p>
+<p><strong>(b)</strong> Plot <span class="math notranslate nohighlight">\(t(n)\)</span> for <span class="math notranslate nohighlight">\(n = 1\)</span> to <span class="math notranslate nohighlight">\(1000\)</span> repetitions. When does the learning curve flatten out?</p>
+<p><strong>(c)</strong> Compute total pins produced per day for a 10-worker team with learning effects vs a single generalist with learning effects. How does the learning curve amplify the gains from specialisation?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-iv-quiz">
+<h2>Part IV — Quiz<a class="headerlink" href="#part-iv-quiz" title="Link to this heading">#</a></h2>
+<section id="conceptual-questions">
+<h3>Conceptual Questions<a class="headerlink" href="#conceptual-questions" title="Link to this heading">#</a></h3>
+<p><strong>Q1.</strong> Smith identified three reasons why the division of labour increases productivity. Which of these is NOT one of them?</p>
+<p>(a) Workers become more skilled through repetition<br />
+(b) Workers save time by not switching between tasks<br />
+(c) Workers are paid lower wages when they specialise<br />
+(d) Specialised workers are more likely to invent improvements</p>
+<p><strong>Q2.</strong> Smith’s pin factory showed that 10 workers with division of labour could produce roughly:</p>
+<p>(a) 10 times more than 10 generalists<br />
+(b) 50 times more than 10 generalists<br />
+(c) 240 times more per worker than a generalist<br />
+(d) The same amount, but at lower cost</p>
+<p><strong>Q3.</strong> “The division of labour is limited by the extent of the market” means:</p>
+<p>(a) Markets should be regulated to prevent over-specialisation<br />
+(b) Specialisation only pays off when there are enough customers to buy the output<br />
+(c) Large markets lead to monopolies<br />
+(d) Division of labour only works in manufacturing, not agriculture</p>
+<p><strong>Q4.</strong> Comparative advantage means:</p>
+<p>(a) A country can produce a good more cheaply in absolute terms<br />
+(b) A country gives up less of another good to produce one unit of this good<br />
+(c) A country has more natural resources<br />
+(d) A country has lower wages</p>
+<p><strong>Q5.</strong> Portugal has absolute advantage in both cloth and wine, but Scotland has comparative advantage in cloth. According to Ricardo, what should happen?</p>
+<p>(a) Portugal should produce both goods and Scotland should import everything<br />
+(b) Scotland should specialise in cloth and Portugal in wine, and they should trade<br />
+(c) Neither country should trade since Portugal is better at both<br />
+(d) Scotland should adopt Portuguese technology</p>
+</section>
+<section id="computational-questions">
+<h3>Computational Questions<a class="headerlink" href="#computational-questions" title="Link to this heading">#</a></h3>
+<p><strong>Q6.</strong> If Scotland takes 100 hours to produce 1 cloth and 120 hours to produce 1 wine, the opportunity cost of 1 cloth is:</p>
+<p>(a) 100/120 = 0.833 wine<br />
+(b) 120/100 = 1.2 wine<br />
+(c) 100 wine<br />
+(d) 20 wine</p>
+<p><strong>Q7.</strong> A country with 1,000 labour hours, needing 50 hours per cloth and 100 hours per wine, can produce at most:</p>
+<p>(a) 20 cloth or 10 wine<br />
+(b) 10 cloth or 20 wine<br />
+(c) 50 cloth or 100 wine<br />
+(d) 20 cloth or 20 wine</p>
+<p><strong>Q8.</strong> The PPF (Production Possibility Frontier) is a straight line when:</p>
+<p>(a) There are increasing returns to scale<br />
+(b) The opportunity cost is constant (no diminishing returns)<br />
+(c) Both goods use the same inputs<br />
+(d) The country doesn’t trade</p>
+<p><strong>Q9.</strong> For trade to benefit both countries, the terms of trade must lie:</p>
+<p>(a) Above both countries’ opportunity costs<br />
+(b) Below both countries’ opportunity costs<br />
+(c) Between the two countries’ opportunity costs<br />
+(d) Equal to the average of their opportunity costs</p>
+<p><strong>Q10.</strong> Full specialisation with trade increases world output because:</p>
+<p>(a) Each country produces what it’s relatively best at, minimising total resource use<br />
+(b) Trade increases the total number of workers<br />
+(c) Specialisation eliminates diminishing returns<br />
+(d) Both countries adopt the same technology</p>
+</section>
+<section id="quiz-answers">
+<h3>Quiz Answers<a class="headerlink" href="#quiz-answers" title="Link to this heading">#</a></h3>
+<details>
+<summary>Click to reveal answers</summary>
+<p><strong>Q1.</strong> (c) Lower wages is not one of Smith’s reasons. His three reasons are: skill improvement through repetition, time saved by not switching tasks, and innovation by focused workers.</p>
+<p><strong>Q2.</strong> (c) Smith estimated a generalist could make about 20 pins/day, while a specialist in a 10-person team made about 4,800/day — a 240-fold increase per worker.</p>
+<p><strong>Q3.</strong> (b) You need a large enough market (enough customers) to justify the fixed costs of setting up specialised production. A village can’t support a pin factory.</p>
+<p><strong>Q4.</strong> (b) Comparative advantage is about opportunity cost — what you give up. A country has comparative advantage in the good it can produce at the lowest opportunity cost.</p>
+<p><strong>Q5.</strong> (b) Ricardo showed that even when one country has absolute advantage in everything, both gain from trade if each specialises in its comparative advantage.</p>
+<p><strong>Q6.</strong> (a) To produce 1 cloth (100 hours), Scotland forgoes 100/120 = 0.833 units of wine that could have been made with those hours.</p>
+<p><strong>Q7.</strong> (a) 1000/50 = 20 cloth, or 1000/100 = 10 wine.</p>
+<p><strong>Q8.</strong> (b) A straight-line PPF means the opportunity cost doesn’t change as you shift production — each unit of cloth always costs the same amount of wine. This happens with constant returns and a single input (labour).</p>
+<p><strong>Q9.</strong> (c) If the price is between their opportunity costs, each country gets a better deal than producing the good domestically.</p>
+<p><strong>Q10.</strong> (a) Specialisation allocates resources to their most efficient use globally, so the same total labour produces more of both goods.</p>
+</details></section>
+</section>
+<hr class="docutils" />
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Smith, A. <em>The Wealth of Nations</em> (1776), Book I, Chapters 1–3.</p></li>
+<li><p>Ricardo, D. <em>Principles of Political Economy and Taxation</em> (1817), Chapter 7.</p></li>
+<li><p>Heilbroner, R. <em>The Worldly Philosophers</em>, Chapter 3.</p></li>
+<li><p>Krugman, P. “Ricardo’s Difficult Idea” (1996) — a short essay on why people find comparative advantage so hard to accept.</p></li>
+</ul>
+<hr class="docutils" />
+<p><em>Next week: Malthus, Ricardo, and the Limits to Growth — population dynamics, diminishing returns, and the Malthusian trap.</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module_01_Invisible_Hand.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 1 — The Invisible Hand</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Module_02_Malthus_Ricardo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 2 — Malthus, Ricardo, and the Limits to Growth</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specialisation-productivity-and-the-gains-from-trade">Specialisation, Productivity, and the Gains from Trade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-the-history">Part I — The History</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-most-famous-factory-in-economics">The Most Famous Factory in Economics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-does-specialisation-work">Why Does Specialisation Work?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-pin-factories-to-nations-comparative-advantage">From Pin Factories to Nations: Comparative Advantage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edinburgh-connection">Edinburgh Connection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-the-computation">Part II — The Computation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting Up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-pin-factory">Simulating the Pin Factory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-productivity-grows-with-the-number-of-specialists">How Productivity Grows with the Number of Specialists</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-advantage-ricardo-s-great-insight">Comparative Advantage: Ricardo’s Great Insight</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-production-possibility-frontier">The Production Possibility Frontier</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-the-gains-from-trade">Computing the Gains from Trade</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terms-of-trade-splitting-the-gains">Terms of Trade: Splitting the Gains</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-exercises">Part III — Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-the-extent-of-the-market">Exercise 1 — The Extent of the Market</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-three-country-comparative-advantage">Exercise 2 — Three-Country Comparative Advantage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-learning-by-doing">Exercise 3 — Learning by Doing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-quiz">Part IV — Quiz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-questions">Conceptual Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-questions">Computational Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz-answers">Quiz Answers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Juan Zurita
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

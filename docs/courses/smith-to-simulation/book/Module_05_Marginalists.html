@@ -1,0 +1,984 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 5 — The Marginalist Revolution &#8212; From Smith to Simulation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=bcdf9603" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module_05_Marginalists';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="_static/logo.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 3 — Keynes and the Multiplier" href="Module_03_Keynes_Multiplier.html" />
+    <link rel="prev" title="Module 4 — Marx and the Machinery Question" href="Module_04_Marx.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="From Smith to Simulation - Home"/>
+    <img src="_static/logo.svg" class="logo__image only-dark pst-js-only" alt="From Smith to Simulation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I — Classical Economics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_01_Invisible_Hand.html">Module 1 — The Invisible Hand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_02_Pin_Factory.html">Module 2 — The Division of Labour and the Pin Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_02_Malthus_Ricardo.html">Module 2 — Malthus, Ricardo, and the Limits to Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_04_Marx.html">Module 4 — Marx and the Machinery Question</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II — Modern Economics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 5 — The Marginalist Revolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_03_Keynes_Multiplier.html">Module 3 — Keynes and the Multiplier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_07_Solow.html">Module 7 — Solow and the Sources of Growth</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part III — Contemporary Economics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_08_Expectations.html">Module 8 — Friedman, Lucas, and the Expectations Revolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_09_Inequality.html">Module 9 — Inequality and Heterogeneous Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_10_Edinburgh_Legacy.html">Module 10 — Edinburgh’s Legacy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="syllabus.html">From Smith to Simulation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module_05_Marginalists.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 5 — The Marginalist Revolution</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-at-the-margin-utility-optimisation-and-demand">Choosing at the Margin: Utility, Optimisation, and Demand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-the-history">Part I — The History</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-revolution-of-the-1870s">The Revolution of the 1870s</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-changed">What Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edinburgh-connection">Edinburgh Connection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-the-computation">Part II — The Computation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting Up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utility-and-diminishing-marginal-utility">Utility and Diminishing Marginal Utility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-diamond-water-paradox-resolved">The Diamond-Water Paradox Resolved</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consumer-choice-two-goods-and-a-budget">Consumer Choice: Two Goods and a Budget</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-consumer-s-problem-with-scipy-optimize-minimize">Solving the Consumer’s Problem with <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-the-demand-curve-computationally">Deriving the Demand Curve Computationally</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-exercises">Part III — Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-income-and-substitution-effects">Exercise 1 — Income and Substitution Effects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-beyond-cobb-douglas-ces-utility">Exercise 2 — Beyond Cobb-Douglas: CES Utility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-from-smith-to-the-marginalists">Exercise 3 — From Smith to the Marginalists</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-quiz">Part IV — Quiz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-questions">Conceptual Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-questions">Computational Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz-answers">Quiz Answers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-5-the-marginalist-revolution">
+<h1>Module 5 — The Marginalist Revolution<a class="headerlink" href="#module-5-the-marginalist-revolution" title="Link to this heading">#</a></h1>
+<section id="choosing-at-the-margin-utility-optimisation-and-demand">
+<h2>Choosing at the Margin: Utility, Optimisation, and Demand<a class="headerlink" href="#choosing-at-the-margin-utility-optimisation-and-demand" title="Link to this heading">#</a></h2>
+<p><strong>From Smith to Simulation: Computing the Ideas that Built Economics</strong><br />
+The University of Edinburgh · School of Economics</p>
+</section>
+<hr class="docutils" />
+<section id="part-i-the-history">
+<h2>Part I — The History<a class="headerlink" href="#part-i-the-history" title="Link to this heading">#</a></h2>
+<section id="the-revolution-of-the-1870s">
+<h3>The Revolution of the 1870s<a class="headerlink" href="#the-revolution-of-the-1870s" title="Link to this heading">#</a></h3>
+<p>In the early 1870s, three economists working independently — <strong>William Stanley Jevons</strong> in Manchester, <strong>Carl Menger</strong> in Vienna, and <strong>Léon Walras</strong> in Lausanne — arrived at the same idea almost simultaneously. They called it <strong>marginal utility</strong>, and it transformed economics from a study of classes and nations into a science of individual choice.</p>
+<p>The classical economists (Smith, Ricardo, Marx) asked: what determines the <strong>value</strong> of a good? Their answer was <strong>labour</strong>: a good is worth the labour required to produce it. This created a paradox — the famous <strong>diamond-water paradox</strong>. Water is essential for life but cheap; diamonds are useless but expensive. If value comes from labour or usefulness, why is water cheap?</p>
+<p>The marginalists’ answer: value comes not from total utility but from <strong>marginal utility</strong> — the satisfaction from one <em>additional</em> unit. Water is abundant, so the marginal glass adds little satisfaction. Diamonds are scarce, so the marginal diamond adds a lot. It’s not the first glass of water vs the first diamond; it’s the <em>last</em> glass vs the <em>last</em> diamond.</p>
+<blockquote>
+<div><p><em>“Value depends entirely upon utility… We have only to trace out carefully the natural laws of the variation of utility, as depending upon the quantity of commodity in our possession, to arrive at a satisfactory theory of exchange.”</em><br />
+— W.S. Jevons, <em>The Theory of Political Economy</em> (1871)</p>
+</div></blockquote>
+</section>
+<section id="what-changed">
+<h3>What Changed<a class="headerlink" href="#what-changed" title="Link to this heading">#</a></h3>
+<p>The Marginalist Revolution reshaped economics in three ways:</p>
+<ol class="arabic simple">
+<li><p><strong>From classes to individuals.</strong> Smith and Marx analysed workers, capitalists, and landlords as classes. The marginalists analysed individual consumers and firms making optimising decisions.</p></li>
+<li><p><strong>From labour theory to subjective value.</strong> Value became subjective — determined by individual preferences — rather than objective (embedded labour).</p></li>
+<li><p><strong>Mathematics entered economics.</strong> Jevons, Walras, and later <strong>Alfred Marshall</strong> (1842–1924) expressed economic ideas as mathematical functions, derivatives, and optimisation problems. Marshall’s <em>Principles of Economics</em> (1890) became the standard textbook for half a century and gave us the supply-and-demand diagrams still used today.</p></li>
+</ol>
+</section>
+<section id="edinburgh-connection">
+<h3>Edinburgh Connection<a class="headerlink" href="#edinburgh-connection" title="Link to this heading">#</a></h3>
+<p>Edinburgh’s intellectual tradition — with its emphasis on systematic, evidence-based inquiry — shaped the reception of marginalism in Britain. Marshall himself acknowledged debts to the Scottish philosophical tradition, and Edinburgh’s economics department adopted the new mathematical methods earlier than many British universities.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-ii-the-computation">
+<h2>Part II — The Computation<a class="headerlink" href="#part-ii-the-computation" title="Link to this heading">#</a></h2>
+<section id="setting-up">
+<h3>Setting Up<a class="headerlink" href="#setting-up" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="utility-and-diminishing-marginal-utility">
+<h3>Utility and Diminishing Marginal Utility<a class="headerlink" href="#utility-and-diminishing-marginal-utility" title="Link to this heading">#</a></h3>
+<p>A consumer gets satisfaction — <strong>utility</strong> — from consuming goods. The key insight of the marginalists is that utility increases with consumption but at a decreasing rate: the first slice of cake is heavenly; the tenth is merely okay; the twentieth might make you ill.</p>
+<p>We model this with a <strong>utility function</strong>. A common choice:</p>
+<div class="math notranslate nohighlight">
+\[u(x) = x^{0.5}\]</div>
+<p>The <strong>marginal utility</strong> is the derivative: <span class="math notranslate nohighlight">\(u'(x) = 0.5 \cdot x^{-0.5}\)</span>, which is positive but decreasing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">))</span>
+
+<span class="c1"># Total utility</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Quantity consumed&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Utility u(x)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Total Utility: Increasing but Concave&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># Marginal utility</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Quantity consumed&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Marginal utility u&#39;(x)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Marginal Utility: Positive but Falling&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is Jevons&#39;s &#39;law of diminishing marginal utility&#39;.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Each additional unit gives less satisfaction than the one before.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-diamond-water-paradox-resolved">
+<h3>The Diamond-Water Paradox Resolved<a class="headerlink" href="#the-diamond-water-paradox-resolved" title="Link to this heading">#</a></h3>
+<p>With diminishing marginal utility, the paradox dissolves. Water is abundant (high total utility but low marginal utility); diamonds are scarce (lower total utility but high marginal utility). Price reflects marginal utility, not total utility.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Same utility function for simplicity: u(x) = x^0.5</span>
+<span class="n">water_quantity</span> <span class="o">=</span> <span class="mi">100</span>   <span class="c1"># abundant</span>
+<span class="n">diamond_quantity</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># scarce</span>
+
+<span class="n">total_utility_water</span> <span class="o">=</span> <span class="n">water_quantity</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="n">total_utility_diamond</span> <span class="o">=</span> <span class="n">diamond_quantity</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="n">marginal_utility_water</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">water_quantity</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">marginal_utility_diamond</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">diamond_quantity</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== The Diamond-Water Paradox ===&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Water (quantity = </span><span class="si">{</span><span class="n">water_quantity</span><span class="si">}</span><span class="s2">):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Total utility:    </span><span class="si">{</span><span class="n">total_utility_water</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> (HIGH — water is essential)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Marginal utility: </span><span class="si">{</span><span class="n">marginal_utility_water</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> (LOW — one more glass adds little)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Diamonds (quantity = </span><span class="si">{</span><span class="n">diamond_quantity</span><span class="si">}</span><span class="s2">):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Total utility:    </span><span class="si">{</span><span class="n">total_utility_diamond</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> (low)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Marginal utility: </span><span class="si">{</span><span class="n">marginal_utility_diamond</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> (HIGH — one more diamond adds a lot)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Price reflects MARGINAL utility, not total utility.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;That&#39;s why diamonds cost more than water, even though water is more useful overall.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="consumer-choice-two-goods-and-a-budget">
+<h3>Consumer Choice: Two Goods and a Budget<a class="headerlink" href="#consumer-choice-two-goods-and-a-budget" title="Link to this heading">#</a></h3>
+<p>The marginalists’ core problem: a consumer has income <span class="math notranslate nohighlight">\(m\)</span> and must choose how much to buy of two goods (<span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>) with prices <span class="math notranslate nohighlight">\(p_1\)</span> and <span class="math notranslate nohighlight">\(p_2\)</span>. They maximise utility subject to a budget constraint:</p>
+<div class="math notranslate nohighlight">
+\[\max_{x_1, x_2} \; u(x_1, x_2) \quad \text{subject to} \quad p_1 x_1 + p_2 x_2 \leq m\]</div>
+<p>We’ll use the <strong>Cobb-Douglas utility function</strong>:</p>
+<div class="math notranslate nohighlight">
+\[u(x_1, x_2) = x_1^a \cdot x_2^{(1-a)}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> governs how much the consumer values good 1 relative to good 2.</p>
+<p>First, let’s visualise the indifference curves and the budget line.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.4</span>    <span class="c1"># preference weight on good 1</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="mi">2</span>     <span class="c1"># price of good 1</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="mi">3</span>     <span class="c1"># price of good 2</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">120</span>    <span class="c1"># income</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">utility</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x1</span><span class="o">**</span><span class="n">a</span> <span class="o">*</span> <span class="n">x2</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span>
+
+<span class="c1"># Budget line: x2 = (m - p1*x1) / p2</span>
+<span class="n">x1_budget</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">m</span><span class="o">/</span><span class="n">p1</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">x2_budget</span> <span class="o">=</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">x1_budget</span><span class="p">)</span> <span class="o">/</span> <span class="n">p2</span>
+
+<span class="c1"># Indifference curves</span>
+<span class="n">x1_grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">u_level</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">]:</span>
+    <span class="c1"># x2 = (u_level / x1^a) ^ (1/(1-a))</span>
+    <span class="n">x2_ic</span> <span class="o">=</span> <span class="p">(</span><span class="n">u_level</span> <span class="o">/</span> <span class="n">x1_grid</span><span class="o">**</span><span class="n">a</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">a</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_grid</span><span class="p">,</span> <span class="n">x2_ic</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_budget</span><span class="p">,</span> <span class="n">x2_budget</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Budget constraint&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Good 1 ($x_1$)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Good 2 ($x_2$)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Indifference Curves and Budget Constraint&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="solving-the-consumer-s-problem-with-scipy-optimize-minimize">
+<h3>Solving the Consumer’s Problem with <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code><a class="headerlink" href="#solving-the-consumer-s-problem-with-scipy-optimize-minimize" title="Link to this heading">#</a></h3>
+<p>We want to find the bundle <span class="math notranslate nohighlight">\((x_1^*, x_2^*)\)</span> that maximises utility on the budget line. Since <code class="docutils literal notranslate"><span class="pre">minimize</span></code> minimises, we minimise <strong>negative</strong> utility.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">neg_utility</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Negative utility (because we use minimize, not maximize).&quot;&quot;&quot;</span>
+    <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">if</span> <span class="n">x1</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x2</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1e10</span>  <span class="c1"># penalty for non-positive consumption</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">utility</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+
+<span class="c1"># Budget constraint: p1*x1 + p2*x2 &lt;= m</span>
+<span class="n">budget_constraint</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ineq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">m</span> <span class="o">-</span> <span class="n">p1</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">p2</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+
+<span class="c1"># Bounds: both goods must be positive</span>
+<span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">0.01</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="kc">None</span><span class="p">)]</span>
+
+<span class="c1"># Solve</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">neg_utility</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;SLSQP&#39;</span><span class="p">,</span>
+                  <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">budget_constraint</span><span class="p">)</span>
+
+<span class="n">x1_star</span><span class="p">,</span> <span class="n">x2_star</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>
+<span class="n">u_star</span> <span class="o">=</span> <span class="n">utility</span><span class="p">(</span><span class="n">x1_star</span><span class="p">,</span> <span class="n">x2_star</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Optimal bundle:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  x1* = </span><span class="si">{</span><span class="n">x1_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> (spending £</span><span class="si">{</span><span class="n">p1</span><span class="o">*</span><span class="n">x1_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  x2* = </span><span class="si">{</span><span class="n">x2_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> (spending £</span><span class="si">{</span><span class="n">p2</span><span class="o">*</span><span class="n">x2_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Total spending: £</span><span class="si">{</span><span class="n">p1</span><span class="o">*</span><span class="n">x1_star</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span><span class="o">*</span><span class="n">x2_star</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> (budget = £</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Utility: </span><span class="si">{</span><span class="n">u_star</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Analytical solution for Cobb-Douglas: x1* = a*m/p1, x2* = (1-a)*m/p2</span>
+<span class="n">x1_analytical</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">m</span> <span class="o">/</span> <span class="n">p1</span>
+<span class="n">x2_analytical</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">m</span> <span class="o">/</span> <span class="n">p2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Analytical solution: x1* = </span><span class="si">{</span><span class="n">x1_analytical</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, x2* = </span><span class="si">{</span><span class="n">x2_analytical</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Match: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">([</span><span class="n">x1_star</span><span class="p">,</span><span class="w"> </span><span class="n">x2_star</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">x1_analytical</span><span class="p">,</span><span class="w"> </span><span class="n">x2_analytical</span><span class="p">],</span><span class="w"> </span><span class="n">rtol</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualise the solution</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">u_level</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">u_star</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">]:</span>
+    <span class="n">x2_ic</span> <span class="o">=</span> <span class="p">(</span><span class="n">u_level</span> <span class="o">/</span> <span class="n">x1_grid</span><span class="o">**</span><span class="n">a</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">a</span><span class="p">))</span>
+    <span class="n">alpha_val</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">u_level</span><span class="p">,</span> <span class="n">u_star</span><span class="p">)</span> <span class="k">else</span> <span class="mf">0.3</span>
+    <span class="n">lw</span> <span class="o">=</span> <span class="mf">2.5</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">u_level</span><span class="p">,</span> <span class="n">u_star</span><span class="p">)</span> <span class="k">else</span> <span class="mi">1</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_grid</span><span class="p">,</span> <span class="n">x2_ic</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha_val</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="n">lw</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_budget</span><span class="p">,</span> <span class="n">x2_budget</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Budget constraint&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_star</span><span class="p">,</span> <span class="n">x2_star</span><span class="p">,</span> <span class="s1">&#39;ko&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Optimum</span><span class="se">\n</span><span class="s1">(</span><span class="si">{</span><span class="n">x1_star</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">x2_star</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">x1_star</span><span class="p">,</span> <span class="n">x2_star</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">x1_star</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">x2_star</span> <span class="o">+</span> <span class="mi">5</span><span class="p">),</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">),</span>
+            <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round,pad=0.3&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightyellow&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Good 1 ($x_1$)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Good 2 ($x_2$)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Consumer Optimisation: Highest Indifference Curve on the Budget Line&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="deriving-the-demand-curve-computationally">
+<h3>Deriving the Demand Curve Computationally<a class="headerlink" href="#deriving-the-demand-curve-computationally" title="Link to this heading">#</a></h3>
+<p>Marshall’s great achievement was deriving the <strong>demand curve</strong> from the theory of consumer choice. As the price of good 1 rises, the consumer buys less of it. We can trace this out by solving the optimisation problem at many different prices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Vary p1 and compute optimal x1 at each price</span>
+<span class="n">p1_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">x1_demand</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">p1_val</span> <span class="ow">in</span> <span class="n">p1_range</span><span class="p">:</span>
+    <span class="n">constraint</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;ineq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p1_val</span><span class="p">:</span> <span class="n">m</span> <span class="o">-</span> <span class="n">p</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">p2</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">neg_utility</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;SLSQP&#39;</span><span class="p">,</span>
+                   <span class="n">bounds</span><span class="o">=</span><span class="p">[(</span><span class="mf">0.01</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="kc">None</span><span class="p">)],</span>
+                   <span class="n">constraints</span><span class="o">=</span><span class="n">constraint</span><span class="p">)</span>
+    <span class="n">x1_demand</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">x1_demand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x1_demand</span><span class="p">)</span>
+
+<span class="c1"># Also compute analytical demand: x1* = a*m/p1</span>
+<span class="n">x1_analytical_demand</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">m</span> <span class="o">/</span> <span class="n">p1_range</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_demand</span><span class="p">,</span> <span class="n">p1_range</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Numerical (scipy)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1_analytical_demand</span><span class="p">,</span> <span class="n">p1_range</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Analytical&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Quantity demanded ($x_1$)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Price ($p_1$)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;The Demand Curve — Derived from Utility Maximisation&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The demand curve slopes downward — exactly as Marshall drew it in 1890.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;But now we&#39;ve DERIVED it from individual optimisation, not assumed it.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-iii-exercises">
+<h2>Part III — Exercises<a class="headerlink" href="#part-iii-exercises" title="Link to this heading">#</a></h2>
+<section id="exercise-1-income-and-substitution-effects">
+<h3>Exercise 1 — Income and Substitution Effects<a class="headerlink" href="#exercise-1-income-and-substitution-effects" title="Link to this heading">#</a></h3>
+<p>When the price of good 1 rises, two things happen: (1) the consumer is effectively poorer (income effect), and (2) good 1 is now relatively more expensive (substitution effect).</p>
+<p>Using <span class="math notranslate nohighlight">\(a = 0.4\)</span>, <span class="math notranslate nohighlight">\(p_2 = 3\)</span>, <span class="math notranslate nohighlight">\(m = 120\)</span>:</p>
+<p><strong>(a)</strong> Compute the optimal <span class="math notranslate nohighlight">\(x_1^*\)</span> at <span class="math notranslate nohighlight">\(p_1 = 2\)</span> and at <span class="math notranslate nohighlight">\(p_1 = 4\)</span>. What is the total change <span class="math notranslate nohighlight">\(\Delta x_1\)</span>?</p>
+<p><strong>(b)</strong> To isolate the substitution effect, compute the “compensated” demand: at the new price <span class="math notranslate nohighlight">\(p_1 = 4\)</span>, how much income would the consumer need to achieve the <em>same</em> utility as before? (Use <code class="docutils literal notranslate"><span class="pre">minimize</span></code> to find the minimum expenditure that achieves the old utility level.) Then compute <span class="math notranslate nohighlight">\(x_1\)</span> at the new price with this compensated income.</p>
+<p><strong>(c)</strong> The substitution effect is the change in <span class="math notranslate nohighlight">\(x_1\)</span> from (a) to the compensated bundle. The income effect is the rest. Compute both and verify they sum to the total change.</p>
+<p><strong>(d)</strong> For a normal good, both effects reduce <span class="math notranslate nohighlight">\(x_1\)</span> when <span class="math notranslate nohighlight">\(p_1\)</span> rises. Verify this is the case here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-beyond-cobb-douglas-ces-utility">
+<h3>Exercise 2 — Beyond Cobb-Douglas: CES Utility<a class="headerlink" href="#exercise-2-beyond-cobb-douglas-ces-utility" title="Link to this heading">#</a></h3>
+<p>The CES utility function allows different degrees of substitutability:</p>
+<div class="math notranslate nohighlight">
+\[u(x_1, x_2) = \left( a \cdot x_1^\rho + (1-a) \cdot x_2^\rho \right)^{1/\rho}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho = (\sigma - 1)/\sigma\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> is the elasticity of substitution.</p>
+<p><strong>(a)</strong> Define a CES utility function. Using <span class="math notranslate nohighlight">\(a = 0.5\)</span>, <span class="math notranslate nohighlight">\(p_1 = 2\)</span>, <span class="math notranslate nohighlight">\(p_2 = 3\)</span>, <span class="math notranslate nohighlight">\(m = 120\)</span>, solve the consumer’s problem for <span class="math notranslate nohighlight">\(\sigma = 0.5, 1, 2, 5\)</span>. How does the optimal bundle change?</p>
+<p><strong>(b)</strong> Derive the demand curve for good 1 at each <span class="math notranslate nohighlight">\(\sigma\)</span> (vary <span class="math notranslate nohighlight">\(p_1\)</span> from 0.5 to 8). Plot all four demand curves on one graph. Which value of <span class="math notranslate nohighlight">\(\sigma\)</span> gives the most elastic (responsive) demand?</p>
+<p><strong>(c)</strong> What happens as <span class="math notranslate nohighlight">\(\sigma \to \infty\)</span>? (Hint: the goods become perfect substitutes.) What does the demand curve look like?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-from-smith-to-the-marginalists">
+<h3>Exercise 3 — From Smith to the Marginalists<a class="headerlink" href="#exercise-3-from-smith-to-the-marginalists" title="Link to this heading">#</a></h3>
+<p>In Module 1, we found market equilibrium by setting supply equal to demand. Now we can <em>derive</em> the demand curve from first principles.</p>
+<p><strong>(a)</strong> Suppose 100 identical consumers each have income <span class="math notranslate nohighlight">\(m = 120\)</span> and Cobb-Douglas utility with <span class="math notranslate nohighlight">\(a = 0.4\)</span> over two goods. Compute the aggregate demand curve for good 1: for each <span class="math notranslate nohighlight">\(p_1\)</span>, total demand <span class="math notranslate nohighlight">\(= 100 \times x_1^*(p_1)\)</span>.</p>
+<p><strong>(b)</strong> Define a linear supply curve: <span class="math notranslate nohighlight">\(Q^S(p_1) = 500 + 200 p_1\)</span>.</p>
+<p><strong>(c)</strong> Use <code class="docutils literal notranslate"><span class="pre">fsolve</span></code> to find the market equilibrium price and quantity. Plot the supply and demand curves.</p>
+<p><strong>(d)</strong> In 2–3 sentences, explain how the marginalist approach provides <em>microfoundations</em> for the supply-and-demand model Smith described verbally.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-iv-quiz">
+<h2>Part IV — Quiz<a class="headerlink" href="#part-iv-quiz" title="Link to this heading">#</a></h2>
+<section id="conceptual-questions">
+<h3>Conceptual Questions<a class="headerlink" href="#conceptual-questions" title="Link to this heading">#</a></h3>
+<p><strong>Q1.</strong> The diamond-water paradox is resolved by recognising that price reflects:</p>
+<p>(a) Total utility<br />
+(b) Marginal utility<br />
+(c) Labour content<br />
+(d) Production cost</p>
+<p><strong>Q2.</strong> The Marginalist Revolution of the 1870s shifted economics from:</p>
+<p>(a) Trade theory to monetary theory<br />
+(b) Class-based analysis to individual optimisation<br />
+(c) Mathematics to verbal reasoning<br />
+(d) Microeconomics to macroeconomics</p>
+<p><strong>Q3.</strong> Diminishing marginal utility means:</p>
+<p>(a) Total utility decreases with consumption<br />
+(b) Each additional unit provides less additional satisfaction than the last<br />
+(c) Utility is negative beyond some point<br />
+(d) Consumers always prefer less to more</p>
+<p><strong>Q4.</strong> Alfred Marshall’s main contribution was:</p>
+<p>(a) Inventing calculus<br />
+(b) Synthesising marginalist theory into the supply-and-demand framework<br />
+(c) Disproving comparative advantage<br />
+(d) Founding the London School of Economics</p>
+<p><strong>Q5.</strong> The consumer’s optimal bundle is where:</p>
+<p>(a) They spend all income on the cheaper good<br />
+(b) The highest indifference curve touches the budget constraint<br />
+(c) Marginal utility is zero<br />
+(d) The budget constraint crosses the origin</p>
+</section>
+<section id="computational-questions">
+<h3>Computational Questions<a class="headerlink" href="#computational-questions" title="Link to this heading">#</a></h3>
+<p><strong>Q6.</strong> For Cobb-Douglas utility <span class="math notranslate nohighlight">\(u = x_1^{0.4} x_2^{0.6}\)</span> with prices <span class="math notranslate nohighlight">\(p_1 = 2\)</span>, <span class="math notranslate nohighlight">\(p_2 = 3\)</span>, and income <span class="math notranslate nohighlight">\(m = 120\)</span>, the optimal <span class="math notranslate nohighlight">\(x_1^*\)</span> is:</p>
+<p>(a) <span class="math notranslate nohighlight">\(0.4 \times 120 / 2 = 24\)</span><br />
+(b) <span class="math notranslate nohighlight">\(0.6 \times 120 / 2 = 36\)</span><br />
+(c) <span class="math notranslate nohighlight">\(120 / 2 = 60\)</span><br />
+(d) <span class="math notranslate nohighlight">\(0.4 \times 120 / 3 = 16\)</span></p>
+<p><strong>Q7.</strong> To maximise utility using <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code>, we minimise:</p>
+<p>(a) Utility directly<br />
+(b) Negative utility<br />
+(c) The budget constraint<br />
+(d) Price times quantity</p>
+<p><strong>Q8.</strong> A demand curve derived from utility maximisation slopes downward because:</p>
+<p>(a) Firms produce less at higher prices<br />
+(b) Higher prices reduce the consumer’s purchasing power and make the good relatively more expensive<br />
+(c) Government regulations limit demand<br />
+(d) Utility functions are always linear</p>
+<p><strong>Q9.</strong> In a constrained optimisation, the <code class="docutils literal notranslate"><span class="pre">SLSQP</span></code> method is used because:</p>
+<p>(a) It is the fastest method<br />
+(b) It handles both bounds and equality/inequality constraints<br />
+(c) It doesn’t require a starting guess<br />
+(d) It only works with two variables</p>
+<p><strong>Q10.</strong> For Cobb-Douglas utility, the share of income spent on good 1 is:</p>
+<p>(a) Always 50%<br />
+(b) Equal to the exponent <span class="math notranslate nohighlight">\(a\)</span><br />
+(c) Depends on the price ratio<br />
+(d) Equal to 1 minus the price ratio</p>
+</section>
+<section id="quiz-answers">
+<h3>Quiz Answers<a class="headerlink" href="#quiz-answers" title="Link to this heading">#</a></h3>
+<details>
+<summary>Click to reveal answers</summary>
+<p><strong>Q1.</strong> (b) Price reflects marginal utility, not total utility. Water has high total but low marginal utility (it’s abundant); diamonds have low total but high marginal utility (they’re scarce).</p>
+<p><strong>Q2.</strong> (b) The marginalists replaced the classical focus on classes (workers, capitalists, landlords) with a framework based on individual consumers and firms making optimising decisions.</p>
+<p><strong>Q3.</strong> (b) Diminishing marginal utility means each successive unit consumed adds less to total satisfaction — the 10th apple brings less joy than the 1st.</p>
+<p><strong>Q4.</strong> (b) Marshall’s <em>Principles of Economics</em> (1890) synthesised the marginalists’ ideas into the coherent supply-and-demand framework still used today.</p>
+<p><strong>Q5.</strong> (b) The consumer reaches the highest attainable indifference curve (utility level) that still touches the budget constraint — the tangency point.</p>
+<p><strong>Q6.</strong> (a) For Cobb-Douglas, <span class="math notranslate nohighlight">\(x_1^* = a \cdot m / p_1 = 0.4 \times 120 / 2 = 24\)</span>.</p>
+<p><strong>Q7.</strong> (b) Since <code class="docutils literal notranslate"><span class="pre">minimize</span></code> finds minima, we minimise negative utility, which is equivalent to maximising utility.</p>
+<p><strong>Q8.</strong> (b) A higher <span class="math notranslate nohighlight">\(p_1\)</span> has both an income effect (consumer is poorer) and a substitution effect (good 1 is relatively more expensive), both reducing demand for a normal good.</p>
+<p><strong>Q9.</strong> (b) SLSQP (Sequential Least-Squares Quadratic Programming) handles bounds on variables and general inequality/equality constraints, making it suitable for budget-constrained optimisation.</p>
+<p><strong>Q10.</strong> (b) A remarkable property of Cobb-Douglas: the consumer always spends exactly fraction <span class="math notranslate nohighlight">\(a\)</span> of income on good 1, regardless of prices. This makes the demand function <span class="math notranslate nohighlight">\(x_1^* = a m / p_1\)</span>.</p>
+</details></section>
+</section>
+<hr class="docutils" />
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Jevons, W.S. <em>The Theory of Political Economy</em> (1871), Chapter 3.</p></li>
+<li><p>Backhouse, R. <em>The Penguin History of Economics</em>, Chapter 7 (“The Marginalist Revolution”).</p></li>
+<li><p>Marshall, A. <em>Principles of Economics</em> (1890), Book III (on demand and utility).</p></li>
+<li><p>Mas-Colell, A., Whinston, M., &amp; Green, J. <em>Microeconomic Theory</em>, Chapter 3 (for the mathematically adventurous).</p></li>
+</ul>
+<hr class="docutils" />
+<p><em>Next week: Keynes and the Great Depression — why the marginalists’ beautiful model of rational individuals couldn’t explain mass unemployment.</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Module_04_Marx.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 4 — Marx and the Machinery Question</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Module_03_Keynes_Multiplier.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 3 — Keynes and the Multiplier</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-at-the-margin-utility-optimisation-and-demand">Choosing at the Margin: Utility, Optimisation, and Demand</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-the-history">Part I — The History</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-revolution-of-the-1870s">The Revolution of the 1870s</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-changed">What Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edinburgh-connection">Edinburgh Connection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-the-computation">Part II — The Computation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting Up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utility-and-diminishing-marginal-utility">Utility and Diminishing Marginal Utility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-diamond-water-paradox-resolved">The Diamond-Water Paradox Resolved</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consumer-choice-two-goods-and-a-budget">Consumer Choice: Two Goods and a Budget</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-consumer-s-problem-with-scipy-optimize-minimize">Solving the Consumer’s Problem with <code class="docutils literal notranslate"><span class="pre">scipy.optimize.minimize</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deriving-the-demand-curve-computationally">Deriving the Demand Curve Computationally</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-exercises">Part III — Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-income-and-substitution-effects">Exercise 1 — Income and Substitution Effects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-beyond-cobb-douglas-ces-utility">Exercise 2 — Beyond Cobb-Douglas: CES Utility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-from-smith-to-the-marginalists">Exercise 3 — From Smith to the Marginalists</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-quiz">Part IV — Quiz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-questions">Conceptual Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-questions">Computational Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz-answers">Quiz Answers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Juan Zurita
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

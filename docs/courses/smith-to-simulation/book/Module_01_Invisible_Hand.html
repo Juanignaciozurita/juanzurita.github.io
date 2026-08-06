@@ -1,0 +1,1102 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Module 1 — The Invisible Hand &#8212; From Smith to Simulation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=bcdf9603" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Module_01_Invisible_Hand';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="_static/logo.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module 2 — The Division of Labour and the Pin Factory" href="Module_02_Pin_Factory.html" />
+    <link rel="prev" title="From Smith to Simulation" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.svg" class="logo__image only-light" alt="From Smith to Simulation - Home"/>
+    <img src="_static/logo.svg" class="logo__image only-dark pst-js-only" alt="From Smith to Simulation - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I — Classical Economics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Module 1 — The Invisible Hand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_02_Pin_Factory.html">Module 2 — The Division of Labour and the Pin Factory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_02_Malthus_Ricardo.html">Module 2 — Malthus, Ricardo, and the Limits to Growth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_04_Marx.html">Module 4 — Marx and the Machinery Question</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II — Modern Economics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_05_Marginalists.html">Module 5 — The Marginalist Revolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_03_Keynes_Multiplier.html">Module 3 — Keynes and the Multiplier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_07_Solow.html">Module 7 — Solow and the Sources of Growth</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part III — Contemporary Economics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Module_08_Expectations.html">Module 8 — Friedman, Lucas, and the Expectations Revolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_09_Inequality.html">Module 9 — Inequality and Heterogeneous Agents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Module_10_Edinburgh_Legacy.html">Module 10 — Edinburgh’s Legacy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="syllabus.html">From Smith to Simulation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Module_01_Invisible_Hand.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Module 1 — The Invisible Hand</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adam-smith-and-market-equilibrium">Adam Smith and Market Equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-the-history">Part I — The History</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edinburgh-1776">Edinburgh, 1776</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-world-smith-lived-in">The World Smith Lived In</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-scottish-enlightenment">The Scottish Enlightenment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-markets-work-supply-and-demand">How Markets Work: Supply and Demand</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-the-computation">Part II — The Computation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting Up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supply-and-demand-as-functions">Supply and Demand as Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-market">Plotting the Market</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#excess-demand">Excess Demand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-equilibrium-with-fsolve">Finding Equilibrium with <code class="docutils literal notranslate"><span class="pre">fsolve</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-the-government-intervenes-price-floors">What Happens When the Government Intervenes? Price Floors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-nonlinear-market-why-we-need-computers">A Nonlinear Market: Why We Need Computers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-invisible-hand-convergence-to-equilibrium">Simulating the Invisible Hand: Convergence to Equilibrium</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-exercises">Part III — Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-a-tax-on-oats">Exercise 1 — A Tax on Oats</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-the-corn-laws">Exercise 2 — The Corn Laws</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-does-the-starting-guess-matter">Exercise 3 — Does the Starting Guess Matter?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-quiz">Part IV — Quiz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-questions">Conceptual Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-questions">Computational Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz-answers">Quiz Answers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="module-1-the-invisible-hand">
+<h1>Module 1 — The Invisible Hand<a class="headerlink" href="#module-1-the-invisible-hand" title="Link to this heading">#</a></h1>
+<section id="adam-smith-and-market-equilibrium">
+<h2>Adam Smith and Market Equilibrium<a class="headerlink" href="#adam-smith-and-market-equilibrium" title="Link to this heading">#</a></h2>
+<p><strong>From Smith to Simulation: Computing the Ideas that Built Economics</strong><br />
+The University of Edinburgh · School of Economics</p>
+</section>
+<hr class="docutils" />
+<section id="part-i-the-history">
+<h2>Part I — The History<a class="headerlink" href="#part-i-the-history" title="Link to this heading">#</a></h2>
+<section id="edinburgh-1776">
+<h3>Edinburgh, 1776<a class="headerlink" href="#edinburgh-1776" title="Link to this heading">#</a></h3>
+<p>In March 1776, a retired professor of moral philosophy published a book in London. He had spent ten years writing it — mostly in his mother’s house in Kirkcaldy, a small fishing town across the Firth of Forth from Edinburgh. The book was called <em>An Inquiry into the Nature and Causes of the Wealth of Nations</em>, and it changed everything.</p>
+<p>The professor was <strong>Adam Smith</strong> (1723–1790), and the book we now call <em>The Wealth of Nations</em> is the founding text of modern economics.</p>
+</section>
+<section id="the-world-smith-lived-in">
+<h3>The World Smith Lived In<a class="headerlink" href="#the-world-smith-lived-in" title="Link to this heading">#</a></h3>
+<p>To understand what Smith was doing, you need to understand what he was arguing <em>against</em>. In 1776, most European governments practised <strong>mercantilism</strong> — the belief that national wealth meant hoarding gold and silver. Governments set tariffs, granted monopolies, banned exports of raw materials, and micro-managed trade. The economy was something to be <em>directed</em> from above.</p>
+<p>Smith’s radical claim was that this was not only unnecessary but counterproductive. He argued that when individuals are left to pursue their own self-interest in competitive markets, they end up — almost by accident — producing outcomes that benefit society as a whole.</p>
+<blockquote>
+<div><p><em>“It is not from the benevolence of the butcher, the brewer, or the baker that we expect our dinner, but from their regard to their own interest.”</em><br />
+— Adam Smith, <em>The Wealth of Nations</em>, Book I, Chapter 2</p>
+</div></blockquote>
+<p>This is the idea of the <strong>invisible hand</strong>: no one plans the economy, yet bread gets baked, shoes get made, and goods reach the people who want them — all through the decentralised mechanism of prices and markets.</p>
+</section>
+<section id="the-scottish-enlightenment">
+<h3>The Scottish Enlightenment<a class="headerlink" href="#the-scottish-enlightenment" title="Link to this heading">#</a></h3>
+<p>Smith was not working in isolation. He was part of the <strong>Scottish Enlightenment</strong>, one of the most extraordinary periods of intellectual creativity in European history. In 18th-century Edinburgh, Smith’s circle included:</p>
+<ul class="simple">
+<li><p><strong>David Hume</strong> — philosopher, historian, and Smith’s closest friend. Hume’s radical empiricism (“we can only know what we observe”) shaped Smith’s method.</p></li>
+<li><p><strong>Joseph Black</strong> — chemist who discovered latent heat, right here at the University of Edinburgh.</p></li>
+<li><p><strong>James Hutton</strong> — geologist who realised the Earth was unimaginably old.</p></li>
+<li><p><strong>Adam Ferguson</strong> — philosopher who coined the phrase “civil society.”</p></li>
+</ul>
+<p>What these thinkers shared was a commitment to understanding the world through careful observation and systematic reasoning — not through appeals to authority or tradition. Smith applied this empirical method to the economy: he walked through factories, studied trade records, and talked to merchants. The pin factory that opens <em>The Wealth of Nations</em> (which we’ll explore in Week 2) was a real place he visited.</p>
+<p><strong>Edinburgh connection.</strong> Smith attended the University of Edinburgh before going to Oxford (which he found vastly inferior — he said the professors at Oxford had “given up altogether even the pretence of teaching”). He later returned to Edinburgh and lived the last years of his life at Panmure House on the Canongate, just off the Royal Mile. You can still visit it today.</p>
+</section>
+<section id="how-markets-work-supply-and-demand">
+<h3>How Markets Work: Supply and Demand<a class="headerlink" href="#how-markets-work-supply-and-demand" title="Link to this heading">#</a></h3>
+<p>Smith didn’t use supply and demand curves — those came later, with Alfred Marshall in the 1890s. But the <em>logic</em> is already in Smith’s writing. He distinguished between:</p>
+<ul class="simple">
+<li><p>The <strong>natural price</strong> — what a good costs to produce (including wages, rent, and profit at their “ordinary” rates).</p></li>
+<li><p>The <strong>market price</strong> — what the good actually sells for, determined by the balance of supply and demand.</p></li>
+</ul>
+<p>When the market price is above the natural price, sellers earn extra profits, which attracts new sellers into the market, which increases supply, which pushes the price back down. When the market price is below the natural price, sellers leave, supply falls, and the price rises. The market gravitates toward the natural price — without anyone directing it.</p>
+<blockquote>
+<div><p><em>“The natural price, therefore, is, as it were, the central price, to which the prices of all commodities are continually gravitating.”</em><br />
+— Adam Smith, <em>The Wealth of Nations</em>, Book I, Chapter 7</p>
+</div></blockquote>
+<p>This is the invisible hand at work. And in this module, we are going to <em>compute</em> it.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-ii-the-computation">
+<h2>Part II — The Computation<a class="headerlink" href="#part-ii-the-computation" title="Link to this heading">#</a></h2>
+<section id="setting-up">
+<h3>Setting Up<a class="headerlink" href="#setting-up" title="Link to this heading">#</a></h3>
+<p>We need two Python libraries: <code class="docutils literal notranslate"><span class="pre">numpy</span></code> for numerical work and <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> for plotting. We’ll also use <code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code> to find equilibria numerically — the computational equivalent of Smith’s “gravitating” market price.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">fsolve</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="supply-and-demand-as-functions">
+<h3>Supply and Demand as Functions<a class="headerlink" href="#supply-and-demand-as-functions" title="Link to this heading">#</a></h3>
+<p>Let’s start with the simplest possible model of a market — say, the market for oats in 18th-century Edinburgh.</p>
+<p><strong>Demand</strong> tells us how much buyers want at each price. When the price is high, fewer people buy; when the price is low, demand rises. We’ll model this as a straight line:</p>
+<div class="math notranslate nohighlight">
+\[Q^D(P) = a - bP\]</div>
+<p><strong>Supply</strong> tells us how much sellers are willing to produce. When the price is high, it’s worth producing more; when the price is low, fewer sellers bother. Again, a straight line:</p>
+<div class="math notranslate nohighlight">
+\[Q^S(P) = c + dP\]</div>
+<p>Here <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(d\)</span> are positive parameters. Let’s define these in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters for Edinburgh&#39;s oat market</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">200</span>    <span class="c1"># maximum demand (bushels per week) when price is zero</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>      <span class="c1"># how much demand falls per shilling increase in price</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">20</span>     <span class="c1"># minimum supply</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">3</span>      <span class="c1"># how much supply rises per shilling increase in price</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demand</span><span class="p">(</span><span class="n">P</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Quantity demanded at price P.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span> <span class="o">*</span> <span class="n">P</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">supply</span><span class="p">(</span><span class="n">P</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Quantity supplied at price P.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">c</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="n">P</span>
+
+<span class="c1"># Test: at a price of 20 shillings, how much is demanded and supplied?</span>
+<span class="n">P_test</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;At P = </span><span class="si">{</span><span class="n">P_test</span><span class="si">}</span><span class="s2"> shillings:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Demand = </span><span class="si">{</span><span class="n">demand</span><span class="p">(</span><span class="n">P_test</span><span class="p">)</span><span class="si">}</span><span class="s2"> bushels&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Supply = </span><span class="si">{</span><span class="n">supply</span><span class="p">(</span><span class="n">P_test</span><span class="p">)</span><span class="si">}</span><span class="s2"> bushels&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting-the-market">
+<h3>Plotting the Market<a class="headerlink" href="#plotting-the-market" title="Link to this heading">#</a></h3>
+<p>Economists plot supply and demand with price on the vertical axis and quantity on the horizontal axis (a tradition that goes back to Marshall — and which confuses every student, since we’re treating price as the independent variable but plotting it on the y-axis). Let’s follow convention:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">P_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">demand</span><span class="p">(</span><span class="n">P_range</span><span class="p">),</span> <span class="n">P_range</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Demand&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">supply</span><span class="p">(</span><span class="n">P_range</span><span class="p">),</span> <span class="n">P_range</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Supply&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Quantity (bushels per week)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Price (shillings)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Edinburgh&#39;s Oat Market, c. 1770&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">220</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The curves cross — that’s where supply equals demand. That crossing point is the <strong>market equilibrium</strong>, and finding it is our computational task.</p>
+</section>
+<section id="excess-demand">
+<h3>Excess Demand<a class="headerlink" href="#excess-demand" title="Link to this heading">#</a></h3>
+<p>The key idea is <strong>excess demand</strong>: the gap between what buyers want and what sellers offer at a given price.</p>
+<div class="math notranslate nohighlight">
+\[ED(P) = Q^D(P) - Q^S(P)\]</div>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(ED(P) &gt; 0\)</span>: there’s a shortage — buyers want more than sellers offer. Prices tend to rise.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(ED(P) &lt; 0\)</span>: there’s a surplus — sellers offer more than buyers want. Prices tend to fall.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(ED(P) = 0\)</span>: the market is in equilibrium.</p></li>
+</ul>
+<p>This is exactly Smith’s gravitational logic, expressed as a function whose <strong>root</strong> gives us the equilibrium price.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">excess_demand</span><span class="p">(</span><span class="n">P</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Excess demand: positive means shortage, negative means surplus.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">demand</span><span class="p">(</span><span class="n">P</span><span class="p">)</span> <span class="o">-</span> <span class="n">supply</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+
+<span class="c1"># Plot excess demand</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">P_range</span><span class="p">,</span> <span class="n">excess_demand</span><span class="p">(</span><span class="n">P_range</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkgreen&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">P_range</span><span class="p">,</span> <span class="n">excess_demand</span><span class="p">(</span><span class="n">P_range</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">where</span><span class="o">=</span><span class="n">excess_demand</span><span class="p">(</span><span class="n">P_range</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Shortage&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">P_range</span><span class="p">,</span> <span class="n">excess_demand</span><span class="p">(</span><span class="n">P_range</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="n">where</span><span class="o">=</span><span class="n">excess_demand</span><span class="p">(</span><span class="n">P_range</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Surplus&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Price (shillings)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Excess demand (bushels)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Excess Demand Function&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="finding-equilibrium-with-fsolve">
+<h3>Finding Equilibrium with <code class="docutils literal notranslate"><span class="pre">fsolve</span></code><a class="headerlink" href="#finding-equilibrium-with-fsolve" title="Link to this heading">#</a></h3>
+<p>For this simple linear model, we could solve by hand:</p>
+<div class="math notranslate nohighlight">
+\[a - bP = c + dP \implies P^* = \frac{a - c}{b + d}\]</div>
+<p>But in more complex models — with nonlinear demand, multiple goods, taxes — an analytical solution may not exist. So we’ll use a <strong>numerical root-finder</strong>: <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fsolve</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">fsolve</span></code> takes a function and a starting guess, and finds a value where the function equals zero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Numerical solution</span>
+<span class="n">P_star</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">excess_demand</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">10</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># x0=10 is our initial guess</span>
+<span class="n">Q_star</span> <span class="o">=</span> <span class="n">demand</span><span class="p">(</span><span class="n">P_star</span><span class="p">)</span>
+
+<span class="c1"># Analytical solution for comparison</span>
+<span class="n">P_analytical</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span>
+<span class="n">Q_analytical</span> <span class="o">=</span> <span class="n">demand</span><span class="p">(</span><span class="n">P_analytical</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Numerical solution:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  P* = </span><span class="si">{</span><span class="n">P_star</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> shillings&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Q* = </span><span class="si">{</span><span class="n">Q_star</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> bushels&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Analytical solution:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  P* = </span><span class="si">{</span><span class="n">P_analytical</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> shillings&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Q* = </span><span class="si">{</span><span class="n">Q_analytical</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> bushels&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Difference: </span><span class="si">{</span><span class="nb">abs</span><span class="p">(</span><span class="n">P_star</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">P_analytical</span><span class="p">)</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The numerical solution matches the analytical one (to machine precision). Now let’s visualise it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">demand</span><span class="p">(</span><span class="n">P_range</span><span class="p">),</span> <span class="n">P_range</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Demand&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">supply</span><span class="p">(</span><span class="n">P_range</span><span class="p">),</span> <span class="n">P_range</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Supply&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q_star</span><span class="p">,</span> <span class="n">P_star</span><span class="p">,</span> <span class="s1">&#39;ko&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Equilibrium</span><span class="se">\n</span><span class="s1">P* = </span><span class="si">{</span><span class="n">P_star</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">, Q* = </span><span class="si">{</span><span class="n">Q_star</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">Q_star</span><span class="p">,</span> <span class="n">P_star</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Q_star</span> <span class="o">+</span> <span class="mi">30</span><span class="p">,</span> <span class="n">P_star</span> <span class="o">+</span> <span class="mi">8</span><span class="p">),</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">),</span>
+            <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round,pad=0.3&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightyellow&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Quantity (bushels per week)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Price (shillings)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Smith&#39;s Invisible Hand: the Market Finds Equilibrium&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">220</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-happens-when-the-government-intervenes-price-floors">
+<h3>What Happens When the Government Intervenes? Price Floors<a class="headerlink" href="#what-happens-when-the-government-intervenes-price-floors" title="Link to this heading">#</a></h3>
+<p>Smith was deeply sceptical of government interference in markets. Let’s see what happens when Edinburgh’s town council sets a <strong>price floor</strong> — a minimum legal price — for oats, perhaps to protect farmers.</p>
+<p>If the floor is set <em>above</em> the equilibrium price, it creates a surplus: more is supplied than demanded.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">P_floor</span> <span class="o">=</span> <span class="mi">35</span>  <span class="c1"># price floor at 35 shillings (above equilibrium)</span>
+
+<span class="n">Q_demanded_at_floor</span> <span class="o">=</span> <span class="n">demand</span><span class="p">(</span><span class="n">P_floor</span><span class="p">)</span>
+<span class="n">Q_supplied_at_floor</span> <span class="o">=</span> <span class="n">supply</span><span class="p">(</span><span class="n">P_floor</span><span class="p">)</span>
+<span class="n">surplus</span> <span class="o">=</span> <span class="n">Q_supplied_at_floor</span> <span class="o">-</span> <span class="n">Q_demanded_at_floor</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Equilibrium price:   P* = </span><span class="si">{</span><span class="n">P_star</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> shillings&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Price floor:         P  = </span><span class="si">{</span><span class="n">P_floor</span><span class="si">}</span><span class="s2"> shillings&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Quantity demanded:   </span><span class="si">{</span><span class="n">Q_demanded_at_floor</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> bushels&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Quantity supplied:   </span><span class="si">{</span><span class="n">Q_supplied_at_floor</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> bushels&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Surplus (unsold):    </span><span class="si">{</span><span class="n">surplus</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> bushels&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualise</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">demand</span><span class="p">(</span><span class="n">P_range</span><span class="p">),</span> <span class="n">P_range</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Demand&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">supply</span><span class="p">(</span><span class="n">P_range</span><span class="p">),</span> <span class="n">P_range</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Supply&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">P_floor</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Price floor = </span><span class="si">{</span><span class="n">P_floor</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q_star</span><span class="p">,</span> <span class="n">P_star</span><span class="p">,</span> <span class="s1">&#39;ko&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Free-market equilibrium&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show the surplus as a bracket</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">Q_supplied_at_floor</span><span class="p">,</span> <span class="n">P_floor</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Q_demanded_at_floor</span><span class="p">,</span> <span class="n">P_floor</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;&lt;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">Q_demanded_at_floor</span> <span class="o">+</span> <span class="n">Q_supplied_at_floor</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">P_floor</span> <span class="o">-</span> <span class="mf">3.5</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;Surplus = </span><span class="si">{</span><span class="n">surplus</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Quantity (bushels per week)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Price (shillings)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Effect of a Price Floor: Unsold Oats&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">220</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is precisely what Smith warned about: the government, trying to help farmers by guaranteeing a high price, instead creates a pile of unsold oats and reduces the quantity actually traded. The invisible hand has been overruled — and the result is waste.</p>
+</section>
+<section id="a-nonlinear-market-why-we-need-computers">
+<h3>A Nonlinear Market: Why We Need Computers<a class="headerlink" href="#a-nonlinear-market-why-we-need-computers" title="Link to this heading">#</a></h3>
+<p>The linear model above is useful for building intuition, but real markets are rarely linear. Let’s make things more interesting with a market where demand and supply are nonlinear:</p>
+<div class="math notranslate nohighlight">
+\[Q^D(P) = \frac{500}{1 + 0.1P^{1.5}}\]</div>
+<div class="math notranslate nohighlight">
+\[Q^S(P) = 10 \cdot \ln(1 + P)\]</div>
+<p>Now there’s no neat algebraic solution — but <code class="docutils literal notranslate"><span class="pre">fsolve</span></code> handles it without breaking a sweat.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">demand_nonlinear</span><span class="p">(</span><span class="n">P</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">500</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">P</span><span class="o">**</span><span class="mf">1.5</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">supply_nonlinear</span><span class="p">(</span><span class="n">P</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">P</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">excess_demand_nonlinear</span><span class="p">(</span><span class="n">P</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">demand_nonlinear</span><span class="p">(</span><span class="n">P</span><span class="p">)</span> <span class="o">-</span> <span class="n">supply_nonlinear</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
+
+<span class="c1"># Solve</span>
+<span class="n">P_star_nl</span> <span class="o">=</span> <span class="n">fsolve</span><span class="p">(</span><span class="n">excess_demand_nonlinear</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">20</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">Q_star_nl</span> <span class="o">=</span> <span class="n">demand_nonlinear</span><span class="p">(</span><span class="n">P_star_nl</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nonlinear equilibrium:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  P* = </span><span class="si">{</span><span class="n">P_star_nl</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Q* = </span><span class="si">{</span><span class="n">Q_star_nl</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Verify: excess demand at P* should be (essentially) zero</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Excess demand at P*: </span><span class="si">{</span><span class="n">excess_demand_nonlinear</span><span class="p">(</span><span class="n">P_star_nl</span><span class="p">)</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot</span>
+<span class="n">P_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">demand_nonlinear</span><span class="p">(</span><span class="n">P_vals</span><span class="p">),</span> <span class="n">P_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Demand (nonlinear)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">supply_nonlinear</span><span class="p">(</span><span class="n">P_vals</span><span class="p">),</span> <span class="n">P_vals</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Supply (nonlinear)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Q_star_nl</span><span class="p">,</span> <span class="n">P_star_nl</span><span class="p">,</span> <span class="s1">&#39;ko&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;P* = </span><span class="si">{</span><span class="n">P_star_nl</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">, Q* = </span><span class="si">{</span><span class="n">Q_star_nl</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">Q_star_nl</span><span class="p">,</span> <span class="n">P_star_nl</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">Q_star_nl</span> <span class="o">+</span> <span class="mi">25</span><span class="p">,</span> <span class="n">P_star_nl</span> <span class="o">+</span> <span class="mi">10</span><span class="p">),</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">),</span>
+            <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round,pad=0.3&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;lightyellow&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Quantity&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;A Nonlinear Market — No Closed-Form Solution&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is the power of computational thinking: Smith’s invisible hand works the same way whether the curves are straight lines or complicated nonlinear functions. The computer doesn’t care — it just finds the root.</p>
+</section>
+<section id="simulating-the-invisible-hand-convergence-to-equilibrium">
+<h3>Simulating the Invisible Hand: Convergence to Equilibrium<a class="headerlink" href="#simulating-the-invisible-hand-convergence-to-equilibrium" title="Link to this heading">#</a></h3>
+<p>Smith described the market price “gravitating” toward the natural price. Let’s simulate that process. We’ll use a simple rule: if there’s excess demand (shortage), the price rises; if there’s excess supply (surplus), the price falls. The speed of adjustment is governed by a parameter <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[P_{t+1} = P_t + \lambda \cdot ED(P_t)\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_market</span><span class="p">(</span><span class="n">P0</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">ed_func</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simulate price adjustment toward equilibrium.</span>
+<span class="sd">    P0    : initial price</span>
+<span class="sd">    lam   : adjustment speed</span>
+<span class="sd">    T     : number of periods</span>
+<span class="sd">    ed_func: excess demand function</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">prices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">P0</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
+        <span class="n">prices</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">prices</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">lam</span> <span class="o">*</span> <span class="n">ed_func</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">prices</span>
+
+<span class="c1"># Try different starting prices</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">P0</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="p">[(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;steelblue&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="s1">&#39;coral&#39;</span><span class="p">),</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;seagreen&#39;</span><span class="p">)]:</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">simulate_market</span><span class="p">(</span><span class="n">P0</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">excess_demand</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Start P = </span><span class="si">{</span><span class="n">P0</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">P_star</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Equilibrium P* = </span><span class="si">{</span><span class="n">P_star</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time period&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Price (shillings)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;The Invisible Hand at Work: Prices Gravitate to Equilibrium&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>No matter where the price starts, it converges to the equilibrium. This is Smith’s insight, now visible as a computational simulation. The market corrects itself — shortages drive prices up, surpluses drive them down, and the invisible hand guides the economy toward balance.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-iii-exercises">
+<h2>Part III — Exercises<a class="headerlink" href="#part-iii-exercises" title="Link to this heading">#</a></h2>
+<p>Now it’s your turn. These exercises ask you to apply the tools from Part II to new situations.</p>
+<section id="exercise-1-a-tax-on-oats">
+<h3>Exercise 1 — A Tax on Oats<a class="headerlink" href="#exercise-1-a-tax-on-oats" title="Link to this heading">#</a></h3>
+<p>The Scottish Parliament imposes a <strong>per-unit tax</strong> of <span class="math notranslate nohighlight">\(\tau = 5\)</span> shillings on each bushel of oats, paid by sellers. This shifts the supply curve up: sellers now need a price that is 5 shillings higher to supply the same quantity. The new supply function is:</p>
+<div class="math notranslate nohighlight">
+\[Q^S_{\text{tax}}(P) = c + d(P - \tau)\]</div>
+<p><strong>(a)</strong> Define a new function <code class="docutils literal notranslate"><span class="pre">supply_tax(P,</span> <span class="pre">tau=5)</span></code> and a new excess demand function incorporating the tax.</p>
+<p><strong>(b)</strong> Use <code class="docutils literal notranslate"><span class="pre">fsolve</span></code> to find the new equilibrium price and quantity.</p>
+<p><strong>(c)</strong> Who bears more of the tax burden — buyers or sellers? Compute the price increase paid by buyers (<span class="math notranslate nohighlight">\(P^*_{\text{tax}} - P^*\)</span>) and the effective price decrease received by sellers (<span class="math notranslate nohighlight">\(P^* - (P^*_{\text{tax}} - \tau)\)</span>).</p>
+<p><strong>(d)</strong> Plot the old and new supply curves together with the demand curve, marking both equilibria.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-the-corn-laws">
+<h3>Exercise 2 — The Corn Laws<a class="headerlink" href="#exercise-2-the-corn-laws" title="Link to this heading">#</a></h3>
+<p>One of the great economic debates in British history concerned the <strong>Corn Laws</strong> — tariffs on imported grain that kept prices high, benefiting landowners but hurting urban workers and manufacturers. The Corn Laws were finally repealed in 1846, but the arguments for and against are pure Adam Smith.</p>
+<p>Model two countries — <strong>Britain</strong> and <strong>France</strong> — each with a domestic oat market:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Britain</p></th>
+<th class="head"><p>France</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Demand</p></td>
+<td><p><span class="math notranslate nohighlight">\(Q^D = 300 - 5P\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(Q^D = 200 - 3P\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Supply</p></td>
+<td><p><span class="math notranslate nohighlight">\(Q^S = 50 + 2P\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(Q^S = 30 + 4P\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>(a)</strong> Find the equilibrium price in each country separately (in autarky — no trade).</p>
+<p><strong>(b)</strong> Which country has the lower equilibrium price? What does Smith’s logic say should happen when trade is allowed?</p>
+<p><strong>(c)</strong> Now suppose trade is allowed and a single world price prevails. The world excess demand is the sum of both countries’ excess demands. Find the world equilibrium price using <code class="docutils literal notranslate"><span class="pre">fsolve</span></code>.</p>
+<p><strong>(d)</strong> At the world price, how much does each country import or export? Does trade make both countries better off in terms of total quantity traded?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-does-the-starting-guess-matter">
+<h3>Exercise 3 — Does the Starting Guess Matter?<a class="headerlink" href="#exercise-3-does-the-starting-guess-matter" title="Link to this heading">#</a></h3>
+<p>Numerical methods need a starting point. For well-behaved functions this doesn’t matter much, but for complicated ones it can.</p>
+<p><strong>(a)</strong> Using the <strong>nonlinear</strong> excess demand function from Part II (<code class="docutils literal notranslate"><span class="pre">excess_demand_nonlinear</span></code>), try <code class="docutils literal notranslate"><span class="pre">fsolve</span></code> with starting guesses <span class="math notranslate nohighlight">\(P_0 = 1, 10, 50, 100, 500\)</span>. Do all of them converge to the same solution? Print the result and the number of function evaluations for each (use <code class="docutils literal notranslate"><span class="pre">fsolve(...,</span> <span class="pre">full_output=True)</span></code>).</p>
+<p><strong>(b)</strong> Now try this pathological excess demand function:</p>
+<div class="math notranslate nohighlight">
+\[ED(P) = \sin(P) - 0.1P + 1\]</div>
+<p>Plot it for <span class="math notranslate nohighlight">\(P \in [0, 30]\)</span>. How many roots does it have? Try <code class="docutils literal notranslate"><span class="pre">fsolve</span></code> from <span class="math notranslate nohighlight">\(P_0 = 1, 5, 15, 25\)</span> and report which root each finds.</p>
+<p><strong>(c)</strong> What lesson does this hold for computational economics? Write 2–3 sentences connecting this to Smith’s idea of the “natural price” — is there always just one?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-iv-quiz">
+<h2>Part IV — Quiz<a class="headerlink" href="#part-iv-quiz" title="Link to this heading">#</a></h2>
+<p>Test your understanding of both the history and the computation.</p>
+<section id="conceptual-questions">
+<h3>Conceptual Questions<a class="headerlink" href="#conceptual-questions" title="Link to this heading">#</a></h3>
+<p><strong>Q1.</strong> What economic system was Adam Smith arguing against in <em>The Wealth of Nations</em>?</p>
+<p>(a) Socialism<br />
+(b) Feudalism<br />
+(c) Mercantilism<br />
+(d) Communism</p>
+<p><strong>Q2.</strong> In Smith’s metaphor, the “invisible hand” refers to:</p>
+<p>(a) Government regulation guiding the economy<br />
+(b) The tendency of self-interested actions to produce socially beneficial outcomes through markets<br />
+(c) The role of religious institutions in economic life<br />
+(d) The hidden power of banks and financial institutions</p>
+<p><strong>Q3.</strong> Smith’s “natural price” is closest in meaning to which modern concept?</p>
+<p>(a) The GDP deflator<br />
+(b) The long-run equilibrium price<br />
+(c) The consumer price index<br />
+(d) The spot price on a commodity exchange</p>
+<p><strong>Q4.</strong> The Scottish Enlightenment was characterised by:</p>
+<p>(a) A return to classical Greek philosophy<br />
+(b) An emphasis on empirical observation, scepticism, and systematic reasoning<br />
+(c) Rejection of all forms of commercial activity<br />
+(d) A focus on theological debate above all other inquiry</p>
+<p><strong>Q5.</strong> David Hume’s relationship to Adam Smith was that of:</p>
+<p>(a) His doctoral supervisor<br />
+(b) His closest intellectual companion and friend<br />
+(c) His political opponent<br />
+(d) His publisher</p>
+</section>
+<section id="computational-questions">
+<h3>Computational Questions<a class="headerlink" href="#computational-questions" title="Link to this heading">#</a></h3>
+<p><strong>Q6.</strong> If demand is <span class="math notranslate nohighlight">\(Q^D = 100 - 2P\)</span> and supply is <span class="math notranslate nohighlight">\(Q^S = 20 + 3P\)</span>, the equilibrium price is:</p>
+<p>(a) 12<br />
+(b) 16<br />
+(c) 20<br />
+(d) 25</p>
+<p><strong>Q7.</strong> Excess demand is defined as <span class="math notranslate nohighlight">\(ED(P) = Q^D(P) - Q^S(P)\)</span>. At equilibrium:</p>
+<p>(a) <span class="math notranslate nohighlight">\(ED(P) &gt; 0\)</span><br />
+(b) <span class="math notranslate nohighlight">\(ED(P) &lt; 0\)</span><br />
+(c) <span class="math notranslate nohighlight">\(ED(P) = 0\)</span><br />
+(d) <span class="math notranslate nohighlight">\(ED(P)\)</span> is undefined</p>
+<p><strong>Q8.</strong> <code class="docutils literal notranslate"><span class="pre">scipy.optimize.fsolve</span></code> finds a value where:</p>
+<p>(a) A function reaches its maximum<br />
+(b) A function reaches its minimum<br />
+(c) A function equals zero<br />
+(d) A function’s derivative equals zero</p>
+<p><strong>Q9.</strong> A price floor set <em>below</em> the equilibrium price will:</p>
+<p>(a) Create a shortage<br />
+(b) Create a surplus<br />
+(c) Have no effect on the market<br />
+(d) Eliminate all trade</p>
+<p><strong>Q10.</strong> When we simulate the invisible hand with <span class="math notranslate nohighlight">\(P_{t+1} = P_t + \lambda \cdot ED(P_t)\)</span>, a larger <span class="math notranslate nohighlight">\(\lambda\)</span> means:</p>
+<p>(a) The market adjusts more slowly<br />
+(b) The market adjusts more quickly<br />
+(c) The equilibrium price changes<br />
+(d) The demand curve shifts</p>
+</section>
+<section id="quiz-answers">
+<h3>Quiz Answers<a class="headerlink" href="#quiz-answers" title="Link to this heading">#</a></h3>
+<details>
+<summary>Click to reveal answers</summary>
+<p><strong>Q1.</strong> (c) Mercantilism — the dominant economic doctrine of Smith’s time, based on hoarding precious metals and government control of trade.</p>
+<p><strong>Q2.</strong> (b) The invisible hand describes how self-interested actions, channelled through competitive markets, produce outcomes that benefit society without any central planner.</p>
+<p><strong>Q3.</strong> (b) The long-run equilibrium price — the price determined by costs of production, to which the market price continually “gravitates.”</p>
+<p><strong>Q4.</strong> (b) Empirical observation, scepticism, and systematic reasoning were the hallmarks of Hume, Smith, and their Edinburgh contemporaries.</p>
+<p><strong>Q5.</strong> (b) Hume and Smith were lifelong friends and intellectual companions. Hume’s philosophy deeply influenced Smith’s economic thinking.</p>
+<p><strong>Q6.</strong> (b) 16 — Setting <span class="math notranslate nohighlight">\(100 - 2P = 20 + 3P\)</span> gives <span class="math notranslate nohighlight">\(80 = 5P\)</span>, so <span class="math notranslate nohighlight">\(P = 16\)</span>.</p>
+<p><strong>Q7.</strong> (c) <span class="math notranslate nohighlight">\(ED(P) = 0\)</span> — equilibrium is defined as the price where quantity demanded equals quantity supplied.</p>
+<p><strong>Q8.</strong> (c) <code class="docutils literal notranslate"><span class="pre">fsolve</span></code> is a root-finder: it finds where a function equals zero. (For minima/maxima, you’d use <code class="docutils literal notranslate"><span class="pre">minimize</span></code>.)</p>
+<p><strong>Q9.</strong> (c) A price floor below the equilibrium is not binding — the market price is already above the floor, so it has no effect.</p>
+<p><strong>Q10.</strong> (b) A larger <span class="math notranslate nohighlight">\(\lambda\)</span> means the price responds more strongly to excess demand in each period, so the market reaches equilibrium faster (though if <span class="math notranslate nohighlight">\(\lambda\)</span> is too large, the process can overshoot).</p>
+</details></section>
+</section>
+<hr class="docutils" />
+<section id="further-reading">
+<h2>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Smith, A. <em>The Wealth of Nations</em> (1776), Book I, Chapters 1–7. Available free online via <a class="reference external" href="https://www.econlib.org/library/Smith/smWN.html">econlib.org</a>.</p></li>
+<li><p>Heilbroner, R. <em>The Worldly Philosophers</em>, Chapter 3 (“The Wonderful World of Adam Smith”).</p></li>
+<li><p>Broadie, A. <em>The Scottish Enlightenment</em> — for the intellectual world Smith inhabited.</p></li>
+<li><p>Phillipson, N. <em>Adam Smith: An Enlightened Life</em> — the best modern biography.</p></li>
+</ul>
+<hr class="docutils" />
+<p><em>Next week: The Division of Labour and the Pin Factory — Smith’s most famous example, and the logic of specialisation and trade.</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">From Smith to Simulation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Module_02_Pin_Factory.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Module 2 — The Division of Labour and the Pin Factory</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adam-smith-and-market-equilibrium">Adam Smith and Market Equilibrium</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-i-the-history">Part I — The History</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edinburgh-1776">Edinburgh, 1776</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-world-smith-lived-in">The World Smith Lived In</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-scottish-enlightenment">The Scottish Enlightenment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-markets-work-supply-and-demand">How Markets Work: Supply and Demand</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-ii-the-computation">Part II — The Computation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting Up</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supply-and-demand-as-functions">Supply and Demand as Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-market">Plotting the Market</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#excess-demand">Excess Demand</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-equilibrium-with-fsolve">Finding Equilibrium with <code class="docutils literal notranslate"><span class="pre">fsolve</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-the-government-intervenes-price-floors">What Happens When the Government Intervenes? Price Floors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-nonlinear-market-why-we-need-computers">A Nonlinear Market: Why We Need Computers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-the-invisible-hand-convergence-to-equilibrium">Simulating the Invisible Hand: Convergence to Equilibrium</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iii-exercises">Part III — Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-a-tax-on-oats">Exercise 1 — A Tax on Oats</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-the-corn-laws">Exercise 2 — The Corn Laws</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-does-the-starting-guess-matter">Exercise 3 — Does the Starting Guess Matter?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-iv-quiz">Part IV — Quiz</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conceptual-questions">Conceptual Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-questions">Computational Questions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quiz-answers">Quiz Answers</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Juan Zurita
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

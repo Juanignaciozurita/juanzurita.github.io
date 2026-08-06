@@ -1,0 +1,1236 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title> &#8212; Programming &amp; Numerical Methods for Economics</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a6909eaf" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/lab03';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/logo.svg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="" href="lab04.html" />
+    <link rel="prev" title="File from Learn - Course Material - Week 3" href="lab02.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.svg" class="logo__image only-light" alt="Programming & Numerical Methods for Economics - Home"/>
+    <img src="../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="Programming & Numerical Methods for Economics - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="week01_intro.html">Week 1 — Introduction to Programming</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="week02_fundamentals.html">Week 2 — Fundamentals of Programming in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week03_pandas.html">Week 3 — Data Manipulation with pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week03_casestudy.html"><center> Programming and Numerical Methods for Economics</center></a></li>
+<li class="toctree-l1"><a class="reference internal" href="week04_models.html">Week 4 — From Data to Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week05_numerical1.html">Week 5 — Numerical Methods I — Root-Finding and Optimisation</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="week06_optimization.html">Week 6 — Numerical Methods II — Optimisation in Economics</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="week07_funcapprox.html">Week 7 — Numerical Methods III — Function Approximation</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="week07_examples.html">Week 7 — Function Approximation — Additional Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="week08_growth_julia.html">Week 8 — Economic Models — Neoclassical Growth via Value Function Iteration</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lab01.html">Marking Scheme</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="lab02.html">File from Learn - Course Material - Week 3</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="lab04.html"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/lab03.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ps1-feedback"><h1><center>  PS1: Feedback</center></h1></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ps1-feedback-general-comments">PS1: Feedback: General Comments</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ps1-feedback-statistics">PS1: Feedback:  Statistics</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries-functions-and-display-settings">Import Libraries, Functions and Display Settings</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15"></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">Tips</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#y-i-2-0-5x-2-i-e-i">$<span class="math notranslate nohighlight">\(y_i = 2 + 0.5x_{2,i} + e_{i}\)</span>$</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-statsmodels-library">Check: StatsModels Library</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations">Simulations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-bmatrix">$$\begin{bmatrix}</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-t-1-a-rho-times-y-t-e-t">$<span class="math notranslate nohighlight">\(y_{t+1} = a + rho \times y_t + e_t\)</span>$</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-t-sim-n-0-sigma-e">$<span class="math notranslate nohighlight">\(e_t \sim N(0,\sigma_e)\)</span>$</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-define-a-function-for-an-ar-1-process">Let’s define a function for an AR(1) process</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-arguments-of-that-function">What are the arguments of that function?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-f-left-x-x-x-x-x-right-output">$<span class="math notranslate nohighlight">\(\mathbf{F}\left(x,x,x,x,x \right)= OUTPUT \)</span>$</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-x-s">What are the <span class="math notranslate nohighlight">\(x_s\)</span>?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-run-a-simulation-of-the-ar-1-for-t-t">We run a simulation of the AR(1) for t=T.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">$$\begin{bmatrix}</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-run-two-simulations-of-the-ar-1-for-t-t">We run two simulations of the AR(1) for t=T.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">$$\begin{bmatrix}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">$$\begin{bmatrix}</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-we-add-an-initial-value-at-t-0-y-0-0">If we add an initial value at t=0 (y_0=0)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">$$\begin{bmatrix}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">$$\begin{bmatrix}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22"></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-create-a-graph">Let’s create a graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-simulate-this-process-t-times"><center>How to simulate this process T times?</center></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discretizing-ar-1-process-into-a-markov-chain">1. Discretizing AR(1) process into a Markov Chain</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-expected-value-mu-of-y1-is">The expected value (mu*) of y1 is:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1><center>  Lab3 </center></h1>
+<h1><center>  ECNM10115 Programming and Numerical Methods for Economics </center></h1><section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id2">
+<h1><a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id3">
+<h1><a class="headerlink" href="#id3" title="Link to this heading">#</a></h1>
+<section id="ps1-feedback">
+<h2><h1><center>  PS1: Feedback<a class="headerlink" href="#ps1-feedback" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id4">
+<h1><a class="headerlink" href="#id4" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id5">
+<h1><a class="headerlink" href="#id5" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id6">
+<h1><a class="headerlink" href="#id6" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id7">
+<h1><a class="headerlink" href="#id7" title="Link to this heading">#</a></h1>
+<section id="ps1-feedback-general-comments">
+<h2>PS1: Feedback: General Comments<a class="headerlink" href="#ps1-feedback-general-comments" title="Link to this heading">#</a></h2>
+<ul>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>From Lecture 1: Submission of the problem set must consist of a SINGLE DOCUMENT containing all the answers and the code for all the exercises.
+</pre></div>
+</div>
+</li>
+<li><p><strong>The document must be called: PSX groupY.</strong></p></li>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Please make sure to avoid typos.
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Submit only one file per submission.
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Use Markdown syntax to improve the presentation of your work.
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Include the relevant equations to describe your work.
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Provide economic interpretations for your figures and results.
+</pre></div>
+</div>
+</li>
+<li><div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Add references if it is necessary. Please the university guidelines for using AI.
+</pre></div>
+</div>
+</li>
+<li><p><a class="reference external" href="https://information-services.ed.ac.uk/computing/communication-and-collaboration/elm/generative-ai-guidance-for-students/using-generative">https://information-services.ed.ac.uk/computing/communication-and-collaboration/elm/generative-ai-guidance-for-students/using-generative</a></p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id8">
+<h1><a class="headerlink" href="#id8" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id9">
+<h1><a class="headerlink" href="#id9" title="Link to this heading">#</a></h1>
+<section id="ps1-feedback-statistics">
+<h2>PS1: Feedback:  Statistics<a class="headerlink" href="#ps1-feedback-statistics" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Statistic</p></th>
+<th class="head text-center"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Mean</p></td>
+<td class="text-center"><p>69</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>SD</p></td>
+<td class="text-center"><p>6</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Min</p></td>
+<td class="text-center"><p>55</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Max</p></td>
+<td class="text-center"><p>79</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>*As a reference, last Year PS1 average was 62.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id10">
+<h1><a class="headerlink" href="#id10" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id11">
+<h1><a class="headerlink" href="#id11" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id12">
+<h1><a class="headerlink" href="#id12" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id13">
+<h1><a class="headerlink" href="#id13" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id14">
+<h1><a class="headerlink" href="#id14" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="import-libraries-functions-and-display-settings">
+<h1>Import Libraries, Functions and Display Settings<a class="headerlink" href="#import-libraries-functions-and-display-settings" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>  <span class="c1"># fix the seed at the beginning and only once.</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">quantecon</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">qe</span> 
+<span class="c1"># os.chdir(r&quot;C:\Users\jzurita\OneDrive - University of Edinburgh\Courses\Programming Numerical Methods\Week 4&quot;)</span>
+
+<span class="c1"># from functions import  gini</span>
+<span class="c1"># import quantecon as qe </span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id15">
+<h1><a class="headerlink" href="#id15" title="Link to this heading">#</a></h1>
+<section id="exercise-1">
+<h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h2>
+<section id="tips">
+<h3>Tips<a class="headerlink" href="#tips" title="Link to this heading">#</a></h3>
+</section>
+<section id="y-i-2-0-5x-2-i-e-i">
+<h3>$<span class="math notranslate nohighlight">\(y_i = 2 + 0.5x_{2,i} + e_{i}\)</span>$<a class="headerlink" href="#y-i-2-0-5x-2-i-e-i" title="Link to this heading">#</a></h3>
+<section id="check-statsmodels-library">
+<h4>Check: StatsModels Library<a class="headerlink" href="#check-statsmodels-library" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLS.html">https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLS.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Library</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
+
+<span class="n">Y</span> <span class="o">=</span> <span class="n">X0</span> <span class="o">+</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">X1</span> <span class="o">+</span> <span class="n">ei</span>
+
+<span class="n">model</span><span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">results</span><span class="o">=</span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="simulations">
+<h3>Simulations<a class="headerlink" href="#simulations" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="begin-bmatrix">
+<h1>$$\begin{bmatrix}<a class="headerlink" href="#begin-bmatrix" title="Link to this heading">#</a></h1>
+<p>t   &amp; 1    &amp; 2    &amp; 3    &amp; … &amp; T    \
+N=1 &amp; y_1 &amp; y_2 &amp; y_3 &amp; … &amp; y_T \
+\end{bmatrix} $$</p>
+<section id="exercise-2">
+<h2>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h2>
+</section>
+<section id="y-t-1-a-rho-times-y-t-e-t">
+<h2>$<span class="math notranslate nohighlight">\(y_{t+1} = a + rho \times y_t + e_t\)</span>$<a class="headerlink" href="#y-t-1-a-rho-times-y-t-e-t" title="Link to this heading">#</a></h2>
+<p>where</p>
+</section>
+<section id="e-t-sim-n-0-sigma-e">
+<h2>$<span class="math notranslate nohighlight">\(e_t \sim N(0,\sigma_e)\)</span>$<a class="headerlink" href="#e-t-sim-n-0-sigma-e" title="Link to this heading">#</a></h2>
+<section id="let-s-define-a-function-for-an-ar-1-process">
+<h3>Let’s define a function for an AR(1) process<a class="headerlink" href="#let-s-define-a-function-for-an-ar-1-process" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="what-are-the-arguments-of-that-function">
+<h1>What are the arguments of that function?<a class="headerlink" href="#what-are-the-arguments-of-that-function" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="mathbf-f-left-x-x-x-x-x-right-output">
+<h1>$<span class="math notranslate nohighlight">\(\mathbf{F}\left(x,x,x,x,x \right)= OUTPUT \)</span>$<a class="headerlink" href="#mathbf-f-left-x-x-x-x-x-right-output" title="Link to this heading">#</a></h1>
+<section id="what-are-the-x-s">
+<h2>What are the <span class="math notranslate nohighlight">\(x_s\)</span>?<a class="headerlink" href="#what-are-the-x-s" title="Link to this heading">#</a></h2>
+<section id="we-run-a-simulation-of-the-ar-1-for-t-t">
+<h3>We run a simulation of the AR(1) for t=T.<a class="headerlink" href="#we-run-a-simulation-of-the-ar-1-for-t-t" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id16">
+<h1>$$\begin{bmatrix}<a class="headerlink" href="#id16" title="Link to this heading">#</a></h1>
+<p>t   &amp; 1    &amp; 2    &amp; 3    &amp; … &amp; T    \
+N=1 &amp; y_1 &amp; y_2 &amp; y_3 &amp; … &amp; y_T \
+\end{bmatrix} $$</p>
+<section id="we-run-two-simulations-of-the-ar-1-for-t-t">
+<h2>We run two simulations of the AR(1) for t=T.<a class="headerlink" href="#we-run-two-simulations-of-the-ar-1-for-t-t" title="Link to this heading">#</a></h2>
+<p>N=2 (Two simulations)…. N=N (N simulations)</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id17">
+<h1>$$\begin{bmatrix}<a class="headerlink" href="#id17" title="Link to this heading">#</a></h1>
+<p>t   &amp; 1    &amp; 2    &amp; 3    &amp; … &amp; T    \
+N=1 &amp; y_{1,1} &amp; y_{1,2} &amp; y_{1,3} &amp; … &amp; y_{1,T} \
+N=2 &amp; y_{2,1} &amp; y_{2,2} &amp; y_{2,3} &amp; … &amp; y_{2,T} \
+… &amp; … &amp; … &amp; … &amp; … &amp;… \
+N=N &amp; y_{N,1} &amp; y_{N,2} &amp; y_{N,3} &amp; … &amp; y_{N,T} \
+\end{bmatrix} $$</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id18">
+<h1>$$\begin{bmatrix}<a class="headerlink" href="#id18" title="Link to this heading">#</a></h1>
+<p>N \times T
+\end{bmatrix} $$</p>
+<section id="if-we-add-an-initial-value-at-t-0-y-0-0">
+<h2>If we add an initial value at t=0 (y_0=0)<a class="headerlink" href="#if-we-add-an-initial-value-at-t-0-y-0-0" title="Link to this heading">#</a></h2>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id19">
+<h1>$$\begin{bmatrix}<a class="headerlink" href="#id19" title="Link to this heading">#</a></h1>
+<p>t   &amp;0 &amp; 1    &amp; 2    &amp; 3    &amp; … &amp; T    \
+N=1 &amp;y_0&amp; y_{1,1} &amp; y_{1,2} &amp; y_{1,3} &amp; … &amp; y_{1,T} \
+N=2 &amp; y_0&amp;y_{2,1} &amp; y_{2,2} &amp; y_{2,3} &amp; … &amp; y_{2,T} \
+… &amp;y_0&amp; … &amp; … &amp; … &amp; … &amp;… \
+N=N &amp; y_0&amp;y_{N,1} &amp; y_{N,2} &amp; y_{N,3} &amp; … &amp; y_{N,T} \
+\end{bmatrix} $$</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id20">
+<h1>$$\begin{bmatrix}<a class="headerlink" href="#id20" title="Link to this heading">#</a></h1>
+<p>N \times (T+1)
+\end{bmatrix} $$</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id21">
+<h1><a class="headerlink" href="#id21" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id22">
+<h1><a class="headerlink" href="#id22" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rho_a</span><span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">sigma_a</span><span class="o">=</span><span class="mf">0.15</span>
+
+<span class="c1"># a Simulate and plot the AR(1) process given by equation (1) for T=50 periods.</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ar_1_sim</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span><span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">sigma_e</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    ar_1_sim simulates for T periods an AR(1) process of the following form:</span>
+<span class="sd">                y_t+1 = a + rho*y_t + e_t</span>
+<span class="sd">                where e_t ~ N (0,sigma_e)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">T</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># store your elements - A vector Tx1</span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span> <span class="c1"># allocate my initial value in the first row</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">T</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">sigma_e</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> 
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span> <span class="n">rho</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">e</span>
+   
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="let-s-create-a-graph">
+<h2>Let’s create a graph<a class="headerlink" href="#let-s-create-a-graph" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span><span class="o">=</span><span class="mi">100</span>
+
+<span class="n">y1</span> <span class="o">=</span> <span class="n">ar_1_sim</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">rho</span><span class="o">=</span><span class="n">rho_a</span><span class="p">,</span> <span class="n">sigma_e</span><span class="o">=</span><span class="n">sigma_a</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2a =======)&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">T</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">y1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">4.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Log of labor earnings in an Aiyagari Economy&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+2a =======)
+</pre></div>
+</div>
+<img alt="../_images/4a95d1fd95a93cd25e7c78647f3965ad68fc6bfa4989976e28489b11e167e55e.png" src="../_images/4a95d1fd95a93cd25e7c78647f3965ad68fc6bfa4989976e28489b11e167e55e.png" />
+</div>
+</div>
+<center></section>
+<section id="how-to-simulate-this-process-t-times">
+<h2><center>How to simulate this process T times?<a class="headerlink" href="#how-to-simulate-this-process-t-times" title="Link to this heading">#</a></h2>
+</section>
+<section id="steps">
+<h2>Steps:<a class="headerlink" href="#steps" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><h2 class="rubric" id="using-our-previous-function-identify-what-objects-will-change">Using our previous function, identify what objects will change?</h2>
+</li>
+<li><h2 class="rubric" id="identify-if-we-need-new-objects">Identify if we need new objects</h2>
+</li>
+<li><h2 class="rubric" id="work-line-by-line">Work line by line</h2>
+<ol class="arabic">
+<li><h3 class="rubric" id="what-s-the-size-of-my-output-now-implies-allocation-object-should-be-different">What’s the size of my output now? <span class="math notranslate nohighlight">\(\implies\)</span> allocation object should be different</h3>
+</li>
+<li><h3 class="rubric" id="do-i-need-more-arguments-in-my-function">Do I need more arguments in my function?</h3>
+</li>
+<li><h3 class="rubric" id="what-is-the-size-of-epsilon">What is the size of <span class="math notranslate nohighlight">\(\epsilon\)</span>?</h3>
+</li>
+<li><h3 class="rubric" id="if-epsilon-is-size-r-times-c-this-implies-that-y-in-each-iteration-must-have-the-same-dimentions">If <span class="math notranslate nohighlight">\(\epsilon\)</span> is size <span class="math notranslate nohighlight">\(=\)</span>  <span class="math notranslate nohighlight">\(r\times c\)</span>, this implies that y, in each iteration, must have the same dimentions.</h3>
+</li>
+<li><h3 class="rubric" id="think-how-to-store-the-value-of-y-in-each-iteration">Think how to store the value of y in each iteration.</h3>
+</li>
+</ol>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ar_1_sim_N</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span><span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">sigma_e</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>        
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">    ar_1_sim simulates for T periods an AR(1) process of the following form:</span>
+<span class="sd">                y_t+1 = a + rho*y_t + e_t</span>
+<span class="sd">                where e_t ~ N (0,sigma_e)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">T</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#(101,1)</span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">T</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">sigma_e</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 1</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span> <span class="n">rho</span><span class="o">*</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">e</span> <span class="c1">#(101,1)</span>
+   
+    <span class="k">return</span> <span class="n">y</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span><span class="o">=</span><span class="mi">100</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">ar_1_sim_N</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="n">T</span><span class="p">,</span><span class="n">rho</span><span class="o">=</span><span class="n">rho_a</span><span class="p">,</span><span class="n">sigma_e</span><span class="o">=</span><span class="n">sigma_a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(101,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## b. AR(1) for size N,T</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ar_1_sim_N</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">rho</span><span class="p">,</span><span class="n">y0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">sigma_e</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="n">T</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y0</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">T</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">sigma_e</span><span class="p">,</span><span class="n">N</span><span class="p">)</span> 
+        <span class="n">y</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span> <span class="n">rho</span><span class="o">*</span><span class="n">y</span><span class="p">[:,</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">e</span>
+   
+    <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">five_ar1s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2c =======)&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">five_ar1s</span><span class="p">)):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">T</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">five_ar1s</span><span class="p">[</span><span class="n">i</span><span class="p">,:],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Hh:&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Log of labor earnings in an Aiyagari Economy&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 
+2c =======)
+</pre></div>
+</div>
+<img alt="../_images/344222de71cc45bd7c94ab78a518055cb7324ab30394a133cf1101a9b3207f77.png" src="../_images/344222de71cc45bd7c94ab78a518055cb7324ab30394a133cf1101a9b3207f77.png" />
+</div>
+</div>
+<section id="discretizing-ar-1-process-into-a-markov-chain">
+<h3>1. Discretizing AR(1) process into a Markov Chain<a class="headerlink" href="#discretizing-ar-1-process-into-a-markov-chain" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">quantecon</span><span class="w"> </span><span class="kn">import</span> <span class="n">rouwenhorst</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Let&#39;s have the 2 AR(1) we saw in this class:</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">ar_1_sim</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="n">rho</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">ar_1_sim</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="n">rho</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">mean_y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span>
+<span class="n">mean_y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean of Ar(1) y1:&#39;</span><span class="p">,</span> <span class="n">mean_y1</span><span class="p">)</span> <span class="c1"># approx mu* = a/(1-rho) = 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean of Ar(1) y2:&#39;</span><span class="p">,</span> <span class="n">mean_y2</span><span class="p">)</span>  <span class="c1"># approx mu* = a/(1-rho) = 2/(1-0.25) =2.66</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean of Ar(1) y1: -0.028307597572529593
+mean of Ar(1) y2: 2.6613404190150374
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#rouwenhorst(n, rho, sigma, mu=0.0)</span>
+<span class="n">mc_ar1</span> <span class="o">=</span> <span class="n">rouwenhorst</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">P1</span> <span class="o">=</span> <span class="n">mc_ar1</span><span class="o">.</span><span class="n">P</span>
+<span class="n">psi1_star</span> <span class="o">=</span> <span class="n">mc_ar1</span><span class="o">.</span><span class="n">stationary_distributions</span>
+<span class="n">y1_values</span> <span class="o">=</span> <span class="n">mc_ar1</span><span class="o">.</span><span class="n">state_values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="the-expected-value-mu-of-y1-is">
+<h4>The expected value (mu*) of y1 is:<a class="headerlink" href="#the-expected-value-mu-of-y1-is" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_mc_y1</span> <span class="o">=</span>  <span class="n">psi1_star</span><span class="nd">@y1_values</span>   <span class="c1"># note that matrix product is equivalent to sum(p_i*y_i)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean of Ar(1) y1:&#39;</span><span class="p">,</span> <span class="n">mean_y1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean MC approx of AR(1) y1:&#39;</span><span class="p">,</span> <span class="n">mean_mc_y1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean of Ar(1) y1: -0.028307597572529593
+mean MC approx of AR(1) y1: [0.]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mc_ar2</span> <span class="o">=</span> <span class="n">rouwenhorst</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">P2</span> <span class="o">=</span> <span class="n">mc_ar2</span><span class="o">.</span><span class="n">P</span>
+<span class="n">psi2_star</span> <span class="o">=</span> <span class="n">mc_ar2</span><span class="o">.</span><span class="n">stationary_distributions</span>
+<span class="n">y2_values</span> <span class="o">=</span> <span class="n">mc_ar2</span><span class="o">.</span><span class="n">state_values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_mc_y2</span> <span class="o">=</span>  <span class="n">psi2_star</span><span class="nd">@y2_values</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean of Ar(1) y2:&#39;</span><span class="p">,</span> <span class="n">mean_y2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean MC approx of AR(1) y1:&#39;</span><span class="p">,</span> <span class="n">mean_mc_y2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mean of Ar(1) y2: 2.6613404190150374
+mean MC approx of AR(1) y1: [2.66666667]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-base-py"
+        },
+        kernelOptions: {
+            name: "conda-base-py",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-base-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lab02.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">File from Learn - Course Material - Week 3</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lab04.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ps1-feedback"><h1><center>  PS1: Feedback</center></h1></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id7"></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ps1-feedback-general-comments">PS1: Feedback: General Comments</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id9"></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ps1-feedback-statistics">PS1: Feedback:  Statistics</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id10"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id11"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id12"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id13"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id14"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries-functions-and-display-settings">Import Libraries, Functions and Display Settings</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id15"></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1">Exercise 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">Tips</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#y-i-2-0-5x-2-i-e-i">$<span class="math notranslate nohighlight">\(y_i = 2 + 0.5x_{2,i} + e_{i}\)</span>$</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#check-statsmodels-library">Check: StatsModels Library</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulations">Simulations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#begin-bmatrix">$$\begin{bmatrix}</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2">Exercise 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#y-t-1-a-rho-times-y-t-e-t">$<span class="math notranslate nohighlight">\(y_{t+1} = a + rho \times y_t + e_t\)</span>$</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-t-sim-n-0-sigma-e">$<span class="math notranslate nohighlight">\(e_t \sim N(0,\sigma_e)\)</span>$</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-define-a-function-for-an-ar-1-process">Let’s define a function for an AR(1) process</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-arguments-of-that-function">What are the arguments of that function?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mathbf-f-left-x-x-x-x-x-right-output">$<span class="math notranslate nohighlight">\(\mathbf{F}\left(x,x,x,x,x \right)= OUTPUT \)</span>$</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-the-x-s">What are the <span class="math notranslate nohighlight">\(x_s\)</span>?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-run-a-simulation-of-the-ar-1-for-t-t">We run a simulation of the AR(1) for t=T.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">$$\begin{bmatrix}</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#we-run-two-simulations-of-the-ar-1-for-t-t">We run two simulations of the AR(1) for t=T.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">$$\begin{bmatrix}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">$$\begin{bmatrix}</a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-we-add-an-initial-value-at-t-0-y-0-0">If we add an initial value at t=0 (y_0=0)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">$$\begin{bmatrix}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">$$\begin{bmatrix}</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21"></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22"></a><ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-create-a-graph">Let’s create a graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-simulate-this-process-t-times"><center>How to simulate this process T times?</center></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discretizing-ar-1-process-into-a-markov-chain">1. Discretizing AR(1) process into a Markov Chain</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-expected-value-mu-of-y1-is">The expected value (mu*) of y1 is:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Juan Zurita
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
