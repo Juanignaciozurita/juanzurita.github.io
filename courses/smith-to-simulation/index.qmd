@@ -1,5 +1,5 @@
 ---
-title: "From Smith to Simulation"
+title: "From Adam Smith to Simulation"
 subtitle: "Computing the Ideas that Built Economics — The University of Edinburgh"
 title-block-banner: true
 toc: true
@@ -9,6 +9,70 @@ toc: true
 A 10-week course pairing the **history of economic thought** with **computational exercises in Python**. Each module tells the story of a transformative idea — from Adam Smith's invisible hand to Piketty's inequality dynamics — then teaches you to build, solve, and simulate the model behind it. No prior programming experience is assumed; the course teaches Python as it goes. All materials are open access.
 </p>
 
+## The Economists
+
+<div style="display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin: 24px 0 32px 0;">
+
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Adam_Smith_The_Muir_portrait.jpg/300px-Adam_Smith_The_Muir_portrait.jpg" alt="Adam Smith" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">Adam Smith</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">1723–1790</p>
+</div>
+
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Thomas_Robert_Malthus.jpg/300px-Thomas_Robert_Malthus.jpg" alt="Thomas Malthus" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">Thomas Malthus</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">1766–1834</p>
+</div>
+
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Portrait_of_David_Ricardo_by_Thomas_Phillips.jpg/300px-Portrait_of_David_Ricardo_by_Thomas_Phillips.jpg" alt="David Ricardo" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">David Ricardo</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">1772–1823</p>
+</div>
+
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Karl_Marx_001.jpg/300px-Karl_Marx_001.jpg" alt="Karl Marx" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">Karl Marx</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">1818–1883</p>
+</div>
+
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/William_Stanley_Jevons.jpg/300px-William_Stanley_Jevons.jpg" alt="William Stanley Jevons" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">W. S. Jevons</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">1835–1882</p>
+</div>
+
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/John_Maynard_Keynes.jpg/300px-John_Maynard_Keynes.jpg" alt="John Maynard Keynes" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">J. M. Keynes</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">1883–1946</p>
+</div>
+
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Robert_Solow_by_Olaf_Storbeck.jpg/300px-Robert_Solow_by_Olaf_Storbeck.jpg" alt="Robert Solow" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">Robert Solow</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">1924–2023</p>
+</div>
+
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Robert_Lucas.jpg/300px-Robert_Lucas.jpg" alt="Robert Lucas" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">Robert Lucas</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">1937–2023</p>
+</div>
+
+<div style="text-align: center; width: 140px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Thomas_Piketty%2C_2015_%28cropped%29.jpg/300px-Thomas_Piketty%2C_2015_%28cropped%29.jpg" alt="Thomas Piketty" style="width: 130px; height: 160px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">Thomas Piketty</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">b. 1971</p>
+</div>
+
+</div>
+
+<p style="text-align: center; font-size: 0.75em; color: #999; margin-top: -16px;">
+Portraits from <a href="https://commons.wikimedia.org" style="color: #999;">Wikimedia Commons</a> (public domain / CC-BY-SA).
+</p>
+
 ## How to use these materials
 
 Each week has a **notebook** you can read online, download, or run in the cloud, plus a **slide deck** for the lecture:
@@ -16,6 +80,7 @@ Each week has a **notebook** you can read online, download, or run in the cloud,
 - **Read online** — click the notebook link; it renders as a webpage with all code and output.
 - **Run in Google Colab** — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.
 - **Run locally** — install [Anaconda](https://www.anaconda.com/download) (includes Python, Jupyter, NumPy, and Matplotlib), then download the `.ipynb` file and open it in Jupyter.
+- **Browse the Jupyter Book** — all notebooks are also collected in a [Jupyter Book](book/intro.html) with a navigable sidebar and search.
 
 ## Materials
 

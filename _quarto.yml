@@ -60,7 +60,7 @@ website:
             href: courses/pnm/index.qmd
           - text: "Deep Learning for Macroeconomics"
             href: courses/dlmacro/index.qmd
-          - text: "From Smith to Simulation"
+          - text: "From Adam Smith to Simulation"
             href: courses/smith-to-simulation/index.qmd
           - text: For Students
             href: students.qmd

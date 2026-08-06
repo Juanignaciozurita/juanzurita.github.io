@@ -27,6 +27,7 @@ Each week has a **notebook** you can read online, download, or run in the cloud:
 - **Read online** — click the notebook link; it renders as a webpage with all code and output.
 - **Run in Google Colab** — click the Colab badge and the notebook opens ready to run, with GPU access. Nothing to install.
 - **Run locally** — install [Anaconda](https://www.anaconda.com/download), then `pip install torch matplotlib scikit-learn`. Download the `.ipynb` file and open it in Jupyter.
+- **Browse the Jupyter Book** — all notebooks are also collected in a [Jupyter Book](book/intro.html) with a navigable sidebar and search.
 
 **Note on compute:** most notebooks run fine on a laptop CPU. Weeks marked with ⚡ benefit from a GPU — use Colab's free GPU runtime (Runtime → Change runtime type → T4 GPU).
 
