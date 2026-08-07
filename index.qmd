@@ -3,7 +3,7 @@
 title: "Juan Zurita"
 subtitle: |
   <div style="font-size:1em; text-align:center;">
-  Lecturer in Economics <br>
+  Fix-Term Lecturer in Economics <br>
   School of Economics, The University of Edinburgh
   </div>
 
@@ -59,7 +59,7 @@ Macroeconomics
 ####  <span style="color:#b22222;">Welcome to my personal website</span>
 
 <p style="text-align: justify;">
-I am a Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy.
+I am a Fix-Term Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy.
 </p>
 
 ::: {.statement-frame}

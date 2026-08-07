@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Python Playground – Juan Zurita</title>
+<title>From Adam Smith to Simulation – Juan Zurita</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,27 +23,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./favicon.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-befc92836a82f2ebff21c48b720c4121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-befc92836a82f2ebff21c48b720c4121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,25 +108,25 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Python Playground – Juan Zurita">
-<meta property="og:description" content="Run course code directly in your browser — nothing to install">
-<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/Profile.jpg">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="From Adam Smith to Simulation – Juan Zurita">
+<meta property="og:description" content="Computing the Ideas that Built Economics">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/smith-to-simulation/Profile.jpg">
 <meta property="og:site_name" content="Juan Zurita">
-<meta name="twitter:title" content="Python Playground – Juan Zurita">
-<meta name="twitter:description" content="Run course code directly in your browser — nothing to install">
-<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/Profile.jpg">
+<meta name="twitter:title" content="From Adam Smith to Simulation – Juan Zurita">
+<meta name="twitter:description" content="Computing the Ideas that Built Economics">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/smith-to-simulation/Profile.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Juan Zurita</span>
     </a>
   </div>
@@ -102,11 +137,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./jobmarket.html"> 
+    <a class="nav-link" href="../../jobmarket.html"> 
 <span class="menu-text">Job Market</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -115,19 +150,19 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
         <li>
-    <a class="dropdown-item" href="./research.html">
+    <a class="dropdown-item" href="../../research.html">
  <span class="dropdown-text">Publications &amp; Working Papers</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./writing.html">
+    <a class="dropdown-item" href="../../writing.html">
  <span class="dropdown-text">Public Writing</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./explorer.html">
+    <a class="dropdown-item" href="../../explorer.html">
  <span class="dropdown-text">Interactive: Debt &amp; Policy</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./opencollaborations.html">
+    <a class="dropdown-item" href="../../opencollaborations.html">
  <span class="dropdown-text">Open Collaborations</span></a>
   </li>  
     </ul>
@@ -138,45 +173,45 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-teaching">    
         <li>
-    <a class="dropdown-item" href="./teaching.html">
+    <a class="dropdown-item" href="../../teaching.html">
  <span class="dropdown-text">Courses</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./courses/pnm/index.html">
+    <a class="dropdown-item" href="../../courses/pnm/index.html">
  <span class="dropdown-text">Programming &amp; Numerical Methods</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./courses/dlmacro/index.html">
+    <a class="dropdown-item" href="../../courses/dlmacro/index.html">
  <span class="dropdown-text">Deep Learning for Macroeconomics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./courses/smith-to-simulation/index.html">
+    <a class="dropdown-item" href="../../courses/smith-to-simulation/index.html">
  <span class="dropdown-text">From Adam Smith to Simulation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./students.html">
+    <a class="dropdown-item" href="../../students.html">
  <span class="dropdown-text">For Students</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./quiz.html">
+    <a class="dropdown-item" href="../../quiz.html">
  <span class="dropdown-text">Numerical Methods Quiz</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./playground.html">
+    <a class="dropdown-item" href="../../playground.html">
  <span class="dropdown-text">Python Playground</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./usefullinks.html">
+    <a class="dropdown-item" href="../../usefullinks.html">
  <span class="dropdown-text">Resources</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./consulting.html"> 
+    <a class="nav-link" href="../../consulting.html"> 
 <span class="menu-text">Consulting &amp; Policy</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -209,254 +244,233 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Python Playground</h1>
-            <p class="subtitle lead">Run course code directly in your browser — nothing to install</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#from-adam-smith-to-simulation" id="toc-from-adam-smith-to-simulation" class="nav-link active" data-scroll-target="#from-adam-smith-to-simulation">From Adam Smith to Simulation</a>
+  <ul class="collapse">
+  <li><a href="#the-economists" id="toc-the-economists" class="nav-link" data-scroll-target="#the-economists">The Economists</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-
-
-
-
-<p style="text-align: justify;">
-This page runs real Python — with NumPy and Matplotlib — entirely inside your browser. Pick an example from the course, edit it, and press <strong>Run</strong>. It is perfect for quick experiments between lectures; for full weekly notebooks, use the <a href="./courses/pnm/index.html">course page</a> and its Colab links.
-</p>
-<style>
-.pg-root {
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  background: #ffffff; border: 1px solid rgba(11,11,11,0.10); border-radius: 14px;
-  padding: 1.1rem 1.25rem 1.25rem; margin: 1rem 0 1.5rem;
-}
-.pg-toolbar { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; margin-bottom: 0.7rem; }
-.pg-toolbar select {
-  font-family: inherit; font-size: 0.9rem; padding: 0.4rem 0.6rem;
-  border: 1px solid #e1e0d9; border-radius: 9px; background: #fff; color: #0b0b0b;
-}
-.pg-run {
-  background: #7a2318; color: #f5efe6; border: none; border-radius: 9px;
-  padding: 0.45rem 1.1rem; font-size: 0.92rem; font-weight: 600; cursor: pointer; font-family: inherit;
-}
-.pg-run:disabled { background: #b9a9a5; cursor: wait; }
-.pg-status { font-size: 0.82rem; color: #898781; }
-.pg-editor {
-  width: 100%; min-height: 240px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.88rem; line-height: 1.5; border: 1px solid #e1e0d9; border-radius: 10px;
-  padding: 0.8rem 1rem; background: #fcfcfb; color: #0b0b0b; resize: vertical; white-space: pre; overflow-x: auto;
-}
-.pg-editor:focus { outline: 2px solid rgba(163,58,42,0.35); }
-.pg-out {
-  margin-top: 0.7rem; background: #1f1e1c; color: #e8e6e0; border-radius: 10px;
-  padding: 0.8rem 1rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 0.85rem; line-height: 1.5; white-space: pre-wrap; min-height: 2.2rem; max-height: 340px; overflow: auto;
-}
-.pg-out .err { color: #ff9f8a; }
-.pg-fig { margin-top: 0.7rem; text-align: center; }
-.pg-fig img { max-width: 100%; border-radius: 10px; border: 1px solid #e1e0d9; }
-.pg-note { font-size: 0.8rem; color: #52514e; margin-top: 0.7rem; }
-</style>
-
-<div class="pg-root" id="pg">
-  <div class="pg-toolbar">
-    <select id="pg-example" aria-label="Load an example">
-      <option value="hello">Example: first steps</option>
-      <option value="pv">Exercise: present value (Week 1)</option>
-      <option value="solow">Example: Solow growth model (Week 1)</option>
-      <option value="loops">Exercise: even numbers (Week 1)</option>
-      <option value="ces">Exercise: CES production (Week 2)</option>
-      <option value="blank">Blank editor</option>
-    </select>
-    <button class="pg-run" id="pg-run" disabled="">▶ Run</button>
-    <span class="pg-status" id="pg-status">Loading Python… (first load takes ~10s)</span>
-  </div>
-  <textarea class="pg-editor" id="pg-code" spellcheck="false" aria-label="Python code editor"></textarea>
-  <div class="pg-out" id="pg-out">Output will appear here.</div>
-  <div class="pg-fig" id="pg-fig"></div>
-  <p class="pg-note">Runs entirely in your browser via <a href="https://pyodide.org">Pyodide</a> (Python 3 + NumPy + Matplotlib compiled to WebAssembly). Nothing is sent to a server. Keyboard: <b>Ctrl/Cmd + Enter</b> to run. For full notebooks, use the Colab links on the course page.</p>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">From Adam Smith to Simulation</h1>
+<p class="subtitle lead">Computing the Ideas that Built Economics</p>
 </div>
 
-<script>
-const PG_EXAMPLES = {
-hello: `# Welcome! Edit this code and press Run (or Ctrl+Enter).
-gdp = 2.85e12
-population = 68_350_000
-print(f"GDP per capita: {gdp/population:,.2f}")
-
-# Greek letters work:
-α, β = 0.3, 0.96
-print("α + β =", α + β)`,
-pv: `# Exercise (Week 1): write present_value(payment, r, T)
-# PV = sum of payment/(1+r)**t for t = 1..T
-# Check: present_value(100, 0.05, 10) should be ≈ 772.17
-
-def present_value(payment, r, T):
-    ...  # your code here
-
-print(present_value(100, 0.05, 10))`,
-solow: `# The Solow growth model — k(t+1) = s*k(t)**α + (1-δ)*k(t)
-import numpy as np
-import matplotlib.pyplot as plt
-
-def solow_path(s=0.25, alpha=0.3, delta=0.05, k0=1.0, T=100):
-    k = np.zeros(T); k[0] = k0
-    for t in range(T-1):
-        k[t+1] = s*k[t]**alpha + (1-delta)*k[t]
-    return k
-
-k = solow_path()
-k_star = (0.25/0.05)**(1/(1-0.3))
-
-plt.figure(figsize=(7,3.5))
-plt.plot(k, lw=2, label="capital path")
-plt.axhline(k_star, ls="--", c="tab:red", label="steady state")
-plt.xlabel("t"); plt.ylabel("k"); plt.legend()
-plt.title("Try changing s or delta and re-running!")
-plt.show()`,
-loops: `# Exercise (Week 1): count the even numbers in 0–99
-# Hint: x % 2 == 0 tests evenness; booleans add as 1/0.
-
-count = 0
-# your loop here
-
-print(count)   # should print 50`,
-ces: `# Exercise (Week 2): CES production function
-# Y = A*(α*K**ρ + (1-α)*L**ρ)**(1/ρ),  ρ = (σ-1)/σ
-# ces(4, 9) with defaults should be ≈ 6.25
-
-def ces(K, L, alpha=0.5, sigma=2.0, A=1.0):
-    ...  # your code here
-
-print(ces(4, 9))`,
-blank: `# Your Python scratchpad — numpy and matplotlib are available.
-`};
-
-(function(){
-  const runBtn = document.getElementById('pg-run');
-  const status = document.getElementById('pg-status');
-  const codeEl = document.getElementById('pg-code');
-  const outEl  = document.getElementById('pg-out');
-  const figEl  = document.getElementById('pg-fig');
-  const exSel  = document.getElementById('pg-example');
-
-  codeEl.value = PG_EXAMPLES.hello;
-  exSel.addEventListener('change', () => { codeEl.value = PG_EXAMPLES[exSel.value]; outEl.textContent = 'Output will appear here.'; figEl.innerHTML=''; });
-  codeEl.addEventListener('keydown', e => {
-    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter'){ e.preventDefault(); if(!runBtn.disabled) run(); }
-    if (e.key === 'Tab'){ e.preventDefault();
-      const s = codeEl.selectionStart; codeEl.setRangeText('    ', s, codeEl.selectionEnd, 'end'); }
-  });
-
-  let pyodide = null, loading = null;
-
-  async function ensurePyodide(){
-    if (pyodide) return pyodide;
-    if (!loading){
-      loading = (async () => {
-        const CDNS = [
-          "https://cdn.jsdelivr.net/pyodide/v0.26.4/full/",
-          "https://cdnjs.cloudflare.com/ajax/libs/pyodide/0.26.4/"
-        ];
-        let mod = null, base = null;
-        for (const c of CDNS){
-          try { mod = await import(c + "pyodide.mjs"); base = c; break; } catch(e){ console.warn("CDN failed:", c); }
-        }
-        if (!mod) throw new Error("no CDN reachable");
-        const py = await mod.loadPyodide({indexURL: base});
-        status.textContent = "Loading NumPy + Matplotlib…";
-        await py.loadPackage(["numpy", "matplotlib"]);
-        await py.runPythonAsync(`
-import matplotlib
-matplotlib.use("AGG")
-import sys, io, base64
-`);
-        return py;
-      })();
-    }
-    pyodide = await loading;
-    return pyodide;
-  }
-
-  // start loading immediately
-  ensurePyodide().then(() => {
-    runBtn.disabled = false;
-    status.textContent = "Python ready ✓";
-  }).catch(e => {
-    status.textContent = "Could not load Python (check your connection).";
-    console.error(e);
-  });
-
-  async function run(){
-    runBtn.disabled = true; status.textContent = "Running…";
-    outEl.textContent = ""; figEl.innerHTML = "";
-    try {
-      const py = await ensurePyodide();
-      py.globals.set("__code__", codeEl.value);
-      const result = await py.runPythonAsync(`
-import sys, io, base64, traceback
-import matplotlib.pyplot as plt
-_buf = io.StringIO()
-_old = sys.stdout
-sys.stdout = _buf
-_err = None
-try:
-    exec(compile(__code__, "<playground>", "exec"), {})
-except Exception:
-    _err = traceback.format_exc(limit=3)
-finally:
-    sys.stdout = _old
-_figs = []
-for _n in plt.get_fignums():
-    _f = plt.figure(_n)
-    _b = io.BytesIO()
-    _f.savefig(_b, format="png", dpi=110, bbox_inches="tight")
-    _figs.append(base64.b64encode(_b.getvalue()).decode())
-plt.close("all")
-import json
-json.dumps({"out": _buf.getvalue(), "err": _err, "figs": _figs})
-`);
-      const r = JSON.parse(result);
-      if (r.out) outEl.textContent = r.out;
-      if (r.err){ const s = document.createElement('span'); s.className='err'; s.textContent = r.err; outEl.appendChild(s); }
-      if (!r.out && !r.err) outEl.textContent = "(no output — use print())";
-      for (const f of r.figs){
-        const img = document.createElement('img');
-        img.src = "data:image/png;base64," + f;
-        img.alt = "Matplotlib figure";
-        figEl.appendChild(img);
-      }
-      status.textContent = "Python ready ✓";
-    } catch(e){
-      outEl.innerHTML = '<span class="err">' + String(e) + '</span>';
-      status.textContent = "Python ready ✓";
-    }
-    runBtn.disabled = false;
-  }
-  runBtn.addEventListener('click', run);
-})();
-</script>
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-</main> <!-- /main -->
+</header>
+
+
+<section id="from-adam-smith-to-simulation" class="level1">
+<h1>From Adam Smith to Simulation</h1>
+<p><strong>Computing the Ideas that Built Economics</strong></p>
+<p><em>University of Edinburgh – School of Economics</em></p>
+<hr>
+<section id="the-economists" class="level2">
+<h2 class="anchored" data-anchor-id="the-economists">The Economists</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; margin: 24px 0 32px 0;">
+<div style="text-align: center; width: 130px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Adam_Smith_The_Muir_portrait.jpg/300px-Adam_Smith_The_Muir_portrait.jpg" alt="Adam Smith" style="width: 120px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+Adam Smith
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1723–1790
+</p>
+</div>
+<div style="text-align: center; width: 130px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Thomas_Robert_Malthus.jpg/300px-Thomas_Robert_Malthus.jpg" alt="Thomas Malthus" style="width: 120px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+Thomas Malthus
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1766–1834
+</p>
+</div>
+<div style="text-align: center; width: 130px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Portrait_of_David_Ricardo_by_Thomas_Phillips.jpg/300px-Portrait_of_David_Ricardo_by_Thomas_Phillips.jpg" alt="David Ricardo" style="width: 120px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+David Ricardo
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1772–1823
+</p>
+</div>
+<div style="text-align: center; width: 130px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Karl_Marx_001.jpg/300px-Karl_Marx_001.jpg" alt="Karl Marx" style="width: 120px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+Karl Marx
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1818–1883
+</p>
+</div>
+<div style="text-align: center; width: 130px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/William_Stanley_Jevons.jpg/300px-William_Stanley_Jevons.jpg" alt="William Stanley Jevons" style="width: 120px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+W. S. Jevons
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1835–1882
+</p>
+</div>
+<div style="text-align: center; width: 130px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/John_Maynard_Keynes.jpg/300px-John_Maynard_Keynes.jpg" alt="John Maynard Keynes" style="width: 120px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+J. M. Keynes
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1883–1946
+</p>
+</div>
+<div style="text-align: center; width: 130px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Robert_Solow_by_Olaf_Storbeck.jpg/300px-Robert_Solow_by_Olaf_Storbeck.jpg" alt="Robert Solow" style="width: 120px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+Robert Solow
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1924–2023
+</p>
+</div>
+<div style="text-align: center; width: 130px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Robert_Lucas.jpg/300px-Robert_Lucas.jpg" alt="Robert Lucas" style="width: 120px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+Robert Lucas
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+1937–2023
+</p>
+</div>
+<div style="text-align: center; width: 130px;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Thomas_Piketty%2C_2015_%28cropped%29.jpg/300px-Thomas_Piketty%2C_2015_%28cropped%29.jpg" alt="Thomas Piketty" style="width: 120px; height: 150px; object-fit: cover; border-radius: 8px; border: 2px solid #7A2318;">
+<p style="margin: 6px 0 0; font-size: 0.85em; font-weight: bold; color: #7A2318;">
+Thomas Piketty
+</p>
+<p style="margin: 0; font-size: 0.75em; color: #666;">
+</p><ol start="2" type="a">
+<li>1971
+<p></p>
+</li></ol></div>
+</div>
+
+<p style="text-align: center; font-size: 0.75em; color: #999;">
+Portraits from <a href="https://commons.wikimedia.org" style="color: #999;">Wikimedia Commons</a> (public domain / CC-BY-SA).
+</p>
+<hr>
+<section id="course-description" class="level2">
+<h2 class="anchored" data-anchor-id="course-description">Course Description</h2>
+<p>This ten-week course traces the intellectual history of economics from Adam Smith’s <em>Wealth of Nations</em> (1776) to Thomas Piketty’s <em>Capital in the Twenty-First Century</em> (2013), pairing each major idea with a computational exercise in Python. Students will build working simulations of supply-and-demand equilibria, Ricardian trade models, Marxian reproduction schemes, Keynesian multipliers, Solow growth dynamics, rational-expectations economies, and Markov-chain wealth distributions.</p>
+<p>No prior programming experience is assumed. Each module introduces the necessary Python tools – arrays, plotting, optimisation, simulation – as they arise naturally from the economics.</p>
+<p>By the end of the course, students will be able to:</p>
+<ul>
+<li>Explain the core contribution of each major school of economic thought.</li>
+<li>Translate verbal and mathematical economic arguments into executable code.</li>
+<li>Use simulation to test theoretical predictions and explore parameter sensitivity.</li>
+<li>Communicate quantitative findings through well-documented computational essays.</li>
+</ul>
+<hr>
+</section>
+<section id="how-to-use-these-materials" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-use-these-materials">How to Use These Materials</h2>
+<section id="run-in-the-cloud-recommended-for-beginners" class="level3">
+<h3 class="anchored" data-anchor-id="run-in-the-cloud-recommended-for-beginners">Run in the cloud (recommended for beginners)</h3>
+<p>Every notebook can be launched directly in Google Colab – look for the <strong>“Open in Colab”</strong> badge at the top of each page. No local installation required; just sign in with your University Google account.</p>
+</section>
+<section id="run-locally" class="level3">
+<h3 class="anchored" data-anchor-id="run-locally">Run locally</h3>
+<ol type="1">
+<li><p>Install <a href="https://www.anaconda.com/download">Anaconda</a> (Python 3.11+).</p></li>
+<li><p>Clone the repository:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/Juanignaciozurita/juanzurita.github.io.git</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> juanzurita.github.io/courses/smith-to-simulation</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Create the course environment:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> smith-sim python=3.11 numpy matplotlib scipy pandas jupyter</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate smith-sim</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Launch Jupyter:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="assessment" class="level2">
+<h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Component</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Weekly quizzes</td>
+<td>20%</td>
+</tr>
+<tr class="even">
+<td>Computational essays</td>
+<td>40%</td>
+</tr>
+<tr class="odd">
+<td>Final project</td>
+<td>30%</td>
+</tr>
+<tr class="even">
+<td>Participation</td>
+<td>10%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Weekly quizzes</strong> test comprehension of both the economic ideas and the Python concepts introduced each week.</p>
+<p><strong>Computational essays</strong> (three over the semester) ask students to extend a module’s model, run new experiments, and write up findings in a Jupyter notebook combining code, visualisations, and narrative.</p>
+<p><strong>Final project</strong> is an independent computational investigation of an economic question of the student’s choosing, presented as a polished Jupyter notebook with full documentation.</p>
+<hr>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Smith, Adam. <em>An Inquiry into the Nature and Causes of the Wealth of Nations</em> (1776).</li>
+<li>Heilbroner, Robert L. <em>The Worldly Philosophers: The Lives, Times, and Ideas of the Great Economic Thinkers</em>. 7th ed., Simon &amp; Schuster, 1999.</li>
+<li>Broadie, Alexander. <em>The Scottish Enlightenment: The Historical Age of the Historical Nation</em>. Birlinn, 2001.</li>
+<li>Romer, David. <em>Advanced Macroeconomics</em>. 5th ed., McGraw-Hill, 2018.</li>
+<li>Piketty, Thomas. <em>Capital in the Twenty-First Century</em>. Translated by Arthur Goldhammer, Harvard University Press, 2014.</li>
+</ul>
+<hr>
+</section>
+<section id="contact" class="level2">
+<h2 class="anchored" data-anchor-id="contact">Contact</h2>
+<p><strong>Instructor:</strong> Juan Zurita<br>
+<strong>Email:</strong> <a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a><br>
+<strong>Office hours:</strong> By appointment</p>
+
+
+</section>
+</section></section></main></div>
+
+
+
+
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -857,14 +871,14 @@ json.dumps({"out": _buf.getvalue(), "err": _err, "figs": _figs})
     }
   });
   </script>
-</div> <!-- /content -->
+ <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
 <p>Juan Zurita · School of Economics, The University of Edinburgh</p>
 </div>   
     <div class="nav-footer-center">
-<p><a href="./jobmarket.html">Job Market</a> · <a href="./cv.html">CV</a> · <a href="./research.html">Research</a></p>
+<p><a href="jobmarket.qmd">Job Market</a> · <a href="cv.qmd">CV</a> · <a href="research.qmd">Research</a></p>
 </div>
     <div class="nav-footer-right">
 <p><a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a></p>

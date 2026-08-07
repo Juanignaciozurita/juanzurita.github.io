@@ -13,65 +13,69 @@ In recent years, I have taught undergraduate and postgraduate courses in program
 
 ## Courses
 
-#### Applications of Econometrics *(Honours)*
+#### Applications of Econometrics *(Honours)*  
 The University of Edinburgh, United Kingdom — 2026
 
 ---
 
-#### Economics 2 *(Undergraduate)*
-The University of Edinburgh, United Kingdom — 2024–2026
-<!-- [Teaching Evaluation Reports](ADD-LINK-WHEN-READY) -->
+#### Economics 2 *(Undergraduate)*  
+The University of Edinburgh, United Kingdom — 2024–2026  
+[Teaching Evaluation Reports](#)
 
 ---
 
 #### Programming and Numerical Methods *(Honours)*
 The University of Edinburgh, United Kingdom — 2024–2026
-[**Course Materials** — notebooks, slides, and Colab links](courses/pnm/index.qmd)
 
 ---
 
-#### Macroeconomics 2 *(PhD Students)*
+#### From Adam Smith to Simulation *(Honours)*
+The University of Edinburgh, United Kingdom — 2026
+
+---
+
+#### Macroeconomics 2 *(PhD Students)*  
 University of Technology Sydney, Australia — 2024
 
 ---
 
-#### Advanced Macroeconomics *(Honours)*
+#### Advanced Macroeconomics *(Honours)*  
 University of Technology Sydney, Australia — 2024
 
 ---
 
-#### Intermediate Macroeconomics
+#### Intermediate Macroeconomics  
 University of Technology Sydney, Australia — 2024
 
 ---
 
-#### Central Banking and Monetary Policy
-University of Technology Sydney, Australia — 2024
-<!-- [Teaching Evaluation Reports](ADD-LINK-WHEN-READY) -->
+#### Central Banking and Monetary Policy  
+University of Technology Sydney, Australia — 2024  
+[Teaching Evaluation Reports](#)
 
 ---
 
-#### Economic and Business Forecasting
-The Australian National University, Australia — 2023
-<!-- [Teaching Evaluation Reports](ADD-LINK-WHEN-READY) -->
+#### Economic and Business Forecasting  
+The Australian National University, Australia — 2023  
+[Teaching Evaluation Reports](#)
 
 ---
 
-#### Economics for Business
-University of Technology Sydney, Australia — 2022
-<!-- [Teaching Evaluation Reports](ADD-LINK-WHEN-READY) -->
+#### Economics for Business  
+University of Technology Sydney, Australia — 2022  
+[Teaching Evaluation Reports](#)
 
 ---
 
-#### History of Economic Thought
-Universidad Católica Argentina, Argentina — 2011–2015
-<!-- [Teaching Evaluation Reports](ADD-LINK-WHEN-READY) -->
+#### History of Economic Thought  
+Universidad Católica Argentina, Argentina — 2011–2015  
+[Teaching Evaluation Reports](#)
 
 ---
 
 ## Lectures
 
-- [**Deep Learning for Macroeconomics** — notebooks, slides, and Colab links](courses/dlmacro/index.qmd)
+- [Deep Learning for Macroeconomics]()
 
 <!-- --- -->
 
@@ -83,4 +87,5 @@ Universidad Católica Argentina, Argentina — 2011–2015
 
 ### Letters of Recommendation
 
-If you would like to request a letter of recommendation, please see the instructions on the [For Students](students.qmd) page.
+For undergraduate recommendation letters, please follow these instructions:  
+[Click here](#)

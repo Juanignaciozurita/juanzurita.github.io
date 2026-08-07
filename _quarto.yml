@@ -9,6 +9,8 @@ project:
     - "courses/dlmacro/index.qmd"
     - "courses/dlmacro/intro.md"
     - "courses/dlmacro/notebooks/*.ipynb"
+    - "courses/smith-to-simulation/index.qmd"
+    - "courses/smith-to-simulation/intro.md"
     - "!courses/pnm/New Problem Sets/"
 
 website:
@@ -55,6 +57,8 @@ website:
             href: courses/pnm/index.qmd
           - text: "Deep Learning for Macroeconomics"
             href: courses/dlmacro/index.qmd
+          - text: "From Adam Smith to Simulation"
+            href: courses/smith-to-simulation/index.qmd
           - text: For Students
             href: students.qmd
           - text: Numerical Methods Quiz
