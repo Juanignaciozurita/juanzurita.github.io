@@ -931,6 +931,97 @@
     "text": "Next week\n\nNumPy and linear algebra in depth\nWorking with real economic data\nReading: QuantEcon Python lectures 1–3"
   },
   {
+    "objectID": "courses/optimisation/index.html",
+    "href": "courses/optimisation/index.html",
+    "title": "Optimisation & Mathematical Methods for Economics",
+    "section": "",
+    "text": "A 10-week course covering the mathematical theory of optimisation that underpins modern economics. Each module develops a core concept — from unconstrained calculus to dynamic programming — and pairs it with computational exercises in Python so you can see the theory at work. Designed as a companion to Programming & Numerical Methods: that course teaches you to implement algorithms; this one teaches you the mathematics behind them. No prior programming experience is assumed; all materials are open access."
+  },
+  {
+    "objectID": "courses/optimisation/index.html#how-to-use-these-materials",
+    "href": "courses/optimisation/index.html#how-to-use-these-materials",
+    "title": "Optimisation & Mathematical Methods for Economics",
+    "section": "How to use these materials",
+    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud, plus a slide deck for the lecture:\n\nRead online — click the notebook link; it renders as a webpage with all code and output.\nRun in Google Colab — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.\nRun locally — install Anaconda (includes Python, Jupyter, NumPy, and Matplotlib), then download the .ipynb file and open it in Jupyter.\n\nCompanion course: this course provides the mathematical foundations for Programming & Numerical Methods. Taking them together is recommended but not required."
+  },
+  {
+    "objectID": "courses/optimisation/index.html#materials",
+    "href": "courses/optimisation/index.html#materials",
+    "title": "Optimisation & Mathematical Methods for Economics",
+    "section": "Materials",
+    "text": "Materials\n\n\n\nWeek\nTopic\nNotebook\nSlides\nColab\n\n\n\n\n1\nMathematical Foundations — Sets, Functions & Linear Algebra\nView\nPDF\n\n\n\n2\nUnconstrained Optimisation I — Gradients, Hessians & Convexity\nView\nPDF\n\n\n\n3\nUnconstrained Optimisation II — Gradient Descent & Newton’s Method\nView\nPDF\n\n\n\n4\nConstrained Optimisation I — Lagrange Multipliers & Economic Applications\nView\nPDF\n\n\n\n5\nConstrained Optimisation II — KKT Conditions & Inequality Constraints\nView\nPDF\n\n\n\n6\nConvex Optimisation — Theory, Duality & CVXPY\nView\nPDF\n\n\n\n7\nLinear Programming — The Simplex Method & Economic Models\nView\nPDF\n\n\n\n8\nDynamic Optimisation I — Optimal Control & the Maximum Principle\nView\nPDF\n\n\n\n9\nDynamic Optimisation II — Dynamic Programming & the Bellman Equation\nView\nPDF\n\n\n\n10\nFrontiers — Stochastic Optimisation, Machine Learning & Beyond\nView\nPDF\n\n\n\n\nEach notebook includes interactive exercises with hidden solutions — try first, then click to check."
+  },
+  {
+    "objectID": "courses/optimisation/index.html#syllabus",
+    "href": "courses/optimisation/index.html#syllabus",
+    "title": "Optimisation & Mathematical Methods for Economics",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nMathematical foundations — sets, real analysis essentials, vector spaces, matrices, eigenvalues, and positive-definiteness; Python refresher with NumPy\nUnconstrained optimisation I — multivariate calculus review, gradient and Hessian, first- and second-order conditions, convexity and concavity, economic examples (profit maximisation, cost minimisation)\nUnconstrained optimisation II — iterative algorithms: steepest descent, Newton’s method, quasi-Newton (BFGS), convergence rates; implementing gradient descent in Python\nConstrained optimisation I — equality constraints, Lagrange multipliers, the bordered Hessian, envelope theorem; applications to utility maximisation and the expenditure function\nConstrained optimisation II — inequality constraints, Karush–Kuhn–Tucker conditions, complementary slackness, constraint qualification; portfolio choice and production planning\nConvex optimisation — convex sets and functions, convex programs, Lagrangian duality, strong duality and Slater’s condition; solving convex problems with CVXPY\nLinear programming — the standard form, the simplex method, LP duality and shadow prices, sensitivity analysis; applications to input–output models, transportation, and diet problems using SciPy and PuLP\nDynamic optimisation I — calculus of variations, Euler–Lagrange equation, transversality conditions, optimal control theory, Pontryagin’s maximum principle; the Ramsey–Cass–Koopmans growth model\nDynamic optimisation II — the principle of optimality, Bellman’s equation, contraction mapping theorem, policy and value function iteration; consumption–savings with borrowing constraints\nFrontiers — stochastic dynamic programming, introduction to Bayesian optimisation, optimisation in machine learning (SGD, Adam), connections to computational economics and current research"
+  },
+  {
+    "objectID": "courses/optimisation/index.html#assessment",
+    "href": "courses/optimisation/index.html#assessment",
+    "title": "Optimisation & Mathematical Methods for Economics",
+    "section": "Assessment",
+    "text": "Assessment\n\nWeekly problem sets: 20%\nComputational essays (3 over the term): 40%\nFinal project: 30%\nParticipation: 10%"
+  },
+  {
+    "objectID": "courses/optimisation/index.html#references",
+    "href": "courses/optimisation/index.html#references",
+    "title": "Optimisation & Mathematical Methods for Economics",
+    "section": "References",
+    "text": "References\n\nMain texts\n\nBoyd, S. & Vandenberghe, L. Convex Optimization (2004) — freely available; main reference for Weeks 2–6\nKochenderfer, M. J. & Wheeler, T. A. Algorithms for Optimization (2019) — freely available; algorithms and implementation\nSundaram, R. K. A First Course in Optimization Theory (1996) — rigorous treatment of constrained optimisation and duality\nChiang, A. C. & Wainwright, K. Fundamental Methods of Mathematical Economics (4th ed.) — accessible introduction for economics students\n\n\n\nSupplementary\n\nJudd, K. L. Numerical Methods in Economics (1998) — bridge to computational implementation (also used in PNM)\nBertsekas, D. P. Convex Optimization Theory — freely available; advanced convex analysis\nBertsekas, D. P. Dynamic Programming and Optimal Control, Vols. I & II — definitive reference for Weeks 8–9\nStokey, N., Lucas, R. & Prescott, E. Recursive Methods in Economic Dynamics (1989) — dynamic programming for economists\nSimon, C. P. & Blume, L. Mathematics for Economists (1994) — comprehensive maths-for-econ reference\nQuantEcon — T. Sargent and J. Stachurski’s open lectures on computational economics\n\n\n\nVideo lectures (all free)\n\nStanford EE364A: Convex Optimization — Stephen Boyd (2023)\nCMU: Convex Optimization — Ryan Tibshirani\nArizona Math Camp: Optimization\nDimitri Bertsekas: Dynamic Programming Lectures\nKIT: Optimization Methods for ML and Engineering — Julius Pfrommer\n\n\n\nPython tools used in this course\n\nSciPy Optimize — general-purpose optimisation routines\nCVXPY — disciplined convex programming in Python\nPuLP — linear programming modelling"
+  },
+  {
+    "objectID": "courses/optimisation/index.html#questions",
+    "href": "courses/optimisation/index.html#questions",
+    "title": "Optimisation & Mathematical Methods for Economics",
+    "section": "Questions",
+    "text": "Questions\nFound an error in a notebook, or stuck on setup? Email juan.zurita@ed.ac.uk."
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Juan Zurita",
+    "section": "",
+    "text": "I work with financial institutions, policy bodies, and businesses that need rigorous, independent analysis of how monetary policy, fiscal policy, and credit conditions affect the economy — and their balance sheets. This page describes what I can help with and how to engage me. For my academic work, see Research."
+  },
+  {
+    "objectID": "consulting.html#what-i-can-help-with",
+    "href": "consulting.html#what-i-can-help-with",
+    "title": "Juan Zurita",
+    "section": "What I can help with",
+    "text": "What I can help with\n\n\n🏦 Bank profitability & interest-rate risk\nHow rate changes feed through to net interest income, and why the impact differs sharply by bank size and funding model. My recent work shows mid-sized banks can lose up to 19% of net interest income after contractionary shocks — relevant for earnings stress-testing and ALM strategy.\n\n\n🏠 Household debt & policy transmission\nHow household indebtedness changes the impact of interest-rate moves and fiscal stimulus on spending and output — essential context for forecasting in high-debt economies like the UK and Australia.\n\n\n📊 Credit supply & regional growth\nHow bank lending shapes local economic activity, and why lender characteristics matter for assessing credit conditions, consolidation, and regional policy.\n\n\n📈 Macroeconomic forecasting & methods\nApplied forecasting and scenario analysis using modern time-series methods (VARs, local projections, Bayesian techniques) — as analysis, or as hands-on training for your team."
+  },
+  {
+    "objectID": "consulting.html#types-of-engagement",
+    "href": "consulting.html#types-of-engagement",
+    "title": "Juan Zurita",
+    "section": "Types of engagement",
+    "text": "Types of engagement\n\nCommissioned analysis — a defined question, answered with data and a clear write-up for a non-technical audience.\nAdvisory work — ongoing input on macro-financial questions: rate-cycle exposure, credit conditions, fiscal outlook.\nTraining & workshops — practical courses for analyst teams on forecasting, Bayesian econometrics, and programming for economics (Julia/numerical methods). I have taught these methods to undergraduates, PhD students, and practitioners.\nExpert commentary — I am happy to speak with journalists and policy audiences about monetary policy, household debt, banking, and the UK fiscal outlook."
+  },
+  {
+    "objectID": "consulting.html#why-me",
+    "href": "consulting.html#why-me",
+    "title": "Juan Zurita",
+    "section": "Why me",
+    "text": "Why me\nMy research on these questions is published in peer-reviewed journals (International Review of Economics and Finance, Macroeconomic Dynamics) and my current project on productivity and the UK’s fiscal sustainability is funded by the Royal Society of Edinburgh. I hold a Lectureship at the University of Edinburgh’s School of Economics, and I have taught macroeconomics, forecasting, and quantitative methods at universities in the UK and Australia."
+  },
+  {
+    "objectID": "consulting.html#data-partnerships",
+    "href": "consulting.html#data-partnerships",
+    "title": "Juan Zurita",
+    "section": "Data partnerships",
+    "text": "Data partnerships\nIf your organisation holds proprietary data on lending, wages, or household finances, a research partnership can turn it into credible, independent insight — see Open Collaborations for what I offer and what I would need."
+  },
+  {
+    "objectID": "consulting.html#get-in-touch",
+    "href": "consulting.html#get-in-touch",
+    "title": "Juan Zurita",
+    "section": "Get in touch",
+    "text": "Get in touch\nEmail juan.zurita@ed.ac.uk with a short description of your question and your timeline, or connect on LinkedIn. I reply to serious enquiries within a few working days."
+  },
+  {
     "objectID": "courses/dlmacro/index.html",
     "href": "courses/dlmacro/index.html",
     "title": "Deep Learning for Macroeconomics",
@@ -985,48 +1076,6 @@
     "title": "Deep Learning for Macroeconomics",
     "section": "Questions",
     "text": "Questions\nFound an error in a notebook, or stuck on setup? Email juan.zurita@ed.ac.uk — see For Students for how to get a fast answer."
-  },
-  {
-    "objectID": "consulting.html",
-    "href": "consulting.html",
-    "title": "Juan Zurita",
-    "section": "",
-    "text": "I work with financial institutions, policy bodies, and businesses that need rigorous, independent analysis of how monetary policy, fiscal policy, and credit conditions affect the economy — and their balance sheets. This page describes what I can help with and how to engage me. For my academic work, see Research."
-  },
-  {
-    "objectID": "consulting.html#what-i-can-help-with",
-    "href": "consulting.html#what-i-can-help-with",
-    "title": "Juan Zurita",
-    "section": "What I can help with",
-    "text": "What I can help with\n\n\n🏦 Bank profitability & interest-rate risk\nHow rate changes feed through to net interest income, and why the impact differs sharply by bank size and funding model. My recent work shows mid-sized banks can lose up to 19% of net interest income after contractionary shocks — relevant for earnings stress-testing and ALM strategy.\n\n\n🏠 Household debt & policy transmission\nHow household indebtedness changes the impact of interest-rate moves and fiscal stimulus on spending and output — essential context for forecasting in high-debt economies like the UK and Australia.\n\n\n📊 Credit supply & regional growth\nHow bank lending shapes local economic activity, and why lender characteristics matter for assessing credit conditions, consolidation, and regional policy.\n\n\n📈 Macroeconomic forecasting & methods\nApplied forecasting and scenario analysis using modern time-series methods (VARs, local projections, Bayesian techniques) — as analysis, or as hands-on training for your team."
-  },
-  {
-    "objectID": "consulting.html#types-of-engagement",
-    "href": "consulting.html#types-of-engagement",
-    "title": "Juan Zurita",
-    "section": "Types of engagement",
-    "text": "Types of engagement\n\nCommissioned analysis — a defined question, answered with data and a clear write-up for a non-technical audience.\nAdvisory work — ongoing input on macro-financial questions: rate-cycle exposure, credit conditions, fiscal outlook.\nTraining & workshops — practical courses for analyst teams on forecasting, Bayesian econometrics, and programming for economics (Julia/numerical methods). I have taught these methods to undergraduates, PhD students, and practitioners.\nExpert commentary — I am happy to speak with journalists and policy audiences about monetary policy, household debt, banking, and the UK fiscal outlook."
-  },
-  {
-    "objectID": "consulting.html#why-me",
-    "href": "consulting.html#why-me",
-    "title": "Juan Zurita",
-    "section": "Why me",
-    "text": "Why me\nMy research on these questions is published in peer-reviewed journals (International Review of Economics and Finance, Macroeconomic Dynamics) and my current project on productivity and the UK’s fiscal sustainability is funded by the Royal Society of Edinburgh. I hold a Lectureship at the University of Edinburgh’s School of Economics, and I have taught macroeconomics, forecasting, and quantitative methods at universities in the UK and Australia."
-  },
-  {
-    "objectID": "consulting.html#data-partnerships",
-    "href": "consulting.html#data-partnerships",
-    "title": "Juan Zurita",
-    "section": "Data partnerships",
-    "text": "Data partnerships\nIf your organisation holds proprietary data on lending, wages, or household finances, a research partnership can turn it into credible, independent insight — see Open Collaborations for what I offer and what I would need."
-  },
-  {
-    "objectID": "consulting.html#get-in-touch",
-    "href": "consulting.html#get-in-touch",
-    "title": "Juan Zurita",
-    "section": "Get in touch",
-    "text": "Get in touch\nEmail juan.zurita@ed.ac.uk with a short description of your question and your timeline, or connect on LinkedIn. I reply to serious enquiries within a few working days."
   },
   {
     "objectID": "courses/pnm/index.html",
@@ -1222,7 +1271,7 @@
     "href": "teaching.html#courses",
     "title": "Juan Zurita",
     "section": "Courses",
-    "text": "Courses\n\nApplications of Econometrics (Honours)\nThe University of Edinburgh, United Kingdom — 2026\n\n\n\nEconomics 2 (Undergraduate)\nThe University of Edinburgh, United Kingdom — 2024–2026\nTeaching Evaluation Reports\n\n\n\nProgramming and Numerical Methods (Honours)\nThe University of Edinburgh, United Kingdom — 2024–2026\n\n\n\nFrom Adam Smith to Simulation (Honours)\nThe University of Edinburgh, United Kingdom — 2026\n\n\n\nMacroeconomics 2 (PhD Students)\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nAdvanced Macroeconomics (Honours)\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nIntermediate Macroeconomics\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nCentral Banking and Monetary Policy\nUniversity of Technology Sydney, Australia — 2024\nTeaching Evaluation Reports\n\n\n\nEconomic and Business Forecasting\nThe Australian National University, Australia — 2023\nTeaching Evaluation Reports\n\n\n\nEconomics for Business\nUniversity of Technology Sydney, Australia — 2022\nTeaching Evaluation Reports\n\n\n\nHistory of Economic Thought\nUniversidad Católica Argentina, Argentina — 2011–2015\nTeaching Evaluation Reports"
+    "text": "Courses\n\nApplications of Econometrics (Honours)\nThe University of Edinburgh, United Kingdom — 2026\n\n\n\nEconomics 2 (Undergraduate)\nThe University of Edinburgh, United Kingdom — 2024–2026\nTeaching Evaluation Reports\n\n\n\nProgramming and Numerical Methods (Honours)\nThe University of Edinburgh, United Kingdom — 2024–2026\n\n\n\nFrom Adam Smith to Simulation (Honours)\nThe University of Edinburgh, United Kingdom — 2026\n\n\n\nOptimisation & Mathematical Methods (Honours)\nThe University of Edinburgh, United Kingdom — 2026\n\n\n\nMacroeconomics 2 (PhD Students)\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nAdvanced Macroeconomics (Honours)\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nIntermediate Macroeconomics\nUniversity of Technology Sydney, Australia — 2024\n\n\n\nCentral Banking and Monetary Policy\nUniversity of Technology Sydney, Australia — 2024\nTeaching Evaluation Reports\n\n\n\nEconomic and Business Forecasting\nThe Australian National University, Australia — 2023\nTeaching Evaluation Reports\n\n\n\nEconomics for Business\nUniversity of Technology Sydney, Australia — 2022\nTeaching Evaluation Reports\n\n\n\nHistory of Economic Thought\nUniversidad Católica Argentina, Argentina — 2011–2015\nTeaching Evaluation Reports"
   },
   {
     "objectID": "teaching.html#lectures",

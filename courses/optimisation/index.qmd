@@ -1,0 +1,93 @@
+---
+title: "Optimisation & Mathematical Methods for Economics"
+subtitle: "Honours — The University of Edinburgh"
+title-block-banner: true
+toc: true
+---
+
+<p style="text-align: justify;">
+A 10-week course covering the **mathematical theory of optimisation** that underpins modern economics. Each module develops a core concept — from unconstrained calculus to dynamic programming — and pairs it with **computational exercises in Python** so you can see the theory at work. Designed as a companion to *Programming & Numerical Methods*: that course teaches you to implement algorithms; this one teaches you the mathematics behind them. No prior programming experience is assumed; all materials are open access.
+</p>
+
+## How to use these materials
+
+Each week has a **notebook** you can read online, download, or run in the cloud, plus a **slide deck** for the lecture:
+
+- **Read online** — click the notebook link; it renders as a webpage with all code and output.
+- **Run in Google Colab** — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.
+- **Run locally** — install [Anaconda](https://www.anaconda.com/download) (includes Python, Jupyter, NumPy, and Matplotlib), then download the `.ipynb` file and open it in Jupyter.
+
+**Companion course:** this course provides the mathematical foundations for [Programming & Numerical Methods](../pnm/index.qmd). Taking them together is recommended but not required.
+
+## Materials
+
+| Week | Topic | Notebook | Slides | Colab |
+|:----:|:------|:---------|:-------|:------|
+| 1 | Mathematical Foundations — Sets, Functions & Linear Algebra | [View](notebooks/week01_foundations.ipynb) | [PDF](slides/week01_foundations.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week01_foundations.ipynb) |
+| 2 | Unconstrained Optimisation I — Gradients, Hessians & Convexity | [View](notebooks/week02_unconstrained1.ipynb) | [PDF](slides/week02_unconstrained1.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week02_unconstrained1.ipynb) |
+| 3 | Unconstrained Optimisation II — Gradient Descent & Newton's Method | [View](notebooks/week03_unconstrained2.ipynb) | [PDF](slides/week03_unconstrained2.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week03_unconstrained2.ipynb) |
+| 4 | Constrained Optimisation I — Lagrange Multipliers & Economic Applications | [View](notebooks/week04_constrained1.ipynb) | [PDF](slides/week04_constrained1.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week04_constrained1.ipynb) |
+| 5 | Constrained Optimisation II — KKT Conditions & Inequality Constraints | [View](notebooks/week05_constrained2.ipynb) | [PDF](slides/week05_constrained2.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week05_constrained2.ipynb) |
+| 6 | Convex Optimisation — Theory, Duality & CVXPY | [View](notebooks/week06_convex.ipynb) | [PDF](slides/week06_convex.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week06_convex.ipynb) |
+| 7 | Linear Programming — The Simplex Method & Economic Models | [View](notebooks/week07_linear.ipynb) | [PDF](slides/week07_linear.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week07_linear.ipynb) |
+| 8 | Dynamic Optimisation I — Optimal Control & the Maximum Principle | [View](notebooks/week08_dynamic1.ipynb) | [PDF](slides/week08_dynamic1.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week08_dynamic1.ipynb) |
+| 9 | Dynamic Optimisation II — Dynamic Programming & the Bellman Equation | [View](notebooks/week09_dynamic2.ipynb) | [PDF](slides/week09_dynamic2.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week09_dynamic2.ipynb) |
+| 10 | Frontiers — Stochastic Optimisation, Machine Learning & Beyond | [View](notebooks/week10_frontiers.ipynb) | [PDF](slides/week10_frontiers.pdf) | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week10_frontiers.ipynb) |
+
+*Each notebook includes interactive exercises with hidden solutions — try first, then click to check.*
+
+## Syllabus
+
+1. **Mathematical foundations** — sets, real analysis essentials, vector spaces, matrices, eigenvalues, and positive-definiteness; Python refresher with NumPy
+2. **Unconstrained optimisation I** — multivariate calculus review, gradient and Hessian, first- and second-order conditions, convexity and concavity, economic examples (profit maximisation, cost minimisation)
+3. **Unconstrained optimisation II** — iterative algorithms: steepest descent, Newton's method, quasi-Newton (BFGS), convergence rates; implementing gradient descent in Python
+4. **Constrained optimisation I** — equality constraints, Lagrange multipliers, the bordered Hessian, envelope theorem; applications to utility maximisation and the expenditure function
+5. **Constrained optimisation II** — inequality constraints, Karush–Kuhn–Tucker conditions, complementary slackness, constraint qualification; portfolio choice and production planning
+6. **Convex optimisation** — convex sets and functions, convex programs, Lagrangian duality, strong duality and Slater's condition; solving convex problems with CVXPY
+7. **Linear programming** — the standard form, the simplex method, LP duality and shadow prices, sensitivity analysis; applications to input–output models, transportation, and diet problems using SciPy and PuLP
+8. **Dynamic optimisation I** — calculus of variations, Euler–Lagrange equation, transversality conditions, optimal control theory, Pontryagin's maximum principle; the Ramsey–Cass–Koopmans growth model
+9. **Dynamic optimisation II** — the principle of optimality, Bellman's equation, contraction mapping theorem, policy and value function iteration; consumption–savings with borrowing constraints
+10. **Frontiers** — stochastic dynamic programming, introduction to Bayesian optimisation, optimisation in machine learning (SGD, Adam), connections to computational economics and current research
+
+## Assessment
+
+- Weekly problem sets: 20%
+- Computational essays (3 over the term): 40%
+- Final project: 30%
+- Participation: 10%
+
+## References
+
+### Main texts
+
+- Boyd, S. & Vandenberghe, L. [*Convex Optimization*](https://web.stanford.edu/~boyd/cvxbook/) (2004) — freely available; main reference for Weeks 2–6
+- Kochenderfer, M. J. & Wheeler, T. A. [*Algorithms for Optimization*](https://algorithmsbook.com/optimization/files/optimization.pdf) (2019) — freely available; algorithms and implementation
+- Sundaram, R. K. *A First Course in Optimization Theory* (1996) — rigorous treatment of constrained optimisation and duality
+- Chiang, A. C. & Wainwright, K. *Fundamental Methods of Mathematical Economics* (4th ed.) — accessible introduction for economics students
+
+### Supplementary
+
+- Judd, K. L. *Numerical Methods in Economics* (1998) — bridge to computational implementation (also used in PNM)
+- Bertsekas, D. P. [*Convex Optimization Theory*](https://web.mit.edu/dimitrib/www/Convex_Theory_Entire_Book.pdf) — freely available; advanced convex analysis
+- Bertsekas, D. P. *Dynamic Programming and Optimal Control*, Vols. I & II — definitive reference for Weeks 8–9
+- Stokey, N., Lucas, R. & Prescott, E. *Recursive Methods in Economic Dynamics* (1989) — dynamic programming for economists
+- Simon, C. P. & Blume, L. *Mathematics for Economists* (1994) — comprehensive maths-for-econ reference
+- [QuantEcon](https://quantecon.org) — T. Sargent and J. Stachurski's open lectures on computational economics
+
+### Video lectures (all free)
+
+- Stanford EE364A: [Convex Optimization](https://www.youtube.com/playlist?list=PLoROMvodv4rMJqxxviPa4AmDClvcbHi6h) — Stephen Boyd (2023)
+- CMU: [Convex Optimization](https://www.stat.cmu.edu/~ryantibs/convexopt/) — Ryan Tibshirani
+- Arizona Math Camp: [Optimization](https://www.youtube.com/playlist?list=PLcjqUUQt__ZE0ZSTNRyBIgLJ5obPHdmxC)
+- Dimitri Bertsekas: [Dynamic Programming Lectures](https://youtube.com/playlist?list=PLmH30BG15SIqgS8N1TLhSQV1jwiB7ufxI)
+- KIT: [Optimization Methods for ML and Engineering](https://www.youtube.com/playlist?list=PLdkTDauaUnQpzuOCZyUUZc0lxf4-PXNR5) — Julius Pfrommer
+
+### Python tools used in this course
+
+- [SciPy Optimize](https://docs.scipy.org/doc/scipy/tutorial/optimize.html) — general-purpose optimisation routines
+- [CVXPY](https://github.com/cvxpy/cvxpy) — disciplined convex programming in Python
+- [PuLP](https://coin-or.github.io/pulp/) — linear programming modelling
+
+## Questions
+
+Found an error in a notebook, or stuck on setup? Email [juan.zurita@ed.ac.uk](mailto:juan.zurita@ed.ac.uk).
