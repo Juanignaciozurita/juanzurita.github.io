@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Juan Zurita</title>
+<title>Programming &amp; Numerical Methods for Economics – Juan Zurita</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,25 +23,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-cdfd0cc769c71205c17cfb73cc6016cc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-befc92836a82f2ebff21c48b720c4121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,17 +108,25 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Programming &amp; Numerical Methods for Economics – Juan Zurita">
+<meta property="og:description" content="University of Edinburgh">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/Profile.jpg">
+<meta property="og:site_name" content="Juan Zurita">
+<meta name="twitter:title" content="Programming &amp; Numerical Methods for Economics – Juan Zurita">
+<meta name="twitter:description" content="University of Edinburgh">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/pnm/Profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed home-page fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Juan Zurita</span>
     </a>
   </div>
@@ -92,28 +137,100 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./research.html"> 
-<span class="menu-text">Research</span></a>
+    <a class="nav-link" href="../../jobmarket.html"> 
+<span class="menu-text">Job Market</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Research</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
+        <li>
+    <a class="dropdown-item" href="../../research.html">
+ <span class="dropdown-text">Publications &amp; Working Papers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../writing.html">
+ <span class="dropdown-text">Public Writing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../explorer.html">
+ <span class="dropdown-text">Interactive: Debt &amp; Policy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../opencollaborations.html">
+ <span class="dropdown-text">Open Collaborations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teaching" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teaching</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teaching">    
+        <li>
+    <a class="dropdown-item" href="../../teaching.html">
+ <span class="dropdown-text">Courses</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../courses/pnm/index.html">
+ <span class="dropdown-text">Programming &amp; Numerical Methods</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../courses/dlmacro/index.html">
+ <span class="dropdown-text">Deep Learning for Macroeconomics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../students.html">
+ <span class="dropdown-text">For Students</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../quiz.html">
+ <span class="dropdown-text">Numerical Methods Quiz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../playground.html">
+ <span class="dropdown-text">Python Playground</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usefullinks.html">
+ <span class="dropdown-text">Resources</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../consulting.html"> 
+<span class="menu-text">Consulting &amp; Policy</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./teaching.html"> 
-<span class="menu-text">Teaching</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./cv.html"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./opencollaborations.html"> 
-<span class="menu-text">Open Collaborations</span></a>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Juanignaciozurita"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./usefullinks.html"> 
-<span class="menu-text">Useful Links</span></a>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/juan-ignacio-z-4b345425/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/juanignaciozurita/"> <i class="bi bi-instagram" role="img" aria-label="Instagram">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:juan.zurita@ed.ac.uk"> <i class="bi bi-envelope-fill" role="img" aria-label="Email">
+</i> 
+<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -126,121 +243,164 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#programming-numerical-methods-for-economics" id="toc-programming-numerical-methods-for-economics" class="nav-link active" data-scroll-target="#programming-numerical-methods-for-economics">Programming &amp; Numerical Methods for Economics</a>
+  <ul class="collapse">
+  <li><a href="#about-this-course" id="toc-about-this-course" class="nav-link" data-scroll-target="#about-this-course">About This Course</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#how-to-use-these-materials" id="toc-how-to-use-these-materials" class="nav-link" data-scroll-target="#how-to-use-these-materials">How to Use These Materials</a>
+  <ul class="collapse">
+  <li><a href="#run-in-google-colab" id="toc-run-in-google-colab" class="nav-link" data-scroll-target="#run-in-google-colab">Run in Google Colab</a></li>
+  <li><a href="#run-locally" id="toc-run-locally" class="nav-link" data-scroll-target="#run-locally">Run locally</a></li>
+  </ul></li>
+  <li><a href="#course-outline" id="toc-course-outline" class="nav-link" data-scroll-target="#course-outline">Course Outline</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#contact" id="toc-contact" class="nav-link" data-scroll-target="#contact">Contact</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="Profile.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Juan Zurita</h1>
-<p class="subtitle lead">Fix-Term Lecturer <br> School of Economics, The University of Edinburgh</p>
+<h1 class="title">Programming &amp; Numerical Methods for Economics</h1>
+<p class="subtitle lead">University of Edinburgh</p>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
-</header><main class="content" id="quarto-document-content">
-<div class="contact">
-<p><span style="color:#a33a2a;"> <i class="bi bi-envelope-fill"></i> </span> <a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a> <!-- 📧 [juan.zurita@ed.ac.uk](mailto:juan.zurita@ed.ac.uk) --> <!-- 🐙 [GitHub](https://github.com/Juanignaciozurita) --> <!-- 📄 [CV](https://drive.google.com/file/d/1DlbczDUbWkBIWiaEBQGoVwmb0AAtj5Dn/view) --></p>
-</div>
-<p>&lt; &gt;</p>
-<section id="research-interest" class="level2">
-<h2 data-anchor-id="research-interest">Research Interest</h2>
-<p>Macroeconomics</p>
-<section id="welcome-to-my-personal-website" class="level4">
-<h4 data-anchor-id="welcome-to-my-personal-website"><span style="color:#b22222;">Welcome to my personal website</span></h4>
-<p style="text-align: justify;">
-I am a fixed-term Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy.
-</p>
+  
+
+
+</header>
+
+
+<section id="programming-numerical-methods-for-economics" class="level1">
+<h1>Programming &amp; Numerical Methods for Economics</h1>
+<p><strong>University of Edinburgh – School of Economics</strong><br>
+<strong>Instructor:</strong> Juan Zurita</p>
+<section id="about-this-course" class="level2">
+<h2 class="anchored" data-anchor-id="about-this-course">About This Course</h2>
+<p>This course provides a practical introduction to programming and numerical methods for economics. Students learn to write Python code for data analysis, build economic models, and solve them computationally. The first half of the course covers Python fundamentals, data manipulation with pandas, and the transition from data to economic models. The second half introduces core numerical methods used in macroeconomics and computational economics: root-finding algorithms, numerical optimisation, function approximation, and dynamic programming via value function iteration.</p>
+<p>The materials are designed to be self-contained and hands-on. Each week pairs a lecture notebook with worked examples, and lab exercises give students the opportunity to apply the techniques to realistic economic problems. The final module uses Julia to illustrate value function iteration for a neoclassical growth model, exposing students to a second scientific computing language widely used in quantitative economics.</p>
 </section>
-</section>
-<div class="statement-frame">
-<div class="columns">
-<div class="column" style="width:50%;">
-<section id="research-statement" class="level2">
-<h2 data-anchor-id="research-statement"><a href="https://drive.google.com/file/d/1tWsicZ2M4dt5BGN5eYs_M9gSFJi06CT2/view?usp=sharing">Research Statement</a></h2>
-</section>
-</div><div class="column" style="width:50%;">
-<section id="teaching-statement" class="level2">
-<h2 data-anchor-id="teaching-statement"><a href="https://drive.google.com/file/d/1MlIbBB82C9jQIq8BS_OEGIp93ZXj7W0v/view?usp=sharing">Teaching Statement</a></h2>
-</section>
-</div>
-</div>
-</div>
-<section id="research-highlights" class="level2">
-<h2 data-anchor-id="research-highlights">Research Highlights</h2>
-<div class="justified-list">
+<section id="prerequisites" class="level2">
+<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
 <ul>
-<li><strong>May 2026</strong>: My paper <a href="https://drive.google.com/file/d/1vWuFSW6Wn0GZTiBAaC-48kA-jwidCV2u/view?usp=sharing">“<em>Does Household Debt affect the Transmission Mechanism of Monetary Policy</em>”</a> has been accepted at <em>Macroeconomic Dynamics</em></li>
-<li><strong>March 2026</strong>: New Working Paper: <a href="https://drive.google.com/file/d/1diD_WeOjfIid2flkEFpJnEuftlgbH2H8/view?usp=sharing">“<em>The Bank Profit Channel of Monetary Policy</em>”</a> with Jiening Le<br>
-</li>
-<li><strong>February 2026</strong>: My project <a href="https://drive.google.com/file/d/1JgVkmJzz4pxLuUIiWGliRyAgdT616lJh/view?usp=sharing">“<em>Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom</em>”</a> has received funding from the Royal Society of Edinburgh.<br>
-</li>
-<li><strong>January 2026</strong>: My paper <a href="https://doi.org/10.1016/j.iref.2026.104921"><em>Banking Heterogeneity, Credit Supply and Economic Growth</em></a>, Slides, has been published at the International Review of Economics and Finance.</li>
+<li><strong>Mathematics:</strong> Calculus (single and multivariable), linear algebra, basic probability and statistics.</li>
+<li><strong>Economics:</strong> Intermediate microeconomics and macroeconomics. Familiarity with constrained optimisation problems is helpful.</li>
+<li><strong>Programming:</strong> No prior programming experience is required. The course starts from the basics.</li>
 </ul>
-</div>
 </section>
-<section id="explore-my-work" class="level2">
-<h2 data-anchor-id="explore-my-work">Explore My Work</h2>
-<div class="homepage-cards">
-<a href="./research.html" class="homepage-card">
-<div class="homepage-card-img">
-<p><img src="img/card_research.png" alt="Research — network visualisation"></p>
-</div>
-<div class="homepage-card-body">
-<h3>
-Research
-</h3>
-<p>
-Macroeconomic policy, credit markets, household debt, and banking — publications, working papers, and an interactive explorer.
-</p>
-</div>
-</a><p><a href="./research.html" class="homepage-card"></a></p>
-<a href="./teaching.html" class="homepage-card">
-<div class="homepage-card-img">
-<p><img src="img/card_teaching.png" alt="Teaching — code and neural networks"></p>
-</div>
-<div class="homepage-card-body">
-<h3>
-Teaching
-</h3>
-<p>
-Open course materials in Programming &amp; Numerical Methods and Deep Learning for Macroeconomics — interactive notebooks and Colab links.
-</p>
-</div>
-</a><p><a href="./teaching.html" class="homepage-card"></a></p>
-<a href="./consulting.html" class="homepage-card">
-<div class="homepage-card-img">
-<p><img src="img/card_consulting.png" alt="Consulting — policy and growth"></p>
-</div>
-<div class="homepage-card-body">
-<h3>
-Consulting &amp; Policy
-</h3>
-<p>
-Applied research for central banks, regulators, and government — fiscal sustainability, macro modelling, and data strategy.
-</p>
-</div>
-</a><p><a href="./consulting.html" class="homepage-card"></a></p>
-</div>
+<section id="how-to-use-these-materials" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-use-these-materials">How to Use These Materials</h2>
+<section id="run-in-google-colab" class="level3">
+<h3 class="anchored" data-anchor-id="run-in-google-colab">Run in Google Colab</h3>
+<p>The simplest way to work with the notebooks is to open them directly in Google Colab. Each notebook page includes a launch button (rocket icon) in the top toolbar – click it and select <strong>Colab</strong> to open a live, runnable copy in your browser. No local installation is needed.</p>
+</section>
+<section id="run-locally" class="level3">
+<h3 class="anchored" data-anchor-id="run-locally">Run locally</h3>
+<p>To run the notebooks on your own machine:</p>
+<ol type="1">
+<li><p>Install <a href="https://www.python.org/downloads/">Python 3.10+</a> (or use <a href="https://www.anaconda.com/download">Anaconda</a>).</p></li>
+<li><p>Clone the course repository:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/Juanignaciozurita/juanzurita.github.io.git</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Install the required packages:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy scipy pandas matplotlib jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Launch Jupyter:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Navigate to the <code>courses/pnm/notebooks/</code> directory and open any notebook.</p></li>
+</ol>
+<p>For the Julia notebook (Week 8), you will also need <a href="https://julialang.org/downloads/">Julia 1.9+</a> and the IJulia kernel.</p>
+</section>
+</section>
+<section id="course-outline" class="level2">
+<h2 class="anchored" data-anchor-id="course-outline">Course Outline</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Week</th>
+<th>Topic</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Introduction to Programming</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Fundamentals of Programming in Python</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Data Manipulation with pandas; Case Study</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>From Data to Models</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Numerical Methods I: Root-Finding &amp; Optimisation</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Numerical Methods II: Optimisation in Economics</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Numerical Methods III: Function Approximation; Examples</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Economic Models: Value Function Iteration (Julia)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Judd, K. L. (1998). <em>Numerical Methods in Economics</em>. MIT Press.</li>
+<li>Fernandez-Villaverde, J. <em>Computational Methods for Economists</em>. Lecture notes, University of Pennsylvania.</li>
+<li>Sargent, T. J. and J. Stachurski. <a href="https://quantecon.org/"><em>QuantEcon</em></a>. Open-source lectures on quantitative economics.</li>
+<li>Miranda, M. J. and P. L. Fackler (2002). <em>Applied Computational Economics and Finance</em>. MIT Press.</li>
+</ul>
+</section>
+<section id="contact" class="level2">
+<h2 class="anchored" data-anchor-id="contact">Contact</h2>
+<p>Juan Zurita<br>
+School of Economics, University of Edinburgh<br>
+Email: <a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a><br>
+GitHub: <a href="https://github.com/Juanignaciozurita">github.com/Juanignaciozurita</a></p>
 
 
 </section>
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://www.linkedin.com/in/juan-ignacio-z-4b345425/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/Juanignaciozurita" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
@@ -305,7 +465,7 @@ Applied research for central banks, regulators, and government — fiscal sustai
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/juanignaciozurita\.github\.io\/personalwebsite\/");
+        var filterRegex = new RegExp("https:\/\/juanignaciozurita\.github\.io\/juanzurita\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -633,6 +793,19 @@ Applied research for central banks, regulators, and government — fiscal sustai
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Juan Zurita · School of Economics, The University of Edinburgh</p>
+</div>   
+    <div class="nav-footer-center">
+<p><a href="jobmarket.qmd">Job Market</a> · <a href="cv.qmd">CV</a> · <a href="research.qmd">Research</a></p>
+</div>
+    <div class="nav-footer-right">
+<p><a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a></p>
+</div>
+  </div>
+</footer>
 
 
 
