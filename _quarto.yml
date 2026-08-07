@@ -15,75 +15,20 @@ project:
 
 website:
   title: "Juan Zurita"
-  description: "Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking."
-  # NOTE: this is the project-page URL implied by your GitHub remote
-  # (github.com/Juanignaciozurita/juanzurita.github.io).
-  # If you rename the repo to Juanignaciozurita.github.io (recommended for a
-  # shorter address) or add a custom domain, update this line to match.
-  site-url: https://juanignaciozurita.github.io/juanzurita.github.io/
-  favicon: favicon.png
-  image: Profile.jpg
-  open-graph: true
-  twitter-card: true
-  # Uncomment and add your Google Analytics ID to enable analytics:
-  # google-analytics: "G-XXXXXXXXXX"
-  page-footer:
-    background: "#7a2318"
-    left: "Juan Zurita · School of Economics, The University of Edinburgh"
-    center: "[Job Market](jobmarket.qmd) · [CV](cv.qmd) · [Research](research.qmd)"
-    right: "[juan.zurita@ed.ac.uk](mailto:juan.zurita@ed.ac.uk)"
   navbar:
-    background: "#7a2318"
     left:
       - href: index.qmd
         text: Home
-      - text: Job Market
-        href: jobmarket.qmd
       - text: Research
-        menu:
-          - text: Publications & Working Papers
-            href: research.qmd
-          - text: Public Writing
-            href: writing.qmd
-          - text: "Interactive: Debt & Policy"
-            href: explorer.qmd
-          - text: Open Collaborations
-            href: opencollaborations.qmd
+        href: research.qmd
       - text: Teaching
-        menu:
-          - text: Courses
-            href: teaching.qmd
-          - text: "Programming & Numerical Methods"
-            href: courses/pnm/index.qmd
-          - text: "Deep Learning for Macroeconomics"
-            href: courses/dlmacro/index.qmd
-          - text: "From Adam Smith to Simulation"
-            href: courses/smith-to-simulation/index.qmd
-          - text: For Students
-            href: students.qmd
-          - text: Numerical Methods Quiz
-            href: quiz.qmd
-          - text: Python Playground
-            href: playground.qmd
-          - text: Resources
-            href: usefullinks.qmd
-      - text: Consulting & Policy
-        href: consulting.qmd
+        href: teaching.qmd
       - text: CV
         href: cv.qmd
-    right:
-      - icon: github
-        href: https://github.com/Juanignaciozurita
-        aria-label: GitHub
-      - icon: linkedin
-        href: https://www.linkedin.com/in/juan-ignacio-z-4b345425/
-        aria-label: LinkedIn
-      - icon: instagram
-        href: https://www.instagram.com/juanignaciozurita/
-        aria-label: Instagram
-      - icon: envelope-fill
-        href: mailto:juan.zurita@ed.ac.uk
-        aria-label: Email
+      - text: Open Collaborations
+        href: opencollaborations.qmd
+      - text: Useful Links
+        href: usefullinks.qmd
 
 format:
   html:
@@ -92,3 +37,5 @@ format:
     theme: cosmo
     css: styles.css
     toc: true
+    
+    
