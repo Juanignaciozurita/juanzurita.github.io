@@ -1,6 +1,15 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "courses/pnm/index.qmd"
+    - "courses/pnm/intro.md"
+    - "courses/pnm/notebooks/*.ipynb"
+    - "courses/dlmacro/index.qmd"
+    - "courses/dlmacro/intro.md"
+    - "courses/dlmacro/notebooks/*.ipynb"
+    - "!courses/pnm/New Problem Sets/"
 
 website:
   title: "Juan Zurita"

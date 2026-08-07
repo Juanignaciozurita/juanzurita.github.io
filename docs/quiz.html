@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Numerical Methods Quiz – Juan Zurita</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-befc92836a82f2ebff21c48b720c4121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Numerical Methods Quiz – Juan Zurita">
+<meta property="og:description" content="Test your understanding — Weeks 5–8">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/Profile.jpg">
+<meta property="og:site_name" content="Juan Zurita">
+<meta name="twitter:title" content="Numerical Methods Quiz – Juan Zurita">
+<meta name="twitter:description" content="Test your understanding — Weeks 5–8">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/Profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Juan Zurita</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./jobmarket.html"> 
+<span class="menu-text">Job Market</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Research</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
+        <li>
+    <a class="dropdown-item" href="./research.html">
+ <span class="dropdown-text">Publications &amp; Working Papers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./writing.html">
+ <span class="dropdown-text">Public Writing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./explorer.html">
+ <span class="dropdown-text">Interactive: Debt &amp; Policy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./opencollaborations.html">
+ <span class="dropdown-text">Open Collaborations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teaching" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teaching</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teaching">    
+        <li>
+    <a class="dropdown-item" href="./teaching.html">
+ <span class="dropdown-text">Courses</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./courses/pnm/index.html">
+ <span class="dropdown-text">Programming &amp; Numerical Methods</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./courses/dlmacro/index.html">
+ <span class="dropdown-text">Deep Learning for Macroeconomics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./students.html">
+ <span class="dropdown-text">For Students</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./quiz.html">
+ <span class="dropdown-text">Numerical Methods Quiz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./playground.html">
+ <span class="dropdown-text">Python Playground</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./usefullinks.html">
+ <span class="dropdown-text">Resources</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./consulting.html"> 
+<span class="menu-text">Consulting &amp; Policy</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Juanignaciozurita"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/juan-ignacio-z-4b345425/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/juanignaciozurita/"> <i class="bi bi-instagram" role="img" aria-label="Instagram">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:juan.zurita@ed.ac.uk"> <i class="bi bi-envelope-fill" role="img" aria-label="Email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Numerical Methods Quiz</h1>
+<p class="subtitle lead">Test your understanding — Weeks 5–8</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p style="text-align: justify;">
+These quizzes help you distinguish between numerical approaches covered in Weeks 5–8 of <a href="./courses/pnm/index.html">Programming &amp; Numerical Methods</a>. Each section tests a different topic. Select your answer, then click <strong>Check</strong> to see whether you’re right — and why.
+</p>
+<style>
+.quiz-section {
+  margin-bottom: 2.5rem;
+}
+.quiz-section h3 {
+  color: #7a2318;
+  border-bottom: 2px solid rgba(122,35,24,0.15);
+  padding-bottom: 0.3rem;
+}
+.q-card {
+  background: #ffffff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.q-card p.q-stem {
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.q-card label {
+  display: block;
+  padding: 0.45rem 0.6rem;
+  margin: 0.2rem 0;
+  border-radius: 8px;
+  cursor: pointer;
+  line-height: 1.45;
+}
+.q-card label:hover {
+  background: #fdf6ec;
+}
+.q-card input[type="radio"] {
+  margin-right: 0.5rem;
+}
+.q-btn {
+  display: inline-block;
+  background: #7a2318;
+  color: white;
+  border: none;
+  padding: 0.4rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.4rem;
+}
+.q-btn:hover {
+  background: #a33a2a;
+}
+.q-feedback {
+  margin-top: 0.6rem;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  display: none;
+  line-height: 1.5;
+  text-align: justify;
+}
+.q-correct {
+  background: #e8f5e9;
+  border-left: 4px solid #43a047;
+  color: #2e7d32;
+}
+.q-wrong {
+  background: #fce4ec;
+  border-left: 4px solid #e53935;
+  color: #c62828;
+}
+.score-bar {
+  background: #f5efe6;
+  border-radius: 12px;
+  padding: 1rem 1.4rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #7a2318;
+  display: none;
+}
+</style>
+<div id="sec-rootfinding" class="quiz-section">
+<section id="section-1-root-finding" class="level3">
+<h3 class="anchored" data-anchor-id="section-1-root-finding">Section 1 — Root-Finding</h3>
+<div id="q1" class="q-card">
+<p class="q-stem">
+</p><ol type="1">
+<li>You need to find the steady-state capital stocks of a 3-country Solow model — a system of three non-linear equations in three unknowns. Which approach is most appropriate?
+<p></p>
+<label><input type="radio" name="q1" value="a"> Brute-force grid search over a 3-D grid</label> <label><input type="radio" name="q1" value="b"> <code>scipy.optimize.fsolve</code> with an initial guess</label> <label><input type="radio" name="q1" value="c"> <code>scipy.optimize.minimize</code> with BFGS</label> <label><input type="radio" name="q1" value="d"> Lagrange interpolation of the solution</label> <button class="q-btn" onclick="check('q1','b','Correct! <code>fsolve</code> solves systems of non-linear equations F(x) = 0. You supply an initial guess and it uses a quasi-Newton method to find the root. Brute force would be prohibitively expensive in 3-D, BFGS minimises rather than finds roots, and interpolation approximates functions rather than solving equations.','The right answer is (b). <code>fsolve</code> is designed for systems of non-linear equations F(x) = 0. It takes an initial guess and iterates using a quasi-Newton method. The Solow steady-state conditions are naturally expressed as a zero-finding problem, not a minimisation or interpolation problem.')">Check</button>
+<div id="q1-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+<div id="q2" class="q-card">
+<p class="q-stem">
+</p><ol start="2" type="1">
+<li>You run <code>fsolve</code> on a non-linear system with initial guess x₀ = [0.5, 0.5, 0.5] and get a solution. You change to x₀ = [5, 5, 5] and get a different answer. What is the most likely explanation?
+<p></p>
+<label><input type="radio" name="q2" value="a"> The system has multiple roots and each initial guess converges to a different one</label> <label><input type="radio" name="q2" value="b"> <code>fsolve</code> has a bug in its implementation</label> <label><input type="radio" name="q2" value="c"> The function is not continuous</label> <label><input type="radio" name="q2" value="d"> You need to use brute-force search instead</label> <button class="q-btn" onclick="check('q2','a','Correct! Iterative root-finding methods converge to the root nearest the initial guess. If a system has multiple roots, different starting points can lead to different solutions. This is exactly what happens in the Solow example when saving rates are bounded between 0 and 1 — some starting values converge outside the feasible region.','The right answer is (a). Iterative solvers like <code>fsolve</code> find a root near the initial guess. Non-linear systems can have multiple roots, so different starting points can converge to different solutions. This is a fundamental feature of iterative methods, not a bug.')">Check</button>
+<div id="q2-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+<div id="q3" class="q-card">
+<p class="q-stem">
+</p><ol start="3" type="1">
+<li>Your non-linear equation has a parameter that must satisfy 0 &lt; s &lt; 1 (e.g., a saving rate). You use <code>fsolve</code> and it returns s = 1.3. What is the best response?
+<p></p>
+<label><input type="radio" name="q3" value="a"> Accept the result — the algorithm always finds the correct solution</label> <label><input type="radio" name="q3" value="b"> Use a bounded solver or reformulate the problem to respect the constraint</label> <label><input type="radio" name="q3" value="c"> Increase the tolerance of fsolve</label> <label><input type="radio" name="q3" value="d"> Switch from fsolve to Nelder–Mead</label> <button class="q-btn" onclick="check('q3','b','Correct! <code>fsolve</code> is an unconstrained root-finder — it does not know about bounds. When your variables have natural constraints you should either use a bounded solver (e.g., <code>optimize.root</code> with appropriate method) or reformulate the variable (e.g., parameterise as s = 1/(1+exp(−z)) to keep it in (0,1) automatically).','The right answer is (b). <code>fsolve</code> is unconstrained and can return values outside the feasible region. You need either a bounded solver or a variable transformation (like the logistic function) to enforce constraints.')">Check</button>
+<div id="q3-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+</section></div>
+<div id="sec-optimisation" class="quiz-section">
+<section id="section-2-optimisation" class="level3">
+<h3 class="anchored" data-anchor-id="section-2-optimisation">Section 2 — Optimisation</h3>
+<div id="q4" class="q-card">
+<p class="q-stem">
+</p><ol start="4" type="1">
+<li>You minimise the 5-dimensional Rosenbrock function with brute-force grid search and with BFGS. Brute-force takes 17 seconds; BFGS takes 0.01 seconds with comparable accuracy. Why is BFGS so much faster?
+<p></p>
+<label><input type="radio" name="q4" value="a"> BFGS uses gradient information to take intelligent steps, while brute force evaluates the function at every point on a grid that grows exponentially in dimension</label> <label><input type="radio" name="q4" value="b"> BFGS uses a coarser grid</label> <label><input type="radio" name="q4" value="c"> Brute force uses more memory</label> <label><input type="radio" name="q4" value="d"> BFGS only works in low dimensions</label> <button class="q-btn" onclick="check('q4','a','Correct! Brute-force search evaluates the function on a grid whose size grows as N<sup>d</sup> (the curse of dimensionality). In 5-D with 20 grid points per dimension that is 20<sup>5</sup> = 3.2 million evaluations. BFGS uses gradient information to choose a descent direction at each step, needing far fewer evaluations — typically O(d) per iteration, with convergence in a handful of iterations for well-behaved functions.','The right answer is (a). The curse of dimensionality makes brute-force grid search exponentially expensive. BFGS exploits gradient (first derivative) and approximate Hessian (second derivative) information to converge in far fewer function evaluations.')">Check</button>
+<div id="q4-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+<div id="q5" class="q-card">
+<p class="q-stem">
+</p><ol start="5" type="1">
+<li>You want to minimise a function but you cannot compute or approximate its gradient. Which method is most appropriate?
+<p></p>
+<label><input type="radio" name="q5" value="a"> BFGS</label> <label><input type="radio" name="q5" value="b"> L-BFGS-B</label> <label><input type="radio" name="q5" value="c"> Nelder–Mead</label> <label><input type="radio" name="q5" value="d"> Sequential Quadratic Programming</label> <button class="q-btn" onclick="check('q5','c','Correct! Nelder–Mead is a derivative-free method — it only uses function evaluations, forming a simplex that adapts to the landscape. BFGS and L-BFGS-B require gradient information (or finite-difference approximations), and SQP works with the Lagrangian\\'s gradient and Hessian.','The right answer is (c). Nelder–Mead is a simplex-based method that requires only function evaluations — no gradient. It is the go-to choice when derivatives are unavailable or unreliable, though it can be slower than gradient-based methods.')">Check</button>
+<div id="q5-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+<div id="q6" class="q-card">
+<p class="q-stem">
+</p><ol start="6" type="1">
+<li>You are solving a consumer’s constrained utility maximisation problem: max u(x) subject to p·x ≤ I and x ≥ 0. You have coded three approaches from the lecture: penalty method, augmented Lagrangian, and SQP (Newton on the Lagrangian). Which statement is correct?
+<p></p>
+<label><input type="radio" name="q6" value="a"> The penalty method always converges faster because it is simpler</label> <label><input type="radio" name="q6" value="b"> If you set the penalty parameter P too large from the start, the penalty method can give completely wrong answers due to ill-conditioning</label> <label><input type="radio" name="q6" value="c"> The augmented Lagrangian and the penalty method are the same thing</label> <label><input type="radio" name="q6" value="d"> SQP cannot handle equality constraints</label> <button class="q-btn" onclick="check('q6','b','Correct! As shown in the lecture, starting with a very large penalty P causes severe ill-conditioning — the algorithm returns completely incorrect answers. The right approach is to solve a sequence of problems with gradually increasing P. The augmented Lagrangian improves on this by adding a Lagrange multiplier estimate that reduces dependence on P. SQP applies Newton\\'s method directly to the KKT conditions of the Lagrangian.','The right answer is (b). A very large penalty P makes the objective function ill-conditioned, causing the inner solver to fail. The lecture demonstrated this explicitly: with P = 10<sup>20</sup>, the penalty method returned completely wrong consumption allocations. You must increase P gradually through a sequence of subproblems.')">Check</button>
+<div id="q6-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+<div id="q7" class="q-card">
+<p class="q-stem">
+</p><ol start="7" type="1">
+<li>You need to minimise a function subject to the constraint x₁² + x₂² ≤ 1. The feasible set is bounded. Which of the following methods can directly handle this inequality constraint?
+<p></p>
+<label><input type="radio" name="q7" value="a"> Brute-force search</label> <label><input type="radio" name="q7" value="b"> Nelder–Mead</label> <label><input type="radio" name="q7" value="c"> COBYLA</label> <label><input type="radio" name="q7" value="d"> BFGS</label> <button class="q-btn" onclick="check('q7','c','Correct! COBYLA (Constrained Optimisation BY Linear Approximation) is designed for constrained optimisation and accepts inequality constraints directly via the <code>constraints</code> argument in <code>scipy.optimize.minimize</code>. Nelder–Mead and BFGS are unconstrained methods. Brute-force can be restricted to a region but does not handle non-linear constraints natively.','The right answer is (c). COBYLA is a derivative-free constrained optimiser. In <code>scipy</code>, you pass inequality constraints as g(x) ≥ 0 via the <code>constraints</code> argument. Other constrained options include SLSQP and trust-constr, but COBYLA is the one used in the lecture for this exact problem.')">Check</button>
+<div id="q7-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+</section></div>
+<div id="sec-funcapprox" class="quiz-section">
+<section id="section-3-function-approximation" class="level3">
+<h3 class="anchored" data-anchor-id="section-3-function-approximation">Section 3 — Function Approximation</h3>
+<div id="q8" class="q-card">
+<p class="q-stem">
+</p><ol start="8" type="1">
+<li>You interpolate f(x) = 1/(1+x²) on [−5, 5] with uniformly spaced nodes and a degree-11 polynomial. The approximation oscillates wildly near the boundaries. What is this phenomenon called, and how do you fix it?
+<p></p>
+<label><input type="radio" name="q8" value="a"> Overfitting — reduce the polynomial degree</label> <label><input type="radio" name="q8" value="b"> Runge’s phenomenon — switch to Chebyshev nodes</label> <label><input type="radio" name="q8" value="c"> Numerical instability — use higher floating-point precision</label> <label><input type="radio" name="q8" value="d"> Underfitting — increase the number of nodes</label> <button class="q-btn" onclick="check('q8','b','Correct! Runge\\'s phenomenon arises when high-degree polynomial interpolation uses equally spaced nodes. The error bound grows without limit near the boundaries. The fix is to use Chebyshev nodes — the roots of Chebyshev polynomials — which cluster near the endpoints and provide near-optimal interpolation error. Adding more equally spaced nodes (d) actually makes the oscillation worse.','The right answer is (b). Runge\\'s phenomenon is a classic result showing that polynomial interpolation on equally spaced nodes can diverge as the degree increases. Chebyshev nodes concentrate points near the boundary, suppressing the oscillation and achieving near-minimax approximation error.')">Check</button>
+<div id="q8-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+<div id="q9" class="q-card">
+<p class="q-stem">
+</p><ol start="9" type="1">
+<li>You need to approximate a value function V(k) that has a kink (is continuous but not differentiable at a point). Which approximation method handles this best?
+<p></p>
+<label><input type="radio" name="q9" value="a"> High-degree Lagrange interpolation</label> <label><input type="radio" name="q9" value="b"> Chebyshev polynomials</label> <label><input type="radio" name="q9" value="c"> Cubic splines</label> <label><input type="radio" name="q9" value="d"> A single global polynomial of degree 30</label> <button class="q-btn" onclick="check('q9','c','Correct! Cubic splines are piecewise polynomials — each subinterval gets its own cubic, stitched together with continuous first and second derivatives. Because they are local, a kink in one region does not distort the approximation elsewhere. Global polynomials (Lagrange, Chebyshev, or otherwise) try to fit the entire function with a single polynomial, so a kink causes oscillation everywhere (Gibbs-like effects).','The right answer is (c). Cubic splines are piecewise cubic polynomials that are local — the approximation near a kink does not contaminate distant regions. For functions with kinks or corners, splines are far more robust than any global polynomial approach.')">Check</button>
+<div id="q9-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+<div id="q10" class="q-card">
+<p class="q-stem">
+</p><ol start="10" type="1">
+<li>When constructing a Chebyshev approximation of f on [a, b], why do we map the interval to [−1, 1] before computing the nodes?
+<p></p>
+<label><input type="radio" name="q10" value="a"> It makes the function easier to differentiate</label> <label><input type="radio" name="q10" value="b"> Chebyshev polynomials Tₙ(x) = cos(n·arccos(x)) are defined on [−1, 1], so we transform the domain to use the optimal node placement</label> <label><input type="radio" name="q10" value="c"> It reduces the number of function evaluations needed</label> <label><input type="radio" name="q10" value="d"> It converts the interpolation into a root-finding problem</label> <button class="q-btn" onclick="check('q10','b','Correct! Chebyshev polynomials are defined on [−1, 1] and their nodes (the roots that give near-optimal interpolation) are computed on that interval. To approximate on [a, b], we map x ∈ [a, b] to z ∈ [−1, 1] via z = 2(x − a)/(b − a) − 1, compute the Chebyshev coefficients in z-space, and evaluate back in x-space. The regression algorithm from the lecture (Steps 1–5) follows exactly this procedure.','The right answer is (b). The orthogonality and near-optimal approximation properties of Chebyshev polynomials hold on [−1, 1]. The domain mapping is a linear change of variables that preserves these properties while letting you approximate functions on any interval [a, b].')">Check</button>
+<div id="q10-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+</section></div>
+<div id="sec-choosing" class="quiz-section">
+<section id="section-4-choosing-the-right-method" class="level3">
+<h3 class="anchored" data-anchor-id="section-4-choosing-the-right-method">Section 4 — Choosing the Right Method</h3>
+<div id="q11" class="q-card">
+<p class="q-stem">
+</p><ol start="11" type="1">
+<li>Match the problem to the best numerical approach: “Find the saving rate s ∈ (0,1) such that the Solow steady-state condition k* = (sA/δ)^(1/(1−α)) matches a target capital stock.”
+<p></p>
+<label><input type="radio" name="q11" value="a"> Chebyshev approximation</label> <label><input type="radio" name="q11" value="b"> Constrained optimisation with COBYLA</label> <label><input type="radio" name="q11" value="c"> Root-finding with <code>fsolve</code> (rewrite as F(s) = 0)</label> <label><input type="radio" name="q11" value="d"> Cubic spline interpolation</label> <button class="q-btn" onclick="check('q11','c','Correct! This is a single non-linear equation in one unknown: F(s) = (sA/δ)<sup>1/(1−α)</sup> − k_target = 0. Root-finding with <code>fsolve</code> is the natural and most efficient tool. You could also use <code>brentq</code> since s is bounded. Optimisation would work (minimise F(s)²) but adds unnecessary complexity. Interpolation solves a different problem entirely.','The right answer is (c). The problem is finding s such that a condition holds — that is, F(s) = 0. Root-finding is the direct tool. <code>fsolve</code> or, for a bounded scalar, <code>brentq</code>, will solve this in a handful of iterations.')">Check</button>
+<div id="q11-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+<div id="q12" class="q-card">
+<p class="q-stem">
+</p><ol start="12" type="1">
+<li>Match the problem to the best numerical approach: “Represent the value function V(k) on a grid of 50 capital values so that you can evaluate V at any k between grid points during value function iteration.”
+<p></p>
+<label><input type="radio" name="q12" value="a"> Root-finding with <code>fsolve</code></label> <label><input type="radio" name="q12" value="b"> Penalty-method optimisation</label> <label><input type="radio" name="q12" value="c"> Cubic spline or Chebyshev interpolation</label> <label><input type="radio" name="q12" value="d"> Brute-force grid search</label> <button class="q-btn" onclick="check('q12','c','Correct! Value function iteration computes V at discrete grid points, but the Bellman equation\\'s optimisation step needs V at off-grid points (tomorrow\\'s capital k\\' may not land on the grid). Interpolation — cubic splines for piecewise smoothness, or Chebyshev polynomials for global smoothness — fills in V between grid points. This is the core use of function approximation in computational economics.','The right answer is (c). Interpolation lets you evaluate the value function at any point, not just at grid nodes. In VFI, the policy function chooses k\\' continuously, so you need V(k\\') at off-grid values. Both cubic splines and Chebyshev approximation are standard tools for this.')">Check</button>
+<div id="q12-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+<div id="q13" class="q-card">
+<p class="q-stem">
+</p><ol start="13" type="1">
+<li>Match the problem to the best numerical approach: “Maximise a consumer’s Cobb-Douglas utility u(x) = Σ αᵢ log(xᵢ) subject to a budget constraint p·x ≤ I and non-negativity xᵢ ≥ 0.”
+<p></p>
+<label><input type="radio" name="q13" value="a"> Root-finding with <code>fsolve</code></label> <label><input type="radio" name="q13" value="b"> Constrained optimisation (SQP, penalty method, or augmented Lagrangian)</label> <label><input type="radio" name="q13" value="c"> Chebyshev regression</label> <label><input type="radio" name="q13" value="d"> Lagrange interpolation</label> <button class="q-btn" onclick="check('q13','b','Correct! This is a constrained optimisation problem — you are maximising an objective subject to inequality constraints. The lecture covered three approaches: SQP (Newton on the Lagrangian), the penalty method (convert constraints to a penalty term), and the augmented Lagrangian (penalty plus multiplier updates). All three solve this problem, with different trade-offs in speed and robustness.','The right answer is (b). Constrained utility maximisation is the textbook application of constrained optimisation. The Week 6 lecture solves exactly this problem using SQP, penalty methods, and the augmented Lagrangian — comparing their accuracy and convergence.')">Check</button>
+<div id="q13-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+<div id="q14" class="q-card">
+<p class="q-stem">
+</p><ol start="14" type="1">
+<li>You are comparing BFGS, Nelder–Mead, and L-BFGS-B for minimising a function on a box [0.5, 2]⁵. Which statement is true?
+<p></p>
+<label><input type="radio" name="q14" value="a"> Nelder–Mead respects bounds natively; BFGS and L-BFGS-B do not</label> <label><input type="radio" name="q14" value="b"> L-BFGS-B can handle box bounds; BFGS and Nelder–Mead cannot</label> <label><input type="radio" name="q14" value="c"> All three methods respect box constraints</label> <label><input type="radio" name="q14" value="d"> None of the three can handle bounds</label> <button class="q-btn" onclick="check('q14','b','Correct! L-BFGS-B (Limited-memory BFGS with Box constraints) is specifically designed for box-constrained minimisation — you pass bounds via the <code>bounds</code> argument. BFGS is unconstrained. Nelder–Mead does not natively handle bounds either (though heuristic adaptations exist). The lecture demonstrates exactly this comparison on the 5-D Rosenbrock function.','The right answer is (b). The \\'B\\' in L-BFGS-B stands for Box constraints. It is the standard choice in <code>scipy.optimize.minimize</code> when you need simple lower/upper bounds on each variable. BFGS and Nelder–Mead are unconstrained methods.')">Check</button>
+<div id="q14-fb" class="q-feedback">
+
+</div>
+</li></ol></div>
+
+</section></div>
+<div id="score-bar" class="score-bar">
+
+</div>
+<script>
+var totalQs = 14;
+var answered = {};
+
+function check(qid, correct, rightMsg, wrongMsg) {
+  var sel = document.querySelector('input[name="'+qid+'"]:checked');
+  var fb = document.getElementById(qid+'-fb');
+  if (!sel) { fb.style.display='block'; fb.className='q-feedback q-wrong'; fb.innerHTML='Please select an answer.'; return; }
+  if (sel.value === correct) {
+    fb.className = 'q-feedback q-correct';
+    fb.innerHTML = rightMsg;
+    answered[qid] = true;
+  } else {
+    fb.className = 'q-feedback q-wrong';
+    fb.innerHTML = wrongMsg;
+    answered[qid] = false;
+  }
+  fb.style.display = 'block';
+  // disable further changes
+  document.querySelectorAll('input[name="'+qid+'"]').forEach(function(r){r.disabled=true;});
+  updateScore();
+}
+
+function updateScore() {
+  var keys = Object.keys(answered);
+  if (keys.length < totalQs) return;
+  var score = 0;
+  keys.forEach(function(k){ if(answered[k]) score++; });
+  var bar = document.getElementById('score-bar');
+  bar.style.display = 'block';
+  if (score === totalQs) {
+    bar.innerHTML = 'Score: ' + score + '/' + totalQs + ' — Perfect! You have a strong grasp of the numerical toolkit.';
+    bar.style.background = '#e8f5e9'; bar.style.color = '#2e7d32';
+  } else if (score >= 10) {
+    bar.innerHTML = 'Score: ' + score + '/' + totalQs + ' — Well done. Review the explanations for the ones you missed.';
+    bar.style.background = '#e8f5e9'; bar.style.color = '#2e7d32';
+  } else if (score >= 7) {
+    bar.innerHTML = 'Score: ' + score + '/' + totalQs + ' — Good start. Re-read the notebooks for the sections you found tricky.';
+    bar.style.background = '#fff3e0'; bar.style.color = '#e65100';
+  } else {
+    bar.innerHTML = 'Score: ' + score + '/' + totalQs + ' — Have another go at the Week 5–7 notebooks before the exam.';
+    bar.style.background = '#fce4ec'; bar.style.color = '#c62828';
+  }
+}
+</script>
+
+
+</main></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/juanignaciozurita\.github\.io\/juanzurita\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+ <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Juan Zurita · School of Economics, The University of Edinburgh</p>
+</div>   
+    <div class="nav-footer-center">
+<p><a href="./jobmarket.html">Job Market</a> · <a href="./cv.html">CV</a> · <a href="./research.html">Research</a></p>
+</div>
+    <div class="nav-footer-right">
+<p><a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
