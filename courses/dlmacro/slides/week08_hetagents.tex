@@ -1,0 +1,138 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 8 --- Heterogeneous Agents}
+\subtitle{The Curse of Dimensionality \& Krusell--Smith with DEQNs}
+\author{Dr Juan Zurita}
+\institute{Deep Learning for Macroeconomics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Why Heterogeneous Agents?}
+Representative-agent models miss:
+
+\bigskip
+\begin{itemize}
+\item Wealth inequality and its aggregate effects
+\item Differential responses to policy across the distribution
+\item Precautionary saving and liquidity constraints
+\end{itemize}
+
+\bigskip
+But HA models have a \alert{high-dimensional} state: the entire wealth distribution $\Gamma_t$.
+
+Traditional methods: approximate $\Gamma_t$ with a few moments (Krusell \& Smith, 1998).
+\end{frame}
+
+\begin{frame}{Krusell--Smith (1998)}
+\begin{block}{Key insight}
+Approximate the distribution by its \textbf{mean} (aggregate capital $K$). Agents' decision rules depend on $(a_i, z_i, K, Z)$.
+\end{block}
+
+\bigskip
+Algorithm:
+\begin{enumerate}
+\item Guess a law of motion: $\ln K' = b_0 + b_1 \ln K$ (conditional on $Z$)
+\item Solve individual problems given this law
+\item Simulate the economy and update $b_0, b_1$
+\item Iterate until convergence
+\end{enumerate}
+
+\bigskip
+This works because $R^2 \approx 0.999$ --- the mean is sufficient.
+\end{frame}
+
+\begin{frame}{DEQNs for Heterogeneous Agents}
+Replace the parametric law of motion with a \textbf{neural network}:
+
+$$K' = \mathcal{N}_{\boldsymbol{\theta}}(K, Z)$$
+
+\bigskip
+Advantages:
+\begin{itemize}
+\item Can capture non-linear dynamics traditional regressions miss
+\item Extend to many moments without specifying functional forms
+\item Scale to models where ``approximate aggregation'' fails
+\end{itemize}
+
+\bigskip
+Scheidegger and collaborators show DEQNs can handle state spaces with $50+$ dimensions.
+\end{frame}
+
+\begin{frame}{Young's Histogram Method}
+To simulate the distribution:
+
+\bigskip
+\begin{enumerate}
+\item Discretise the individual state space into bins
+\item Track the mass in each bin over time
+\item Update masses using the policy function
+\end{enumerate}
+
+\bigskip
+This avoids simulating millions of individual agents. Combined with DEQNs, the entire solution is differentiable.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+\item HA models are essential for inequality and policy analysis
+\item The state space is the entire wealth distribution --- very high-dimensional
+\item DEQNs overcome the curse of dimensionality
+\item Krusell--Smith with neural networks: more flexible, more scalable
+\end{itemize}
+
+\bigskip
+\textbf{Next week:} surrogates, estimation, and climate economics.
+\end{frame}
+
+\end{document}

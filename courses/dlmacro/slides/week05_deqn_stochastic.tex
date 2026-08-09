@@ -1,0 +1,130 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 5 --- Deep Equilibrium Networks II}
+\subtitle{Stochastic Models \& Gauss--Hermite Quadrature}
+\author{Dr Juan Zurita}
+\institute{Deep Learning for Macroeconomics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Adding Uncertainty}
+Real economies face shocks: $y_t = e^{z_t} k_t^\alpha$, where $z_t$ follows an AR(1).
+
+\bigskip
+The Euler equation now involves an \alert{expectation}:
+
+$$u'(c_t) = \beta\,\mathbb{E}_t\!\left[u'(c_{t+1})\,(1 + r_{t+1})\right]$$
+
+\bigskip
+How do we compute $\mathbb{E}_t[\cdot]$ inside a neural-network training loop?
+\end{frame}
+
+\begin{frame}{Gauss--Hermite Quadrature}
+Approximate the expectation with a weighted sum:
+
+$$\mathbb{E}[g(\varepsilon)] \approx \sum_{j=1}^{J} \omega_j\,g(\varepsilon_j)$$
+
+\bigskip
+\begin{itemize}
+\item $\varepsilon_j$: quadrature nodes (roots of Hermite polynomials)
+\item $\omega_j$: quadrature weights
+\item With $J = 5$--$7$ nodes, accuracy is excellent for smooth integrands
+\end{itemize}
+
+\bigskip
+This integrates seamlessly with PyTorch --- each node is a forward pass through the network.
+\end{frame}
+
+\begin{frame}{Stochastic Brock--Mirman}
+State: $(k_t, z_t)$. Policy: $c_t = \mathcal{N}_{\boldsymbol{\theta}}(k_t, z_t)$.
+
+\bigskip
+Residual with quadrature:
+
+$$R(k,z; \boldsymbol{\theta}) = 1 - \beta \sum_j \omega_j \frac{\alpha (k')^{\alpha-1} e^{z'_j}}{c(k', z'_j; \boldsymbol{\theta}) / c(k,z; \boldsymbol{\theta})}$$
+
+\bigskip
+Now the network takes \textbf{two} inputs --- this is where the grid-free advantage starts to matter.
+\end{frame}
+
+\begin{frame}{Loss Function Variants}
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Loss & Formula & Properties \\
+\midrule
+MSE & $R^2$ & Standard, sensitive to outliers \\
+Huber & smooth $L_1$ & Robust to large residuals \\
+Log-cosh & $\ln(\cosh R)$ & Smooth Huber approximation \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip
+In practice, \textbf{MSE} works well for most economic models. Switch to Huber if training is unstable.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+\item Stochastic models require numerical integration of expectations
+\item Gauss--Hermite quadrature is accurate and differentiable
+\item The DEQN approach extends naturally to stochastic settings
+\item With two state variables, we already outperform naive grids
+\end{itemize}
+
+\bigskip
+\textbf{Next week:} occasionally binding constraints --- the Fischer--Burmeister trick.
+\end{frame}
+
+\end{document}

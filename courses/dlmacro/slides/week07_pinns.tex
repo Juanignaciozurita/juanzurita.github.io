@@ -1,0 +1,127 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 7 --- Physics-Informed Neural Networks}
+\subtitle{Continuous-Time Economics \& the HJB Equation}
+\author{Dr Juan Zurita}
+\institute{Deep Learning for Macroeconomics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{From Discrete to Continuous Time}
+Many economic models are naturally continuous-time:
+
+$$\rho\,V(x) = \max_c\!\left\{u(c) + V'(x)\,\mu(x,c) + \tfrac{1}{2}\,V''(x)\,\sigma^2(x)\right\}$$
+
+\bigskip
+This is the \textbf{Hamilton--Jacobi--Bellman} (HJB) equation.
+
+\bigskip
+Traditional approach: finite-difference grids. PINN approach: train a neural network to satisfy the PDE.
+\end{frame}
+
+\begin{frame}{The PINN Principle}
+\begin{block}{Raissi, Perdikaris \& Karniadakis (2019)}
+Parameterise the solution as $V(x) = \mathcal{N}_{\boldsymbol{\theta}}(x)$ and minimise the PDE residual.
+\end{block}
+
+\bigskip
+Loss = $\underbrace{\|PDE\text{ residual}\|^2}_{\text{interior}}$ + $\underbrace{\|BC\text{ residual}\|^2}_{\text{boundary}}$
+
+\bigskip
+Derivatives $V'$, $V''$ are computed via \textbf{autodiff} --- no finite differences needed.
+\end{frame}
+
+\begin{frame}{Cake-Eating as an HJB}
+$\rho\,V(W) = \max_c\left\{u(c) + V'(W)\cdot(-c)\right\}$
+
+\bigskip
+FOC: $u'(c) = V'(W)$ $\Rightarrow$ $c^* = (V'(W))^{-1/\gamma}$
+
+\bigskip
+Substitute back: $\rho\,V = u(c^*) - c^*\,V'$
+
+\bigskip
+\begin{block}{Boundary condition}
+$V(0) = 0$ (no cake left $\Rightarrow$ no value).
+\end{block}
+
+\bigskip
+The PINN learns $V(W)$ that satisfies both the HJB and the boundary.
+\end{frame}
+
+\begin{frame}{Soft vs Hard Boundary Conditions}
+\textbf{Soft BC}: include boundary violations in the loss (weighted penalty).
+
+\textbf{Hard BC}: embed the boundary in the architecture: $V(W) = W \cdot \mathcal{N}_{\boldsymbol{\theta}}(W)$.
+
+\bigskip
+Hard BCs guarantee satisfaction by construction. Soft BCs are more flexible but may violate boundaries during training.
+
+\bigskip
+For economics: hard BCs are preferred when boundary conditions have clear economic meaning.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+\item PINNs solve PDEs by training neural networks on residuals
+\item Autodiff provides exact spatial derivatives --- no grids needed
+\item The HJB equation is the natural target for continuous-time models
+\item Hard boundary conditions embed economic constraints directly
+\end{itemize}
+
+\bigskip
+\textbf{Next week:} heterogeneous agents --- where deep learning truly shines.
+\end{frame}
+
+\end{document}

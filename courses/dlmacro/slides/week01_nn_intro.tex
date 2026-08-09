@@ -1,0 +1,137 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 1 --- From Numerical Methods to Neural Networks}
+\subtitle{Why Traditional Methods Struggle \& Neural Networks as Function Approximators}
+\author{Dr Juan Zurita}
+\institute{Deep Learning for Macroeconomics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{The Challenge}
+Traditional numerical methods break down in \alert{high dimensions}.
+
+\bigskip
+\begin{block}{The Curse of Dimensionality}
+A grid with $n$ points per dimension in $d$ dimensions has $n^d$ nodes.
+
+$n=100$, $d=5$ $\Rightarrow$ $10^{10}$ grid points --- infeasible.
+\end{block}
+
+\bigskip
+Deep learning offers a \textbf{grid-free} alternative.
+\end{frame}
+
+\begin{frame}{From PNM to Deep Learning}
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+PNM & This course \\
+\midrule
+Root-finding & Equilibrium as loss functions \\
+BFGS / Nelder--Mead & Gradient descent, Adam \\
+Polynomials / splines & Neural networks \\
+Value-function iteration & Deep Equilibrium Networks \\
+Grid-based methods & Grid-free solutions \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip
+The key shift: parameterise value and policy functions as \alert{neural networks}.
+\end{frame}
+
+\begin{frame}{Universal Approximation Theorem}
+\begin{block}{Cybenko (1989), Hornik et al.\ (1989)}
+A feedforward network with one hidden layer and a non-linear activation can approximate any continuous function on a compact set to arbitrary accuracy.
+\end{block}
+
+\bigskip
+This is the theoretical foundation for using neural networks as function approximators in economics.
+
+\bigskip
+Practical question: \textbf{how many} neurons do we need?
+\end{frame}
+
+\begin{frame}{A Single Neuron}
+$$y = \sigma\!\left(\sum_{i=1}^n w_i x_i + b\right)$$
+
+\bigskip
+\begin{itemize}
+\item $\mathbf{w}$: weights (parameters to learn)
+\item $b$: bias
+\item $\sigma$: activation function (ReLU, sigmoid, tanh)
+\end{itemize}
+
+\bigskip
+A \textbf{layer} stacks many neurons; a \textbf{network} stacks many layers.
+\end{frame}
+
+\begin{frame}{Your First Network in PyTorch}
+\begin{block}{Key idea}
+Define the architecture, choose a loss, run gradient descent.
+\end{block}
+
+\bigskip
+In the notebook you will:
+\begin{enumerate}
+\item Approximate $\sin(x)$ with a small network
+\item Compare with polynomial and Chebyshev approximation from PNM
+\item See how adding layers and neurons improves accuracy
+\end{enumerate}
+
+\bigskip
+\textbf{Next week:} the full deep learning toolkit --- backpropagation, regularisation, and training.
+\end{frame}
+
+\end{document}

@@ -1,0 +1,145 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 10 --- Frontiers \& Course Synthesis}
+\subtitle{Sequence-Space Methods, Continuous-Time HA \& When to Use Deep Learning}
+\author{Dr Juan Zurita}
+\institute{Deep Learning for Macroeconomics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Sequence-Space Jacobians}
+\textbf{Auclert et al.\ (2021):} solve HA models by linearising around the steady state in \textbf{sequence space}.
+
+\bigskip
+\begin{itemize}
+\item Represent the economy as a mapping from shock sequences to outcome sequences
+\item Compute Jacobians of this mapping using autodiff
+\item Linear impulse responses without simulation
+\end{itemize}
+
+\bigskip
+Complements DEQNs: SSJ is fast for linearised models; DEQNs handle non-linearities.
+\end{frame}
+
+\begin{frame}{Continuous-Time HA Models}
+\textbf{Achdou et al.\ (2022):} solve the Kolmogorov Forward Equation (KFE) for the wealth distribution.
+
+\bigskip
+$0 = -\partial_a[s(a,z)\,g(a,z)] + \text{(diffusion)} + \text{(jumps in } z\text{)}$
+
+\bigskip
+Combined with the HJB for individual decisions:
+
+\bigskip
+\begin{itemize}
+\item PINNs for the HJB $\Rightarrow$ policy functions
+\item Finite differences or PINNs for the KFE $\Rightarrow$ distributions
+\item Mean-field games: the two PDEs coupled
+\end{itemize}
+\end{frame}
+
+\begin{frame}{When to Use Deep Learning}
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Use deep learning when \ldots & Use traditional methods when \ldots \\
+\midrule
+State dimension $> 4$--$5$ & Low-dimensional ($\leq 3$) \\
+Constraints bind occasionally & Linear or log-linear model \\
+Non-linear dynamics matter & Perturbation suffices \\
+Global solution needed & Local approximation is fine \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip
+Deep learning is a \textbf{complement} to traditional methods, not a replacement. Use the simplest tool that answers your question.
+\end{frame}
+
+\begin{frame}{Course Summary}
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+Weeks & Topic \\
+\midrule
+1--3 & Foundations: networks, training, autodiff \\
+4--5 & DEQNs: deterministic and stochastic \\
+6 & Constraints: Fischer--Burmeister \\
+7 & PINNs: continuous-time models \\
+8 & Heterogeneous agents \\
+9 & Surrogates and estimation \\
+10 & Frontiers \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip
+From PNM's grids to neural networks --- you now have tools for problems that were infeasible five years ago.
+\end{frame}
+
+\begin{frame}{Where to Go Next}
+\begin{itemize}
+\item \textbf{PNM:} revisit with deeper understanding of what the algorithms do
+\item \textbf{Optimisation course:} the mathematical theory behind gradient descent and beyond
+\item \textbf{Research:} Scheidegger's GitHub, QuantEcon, Econ-ARK
+\end{itemize}
+
+\bigskip
+\textbf{References:} Azinovic et al.\ (2022), Scheidegger (2025), Goodfellow et al.\ (2016)
+
+\par\bigskip
+\alert{Thank you and good luck!}
+\end{frame}
+
+\end{document}

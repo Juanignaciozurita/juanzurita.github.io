@@ -1,0 +1,131 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 2 --- Deep Learning Fundamentals}
+\subtitle{Gradient Descent, Backpropagation \& Training Neural Networks}
+\author{Dr Juan Zurita}
+\institute{Deep Learning for Macroeconomics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{The Learning Problem}
+Given data or a known function, find network parameters $\boldsymbol{\theta}$ that minimise a \alert{loss function}:
+
+$$\boldsymbol{\theta}^* = \arg\min_{\boldsymbol{\theta}} \mathcal{L}(\boldsymbol{\theta})$$
+
+\bigskip
+In economics: the ``data'' is often \textbf{equilibrium conditions} rather than observed samples.
+\end{frame}
+
+\begin{frame}{Gradient Descent}
+Update rule: $\boldsymbol{\theta}_{t+1} = \boldsymbol{\theta}_t - \alpha\,\nabla_{\boldsymbol{\theta}}\mathcal{L}$
+
+\bigskip
+\begin{itemize}
+\item $\alpha$: learning rate --- too large diverges, too small crawls
+\item \textbf{SGD}: use a random mini-batch instead of all data
+\item \textbf{Adam}: adaptive learning rates per parameter --- the workhorse
+\end{itemize}
+
+\bigskip
+\begin{block}{From PNM}
+You already know gradient descent and Newton's method. Adam is an adaptive extension that works well for neural networks.
+\end{block}
+\end{frame}
+
+\begin{frame}{Backpropagation}
+\textbf{Backprop} = chain rule applied systematically through the computational graph.
+
+\bigskip
+For a composition $f = f_L \circ f_{L-1} \circ \cdots \circ f_1$:
+
+$$\frac{\partial \mathcal{L}}{\partial \boldsymbol{\theta}_\ell} = \frac{\partial \mathcal{L}}{\partial f_L} \cdot \frac{\partial f_L}{\partial f_{L-1}} \cdots \frac{\partial f_{\ell+1}}{\partial f_\ell} \cdot \frac{\partial f_\ell}{\partial \boldsymbol{\theta}_\ell}$$
+
+\bigskip
+PyTorch computes this automatically via \texttt{loss.backward()}.
+\end{frame}
+
+\begin{frame}{Activation Functions}
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Name & Formula & Use case \\
+\midrule
+ReLU & $\max(0, x)$ & Default hidden layers \\
+Sigmoid & $1/(1+e^{-x})$ & Output in $[0,1]$ \\
+Tanh & $(e^x - e^{-x})/(e^x + e^{-x})$ & Output in $[-1,1]$ \\
+Softplus & $\ln(1 + e^x)$ & Smooth ReLU \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip
+For economics: \textbf{softplus} is useful when outputs must be positive (e.g.\ consumption).
+\end{frame}
+
+\begin{frame}{Overfitting and Regularisation}
+\begin{itemize}
+\item \textbf{Overfitting}: the network memorises training points but generalises poorly
+\item \textbf{Weight decay} ($L_2$ regularisation): penalise large weights
+\item \textbf{Dropout}: randomly zero out neurons during training
+\item \textbf{Early stopping}: halt when validation loss stops improving
+\end{itemize}
+
+\bigskip
+In economics, overfitting is less of a concern when the ``data'' comes from equilibrium conditions --- but training stability still matters.
+
+\bigskip
+\textbf{Next week:} automatic differentiation --- the engine behind backpropagation.
+\end{frame}
+
+\end{document}

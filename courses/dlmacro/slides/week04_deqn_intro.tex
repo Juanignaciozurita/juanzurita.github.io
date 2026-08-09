@@ -1,0 +1,126 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 4 --- Deep Equilibrium Networks I}
+\subtitle{The DEQN Principle \& the Brock--Mirman Growth Model}
+\author{Dr Juan Zurita}
+\institute{Deep Learning for Macroeconomics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{From VFI to DEQNs}
+In PNM you solved the growth model by \textbf{value-function iteration} on a grid.
+
+\bigskip
+\textbf{DEQN idea:} parameterise the policy function as a neural network and train it to satisfy the \alert{equilibrium conditions}.
+
+\bigskip
+\begin{block}{Azinovic, Gaegauf \& Scheidegger (2022)}
+``Deep Equilibrium Nets'' --- \textit{International Economic Review}
+\end{block}
+\end{frame}
+
+\begin{frame}{The DEQN Recipe}
+\begin{enumerate}
+\item \textbf{Define} the economic model (states, controls, equilibrium conditions)
+\item \textbf{Parameterise} policy functions: $c = \mathcal{N}_{\boldsymbol{\theta}}(k)$
+\item \textbf{Construct loss}: squared Euler-equation residuals
+\item \textbf{Train}: minimise the loss with Adam
+\item \textbf{Verify}: compare with known solutions or refined grids
+\end{enumerate}
+
+\bigskip
+No grid, no discretisation of the state space --- just sample points.
+\end{frame}
+
+\begin{frame}{Brock--Mirman Model}
+$\max \sum_{t=0}^{\infty} \beta^t \ln c_t$ \quad s.t.\ $k_{t+1} = k_t^\alpha - c_t$
+
+\bigskip
+Euler equation: $\frac{1}{c_t} = \beta\,\frac{\alpha k_{t+1}^{\alpha-1}}{c_{t+1}}$
+
+\bigskip
+\begin{block}{Why this model?}
+It has a \textbf{closed-form solution}: $c_t = (1 - \alpha\beta)\,k_t^\alpha$.
+
+We can verify the neural network against the true answer.
+\end{block}
+\end{frame}
+
+\begin{frame}{Loss Function Design}
+The Euler-equation residual at a sample point $k$:
+
+$$R(k; \boldsymbol{\theta}) = 1 - \beta\,\frac{\alpha k'^{\alpha-1} \cdot c(k; \boldsymbol{\theta})}{c(k'; \boldsymbol{\theta})}$$
+
+where $k' = k^\alpha - c(k; \boldsymbol{\theta})$.
+
+\bigskip
+Loss: $\mathcal{L}(\boldsymbol{\theta}) = \frac{1}{N}\sum_{i=1}^{N} R(k_i; \boldsymbol{\theta})^2$
+
+\bigskip
+Train until $\mathcal{L} < 10^{-8}$ --- machine-precision accuracy.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+\item DEQNs replace grid-based VFI with neural-network policy functions
+\item The loss function encodes economic equilibrium conditions
+\item Brock--Mirman provides a verifiable first test case
+\item The method is grid-free and scales to higher dimensions
+\end{itemize}
+
+\bigskip
+\textbf{Next week:} adding uncertainty --- stochastic models with Gauss--Hermite quadrature.
+\end{frame}
+
+\end{document}

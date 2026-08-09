@@ -1,0 +1,137 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 3 --- Automatic Differentiation for Economics}
+\subtitle{Forward Mode, Reverse Mode \& PyTorch Autograd}
+\author{Dr Juan Zurita}
+\institute{Deep Learning for Macroeconomics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Why Differentiation Matters}
+Economic models are systems of equations involving derivatives:
+
+\bigskip
+\begin{itemize}
+\item Euler equations: $u'(c_t) = \beta\,\mathbb{E}_t[u'(c_{t+1})(1 + r_{t+1})]$
+\item FOCs of optimisation problems
+\item Jacobians for stability analysis
+\end{itemize}
+
+\bigskip
+\alert{Automatic differentiation} computes exact derivatives --- not numerical approximation, not symbolic algebra.
+\end{frame}
+
+\begin{frame}{Three Ways to Differentiate}
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Method & Pros & Cons \\
+\midrule
+Symbolic & Exact, interpretable & Expression swell \\
+Numerical & Simple (finite diff.) & Approximation error \\
+Automatic & Exact, efficient & Requires code graph \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip
+\textbf{Autodiff} decomposes any program into elementary operations and applies the chain rule to each.
+\end{frame}
+
+\begin{frame}{Forward vs Reverse Mode}
+\textbf{Forward mode}: propagate derivatives input $\to$ output.
+
+Cost: one pass per input variable. Good when $n_{\text{inputs}} \ll n_{\text{outputs}}$.
+
+\bigskip
+\textbf{Reverse mode} (backpropagation): propagate derivatives output $\to$ input.
+
+Cost: one pass per output variable. Good when $n_{\text{outputs}} \ll n_{\text{inputs}}$.
+
+\bigskip
+\begin{block}{Key insight}
+Neural networks have \textbf{one} scalar loss and \textbf{millions} of parameters $\Rightarrow$ reverse mode is vastly more efficient.
+\end{block}
+\end{frame}
+
+\begin{frame}{PyTorch Autograd}
+\begin{block}{In practice}
+\texttt{torch.autograd} builds a computational graph and computes gradients automatically.
+\end{block}
+
+\bigskip
+Key functions:
+\begin{itemize}
+\item \texttt{torch.autograd.grad()} --- compute $\partial y / \partial x$
+\item \texttt{torch.autograd.functional.jacobian()} --- full Jacobian matrix
+\item \texttt{torch.autograd.functional.hessian()} --- second derivatives
+\end{itemize}
+
+\bigskip
+This is what makes DEQNs possible: we can differentiate through the entire economic model.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+\item Autodiff gives \textbf{exact} derivatives at machine precision
+\item Reverse mode is efficient for scalar-output functions (losses)
+\item PyTorch autograd handles everything behind the scenes
+\item We can differentiate Euler equations, value functions, and equilibrium conditions
+\end{itemize}
+
+\bigskip
+\textbf{Next week:} Deep Equilibrium Networks --- using all of this to solve dynamic models.
+\end{frame}
+
+\end{document}

@@ -1,0 +1,138 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 9 --- Surrogates, Estimation \& Climate Economics}
+\subtitle{Gaussian Processes, SMM \& the DICE Model}
+\author{Dr Juan Zurita}
+\institute{Deep Learning for Macroeconomics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Surrogate Models}
+Some models are too expensive to evaluate repeatedly (e.g.\ for estimation).
+
+\bigskip
+\textbf{Surrogate} (emulator): a cheap-to-evaluate approximation trained on a small number of model runs.
+
+\bigskip
+\begin{itemize}
+\item \textbf{Gaussian processes}: non-parametric, with uncertainty quantification
+\item \textbf{Neural networks}: scale to higher dimensions
+\item \textbf{Polynomial chaos}: spectral approach for stochastic inputs
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Gaussian Process Regression}
+A GP defines a distribution over functions: $f \sim \mathcal{GP}(m, k)$
+
+\bigskip
+\begin{itemize}
+\item $m(x)$: mean function (often zero)
+\item $k(x, x')$: covariance kernel (e.g.\ squared exponential)
+\end{itemize}
+
+\bigskip
+Given $n$ evaluations of the expensive model, the GP provides:
+\begin{enumerate}
+\item A posterior mean (the surrogate prediction)
+\item A posterior variance (uncertainty about the prediction)
+\end{enumerate}
+
+\bigskip
+The variance tells us \textbf{where to evaluate next} --- active learning.
+\end{frame}
+
+\begin{frame}{Simulated Method of Moments}
+\textbf{Goal}: estimate structural parameters $\boldsymbol{\theta}$ by matching model moments to data moments.
+
+\bigskip
+$$\hat{\boldsymbol{\theta}} = \arg\min_{\boldsymbol{\theta}} \left[\mathbf{m}^{\text{data}} - \mathbf{m}^{\text{model}}(\boldsymbol{\theta})\right]' W \left[\mathbf{m}^{\text{data}} - \mathbf{m}^{\text{model}}(\boldsymbol{\theta})\right]$$
+
+\bigskip
+\textbf{Problem}: each evaluation of $\mathbf{m}^{\text{model}}(\boldsymbol{\theta})$ requires solving the full model.
+
+\textbf{Solution}: replace the model with a trained surrogate $\Rightarrow$ fast evaluation.
+\end{frame}
+
+\begin{frame}{The DICE Model}
+Nordhaus's \textbf{DICE} (Dynamic Integrated Climate--Economy):
+
+\bigskip
+\begin{itemize}
+\item Couples economic growth with carbon emissions and climate dynamics
+\item Optimal abatement policy: how much to reduce emissions?
+\item High-dimensional when extended (regions, sectors, uncertainty)
+\end{itemize}
+
+\bigskip
+Deep learning enables:
+\begin{enumerate}
+\item Solving richer versions of DICE with many state variables
+\item Surrogate-based estimation of climate damage parameters
+\item Uncertainty quantification via ensemble training
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+\item Surrogates make expensive models tractable for estimation
+\item GPs provide uncertainty; neural networks provide scalability
+\item SMM + surrogates: estimate structural models efficiently
+\item Climate economics is a natural application of high-dimensional methods
+\end{itemize}
+
+\bigskip
+\textbf{Next week:} frontiers and the big picture --- when to use deep learning.
+\end{frame}
+
+\end{document}

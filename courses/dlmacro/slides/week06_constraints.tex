@@ -1,0 +1,128 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 6 --- Constraints and Real-World Models}
+\subtitle{Occasionally Binding Constraints \& the Fischer--Burmeister Function}
+\author{Dr Juan Zurita}
+\institute{Deep Learning for Macroeconomics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{The Constraint Problem}
+Many economic models feature \alert{inequality constraints}:
+
+\bigskip
+\begin{itemize}
+\item Borrowing limits: $a_{t+1} \geq \underline{a}$
+\item Non-negativity: $c_t \geq 0$, $k_t \geq 0$
+\item Collateral constraints: $b_t \leq \phi\,k_t$
+\end{itemize}
+
+\bigskip
+These constraints \textbf{bind occasionally} --- sometimes active, sometimes not.
+
+Traditional KKT conditions create a discrete switch that is hard to differentiate.
+\end{frame}
+
+\begin{frame}{Fischer--Burmeister Complementarity}
+The \textbf{FB function} provides a smooth reformulation:
+
+$$\Phi(a, b) = a + b - \sqrt{a^2 + b^2}$$
+
+\bigskip
+\begin{block}{Key property}
+$\Phi(a, b) = 0$ if and only if $a \geq 0$, $b \geq 0$, and $ab = 0$.
+\end{block}
+
+\bigskip
+This is continuously differentiable --- perfect for gradient-based training. It replaces the discrete if/else with a smooth function that autodiff can handle.
+\end{frame}
+
+\begin{frame}{Consumption--Savings with Borrowing Constraint}
+$\max \sum \beta^t u(c_t)$ s.t.\ $a_{t+1} = (1+r)\,a_t + y_t - c_t$ and $a_{t+1} \geq \underline{a}$
+
+\bigskip
+Complementarity: either $a_{t+1} > \underline{a}$ (unconstrained) or $\mu_t > 0$ (constrained).
+
+\bigskip
+FB formulation: $\Phi(a_{t+1} - \underline{a},\; \mu_t) = 0$
+
+\bigskip
+Add this as an extra residual in the DEQN loss.
+\end{frame}
+
+\begin{frame}{Architecture Design}
+\begin{itemize}
+\item \textbf{Output activation}: softplus for consumption (ensures $c > 0$)
+\item \textbf{Width}: 3--4 hidden layers, 64--128 neurons each
+\item \textbf{Multiple outputs}: one head for $c$, another for $\mu$ (the multiplier)
+\item \textbf{Learning rate schedule}: cosine annealing helps convergence
+\end{itemize}
+
+\bigskip
+Architecture search is mostly empirical --- start simple, add complexity only if needed.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+\item Occasionally binding constraints are common and difficult
+\item Fischer--Burmeister smooths the complementarity condition
+\item DEQNs handle constraints naturally via extra residual terms
+\item Architecture choices (activations, depth) matter for convergence
+\end{itemize}
+
+\bigskip
+\textbf{Next week:} Physics-Informed Neural Networks --- continuous-time economics.
+\end{frame}
+
+\end{document}
