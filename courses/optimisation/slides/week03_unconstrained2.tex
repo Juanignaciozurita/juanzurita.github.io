@@ -1,0 +1,80 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 3 --- Unconstrained Optimisation II}
+\subtitle{Gradient Descent \& Newton's Method}
+\author{Dr Juan Zurita}
+\institute{Optimisation \& Mathematical Methods for Economics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Gradient Descent}
+\textbf{Algorithm:} $\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha\,\nabla f(\mathbf{x}_k)$\\\bigskip\begin{itemize}\item $\alpha > 0$: step size (learning rate)\item Follows the steepest descent direction\item \textbf{Linear} convergence rate\item Simple but can be slow on ill-conditioned problems\end{itemize}
+\end{frame}
+
+\begin{frame}{Newton's Method}
+Uses second-order information:\\ $\mathbf{x}_{k+1} = \mathbf{x}_k - [H_f(\mathbf{x}_k)]^{-1}\nabla f(\mathbf{x}_k)$\\\bigskip\begin{itemize}\item \textbf{Quadratic} convergence near optimum\item Each step is more expensive (Hessian computation)\item May diverge if started far from optimum\end{itemize}
+\end{frame}
+
+\begin{frame}{Quasi-Newton: BFGS}
+\textbf{Idea:} approximate the inverse Hessian from gradient differences.\\\bigskip\begin{itemize}\item No need to compute or invert the Hessian\item \textbf{Superlinear} convergence\item L-BFGS: limited-memory variant for large problems\item The workhorse of smooth optimisation in practice\end{itemize}\par\bigskip In Python: \texttt{scipy.optimize.minimize(method='BFGS')}
+\end{frame}
+
+\begin{frame}{Convergence Comparison}
+\begin{center}\begin{tabular}{lcc}\toprule Method & Convergence & Cost per step \\ \midrule Gradient descent & Linear & $O(n)$ \\ Newton & Quadratic & $O(n^3)$ \\ BFGS & Superlinear & $O(n^2)$ \\ \bottomrule\end{tabular}\end{center}\par\bigskip Choose based on problem size and smoothness.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}\item GD: simple, slow; Newton: fast, expensive; BFGS: best of both\item Step size matters --- too large diverges, too small crawls\item \texttt{scipy.optimize} provides production-quality implementations\item \textbf{Next week:} constrained optimisation with Lagrange multipliers\end{itemize}
+\end{frame}
+\end{document}

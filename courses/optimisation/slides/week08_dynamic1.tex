@@ -1,0 +1,80 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 8 --- Dynamic Optimisation I}
+\subtitle{Optimal Control \& the Maximum Principle}
+\author{Dr Juan Zurita}
+\institute{Optimisation \& Mathematical Methods for Economics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Why Dynamic Optimisation?}
+Economic decisions are \textbf{intertemporal}: save, invest, consume over time.\\\bigskip We need to optimise \textit{paths} $\{x(t)\}$, not just points.\\\bigskip Two frameworks:\begin{enumerate}\item Calculus of variations / optimal control (continuous time)\item Dynamic programming (discrete time --- next week)\end{enumerate}
+\end{frame}
+
+\begin{frame}{The Euler--Lagrange Equation}
+$\max\;\int_{t_0}^{t_1} F(t,y,\dot{y})\,dt$\\\bigskip Necessary condition: $$\frac{\partial F}{\partial y} - \frac{d}{dt}\frac{\partial F}{\partial \dot{y}} = 0$$
+\end{frame}
+
+\begin{frame}{Pontryagin's Maximum Principle}
+\textbf{Hamiltonian:} $H = f(x,u,t) + \lambda\,g(x,u,t)$\\\bigskip Necessary conditions:\begin{enumerate}\item $\partial H/\partial u = 0$ (optimality)\item $\dot{\lambda} = -\partial H/\partial x$ (costate)\item $\dot{x} = \partial H/\partial \lambda$ (state)\item Transversality condition\end{enumerate}
+\end{frame}
+
+\begin{frame}{The Ramsey Model}
+$\max\;\int_0^\infty e^{-\rho t}u(c)\,dt$ s.t.\ $\dot{k} = f(k) - \delta k - c$\\\bigskip\textbf{Euler equation} (Keynes--Ramsey rule):\\ $$\frac{\dot{c}}{c} = \frac{1}{\sigma}[f'(k) - \delta - \rho]$$\\\bigskip Consumption grows when the marginal product of capital exceeds the discount rate plus depreciation.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}\item Dynamic optimisation: choosing optimal paths over time\item Euler--Lagrange equation: necessary condition for variational problems\item Maximum Principle: powerful extension to control problems\item The Ramsey model: foundation of modern growth theory\item \textbf{Next week:} dynamic programming and the Bellman equation\end{itemize}
+\end{frame}
+\end{document}

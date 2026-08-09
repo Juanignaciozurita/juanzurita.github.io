@@ -1,0 +1,80 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 4 --- Constrained Optimisation I}
+\subtitle{Lagrange Multipliers \& Economic Applications}
+\author{Dr Juan Zurita}
+\institute{Optimisation \& Mathematical Methods for Economics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{The Constrained Problem}
+\textbf{Maximise} $f(\mathbf{x})$ \textbf{subject to} $g(\mathbf{x}) = 0$\\\bigskip\textbf{Lagrangian:} $\mathcal{L}(\mathbf{x},\lambda) = f(\mathbf{x}) - \lambda\,g(\mathbf{x})$\\\bigskip\textbf{FOC:} $\nabla f = \lambda\nabla g$ and $g(\mathbf{x}) = 0$\\\bigskip Geometrically: at the optimum, the level curve of $f$ is \alert{tangent} to the constraint.
+\end{frame}
+
+\begin{frame}{Utility Maximisation}
+$\max\; u(x_1,x_2) = x_1^\alpha x_2^{1-\alpha}$ s.t.\ $p_1x_1 + p_2x_2 = m$\\\bigskip Marshallian demands: $x_1^* = \frac{\alpha m}{p_1}$, $x_2^* = \frac{(1-\alpha)m}{p_2}$\\\bigskip The multiplier $\lambda^*$ = marginal utility of income.
+\end{frame}
+
+\begin{frame}{The Envelope Theorem}
+\begin{block}{Envelope Theorem}$\frac{\partial V}{\partial m} = \lambda^*$\end{block}\par\bigskip The Lagrange multiplier measures the \alert{shadow value} of the constraint.\\\bigskip An extra \$1 of income raises utility by exactly $\lambda^*$.
+\end{frame}
+
+\begin{frame}{Bordered Hessian}
+To verify a constrained maximum, check the \textbf{bordered Hessian}:\\ $$\bar{H} = \begin{pmatrix} 0 & g_{x_1} & g_{x_2} \\\\ g_{x_1} & \mathcal{L}_{x_1x_1} & \mathcal{L}_{x_1x_2} \\\\ g_{x_2} & \mathcal{L}_{x_2x_1} & \mathcal{L}_{x_2x_2}\end{pmatrix}$$\\\bigskip For a maximum with one constraint: $|\bar{H}| > 0$.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}\item Lagrange multipliers handle equality constraints\item $\lambda^*$ = shadow price of the constraint\item The envelope theorem connects multipliers to comparative statics\item \textbf{Next week:} inequality constraints and KKT conditions\end{itemize}
+\end{frame}
+\end{document}

@@ -1,0 +1,80 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 5 --- Constrained Optimisation II}
+\subtitle{KKT Conditions \& Inequality Constraints}
+\author{Dr Juan Zurita}
+\institute{Optimisation \& Mathematical Methods for Economics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Inequality Constraints}
+Most economic constraints are \textbf{inequalities}: budgets, non-negativity, capacity.\\\bigskip $\min f(\mathbf{x})$ s.t.\ $g_i(\mathbf{x}) \leq 0$, $i=1,\ldots,m$
+\end{frame}
+
+\begin{frame}{KKT Conditions}
+\begin{enumerate}\item \textbf{Stationarity:} $\nabla f + \sum\mu_i\nabla g_i = 0$\item \textbf{Primal feasibility:} $g_i(\mathbf{x}) \leq 0$\item \textbf{Dual feasibility:} $\mu_i \geq 0$\item \textbf{Complementary slackness:} $\mu_i\,g_i(\mathbf{x}) = 0$\end{enumerate}\par\bigskip Under convexity, KKT conditions are \alert{sufficient}.
+\end{frame}
+
+\begin{frame}{Complementary Slackness}
+$\mu_i\,g_i = 0$ means:\\\bigskip\begin{itemize}\item Constraint \textbf{binding} ($g_i = 0$): multiplier can be positive\item Constraint \textbf{slack} ($g_i < 0$): multiplier must be zero\end{itemize}\par\bigskip\textbf{Economics:} a resource has a positive shadow price only if it is fully used.
+\end{frame}
+
+\begin{frame}{Portfolio Choice}
+$\min\;\mathbf{w}^T\Sigma\mathbf{w}$ s.t.\ $\mathbf{w}^T\boldsymbol{\mu} \geq r_{\min}$, $\sum w_i = 1$, $w_i \geq 0$\\\bigskip No short-selling constraints are \textbf{inequalities}.\\\bigskip KKT tells us: assets with zero weight have insufficient expected return to justify inclusion.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}\item KKT = Lagrange multipliers extended to inequalities\item Complementary slackness: binding vs.\ slack constraints\item Under convexity, KKT is necessary \textit{and} sufficient\item \textbf{Next week:} convex optimisation theory and CVXPY\end{itemize}
+\end{frame}
+\end{document}

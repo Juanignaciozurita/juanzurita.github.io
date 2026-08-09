@@ -1,0 +1,84 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 1 --- Mathematical Foundations}
+\subtitle{Sets, Functions \& Linear Algebra}
+\author{Dr Juan Zurita}
+\institute{Optimisation \& Mathematical Methods for Economics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Roadmap}
+This course builds the \alert{mathematical theory of optimisation} for economics.\\\bigskip\textbf{Today:} the toolkit --- sets, vectors, matrices, eigenvalues, positive definiteness.\\\bigskip\textbf{Why?} Every optimisation result rests on these foundations.
+\end{frame}
+
+\begin{frame}{Sets in $\mathbb{R}^n$}
+\begin{itemize}\item \textbf{Open set:} every point has a neighbourhood inside the set\item \textbf{Closed set:} contains all its limit points\item \textbf{Compact set:} closed and bounded (Heine--Borel)\end{itemize}\bigskip\begin{block}{Extreme Value Theorem}A continuous function on a compact set attains its maximum and minimum.\end{block}
+\end{frame}
+
+\begin{frame}{Vectors and Matrices}
+A \textbf{vector} $\mathbf{x} \in \mathbb{R}^n$; a \textbf{matrix} $A \in \mathbb{R}^{m\times n}$.\\\bigskip Key operations: dot product, matrix multiplication, transpose, inverse, determinant.\\\bigskip In Python: \texttt{numpy} handles all of these efficiently.
+\end{frame}
+
+\begin{frame}{Eigenvalues}
+For square $A$: $A\mathbf{v} = \lambda\mathbf{v}$\\\bigskip $\lambda$ = eigenvalue, $\mathbf{v}$ = eigenvector.\\\bigskip\begin{block}{Definiteness (symmetric $A$)}\begin{itemize}\item All $\lambda > 0$ $\Rightarrow$ \textbf{positive definite}\item All $\lambda < 0$ $\Rightarrow$ \textbf{negative definite}\item Mixed signs $\Rightarrow$ \textbf{indefinite}\end{itemize}\end{block}
+\end{frame}
+
+\begin{frame}{Why Definiteness Matters}
+At a critical point $\nabla f = 0$:\\\bigskip\begin{itemize}\item Hessian \textbf{negative definite} $\Rightarrow$ local \textbf{maximum}\item Hessian \textbf{positive definite} $\Rightarrow$ local \textbf{minimum}\item Hessian \textbf{indefinite} $\Rightarrow$ \textbf{saddle point}\end{itemize}\par\bigskip This is the \alert{second-order condition} we formalise next week.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}\item Sets, functions, vectors, matrices --- the language of optimisation\item Eigenvalues classify matrices as positive/negative definite\item Definiteness of the Hessian $\to$ nature of critical points\item NumPy makes these computations trivial in Python\end{itemize}\par\bigskip\textbf{Next week:} Gradients, Hessians, and convexity.
+\end{frame}
+\end{document}

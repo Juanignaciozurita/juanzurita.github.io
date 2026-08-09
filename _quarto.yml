@@ -11,7 +11,9 @@ project:
     - "courses/dlmacro/notebooks/*.ipynb"
     - "courses/smith-to-simulation/index.qmd"
     - "courses/smith-to-simulation/intro.md"
+    - "courses/smith-to-simulation/*.ipynb"
     - "courses/optimisation/index.qmd"
+    - "courses/optimisation/notebooks/*.ipynb"
     - "!courses/pnm/New Problem Sets/"
 
 website:

@@ -1,0 +1,80 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 7 --- Linear Programming}
+\subtitle{The Simplex Method \& Economic Models}
+\author{Dr Juan Zurita}
+\institute{Optimisation \& Mathematical Methods for Economics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Linear Programs}
+$\min\;\mathbf{c}^T\mathbf{x}$ s.t.\ $A\mathbf{x} \leq \mathbf{b}$, $\mathbf{x} \geq 0$\\\bigskip\begin{block}{Fundamental Theorem of LP}If an LP has an optimal solution, there is one at a \textbf{vertex} of the feasible polyhedron.\end{block}
+\end{frame}
+
+\begin{frame}{The Simplex Method}
+Dantzig (1947): move from vertex to vertex, improving the objective at each step.\\\bigskip\begin{itemize}\item Worst case: exponential; in practice: very fast\item The most successful algorithm in operations research\end{itemize}
+\end{frame}
+
+\begin{frame}{LP Duality \& Shadow Prices}
+Every LP has a \textbf{dual}. Optimal primal value = optimal dual value.\\\bigskip Dual variables = \textbf{shadow prices}: how much the objective improves per unit relaxation of each constraint.\\\bigskip In economics: the marginal value of an additional unit of a scarce resource.
+\end{frame}
+
+\begin{frame}{Applications}
+\begin{itemize}\item \textbf{Input--output models:} Leontief's production planning\item \textbf{Transportation:} minimise shipping cost across a network\item \textbf{Diet problem:} minimise food cost meeting nutrition targets\item \textbf{Production planning:} allocate resources across products\end{itemize}\par\bigskip In Python: \texttt{scipy.optimize.linprog} or \texttt{PuLP}.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}\item LP: optimise linear objective over linear constraints\item Simplex moves along vertices; solution is always at a corner\item Duality provides shadow prices for economic interpretation\item \textbf{Next week:} dynamic optimisation --- optimising over time\end{itemize}
+\end{frame}
+\end{document}

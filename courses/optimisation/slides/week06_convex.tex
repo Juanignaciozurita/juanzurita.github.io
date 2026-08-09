@@ -1,0 +1,86 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 6 --- Convex Optimisation}
+\subtitle{Theory, Duality \& CVXPY}
+\author{Dr Juan Zurita}
+\institute{Optimisation \& Mathematical Methods for Economics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Why Convexity?}
+\begin{block}{The Convex Optimisation Guarantee}Every local minimum is \alert{global}. Efficient algorithms exist.\end{block}\par\bigskip Many economic models are naturally convex: cost minimisation, portfolio optimisation, regression.
+\end{frame}
+
+\begin{frame}{Lagrangian Duality}
+\textbf{Primal:} $\min f(\mathbf{x})$ s.t.\ $g_i \leq 0$\\\bigskip\textbf{Dual function:} $d(\boldsymbol{\mu}) = \inf_\mathbf{x}\{f(\mathbf{x}) + \sum\mu_i g_i(\mathbf{x})\}$\\\bigskip\textbf{Weak duality:} $d^* \leq p^*$ always\\\textbf{Strong duality:} $d^* = p^*$ for convex problems (Slater's condition)
+\end{frame}
+
+\begin{frame}[fragile]{CVXPY}
+CVXPY: a Python library for \textbf{disciplined convex programming}.
+
+\begin{lstlisting}
+import cvxpy as cp
+x = cp.Variable(n)
+prob = cp.Problem(cp.Minimize(cp.sum_squares(A@x-b)),
+                  [x >= 0])
+prob.solve()
+\end{lstlisting}
+
+Automatically checks convexity and selects the right solver.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}\item Convexity guarantees global optimality\item Strong duality: primal value = dual value\item CVXPY makes convex optimisation accessible in Python\item \textbf{Next week:} linear programming --- a special case with rich structure\end{itemize}
+\end{frame}
+\end{document}

@@ -1,0 +1,76 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 10 --- Frontiers}
+\subtitle{Stochastic Optimisation, ML \& Beyond}
+\author{Dr Juan Zurita}
+\institute{Optimisation \& Mathematical Methods for Economics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Stochastic Dynamic Programming}
+Real economies face uncertainty: $V(k,z) = \max_c\{u(c) + \beta\,\mathbb{E}[V(k',z')|z]\}$\\\bigskip $z$ follows a Markov process (e.g.\ productivity shocks).\\\bigskip Discretise with Tauchen or Rouwenhorst methods; solve with VFI over the joint $(k,z)$ grid.
+\end{frame}
+
+\begin{frame}{Stochastic Gradient Descent}
+In machine learning: $\min_\theta\frac{1}{N}\sum_i\ell(\theta;x_i,y_i)$\\\bigskip SGD uses a random \textbf{mini-batch} instead of all $N$ samples:\\ $\theta_{t+1} = \theta_t - \alpha_t\nabla\ell(\theta_t; x_{i_t}, y_{i_t})$\\\bigskip Variants: momentum, Adam, RMSProp --- foundations of deep learning.
+\end{frame}
+
+\begin{frame}{Course Summary}
+\begin{center}\begin{tabular}{ll}\toprule Weeks & Topic \\ \midrule 1 & Mathematical foundations \\ 2--3 & Unconstrained optimisation \\ 4--5 & Constrained (Lagrange, KKT) \\ 6 & Convex optimisation \\ 7 & Linear programming \\ 8--9 & Dynamic optimisation \\ 10 & Frontiers \\ \bottomrule\end{tabular}\end{center}\par\bigskip These tools underpin virtually every model in modern economics.
+\end{frame}
+
+\begin{frame}{Where to Go Next}
+\begin{itemize}\item \textbf{PNM:} implement these methods computationally\item \textbf{Deep Learning for Macro:} neural nets meet DSGE models\item \textbf{Research:} heterogeneous agents, high-dimensional problems\end{itemize}\par\bigskip\textbf{References:} Boyd \& Vandenberghe, Sundaram, Stokey--Lucas--Prescott, Bertsekas\par\bigskip\alert{Thank you and good luck!}
+\end{frame}
+\end{document}

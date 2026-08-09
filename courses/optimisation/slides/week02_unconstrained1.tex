@@ -1,0 +1,80 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 2 --- Unconstrained Optimisation I}
+\subtitle{Gradients, Hessians \& Convexity}
+\author{Dr Juan Zurita}
+\institute{Optimisation \& Mathematical Methods for Economics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{First-Order Conditions}
+For $f:\mathbb{R}^n\to\mathbb{R}$, the \textbf{gradient} is $\nabla f = \left(\frac{\partial f}{\partial x_1},\ldots,\frac{\partial f}{\partial x_n}\right)^T$.\\\bigskip\begin{block}{First-Order Necessary Condition}If $\mathbf{x}^*$ is a local extremum of $f$ and $f$ is differentiable, then $\nabla f(\mathbf{x}^*) = \mathbf{0}$.\end{block}
+\end{frame}
+
+\begin{frame}{The Hessian Matrix}
+$$H_f(\mathbf{x}) = \begin{pmatrix} f_{x_1x_1} & f_{x_1x_2} \\ f_{x_2x_1} & f_{x_2x_2}\end{pmatrix}$$\\\bigskip\begin{block}{Second-Order Conditions at $\nabla f = 0$}\begin{itemize}\item $H$ pos.\ def.\ $\Rightarrow$ local min\item $H$ neg.\ def.\ $\Rightarrow$ local max\item $H$ indefinite $\Rightarrow$ saddle\end{itemize}\end{block}
+\end{frame}
+
+\begin{frame}{Convexity}
+$f$ is \textbf{convex} if the line segment between any two points lies above the graph:\\ $f(\lambda x + (1-\lambda)y) \leq \lambda f(x) + (1-\lambda)f(y)$\\\bigskip\begin{block}{Key Result}If $f$ is convex, every local minimum is a \alert{global} minimum.\end{block}\par\bigskip Characterisation: $f$ convex $\iff$ $H_f \succeq 0$ everywhere.
+\end{frame}
+
+\begin{frame}{Economic Application}
+\textbf{Profit maximisation:} $\pi(q) = pq - C(q)$\\\bigskip FOC: $p = C'(q)$ (price = marginal cost)\\\bigskip SOC: $C''(q) > 0$ (increasing marginal cost)\\\bigskip If cost is convex, the profit function is concave in $q$ --- the FOC is sufficient.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}\item Gradient = direction of steepest ascent; zero at optima\item Hessian classifies critical points via definiteness\item Convexity: local = global --- the gold standard\item \textbf{Next week:} algorithms that find the optimum\end{itemize}
+\end{frame}
+\end{document}

@@ -1,0 +1,80 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 9 --- Dynamic Optimisation II}
+\subtitle{Dynamic Programming \& the Bellman Equation}
+\author{Dr Juan Zurita}
+\institute{Optimisation \& Mathematical Methods for Economics\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{The Bellman Equation}
+$$V(k) = \max_c\{u(c) + \beta V(k')\}$$\\\bigskip subject to $k' = f(k) - c$.\\\bigskip\begin{block}{Principle of Optimality (Bellman, 1957)}An optimal policy has the property that, regardless of the initial state, the remaining decisions must constitute an optimal policy.\end{block}
+\end{frame}
+
+\begin{frame}{Contraction Mapping}
+\begin{block}{Blackwell's Sufficient Conditions}The Bellman operator $T$ is a contraction if it satisfies \textbf{monotonicity} and \textbf{discounting}.\end{block}\par\bigskip Consequence: iterating $V_{n+1} = TV_n$ converges to the unique fixed point $V^*$ from any initial guess.\\\bigskip This is the theoretical foundation of \textbf{value function iteration}.
+\end{frame}
+
+\begin{frame}{Value Function Iteration}
+\textbf{Algorithm:}\begin{enumerate}\item Discretise the state space\item Guess $V_0(k)$\item For each $k$: $V_{n+1}(k) = \max_c\{u(c) + \beta V_n(k')\}$\item Repeat until $\|V_{n+1} - V_n\| < \varepsilon$\end{enumerate}\par\bigskip This is the algorithm you implement in PNM Week 8.
+\end{frame}
+
+\begin{frame}{Analytical Benchmark}
+With $u(c) = \ln c$ and $f(k) = k^\alpha$:\\\bigskip Optimal savings rate: $s = \alpha\beta$\\\bigskip Policy function: $c^*(k) = (1-\alpha\beta)k^\alpha$\\\bigskip Use this to verify your numerical code!
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}\item Bellman equation: recursive formulation of dynamic problems\item Contraction mapping $\Rightarrow$ VFI converges\item Policy function: the optimal decision rule\item Connects directly to PNM Weeks 8--10\item \textbf{Next week:} frontiers --- stochastic DP, SGD, and beyond\end{itemize}
+\end{frame}
+\end{document}

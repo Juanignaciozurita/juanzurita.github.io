@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Optimisation &amp; Mathematical Methods for Economics – Juan Zurita</title>
+<title>Week 6 — Convex Optimisation – Juan Zurita</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,27 +23,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../favicon.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-befc92836a82f2ebff21c48b720c4121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../favicon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-befc92836a82f2ebff21c48b720c4121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,26 +107,55 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Optimisation &amp; Mathematical Methods for Economics – Juan Zurita">
-<meta property="og:description" content="Honours — The University of Edinburgh">
-<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/Profile.jpg">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta property="og:title" content="Week 6 — Convex Optimisation – Juan Zurita">
+<meta property="og:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
 <meta property="og:site_name" content="Juan Zurita">
-<meta name="twitter:title" content="Optimisation &amp; Mathematical Methods for Economics – Juan Zurita">
-<meta name="twitter:description" content="Honours — The University of Edinburgh">
-<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/Profile.jpg">
+<meta name="twitter:title" content="Week 6 — Convex Optimisation – Juan Zurita">
+<meta name="twitter:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Juan Zurita</span>
     </a>
   </div>
@@ -102,11 +166,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../jobmarket.html"> 
+    <a class="nav-link" href="../../../jobmarket.html"> 
 <span class="menu-text">Job Market</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -115,19 +179,19 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
         <li>
-    <a class="dropdown-item" href="../../research.html">
+    <a class="dropdown-item" href="../../../research.html">
  <span class="dropdown-text">Publications &amp; Working Papers</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../writing.html">
+    <a class="dropdown-item" href="../../../writing.html">
  <span class="dropdown-text">Public Writing</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../explorer.html">
+    <a class="dropdown-item" href="../../../explorer.html">
  <span class="dropdown-text">Interactive: Debt &amp; Policy</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../opencollaborations.html">
+    <a class="dropdown-item" href="../../../opencollaborations.html">
  <span class="dropdown-text">Open Collaborations</span></a>
   </li>  
     </ul>
@@ -138,49 +202,49 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-teaching">    
         <li>
-    <a class="dropdown-item" href="../../teaching.html">
+    <a class="dropdown-item" href="../../../teaching.html">
  <span class="dropdown-text">Courses</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../courses/pnm/index.html">
+    <a class="dropdown-item" href="../../../courses/pnm/index.html">
  <span class="dropdown-text">Programming &amp; Numerical Methods</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../courses/dlmacro/index.html">
+    <a class="dropdown-item" href="../../../courses/dlmacro/index.html">
  <span class="dropdown-text">Deep Learning for Macroeconomics</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../courses/smith-to-simulation/index.html">
+    <a class="dropdown-item" href="../../../courses/smith-to-simulation/index.html">
  <span class="dropdown-text">From Adam Smith to Simulation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../courses/optimisation/index.html">
+    <a class="dropdown-item" href="../../../courses/optimisation/index.html">
  <span class="dropdown-text">Optimisation &amp; Mathematical Methods</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../students.html">
+    <a class="dropdown-item" href="../../../students.html">
  <span class="dropdown-text">For Students</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../quiz.html">
+    <a class="dropdown-item" href="../../../quiz.html">
  <span class="dropdown-text">Numerical Methods Quiz</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../playground.html">
+    <a class="dropdown-item" href="../../../playground.html">
  <span class="dropdown-text">Python Playground</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../usefullinks.html">
+    <a class="dropdown-item" href="../../../usefullinks.html">
  <span class="dropdown-text">Resources</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../../consulting.html"> 
+    <a class="nav-link" href="../../../consulting.html"> 
 <span class="menu-text">Consulting &amp; Policy</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../cv.html"> 
+    <a class="nav-link" href="../../../cv.html"> 
 <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -213,24 +277,7 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Optimisation &amp; Mathematical Methods for Economics</h1>
-            <p class="subtitle lead">Honours — The University of Edinburgh</p>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -238,196 +285,124 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-to-use-these-materials" id="toc-how-to-use-these-materials" class="nav-link active" data-scroll-target="#how-to-use-these-materials">How to use these materials</a></li>
-  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
-  <li><a href="#syllabus" id="toc-syllabus" class="nav-link" data-scroll-target="#syllabus">Syllabus</a></li>
-  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a>
-  <ul class="collapse">
-  <li><a href="#main-texts" id="toc-main-texts" class="nav-link" data-scroll-target="#main-texts">Main texts</a></li>
-  <li><a href="#supplementary" id="toc-supplementary" class="nav-link" data-scroll-target="#supplementary">Supplementary</a></li>
-  <li><a href="#video-lectures-all-free" id="toc-video-lectures-all-free" class="nav-link" data-scroll-target="#video-lectures-all-free">Video lectures (all free)</a></li>
-  <li><a href="#python-tools-used-in-this-course" id="toc-python-tools-used-in-this-course" class="nav-link" data-scroll-target="#python-tools-used-in-this-course">Python tools used in this course</a></li>
-  </ul></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  <li><a href="#theory-duality-cvxpy" id="toc-theory-duality-cvxpy" class="nav-link active" data-scroll-target="#theory-duality-cvxpy">Theory, Duality &amp; CVXPY</a></li>
+  <li><a href="#convex-sets-and-functions" id="toc-convex-sets-and-functions" class="nav-link" data-scroll-target="#convex-sets-and-functions">1. Convex Sets and Functions</a></li>
+  <li><a href="#lagrangian-duality" id="toc-lagrangian-duality" class="nav-link" data-scroll-target="#lagrangian-duality">2. Lagrangian Duality</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 6 — Convex Optimisation</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<p style="text-align: justify;">
-A 10-week course covering the <strong>mathematical theory of optimisation</strong> that underpins modern economics. Each module develops a core concept — from unconstrained calculus to dynamic programming — and pairs it with <strong>computational exercises in Python</strong> so you can see the theory at work. Designed as a companion to <em>Programming &amp; Numerical Methods</em>: that course teaches you to implement algorithms; this one teaches you the mathematics behind them. No prior programming experience is assumed; all materials are open access.
-</p>
-<section id="how-to-use-these-materials" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-these-materials">How to use these materials</h2>
-<p>Each week has a <strong>notebook</strong> you can read online, download, or run in the cloud, plus a <strong>slide deck</strong> for the lecture:</p>
-<ul>
-<li><strong>Read online</strong> — click the notebook link; it renders as a webpage with all code and output.</li>
-<li><strong>Run in Google Colab</strong> — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.</li>
-<li><strong>Run locally</strong> — install <a href="https://www.anaconda.com/download">Anaconda</a> (includes Python, Jupyter, NumPy, and Matplotlib), then download the <code>.ipynb</code> file and open it in Jupyter.</li>
-</ul>
-<p><strong>Companion course:</strong> this course provides the mathematical foundations for <a href="../../courses/pnm/index.html">Programming &amp; Numerical Methods</a>. Taking them together is recommended but not required.</p>
+</header>
+
+
+<section id="theory-duality-cvxpy" class="level2">
+<h2 class="anchored" data-anchor-id="theory-duality-cvxpy">Theory, Duality &amp; CVXPY</h2>
+<p><strong>Optimisation &amp; Mathematical Methods for Economics</strong> The University of Edinburgh · School of Economics</p>
+<hr>
+<p>Convex optimisation is special: every local minimum is global, and powerful algorithms solve even large problems efficiently. This week covers convex theory and introduces <strong>CVXPY</strong>, a Python library for specifying and solving convex programs.</p>
 </section>
-<section id="materials" class="level2">
-<h2 class="anchored" data-anchor-id="materials">Materials</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th style="text-align: center;">Week</th>
-<th style="text-align: left;">Topic</th>
-<th style="text-align: left;">Notebook</th>
-<th style="text-align: left;">Slides</th>
-<th style="text-align: left;">Colab</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">Mathematical Foundations</td>
-<td style="text-align: left;"><a href="../../courses/optimisation/notebooks/week01_foundations.html">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/optimisation/notebooks/week01_foundations.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/week01_foundations.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week01_foundations.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">Unconstrained Optimisation I</td>
-<td style="text-align: left;"><a href="../../courses/optimisation/notebooks/week02_unconstrained1.html">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/optimisation/notebooks/week02_unconstrained1.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/week02_unconstrained1.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week02_unconstrained1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">Unconstrained Optimisation II</td>
-<td style="text-align: left;"><a href="../../courses/optimisation/notebooks/week03_unconstrained2.html">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/optimisation/notebooks/week03_unconstrained2.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/week03_unconstrained2.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week03_unconstrained2.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">Constrained Optimisation I</td>
-<td style="text-align: left;"><a href="../../courses/optimisation/notebooks/week04_constrained1.html">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/optimisation/notebooks/week04_constrained1.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/week04_constrained1.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week04_constrained1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">5</td>
-<td style="text-align: left;">Constrained Optimisation II</td>
-<td style="text-align: left;"><a href="../../courses/optimisation/notebooks/week05_constrained2.html">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/optimisation/notebooks/week05_constrained2.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/week05_constrained2.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week05_constrained2.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">6</td>
-<td style="text-align: left;">Convex Optimisation</td>
-<td style="text-align: left;"><a href="../../courses/optimisation/notebooks/week06_convex.html">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/optimisation/notebooks/week06_convex.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/week06_convex.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week06_convex.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">7</td>
-<td style="text-align: left;">Linear Programming</td>
-<td style="text-align: left;"><a href="../../courses/optimisation/notebooks/week07_linear.html">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/optimisation/notebooks/week07_linear.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/week07_linear.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week07_linear.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">8</td>
-<td style="text-align: left;">Dynamic Optimisation I</td>
-<td style="text-align: left;"><a href="../../courses/optimisation/notebooks/week08_dynamic1.html">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/optimisation/notebooks/week08_dynamic1.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/week08_dynamic1.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week08_dynamic1.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">9</td>
-<td style="text-align: left;">Dynamic Optimisation II</td>
-<td style="text-align: left;"><a href="../../courses/optimisation/notebooks/week09_dynamic2.html">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/optimisation/notebooks/week09_dynamic2.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/week09_dynamic2.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week09_dynamic2.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">10</td>
-<td style="text-align: left;">Frontiers</td>
-<td style="text-align: left;"><a href="../../courses/optimisation/notebooks/week10_frontiers.html">View</a> · <a href="https://github.com/Juanignaciozurita/juanzurita.github.io/raw/main/courses/optimisation/notebooks/week10_frontiers.ipynb">Download</a></td>
-<td style="text-align: left;"><a href="slides/week10_frontiers.pdf">PDF</a></td>
-<td style="text-align: left;"><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/courses/optimisation/notebooks/week10_frontiers.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Open in Colab"></a></td>
-</tr>
-</tbody>
-</table>
-<p><em>Notebooks include interactive exercises with hidden solutions — try first, then click to check.</em></p>
+<section id="convex-sets-and-functions" class="level2">
+<h2 class="anchored" data-anchor-id="convex-sets-and-functions">1. Convex Sets and Functions</h2>
+<p>A set <span class="math inline">\(C\)</span> is <strong>convex</strong> if <span class="math inline">\(\lambda \mathbf{x} + (1-\lambda)\mathbf{y} \in C\)</span> for all <span class="math inline">\(\mathbf{x}, \mathbf{y} \in C\)</span> and <span class="math inline">\(\lambda \in [0,1]\)</span>.</p>
+<p>A function <span class="math inline">\(f\)</span> is <strong>convex</strong> if <span class="math inline">\(\text{dom}(f)\)</span> is convex and <span class="math inline">\(f(\lambda x + (1-\lambda)y) \leq \lambda f(x) + (1-\lambda)f(y)\)</span>.</p>
+<p><strong>Operations preserving convexity:</strong> non-negative weighted sums, composition with affine maps, pointwise maximum, perspective.</p>
 </section>
-<section id="syllabus" class="level2">
-<h2 class="anchored" data-anchor-id="syllabus">Syllabus</h2>
-<ol type="1">
-<li><strong>Mathematical foundations</strong> — sets, real analysis essentials, vector spaces, matrices, eigenvalues, and positive-definiteness; Python refresher with NumPy</li>
-<li><strong>Unconstrained optimisation I</strong> — multivariate calculus review, gradient and Hessian, first- and second-order conditions, convexity and concavity, economic examples (profit maximisation, cost minimisation)</li>
-<li><strong>Unconstrained optimisation II</strong> — iterative algorithms: steepest descent, Newton’s method, quasi-Newton (BFGS), convergence rates; implementing gradient descent in Python</li>
-<li><strong>Constrained optimisation I</strong> — equality constraints, Lagrange multipliers, the bordered Hessian, envelope theorem; applications to utility maximisation and the expenditure function</li>
-<li><strong>Constrained optimisation II</strong> — inequality constraints, Karush–Kuhn–Tucker conditions, complementary slackness, constraint qualification; portfolio choice and production planning</li>
-<li><strong>Convex optimisation</strong> — convex sets and functions, convex programs, Lagrangian duality, strong duality and Slater’s condition; solving convex problems with CVXPY</li>
-<li><strong>Linear programming</strong> — the standard form, the simplex method, LP duality and shadow prices, sensitivity analysis; applications to input–output models, transportation, and diet problems using SciPy and PuLP</li>
-<li><strong>Dynamic optimisation I</strong> — calculus of variations, Euler–Lagrange equation, transversality conditions, optimal control theory, Pontryagin’s maximum principle; the Ramsey–Cass–Koopmans growth model</li>
-<li><strong>Dynamic optimisation II</strong> — the principle of optimality, Bellman’s equation, contraction mapping theorem, policy and value function iteration; consumption–savings with borrowing constraints</li>
-<li><strong>Frontiers</strong> — stochastic dynamic programming, introduction to Bayesian optimisation, optimisation in machine learning (SGD, Adam), connections to computational economics and current research</li>
-</ol>
+<section id="lagrangian-duality" class="level2">
+<h2 class="anchored" data-anchor-id="lagrangian-duality">2. Lagrangian Duality</h2>
+<p>For <span class="math inline">\(\min f(\mathbf{x})\)</span> s.t. <span class="math inline">\(g_i(\mathbf{x}) \leq 0\)</span>, <span class="math inline">\(h_j(\mathbf{x}) = 0\)</span>:</p>
+<p><strong>Lagrangian:</strong> <span class="math inline">\(L(\mathbf{x}, \boldsymbol{\mu}, \boldsymbol{\lambda}) = f(\mathbf{x}) + \sum \mu_i g_i(\mathbf{x}) + \sum \lambda_j h_j(\mathbf{x})\)</span></p>
+<p><strong>Dual function:</strong> <span class="math inline">\(d(\boldsymbol{\mu}, \boldsymbol{\lambda}) = \inf_\mathbf{x} L(\mathbf{x}, \boldsymbol{\mu}, \boldsymbol{\lambda})\)</span></p>
+<p><strong>Weak duality:</strong> <span class="math inline">\(d^* \leq p^*\)</span> always. <strong>Strong duality:</strong> <span class="math inline">\(d^* = p^*\)</span> (holds for convex problems under Slater’s condition).</p>
+<div id="8fa0881f" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Install cvxpy if needed</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> cvxpy <span class="im">as</span> cp</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ImportError</span>:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> subprocess</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    subprocess.check_call([<span class="st">'pip'</span>, <span class="st">'install'</span>, <span class="st">'cvxpy'</span>, <span class="st">'-q'</span>, <span class="st">'--break-system-packages'</span>])</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> cvxpy <span class="im">as</span> cp</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Least-squares with non-negativity constraints</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># min ||Ax - b||^2 subject to x &gt;= 0</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">1</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>m, n <span class="op">=</span> <span class="dv">30</span>, <span class="dv">10</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.random.randn(m, n)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> np.random.randn(m)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> cp.Variable(n)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>objective <span class="op">=</span> cp.Minimize(cp.sum_squares(A <span class="op">@</span> x <span class="op">-</span> b))</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>constraints <span class="op">=</span> [x <span class="op">&gt;=</span> <span class="dv">0</span>]</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> cp.Problem(objective, constraints)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>prob.solve()</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Status: </span><span class="sc">{</span>prob<span class="sc">.</span>status<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Optimal value: </span><span class="sc">{</span>prob<span class="sc">.</span>value<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Optimal x: </span><span class="sc">{</span>np<span class="sc">.</span><span class="bu">round</span>(x.value, <span class="dv">3</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="eef81123" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Economic example: Production planning with CVXPY</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># A firm produces 3 goods using 2 inputs</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Maximise revenue subject to input availability</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>revenue <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">8</span>])   <span class="co"># price per unit of each good</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>input_use <span class="op">=</span> np.array([            <span class="co"># input requirements</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>],   <span class="co"># input 1 per unit</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],   <span class="co"># input 2 per unit</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>capacity <span class="op">=</span> np.array([<span class="dv">120</span>, <span class="dv">100</span>])   <span class="co"># available inputs</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> cp.Variable(<span class="dv">3</span>)  <span class="co"># quantities</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>objective <span class="op">=</span> cp.Maximize(revenue <span class="op">@</span> q)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>constraints <span class="op">=</span> [</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    input_use <span class="op">@</span> q <span class="op">&lt;=</span> capacity,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    q <span class="op">&gt;=</span> <span class="dv">0</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> cp.Problem(objective, constraints)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>prob.solve()</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Production planning solution:"</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Good </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>q<span class="sc">.</span>value[i]<span class="sc">:.2f}</span><span class="ss"> units"</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Maximum revenue: $</span><span class="sc">{</span>prob<span class="sc">.</span>value<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Shadow prices (dual values):"</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Input </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">: $</span><span class="sc">{</span>constraints[<span class="dv">0</span>]<span class="sc">.</span>dual_value[i]<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
-<section id="assessment" class="level2">
-<h2 class="anchored" data-anchor-id="assessment">Assessment</h2>
-<ul>
-<li>Weekly problem sets: 20%</li>
-<li>Computational essays (3 over the term): 40%</li>
-<li>Final project: 30%</li>
-<li>Participation: 10%</li>
-</ul>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<section id="main-texts" class="level3">
-<h3 class="anchored" data-anchor-id="main-texts">Main texts</h3>
-<ul>
-<li>Boyd, S. &amp; Vandenberghe, L. <a href="https://web.stanford.edu/~boyd/cvxbook/"><em>Convex Optimization</em></a> (2004) — freely available; main reference for Weeks 2–6</li>
-<li>Kochenderfer, M. J. &amp; Wheeler, T. A. <a href="https://algorithmsbook.com/optimization/files/optimization.pdf"><em>Algorithms for Optimization</em></a> (2019) — freely available; algorithms and implementation</li>
-<li>Sundaram, R. K. <em>A First Course in Optimization Theory</em> (1996) — rigorous treatment of constrained optimisation and duality</li>
-<li>Chiang, A. C. &amp; Wainwright, K. <em>Fundamental Methods of Mathematical Economics</em> (4th ed.) — accessible introduction for economics students</li>
-</ul>
-</section>
-<section id="supplementary" class="level3">
-<h3 class="anchored" data-anchor-id="supplementary">Supplementary</h3>
-<ul>
-<li>Judd, K. L. <em>Numerical Methods in Economics</em> (1998) — bridge to computational implementation (also used in PNM)</li>
-<li>Bertsekas, D. P. <a href="https://web.mit.edu/dimitrib/www/Convex_Theory_Entire_Book.pdf"><em>Convex Optimization Theory</em></a> — freely available; advanced convex analysis</li>
-<li>Bertsekas, D. P. <em>Dynamic Programming and Optimal Control</em>, Vols. I &amp; II — definitive reference for Weeks 8–9</li>
-<li>Stokey, N., Lucas, R. &amp; Prescott, E. <em>Recursive Methods in Economic Dynamics</em> (1989) — dynamic programming for economists</li>
-<li>Simon, C. P. &amp; Blume, L. <em>Mathematics for Economists</em> (1994) — comprehensive maths-for-econ reference</li>
-<li><a href="https://quantecon.org">QuantEcon</a> — T. Sargent and J. Stachurski’s open lectures on computational economics</li>
-</ul>
-</section>
-<section id="video-lectures-all-free" class="level3">
-<h3 class="anchored" data-anchor-id="video-lectures-all-free">Video lectures (all free)</h3>
-<ul>
-<li>Stanford EE364A: <a href="https://www.youtube.com/playlist?list=PLoROMvodv4rMJqxxviPa4AmDClvcbHi6h">Convex Optimization</a> — Stephen Boyd (2023)</li>
-<li>CMU: <a href="https://www.stat.cmu.edu/~ryantibs/convexopt/">Convex Optimization</a> — Ryan Tibshirani</li>
-<li>Arizona Math Camp: <a href="https://www.youtube.com/playlist?list=PLcjqUUQt__ZE0ZSTNRyBIgLJ5obPHdmxC">Optimization</a></li>
-<li>Dimitri Bertsekas: <a href="https://youtube.com/playlist?list=PLmH30BG15SIqgS8N1TLhSQV1jwiB7ufxI">Dynamic Programming Lectures</a></li>
-<li>KIT: <a href="https://www.youtube.com/playlist?list=PLdkTDauaUnQpzuOCZyUUZc0lxf4-PXNR5">Optimization Methods for ML and Engineering</a> — Julius Pfrommer</li>
-</ul>
-</section>
-<section id="python-tools-used-in-this-course" class="level3">
-<h3 class="anchored" data-anchor-id="python-tools-used-in-this-course">Python tools used in this course</h3>
-<ul>
-<li><a href="https://docs.scipy.org/doc/scipy/tutorial/optimize.html">SciPy Optimize</a> — general-purpose optimisation routines</li>
-<li><a href="https://github.com/cvxpy/cvxpy">CVXPY</a> — disciplined convex programming in Python</li>
-<li><a href="https://coin-or.github.io/pulp/">PuLP</a> — linear programming modelling</li>
-</ul>
-</section>
-</section>
-<section id="questions" class="level2">
-<h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<p>Found an error in a notebook, or stuck on setup? Email <a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a>.</p>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<details>
+<summary>
+<b>Exercise 1:</b> Formulate and solve a Markowitz portfolio optimisation problem in CVXPY: minimise portfolio variance subject to achieving a target return of 10% and weights summing to 1.
+</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cvxpy <span class="im">as</span> cp</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> cp.Variable(<span class="dv">4</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ret <span class="op">=</span> mu <span class="op">@</span> w</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>risk <span class="op">=</span> cp.quad_form(w, Sigma)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> cp.Problem(cp.Minimize(risk), [cp.<span class="bu">sum</span>(w) <span class="op">==</span> <span class="dv">1</span>, ret <span class="op">&gt;=</span> <span class="fl">0.10</span>, w <span class="op">&gt;=</span> <span class="dv">0</span>])</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>prob.solve()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 
 
 </section>
