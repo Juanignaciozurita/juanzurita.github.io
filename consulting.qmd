@@ -79,6 +79,9 @@ The notebook is designed to be updated with the latest market data from the <a h
 [**Open the Forecasting Cattle Prices notebook →**](consulting/cattle-forecast/forecasting_cattle_prices.ipynb)
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/consulting/cattle-forecast/forecasting_cattle_prices.ipynb)
+
+📄 **Executive Summary (PDF):**
+[English](consulting/cattle-forecast/Forecasting_Argentine_Cattle_Prices_EN.pdf){target="_blank"} | [Español](consulting/cattle-forecast/Pronostico_Precios_Ganado_Argentino_ES.pdf){target="_blank"}
 :::
 
 ### Forecasting Pedigree Angus Vaquillona Prices
@@ -96,6 +99,9 @@ The key analytical insight is expressing pedigree prices as a <b>premium ratio</
 [**Open the Pedigree Angus Vaquillona notebook →**](consulting/cattle-forecast/forecasting_angus_pedigree.ipynb)
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/consulting/cattle-forecast/forecasting_angus_pedigree.ipynb)
+
+📄 **Executive Summary (PDF):**
+[English](consulting/cattle-forecast/Forecasting_Pedigree_Angus_Vaquillona_EN.pdf){target="_blank"} | [Español](consulting/cattle-forecast/Pronostico_Vaquillonas_Angus_Pedigree_ES.pdf){target="_blank"}
 :::
 
 ---
