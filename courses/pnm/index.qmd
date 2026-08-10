@@ -16,8 +16,6 @@ Each week has a **notebook** you can read online, download, or run in the cloud:
 - **Read online** — click the notebook link; it renders as a webpage with all code and output.
 - **Run in Google Colab** — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.
 - **Run locally** — install [Anaconda](https://www.anaconda.com/download) (includes Python, Jupyter, NumPy, and Matplotlib), then download the `.ipynb` file from the links below and open it in Jupyter.
-- **Browse the Jupyter Book** — all notebooks are also collected in a [Jupyter Book](book/intro.html) with a navigable sidebar and search.
-
 **New to Python?** Start with the [Python Refresher repository](https://github.com/Juanignaciozurita/Python-Refresher) alongside PS0.
 
 **Quick experiments:** try the [Python Playground](../../playground.qmd) — run and edit course code directly in your browser, nothing to install.
