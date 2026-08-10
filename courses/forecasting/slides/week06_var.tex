@@ -1,0 +1,133 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+\definecolor{UoEBlue}{HTML}{2a78d6}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 6 --- Multiple Time Series \& VAR Models}
+\subtitle{Vector Autoregressions, IRFs, and Granger Causality}
+\author{Dr Juan Zurita}
+\institute{Economic \& Business Forecasting\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{The VAR Model}
+
+\begin{frame}{From Univariate to Multivariate}
+Why go multivariate?
+\begin{itemize}
+    \item Variables \alert{interact}: GDP affects unemployment affects consumption
+    \item Omitting relevant variables biases forecasts
+    \item We want to trace \textbf{dynamic interactions} (impulse responses)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{VAR($p$) Specification}
+For $\mathbf{y}_t = (y_{1t}, \ldots, y_{nt})'$:
+\[
+\mathbf{y}_t = \mathbf{c} + \mathbf{A}_1 \mathbf{y}_{t-1} + \cdots + \mathbf{A}_p \mathbf{y}_{t-p} + \mathbf{u}_t
+\]
+where $\mathbf{u}_t \sim N(\mathbf{0}, \Sigma)$.
+
+\vspace{0.5em}
+\begin{itemize}
+    \item Each equation is a \textbf{multivariate regression}
+    \item Estimated by \textbf{OLS equation by equation}
+    \item Parameters: $n^2 p + n$ --- grows fast!
+\end{itemize}
+\end{frame}
+
+\section{Impulse Response Functions}
+
+\begin{frame}{IRFs}
+An IRF traces the effect of a \alert{one-unit shock} in variable $j$ on variable $i$ over time.
+
+\vspace{0.5em}
+Write the VAR in MA($\infty$) form:
+\[
+\mathbf{y}_t = \boldsymbol{\mu} + \sum_{s=0}^{\infty} \Phi_s \mathbf{u}_{t-s}
+\]
+
+\textbf{IRF:} $\frac{\partial y_{i,t+h}}{\partial u_{j,t}} = [\Phi_h]_{ij}$
+
+\vspace{0.5em}
+\alert{Identification problem:} shocks may be correlated ($\Sigma$ not diagonal). \\
+Common solution: \textbf{Cholesky decomposition} of $\Sigma$.
+\end{frame}
+
+\section{Granger Causality}
+
+\begin{frame}{Granger Causality}
+$x$ \alert{Granger-causes} $y$ if past values of $x$ help predict $y$ beyond $y$'s own past.
+
+\vspace{0.5em}
+\textbf{Test:} in the equation for $y_t$, test $H_0$: all coefficients on lagged $x$ are zero.
+
+\vspace{0.5em}
+\begin{block}{Caution}
+Granger causality $\neq$ true causality. It is about \emph{predictive content}, not causal mechanisms.
+\end{block}
+\end{frame}
+
+\begin{frame}{VAR Forecasting}
+\begin{itemize}
+    \item Iterate the VAR forward: $\hat{\mathbf{y}}_{T+h|T} = \mathbf{c} + \sum_{i=1}^{p} \mathbf{A}_i \hat{\mathbf{y}}_{T+h-i|T}$
+    \item Lag order selection: AIC, BIC, HQ
+    \item Forecast uncertainty: bootstrap or asymptotic intervals
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Next week:} state space models and the Kalman filter.
+\end{frame}
+
+
+\end{document}

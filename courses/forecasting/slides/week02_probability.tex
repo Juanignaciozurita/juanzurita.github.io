@@ -1,0 +1,157 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+\definecolor{UoEBlue}{HTML}{2a78d6}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 2 --- Probability \& Statistics for Forecasting}
+\subtitle{Distributions, MLE, and Hypothesis Testing}
+\author{Dr Juan Zurita}
+\institute{Economic \& Business Forecasting\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{Key Distributions}
+
+\begin{frame}{Three Workhorses}
+\begin{columns}[T]
+\begin{column}{0.32\textwidth}
+\textbf{Normal} \\[4pt]
+$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$ \\[6pt]
+Most common; foundation of classical econometrics.
+\end{column}
+\begin{column}{0.32\textwidth}
+\textbf{Student-$t$} \\[4pt]
+Heavier tails than Normal. \\[6pt]
+\alert{Robust} to outliers; used in financial modelling.
+\end{column}
+\begin{column}{0.32\textwidth}
+\textbf{Laplace} \\[4pt]
+$f(x) = \frac{1}{2b} e^{-\frac{|x-\mu|}{b}}$ \\[6pt]
+Even heavier tails; connection to $L_1$ estimation.
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Tail Behaviour Matters}
+Financial returns are typically \alert{fat-tailed}:
+\begin{itemize}
+    \item Normal model \emph{underestimates} the probability of extreme events
+    \item Student-$t$ with low $\nu$ provides a better fit
+    \item Model choice affects \textbf{risk assessment} and \textbf{confidence intervals}
+\end{itemize}
+\end{frame}
+
+\section{Maximum Likelihood Estimation}
+
+\begin{frame}{The MLE Principle}
+Given data $y_1, \ldots, y_T$ and model $f(y|\theta)$:
+\[
+\hat{\theta}_{\text{MLE}} = \arg\max_\theta \sum_{t=1}^{T} \log f(y_t | \theta)
+\]
+
+\textbf{Properties} (under regularity conditions):
+\begin{itemize}
+    \item \textbf{Consistent}: $\hat{\theta} \xrightarrow{p} \theta_0$ as $T \to \infty$
+    \item \textbf{Asymptotically efficient}: lowest variance among consistent estimators
+    \item \textbf{Asymptotically normal}: $\sqrt{T}(\hat{\theta} - \theta_0) \xrightarrow{d} N(0, I^{-1}(\theta_0))$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{OLS as MLE}
+For $y_t = x_t'\beta + \varepsilon_t$ with $\varepsilon_t \sim N(0, \sigma^2)$:
+\[
+\log L(\beta, \sigma^2) = -\frac{T}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2}\sum_{t=1}^{T}(y_t - x_t'\beta)^2
+\]
+Maximising w.r.t.\ $\beta$ $\Leftrightarrow$ minimising $\sum(y_t - x_t'\beta)^2$ --- \alert{OLS}!
+\end{frame}
+
+\section{Hypothesis Testing}
+
+\begin{frame}{Likelihood Ratio, Wald, and LM Tests}
+Three asymptotically equivalent approaches to test $H_0: g(\theta) = 0$:
+\begin{description}
+    \item[LR] Compare log-likelihoods: $\Lambda = 2[\ell(\hat\theta) - \ell(\tilde\theta)]$
+    \item[Wald] How far is $g(\hat\theta)$ from zero?
+    \item[LM] How steep is the log-likelihood at the restricted estimate?
+\end{description}
+
+All $\xrightarrow{d} \chi^2(r)$ under $H_0$ where $r$ = number of restrictions.
+\end{frame}
+
+\begin{frame}{Information Criteria}
+Model selection without nested hypotheses:
+\begin{align}
+\text{AIC} &= -2\ell + 2k \\
+\text{BIC} &= -2\ell + k\log T
+\end{align}
+where $k$ = number of parameters.
+
+\vspace{0.5em}
+\begin{itemize}
+    \item BIC penalises complexity more $\Rightarrow$ simpler models
+    \item BIC is consistent; AIC can overfit
+    \item In practice: compare both
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Choose distributions that match the \textbf{tail behaviour} of your data
+    \item \textbf{MLE} is the unifying estimation principle
+    \item \textbf{AIC/BIC} guide model selection
+    \item Next week: \alert{ARMA models} --- putting these tools to work
+\end{itemize}
+\end{frame}
+
+
+\end{document}

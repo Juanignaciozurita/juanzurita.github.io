@@ -1,0 +1,146 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+\definecolor{UoEBlue}{HTML}{2a78d6}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 7 --- State Space Models \& the Kalman Filter}
+\subtitle{Unobserved Components and Optimal Filtering}
+\author{Dr Juan Zurita}
+\institute{Economic \& Business Forecasting\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{State Space Representation}
+
+\begin{frame}{The General Model}
+\textbf{State equation:}
+\[
+\boldsymbol{\alpha}_{t+1} = \mathbf{T}\boldsymbol{\alpha}_t + \mathbf{R}\boldsymbol{\eta}_t, \quad \boldsymbol{\eta}_t \sim N(\mathbf{0}, \mathbf{Q})
+\]
+
+\textbf{Observation equation:}
+\[
+\mathbf{y}_t = \mathbf{Z}\boldsymbol{\alpha}_t + \boldsymbol{\varepsilon}_t, \quad \boldsymbol{\varepsilon}_t \sim N(\mathbf{0}, \mathbf{H})
+\]
+
+\begin{itemize}
+    \item $\boldsymbol{\alpha}_t$: \alert{unobserved} state vector
+    \item $\mathbf{y}_t$: observed data
+    \item Many time-series models are special cases
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Why State Space?}
+\textbf{Unifying framework:}
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Model} & \textbf{State Space Form} \\
+\midrule
+ARMA & state = lagged values/errors \\
+Exponential smoothing & state = level, trend, seasonal \\
+Structural time series & state = trend + season + cycle \\
+Dynamic factor model & state = latent factors \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\section{The Kalman Filter}
+
+\begin{frame}{Prediction and Update}
+\textbf{Prediction step:}
+\begin{align}
+\hat{\boldsymbol{\alpha}}_{t|t-1} &= \mathbf{T}\hat{\boldsymbol{\alpha}}_{t-1|t-1} \\
+\mathbf{P}_{t|t-1} &= \mathbf{T}\mathbf{P}_{t-1|t-1}\mathbf{T}' + \mathbf{R}\mathbf{Q}\mathbf{R}'
+\end{align}
+
+\textbf{Update step:}
+\begin{align}
+\mathbf{K}_t &= \mathbf{P}_{t|t-1}\mathbf{Z}'(\mathbf{Z}\mathbf{P}_{t|t-1}\mathbf{Z}' + \mathbf{H})^{-1} \\
+\hat{\boldsymbol{\alpha}}_{t|t} &= \hat{\boldsymbol{\alpha}}_{t|t-1} + \mathbf{K}_t(\mathbf{y}_t - \mathbf{Z}\hat{\boldsymbol{\alpha}}_{t|t-1})
+\end{align}
+
+$\mathbf{K}_t$ is the \alert{Kalman gain} --- optimal weighting of new information.
+\end{frame}
+
+\section{Structural Time Series}
+
+\begin{frame}{Local Level Model}
+\begin{align}
+y_t &= \mu_t + \varepsilon_t & \varepsilon_t &\sim N(0, \sigma_\varepsilon^2) \\
+\mu_{t+1} &= \mu_t + \eta_t & \eta_t &\sim N(0, \sigma_\eta^2)
+\end{align}
+
+\begin{itemize}
+    \item Signal-to-noise ratio: $q = \sigma_\eta^2 / \sigma_\varepsilon^2$
+    \item $q \to 0$: constant level (all variation is noise)
+    \item $q \to \infty$: random walk (all variation is signal)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Local Linear Trend}
+Adds a stochastic slope:
+\begin{align}
+\mu_{t+1} &= \mu_t + \nu_t + \eta_t \\
+\nu_{t+1} &= \nu_t + \zeta_t
+\end{align}
+
+Can add seasonal, cycle, and regression components.
+
+\vspace{0.5em}
+\textbf{Next week:} dynamic factor models for large datasets.
+\end{frame}
+
+
+\end{document}

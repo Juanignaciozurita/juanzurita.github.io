@@ -1,0 +1,164 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+\definecolor{UoEBlue}{HTML}{2a78d6}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 4 --- Forecasting with ARMA Models}
+\subtitle{Estimation, Model Selection, and Forecast Evaluation}
+\author{Dr Juan Zurita}
+\institute{Economic \& Business Forecasting\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{Estimation}
+
+\begin{frame}{Maximum Likelihood for ARMA}
+For ARMA($p,q$): $y_t = c + \sum \phi_i y_{t-i} + \varepsilon_t + \sum \theta_j \varepsilon_{t-j}$
+
+\vspace{0.5em}
+Under normality:
+\[
+\ell(\theta) = -\frac{T}{2}\log(2\pi) - \frac{1}{2}\sum_{t=1}^{T}\left[\log \sigma_t^2 + \frac{(y_t - \hat{y}_{t|t-1})^2}{\sigma_t^2}\right]
+\]
+
+The Kalman filter computes $\hat{y}_{t|t-1}$ and $\sigma_t^2$ recursively.
+\end{frame}
+
+\section{Model Selection}
+
+\begin{frame}{Information Criteria in Practice}
+\begin{itemize}
+    \item Fit all ARMA($p,q$) for $p = 0,\ldots,P$ and $q = 0,\ldots,Q$
+    \item Compute AIC and BIC for each
+    \item Select the model with the \alert{lowest} criterion value
+\end{itemize}
+
+\vspace{0.5em}
+\begin{block}{Rule of thumb}
+AIC tends to select larger models (better forecasts). \\
+BIC tends to select the true model (if it's in the set).
+\end{block}
+\end{frame}
+
+\section{Forecasting}
+
+\begin{frame}{$h$-Step-Ahead Forecasts}
+The \alert{minimum MSE} forecast is the conditional mean:
+\[
+\hat{y}_{T+h|T} = E[y_{T+h} \mid y_1, \ldots, y_T]
+\]
+
+\textbf{AR(1) example:}
+\begin{align}
+\hat{y}_{T+1|T} &= c + \phi y_T \\
+\hat{y}_{T+2|T} &= c + \phi \hat{y}_{T+1|T} = c(1+\phi) + \phi^2 y_T \\
+\hat{y}_{T+h|T} &\to \frac{c}{1-\phi} = \mu \quad \text{as } h \to \infty
+\end{align}
+Forecasts \alert{revert to the mean} at rate $\phi$.
+\end{frame}
+
+\begin{frame}{Forecast Uncertainty}
+The forecast error variance grows with horizon:
+\[
+\operatorname{Var}(y_{T+h} - \hat{y}_{T+h|T}) = \sigma^2 \sum_{j=0}^{h-1} \psi_j^2
+\]
+where $\psi_j$ are MA($\infty$) coefficients.
+
+\vspace{0.5em}
+\textbf{Confidence intervals:}
+\[
+\hat{y}_{T+h|T} \pm z_{\alpha/2} \sqrt{\operatorname{Var}(e_{T+h|T})}
+\]
+\end{frame}
+
+\section{Diagnostics}
+
+\begin{frame}{Residual Checking}
+If the model is correct, residuals $\hat\varepsilon_t$ should be white noise:
+\begin{enumerate}
+    \item \textbf{Plot} residuals over time: no patterns?
+    \item \textbf{ACF of residuals}: all within confidence bands?
+    \item \textbf{Ljung-Box test}: $Q(m) = T(T+2)\sum_{k=1}^{m} \frac{\hat\rho_k^2}{T-k} \sim \chi^2(m-p-q)$
+    \item \textbf{Normality}: Q-Q plot, Jarque-Bera test
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Forecast Evaluation}
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Metric} & \textbf{Formula} \\
+\midrule
+RMSE & $\sqrt{\frac{1}{H}\sum(y_{T+h} - \hat{y}_{T+h})^2}$ \\[4pt]
+MAE & $\frac{1}{H}\sum|y_{T+h} - \hat{y}_{T+h}|$ \\[4pt]
+MAPE & $\frac{100}{H}\sum\left|\frac{y_{T+h} - \hat{y}_{T+h}}{y_{T+h}}\right|$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{0.5em}
+Always evaluate on \alert{out-of-sample} data. Rolling-window or expanding-window evaluation is best practice.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Estimate ARMA by \textbf{MLE}; select with \textbf{AIC/BIC}
+    \item Forecasts \textbf{revert to the mean}; uncertainty grows with horizon
+    \item Check residuals for white noise
+    \item Evaluate on \alert{out-of-sample} data
+    \item Next week: \alert{exponential smoothing}
+\end{itemize}
+\end{frame}
+
+
+\end{document}

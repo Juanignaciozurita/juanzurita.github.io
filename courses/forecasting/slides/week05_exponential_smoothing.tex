@@ -1,0 +1,146 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+\definecolor{UoEBlue}{HTML}{2a78d6}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 5 --- Exponential Smoothing \& ETS}
+\subtitle{Simple, Holt, and Holt-Winters Methods}
+\author{Dr Juan Zurita}
+\institute{Economic \& Business Forecasting\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{Simple Exponential Smoothing}
+
+\begin{frame}{The SES Recursion}
+\[
+\hat{y}_{t+1|t} = \alpha y_t + (1-\alpha)\hat{y}_{t|t-1}, \quad \alpha \in [0,1]
+\]
+
+Equivalently:
+\[
+\hat{y}_{t+1|t} = \alpha \sum_{j=0}^{\infty} (1-\alpha)^j y_{t-j}
+\]
+
+\begin{itemize}
+    \item $\alpha$ close to 1: fast adaptation, noisy forecast
+    \item $\alpha$ close to 0: slow adaptation, smooth forecast
+    \item Optimal for data with \textbf{no trend, no seasonality}
+\end{itemize}
+\end{frame}
+
+\section{Holt's Linear Trend}
+
+\begin{frame}{Adding a Trend}
+Two equations:
+\begin{align}
+\ell_t &= \alpha y_t + (1-\alpha)(\ell_{t-1} + b_{t-1}) & \text{(level)} \\
+b_t &= \beta^*(\ell_t - \ell_{t-1}) + (1-\beta^*)b_{t-1} & \text{(trend)}
+\end{align}
+
+\textbf{Forecast:} $\hat{y}_{t+h|t} = \ell_t + h \cdot b_t$
+
+\vspace{0.5em}
+\begin{block}{Damped trend variant}
+$\hat{y}_{t+h|t} = \ell_t + (\phi + \phi^2 + \cdots + \phi^h) b_t$
+
+Prevents unrealistic long-run extrapolation.
+\end{block}
+\end{frame}
+
+\section{Holt-Winters}
+
+\begin{frame}{Adding Seasonality}
+\textbf{Additive:}
+\begin{align}
+\ell_t &= \alpha(y_t - s_{t-m}) + (1-\alpha)(\ell_{t-1} + b_{t-1}) \\
+b_t &= \beta^*(\ell_t - \ell_{t-1}) + (1-\beta^*)b_{t-1} \\
+s_t &= \gamma(y_t - \ell_{t-1} - b_{t-1}) + (1-\gamma)s_{t-m}
+\end{align}
+
+Forecast: $\hat{y}_{t+h|t} = \ell_t + hb_t + s_{t+h-m}$
+
+\vspace{0.5em}
+\textbf{Multiplicative:} seasonal component multiplies level.
+\end{frame}
+
+\section{The ETS Framework}
+
+\begin{frame}{Error, Trend, Seasonal (ETS)}
+Systematic taxonomy:
+\begin{itemize}
+    \item \textbf{Error}: Additive (A) or Multiplicative (M)
+    \item \textbf{Trend}: None (N), Additive (A), Damped (Ad)
+    \item \textbf{Seasonal}: None (N), Additive (A), Multiplicative (M)
+\end{itemize}
+
+\vspace{0.5em}
+ETS(A,A,A) = additive Holt-Winters. \\
+ETS(M,Ad,M) = damped-trend multiplicative.
+
+\vspace{0.5em}
+All can be estimated by \alert{MLE} and compared via \alert{AIC}.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item \textbf{SES}: no trend, no season --- one parameter $\alpha$
+    \item \textbf{Holt}: adds trend --- two parameters $\alpha, \beta^*$
+    \item \textbf{Holt-Winters}: adds season --- three parameters $\alpha, \beta^*, \gamma$
+    \item \textbf{ETS}: unifying framework; model selection via AIC
+    \item Next week: \alert{VAR models} for multivariate forecasting
+\end{itemize}
+\end{frame}
+
+
+\end{document}

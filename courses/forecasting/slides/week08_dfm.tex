@@ -1,0 +1,127 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+\definecolor{UoEBlue}{HTML}{2a78d6}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 8 --- Dynamic Factor Models}
+\subtitle{Dimension Reduction for Large Time-Series Panels}
+\author{Dr Juan Zurita}
+\institute{Economic \& Business Forecasting\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{Motivation}
+
+\begin{frame}{The Curse of Dimensionality}
+Central banks track \alert{hundreds} of economic indicators. \\
+How to use all this information for forecasting?
+
+\vspace{0.5em}
+\textbf{Solution:} a small number of \alert{latent factors} drive the co-movement.
+\[
+y_{it} = \lambda_i' \mathbf{f}_t + e_{it}, \quad i = 1, \ldots, N
+\]
+\begin{itemize}
+    \item $\mathbf{f}_t$: $k$-dimensional factor vector ($k \ll N$)
+    \item $\lambda_i$: factor loadings for series $i$
+    \item $e_{it}$: idiosyncratic component
+\end{itemize}
+\end{frame}
+
+\section{Estimation}
+
+\begin{frame}{Principal Components}
+\textbf{Static approach:} extract factors via PCA on the $T \times N$ data matrix.
+\begin{itemize}
+    \item \alert{Fast}: eigenvalue decomposition
+    \item Consistent as $N, T \to \infty$ (Stock \& Watson, 2002)
+    \item Scree plot determines $k$
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Dynamic approach:} specify factor dynamics
+\[
+\mathbf{f}_t = \Phi_1 \mathbf{f}_{t-1} + \cdots + \Phi_s \mathbf{f}_{t-s} + \boldsymbol{\eta}_t
+\]
+and estimate via \alert{Kalman filter} (state space form).
+\end{frame}
+
+\begin{frame}{How Many Factors?}
+\begin{itemize}
+    \item \textbf{Scree plot}: eigenvalues vs component number --- look for the ``elbow''
+    \item \textbf{Bai-Ng criteria}: information criteria adapted for factor models
+    \item \textbf{Proportion of variance}: retain components explaining $>$85--90\%
+\end{itemize}
+\end{frame}
+
+\section{Applications}
+
+\begin{frame}{Factor-Augmented Forecasting}
+Use extracted factors as additional predictors:
+\[
+y_{t+h} = \alpha + \beta_1 y_t + \gamma' \hat{\mathbf{f}}_t + \varepsilon_{t+h}
+\]
+
+\textbf{Applications:}
+\begin{itemize}
+    \item \textbf{Nowcasting}: real-time GDP estimation (mixed frequencies)
+    \item \textbf{Monetary policy}: summarising financial conditions
+    \item \textbf{FAVAR}: factor-augmented VAR for structural analysis
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Next week:} machine learning methods.
+\end{frame}
+
+
+\end{document}

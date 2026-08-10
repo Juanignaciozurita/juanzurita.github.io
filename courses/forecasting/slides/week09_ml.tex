@@ -1,0 +1,139 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+\definecolor{UoEBlue}{HTML}{2a78d6}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 9 --- Machine Learning for Forecasting}
+\subtitle{Regularisation, Trees, and the Bias-Variance Tradeoff}
+\author{Dr Juan Zurita}
+\institute{Economic \& Business Forecasting\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{The Bias-Variance Tradeoff}
+
+\begin{frame}{Why ML for Forecasting?}
+\begin{itemize}
+    \item Traditional models: low bias, potentially high variance when $p$ is large
+    \item \alert{ML insight}: accept some bias to reduce variance $\Rightarrow$ lower total error
+    \item Especially useful with \textbf{many predictors} relative to sample size
+\end{itemize}
+
+\[
+\text{MSE} = \underbrace{\text{Bias}^2}_{\text{model too simple}} + \underbrace{\text{Variance}}_{\text{model too complex}} + \underbrace{\sigma^2_\varepsilon}_{\text{irreducible}}
+\]
+\end{frame}
+
+\section{Regularised Regression}
+
+\begin{frame}{Ridge and Lasso}
+\textbf{Ridge} ($L_2$ penalty):
+\[
+\hat\beta_{\text{Ridge}} = \arg\min \|y - X\beta\|^2 + \lambda\|\beta\|_2^2
+\]
+Shrinks all coefficients towards zero.
+
+\vspace{0.5em}
+\textbf{Lasso} ($L_1$ penalty):
+\[
+\hat\beta_{\text{Lasso}} = \arg\min \|y - X\beta\|^2 + \lambda\|\beta\|_1
+\]
+\alert{Sets some coefficients exactly to zero} --- automatic variable selection!
+
+\vspace{0.5em}
+\textbf{Elastic Net}: combines both penalties.
+\end{frame}
+
+\begin{frame}{Cross-Validation for $\lambda$}
+\begin{enumerate}
+    \item Split training data into $K$ folds
+    \item For each $\lambda$, compute average out-of-fold MSE
+    \item Select $\lambda$ with lowest CV error
+\end{enumerate}
+
+\vspace{0.5em}
+\alert{Caution for time series:} use \textbf{rolling-window} or \textbf{expanding-window} CV to respect temporal order.
+\end{frame}
+
+\section{Tree-Based Methods}
+
+\begin{frame}{Decision Trees and Random Forests}
+\textbf{Decision tree:}
+\begin{itemize}
+    \item Recursively partition the feature space
+    \item Predict the mean of each partition
+    \item \alert{Nonlinear} and interpretable, but high variance
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Random forest:}
+\begin{itemize}
+    \item Average over $B$ trees, each on a bootstrap sample
+    \item Each split considers a random subset of features
+    \item \alert{Low variance}, retains nonlinearity
+    \item Feature importance: how much does each lag matter?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item \textbf{Bias-variance tradeoff} is the key ML insight
+    \item \textbf{Ridge}: shrinks; \textbf{Lasso}: shrinks + selects
+    \item \textbf{Random forests}: nonlinear, robust
+    \item Use \alert{time-aware cross-validation}
+    \item Next week: \alert{neural networks and deep learning}
+\end{itemize}
+\end{frame}
+
+
+\end{document}

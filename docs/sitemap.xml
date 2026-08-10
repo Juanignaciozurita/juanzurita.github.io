@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week10_frontiers.html</loc>
-    <lastmod>2026-08-09T17:58:29.672Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/forecasting/notebooks/week10_neural_networks.html</loc>
+    <lastmod>2026-08-10T08:38:37.595Z</lastmod>
   </url>
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week08_dynamic1.html</loc>
-    <lastmod>2026-08-09T17:58:28.866Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/forecasting/notebooks/week08_dynamic_factors.html</loc>
+    <lastmod>2026-08-10T08:38:34.907Z</lastmod>
   </url>
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week06_convex.html</loc>
-    <lastmod>2026-08-09T17:58:28.118Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/forecasting/notebooks/week06_var_models.html</loc>
+    <lastmod>2026-08-10T08:38:33.078Z</lastmod>
   </url>
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week04_constrained1.html</loc>
-    <lastmod>2026-08-09T17:58:27.243Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/forecasting/notebooks/week04_forecasting_arma.html</loc>
+    <lastmod>2026-08-10T08:38:31.733Z</lastmod>
   </url>
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week02_unconstrained1.html</loc>
-    <lastmod>2026-08-09T17:58:26.361Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/forecasting/notebooks/week02_probability_statistics.html</loc>
+    <lastmod>2026-08-10T08:38:30.428Z</lastmod>
   </url>
   <url>
     <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/smith-to-simulation/syllabus.html</loc>
@@ -129,12 +129,16 @@
     <lastmod>2026-08-10T00:18:41.728Z</lastmod>
   </url>
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/dlmacro/index.html</loc>
-    <lastmod>2026-08-09T18:41:20.097Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/forecasting/index.html</loc>
+    <lastmod>2026-08-10T08:38:29.114Z</lastmod>
   </url>
   <url>
     <loc>https://juanignaciozurita.github.io/juanzurita.github.io/consulting.html</loc>
     <lastmod>2026-07-16T22:12:45.493Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/dlmacro/index.html</loc>
+    <lastmod>2026-08-09T18:41:20.097Z</lastmod>
   </url>
   <url>
     <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/index.html</loc>
@@ -245,23 +249,23 @@
     <lastmod>2026-08-05T02:30:48.177Z</lastmod>
   </url>
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week01_foundations.html</loc>
-    <lastmod>2026-08-09T17:58:25.998Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/forecasting/notebooks/week01_intro_forecasting.html</loc>
+    <lastmod>2026-08-10T08:38:29.905Z</lastmod>
   </url>
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week03_unconstrained2.html</loc>
-    <lastmod>2026-08-09T17:58:26.788Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/forecasting/notebooks/week03_arma_models.html</loc>
+    <lastmod>2026-08-10T08:38:31.178Z</lastmod>
   </url>
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week05_constrained2.html</loc>
-    <lastmod>2026-08-09T17:58:27.641Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/forecasting/notebooks/week05_exponential_smoothing.html</loc>
+    <lastmod>2026-08-10T08:38:32.384Z</lastmod>
   </url>
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week07_linear.html</loc>
-    <lastmod>2026-08-09T17:58:28.480Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/forecasting/notebooks/week07_state_space.html</loc>
+    <lastmod>2026-08-10T08:38:33.649Z</lastmod>
   </url>
   <url>
-    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week09_dynamic2.html</loc>
-    <lastmod>2026-08-09T17:58:29.299Z</lastmod>
+    <loc>https://juanignaciozurita.github.io/juanzurita.github.io/courses/forecasting/notebooks/week09_machine_learning.html</loc>
+    <lastmod>2026-08-10T08:38:35.567Z</lastmod>
   </url>
 </urlset>

@@ -13,7 +13,8 @@ project:
     - "courses/smith-to-simulation/intro.md"
     - "courses/smith-to-simulation/*.ipynb"
     - "courses/optimisation/index.qmd"
-    - "courses/optimisation/notebooks/*.ipynb"
+    - "courses/forecasting/index.qmd"
+    - "courses/forecasting/notebooks/*.ipynb"
     - "!courses/pnm/New Problem Sets/"
 
 website:
@@ -64,6 +65,8 @@ website:
             href: courses/smith-to-simulation/index.qmd
           - text: "Optimisation & Mathematical Methods"
             href: courses/optimisation/index.qmd
+          - text: "Economic & Business Forecasting"
+            href: courses/forecasting/index.qmd
           - text: For Students
             href: students.qmd
           - text: Numerical Methods Quiz

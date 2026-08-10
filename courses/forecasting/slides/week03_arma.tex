@@ -1,0 +1,148 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+\definecolor{UoEBlue}{HTML}{2a78d6}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 3 --- ARMA Models}
+\subtitle{Autoregressive and Moving Average Processes}
+\author{Dr Juan Zurita}
+\institute{Economic \& Business Forecasting\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{The AR Process}
+
+\begin{frame}{AR(1) --- The Simplest Dynamic Model}
+\[
+y_t = c + \phi y_{t-1} + \varepsilon_t, \quad \varepsilon_t \sim WN(0, \sigma^2)
+\]
+
+\begin{itemize}
+    \item \textbf{Stationary} iff $|\phi| < 1$
+    \item Unconditional mean: $\mu = c / (1 - \phi)$
+    \item Unconditional variance: $\sigma_y^2 = \sigma^2 / (1 - \phi^2)$
+    \item ACF: $\rho_k = \phi^k$ (geometric decay)
+    \item PACF: cuts off after lag 1
+\end{itemize}
+\end{frame}
+
+\begin{frame}{AR(p) --- General Autoregressive}
+\[
+y_t = c + \phi_1 y_{t-1} + \phi_2 y_{t-2} + \cdots + \phi_p y_{t-p} + \varepsilon_t
+\]
+
+\textbf{Stationarity condition:} all roots of $1 - \phi_1 z - \phi_2 z^2 - \cdots - \phi_p z^p = 0$ lie \alert{outside} the unit circle.
+
+\vspace{0.5em}
+\textbf{PACF} of AR($p$): cuts off after lag $p$.
+\end{frame}
+
+\section{The MA Process}
+
+\begin{frame}{MA(q) --- Moving Average}
+\[
+y_t = \mu + \varepsilon_t + \theta_1 \varepsilon_{t-1} + \cdots + \theta_q \varepsilon_{t-q}
+\]
+
+\begin{itemize}
+    \item \alert{Always stationary} (finite linear combination of white noise)
+    \item ACF: cuts off after lag $q$
+    \item PACF: decays geometrically
+    \item Invertibility requires roots of $1 + \theta_1 z + \cdots$ outside unit circle
+\end{itemize}
+\end{frame}
+
+\section{ARMA Models}
+
+\begin{frame}{ARMA(p,q)}
+\[
+y_t = c + \sum_{i=1}^{p}\phi_i y_{t-i} + \varepsilon_t + \sum_{j=1}^{q}\theta_j \varepsilon_{t-j}
+\]
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Model} & \textbf{ACF} & \textbf{PACF} \\
+\midrule
+AR($p$) & Decays & Cuts off at $p$ \\
+MA($q$) & Cuts off at $q$ & Decays \\
+ARMA($p,q$) & Decays & Decays \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{The Box-Jenkins Methodology}
+\begin{enumerate}
+    \item \textbf{Identification}: use ACF/PACF to determine $p, q$
+    \item \textbf{Estimation}: fit by MLE (or conditional least squares)
+    \item \textbf{Diagnostic checking}: are residuals white noise?
+    \item \textbf{Forecasting}: generate $h$-step-ahead predictions
+\end{enumerate}
+
+\vspace{0.5em}
+Modern practice also uses \textbf{AIC/BIC} for step 1.
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item \textbf{AR}: past \emph{values} determine the present
+    \item \textbf{MA}: past \emph{shocks} determine the present
+    \item \textbf{ARMA}: combines both
+    \item ACF/PACF patterns $\Rightarrow$ model identification
+    \item Next week: \alert{estimation, forecasting, and diagnostics}
+\end{itemize}
+\end{frame}
+
+
+\end{document}

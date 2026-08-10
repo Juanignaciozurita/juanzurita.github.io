@@ -1,0 +1,214 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usetheme{metropolis}
+
+% --- Edinburgh colours ----------------------------------------
+\definecolor{UoERed}{HTML}{7A2318}
+\definecolor{UoEGold}{HTML}{B8860B}
+\definecolor{CodeBG}{HTML}{F7F3ED}
+\definecolor{CodeFrame}{HTML}{D5C9B1}
+\definecolor{UoEBlue}{HTML}{2a78d6}
+
+\setbeamercolor{palette primary}{bg=UoERed, fg=white}
+\setbeamercolor{frametitle}{bg=UoERed, fg=white}
+\setbeamercolor{title separator}{fg=UoEGold}
+\setbeamercolor{progress bar}{fg=UoEGold, bg=UoEGold!20}
+\setbeamercolor{alerted text}{fg=UoERed}
+\setbeamercolor{block title}{bg=UoERed!15, fg=UoERed}
+\setbeamercolor{block body}{bg=UoERed!5}
+
+% --- Packages -------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{listings}
+\usepackage{graphicx, booktabs}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathreplacing}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=UoERed, urlcolor=UoERed!70!black}
+\setbeamertemplate{navigation symbols}{}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{UoERed}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{UoEGold},
+  backgroundcolor=\color{CodeBG},
+  frame=single,
+  rulecolor=\color{CodeFrame},
+  numbers=none, breaklines=true, showstringspaces=false, tabsize=4,
+  xleftmargin=4pt, xrightmargin=4pt, aboveskip=6pt, belowskip=4pt,
+}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill\centering
+    \usebeamerfont{title}\insertsectionhead\par
+    \vfill
+  \end{frame}
+}
+
+\title{Week 1 --- Introduction to Forecasting}
+\subtitle{Time Series Components, Stationarity, and Naive Methods}
+\author{Dr Juan Zurita}
+\institute{Economic \& Business Forecasting\\
+The University of Edinburgh~$\cdot$~School of Economics}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\section{What Is Forecasting?}
+
+\begin{frame}{Why Forecast?}
+\begin{itemize}
+    \item \alert{Monetary policy}: central banks forecast inflation to set interest rates
+    \item \alert{Fiscal planning}: governments forecast GDP to plan budgets
+    \item \alert{Business}: firms forecast demand for inventory and staffing
+    \item \alert{Finance}: risk models rely on forecasts of returns and volatility
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Key question:} given observations $y_1, y_2, \ldots, y_T$, what is our best prediction of $y_{T+h}$ for horizon $h \geq 1$?
+\end{frame}
+
+\begin{frame}{Types of Forecasting}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Qualitative}
+\begin{itemize}
+    \item Expert judgement
+    \item Delphi method
+    \item Surveys
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Quantitative}
+\begin{itemize}
+    \item Time-series models
+    \item Causal / econometric models
+    \item Machine learning
+\end{itemize}
+\end{column}
+\end{columns}
+\vspace{1em}
+This course focuses on \alert{quantitative methods}.
+\end{frame}
+
+\section{Time Series Components}
+
+\begin{frame}{Decomposition}
+Any time series can be decomposed:
+\[
+y_t = T_t + S_t + C_t + \varepsilon_t
+\]
+\begin{description}
+    \item[$T_t$] \textbf{Trend} --- long-run increase or decrease
+    \item[$S_t$] \textbf{Seasonality} --- regular periodic pattern (fixed period)
+    \item[$C_t$] \textbf{Cycle} --- fluctuations without a fixed period
+    \item[$\varepsilon_t$] \textbf{Irregular} --- random noise
+\end{description}
+\end{frame}
+
+\begin{frame}{Additive vs Multiplicative}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Additive:}
+\[
+y_t = T_t + S_t + \varepsilon_t
+\]
+Seasonal amplitude is \emph{constant}.
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Multiplicative:}
+\[
+y_t = T_t \times S_t \times \varepsilon_t
+\]
+Seasonal amplitude \emph{grows} with the level.
+\end{column}
+\end{columns}
+\end{frame}
+
+\section{Stationarity}
+
+\begin{frame}{Covariance Stationarity}
+A time series $\{y_t\}$ is \alert{covariance stationary} if:
+\begin{enumerate}
+    \item $E[y_t] = \mu$ for all $t$ (constant mean)
+    \item $\operatorname{Var}(y_t) = \sigma^2$ for all $t$ (constant variance)
+    \item $\operatorname{Cov}(y_t, y_{t-k}) = \gamma_k$ depends only on $k$, not $t$
+\end{enumerate}
+
+\vspace{0.5em}
+\textbf{Why it matters:} most forecasting models assume stationarity, or that we can transform the data to achieve it.
+\end{frame}
+
+\begin{frame}{Testing for Stationarity}
+\begin{itemize}
+    \item \textbf{Visual inspection}: does the series wander or mean-revert?
+    \item \textbf{ACF}: slow decay $\Rightarrow$ likely non-stationary
+    \item \textbf{Augmented Dickey-Fuller (ADF) test}: $H_0$: unit root (non-stationary)
+    \item \textbf{KPSS test}: $H_0$: stationary
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Common remedy:} differencing --- $\Delta y_t = y_t - y_{t-1}$.
+\end{frame}
+
+\section{Autocorrelation}
+
+\begin{frame}{ACF and PACF}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Autocorrelation Function (ACF):}
+\[
+\rho_k = \frac{\gamma_k}{\gamma_0} = \frac{\operatorname{Cov}(y_t, y_{t-k})}{\operatorname{Var}(y_t)}
+\]
+Measures \emph{total} correlation at lag $k$.
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Partial ACF (PACF):}
+
+Correlation between $y_t$ and $y_{t-k}$ \emph{after} removing the effect of lags $1, \ldots, k-1$.
+\end{column}
+\end{columns}
+
+\vspace{0.5em}
+ACF and PACF are the main tools for \alert{model identification}.
+\end{frame}
+
+\section{A First Forecast}
+
+\begin{frame}{The Naive Method}
+\textbf{Forecast:} $\hat{y}_{T+h|T} = y_T$ \quad (repeat the last observation)
+
+\vspace{0.5em}
+\begin{itemize}
+    \item Surprisingly hard to beat for \alert{random walks}
+    \item Serves as a \textbf{benchmark} --- any useful model should beat it
+    \item Seasonal variant: $\hat{y}_{T+h|T} = y_{T+h-m}$ (same season last year)
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Forecast evaluation:}
+\[
+\text{RMSE} = \sqrt{\frac{1}{H}\sum_{h=1}^{H}\left(y_{T+h} - \hat{y}_{T+h|T}\right)^2}
+\]
+\end{frame}
+
+\begin{frame}{Summary}
+\begin{itemize}
+    \item Time series have \textbf{trend}, \textbf{seasonal}, \textbf{cyclical}, and \textbf{irregular} components
+    \item \textbf{Stationarity} is the key assumption behind most models
+    \item \textbf{ACF/PACF} reveal the dependence structure
+    \item The \textbf{naive method} is a useful benchmark
+\end{itemize}
+
+\vspace{0.5em}
+\textbf{Next week:} probability and statistics foundations for forecasting.
+\end{frame}
+
+
+\end{document}
