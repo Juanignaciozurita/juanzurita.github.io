@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Dr Juan Zurita — University of Edinburgh">
+
+<title>Forecasting Pedigree Angus Vaquillona Prices – Juan Zurita</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-befc92836a82f2ebff21c48b720c4121.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Forecasting Pedigree Angus Vaquillona Prices – Juan Zurita">
+<meta property="og:description" content="Auction Data from Argentine Cabaña Sales">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/consulting/cattle-forecast/forecasting_angus_pedigree_files/figure-html/cell-5-output-1.png">
+<meta property="og:site_name" content="Juan Zurita">
+<meta property="og:image:height" content="535">
+<meta property="og:image:width" content="1525">
+<meta name="twitter:title" content="Forecasting Pedigree Angus Vaquillona Prices – Juan Zurita">
+<meta name="twitter:description" content="Auction Data from Argentine Cabaña Sales">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/consulting/cattle-forecast/forecasting_angus_pedigree_files/figure-html/cell-5-output-1.png">
+<meta name="twitter:image-height" content="535">
+<meta name="twitter:image-width" content="1525">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Juan Zurita</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../jobmarket.html"> 
+<span class="menu-text">Job Market</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Research</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-research">    
+        <li>
+    <a class="dropdown-item" href="../../research.html">
+ <span class="dropdown-text">Publications &amp; Working Papers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../writing.html">
+ <span class="dropdown-text">Public Writing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../explorer.html">
+ <span class="dropdown-text">Interactive: Debt &amp; Policy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../opencollaborations.html">
+ <span class="dropdown-text">Open Collaborations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teaching" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teaching</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teaching">    
+        <li>
+    <a class="dropdown-item" href="../../teaching.html">
+ <span class="dropdown-text">Courses</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../courses/pnm/index.html">
+ <span class="dropdown-text">Programming &amp; Numerical Methods</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../courses/dlmacro/index.html">
+ <span class="dropdown-text">Deep Learning for Macroeconomics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../courses/smith-to-simulation/index.html">
+ <span class="dropdown-text">From Adam Smith to Simulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../courses/optimisation/index.html">
+ <span class="dropdown-text">Optimisation &amp; Mathematical Methods</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../courses/forecasting/index.html">
+ <span class="dropdown-text">Economic &amp; Business Forecasting</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../students.html">
+ <span class="dropdown-text">For Students</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../quiz.html">
+ <span class="dropdown-text">Numerical Methods Quiz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../playground.html">
+ <span class="dropdown-text">Python Playground</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../usefullinks.html">
+ <span class="dropdown-text">Resources</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-consulting--policy" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Consulting &amp; Policy</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-consulting--policy">    
+        <li>
+    <a class="dropdown-item" href="../../consulting.html">
+ <span class="dropdown-text">Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../consulting/cattle-forecast/forecasting_cattle_prices.html">
+ <span class="dropdown-text">Forecasting Cattle Prices in Argentina</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../consulting/cattle-forecast/forecasting_angus_pedigree.html">
+ <span class="dropdown-text">Forecasting Pedigree Angus Vaquillonas</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Juanignaciozurita"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/juan-ignacio-z-4b345425/"> <i class="bi bi-linkedin" role="img" aria-label="LinkedIn">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.instagram.com/juanignaciozurita/"> <i class="bi bi-instagram" role="img" aria-label="Instagram">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:juan.zurita@ed.ac.uk"> <i class="bi bi-envelope-fill" role="img" aria-label="Email">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#forecasting-pedigree-angus-vaquillona-prices" id="toc-forecasting-pedigree-angus-vaquillona-prices" class="nav-link active" data-scroll-target="#forecasting-pedigree-angus-vaquillona-prices">Forecasting Pedigree Angus Vaquillona Prices</a>
+  <ul class="collapse">
+  <li><a href="#data-pedigree-auction-prices" id="toc-data-pedigree-auction-prices" class="nav-link" data-scroll-target="#data-pedigree-auction-prices">1 — Data: Pedigree Auction Prices</a></li>
+  <li><a href="#exploratory-analysis" id="toc-exploratory-analysis" class="nav-link" data-scroll-target="#exploratory-analysis">2 — Exploratory Analysis</a></li>
+  <li><a href="#train-test-split" id="toc-train-test-split" class="nav-link" data-scroll-target="#train-test-split">3 — Train / Test Split</a></li>
+  <li><a href="#arima-on-the-premium-ratio" id="toc-arima-on-the-premium-ratio" class="nav-link" data-scroll-target="#arima-on-the-premium-ratio">4 — ARIMA on the Premium Ratio</a></li>
+  <li><a href="#exponential-smoothing-ets" id="toc-exponential-smoothing-ets" class="nav-link" data-scroll-target="#exponential-smoothing-ets">5 — Exponential Smoothing (ETS)</a></li>
+  <li><a href="#state-space-model-local-linear-trend" id="toc-state-space-model-local-linear-trend" class="nav-link" data-scroll-target="#state-space-model-local-linear-trend">6 — State-Space Model: Local Linear Trend</a></li>
+  <li><a href="#machine-learning-ridge-regression-random-forest" id="toc-machine-learning-ridge-regression-random-forest" class="nav-link" data-scroll-target="#machine-learning-ridge-regression-random-forest">7 — Machine Learning: Ridge Regression &amp; Random Forest</a></li>
+  <li><a href="#neural-network-feedforward" id="toc-neural-network-feedforward" class="nav-link" data-scroll-target="#neural-network-feedforward">8 — Neural Network (Feedforward)</a></li>
+  <li><a href="#model-comparison" id="toc-model-comparison" class="nav-link" data-scroll-target="#model-comparison">9 — Model Comparison</a></li>
+  <li><a href="#ensemble-forecast-policy-implications" id="toc-ensemble-forecast-policy-implications" class="nav-link" data-scroll-target="#ensemble-forecast-policy-implications">10 — Ensemble Forecast &amp; Policy Implications</a>
+  <ul class="collapse">
+  <li><a href="#policy-commentary" id="toc-policy-commentary" class="nav-link" data-scroll-target="#policy-commentary">Policy Commentary</a></li>
+  </ul></li>
+  <li><a href="#how-to-update-this-notebook" id="toc-how-to-update-this-notebook" class="nav-link" data-scroll-target="#how-to-update-this-notebook">11 — How to Update This Notebook</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Forecasting Pedigree Angus Vaquillona Prices</h1>
+<p class="subtitle lead">Auction Data from Argentine Cabaña Sales</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Dr Juan Zurita — University of Edinburgh </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="forecasting-pedigree-angus-vaquillona-prices" class="level1">
+<h1>Forecasting Pedigree Angus Vaquillona Prices</h1>
+<p style="text-align: justify;">
+Argentina’s pedigree cattle market is the foundation of its world-class beef genetics. <b>Cabaña auctions</b> — held at major expositions such as <b>Palermo</b> (Expo Rural), the <b>Expo Angus de Otoño</b>, and regional breed shows — set the benchmark prices for registered Angus breeding stock. This notebook forecasts the average price of <b>pedigree and Puro Controlado (PC) vaquillonas</b> (heifers) at these auctions, drawing on data from <a href="https://www.entresurcosycorralesya.com/resultados-cabanas-exposiciones.php">Entre Surcos y Corrales</a>, the <a href="https://www.angus.org.ar/">Sociedad Argentina de Angus</a>, and press reports from La Nación, Infocampo, and Angus Digital.
+</p>
+<p><strong>Why pedigree vaquillona prices matter:</strong></p>
+<ul>
+<li>For <strong>breeders</strong>, they signal the return on genetic investment and guide decisions on whether to sell or retain elite females.</li>
+<li>For <strong>policymakers</strong>, the premium over commercial cattle reflects breed-improvement incentives and the health of Argentina’s genetics pipeline.</li>
+<li>For <strong>students</strong>, pedigree auction data offers a fascinating case study in <em>thin-market forecasting</em> — small samples, irregular timing, and extreme heterogeneity.</li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>Key insight:</strong> We express pedigree prices as a <strong>premium ratio</strong> over the commercial novillo price. This removes the dominant inflation trend and isolates the genetics premium, which is far more stable and forecastable than the nominal ARS price.</p>
+</blockquote>
+<div id="5f6a1e35" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:46.821453Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:46.821237Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:27:48.318720Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:27:48.317431Z&quot;}}" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Edinburgh palette</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>UOE_RED   <span class="op">=</span> <span class="st">'#7A2318'</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>UOE_BLUE  <span class="op">=</span> <span class="st">'#2a78d6'</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>UOE_GOLD  <span class="op">=</span> <span class="st">'#B8860B'</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>UOE_GREY  <span class="op">=</span> <span class="st">'#52514e'</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>UOE_GREEN <span class="op">=</span> <span class="st">'#2E8B57'</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>UOE_PURPLE <span class="op">=</span> <span class="st">'#6A0DAD'</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>mpl.rcParams.update({</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">'figure.figsize'</span>: (<span class="dv">12</span>, <span class="dv">5</span>),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">'axes.prop_cycle'</span>: mpl.cycler(color<span class="op">=</span>[UOE_RED, UOE_BLUE, UOE_GOLD,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                                         UOE_GREEN, UOE_GREY, UOE_PURPLE]),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">'axes.titlesize'</span>: <span class="dv">14</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">'axes.labelsize'</span>: <span class="dv">12</span>,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">'lines.linewidth'</span>: <span class="dv">2</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">'font.size'</span>: <span class="dv">11</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">'legend.fontsize'</span>: <span class="dv">10</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">'figure.dpi'</span>: <span class="dv">110</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">'axes.grid'</span>: <span class="va">True</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">'grid.alpha'</span>: <span class="fl">0.3</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">'axes.spines.top'</span>: <span class="va">False</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">'axes.spines.right'</span>: <span class="va">False</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Style loaded."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Style loaded.</code></pre>
+</div>
+</div>
+<section id="data-pedigree-auction-prices" class="level2">
+<h2 class="anchored" data-anchor-id="data-pedigree-auction-prices">1 — Data: Pedigree Auction Prices</h2>
+<p>The dataset below compiles verified auction results for Angus vaquillonas (pedigree and Puro Controlado) from cabaña auctions across Argentina, alongside the concurrent commercial novillo price at the Mercado Agroganadero.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://www.entresurcosycorralesya.com/resultados-cabanas-exposiciones.php">Entre Surcos y Corrales — Resultados de Cabañas</a></li>
+<li><a href="https://www.angusdigital.com.ar/">Sociedad Argentina de Angus / Angus Digital</a></li>
+<li><a href="https://www.lanacion.com.ar/economia/campo/">La Nación — Campo</a></li>
+<li><a href="https://www.infocampo.com.ar/">Infocampo</a></li>
+<li><a href="https://www.magyp.gob.ar/sitio/areas/bovinos/informacion_sectorial/">MAGyP monthly reports</a></li>
+</ul>
+<div id="42b80721" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:48.321520Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:48.321239Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:27:48.363728Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:27:48.362394Z&quot;}}" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════════════</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pedigree / PC Angus vaquillona auction results</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Each entry: (date, avg_price_ARS, category, event, n_sold)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════════════</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>auction_data <span class="op">=</span> [</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ── 2017 ──</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2017-07-28'</span>, <span class="dv">85_000</span>,   <span class="st">'PED'</span>, <span class="st">'Palermo 2017'</span>, <span class="dv">4</span>),</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2017-10-15'</span>, <span class="dv">60_000</span>,   <span class="st">'PC'</span>,  <span class="st">'Expo Otoño 2017'</span>, <span class="dv">15</span>),</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ── 2018 ──</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2018-07-29'</span>, <span class="dv">130_000</span>,  <span class="st">'PED'</span>, <span class="st">'Palermo 2018'</span>, <span class="dv">5</span>),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2018-05-20'</span>, <span class="dv">70_000</span>,   <span class="st">'PC'</span>,  <span class="st">'Expo Otoño 2018'</span>, <span class="dv">20</span>),</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2018-10-10'</span>, <span class="dv">90_000</span>,   <span class="st">'PC'</span>,  <span class="st">'Expo Primavera 2018'</span>, <span class="dv">18</span>),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ── 2019 ──</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2019-07-28'</span>, <span class="dv">150_000</span>,  <span class="st">'PED'</span>, <span class="st">'Palermo 2019'</span>, <span class="dv">5</span>),</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2019-05-18'</span>, <span class="dv">85_000</span>,   <span class="st">'PC'</span>,  <span class="st">'Expo Otoño 2019'</span>, <span class="dv">22</span>),</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2019-09-15'</span>, <span class="dv">110_000</span>,  <span class="st">'PC'</span>,  <span class="st">'Expo Primavera 2019'</span>, <span class="dv">16</span>),</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ── 2020 (COVID — reduced activity) ──</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2020-08-15'</span>, <span class="dv">200_000</span>,  <span class="st">'PC'</span>,  <span class="st">'Remate virtual Casamú 2020'</span>, <span class="dv">30</span>),</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2020-11-10'</span>, <span class="dv">250_000</span>,  <span class="st">'PC'</span>,  <span class="st">'Expo Primavera 2020'</span>, <span class="dv">12</span>),</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ── 2021 ──</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2021-05-22'</span>, <span class="dv">320_000</span>,  <span class="st">'PC'</span>,  <span class="st">'Expo Otoño 2021'</span>, <span class="dv">25</span>),</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2021-09-05'</span>, <span class="dv">450_000</span>,  <span class="st">'PED'</span>, <span class="st">'Rural Río Cuarto 2021'</span>, <span class="dv">6</span>),</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2021-07-30'</span>, <span class="dv">380_000</span>,  <span class="st">'PED'</span>, <span class="st">'Palermo 2021'</span>, <span class="dv">4</span>),</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ── 2022 ──</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2022-05-28'</span>, <span class="dv">420_000</span>,  <span class="st">'PC'</span>,  <span class="st">'Remate PC Angus (Entre Surcos)'</span>, <span class="dv">95</span>),</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2022-07-31'</span>, <span class="dv">1_090_000</span>,<span class="st">'PED'</span>, <span class="st">'Palermo 2022'</span>, <span class="dv">5</span>),</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2022-10-08'</span>, <span class="dv">600_000</span>,  <span class="st">'PC'</span>,  <span class="st">'Expo Primavera 2022'</span>, <span class="dv">18</span>),</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ── 2023 ──</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2023-05-20'</span>, <span class="dv">1_200_000</span>,<span class="st">'PC'</span>,  <span class="st">'Expo Otoño 2023'</span>, <span class="dv">30</span>),</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2023-07-31'</span>, <span class="dv">6_800_000</span>,<span class="st">'PED'</span>, <span class="st">'Palermo 2023'</span>, <span class="dv">2</span>),</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2023-10-08'</span>, <span class="dv">900_000</span>,  <span class="st">'PC'</span>,  <span class="st">'La Pastoriza (Entre Surcos)'</span>, <span class="dv">20</span>),</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ── 2024 ──</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2024-05-18'</span>, <span class="dv">2_800_000</span>,<span class="st">'PC'</span>,  <span class="st">'Expo Otoño 2024'</span>, <span class="dv">40</span>),</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2024-07-28'</span>, <span class="dv">5_500_000</span>,<span class="st">'PED'</span>, <span class="st">'Palermo 2024'</span>, <span class="dv">6</span>),</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2024-10-12'</span>, <span class="dv">3_200_000</span>,<span class="st">'PC'</span>,  <span class="st">'Expo Primavera 2024'</span>, <span class="dv">22</span>),</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ── 2025 ──</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2025-05-20'</span>, <span class="dv">3_268_965</span>,<span class="st">'PC'</span>,  <span class="st">'Expo Otoño Palermo 2025 (Entre Surcos)'</span>, <span class="dv">74</span>),</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2025-06-05'</span>, <span class="dv">4_500_000</span>,<span class="st">'PC'</span>,  <span class="st">'Casamú (Entre Surcos)'</span>, <span class="dv">35</span>),</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2025-07-26'</span>, <span class="dv">9_000_000</span>,<span class="st">'PED'</span>, <span class="st">'Palermo 2025'</span>, <span class="dv">10</span>),</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2025-08-22'</span>, <span class="dv">7_000_000</span>,<span class="st">'PED'</span>, <span class="st">'Tres Marías (Entre Surcos)'</span>, <span class="dv">15</span>),</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># ── 2026 ──</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2026-05-15'</span>, <span class="dv">5_500_000</span>,<span class="st">'PC'</span>,  <span class="st">'Expo Otoño 2026'</span>, <span class="dv">50</span>),</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'2026-07-28'</span>, <span class="dv">9_570_000</span>,<span class="st">'PED'</span>, <span class="st">'Palermo 2026 (black PED)'</span>, <span class="dv">7</span>),</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>df_auctions <span class="op">=</span> pd.DataFrame(auction_data,</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span>[<span class="st">'date'</span>, <span class="st">'avg_price_ars'</span>, <span class="st">'category'</span>, <span class="st">'event'</span>, <span class="st">'n_sold'</span>])</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>df_auctions[<span class="st">'date'</span>] <span class="op">=</span> pd.to_datetime(df_auctions[<span class="st">'date'</span>])</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>df_auctions <span class="op">=</span> df_auctions.sort_values(<span class="st">'date'</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Auction records: </span><span class="sc">{</span><span class="bu">len</span>(df_auctions)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Period: </span><span class="sc">{</span>df_auctions[<span class="st">'date'</span>]<span class="sc">.</span><span class="bu">min</span>()<span class="sc">.</span>strftime(<span class="st">'%b %Y'</span>)<span class="sc">}</span><span class="ss"> – "</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"</span><span class="sc">{</span>df_auctions[<span class="st">'date'</span>]<span class="sc">.</span><span class="bu">max</span>()<span class="sc">.</span>strftime(<span class="st">'%b %Y'</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Category breakdown:"</span>)</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_auctions.groupby(<span class="st">'category'</span>).agg(</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>    n_auctions<span class="op">=</span>(<span class="st">'event'</span>, <span class="st">'count'</span>),</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>    total_sold<span class="op">=</span>(<span class="st">'n_sold'</span>, <span class="st">'sum'</span>),</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>    avg_price<span class="op">=</span>(<span class="st">'avg_price_ars'</span>, <span class="st">'mean'</span>)</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>).to_string())</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="sc">{</span>df_auctions<span class="sc">.</span>tail(<span class="dv">8</span>)<span class="sc">.</span>to_string(index<span class="op">=</span><span class="va">False</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Auction records: 28
+Period: Jul 2017 – Jul 2026
+
+Category breakdown:
+          n_auctions  total_sold     avg_price
+category                                      
+PC                17         542  1.386704e+06
+PED               11          69  3.650455e+06
+
+      date  avg_price_ars category                                  event  n_sold
+2024-07-28        5500000      PED                           Palermo 2024       6
+2024-10-12        3200000       PC                    Expo Primavera 2024      22
+2025-05-20        3268965       PC Expo Otoño Palermo 2025 (Entre Surcos)      74
+2025-06-05        4500000       PC                  Casamú (Entre Surcos)      35
+2025-07-26        9000000      PED                           Palermo 2025      10
+2025-08-22        7000000      PED             Tres Marías (Entre Surcos)      15
+2026-05-15        5500000       PC                        Expo Otoño 2026      50
+2026-07-28        9570000      PED               Palermo 2026 (black PED)       7</code></pre>
+</div>
+</div>
+<div id="8b663322" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:48.365993Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:48.365762Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:27:49.334679Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:27:49.331718Z&quot;}}" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════════════</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Commercial novillo price (monthly, ARS/kg live weight)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># From the companion novillo forecasting notebook</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════════════</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>novillo_monthly <span class="op">=</span> {</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2017-01'</span>: <span class="fl">48.0</span>, <span class="st">'2017-04'</span>: <span class="fl">49.0</span>, <span class="st">'2017-07'</span>: <span class="fl">50.0</span>, <span class="st">'2017-10'</span>: <span class="fl">52.0</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2018-01'</span>: <span class="fl">54.0</span>, <span class="st">'2018-04'</span>: <span class="fl">56.0</span>, <span class="st">'2018-07'</span>: <span class="fl">58.0</span>, <span class="st">'2018-10'</span>: <span class="fl">62.0</span>,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2019-01'</span>: <span class="fl">64.0</span>, <span class="st">'2019-04'</span>: <span class="fl">62.0</span>, <span class="st">'2019-07'</span>: <span class="fl">68.0</span>, <span class="st">'2019-10'</span>: <span class="fl">69.4</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2020-01'</span>: <span class="fl">84.4</span>, <span class="st">'2020-04'</span>: <span class="fl">88.5</span>, <span class="st">'2020-07'</span>: <span class="fl">95.6</span>, <span class="st">'2020-10'</span>: <span class="fl">105.7</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2021-01'</span>: <span class="fl">160.0</span>, <span class="st">'2021-04'</span>: <span class="fl">220.0</span>, <span class="st">'2021-07'</span>: <span class="fl">225.0</span>, <span class="st">'2021-10'</span>: <span class="fl">235.0</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2022-01'</span>: <span class="fl">223.8</span>, <span class="st">'2022-04'</span>: <span class="fl">260.0</span>, <span class="st">'2022-07'</span>: <span class="fl">285.0</span>, <span class="st">'2022-10'</span>: <span class="fl">305.0</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2023-01'</span>: <span class="fl">336.5</span>, <span class="st">'2023-04'</span>: <span class="fl">450.0</span>, <span class="st">'2023-07'</span>: <span class="fl">650.0</span>, <span class="st">'2023-10'</span>: <span class="fl">1000.0</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2024-01'</span>: <span class="fl">1424.2</span>, <span class="st">'2024-04'</span>: <span class="fl">1550.0</span>, <span class="st">'2024-07'</span>: <span class="fl">1700.0</span>, <span class="st">'2024-10'</span>: <span class="fl">1950.0</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2025-01'</span>: <span class="fl">2400.0</span>, <span class="st">'2025-04'</span>: <span class="fl">2788.0</span>, <span class="st">'2025-07'</span>: <span class="fl">2924.0</span>, <span class="st">'2025-10'</span>: <span class="fl">3246.0</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'2026-01'</span>: <span class="fl">4117.0</span>, <span class="st">'2026-04'</span>: <span class="fl">4265.0</span>, <span class="st">'2026-07'</span>: <span class="fl">4318.0</span>,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>novillo_s <span class="op">=</span> pd.Series(novillo_monthly, name<span class="op">=</span><span class="st">'novillo_ars_kg'</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>novillo_s.index <span class="op">=</span> pd.to_datetime([k <span class="op">+</span> <span class="st">'-01'</span> <span class="cf">for</span> k <span class="kw">in</span> novillo_s.index])</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>novillo_s <span class="op">=</span> novillo_s.sort_index()</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Interpolate to daily so we can match any auction date</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>novillo_daily <span class="op">=</span> novillo_s.reindex(</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    pd.date_range(novillo_s.index.<span class="bu">min</span>(), novillo_s.index.<span class="bu">max</span>(), freq<span class="op">=</span><span class="st">'D'</span>)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>).interpolate(<span class="st">'cubic'</span>)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Match each auction to the concurrent novillo price</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>df_auctions[<span class="st">'novillo_ars_kg'</span>] <span class="op">=</span> df_auctions[<span class="st">'date'</span>].<span class="bu">map</span>(</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> d: novillo_daily.asof(d)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the premium ratio: how many kg of novillo does one vaquillona buy?</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the "genetics premium" — independent of inflation.</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>df_auctions[<span class="st">'premium_ratio'</span>] <span class="op">=</span> (</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>    df_auctions[<span class="st">'avg_price_ars'</span>] <span class="op">/</span> df_auctions[<span class="st">'novillo_ars_kg'</span>]</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Premium ratio = vaquillona price / novillo price (kg equivalent)"</span>)</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Interpretation: a pedigree vaquillona costs as many ARS as "</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"X kg of commercial novillo</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_auctions[[<span class="st">'date'</span>,<span class="st">'category'</span>,<span class="st">'avg_price_ars'</span>,<span class="st">'novillo_ars_kg'</span>,</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'premium_ratio'</span>,<span class="st">'event'</span>]].to_string(index<span class="op">=</span><span class="va">False</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Premium ratio = vaquillona price / novillo price (kg equivalent)
+  Interpretation: a pedigree vaquillona costs as many ARS as X kg of commercial novillo
+
+      date category  avg_price_ars  novillo_ars_kg  premium_ratio                                  event
+2017-07-28      PED          85000       50.514285    1682.692337                           Palermo 2017
+2017-10-15       PC          60000       52.313750    1146.926002                        Expo Otoño 2017
+2018-05-20       PC          70000       56.917764    1229.844511                        Expo Otoño 2018
+2018-07-29      PED         130000       59.060052    2201.149451                           Palermo 2018
+2018-10-10       PC          90000       62.403333    1442.230648                    Expo Primavera 2018
+2019-05-18       PC          85000       65.131551    1305.051064                        Expo Otoño 2019
+2019-07-28      PED         150000       68.148052    2201.090078                           Palermo 2019
+2019-09-15       PC         110000       68.300972    1610.518816                    Expo Primavera 2019
+2020-08-15       PC         200000       97.489420    2051.504661             Remate virtual Casamú 2020
+2020-11-10       PC         250000      123.959623    2016.785740                    Expo Primavera 2020
+2021-05-22       PC         320000      225.603890    1418.415261                        Expo Otoño 2021
+2021-07-30      PED         380000      228.384993    1663.857135                           Palermo 2021
+2021-09-05      PED         450000      234.033356    1922.802833                  Rural Río Cuarto 2021
+2022-05-28       PC         420000      277.604361    1512.944530         Remate PC Angus (Entre Surcos)
+2022-07-31      PED        1090000      291.767870    3735.846581                           Palermo 2022
+2022-10-08       PC         600000      306.237425    1959.264123                    Expo Primavera 2022
+2023-05-20       PC        1200000      544.267350    2204.798798                        Expo Otoño 2023
+2023-07-31      PED        6800000      744.541376    9133.139162                           Palermo 2023
+2023-10-08       PC         900000     1034.413292     870.058426            La Pastoriza (Entre Surcos)
+2024-05-18       PC        2800000     1615.651640    1733.046859                        Expo Otoño 2024
+2024-07-28      PED        5500000     1757.862669    3128.799591                           Palermo 2024
+2024-10-12       PC        3200000     1994.824695    1604.150985                    Expo Primavera 2024
+2025-05-20       PC        3268965     2879.383490    1135.300321 Expo Otoño Palermo 2025 (Entre Surcos)
+2025-06-05       PC        4500000     2897.146505    1553.252482                  Casamú (Entre Surcos)
+2025-07-26      PED        9000000     2958.465558    3042.117552                           Palermo 2025
+2025-08-22      PED        7000000     3027.564580    2312.089409             Tres Marías (Entre Surcos)
+2026-05-15       PC        5500000     4226.997617    1301.159948                        Expo Otoño 2026
+2026-07-28      PED        9570000     4318.000000    2216.303844               Palermo 2026 (black PED)</code></pre>
+</div>
+</div>
+</section>
+<section id="exploratory-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-analysis">2 — Exploratory Analysis</h2>
+<p>Pedigree auction prices in nominal ARS are dominated by inflation (just like the novillo), so the raw series is hard to interpret. The <strong>premium ratio</strong> — vaquillona price / novillo price per kg — strips out inflation and reveals the underlying genetics premium.</p>
+<div id="732e07cc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:49.337881Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:49.337646Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:27:49.838743Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:27:49.837947Z&quot;}}" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ── 2.1  Nominal prices by category ──────────────────────────────</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">5</span>))</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> cat, colour, marker <span class="kw">in</span> [(<span class="st">'PED'</span>, UOE_RED, <span class="st">'s'</span>), (<span class="st">'PC'</span>, UOE_BLUE, <span class="st">'o'</span>)]:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    sub <span class="op">=</span> df_auctions[df_auctions[<span class="st">'category'</span>] <span class="op">==</span> cat]</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">0</span>].scatter(sub[<span class="st">'date'</span>], sub[<span class="st">'avg_price_ars'</span>] <span class="op">/</span> <span class="fl">1e6</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                    color<span class="op">=</span>colour, marker<span class="op">=</span>marker, s<span class="op">=</span>sub[<span class="st">'n_sold'</span>]<span class="op">*</span><span class="dv">3</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                    label<span class="op">=</span><span class="ss">f'</span><span class="sc">{</span>cat<span class="sc">}</span><span class="ss"> (size ∝ lots sold)'</span>, alpha<span class="op">=</span><span class="fl">0.8</span>, edgecolors<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'ARS (millions)'</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'(A)  Nominal Vaquillona Price'</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> cat, colour, marker <span class="kw">in</span> [(<span class="st">'PED'</span>, UOE_RED, <span class="st">'s'</span>), (<span class="st">'PC'</span>, UOE_BLUE, <span class="st">'o'</span>)]:</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    sub <span class="op">=</span> df_auctions[df_auctions[<span class="st">'category'</span>] <span class="op">==</span> cat]</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    axes[<span class="dv">1</span>].scatter(sub[<span class="st">'date'</span>], sub[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                    color<span class="op">=</span>colour, marker<span class="op">=</span>marker, s<span class="op">=</span>sub[<span class="st">'n_sold'</span>]<span class="op">*</span><span class="dv">3</span>,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                    label<span class="op">=</span>cat, alpha<span class="op">=</span><span class="fl">0.8</span>, edgecolors<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Premium ratio (kg novillo equivalent)'</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'(B)  Premium Ratio over Commercial Novillo'</span>)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axhline(df_auctions[<span class="st">'premium_ratio'</span>].median(), color<span class="op">=</span>UOE_GREY,</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>                ls<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">'Median'</span>)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary stats</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> cat <span class="kw">in</span> [<span class="st">'PED'</span>, <span class="st">'PC'</span>]:</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    sub <span class="op">=</span> df_auctions[df_auctions[<span class="st">'category'</span>] <span class="op">==</span> cat]</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">── </span><span class="sc">{</span>cat<span class="sc">}</span><span class="ss"> ──"</span>)</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Median premium ratio: </span><span class="sc">{</span>sub[<span class="st">'premium_ratio'</span>]<span class="sc">.</span>median()<span class="sc">:,.0f}</span><span class="ss"> kg equiv"</span>)</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Mean premium ratio  : </span><span class="sc">{</span>sub[<span class="st">'premium_ratio'</span>]<span class="sc">.</span>mean()<span class="sc">:,.0f}</span><span class="ss"> kg equiv"</span>)</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  Std                 : </span><span class="sc">{</span>sub[<span class="st">'premium_ratio'</span>]<span class="sc">.</span>std()<span class="sc">:,.0f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="forecasting_angus_pedigree_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+── PED ──
+  Median premium ratio: 2,216 kg equiv
+  Mean premium ratio  : 3,022 kg equiv
+  Std                 : 2,126
+
+── PC ──
+  Median premium ratio: 1,513 kg equiv
+  Mean premium ratio  : 1,535 kg equiv
+  Std                 : 367</code></pre>
+</div>
+</div>
+<div id="097d4a24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:49.840910Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:49.840701Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:27:49.869984Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:27:49.868749Z&quot;}}" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ── 2.2  Build a quarterly time series ───────────────────────────</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregate auctions to quarterly averages (weighted by n_sold)</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>df_auctions[<span class="st">'quarter'</span>] <span class="op">=</span> df_auctions[<span class="st">'date'</span>].dt.to_period(<span class="st">'Q'</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>quarterly <span class="op">=</span> df_auctions.groupby(<span class="st">'quarter'</span>).<span class="bu">apply</span>(</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> g: pd.Series({</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'avg_price_ars'</span>: np.average(g[<span class="st">'avg_price_ars'</span>], weights<span class="op">=</span>g[<span class="st">'n_sold'</span>]),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'premium_ratio'</span>: np.average(g[<span class="st">'premium_ratio'</span>], weights<span class="op">=</span>g[<span class="st">'n_sold'</span>]),</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'n_sold'</span>: g[<span class="st">'n_sold'</span>].<span class="bu">sum</span>(),</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'n_auctions'</span>: <span class="bu">len</span>(g),</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>).reset_index()</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>quarterly[<span class="st">'date'</span>] <span class="op">=</span> quarterly[<span class="st">'quarter'</span>].dt.to_timestamp()</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>quarterly <span class="op">=</span> quarterly.sort_values(<span class="st">'date'</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Quarterly series: </span><span class="sc">{</span><span class="bu">len</span>(quarterly)<span class="sc">}</span><span class="ss"> observations"</span>)</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(quarterly[[<span class="st">'quarter'</span>,<span class="st">'avg_price_ars'</span>,<span class="st">'premium_ratio'</span>,<span class="st">'n_sold'</span>,<span class="st">'n_auctions'</span>]]</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>      .to_string(index<span class="op">=</span><span class="va">False</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Quarterly series: 24 observations
+quarter  avg_price_ars  premium_ratio  n_sold  n_auctions
+ 2017Q3   8.500000e+04    1682.692337     4.0         1.0
+ 2017Q4   6.000000e+04    1146.926002    15.0         1.0
+ 2018Q2   7.000000e+04    1229.844511    20.0         1.0
+ 2018Q3   1.300000e+05    2201.149451     5.0         1.0
+ 2018Q4   9.000000e+04    1442.230648    18.0         1.0
+ 2019Q2   8.500000e+04    1305.051064    22.0         1.0
+ 2019Q3   1.195238e+05    1751.131022    21.0         2.0
+ 2020Q3   2.000000e+05    2051.504661    30.0         1.0
+ 2020Q4   2.500000e+05    2016.785740    12.0         1.0
+ 2021Q2   3.200000e+05    1418.415261    25.0         1.0
+ 2021Q3   4.220000e+05    1819.224554    10.0         2.0
+ 2022Q2   4.200000e+05    1512.944530    95.0         1.0
+ 2022Q3   1.090000e+06    3735.846581     5.0         1.0
+ 2022Q4   6.000000e+05    1959.264123    18.0         1.0
+ 2023Q2   1.200000e+06    2204.798798    30.0         1.0
+ 2023Q3   6.800000e+06    9133.139162     2.0         1.0
+ 2023Q4   9.000000e+05     870.058426    20.0         1.0
+ 2024Q2   2.800000e+06    1733.046859    40.0         1.0
+ 2024Q3   5.500000e+06    3128.799591     6.0         1.0
+ 2024Q4   3.200000e+06    1604.150985    22.0         1.0
+ 2025Q2   3.664251e+06    1269.505143   109.0         2.0
+ 2025Q3   7.800000e+06    2604.100666    25.0         2.0
+ 2026Q2   5.500000e+06    1301.159948    50.0         1.0
+ 2026Q3   9.570000e+06    2216.303844     7.0         1.0</code></pre>
+</div>
+</div>
+<div id="4ed80092" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:49.871829Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:49.871647Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:27:50.110651Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:27:50.110039Z&quot;}}" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ── 2.3  Premium ratio time series plot ──────────────────────────</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">5</span>))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>ax.plot(quarterly[<span class="st">'date'</span>], quarterly[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-o'</span>, color<span class="op">=</span>UOE_RED, markersize<span class="op">=</span><span class="dv">6</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>ax.fill_between(quarterly[<span class="st">'date'</span>], quarterly[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                alpha<span class="op">=</span><span class="fl">0.08</span>, color<span class="op">=</span>UOE_RED)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Premium ratio (kg novillo equivalent)'</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Quarterly Premium Ratio — Pedigree Angus Vaquillona / Commercial Novillo'</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Annotate the Palermo spike</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>palermo_mask <span class="op">=</span> quarterly[<span class="st">'premium_ratio'</span>] <span class="op">==</span> quarterly[<span class="st">'premium_ratio'</span>].<span class="bu">max</span>()</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> palermo_mask.<span class="bu">any</span>():</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    peak_date <span class="op">=</span> quarterly.loc[palermo_mask, <span class="st">'date'</span>].iloc[<span class="dv">0</span>]</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    peak_val <span class="op">=</span> quarterly.loc[palermo_mask, <span class="st">'premium_ratio'</span>].iloc[<span class="dv">0</span>]</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    ax.annotate(<span class="ss">f'Palermo</span><span class="ch">\n</span><span class="sc">{</span>peak_val<span class="sc">:,.0f}</span><span class="ss">×'</span>, xy<span class="op">=</span>(peak_date, peak_val),</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>                xytext<span class="op">=</span>(<span class="dv">30</span>, <span class="op">-</span><span class="dv">20</span>), textcoords<span class="op">=</span><span class="st">'offset points'</span>, fontsize<span class="op">=</span><span class="dv">9</span>,</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>                arrowprops<span class="op">=</span><span class="bu">dict</span>(arrowstyle<span class="op">=</span><span class="st">'-&gt;'</span>, color<span class="op">=</span>UOE_GREY))</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="forecasting_angus_pedigree_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="train-test-split" class="level2">
+<h2 class="anchored" data-anchor-id="train-test-split">3 — Train / Test Split</h2>
+<p>We hold out the <strong>last 3 quarters</strong> as the test set. With ~28 auction-level observations aggregated to ~18 quarterly points, this is a genuinely thin sample — exactly the kind of challenge pedigree-market participants face.</p>
+<div id="c57d1608" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:50.113635Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:50.113445Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:27:50.119977Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:27:50.118952Z&quot;}}" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>HORIZON <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>train_q <span class="op">=</span> quarterly.iloc[:<span class="op">-</span>HORIZON].copy()</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>test_q  <span class="op">=</span> quarterly.iloc[<span class="op">-</span>HORIZON:].copy()</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Training: </span><span class="sc">{</span>train_q[<span class="st">'quarter'</span>]<span class="sc">.</span>iloc[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> – </span><span class="sc">{</span>train_q[<span class="st">'quarter'</span>]<span class="sc">.</span>iloc[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">  "</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"(</span><span class="sc">{</span><span class="bu">len</span>(train_q)<span class="sc">}</span><span class="ss"> quarters)"</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Test    : </span><span class="sc">{</span>test_q[<span class="st">'quarter'</span>]<span class="sc">.</span>iloc[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> – </span><span class="sc">{</span>test_q[<span class="st">'quarter'</span>]<span class="sc">.</span>iloc[<span class="op">-</span><span class="dv">1</span>]<span class="sc">}</span><span class="ss">  "</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>      <span class="ss">f"(</span><span class="sc">{</span><span class="bu">len</span>(test_q)<span class="sc">}</span><span class="ss"> quarters)"</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>forecasts <span class="op">=</span> {}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Training: 2017Q3 – 2025Q2  (21 quarters)
+Test    : 2025Q3 – 2026Q3  (3 quarters)</code></pre>
+</div>
+</div>
+</section>
+<section id="arima-on-the-premium-ratio" class="level2">
+<h2 class="anchored" data-anchor-id="arima-on-the-premium-ratio">4 — ARIMA on the Premium Ratio</h2>
+<p>Because the premium ratio is much more stationary than the nominal price, ARIMA can work directly on it (or on its log).</p>
+<div id="34fbf6da" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:50.122058Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:50.121830Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:27:54.801827Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:27:54.801258Z&quot;}}" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.tsa.stattools <span class="im">import</span> adfuller</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>y_train <span class="op">=</span> train_q.set_index(<span class="st">'date'</span>)[<span class="st">'premium_ratio'</span>]</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ADF test</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>adf <span class="op">=</span> adfuller(y_train, autolag<span class="op">=</span><span class="st">'AIC'</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"ADF on premium ratio: stat=</span><span class="sc">{</span>adf[<span class="dv">0</span>]<span class="sc">:.3f}</span><span class="ss">, p=</span><span class="sc">{</span>adf[<span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  → </span><span class="sc">{</span><span class="st">'stationary'</span> <span class="cf">if</span> adf[<span class="dv">1</span>] <span class="op">&lt;</span> <span class="fl">0.05</span> <span class="cf">else</span> <span class="st">'non-stationary at 5%'</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Grid search</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>best_aic, best_order <span class="op">=</span> np.inf, (<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> d <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> q <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>                m <span class="op">=</span> sm.tsa.ARIMA(y_train, order<span class="op">=</span>(p,d,q)).fit()</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> m.aic <span class="op">&lt;</span> best_aic:</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>                    best_aic, best_order <span class="op">=</span> m.aic, (p,d,q)</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span>:</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>                <span class="cf">pass</span></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Best ARIMA order: </span><span class="sc">{</span>best_order<span class="sc">}</span><span class="ss">  (AIC = </span><span class="sc">{</span>best_aic<span class="sc">:.1f}</span><span class="ss">)"</span>)</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>arima <span class="op">=</span> sm.tsa.ARIMA(y_train, order<span class="op">=</span>best_order).fit()</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>fc <span class="op">=</span> arima.get_forecast(steps<span class="op">=</span>HORIZON)</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>fc_mean <span class="op">=</span> fc.predicted_mean</span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>ci <span class="op">=</span> fc.conf_int()</span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a>forecasts[<span class="st">'ARIMA'</span>] <span class="op">=</span> fc_mean.values</span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to nominal ARS using the last known novillo prices</span></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>novillo_test <span class="op">=</span> [<span class="fl">4265.0</span>, <span class="fl">4318.0</span>, <span class="fl">4400.0</span>]  <span class="co"># Q2, Q3, Q4 2026 (est)</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>fc_nominal <span class="op">=</span> fc_mean.values <span class="op">*</span> np.array(novillo_test)</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Forecast (premium ratio): </span><span class="sc">{</span>fc_mean<span class="sc">.</span>values<span class="sc">.</span><span class="bu">round</span>(<span class="dv">0</span>)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Forecast (ARS nominal) : </span><span class="sc">{</span>(fc_nominal<span class="op">/</span><span class="fl">1e6</span>)<span class="sc">.</span><span class="bu">round</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> million"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>ADF on premium ratio: stat=3.194, p=1.0000
+  → non-stationary at 5%</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Best ARIMA order: (0, 1, 1)  (AIC = 361.9)
+
+Forecast (premium ratio): [2294. 2294. 2294.]
+Forecast (ARS nominal) : [ 9.79  9.91 10.1 ] million</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.11/dist-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/base/model.py:607: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  warnings.warn("Maximum Likelihood optimization failed to "
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:837: ValueWarning: No supported index is available. Prediction results will be given with an integer index beginning at `start`.
+  return get_prediction_index(</code></pre>
+</div>
+</div>
+<div id="0e22734f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:54.803687Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:54.803408Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:27:55.035636Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:27:55.034804Z&quot;}}" data-execution_count="9">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ── ARIMA plot ───────────────────────────────────────────────────</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">5</span>))</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>ax.plot(train_q[<span class="st">'date'</span>], train_q[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-o'</span>, color<span class="op">=</span>UOE_GREY, markersize<span class="op">=</span><span class="dv">5</span>, label<span class="op">=</span><span class="st">'Training'</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], test_q[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-s'</span>, color<span class="op">=</span>UOE_RED, markersize<span class="op">=</span><span class="dv">7</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>, label<span class="op">=</span><span class="st">'Actual (test)'</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], fc_mean.values,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'--^'</span>, color<span class="op">=</span>UOE_BLUE, markersize<span class="op">=</span><span class="dv">7</span>, linewidth<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="ss">f'ARIMA</span><span class="sc">{</span>best_order<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>ax.fill_between(test_q[<span class="st">'date'</span>], ci.iloc[:, <span class="dv">0</span>].values, ci.iloc[:, <span class="dv">1</span>].values,</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span>UOE_BLUE, alpha<span class="op">=</span><span class="fl">0.12</span>, label<span class="op">=</span><span class="st">'95 % CI'</span>)</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Premium ratio'</span>)</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'ARIMA Forecast — Premium Ratio'</span>)</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="forecasting_angus_pedigree_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="exponential-smoothing-ets" class="level2">
+<h2 class="anchored" data-anchor-id="exponential-smoothing-ets">5 — Exponential Smoothing (ETS)</h2>
+<p>With a short series, exponential smoothing’s parsimony is an advantage. We fit a damped-trend model.</p>
+<div id="b191d74e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:55.037498Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:55.037317Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:27:55.275039Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:27:55.273849Z&quot;}}" data-execution_count="10">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.tsa.holtwinters <span class="im">import</span> ExponentialSmoothing</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>ets <span class="op">=</span> ExponentialSmoothing(y_train, trend<span class="op">=</span><span class="st">'add'</span>, damped_trend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>                           seasonal<span class="op">=</span><span class="va">None</span>).fit(optimized<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>fc_ets <span class="op">=</span> ets.forecast(HORIZON)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>forecasts[<span class="st">'ETS (damped)'</span>] <span class="op">=</span> fc_ets.values</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">5</span>))</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>ax.plot(train_q[<span class="st">'date'</span>], train_q[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-o'</span>, color<span class="op">=</span>UOE_GREY, markersize<span class="op">=</span><span class="dv">5</span>, label<span class="op">=</span><span class="st">'Training'</span>)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], test_q[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-s'</span>, color<span class="op">=</span>UOE_RED, markersize<span class="op">=</span><span class="dv">7</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>, label<span class="op">=</span><span class="st">'Actual'</span>)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], fc_ets.values,</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">'--^'</span>, color<span class="op">=</span>UOE_GOLD, markersize<span class="op">=</span><span class="dv">7</span>, linewidth<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">'ETS (damped)'</span>)</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Premium ratio'</span>)</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Exponential Smoothing Forecast'</span>)</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:837: ValueWarning: No supported index is available. Prediction results will be given with an integer index beginning at `start`.
+  return get_prediction_index(</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="forecasting_angus_pedigree_files/figure-html/cell-11-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="state-space-model-local-linear-trend" class="level2">
+<h2 class="anchored" data-anchor-id="state-space-model-local-linear-trend">6 — State-Space Model: Local Linear Trend</h2>
+<p>A local linear trend model estimated via the Kalman filter can handle irregular level shifts in the premium ratio.</p>
+<div id="54311777" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:55.277410Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:55.277189Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:27:55.511181Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:27:55.509988Z&quot;}}" data-execution_count="11">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>llt <span class="op">=</span> sm.tsa.UnobservedComponents(y_train, level<span class="op">=</span><span class="st">'local linear trend'</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>llt_fit <span class="op">=</span> llt.fit(disp<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>fc_ss <span class="op">=</span> llt_fit.get_forecast(steps<span class="op">=</span>HORIZON)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>fc_ss_mean <span class="op">=</span> fc_ss.predicted_mean</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>forecasts[<span class="st">'State-Space (LLT)'</span>] <span class="op">=</span> fc_ss_mean.values</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">5</span>))</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>ax.plot(train_q[<span class="st">'date'</span>], train_q[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-o'</span>, color<span class="op">=</span>UOE_GREY, markersize<span class="op">=</span><span class="dv">5</span>, label<span class="op">=</span><span class="st">'Training'</span>)</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], test_q[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-s'</span>, color<span class="op">=</span>UOE_RED, markersize<span class="op">=</span><span class="dv">7</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>, label<span class="op">=</span><span class="st">'Actual'</span>)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], fc_ss_mean.values,</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">'--^'</span>, color<span class="op">=</span>UOE_GREEN, markersize<span class="op">=</span><span class="dv">7</span>, linewidth<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">'State-Space (LLT)'</span>)</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>fc_ss_ci <span class="op">=</span> fc_ss.conf_int()</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>ax.fill_between(test_q[<span class="st">'date'</span>], fc_ss_ci.iloc[:, <span class="dv">0</span>].values,</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>                fc_ss_ci.iloc[:, <span class="dv">1</span>].values,</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>                color<span class="op">=</span>UOE_GREEN, alpha<span class="op">=</span><span class="fl">0.12</span>)</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Premium ratio'</span>)</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'State-Space Forecast'</span>)</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:473: ValueWarning: A date index has been provided, but it has no associated frequency information and so will be ignored when e.g. forecasting.
+  self._init_dates(dates, freq)
+/usr/local/lib/python3.11/dist-packages/statsmodels/tsa/base/tsa_model.py:837: ValueWarning: No supported index is available. Prediction results will be given with an integer index beginning at `start`.
+  return get_prediction_index(</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="forecasting_angus_pedigree_files/figure-html/cell-12-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="machine-learning-ridge-regression-random-forest" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning-ridge-regression-random-forest">7 — Machine Learning: Ridge Regression &amp; Random Forest</h2>
+<p>We engineer features from the premium-ratio series (lags, rolling stats, quarter-of-year) and fit Ridge and Random Forest regressors.</p>
+<div id="b41d73cd" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:55.513248Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:55.513039Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:27:56.287638Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:27:56.286759Z&quot;}}" data-execution_count="12">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, mean_absolute_error</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Feature engineering on quarterly premium-ratio series</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_features_q(series):</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    feat <span class="op">=</span> pd.DataFrame(index<span class="op">=</span>series.index)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    feat[<span class="st">'lag_1'</span>] <span class="op">=</span> series.shift(<span class="dv">1</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    feat[<span class="st">'lag_2'</span>] <span class="op">=</span> series.shift(<span class="dv">2</span>)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    feat[<span class="st">'lag_3'</span>] <span class="op">=</span> series.shift(<span class="dv">3</span>)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    feat[<span class="st">'roll_mean_2'</span>] <span class="op">=</span> series.shift(<span class="dv">1</span>).rolling(<span class="dv">2</span>, min_periods<span class="op">=</span><span class="dv">1</span>).mean()</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    feat[<span class="st">'roll_std_2'</span>]  <span class="op">=</span> series.shift(<span class="dv">1</span>).rolling(<span class="dv">2</span>, min_periods<span class="op">=</span><span class="dv">1</span>).std().fillna(<span class="dv">0</span>)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Quarter-of-year (Q2 = autumn expos, Q3 = Palermo)</span></span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>    feat[<span class="st">'quarter_num'</span>] <span class="op">=</span> series.index.quarter <span class="cf">if</span> <span class="bu">hasattr</span>(series.index, <span class="st">'quarter'</span>) <span class="cf">else</span> <span class="dv">2</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    feat[<span class="st">'is_palermo'</span>] <span class="op">=</span> (feat[<span class="st">'quarter_num'</span>] <span class="op">==</span> <span class="dv">3</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> feat</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>pr_series <span class="op">=</span> quarterly.set_index(<span class="st">'date'</span>)[<span class="st">'premium_ratio'</span>]</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>X_all <span class="op">=</span> make_features_q(pr_series)</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>y_all <span class="op">=</span> pr_series</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>mask <span class="op">=</span> X_all.notna().<span class="bu">all</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>X_all, y_all <span class="op">=</span> X_all[mask], y_all[mask]</span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>X_tr <span class="op">=</span> X_all.iloc[:<span class="op">-</span>HORIZON]</span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a>y_tr <span class="op">=</span> y_all.iloc[:<span class="op">-</span>HORIZON]</span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>X_te <span class="op">=</span> X_all.iloc[<span class="op">-</span>HORIZON:]</span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>y_te <span class="op">=</span> y_all.iloc[<span class="op">-</span>HORIZON:]</span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a>ml_models <span class="op">=</span> {</span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Ridge'</span>: Ridge(alpha<span class="op">=</span><span class="fl">10.0</span>),</span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Random Forest'</span>: RandomForestRegressor(n_estimators<span class="op">=</span><span class="dv">200</span>, max_depth<span class="op">=</span><span class="dv">3</span>,</span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a>                                           random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">5</span>))</span>
+<span id="cb24-38"><a href="#cb24-38" aria-hidden="true" tabindex="-1"></a>ax.plot(train_q[<span class="st">'date'</span>], train_q[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb24-39"><a href="#cb24-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-o'</span>, color<span class="op">=</span>UOE_GREY, markersize<span class="op">=</span><span class="dv">5</span>, label<span class="op">=</span><span class="st">'Training'</span>)</span>
+<span id="cb24-40"><a href="#cb24-40" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], test_q[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb24-41"><a href="#cb24-41" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-s'</span>, color<span class="op">=</span>UOE_RED, markersize<span class="op">=</span><span class="dv">7</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>, label<span class="op">=</span><span class="st">'Actual'</span>)</span>
+<span id="cb24-42"><a href="#cb24-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-43"><a href="#cb24-43" aria-hidden="true" tabindex="-1"></a>colours <span class="op">=</span> [UOE_BLUE, UOE_GOLD]</span>
+<span id="cb24-44"><a href="#cb24-44" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (name, model), colour <span class="kw">in</span> <span class="bu">zip</span>(ml_models.items(), colours):</span>
+<span id="cb24-45"><a href="#cb24-45" aria-hidden="true" tabindex="-1"></a>    model.fit(X_tr, y_tr)</span>
+<span id="cb24-46"><a href="#cb24-46" aria-hidden="true" tabindex="-1"></a>    preds <span class="op">=</span> model.predict(X_te)</span>
+<span id="cb24-47"><a href="#cb24-47" aria-hidden="true" tabindex="-1"></a>    forecasts[name] <span class="op">=</span> preds</span>
+<span id="cb24-48"><a href="#cb24-48" aria-hidden="true" tabindex="-1"></a>    ax.plot(test_q[<span class="st">'date'</span>], preds, <span class="st">'--^'</span>, color<span class="op">=</span>colour,</span>
+<span id="cb24-49"><a href="#cb24-49" aria-hidden="true" tabindex="-1"></a>            markersize<span class="op">=</span><span class="dv">7</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span>name)</span>
+<span id="cb24-50"><a href="#cb24-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-51"><a href="#cb24-51" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Premium ratio'</span>)</span>
+<span id="cb24-52"><a href="#cb24-52" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Machine Learning Forecasts — Premium Ratio'</span>)</span>
+<span id="cb24-53"><a href="#cb24-53" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb24-54"><a href="#cb24-54" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb24-55"><a href="#cb24-55" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="forecasting_angus_pedigree_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="neural-network-feedforward" class="level2">
+<h2 class="anchored" data-anchor-id="neural-network-feedforward">8 — Neural Network (Feedforward)</h2>
+<p>With only ~15 training points, a deep network would overfit instantly. We use a small feedforward net (one hidden layer) as a non-linear regression on the same features.</p>
+<div id="6f0b2847" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:27:56.290132Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:27:56.289706Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:29:08.851069Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:29:08.846736Z&quot;}}" data-execution_count="13">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow <span class="im">import</span> keras</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>tf.random.set_seed(<span class="dv">42</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalise features</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler()</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>X_tr_s <span class="op">=</span> scaler.fit_transform(X_tr)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>X_te_s <span class="op">=</span> scaler.transform(X_te)</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>nn <span class="op">=</span> keras.Sequential([</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    keras.layers.Dense(<span class="dv">8</span>, activation<span class="op">=</span><span class="st">'relu'</span>, input_shape<span class="op">=</span>(X_tr_s.shape[<span class="dv">1</span>],)),</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    keras.layers.Dropout(<span class="fl">0.3</span>),</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>    keras.layers.Dense(<span class="dv">1</span>)</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>nn.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">'adam'</span>, loss<span class="op">=</span><span class="st">'mse'</span>)</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> nn.fit(X_tr_s, y_tr.values, epochs<span class="op">=</span><span class="dv">200</span>, batch_size<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>                 validation_split<span class="op">=</span><span class="fl">0.2</span>, verbose<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>preds_nn <span class="op">=</span> nn.predict(X_te_s, verbose<span class="op">=</span><span class="dv">0</span>).flatten()</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>forecasts[<span class="st">'Neural Net'</span>] <span class="op">=</span> preds_nn</span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">4</span>))</span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> axes[<span class="dv">0</span>]</span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>ax.plot(history.history[<span class="st">'loss'</span>], label<span class="op">=</span><span class="st">'Train'</span>, color<span class="op">=</span>UOE_RED)</span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>ax.plot(history.history[<span class="st">'val_loss'</span>], label<span class="op">=</span><span class="st">'Val'</span>, color<span class="op">=</span>UOE_BLUE)</span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'NN Training Loss'</span>)</span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Epoch'</span>)</span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> axes[<span class="dv">1</span>]</span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>ax.plot(train_q[<span class="st">'date'</span>], train_q[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-o'</span>, color<span class="op">=</span>UOE_GREY, markersize<span class="op">=</span><span class="dv">5</span>, label<span class="op">=</span><span class="st">'Training'</span>)</span>
+<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], test_q[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-s'</span>, color<span class="op">=</span>UOE_RED, markersize<span class="op">=</span><span class="dv">7</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>, label<span class="op">=</span><span class="st">'Actual'</span>)</span>
+<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], preds_nn,</span>
+<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a>        <span class="st">'--^'</span>, color<span class="op">=</span>UOE_PURPLE, markersize<span class="op">=</span><span class="dv">7</span>, linewidth<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="st">'Neural Net'</span>)</span>
+<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Premium ratio'</span>)</span>
+<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Neural Network Forecast'</span>)</span>
+<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786375696.299414    2541 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1786375696.325060    2541 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+I0000 00:00:1786375716.188476    2541 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786375730.631049    2541 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1786375730.634149    2541 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+E0000 00:00:1786375732.551430    2541 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="forecasting_angus_pedigree_files/figure-html/cell-14-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="model-comparison" class="level2">
+<h2 class="anchored" data-anchor-id="model-comparison">9 — Model Comparison</h2>
+<p>We evaluate all models on the held-out test quarters using RMSE, MAE, and MAPE — all computed on the <strong>premium ratio</strong> (not the nominal price), so errors reflect genuine forecasting skill rather than inflation tracking.</p>
+<div id="5360be1f" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:29:08.864011Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:29:08.863275Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:29:08.883039Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:29:08.881769Z&quot;}}" data-execution_count="14">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>actual <span class="op">=</span> test_q[<span class="st">'premium_ratio'</span>].values</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> []</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, fc <span class="kw">in</span> forecasts.items():</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    fc_arr <span class="op">=</span> np.array(fc)[:<span class="bu">len</span>(actual)]</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    rmse <span class="op">=</span> np.sqrt(mean_squared_error(actual, fc_arr))</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    mae  <span class="op">=</span> mean_absolute_error(actual, fc_arr)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    mape <span class="op">=</span> np.mean(np.<span class="bu">abs</span>((actual <span class="op">-</span> fc_arr) <span class="op">/</span> actual)) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    results.append({<span class="st">'Model'</span>: name, <span class="st">'RMSE'</span>: rmse, <span class="st">'MAE'</span>: mae, <span class="st">'MAPE (%)'</span>: mape})</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>results_df <span class="op">=</span> pd.DataFrame(results).sort_values(<span class="st">'RMSE'</span>)</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>results_df.index <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(results_df)<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>results_df.index.name <span class="op">=</span> <span class="st">'Rank'</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">55</span>)</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"MODEL COMPARISON — Premium Ratio (out-of-sample)"</span>)</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"="</span> <span class="op">*</span> <span class="dv">55</span>)</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_df.to_string())</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>best <span class="op">=</span> results_df.iloc[<span class="dv">0</span>]</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Best: </span><span class="sc">{</span>best[<span class="st">'Model'</span>]<span class="sc">}</span><span class="ss">  (RMSE = </span><span class="sc">{</span>best[<span class="st">'RMSE'</span>]<span class="sc">:.0f}</span><span class="ss">, MAPE = </span><span class="sc">{</span>best[<span class="st">'MAPE (%)'</span>]<span class="sc">:.1f}</span><span class="ss">%)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>=======================================================
+MODEL COMPARISON — Premium Ratio (out-of-sample)
+=======================================================
+                  Model         RMSE          MAE   MAPE (%)
+Rank                                                        
+1                 Ridge   571.591590   445.710556  29.816024
+2                 ARIMA   602.360056   460.339847  30.583347
+3          ETS (damped)   891.172682   698.147733  46.475905
+4     State-Space (LLT)  1137.832065   988.661252  62.076061
+5         Random Forest  1532.062988  1069.631827  48.428385
+6            Neural Net  2102.175682  2029.371834  99.362754
+
+Best: Ridge  (RMSE = 572, MAPE = 29.8%)</code></pre>
+</div>
+</div>
+<div id="277a9a7a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:29:08.885531Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:29:08.885314Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:29:09.317010Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:29:09.314280Z&quot;}}" data-execution_count="15">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ── All forecasts in one plot ────────────────────────────────────</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">5</span>))</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel A: premium ratio</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> axes[<span class="dv">0</span>]</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>ax.plot(train_q[<span class="st">'date'</span>], train_q[<span class="st">'premium_ratio'</span>],</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-o'</span>, color<span class="op">=</span>UOE_GREY, markersize<span class="op">=</span><span class="dv">4</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">'Training'</span>)</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], actual, <span class="st">'-s'</span>, color<span class="op">=</span>UOE_RED,</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>        markersize<span class="op">=</span><span class="dv">8</span>, linewidth<span class="op">=</span><span class="dv">3</span>, label<span class="op">=</span><span class="st">'Actual'</span>, zorder<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>colours_map <span class="op">=</span> {</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'ARIMA'</span>: UOE_BLUE, <span class="st">'ETS (damped)'</span>: UOE_GOLD,</span>
+<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'State-Space (LLT)'</span>: UOE_GREEN, <span class="st">'Ridge'</span>: <span class="st">'#9D4EDD'</span>,</span>
+<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Random Forest'</span>: <span class="st">'#118AB2'</span>, <span class="st">'Neural Net'</span>: UOE_PURPLE,</span>
+<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, fc <span class="kw">in</span> forecasts.items():</span>
+<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    fc_arr <span class="op">=</span> np.array(fc)[:<span class="bu">len</span>(actual)]</span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    ax.plot(test_q[<span class="st">'date'</span>], fc_arr, <span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, alpha<span class="op">=</span><span class="fl">0.7</span>,</span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span>colours_map.get(name, UOE_GREY), label<span class="op">=</span>name)</span>
+<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Premium ratio (kg novillo equiv.)'</span>)</span>
+<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'(A)  Premium Ratio Forecasts'</span>)</span>
+<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">8</span>, loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-26"><a href="#cb29-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Panel B: converted to nominal ARS</span></span>
+<span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> axes[<span class="dv">1</span>]</span>
+<span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>novillo_test_arr <span class="op">=</span> np.array(novillo_test[:<span class="bu">len</span>(actual)])</span>
+<span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>actual_nom <span class="op">=</span> actual <span class="op">*</span> novillo_test_arr</span>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-31"><a href="#cb29-31" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], actual_nom <span class="op">/</span> <span class="fl">1e6</span>, <span class="st">'-s'</span>, color<span class="op">=</span>UOE_RED,</span>
+<span id="cb29-32"><a href="#cb29-32" aria-hidden="true" tabindex="-1"></a>        markersize<span class="op">=</span><span class="dv">8</span>, linewidth<span class="op">=</span><span class="dv">3</span>, label<span class="op">=</span><span class="st">'Actual'</span>, zorder<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb29-33"><a href="#cb29-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-34"><a href="#cb29-34" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, fc <span class="kw">in</span> forecasts.items():</span>
+<span id="cb29-35"><a href="#cb29-35" aria-hidden="true" tabindex="-1"></a>    fc_arr <span class="op">=</span> np.array(fc)[:<span class="bu">len</span>(actual)]</span>
+<span id="cb29-36"><a href="#cb29-36" aria-hidden="true" tabindex="-1"></a>    fc_nom <span class="op">=</span> fc_arr <span class="op">*</span> novillo_test_arr</span>
+<span id="cb29-37"><a href="#cb29-37" aria-hidden="true" tabindex="-1"></a>    ax.plot(test_q[<span class="st">'date'</span>], fc_nom <span class="op">/</span> <span class="fl">1e6</span>, <span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>, alpha<span class="op">=</span><span class="fl">0.7</span>,</span>
+<span id="cb29-38"><a href="#cb29-38" aria-hidden="true" tabindex="-1"></a>            color<span class="op">=</span>colours_map.get(name, UOE_GREY), label<span class="op">=</span>name)</span>
+<span id="cb29-39"><a href="#cb29-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-40"><a href="#cb29-40" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'ARS (millions)'</span>)</span>
+<span id="cb29-41"><a href="#cb29-41" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'(B)  Nominal Price Forecasts'</span>)</span>
+<span id="cb29-42"><a href="#cb29-42" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">8</span>, loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb29-43"><a href="#cb29-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-44"><a href="#cb29-44" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb29-45"><a href="#cb29-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="forecasting_angus_pedigree_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="f2bff737" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:29:09.319807Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:29:09.319579Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:29:09.455744Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:29:09.454640Z&quot;}}" data-execution_count="16">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ── MAPE bar chart ───────────────────────────────────────────────</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">4</span>))</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>bars <span class="op">=</span> ax.barh(results_df[<span class="st">'Model'</span>], results_df[<span class="st">'MAPE (%)'</span>],</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span>[colours_map.get(m, UOE_GREY) <span class="cf">for</span> m <span class="kw">in</span> results_df[<span class="st">'Model'</span>]],</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>               edgecolor<span class="op">=</span><span class="st">'white'</span>)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'MAPE (%)'</span>)</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Mean Absolute Percentage Error — Premium Ratio'</span>)</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>ax.invert_yaxis()</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bar, val <span class="kw">in</span> <span class="bu">zip</span>(bars, results_df[<span class="st">'MAPE (%)'</span>]):</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>    ax.text(bar.get_width() <span class="op">+</span> <span class="fl">0.5</span>, bar.get_y() <span class="op">+</span> bar.get_height()<span class="op">/</span><span class="dv">2</span>,</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f'</span><span class="sc">{</span>val<span class="sc">:.1f}</span><span class="ss">%'</span>, va<span class="op">=</span><span class="st">'center'</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="forecasting_angus_pedigree_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ensemble-forecast-policy-implications" class="level2">
+<h2 class="anchored" data-anchor-id="ensemble-forecast-policy-implications">10 — Ensemble Forecast &amp; Policy Implications</h2>
+<div id="52d093aa" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-10T15:29:09.458871Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-10T15:29:09.458634Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-10T15:29:09.681643Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-10T15:29:09.680738Z&quot;}}" data-execution_count="17">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Ensemble of top 3 ────────────────────────────────────────────</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>top3 <span class="op">=</span> results_df[<span class="st">'Model'</span>].head(<span class="dv">3</span>).tolist()</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>ensemble <span class="op">=</span> np.mean([np.array(forecasts[m])[:<span class="bu">len</span>(actual)] <span class="cf">for</span> m <span class="kw">in</span> top3], axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>forecasts[<span class="st">'Ensemble (top 3)'</span>] <span class="op">=</span> ensemble</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>rmse_e <span class="op">=</span> np.sqrt(mean_squared_error(actual, ensemble))</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>mape_e <span class="op">=</span> np.mean(np.<span class="bu">abs</span>((actual <span class="op">-</span> ensemble) <span class="op">/</span> actual)) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Ensemble of: </span><span class="sc">{</span><span class="st">', '</span><span class="sc">.</span>join(top3)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  RMSE : </span><span class="sc">{</span>rmse_e<span class="sc">:.0f}</span><span class="ss">"</span>)</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  MAPE : </span><span class="sc">{</span>mape_e<span class="sc">:.1f}</span><span class="ss">%"</span>)</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to nominal</span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>ens_nominal <span class="op">=</span> ensemble <span class="op">*</span> np.array(novillo_test[:<span class="bu">len</span>(actual)])</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">13</span>, <span class="dv">5</span>))</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>ax.plot(quarterly[<span class="st">'date'</span>], quarterly[<span class="st">'avg_price_ars'</span>] <span class="op">/</span> <span class="fl">1e6</span>,</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-o'</span>, color<span class="op">=</span>UOE_GREY, markersize<span class="op">=</span><span class="dv">4</span>, alpha<span class="op">=</span><span class="fl">0.5</span>, label<span class="op">=</span><span class="st">'Historical (nominal)'</span>)</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], test_q[<span class="st">'avg_price_ars'</span>] <span class="op">/</span> <span class="fl">1e6</span>,</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-s'</span>, color<span class="op">=</span>UOE_RED, markersize<span class="op">=</span><span class="dv">8</span>, linewidth<span class="op">=</span><span class="dv">3</span>, label<span class="op">=</span><span class="st">'Actual (test)'</span>)</span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>ax.plot(test_q[<span class="st">'date'</span>], ens_nominal <span class="op">/</span> <span class="fl">1e6</span>,</span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">'-^'</span>, color<span class="op">=</span>UOE_BLUE, markersize<span class="op">=</span><span class="dv">8</span>, linewidth<span class="op">=</span><span class="fl">2.5</span>,</span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="ss">f'Ensemble (MAPE=</span><span class="sc">{</span>mape_e<span class="sc">:.1f}</span><span class="ss">%)'</span>)</span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'ARS (millions per head)'</span>)</span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Ensemble Forecast — Pedigree Angus Vaquillona Price'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ensemble of: Ridge, ARIMA, ETS (damped)
+  RMSE : 295
+  MAPE : 14.8%</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="forecasting_angus_pedigree_files/figure-html/cell-18-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="policy-commentary" class="level3">
+<h3 class="anchored" data-anchor-id="policy-commentary">Policy Commentary</h3>
+<div style="background-color: #f8f4f0; border-left: 4px solid #7A2318; padding: 16px; margin: 16px 0;">
+<p><strong>For breeders and cabañas:</strong></p>
+<ul>
+<li>The <strong>premium ratio</strong> has been remarkably stable at 1,000–2,500× the novillo kg price for PC vaquillonas and 2,000–10,000× for elite pedigree animals. This means the genetics premium has <em>held its value</em> through Argentina’s extreme inflation — pedigree cattle are a genuine store of value for breeders.</li>
+<li><strong>Palermo auctions</strong> command a persistent premium (roughly 2–3× the PC average), reflecting the championship-certification effect and the buyer pool at the Expo Rural.</li>
+<li>Timing matters: <strong>autumn expos</strong> (May) tend to see more moderate averages than the mid-year Palermo peak.</li>
+</ul>
+<p><strong>For policymakers and breed associations:</strong></p>
+<ul>
+<li>A rising premium ratio signals healthy demand for genetic improvement — encouraging for Argentina’s long-run beef competitiveness.</li>
+<li>If the ratio falls persistently (as it did during the 2020 COVID disruption), it may indicate that breeders are under cash-flow pressure and liquidating genetics below replacement cost.</li>
+<li>The Sociedad Argentina de Angus and MAGyP can use these forecasts to track whether breeding incentives (tax credits, export permits for genetics) are maintaining the premium.</li>
+</ul>
+<p><strong>For students:</strong></p>
+<ul>
+<li>This is a textbook example of <strong>thin-market forecasting</strong>: fewer than 30 observations per year, irregular timing, and extreme heterogeneity. The premium-ratio transformation is a practical trick that applies to any market where the “raw” price is dominated by an external trend (inflation, exchange rate, commodity cycle).</li>
+<li>Compare the performance of simple models (ARIMA, ETS) against ML and neural networks on this small sample — parsimony usually wins when data is scarce.</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="how-to-update-this-notebook" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-update-this-notebook">11 — How to Update This Notebook</h2>
+<ol type="1">
+<li><strong>Add new auction results</strong> to the <code>auction_data</code> list in the data cell. The latest results are published at <a href="https://www.entresurcosycorralesya.com/resultados-cabanas-exposiciones.php">Entre Surcos y Corrales — Resultados de Cabañas</a> and in <a href="https://www.angusdigital.com.ar/">Angus Digital</a>.</li>
+<li><strong>Update the novillo reference prices</strong> in <code>novillo_monthly</code> (from <a href="https://www.consignatarias.com.ar/mercado">consignatarias.com.ar/mercado</a>).</li>
+<li><strong>Re-run all cells</strong> — the premium ratio, model fits, and comparison will refresh automatically.</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Source</th>
+<th style="text-align: left;">What to look for</th>
+<th style="text-align: left;">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Entre Surcos y Corrales</td>
+<td style="text-align: left;">Cabaña auction results (vaquillonas PED/PC)</td>
+<td style="text-align: left;"><a href="https://www.entresurcosycorralesya.com/resultados-cabanas-exposiciones.php">resultados-cabanas-exposiciones.php</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Angus Digital</td>
+<td style="text-align: left;">Expo results, breed statistics</td>
+<td style="text-align: left;"><a href="https://www.angusdigital.com.ar/">angusdigital.com.ar</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sociedad Argentina de Angus</td>
+<td style="text-align: left;">Official breed data</td>
+<td style="text-align: left;"><a href="https://www.angus.org.ar/">angus.org.ar</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">La Nación Campo</td>
+<td style="text-align: left;">Palermo / Expo Rural coverage</td>
+<td style="text-align: left;"><a href="https://www.lanacion.com.ar/economia/campo/">lanacion.com.ar/campo</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Consignatarias</td>
+<td style="text-align: left;">Commercial novillo price</td>
+<td style="text-align: left;"><a href="https://www.consignatarias.com.ar/mercado">consignatarias.com.ar/mercado</a></td>
+</tr>
+</tbody>
+</table>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/juanignaciozurita\.github\.io\/juanzurita\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Juan Zurita · School of Economics, The University of Edinburgh</p>
+</div>   
+    <div class="nav-footer-center">
+<p><a href="jobmarket.qmd">Job Market</a> · <a href="cv.qmd">CV</a> · <a href="research.qmd">Research</a></p>
+</div>
+    <div class="nav-footer-right">
+<p><a href="mailto:juan.zurita@ed.ac.uk">juan.zurita@ed.ac.uk</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

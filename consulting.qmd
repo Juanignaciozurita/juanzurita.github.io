@@ -81,6 +81,23 @@ The notebook is designed to be updated with the latest market data from the <a h
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/consulting/cattle-forecast/forecasting_cattle_prices.ipynb)
 :::
 
+### Forecasting Pedigree Angus Vaquillona Prices
+
+<p style="text-align: justify;">
+A companion notebook focuses on the <b>pedigree and Puro Controlado (PC) Angus vaquillona</b> market — the elite breeding-stock auctions held at major expositions such as <b>Palermo</b>, the <b>Expo Angus de Otoño</b>, and regional breed shows. Auction results are compiled from <a href="https://www.entresurcosycorralesya.com/resultados-cabanas-exposiciones.php">Entre Surcos y Corrales — Resultados de Cabañas</a>, the <a href="https://www.angus.org.ar/">Sociedad Argentina de Angus</a>, and press coverage.
+</p>
+
+<p style="text-align: justify;">
+The key analytical insight is expressing pedigree prices as a <b>premium ratio</b> over the commercial novillo price — this removes the dominant inflation trend and isolates the genetics premium, which is far more stable and forecastable. Six forecasting models (ARIMA, ETS, state-space, Ridge, Random Forest, and neural network) are compared on this transformed series.
+</p>
+
+::: {.callout-note}
+## Interactive notebook
+[**Open the Pedigree Angus Vaquillona notebook →**](consulting/cattle-forecast/forecasting_angus_pedigree.ipynb)
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/consulting/cattle-forecast/forecasting_angus_pedigree.ipynb)
+:::
+
 ---
 
 ## Data partnerships

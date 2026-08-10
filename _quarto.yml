@@ -82,6 +82,8 @@ website:
             href: consulting.qmd
           - text: "Forecasting Cattle Prices in Argentina"
             href: consulting/cattle-forecast/forecasting_cattle_prices.ipynb
+          - text: "Forecasting Pedigree Angus Vaquillonas"
+            href: consulting/cattle-forecast/forecasting_angus_pedigree.ipynb
       - text: CV
         href: cv.qmd
     right:
