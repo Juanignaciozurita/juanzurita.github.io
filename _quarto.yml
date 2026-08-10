@@ -84,6 +84,8 @@ website:
             href: consulting/cattle-forecast/forecasting_cattle_prices.ipynb
           - text: "Forecasting Pedigree Angus Vaquillonas"
             href: consulting/cattle-forecast/forecasting_angus_pedigree.ipynb
+          - text: "Forecasting Pedigree Angus Terneras"
+            href: consulting/cattle-forecast/forecasting_ternera_pedigree.ipynb
       - text: CV
         href: cv.qmd
     right:
