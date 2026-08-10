@@ -246,6 +246,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#forecasting-cattle-prices-in-argentina" id="toc-forecasting-cattle-prices-in-argentina" class="nav-link" data-scroll-target="#forecasting-cattle-prices-in-argentina">Forecasting Cattle Prices in Argentina</a>
   <ul class="collapse">
   <li><a href="#forecasting-pedigree-angus-vaquillona-prices" id="toc-forecasting-pedigree-angus-vaquillona-prices" class="nav-link" data-scroll-target="#forecasting-pedigree-angus-vaquillona-prices">Forecasting Pedigree Angus Vaquillona Prices</a></li>
+  <li><a href="#forecasting-pedigree-angus-ternera-prices" id="toc-forecasting-pedigree-angus-ternera-prices" class="nav-link" data-scroll-target="#forecasting-pedigree-angus-ternera-prices">Forecasting Pedigree Angus Ternera Prices</a></li>
   </ul></li>
   <li><a href="#data-partnerships" id="toc-data-partnerships" class="nav-link" data-scroll-target="#data-partnerships">Data partnerships</a></li>
   <li><a href="#get-in-touch" id="toc-get-in-touch" class="nav-link" data-scroll-target="#get-in-touch">Get in touch</a></li>
@@ -331,7 +332,6 @@ The notebook is designed to be updated with the latest market data from the <a h
 <figcaption>Open in Colab</figcaption>
 </figure>
 </div>
-<p>📄 <strong>Executive Summary (PDF):</strong> <a href="consulting/cattle-forecast/Forecasting_Argentine_Cattle_Prices_EN.pdf" target="_blank">English</a> | <a href="consulting/cattle-forecast/Pronostico_Precios_Ganado_Argentino_ES.pdf" target="_blank">Español</a></p>
 </div>
 </div>
 <section id="forecasting-pedigree-angus-vaquillona-prices" class="level3">
@@ -359,7 +359,34 @@ The key analytical insight is expressing pedigree prices as a <b>premium ratio</
 <figcaption>Open in Colab</figcaption>
 </figure>
 </div>
-<p>📄 <strong>Executive Summary (PDF):</strong> <a href="consulting/cattle-forecast/Forecasting_Pedigree_Angus_Vaquillona_EN.pdf" target="_blank">English</a> | <a href="consulting/cattle-forecast/Pronostico_Vaquillonas_Angus_Pedigree_ES.pdf" target="_blank">Español</a></p>
+</div>
+</div>
+</section>
+<section id="forecasting-pedigree-angus-ternera-prices" class="level3">
+<h3 class="anchored" data-anchor-id="forecasting-pedigree-angus-ternera-prices">Forecasting Pedigree Angus Ternera Prices</h3>
+<p style="text-align: justify;">
+A further companion notebook extends the analysis to <b>pedigree and Puro Controlado (PC) Angus terneras</b> (female calves) — a younger category that offers buyers early access to elite genetics at a lower entry price. Terneras are sold at the same major expositions (Palermo, Expo Angus de Otoño, regional breed shows) and data is drawn from the same sources.
+</p>
+<p style="text-align: justify;">
+The same <b>premium-ratio</b> approach is applied: ternera prices per head divided by the contemporary novillo price per kilogram. Ternera ratios are typically lower than vaquillona ratios — reflecting the younger age and smaller frame — but follow similar cyclical patterns. The top-3 ensemble (Random Forest, Ridge, ARIMA) achieves a <b>MAPE of 16.7%</b> on the test set.
+</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Interactive notebook
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="./consulting/cattle-forecast/forecasting_ternera_pedigree.html"><strong>Open the Pedigree Angus Ternera notebook →</strong></a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/consulting/cattle-forecast/forecasting_ternera_pedigree.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid figure-img"></a></p>
+<figcaption>Open in Colab</figcaption>
+</figure>
+</div>
 </div>
 </div>
 <hr>

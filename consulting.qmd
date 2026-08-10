@@ -79,9 +79,6 @@ The notebook is designed to be updated with the latest market data from the <a h
 [**Open the Forecasting Cattle Prices notebook →**](consulting/cattle-forecast/forecasting_cattle_prices.ipynb)
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/consulting/cattle-forecast/forecasting_cattle_prices.ipynb)
-
-📄 **Executive Summary (PDF):**
-[English](consulting/cattle-forecast/Forecasting_Argentine_Cattle_Prices_EN.pdf){target="_blank"} | [Español](consulting/cattle-forecast/Pronostico_Precios_Ganado_Argentino_ES.pdf){target="_blank"}
 :::
 
 ### Forecasting Pedigree Angus Vaquillona Prices
@@ -99,9 +96,23 @@ The key analytical insight is expressing pedigree prices as a <b>premium ratio</
 [**Open the Pedigree Angus Vaquillona notebook →**](consulting/cattle-forecast/forecasting_angus_pedigree.ipynb)
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/consulting/cattle-forecast/forecasting_angus_pedigree.ipynb)
+:::
 
-📄 **Executive Summary (PDF):**
-[English](consulting/cattle-forecast/Forecasting_Pedigree_Angus_Vaquillona_EN.pdf){target="_blank"} | [Español](consulting/cattle-forecast/Pronostico_Vaquillonas_Angus_Pedigree_ES.pdf){target="_blank"}
+### Forecasting Pedigree Angus Ternera Prices
+
+<p style="text-align: justify;">
+A further companion notebook extends the analysis to <b>pedigree and Puro Controlado (PC) Angus terneras</b> (female calves) — a younger category that offers buyers early access to elite genetics at a lower entry price. Terneras are sold at the same major expositions (Palermo, Expo Angus de Otoño, regional breed shows) and data is drawn from the same sources.
+</p>
+
+<p style="text-align: justify;">
+The same <b>premium-ratio</b> approach is applied: ternera prices per head divided by the contemporary novillo price per kilogram. Ternera ratios are typically lower than vaquillona ratios — reflecting the younger age and smaller frame — but follow similar cyclical patterns. The top-3 ensemble (Random Forest, Ridge, ARIMA) achieves a <b>MAPE of 16.7%</b> on the test set.
+</p>
+
+::: {.callout-note}
+## Interactive notebook
+[**Open the Pedigree Angus Ternera notebook →**](consulting/cattle-forecast/forecasting_ternera_pedigree.ipynb)
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/consulting/cattle-forecast/forecasting_ternera_pedigree.ipynb)
 :::
 
 ---
