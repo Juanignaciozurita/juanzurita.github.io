@@ -63,19 +63,7 @@ I am a Fix-Term Lecturer in Economics at the School of Economics at the Universi
 </p>
 
 ::: {.statement-frame}
-
-::: {.columns}
-
-::: {.column width="50%"}
-## [Research Statement](files/Research_Statement - Juan Zurita - 2026.pdf)
-:::
-
-::: {.column width="50%"}
-## [Teaching Statement](files/Juan Zurita Teaching Statement - 2026.pdf)
-:::
-
-:::
-
+&nbsp;
 :::
 
 
