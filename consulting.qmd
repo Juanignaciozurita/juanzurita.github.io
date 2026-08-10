@@ -58,6 +58,31 @@ My research on these questions is published in peer-reviewed journals (*Internat
 
 ---
 
+## Forecasting Cattle Prices in Argentina
+
+<p style="text-align: justify;">
+Argentina is one of the world's largest beef producers, and cattle prices at the <b>Mercado Agroganadero S.A.</b> (Buenos Aires) are a key indicator for agricultural policy, rural incomes, and consumer inflation. I maintain an open, reproducible forecasting notebook that applies <b>eight different techniques</b> — ARIMA, exponential smoothing, VAR, state-space models, Ridge and Lasso regression, Random Forest, and LSTM neural networks — to the monthly <em>Indice Novillo</em> (steer price, ARS/kg live weight).
+</p>
+
+<p style="text-align: justify;">
+The notebook is designed to be updated with the latest market data from the <a href="https://www.consignatarias.com.ar/mercado">Consignatarias</a> and <a href="https://www.magyp.gob.ar/sitio/areas/bovinos/informacion_sectorial/">MAGyP monthly reports</a>, and the forecasts refresh automatically. It draws on official data from the Ministerio de Agricultura, Ganadería y Pesca, as well as market intelligence from <a href="https://entresurcosycorralesya.com/">Entre Surcos y Corrales</a> and the <a href="https://www.angus.org.ar/">Sociedad Argentina de Angus</a>.
+</p>
+
+**Who benefits:**
+
+- **Policymakers** — anticipate inflationary pressures from beef prices (7–8 % of Argentina's CPI basket) and calibrate export quotas.
+- **Breeders & feedlot operators** — time retention and sale decisions using seasonal forecasts and feed-cost sensitivity analysis.
+- **Students & researchers** — a rich case study in non-stationary, inflation-affected time series with model comparison across seven families.
+
+::: {.callout-note}
+## Interactive notebook
+[**Open the Forecasting Cattle Prices notebook →**](consulting/cattle-forecast/forecasting_cattle_prices.ipynb)
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Juanignaciozurita/juanzurita.github.io/blob/main/consulting/cattle-forecast/forecasting_cattle_prices.ipynb)
+:::
+
+---
+
 ## Data partnerships
 
 If your organisation holds proprietary data on lending, wages, or household finances, a research partnership can turn it into credible, independent insight — see [Open Collaborations](opencollaborations.qmd) for what I offer and what I would need.
