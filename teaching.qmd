@@ -66,21 +66,3 @@ University of Technology Sydney, Australia — 2022
 Universidad Católica Argentina, Argentina — 2011–2015  
 [Teaching Evaluation Reports](#)
 
----
-
-## Lectures
-
-- [Deep Learning for Macroeconomics]()
-
-<!-- --- -->
-
-<!-- ## Tutorials -->
-
-<!-- - Applications of Econometrics -->
-
----
-
-### Letters of Recommendation
-
-For undergraduate recommendation letters, please follow these instructions:  
-[Click here](#)
