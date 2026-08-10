@@ -93,7 +93,7 @@ Does household debt affect the size of the fiscal multiplier? We investigate the
 
 
 ::: {.paper-links}
-[PDF](files/jmp.pdf) \  [Job Market Page](jobmarket.qmd)
+[PDF](files/jmp.pdf) \  [Slides](files/jmp_slides.pdf) \  [Job Market Page](jobmarket.qmd)
 :::
 
 <details>

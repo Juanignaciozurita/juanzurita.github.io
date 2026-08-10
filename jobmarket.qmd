@@ -16,7 +16,7 @@ I am on the 2026–27 academic job market. My research sits at the intersection 
 <span class="journal-tag">Job Market Paper</span>
 
 ::: {.paper-links}
-[Download PDF](files/jmp.pdf)
+[Download PDF](files/jmp.pdf) \  [Slides](files/jmp_slides.pdf)
 :::
 
 <details>
