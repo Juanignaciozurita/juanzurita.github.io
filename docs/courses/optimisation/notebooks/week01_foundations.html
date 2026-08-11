@@ -140,11 +140,15 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 <meta property="og:title" content="Week 1 — Mathematical Foundations – Juan Zurita">
 <meta property="og:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week01_foundations_files/figure-html/cell-2-output-1.png">
 <meta property="og:site_name" content="Juan Zurita">
+<meta property="og:image:height" content="190">
+<meta property="og:image:width" content="989">
 <meta name="twitter:title" content="Week 1 — Mathematical Foundations – Juan Zurita">
 <meta name="twitter:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week01_foundations_files/figure-html/cell-2-output-1.png">
+<meta name="twitter:image-height" content="190">
+<meta name="twitter:image-width" content="989">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -350,7 +354,7 @@ window.Quarto = {
 <p>A <strong>set</strong> is a collection of distinct objects. In economics we work mostly with subsets of <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 <p><strong>Key definitions:</strong> - <strong>Open set:</strong> A set <span class="math inline">\(S\)</span> is open if for every <span class="math inline">\(x \in S\)</span> there exists <span class="math inline">\(\varepsilon &gt; 0\)</span> such that <span class="math inline">\(B(x, \varepsilon) \subset S\)</span>. - <strong>Closed set:</strong> A set is closed if its complement is open, or equivalently if it contains all its limit points. - <strong>Bounded set:</strong> <span class="math inline">\(S\)</span> is bounded if there exists <span class="math inline">\(M &gt; 0\)</span> such that <span class="math inline">\(\|x\| \leq M\)</span> for all <span class="math inline">\(x \in S\)</span>. - <strong>Compact set:</strong> A set that is both closed and bounded (in <span class="math inline">\(\mathbb{R}^n\)</span>, by the Heine–Borel theorem).</p>
 <p><strong>Why this matters for optimisation:</strong> The <em>Extreme Value Theorem</em> guarantees that a continuous function on a compact set attains its maximum and minimum.</p>
-<div id="eb4eec7b" class="cell">
+<div id="eb4eec7b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:32.266503Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:32.266272Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:33.363495Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:33.361809Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -377,13 +381,20 @@ window.Quarto = {
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week01_foundations_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="vectors-and-matrices-with-numpy" class="level2">
 <h2 class="anchored" data-anchor-id="vectors-and-matrices-with-numpy">2. Vectors and Matrices with NumPy</h2>
 <p>A <strong>vector</strong> <span class="math inline">\(\mathbf{x} \in \mathbb{R}^n\)</span> is an ordered list of <span class="math inline">\(n\)</span> real numbers. A <strong>matrix</strong> <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> is a rectangular array.</p>
 <p>Key operations: addition, scalar multiplication, dot product, matrix multiplication.</p>
-<div id="b2253d95" class="cell">
+<div id="b2253d95" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:33.366191Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:33.365873Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:33.374473Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:33.373462Z&quot;}}" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vectors</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.array([<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>])</span>
@@ -394,19 +405,46 @@ window.Quarto = {
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"3x ="</span>, <span class="dv">3</span> <span class="op">*</span> x)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"x . y ="</span>, np.dot(x, y))</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"||x|| ="</span>, np.linalg.norm(x))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x = [1 2 3]
+y = [4 5 6]
+x + y = [5 7 9]
+3x = [3 6 9]
+x . y = 32
+||x|| = 3.7416573867739413</code></pre>
 </div>
-<div id="1e96e58c" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrices</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>],</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>],</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A =</span><span class="ch">\n</span><span class="st">"</span>, A)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">A @ B =</span><span class="ch">\n</span><span class="st">"</span>, A <span class="op">@</span> B)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">A^T =</span><span class="ch">\n</span><span class="st">"</span>, A.T)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">det(A) ="</span>, np.linalg.det(A))</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">A^{-1} =</span><span class="ch">\n</span><span class="st">"</span>, np.linalg.inv(A))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="1e96e58c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:33.376939Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:33.376549Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:33.384614Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:33.383524Z&quot;}}" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrices</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>],</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">5</span>, <span class="dv">6</span>],</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>              [<span class="dv">7</span>, <span class="dv">8</span>]])</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"A =</span><span class="ch">\n</span><span class="st">"</span>, A)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">A @ B =</span><span class="ch">\n</span><span class="st">"</span>, A <span class="op">@</span> B)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">A^T =</span><span class="ch">\n</span><span class="st">"</span>, A.T)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">det(A) ="</span>, np.linalg.det(A))</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">A^{-1} =</span><span class="ch">\n</span><span class="st">"</span>, np.linalg.inv(A))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A =
+ [[1 2]
+ [3 4]]
+
+A @ B =
+ [[19 22]
+ [43 50]]
+
+A^T =
+ [[1 3]
+ [2 4]]
+
+det(A) = -2.0000000000000004
+
+A^{-1} =
+ [[-2.   1. ]
+ [ 1.5 -0.5]]</code></pre>
+</div>
 </div>
 </section>
 <section id="eigenvalues-and-positive-definiteness" class="level2">
@@ -414,64 +452,76 @@ window.Quarto = {
 <p>For a square matrix <span class="math inline">\(A\)</span>, a scalar <span class="math inline">\(\lambda\)</span> is an <strong>eigenvalue</strong> if <span class="math inline">\(A\mathbf{v} = \lambda \mathbf{v}\)</span> for some non-zero vector <span class="math inline">\(\mathbf{v}\)</span> (the <strong>eigenvector</strong>).</p>
 <p>A symmetric matrix <span class="math inline">\(A\)</span> is: - <strong>Positive definite</strong> if all eigenvalues <span class="math inline">\(&gt; 0\)</span> (equivalently, <span class="math inline">\(\mathbf{x}^T A \mathbf{x} &gt; 0\)</span> for all <span class="math inline">\(\mathbf{x} \neq 0\)</span>) - <strong>Positive semi-definite</strong> if all eigenvalues <span class="math inline">\(\geq 0\)</span> - <strong>Negative definite</strong> if all eigenvalues <span class="math inline">\(&lt; 0\)</span></p>
 <p><strong>Why this matters:</strong> The Hessian matrix being negative definite at a critical point confirms a local maximum.</p>
-<div id="dcaaddf2" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Eigenvalues and definiteness</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>H1 <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="dv">0</span>],</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">0</span>, <span class="dv">3</span>]])  <span class="co"># Positive definite</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>H2 <span class="op">=</span> np.array([[<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>],</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">0</span>, <span class="op">-</span><span class="dv">2</span>]])  <span class="co"># Negative definite</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>H3 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">0</span>],</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>]])  <span class="co"># Indefinite</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, H <span class="kw">in</span> [(<span class="st">"H1"</span>, H1), (<span class="st">"H2"</span>, H2), (<span class="st">"H3"</span>, H3)]:</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    eigvals <span class="op">=</span> np.linalg.eigvalsh(H)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">all</span>(eigvals <span class="op">&gt;</span> <span class="dv">0</span>):</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        classification <span class="op">=</span> <span class="st">"Positive definite"</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="bu">all</span>(eigvals <span class="op">&lt;</span> <span class="dv">0</span>):</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        classification <span class="op">=</span> <span class="st">"Negative definite"</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="bu">all</span>(eigvals <span class="op">&gt;=</span> <span class="dv">0</span>):</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        classification <span class="op">=</span> <span class="st">"Positive semi-definite"</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="bu">all</span>(eigvals <span class="op">&lt;=</span> <span class="dv">0</span>):</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        classification <span class="op">=</span> <span class="st">"Negative semi-definite"</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        classification <span class="op">=</span> <span class="st">"Indefinite"</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">: eigenvalues = </span><span class="sc">{</span>eigvals<span class="sc">}</span><span class="ss">  -&gt;  </span><span class="sc">{</span>classification<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="dcaaddf2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:33.386907Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:33.386707Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:33.394124Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:33.393511Z&quot;}}" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Eigenvalues and definiteness</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>H1 <span class="op">=</span> np.array([[<span class="dv">2</span>, <span class="dv">0</span>],</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">0</span>, <span class="dv">3</span>]])  <span class="co"># Positive definite</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>H2 <span class="op">=</span> np.array([[<span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>],</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">0</span>, <span class="op">-</span><span class="dv">2</span>]])  <span class="co"># Negative definite</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>H3 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">0</span>],</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>               [<span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>]])  <span class="co"># Indefinite</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, H <span class="kw">in</span> [(<span class="st">"H1"</span>, H1), (<span class="st">"H2"</span>, H2), (<span class="st">"H3"</span>, H3)]:</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    eigvals <span class="op">=</span> np.linalg.eigvalsh(H)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">all</span>(eigvals <span class="op">&gt;</span> <span class="dv">0</span>):</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        classification <span class="op">=</span> <span class="st">"Positive definite"</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="bu">all</span>(eigvals <span class="op">&lt;</span> <span class="dv">0</span>):</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>        classification <span class="op">=</span> <span class="st">"Negative definite"</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="bu">all</span>(eigvals <span class="op">&gt;=</span> <span class="dv">0</span>):</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        classification <span class="op">=</span> <span class="st">"Positive semi-definite"</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> <span class="bu">all</span>(eigvals <span class="op">&lt;=</span> <span class="dv">0</span>):</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        classification <span class="op">=</span> <span class="st">"Negative semi-definite"</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        classification <span class="op">=</span> <span class="st">"Indefinite"</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">: eigenvalues = </span><span class="sc">{</span>eigvals<span class="sc">}</span><span class="ss">  -&gt;  </span><span class="sc">{</span>classification<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>H1: eigenvalues = [2. 3.]  -&gt;  Positive definite
+H2: eigenvalues = [-2. -1.]  -&gt;  Negative definite
+H3: eigenvalues = [-1.  1.]  -&gt;  Indefinite</code></pre>
+</div>
 </div>
 </section>
 <section id="functions-and-level-curves" class="level2">
 <h2 class="anchored" data-anchor-id="functions-and-level-curves">4. Functions and Level Curves</h2>
 <p>A function <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}\)</span> maps vectors to scalars. In economics, utility functions <span class="math inline">\(u(x_1, x_2)\)</span> and production functions <span class="math inline">\(f(K, L)\)</span> are key examples.</p>
 <p><strong>Level curves</strong> (or indifference curves) are the sets <span class="math inline">\(\{\mathbf{x} : f(\mathbf{x}) = c\}\)</span> for constant <span class="math inline">\(c\)</span>.</p>
-<div id="92796e5e" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a function and its level curves</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">100</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">100</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>X1, X2 <span class="op">=</span> np.meshgrid(x1, x2)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> X1<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> X2<span class="op">**</span><span class="dv">2</span>  <span class="co"># Simple quadratic</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Surface plot (as contour fill)</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>cp <span class="op">=</span> axes[<span class="dv">0</span>].contourf(X1, X2, Z, levels<span class="op">=</span><span class="dv">20</span>, cmap<span class="op">=</span><span class="st">'RdYlBu_r'</span>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>plt.colorbar(cp, ax<span class="op">=</span>axes[<span class="dv">0</span>])</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'$f(x_1, x_2) = x_1^2 + x_2^2$'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">'$x_1$'</span>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'$x_2$'</span>)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Level curves</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>cs <span class="op">=</span> axes[<span class="dv">1</span>].contour(X1, X2, Z, levels<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">9</span>], colors<span class="op">=</span><span class="st">'darkred'</span>)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].clabel(cs, inline<span class="op">=</span><span class="va">True</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Level curves'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'$x_1$'</span>)</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'$x_2$'</span>)</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_aspect(<span class="st">'equal'</span>)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="92796e5e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:33.395874Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:33.395705Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:33.955359Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:33.954348Z&quot;}}" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a function and its level curves</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">100</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">100</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>X1, X2 <span class="op">=</span> np.meshgrid(x1, x2)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> X1<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> X2<span class="op">**</span><span class="dv">2</span>  <span class="co"># Simple quadratic</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Surface plot (as contour fill)</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>cp <span class="op">=</span> axes[<span class="dv">0</span>].contourf(X1, X2, Z, levels<span class="op">=</span><span class="dv">20</span>, cmap<span class="op">=</span><span class="st">'RdYlBu_r'</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>plt.colorbar(cp, ax<span class="op">=</span>axes[<span class="dv">0</span>])</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'$f(x_1, x_2) = x_1^2 + x_2^2$'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">'$x_1$'</span>)</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_ylabel(<span class="st">'$x_2$'</span>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Level curves</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>cs <span class="op">=</span> axes[<span class="dv">1</span>].contour(X1, X2, Z, levels<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">9</span>], colors<span class="op">=</span><span class="st">'darkred'</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].clabel(cs, inline<span class="op">=</span><span class="va">True</span>, fontsize<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Level curves'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'$x_1$'</span>)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_ylabel(<span class="st">'$x_2$'</span>)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_aspect(<span class="st">'equal'</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week01_foundations_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="exercises" class="level2">
@@ -480,24 +530,24 @@ window.Quarto = {
 <summary>
 <b>Exercise 1:</b> Given <span class="math inline">\(A = \begin{pmatrix} 4 &amp; 2 \\ 2 &amp; 3 \end{pmatrix}\)</span>, compute the eigenvalues and determine if <span class="math inline">\(A\)</span> is positive definite.
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">4</span>, <span class="dv">2</span>], [<span class="dv">2</span>, <span class="dv">3</span>]])</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>eigvals <span class="op">=</span> np.linalg.eigvalsh(A)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Eigenvalues:"</span>, eigvals)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Positive definite:"</span>, <span class="bu">all</span>(eigvals <span class="op">&gt;</span> <span class="dv">0</span>))</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Eigenvalues: [1.764, 5.236] -&gt; Yes, positive definite</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">4</span>, <span class="dv">2</span>], [<span class="dv">2</span>, <span class="dv">3</span>]])</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>eigvals <span class="op">=</span> np.linalg.eigvalsh(A)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Eigenvalues:"</span>, eigvals)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Positive definite:"</span>, <span class="bu">all</span>(eigvals <span class="op">&gt;</span> <span class="dv">0</span>))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Eigenvalues: [1.764, 5.236] -&gt; Yes, positive definite</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <details>
 <summary>
 <b>Exercise 2:</b> Plot the level curves of <span class="math inline">\(f(x_1, x_2) = x_1 x_2\)</span> (a Cobb–Douglas-style function). What shape are they?
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>X1, X2 <span class="op">=</span> np.meshgrid(np.linspace(<span class="fl">0.1</span>, <span class="dv">5</span>, <span class="dv">100</span>), np.linspace(<span class="fl">0.1</span>, <span class="dv">5</span>, <span class="dv">100</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> X1 <span class="op">*</span> X2</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>cs <span class="op">=</span> plt.contour(X1, X2, Z, levels<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">12</span>], colors<span class="op">=</span><span class="st">'darkred'</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.clabel(cs, inline<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'$x_1$'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'$x_2$'</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Level curves of $f = x_1 x_2$'</span>)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># They are rectangular hyperbolas.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>X1, X2 <span class="op">=</span> np.meshgrid(np.linspace(<span class="fl">0.1</span>, <span class="dv">5</span>, <span class="dv">100</span>), np.linspace(<span class="fl">0.1</span>, <span class="dv">5</span>, <span class="dv">100</span>))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> X1 <span class="op">*</span> X2</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>cs <span class="op">=</span> plt.contour(X1, X2, Z, levels<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">12</span>], colors<span class="op">=</span><span class="st">'darkred'</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>plt.clabel(cs, inline<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'$x_1$'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'$x_2$'</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Level curves of $f = x_1 x_2$'</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># They are rectangular hyperbolas.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 

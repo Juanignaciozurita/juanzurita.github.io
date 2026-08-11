@@ -140,11 +140,15 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 <meta property="og:title" content="Week 10 — Frontiers – Juan Zurita">
 <meta property="og:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week10_frontiers_files/figure-html/cell-2-output-2.png">
 <meta property="og:site_name" content="Juan Zurita">
+<meta property="og:image:height" content="490">
+<meta property="og:image:width" content="790">
 <meta name="twitter:title" content="Week 10 — Frontiers – Juan Zurita">
 <meta name="twitter:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week10_frontiers_files/figure-html/cell-2-output-2.png">
+<meta name="twitter:image-height" content="490">
+<meta name="twitter:image-width" content="790">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -349,7 +353,7 @@ window.Quarto = {
 <p>Real economies face uncertainty. The Bellman equation becomes:</p>
 <p><span class="math display">\[V(k, z) = \max_c \{ u(c) + \beta \, \mathbb{E}[V(k', z') \mid z] \}\]</span></p>
 <p>where <span class="math inline">\(z\)</span> is a stochastic productivity shock following a Markov process.</p>
-<div id="73ad2334" class="cell">
+<div id="73ad2334" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:52:44.477617Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:52:44.477404Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:52:49.175402Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:52:49.173679Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -389,6 +393,16 @@ window.Quarto = {
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>ax.legend()<span class="op">;</span> ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Converged in 294 iterations</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week10_frontiers_files/figure-html/cell-2-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="stochastic-gradient-descent-sgd" class="level2">
@@ -398,42 +412,49 @@ window.Quarto = {
 <p><strong>SGD</strong> approximates the gradient using a random mini-batch rather than all <span class="math inline">\(N\)</span> samples:</p>
 <p><span class="math display">\[\theta_{t+1} = \theta_t - \alpha_t \nabla \ell(\theta_t; x_i, y_i)\]</span></p>
 <p>Variants: momentum, Adam, RMSProp — all trade off noise reduction against convergence speed.</p>
-<div id="7efb1150" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SGD for linear regression</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>n, d <span class="op">=</span> <span class="dv">1000</span>, <span class="dv">5</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.randn(n, d)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>true_theta <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>, <span class="fl">0.5</span>, <span class="dv">3</span>, <span class="op">-</span><span class="fl">1.5</span>])</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> X <span class="op">@</span> true_theta <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>np.random.randn(n)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Full gradient descent vs SGD</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>theta_gd <span class="op">=</span> np.zeros(d)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>theta_sgd <span class="op">=</span> np.zeros(d)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> <span class="fl">0.01</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">32</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>losses_gd, losses_sgd <span class="op">=</span> [], []</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">200</span>):</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Full GD</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    grad_full <span class="op">=</span> (<span class="dv">2</span><span class="op">/</span>n) <span class="op">*</span> X.T <span class="op">@</span> (X <span class="op">@</span> theta_gd <span class="op">-</span> y)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    theta_gd <span class="op">-=</span> lr <span class="op">*</span> grad_full</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    losses_gd.append(np.mean((X <span class="op">@</span> theta_gd <span class="op">-</span> y)<span class="op">**</span><span class="dv">2</span>))</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># SGD</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    idx <span class="op">=</span> np.random.choice(n, batch_size, replace<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    grad_batch <span class="op">=</span> (<span class="dv">2</span><span class="op">/</span>batch_size) <span class="op">*</span> X[idx].T <span class="op">@</span> (X[idx] <span class="op">@</span> theta_sgd <span class="op">-</span> y[idx])</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    theta_sgd <span class="op">-=</span> lr <span class="op">*</span> grad_batch</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    losses_sgd.append(np.mean((X <span class="op">@</span> theta_sgd <span class="op">-</span> y)<span class="op">**</span><span class="dv">2</span>))</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>ax.plot(losses_gd, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Full GD'</span>)</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>ax.plot(losses_sgd, <span class="st">'r-'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="ss">f'SGD (batch=</span><span class="sc">{</span>batch_size<span class="sc">}</span><span class="ss">)'</span>)</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Iteration'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'MSE Loss'</span>)</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Gradient Descent vs Stochastic Gradient Descent'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>ax.legend()<span class="op">;</span> ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="7efb1150" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:52:49.178011Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:52:49.177645Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:52:49.409508Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:52:49.407956Z&quot;}}" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SGD for linear regression</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>n, d <span class="op">=</span> <span class="dv">1000</span>, <span class="dv">5</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.randn(n, d)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>true_theta <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="op">-</span><span class="dv">2</span>, <span class="fl">0.5</span>, <span class="dv">3</span>, <span class="op">-</span><span class="fl">1.5</span>])</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> X <span class="op">@</span> true_theta <span class="op">+</span> <span class="fl">0.5</span><span class="op">*</span>np.random.randn(n)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Full gradient descent vs SGD</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>theta_gd <span class="op">=</span> np.zeros(d)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>theta_sgd <span class="op">=</span> np.zeros(d)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> <span class="fl">0.01</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">32</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>losses_gd, losses_sgd <span class="op">=</span> [], []</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">200</span>):</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Full GD</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    grad_full <span class="op">=</span> (<span class="dv">2</span><span class="op">/</span>n) <span class="op">*</span> X.T <span class="op">@</span> (X <span class="op">@</span> theta_gd <span class="op">-</span> y)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    theta_gd <span class="op">-=</span> lr <span class="op">*</span> grad_full</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    losses_gd.append(np.mean((X <span class="op">@</span> theta_gd <span class="op">-</span> y)<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># SGD</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    idx <span class="op">=</span> np.random.choice(n, batch_size, replace<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    grad_batch <span class="op">=</span> (<span class="dv">2</span><span class="op">/</span>batch_size) <span class="op">*</span> X[idx].T <span class="op">@</span> (X[idx] <span class="op">@</span> theta_sgd <span class="op">-</span> y[idx])</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    theta_sgd <span class="op">-=</span> lr <span class="op">*</span> grad_batch</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    losses_sgd.append(np.mean((X <span class="op">@</span> theta_sgd <span class="op">-</span> y)<span class="op">**</span><span class="dv">2</span>))</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>ax.plot(losses_gd, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Full GD'</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>ax.plot(losses_sgd, <span class="st">'r-'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="ss">f'SGD (batch=</span><span class="sc">{</span>batch_size<span class="sc">}</span><span class="ss">)'</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Iteration'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'MSE Loss'</span>)</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Gradient Descent vs Stochastic Gradient Descent'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>ax.legend()<span class="op">;</span> ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week10_frontiers_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="course-summary" class="level2">
@@ -493,15 +514,15 @@ window.Quarto = {
 <summary>
 <b>Exercise 1:</b> Implement SGD with momentum: <span class="math inline">\(v_{t+1} = \gamma v_t + \alpha \nabla \ell\)</span> and <span class="math inline">\(\theta_{t+1} = \theta_t - v_{t+1}\)</span>. Does it converge faster than vanilla SGD?
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>theta_mom <span class="op">=</span> np.zeros(d)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.zeros(d)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="fl">0.9</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">200</span>):</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    idx <span class="op">=</span> np.random.choice(n, batch_size)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> (<span class="dv">2</span><span class="op">/</span>batch_size) <span class="op">*</span> X[idx].T <span class="op">@</span> (X[idx] <span class="op">@</span> theta_mom <span class="op">-</span> y[idx])</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> gamma <span class="op">*</span> v <span class="op">+</span> lr <span class="op">*</span> grad</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    theta_mom <span class="op">-=</span> v</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Yes, momentum smooths the updates and typically converges faster.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>theta_mom <span class="op">=</span> np.zeros(d)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.zeros(d)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>gamma <span class="op">=</span> <span class="fl">0.9</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">200</span>):</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    idx <span class="op">=</span> np.random.choice(n, batch_size)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    grad <span class="op">=</span> (<span class="dv">2</span><span class="op">/</span>batch_size) <span class="op">*</span> X[idx].T <span class="op">@</span> (X[idx] <span class="op">@</span> theta_mom <span class="op">-</span> y[idx])</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    v <span class="op">=</span> gamma <span class="op">*</span> v <span class="op">+</span> lr <span class="op">*</span> grad</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    theta_mom <span class="op">-=</span> v</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Yes, momentum smooths the updates and typically converges faster.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 

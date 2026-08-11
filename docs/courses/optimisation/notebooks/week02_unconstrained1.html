@@ -140,11 +140,15 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 <meta property="og:title" content="Week 2 — Unconstrained Optimisation I – Juan Zurita">
 <meta property="og:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week02_unconstrained1_files/figure-html/cell-2-output-1.png">
 <meta property="og:site_name" content="Juan Zurita">
+<meta property="og:image:height" content="590">
+<meta property="og:image:width" content="759">
 <meta name="twitter:title" content="Week 2 — Unconstrained Optimisation I – Juan Zurita">
 <meta name="twitter:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week02_unconstrained1_files/figure-html/cell-2-output-1.png">
+<meta name="twitter:image-height" content="590">
+<meta name="twitter:image-width" content="759">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -350,7 +354,7 @@ window.Quarto = {
 <p>For <span class="math inline">\(f: \mathbb{R}^n \to \mathbb{R}\)</span>, the <strong>gradient</strong> is the vector of partial derivatives:</p>
 <p><span class="math display">\[\nabla f(\mathbf{x}) = \begin{pmatrix} \frac{\partial f}{\partial x_1} \\ \vdots \\ \frac{\partial f}{\partial x_n} \end{pmatrix}\]</span></p>
 <p>The gradient points in the direction of steepest ascent. At a local optimum, <span class="math inline">\(\nabla f(\mathbf{x}^*) = \mathbf{0}\)</span> (first-order necessary condition).</p>
-<div id="64647914" class="cell">
+<div id="64647914" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:38.679602Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:38.679311Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:39.522756Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:39.521758Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -384,6 +388,13 @@ window.Quarto = {
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'$x_1$'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'$x_2$'</span>)</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week02_unconstrained1_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="the-hessian-matrix" class="level2">
@@ -391,7 +402,7 @@ window.Quarto = {
 <p>The <strong>Hessian</strong> is the matrix of second partial derivatives:</p>
 <p><span class="math display">\[H_f(\mathbf{x}) = \begin{pmatrix} \frac{\partial^2 f}{\partial x_1^2} &amp; \frac{\partial^2 f}{\partial x_1 \partial x_2} \\ \frac{\partial^2 f}{\partial x_2 \partial x_1} &amp; \frac{\partial^2 f}{\partial x_2^2} \end{pmatrix}\]</span></p>
 <p><strong>Second-order conditions</strong> at a critical point <span class="math inline">\(\mathbf{x}^*\)</span> where <span class="math inline">\(\nabla f = 0\)</span>: - <span class="math inline">\(H\)</span> negative definite <span class="math inline">\(\Rightarrow\)</span> local <strong>maximum</strong> - <span class="math inline">\(H\)</span> positive definite <span class="math inline">\(\Rightarrow\)</span> local <strong>minimum</strong> - <span class="math inline">\(H\)</span> indefinite <span class="math inline">\(\Rightarrow\)</span> <strong>saddle point</strong></p>
-<div id="6d04d2f1" class="cell">
+<div id="6d04d2f1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:39.525905Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:39.525517Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:39.533540Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:39.532361Z&quot;}}" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Classify critical points using the Hessian</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># f(x,y) = x^3 - 3xy^2  (monkey saddle has critical point at origin)</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># f(x,y) = x^2 + y^2     (minimum at origin)</span></span>
@@ -414,6 +425,20 @@ window.Quarto = {
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"f = </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  H = </span><span class="sc">{</span>H<span class="sc">.</span>tolist()<span class="sc">}</span><span class="ss">, eigenvalues = </span><span class="sc">{</span>eigvals<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  =&gt; </span><span class="sc">{</span>result<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>f = x^2 + y^2 (minimum)
+  H = [[2, 0], [0, 2]], eigenvalues = [2. 2.]
+  =&gt; Local MINIMUM (H positive definite)
+
+f = -(x^2 + y^2) (maximum)
+  H = [[-2, 0], [0, -2]], eigenvalues = [-2. -2.]
+  =&gt; Local MAXIMUM (H negative definite)
+
+f = x^2 - y^2 (saddle)
+  H = [[2, 0], [0, -2]], eigenvalues = [-2.  2.]
+  =&gt; SADDLE POINT (H indefinite)
+</code></pre>
+</div>
 </div>
 </section>
 <section id="convexity-and-concavity" class="level2">
@@ -422,37 +447,44 @@ window.Quarto = {
 <p>Geometrically: the line segment between any two points on the graph lies above (or on) the graph.</p>
 <p><strong>Key result:</strong> If <span class="math inline">\(f\)</span> is convex, then every local minimum is a <strong>global</strong> minimum. If <span class="math inline">\(f\)</span> is concave, every local maximum is a global maximum.</p>
 <p><strong>Characterisation via the Hessian:</strong> If <span class="math inline">\(f\)</span> is twice differentiable, <span class="math inline">\(f\)</span> is convex <span class="math inline">\(\iff H_f(\mathbf{x})\)</span> is positive semi-definite for all <span class="math inline">\(\mathbf{x}\)</span>.</p>
-<div id="10b75e5e" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualising convexity</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">200</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">4</span>))</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Convex function</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(x, x<span class="op">**</span><span class="dv">2</span>, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Secant line between (-1.5, 2.25) and (1.5, 2.25)</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot([<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>], [(<span class="op">-</span><span class="fl">1.5</span>)<span class="op">**</span><span class="dv">2</span>, (<span class="fl">1.5</span>)<span class="op">**</span><span class="dv">2</span>], <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].fill_between(x[(x<span class="op">&gt;=-</span><span class="fl">1.5</span>)<span class="op">&amp;</span>(x<span class="op">&lt;=</span><span class="fl">1.5</span>)],</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                     x[(x<span class="op">&gt;=-</span><span class="fl">1.5</span>)<span class="op">&amp;</span>(x<span class="op">&lt;=</span><span class="fl">1.5</span>)]<span class="op">**</span><span class="dv">2</span>,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                     np.interp(x[(x<span class="op">&gt;=-</span><span class="fl">1.5</span>)<span class="op">&amp;</span>(x<span class="op">&lt;=</span><span class="fl">1.5</span>)], [<span class="op">-</span><span class="fl">1.5</span>,<span class="fl">1.5</span>], [<span class="fl">2.25</span>,<span class="fl">2.25</span>]),</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>                     alpha<span class="op">=</span><span class="fl">0.2</span>, color<span class="op">=</span><span class="st">'red'</span>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Convex: $f(x)=x^2$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Concave function</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(x, <span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">4</span>, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot([<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>], [<span class="op">-</span>(<span class="op">-</span><span class="fl">1.5</span>)<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">4</span>, <span class="op">-</span>(<span class="fl">1.5</span>)<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">4</span>], <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Concave: $f(x)=-x^2+4$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Neither</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].plot(x, x<span class="op">**</span><span class="dv">3</span>, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].plot([<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>], [(<span class="op">-</span><span class="fl">1.5</span>)<span class="op">**</span><span class="dv">3</span>, (<span class="fl">1.5</span>)<span class="op">**</span><span class="dv">3</span>], <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">'Neither: $f(x)=x^3$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axes:</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'$x$'</span>)</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="10b75e5e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:39.535542Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:39.535326Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:40.098967Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:40.097674Z&quot;}}" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualising convexity</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">200</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">4</span>))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Convex function</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(x, x<span class="op">**</span><span class="dv">2</span>, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Secant line between (-1.5, 2.25) and (1.5, 2.25)</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot([<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>], [(<span class="op">-</span><span class="fl">1.5</span>)<span class="op">**</span><span class="dv">2</span>, (<span class="fl">1.5</span>)<span class="op">**</span><span class="dv">2</span>], <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].fill_between(x[(x<span class="op">&gt;=-</span><span class="fl">1.5</span>)<span class="op">&amp;</span>(x<span class="op">&lt;=</span><span class="fl">1.5</span>)],</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                     x[(x<span class="op">&gt;=-</span><span class="fl">1.5</span>)<span class="op">&amp;</span>(x<span class="op">&lt;=</span><span class="fl">1.5</span>)]<span class="op">**</span><span class="dv">2</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                     np.interp(x[(x<span class="op">&gt;=-</span><span class="fl">1.5</span>)<span class="op">&amp;</span>(x<span class="op">&lt;=</span><span class="fl">1.5</span>)], [<span class="op">-</span><span class="fl">1.5</span>,<span class="fl">1.5</span>], [<span class="fl">2.25</span>,<span class="fl">2.25</span>]),</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                     alpha<span class="op">=</span><span class="fl">0.2</span>, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Convex: $f(x)=x^2$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Concave function</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(x, <span class="op">-</span>x<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">4</span>, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot([<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>], [<span class="op">-</span>(<span class="op">-</span><span class="fl">1.5</span>)<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">4</span>, <span class="op">-</span>(<span class="fl">1.5</span>)<span class="op">**</span><span class="dv">2</span><span class="op">+</span><span class="dv">4</span>], <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Concave: $f(x)=-x^2+4$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Neither</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].plot(x, x<span class="op">**</span><span class="dv">3</span>, <span class="st">'b-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].plot([<span class="op">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>], [(<span class="op">-</span><span class="fl">1.5</span>)<span class="op">**</span><span class="dv">3</span>, (<span class="fl">1.5</span>)<span class="op">**</span><span class="dv">3</span>], <span class="st">'r--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">2</span>].set_title(<span class="st">'Neither: $f(x)=x^3$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axes:</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">'$x$'</span>)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week02_unconstrained1_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="economic-application-profit-maximisation" class="level2">
@@ -461,39 +493,50 @@ window.Quarto = {
 <p>Profit: <span class="math inline">\(\pi(q) = pq - C(q)\)</span></p>
 <p><strong>First-order condition:</strong> <span class="math inline">\(\pi'(q) = p - C'(q) = 0 \Rightarrow p = MC(q)\)</span></p>
 <p><strong>Second-order condition:</strong> <span class="math inline">\(\pi''(q) = -C''(q) &lt; 0 \Rightarrow C''(q) &gt; 0\)</span> (increasing marginal cost)</p>
-<div id="26c9356a" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Profit maximisation</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">10</span>  <span class="co"># price</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">200</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> q<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">6</span><span class="op">*</span>q<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">15</span><span class="op">*</span>q <span class="op">+</span> <span class="dv">10</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> p <span class="op">*</span> q</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>profit <span class="op">=</span> R <span class="op">-</span> C</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># FOC: p - (3q^2 - 12q + 15) = 0  =&gt;  3q^2 - 12q + (15 - p) = 0</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>a, b, c <span class="op">=</span> <span class="dv">3</span>, <span class="op">-</span><span class="dv">12</span>, (<span class="dv">15</span> <span class="op">-</span> p)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>q_star <span class="op">=</span> (<span class="op">-</span>b <span class="op">+</span> np.sqrt(b<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>a<span class="op">*</span>c)) <span class="op">/</span> (<span class="dv">2</span><span class="op">*</span>a)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(q, R, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Revenue $R(q)$'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(q, C, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Cost $C(q)$'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].axvline(q_star, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">'Quantity $q$'</span>)<span class="op">;</span> axes[<span class="dv">0</span>].set_ylabel(<span class="st">'$'</span>)</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Revenue and Cost'</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(q, profit, <span class="st">'g-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axvline(q_star, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="ss">f'$q^* = </span><span class="sc">{</span>q_star<span class="sc">:.2f}</span><span class="ss">$'</span>)</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'Quantity $q$'</span>)<span class="op">;</span> axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Profit $</span><span class="er">\</span><span class="st">pi$'</span>)</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Profit $</span><span class="er">\</span><span class="st">pi(q) = R(q) - C(q)$'</span>)</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">11</span>)</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Optimal quantity: q* = </span><span class="sc">{</span>q_star<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Maximum profit: pi* = </span><span class="sc">{</span>p<span class="op">*</span>q_star <span class="op">-</span> (q_star<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">6</span><span class="op">*</span>q_star<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">15</span><span class="op">*</span>q_star <span class="op">+</span> <span class="dv">10</span>)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="26c9356a" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:40.101316Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:40.101068Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:40.477494Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:40.476056Z&quot;}}" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Profit maximisation</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="dv">10</span>  <span class="co"># price</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">200</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> q<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">6</span><span class="op">*</span>q<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">15</span><span class="op">*</span>q <span class="op">+</span> <span class="dv">10</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> p <span class="op">*</span> q</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>profit <span class="op">=</span> R <span class="op">-</span> C</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># FOC: p - (3q^2 - 12q + 15) = 0  =&gt;  3q^2 - 12q + (15 - p) = 0</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>a, b, c <span class="op">=</span> <span class="dv">3</span>, <span class="op">-</span><span class="dv">12</span>, (<span class="dv">15</span> <span class="op">-</span> p)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>q_star <span class="op">=</span> (<span class="op">-</span>b <span class="op">+</span> np.sqrt(b<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>a<span class="op">*</span>c)) <span class="op">/</span> (<span class="dv">2</span><span class="op">*</span>a)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>))</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(q, R, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'Revenue $R(q)$'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].plot(q, C, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'Cost $C(q)$'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].axvline(q_star, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].legend(fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_xlabel(<span class="st">'Quantity $q$'</span>)<span class="op">;</span> axes[<span class="dv">0</span>].set_ylabel(<span class="st">'$'</span>)</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">0</span>].set_title(<span class="st">'Revenue and Cost'</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].plot(q, profit, <span class="st">'g-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].axvline(q_star, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="ss">f'$q^* = </span><span class="sc">{</span>q_star<span class="sc">:.2f}</span><span class="ss">$'</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_xlabel(<span class="st">'Quantity $q$'</span>)<span class="op">;</span> axes[<span class="dv">1</span>].set_ylabel(<span class="st">'Profit $</span><span class="er">\</span><span class="st">pi$'</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].set_title(<span class="st">'Profit $</span><span class="er">\</span><span class="st">pi(q) = R(q) - C(q)$'</span>)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>axes[<span class="dv">1</span>].legend(fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Optimal quantity: q* = </span><span class="sc">{</span>q_star<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Maximum profit: pi* = </span><span class="sc">{</span>p<span class="op">*</span>q_star <span class="op">-</span> (q_star<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">6</span><span class="op">*</span>q_star<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">15</span><span class="op">*</span>q_star <span class="op">+</span> <span class="dv">10</span>)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week02_unconstrained1_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Optimal quantity: q* = 3.5275
+Maximum profit: pi* = 3.1285</code></pre>
+</div>
 </div>
 </section>
 <section id="exercises" class="level2">
@@ -502,13 +545,13 @@ window.Quarto = {
 <summary>
 <b>Exercise 1:</b> Find the gradient and Hessian of <span class="math inline">\(f(x,y) = x^2 y + xy^2 - 3xy\)</span>. Locate and classify the critical points.
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gradient: [2xy + y^2 - 3y, x^2 + 2xy - 3x]</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting both to zero and solving:</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># y(2x + y - 3) = 0 and x(x + 2y - 3) = 0</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Critical points: (0,0), (3,0), (0,3), (1,1)</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the Hessian at each to classify.</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ... (students work through this analytically and verify numerically)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gradient: [2xy + y^2 - 3y, x^2 + 2xy - 3x]</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting both to zero and solving:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># y(2x + y - 3) = 0 and x(x + 2y - 3) = 0</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Critical points: (0,0), (3,0), (0,3), (1,1)</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the Hessian at each to classify.</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> fsolve</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># ... (students work through this analytically and verify numerically)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <details>
 <summary>

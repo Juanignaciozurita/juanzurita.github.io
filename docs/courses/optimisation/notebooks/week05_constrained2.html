@@ -140,11 +140,15 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 <meta property="og:title" content="Week 5 — Constrained Optimisation II – Juan Zurita">
 <meta property="og:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week05_constrained2_files/figure-html/cell-3-output-1.png">
 <meta property="og:site_name" content="Juan Zurita">
+<meta property="og:image:height" content="690">
+<meta property="og:image:width" content="790">
 <meta name="twitter:title" content="Week 5 — Constrained Optimisation II – Juan Zurita">
 <meta name="twitter:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week05_constrained2_files/figure-html/cell-3-output-1.png">
+<meta name="twitter:image-height" content="690">
+<meta name="twitter:image-width" content="790">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -353,7 +357,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="complementary-slackness">2. Complementary Slackness</h2>
 <p>The condition <span class="math inline">\(\mu_i g_i(\mathbf{x}) = 0\)</span> means: - Either the constraint is <strong>binding</strong> (<span class="math inline">\(g_i = 0\)</span>) and the multiplier can be positive (<span class="math inline">\(\mu_i &gt; 0\)</span>) - Or the constraint is <strong>slack</strong> (<span class="math inline">\(g_i &lt; 0\)</span>) and the multiplier must be zero (<span class="math inline">\(\mu_i = 0\)</span>)</p>
 <p>Economically: a resource has a positive shadow price only if it is fully used.</p>
-<div id="5392e72c" class="cell">
+<div id="5392e72c" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:52:04.699376Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:52:04.699116Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:52:05.561051Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:52:05.559102Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize</span>
@@ -374,73 +378,96 @@ window.Quarto = {
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x + y = </span><span class="sc">{</span><span class="bu">sum</span>(result.x)<span class="sc">:.4f}</span><span class="ss"> (constraint bound = 4)"</span>)</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="bu">abs</span>(<span class="bu">sum</span>(result.x) <span class="op">-</span> <span class="dv">4</span>) <span class="op">&lt;</span> <span class="fl">0.01</span>:</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"=&gt; Budget constraint is BINDING"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Optimal x* = (2.5000, 1.5000)
+Minimum f* = 0.5000
+x + y = 4.0000 (constraint bound = 4)
+=&gt; Budget constraint is BINDING</code></pre>
 </div>
-<div id="e615e785" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise the constrained optimisation</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">0.5</span>, <span class="dv">5</span>, <span class="dv">300</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">0.5</span>, <span class="dv">5</span>, <span class="dv">300</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>X1, X2 <span class="op">=</span> np.meshgrid(x1, x2)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> (X1<span class="op">-</span><span class="dv">3</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (X2<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">7</span>))</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Objective contours</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>cs <span class="op">=</span> ax.contour(X1, X2, Z, levels<span class="op">=</span>[<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">12</span>], cmap<span class="op">=</span><span class="st">'Blues'</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>ax.clabel(cs, inline<span class="op">=</span><span class="va">True</span>, fontsize<span class="op">=</span><span class="dv">9</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Feasible region</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ax.fill([<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>], alpha<span class="op">=</span><span class="fl">0.15</span>, color<span class="op">=</span><span class="st">'green'</span>, label<span class="op">=</span><span class="st">'Feasible region'</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">0</span>, <span class="dv">4</span>], [<span class="dv">4</span>, <span class="dv">0</span>], <span class="st">'g-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'g'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'g'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Unconstrained and constrained optima</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="dv">3</span>, <span class="dv">2</span>, <span class="st">'bo'</span>, markersize<span class="op">=</span><span class="dv">10</span>, label<span class="op">=</span><span class="st">'Unconstrained min (3, 2)'</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>ax.plot(result.x[<span class="dv">0</span>], result.x[<span class="dv">1</span>], <span class="st">'r*'</span>, markersize<span class="op">=</span><span class="dv">15</span>, label<span class="op">=</span><span class="ss">f'Constrained min (</span><span class="sc">{</span>result<span class="sc">.</span>x[<span class="dv">0</span>]<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>result<span class="sc">.</span>x[<span class="dv">1</span>]<span class="sc">:.1f}</span><span class="ss">)'</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span><span class="fl">0.5</span>, <span class="dv">5</span>)<span class="op">;</span> ax.set_ylim(<span class="op">-</span><span class="fl">0.5</span>, <span class="dv">5</span>)</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'$x_1$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'$x_2$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Constrained Optimisation with KKT'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">10</span>)<span class="op">;</span> ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="e615e785" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:52:05.564763Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:52:05.564416Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:52:05.956388Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:52:05.955529Z&quot;}}" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise the constrained optimisation</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">0.5</span>, <span class="dv">5</span>, <span class="dv">300</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="fl">0.5</span>, <span class="dv">5</span>, <span class="dv">300</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>X1, X2 <span class="op">=</span> np.meshgrid(x1, x2)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> (X1<span class="op">-</span><span class="dv">3</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (X2<span class="op">-</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">7</span>))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Objective contours</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>cs <span class="op">=</span> ax.contour(X1, X2, Z, levels<span class="op">=</span>[<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">12</span>], cmap<span class="op">=</span><span class="st">'Blues'</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ax.clabel(cs, inline<span class="op">=</span><span class="va">True</span>, fontsize<span class="op">=</span><span class="dv">9</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Feasible region</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>ax.fill([<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>], alpha<span class="op">=</span><span class="fl">0.15</span>, color<span class="op">=</span><span class="st">'green'</span>, label<span class="op">=</span><span class="st">'Feasible region'</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">0</span>, <span class="dv">4</span>], [<span class="dv">4</span>, <span class="dv">0</span>], <span class="st">'g-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'g'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">'g'</span>, linewidth<span class="op">=</span><span class="fl">1.5</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Unconstrained and constrained optima</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="dv">3</span>, <span class="dv">2</span>, <span class="st">'bo'</span>, markersize<span class="op">=</span><span class="dv">10</span>, label<span class="op">=</span><span class="st">'Unconstrained min (3, 2)'</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>ax.plot(result.x[<span class="dv">0</span>], result.x[<span class="dv">1</span>], <span class="st">'r*'</span>, markersize<span class="op">=</span><span class="dv">15</span>, label<span class="op">=</span><span class="ss">f'Constrained min (</span><span class="sc">{</span>result<span class="sc">.</span>x[<span class="dv">0</span>]<span class="sc">:.1f}</span><span class="ss">, </span><span class="sc">{</span>result<span class="sc">.</span>x[<span class="dv">1</span>]<span class="sc">:.1f}</span><span class="ss">)'</span>)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="op">-</span><span class="fl">0.5</span>, <span class="dv">5</span>)<span class="op">;</span> ax.set_ylim(<span class="op">-</span><span class="fl">0.5</span>, <span class="dv">5</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'$x_1$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'$x_2$'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Constrained Optimisation with KKT'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>ax.legend(fontsize<span class="op">=</span><span class="dv">10</span>)<span class="op">;</span> ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week05_constrained2_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="portfolio-choice-with-short-selling-constraints" class="level2">
 <h2 class="anchored" data-anchor-id="portfolio-choice-with-short-selling-constraints">3. Portfolio Choice with Short-Selling Constraints</h2>
 <p>An investor allocates wealth across <span class="math inline">\(n\)</span> assets to minimise portfolio variance <span class="math inline">\(\mathbf{w}^T \Sigma \mathbf{w}\)</span> subject to: - Target return: <span class="math inline">\(\mathbf{w}^T \boldsymbol{\mu} \geq r_{\min}\)</span> - Weights sum to 1: <span class="math inline">\(\sum w_i = 1\)</span> - No short-selling: <span class="math inline">\(w_i \geq 0\)</span></p>
 <p>The no-short-selling constraints are inequalities — KKT conditions apply.</p>
-<div id="2741b69d" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimum variance portfolio with no short-selling</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>mu <span class="op">=</span> np.array([<span class="fl">0.08</span>, <span class="fl">0.12</span>, <span class="fl">0.06</span>, <span class="fl">0.10</span>])  <span class="co"># expected returns</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Sigma <span class="op">=</span> np.array([</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.04</span>, <span class="fl">0.006</span>, <span class="fl">0.002</span>, <span class="fl">0.01</span>],</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.006</span>, <span class="fl">0.09</span>, <span class="fl">0.009</span>, <span class="fl">0.015</span>],</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.002</span>, <span class="fl">0.009</span>, <span class="fl">0.025</span>, <span class="fl">0.005</span>],</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.01</span>, <span class="fl">0.015</span>, <span class="fl">0.005</span>, <span class="fl">0.06</span>]</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>])</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>r_target <span class="op">=</span> <span class="fl">0.09</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> minimize(</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    fun<span class="op">=</span><span class="kw">lambda</span> w: w <span class="op">@</span> Sigma <span class="op">@</span> w,</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    x0<span class="op">=</span>np.ones(n)<span class="op">/</span>n,</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    constraints<span class="op">=</span>[</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>        {<span class="st">'type'</span>: <span class="st">'eq'</span>, <span class="st">'fun'</span>: <span class="kw">lambda</span> w: np.<span class="bu">sum</span>(w) <span class="op">-</span> <span class="dv">1</span>},</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        {<span class="st">'type'</span>: <span class="st">'ineq'</span>, <span class="st">'fun'</span>: <span class="kw">lambda</span> w: w <span class="op">@</span> mu <span class="op">-</span> r_target}</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    ],</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    bounds<span class="op">=</span>[(<span class="dv">0</span>, <span class="dv">1</span>)]<span class="op">*</span>n</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Optimal portfolio weights:"</span>)</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>assets <span class="op">=</span> [<span class="st">'Asset A'</span>, <span class="st">'Asset B'</span>, <span class="st">'Asset C'</span>, <span class="st">'Asset D'</span>]</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a, w <span class="kw">in</span> <span class="bu">zip</span>(assets, result.x):</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    binding <span class="op">=</span> <span class="st">"(binding: w=0)"</span> <span class="cf">if</span> w <span class="op">&lt;</span> <span class="fl">0.001</span> <span class="cf">else</span> <span class="st">""</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>w<span class="sc">:.4f}</span><span class="ss">  </span><span class="sc">{</span>binding<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Portfolio return: </span><span class="sc">{</span>result<span class="sc">.</span>x <span class="op">@</span> mu<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Portfolio std dev: </span><span class="sc">{</span>np<span class="sc">.</span>sqrt(result.fun)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2741b69d" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:52:05.958715Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:52:05.958522Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:52:05.970604Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:52:05.969892Z&quot;}}" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimum variance portfolio with no short-selling</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>mu <span class="op">=</span> np.array([<span class="fl">0.08</span>, <span class="fl">0.12</span>, <span class="fl">0.06</span>, <span class="fl">0.10</span>])  <span class="co"># expected returns</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Sigma <span class="op">=</span> np.array([</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.04</span>, <span class="fl">0.006</span>, <span class="fl">0.002</span>, <span class="fl">0.01</span>],</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.006</span>, <span class="fl">0.09</span>, <span class="fl">0.009</span>, <span class="fl">0.015</span>],</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.002</span>, <span class="fl">0.009</span>, <span class="fl">0.025</span>, <span class="fl">0.005</span>],</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">0.01</span>, <span class="fl">0.015</span>, <span class="fl">0.005</span>, <span class="fl">0.06</span>]</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>r_target <span class="op">=</span> <span class="fl">0.09</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> minimize(</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    fun<span class="op">=</span><span class="kw">lambda</span> w: w <span class="op">@</span> Sigma <span class="op">@</span> w,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    x0<span class="op">=</span>np.ones(n)<span class="op">/</span>n,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    constraints<span class="op">=</span>[</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        {<span class="st">'type'</span>: <span class="st">'eq'</span>, <span class="st">'fun'</span>: <span class="kw">lambda</span> w: np.<span class="bu">sum</span>(w) <span class="op">-</span> <span class="dv">1</span>},</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        {<span class="st">'type'</span>: <span class="st">'ineq'</span>, <span class="st">'fun'</span>: <span class="kw">lambda</span> w: w <span class="op">@</span> mu <span class="op">-</span> r_target}</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    bounds<span class="op">=</span>[(<span class="dv">0</span>, <span class="dv">1</span>)]<span class="op">*</span>n</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Optimal portfolio weights:"</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>assets <span class="op">=</span> [<span class="st">'Asset A'</span>, <span class="st">'Asset B'</span>, <span class="st">'Asset C'</span>, <span class="st">'Asset D'</span>]</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a, w <span class="kw">in</span> <span class="bu">zip</span>(assets, result.x):</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    binding <span class="op">=</span> <span class="st">"(binding: w=0)"</span> <span class="cf">if</span> w <span class="op">&lt;</span> <span class="fl">0.001</span> <span class="cf">else</span> <span class="st">""</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>w<span class="sc">:.4f}</span><span class="ss">  </span><span class="sc">{</span>binding<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Portfolio return: </span><span class="sc">{</span>result<span class="sc">.</span>x <span class="op">@</span> mu<span class="sc">:.4f}</span><span class="ss">"</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Portfolio std dev: </span><span class="sc">{</span>np<span class="sc">.</span>sqrt(result.fun)<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Optimal portfolio weights:
+  Asset A: 0.2878  
+  Asset B: 0.2353  
+  Asset C: 0.2238  
+  Asset D: 0.2532  
+
+Portfolio return: 0.0900
+Portfolio std dev: 0.1386</code></pre>
+</div>
 </div>
 </section>
 <section id="exercises" class="level2">

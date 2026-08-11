@@ -140,11 +140,15 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 <meta property="og:title" content="Week 9 — Dynamic Optimisation II – Juan Zurita">
 <meta property="og:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week09_dynamic2_files/figure-html/cell-2-output-2.png">
 <meta property="og:site_name" content="Juan Zurita">
+<meta property="og:image:height" content="490">
+<meta property="og:image:width" content="1189">
 <meta name="twitter:title" content="Week 9 — Dynamic Optimisation II – Juan Zurita">
 <meta name="twitter:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week09_dynamic2_files/figure-html/cell-2-output-2.png">
+<meta name="twitter:image-height" content="490">
+<meta name="twitter:image-width" content="1189">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -348,7 +352,7 @@ window.Quarto = {
 <p>The agent solves: <span class="math inline">\(V(k) = \max_c \{ u(c) + \beta V(k') \}\)</span> subject to <span class="math inline">\(k' = f(k) - c\)</span>.</p>
 <p><strong>Principle of optimality:</strong> An optimal policy has the property that regardless of the initial state and initial decision, the remaining decisions must constitute an optimal policy.</p>
 <p><strong>Contraction mapping theorem:</strong> Under standard assumptions, the Bellman operator <span class="math inline">\(T\)</span> is a contraction. Iterating <span class="math inline">\(V_{n+1} = TV_n\)</span> from any initial guess converges to the unique fixed point <span class="math inline">\(V^*\)</span>.</p>
-<div id="8ad42adc" class="cell">
+<div id="8ad42adc" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:52:36.593382Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:52:36.593196Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:52:39.359499Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:52:39.357578Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -406,6 +410,16 @@ window.Quarto = {
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Converged in 337 iterations</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week09_dynamic2_files/figure-html/cell-2-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="analytical-solution-log-utility-cobb-douglas" class="level2">
@@ -413,23 +427,34 @@ window.Quarto = {
 <p>With <span class="math inline">\(u(c)=\ln c\)</span> and <span class="math inline">\(f(k)=k^\alpha\)</span>, the value function has the closed form:</p>
 <p><span class="math display">\[V(k) = \frac{\alpha \beta}{(1-\alpha\beta)} \ln k + \text{const}\]</span></p>
 <p>and the optimal savings rate is <span class="math inline">\(s = \alpha \beta\)</span>, giving <span class="math inline">\(c^* = (1-\alpha\beta)k^\alpha\)</span>.</p>
-<div id="b43451bb" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare numerical solution to analytical</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>s_analytical <span class="op">=</span> alpha <span class="op">*</span> beta</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>c_analytical <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> alpha<span class="op">*</span>beta) <span class="op">*</span> k_grid<span class="op">**</span>alpha</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ax.plot(k_grid, c_policy, <span class="st">'r-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Numerical VFI'</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>ax.plot(k_grid, c_analytical, <span class="st">'b--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Analytical'</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Capital $k$'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'Consumption $c(k)$'</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Policy Function: Numerical vs Analytical'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>ax.legend()<span class="op">;</span> ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>max_err <span class="op">=</span> np.<span class="bu">max</span>(np.<span class="bu">abs</span>(c_policy <span class="op">-</span> c_analytical))</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Maximum error: </span><span class="sc">{</span>max_err<span class="sc">:.6f}</span><span class="ss">"</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Analytical savings rate: </span><span class="sc">{</span>s_analytical<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b43451bb" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:52:39.363137Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:52:39.362686Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:52:39.555075Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:52:39.553513Z&quot;}}" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare numerical solution to analytical</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>s_analytical <span class="op">=</span> alpha <span class="op">*</span> beta</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>c_analytical <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> alpha<span class="op">*</span>beta) <span class="op">*</span> k_grid<span class="op">**</span>alpha</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>ax.plot(k_grid, c_policy, <span class="st">'r-'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Numerical VFI'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>ax.plot(k_grid, c_analytical, <span class="st">'b--'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Analytical'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Capital $k$'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'Consumption $c(k)$'</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Policy Function: Numerical vs Analytical'</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ax.legend()<span class="op">;</span> ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>max_err <span class="op">=</span> np.<span class="bu">max</span>(np.<span class="bu">abs</span>(c_policy <span class="op">-</span> c_analytical))</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Maximum error: </span><span class="sc">{</span>max_err<span class="sc">:.6f}</span><span class="ss">"</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Analytical savings rate: </span><span class="sc">{</span>s_analytical<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week09_dynamic2_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Maximum error: 0.080234
+Analytical savings rate: 0.2880</code></pre>
+</div>
 </div>
 </section>
 <section id="exercises" class="level2">

@@ -140,11 +140,15 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 <meta property="og:title" content="Week 7 — Linear Programming – Juan Zurita">
 <meta property="og:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week07_linear_files/figure-html/cell-2-output-2.png">
 <meta property="og:site_name" content="Juan Zurita">
+<meta property="og:image:height" content="590">
+<meta property="og:image:width" content="790">
 <meta name="twitter:title" content="Week 7 — Linear Programming – Juan Zurita">
 <meta name="twitter:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week07_linear_files/figure-html/cell-2-output-2.png">
+<meta name="twitter:image-height" content="590">
+<meta name="twitter:image-width" content="790">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -348,7 +352,7 @@ window.Quarto = {
 <p>A linear program in standard form:</p>
 <p><span class="math display">\[\min \mathbf{c}^T \mathbf{x} \quad \text{s.t.} \quad A\mathbf{x} \leq \mathbf{b}, \quad \mathbf{x} \geq \mathbf{0}\]</span></p>
 <p><strong>Fundamental theorem of LP:</strong> If an LP has an optimal solution, there is one at a <strong>vertex</strong> (extreme point) of the feasible polyhedron.</p>
-<div id="7e68fe4b" class="cell">
+<div id="7e68fe4b" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:52:17.306677Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:52:17.306503Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:52:18.623422Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:52:18.621560Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> linprog</span>
@@ -392,6 +396,17 @@ window.Quarto = {
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>ax.legend()<span class="op">;</span> ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Optimal x = 3.00, y = 1.50
+Maximum value = 21.00</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week07_linear_files/figure-html/cell-2-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="lp-duality-and-shadow-prices" class="level2">
@@ -399,38 +414,46 @@ window.Quarto = {
 <p>Every LP has a <strong>dual</strong> problem. If the primal is <span class="math inline">\(\min \mathbf{c}^T\mathbf{x}\)</span> s.t. <span class="math inline">\(A\mathbf{x} \geq \mathbf{b}\)</span>, <span class="math inline">\(\mathbf{x} \geq 0\)</span>, the dual is <span class="math inline">\(\max \mathbf{b}^T\mathbf{y}\)</span> s.t. <span class="math inline">\(A^T\mathbf{y} \leq \mathbf{c}\)</span>, <span class="math inline">\(\mathbf{y} \geq 0\)</span>.</p>
 <p><strong>Strong duality:</strong> optimal primal value = optimal dual value.</p>
 <p>The dual variables are <strong>shadow prices</strong> — the rate of change of the optimal value with respect to the constraint bounds.</p>
-<div id="d531d516" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># LP with PuLP — the diet problem</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> pulp <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ImportError</span>:</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> subprocess</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    subprocess.check_call([<span class="st">'pip'</span>, <span class="st">'install'</span>, <span class="st">'pulp'</span>, <span class="st">'-q'</span>, <span class="st">'--break-system-packages'</span>])</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> pulp <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimise cost of a diet meeting nutritional requirements</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Foods: bread, milk, cheese</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> LpProblem(<span class="st">"Diet"</span>, LpMinimize)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>bread <span class="op">=</span> LpVariable(<span class="st">"bread"</span>, <span class="dv">0</span>)   <span class="co"># servings</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>milk <span class="op">=</span> LpVariable(<span class="st">"milk"</span>, <span class="dv">0</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>cheese <span class="op">=</span> LpVariable(<span class="st">"cheese"</span>, <span class="dv">0</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Costs per serving</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>prob <span class="op">+=</span> <span class="dv">2</span><span class="op">*</span>bread <span class="op">+</span> <span class="fl">3.5</span><span class="op">*</span>milk <span class="op">+</span> <span class="dv">5</span><span class="op">*</span>cheese, <span class="st">"Total cost"</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Nutritional constraints (minimum daily requirements)</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>prob <span class="op">+=</span> <span class="dv">3</span><span class="op">*</span>bread <span class="op">+</span> <span class="dv">8</span><span class="op">*</span>milk <span class="op">+</span> <span class="dv">6</span><span class="op">*</span>cheese <span class="op">&gt;=</span> <span class="dv">50</span>, <span class="st">"Protein"</span>     <span class="co"># grams</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>prob <span class="op">+=</span> <span class="dv">250</span><span class="op">*</span>bread <span class="op">+</span> <span class="dv">300</span><span class="op">*</span>milk <span class="op">+</span> <span class="dv">100</span><span class="op">*</span>cheese <span class="op">&gt;=</span> <span class="dv">2000</span>, <span class="st">"Calories"</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>prob <span class="op">+=</span> <span class="dv">2</span><span class="op">*</span>bread <span class="op">+</span> <span class="dv">10</span><span class="op">*</span>milk <span class="op">+</span> <span class="dv">8</span><span class="op">*</span>cheese <span class="op">&gt;=</span> <span class="dv">30</span>, <span class="st">"Calcium"</span>     <span class="co"># mg</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>prob.solve(PULP_CBC_CMD(msg<span class="op">=</span><span class="dv">0</span>))</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Status: </span><span class="sc">{</span>LpStatus[prob.status]<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Optimal diet:"</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> v <span class="kw">in</span> prob.variables():</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>v<span class="sc">.</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>v<span class="sc">.</span>varValue<span class="sc">:.2f}</span><span class="ss"> servings"</span>)</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Minimum daily cost: $</span><span class="sc">{</span>value(prob.objective)<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="d531d516" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:52:18.626682Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:52:18.626282Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:52:18.673396Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:52:18.672148Z&quot;}}" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># LP with PuLP — the diet problem</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> pulp <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">ImportError</span>:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> subprocess</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    subprocess.check_call([<span class="st">'pip'</span>, <span class="st">'install'</span>, <span class="st">'pulp'</span>, <span class="st">'-q'</span>, <span class="st">'--break-system-packages'</span>])</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> pulp <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimise cost of a diet meeting nutritional requirements</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Foods: bread, milk, cheese</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>prob <span class="op">=</span> LpProblem(<span class="st">"Diet"</span>, LpMinimize)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>bread <span class="op">=</span> LpVariable(<span class="st">"bread"</span>, <span class="dv">0</span>)   <span class="co"># servings</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>milk <span class="op">=</span> LpVariable(<span class="st">"milk"</span>, <span class="dv">0</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>cheese <span class="op">=</span> LpVariable(<span class="st">"cheese"</span>, <span class="dv">0</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Costs per serving</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>prob <span class="op">+=</span> <span class="dv">2</span><span class="op">*</span>bread <span class="op">+</span> <span class="fl">3.5</span><span class="op">*</span>milk <span class="op">+</span> <span class="dv">5</span><span class="op">*</span>cheese, <span class="st">"Total cost"</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Nutritional constraints (minimum daily requirements)</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>prob <span class="op">+=</span> <span class="dv">3</span><span class="op">*</span>bread <span class="op">+</span> <span class="dv">8</span><span class="op">*</span>milk <span class="op">+</span> <span class="dv">6</span><span class="op">*</span>cheese <span class="op">&gt;=</span> <span class="dv">50</span>, <span class="st">"Protein"</span>     <span class="co"># grams</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>prob <span class="op">+=</span> <span class="dv">250</span><span class="op">*</span>bread <span class="op">+</span> <span class="dv">300</span><span class="op">*</span>milk <span class="op">+</span> <span class="dv">100</span><span class="op">*</span>cheese <span class="op">&gt;=</span> <span class="dv">2000</span>, <span class="st">"Calories"</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>prob <span class="op">+=</span> <span class="dv">2</span><span class="op">*</span>bread <span class="op">+</span> <span class="dv">10</span><span class="op">*</span>milk <span class="op">+</span> <span class="dv">8</span><span class="op">*</span>cheese <span class="op">&gt;=</span> <span class="dv">30</span>, <span class="st">"Calcium"</span>     <span class="co"># mg</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>prob.solve(PULP_CBC_CMD(msg<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Status: </span><span class="sc">{</span>LpStatus[prob.status]<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Optimal diet:"</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> v <span class="kw">in</span> prob.variables():</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"  </span><span class="sc">{</span>v<span class="sc">.</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>v<span class="sc">.</span>varValue<span class="sc">:.2f}</span><span class="ss"> servings"</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Minimum daily cost: $</span><span class="sc">{</span>value(prob.objective)<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Status: Optimal
+Optimal diet:
+  bread: 0.91 servings
+  cheese: 0.00 servings
+  milk: 5.91 servings
+Minimum daily cost: $22.50</code></pre>
+</div>
 </div>
 </section>
 <section id="exercises" class="level2">
@@ -439,12 +462,12 @@ window.Quarto = {
 <summary>
 <b>Exercise 1:</b> A firm can produce 2 goods. Good 1 uses 2 hours of labour and 1 unit of capital; Good 2 uses 1 hour of labour and 3 units of capital. Available: 100 hours of labour, 90 units of capital. Profits: $30 per unit of Good 1, $50 per unit of Good 2. Formulate and solve as an LP. What are the shadow prices?
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> linprog</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> [<span class="op">-</span><span class="dv">30</span>, <span class="op">-</span><span class="dv">50</span>]  <span class="co"># negate for minimisation</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="dv">2</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">3</span>]]</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">90</span>]</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> linprog(c, A_ub<span class="op">=</span>A, b_ub<span class="op">=</span>b, bounds<span class="op">=</span>[(<span class="dv">0</span>,<span class="va">None</span>),(<span class="dv">0</span>,<span class="va">None</span>)])</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x1=</span><span class="sc">{</span>res<span class="sc">.</span>x[<span class="dv">0</span>]<span class="sc">:.1f}</span><span class="ss">, x2=</span><span class="sc">{</span>res<span class="sc">.</span>x[<span class="dv">1</span>]<span class="sc">:.1f}</span><span class="ss">, profit=$</span><span class="sc">{</span><span class="op">-</span>res<span class="sc">.</span>fun<span class="sc">:.0f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> linprog</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>c <span class="op">=</span> [<span class="op">-</span><span class="dv">30</span>, <span class="op">-</span><span class="dv">50</span>]  <span class="co"># negate for minimisation</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="dv">2</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">3</span>]]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="dv">100</span>, <span class="dv">90</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> linprog(c, A_ub<span class="op">=</span>A, b_ub<span class="op">=</span>b, bounds<span class="op">=</span>[(<span class="dv">0</span>,<span class="va">None</span>),(<span class="dv">0</span>,<span class="va">None</span>)])</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"x1=</span><span class="sc">{</span>res<span class="sc">.</span>x[<span class="dv">0</span>]<span class="sc">:.1f}</span><span class="ss">, x2=</span><span class="sc">{</span>res<span class="sc">.</span>x[<span class="dv">1</span>]<span class="sc">:.1f}</span><span class="ss">, profit=$</span><span class="sc">{</span><span class="op">-</span>res<span class="sc">.</span>fun<span class="sc">:.0f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 
 

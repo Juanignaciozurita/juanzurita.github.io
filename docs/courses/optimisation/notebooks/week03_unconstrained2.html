@@ -140,11 +140,15 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 <meta property="og:title" content="Week 3 — Unconstrained Optimisation II – Juan Zurita">
 <meta property="og:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta property="og:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week03_unconstrained2_files/figure-html/cell-3-output-1.png">
 <meta property="og:site_name" content="Juan Zurita">
+<meta property="og:image:height" content="690">
+<meta property="og:image:width" content="989">
 <meta name="twitter:title" content="Week 3 — Unconstrained Optimisation II – Juan Zurita">
 <meta name="twitter:description" content="Juan Zurita — Lecturer in Economics at the University of Edinburgh. Research on macroeconomic policy, credit markets, household debt, and banking.">
-<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/Profile.jpg">
+<meta name="twitter:image" content="https://juanignaciozurita.github.io/juanzurita.github.io/courses/optimisation/notebooks/week03_unconstrained2_files/figure-html/cell-3-output-1.png">
+<meta name="twitter:image-height" content="690">
+<meta name="twitter:image-width" content="989">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -350,7 +354,7 @@ window.Quarto = {
 <p><span class="math display">\[\mathbf{x}_{k+1} = \mathbf{x}_k - \alpha \nabla f(\mathbf{x}_k)\]</span></p>
 <p>where <span class="math inline">\(\alpha &gt; 0\)</span> is the <strong>step size</strong> (or learning rate).</p>
 <p>For minimisation: follow <span class="math inline">\(-\nabla f\)</span>. For maximisation: follow <span class="math inline">\(+\nabla f\)</span>.</p>
-<div id="b71176d3" class="cell">
+<div id="b71176d3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:45.174496Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:45.174287Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:45.724168Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:45.722845Z&quot;}}" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -381,27 +385,39 @@ window.Quarto = {
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Gradient descent: </span><span class="sc">{</span><span class="bu">len</span>(path_gd)<span class="sc">}</span><span class="ss"> iterations"</span>)</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Final point: (</span><span class="sc">{</span>path_gd[<span class="op">-</span><span class="dv">1</span>][<span class="dv">0</span>]<span class="sc">:.4f}</span><span class="ss">, </span><span class="sc">{</span>path_gd[<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>]<span class="sc">:.4f}</span><span class="ss">)"</span>)</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Final f value: </span><span class="sc">{</span>rosenbrock(path_gd[<span class="op">-</span><span class="dv">1</span>])<span class="sc">:.6f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Gradient descent: 20001 iterations
+Final point: (0.9999, 0.9997)
+Final f value: 0.000000</code></pre>
 </div>
-<div id="237f8264" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise the path</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">300</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">300</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>X1, X2 <span class="op">=</span> np.meshgrid(x1, x2)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> X1)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">100</span><span class="op">*</span>(X2 <span class="op">-</span> X1<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">7</span>))</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>levels <span class="op">=</span> [<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">500</span>, <span class="dv">1000</span>]</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>cs <span class="op">=</span> ax.contour(X1, X2, Z, levels<span class="op">=</span>levels, cmap<span class="op">=</span><span class="st">'RdYlBu_r'</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>ax.clabel(cs, inline<span class="op">=</span><span class="va">True</span>, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>ax.plot(path_gd[:, <span class="dv">0</span>], path_gd[:, <span class="dv">1</span>], <span class="st">'b.-'</span>, markersize<span class="op">=</span><span class="dv">1</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="st">'Gradient descent'</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="dv">1</span>, <span class="dv">1</span>, <span class="st">'r*'</span>, markersize<span class="op">=</span><span class="dv">15</span>, label<span class="op">=</span><span class="st">'Minimum (1,1)'</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ax.plot(x0[<span class="dv">0</span>], x0[<span class="dv">1</span>], <span class="st">'go'</span>, markersize<span class="op">=</span><span class="dv">10</span>, label<span class="op">=</span><span class="st">'Start'</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'$x$'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'$y$'</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Gradient Descent on the Rosenbrock Function"</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="237f8264" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:45.726947Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:45.726612Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:46.190300Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:46.189492Z&quot;}}" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise the path</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">300</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">300</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>X1, X2 <span class="op">=</span> np.meshgrid(x1, x2)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> (<span class="dv">1</span> <span class="op">-</span> X1)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">100</span><span class="op">*</span>(X2 <span class="op">-</span> X1<span class="op">**</span><span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">7</span>))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>levels <span class="op">=</span> [<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">500</span>, <span class="dv">1000</span>]</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>cs <span class="op">=</span> ax.contour(X1, X2, Z, levels<span class="op">=</span>levels, cmap<span class="op">=</span><span class="st">'RdYlBu_r'</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>ax.clabel(cs, inline<span class="op">=</span><span class="va">True</span>, fontsize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ax.plot(path_gd[:, <span class="dv">0</span>], path_gd[:, <span class="dv">1</span>], <span class="st">'b.-'</span>, markersize<span class="op">=</span><span class="dv">1</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        alpha<span class="op">=</span><span class="fl">0.7</span>, label<span class="op">=</span><span class="st">'Gradient descent'</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="dv">1</span>, <span class="dv">1</span>, <span class="st">'r*'</span>, markersize<span class="op">=</span><span class="dv">15</span>, label<span class="op">=</span><span class="st">'Minimum (1,1)'</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>ax.plot(x0[<span class="dv">0</span>], x0[<span class="dv">1</span>], <span class="st">'go'</span>, markersize<span class="op">=</span><span class="dv">10</span>, label<span class="op">=</span><span class="st">'Start'</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'$x$'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'$y$'</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Gradient Descent on the Rosenbrock Function"</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week03_unconstrained2_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="newtons-method" class="level2">
@@ -409,69 +425,87 @@ window.Quarto = {
 <p>Newton’s method uses second-order information (the Hessian) for faster convergence:</p>
 <p><span class="math display">\[\mathbf{x}_{k+1} = \mathbf{x}_k - [H_f(\mathbf{x}_k)]^{-1} \nabla f(\mathbf{x}_k)\]</span></p>
 <p><strong>Convergence:</strong> Newton’s method has <strong>quadratic</strong> convergence near the optimum (vs.&nbsp;linear for gradient descent), but each step is more expensive and requires computing/inverting the Hessian.</p>
-<div id="5f96d6ba" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Newton's method for a simpler example: f(x,y) = x^4 + y^4 - 4xy + 1</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_simple(x):</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">4</span> <span class="op">+</span> x[<span class="dv">1</span>]<span class="op">**</span><span class="dv">4</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">*</span>x[<span class="dv">1</span>] <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> grad_simple(x):</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([<span class="dv">4</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x[<span class="dv">1</span>], <span class="dv">4</span><span class="op">*</span>x[<span class="dv">1</span>]<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x[<span class="dv">0</span>]])</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hess_simple(x):</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([[<span class="dv">12</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">4</span>],</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                     [<span class="op">-</span><span class="dv">4</span>, <span class="dv">12</span><span class="op">*</span>x[<span class="dv">1</span>]<span class="op">**</span><span class="dv">2</span>]])</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> newtons_method(grad_f, hess_f, x0, tol<span class="op">=</span><span class="fl">1e-8</span>, max_iter<span class="op">=</span><span class="dv">100</span>):</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x0.copy()</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> [x.copy()]</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(max_iter):</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>        g <span class="op">=</span> grad_f(x)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.linalg.norm(g) <span class="op">&lt;</span> tol:</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>        H <span class="op">=</span> hess_f(x)</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>        direction <span class="op">=</span> np.linalg.solve(H, <span class="op">-</span>g)</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x <span class="op">+</span> direction</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>        path.append(x.copy())</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(path)</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> np.array([<span class="fl">2.0</span>, <span class="fl">2.0</span>])</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare</span></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>path_newton <span class="op">=</span> newtons_method(grad_simple, hess_simple, x0)</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>path_gd2 <span class="op">=</span> gradient_descent(grad_simple, x0, alpha<span class="op">=</span><span class="fl">0.01</span>, max_iter<span class="op">=</span><span class="dv">500</span>)</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Newton: </span><span class="sc">{</span><span class="bu">len</span>(path_newton)<span class="sc">}</span><span class="ss"> iterations -&gt; (</span><span class="sc">{</span>path_newton[<span class="op">-</span><span class="dv">1</span>][<span class="dv">0</span>]<span class="sc">:.6f}</span><span class="ss">, </span><span class="sc">{</span>path_newton[<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>]<span class="sc">:.6f}</span><span class="ss">)"</span>)</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"GD:     </span><span class="sc">{</span><span class="bu">len</span>(path_gd2)<span class="sc">}</span><span class="ss"> iterations -&gt; (</span><span class="sc">{</span>path_gd2[<span class="op">-</span><span class="dv">1</span>][<span class="dv">0</span>]<span class="sc">:.6f}</span><span class="ss">, </span><span class="sc">{</span>path_gd2[<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>]<span class="sc">:.6f}</span><span class="ss">)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="5f96d6ba" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:46.192577Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:46.192374Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:46.204215Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:46.203425Z&quot;}}" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Newton's method for a simpler example: f(x,y) = x^4 + y^4 - 4xy + 1</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_simple(x):</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">4</span> <span class="op">+</span> x[<span class="dv">1</span>]<span class="op">**</span><span class="dv">4</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">*</span>x[<span class="dv">1</span>] <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> grad_simple(x):</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([<span class="dv">4</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x[<span class="dv">1</span>], <span class="dv">4</span><span class="op">*</span>x[<span class="dv">1</span>]<span class="op">**</span><span class="dv">3</span> <span class="op">-</span> <span class="dv">4</span><span class="op">*</span>x[<span class="dv">0</span>]])</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hess_simple(x):</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([[<span class="dv">12</span><span class="op">*</span>x[<span class="dv">0</span>]<span class="op">**</span><span class="dv">2</span>, <span class="op">-</span><span class="dv">4</span>],</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                     [<span class="op">-</span><span class="dv">4</span>, <span class="dv">12</span><span class="op">*</span>x[<span class="dv">1</span>]<span class="op">**</span><span class="dv">2</span>]])</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> newtons_method(grad_f, hess_f, x0, tol<span class="op">=</span><span class="fl">1e-8</span>, max_iter<span class="op">=</span><span class="dv">100</span>):</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x0.copy()</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> [x.copy()]</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(max_iter):</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        g <span class="op">=</span> grad_f(x)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> np.linalg.norm(g) <span class="op">&lt;</span> tol:</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        H <span class="op">=</span> hess_f(x)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        direction <span class="op">=</span> np.linalg.solve(H, <span class="op">-</span>g)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> x <span class="op">+</span> direction</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        path.append(x.copy())</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(path)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> np.array([<span class="fl">2.0</span>, <span class="fl">2.0</span>])</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>path_newton <span class="op">=</span> newtons_method(grad_simple, hess_simple, x0)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>path_gd2 <span class="op">=</span> gradient_descent(grad_simple, x0, alpha<span class="op">=</span><span class="fl">0.01</span>, max_iter<span class="op">=</span><span class="dv">500</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Newton: </span><span class="sc">{</span><span class="bu">len</span>(path_newton)<span class="sc">}</span><span class="ss"> iterations -&gt; (</span><span class="sc">{</span>path_newton[<span class="op">-</span><span class="dv">1</span>][<span class="dv">0</span>]<span class="sc">:.6f}</span><span class="ss">, </span><span class="sc">{</span>path_newton[<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>]<span class="sc">:.6f}</span><span class="ss">)"</span>)</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"GD:     </span><span class="sc">{</span><span class="bu">len</span>(path_gd2)<span class="sc">}</span><span class="ss"> iterations -&gt; (</span><span class="sc">{</span>path_gd2[<span class="op">-</span><span class="dv">1</span>][<span class="dv">0</span>]<span class="sc">:.6f}</span><span class="ss">, </span><span class="sc">{</span>path_gd2[<span class="op">-</span><span class="dv">1</span>][<span class="dv">1</span>]<span class="sc">:.6f}</span><span class="ss">)"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Newton: 7 iterations -&gt; (1.000000, 1.000000)
+GD:     183 iterations -&gt; (1.000000, 1.000000)</code></pre>
 </div>
-<div id="fdfcd67e" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convergence comparison</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>fvals_newton <span class="op">=</span> [f_simple(p) <span class="cf">for</span> p <span class="kw">in</span> path_newton]</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>fvals_gd <span class="op">=</span> [f_simple(p) <span class="cf">for</span> p <span class="kw">in</span> path_gd2]</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>ax.semilogy(<span class="bu">range</span>(<span class="bu">len</span>(fvals_newton)), fvals_newton, <span class="st">'r-o'</span>, label<span class="op">=</span><span class="st">"Newton's method"</span>, markersize<span class="op">=</span><span class="dv">6</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ax.semilogy(<span class="bu">range</span>(<span class="bu">min</span>(<span class="dv">50</span>, <span class="bu">len</span>(fvals_gd))), fvals_gd[:<span class="dv">50</span>], <span class="st">'b-s'</span>, label<span class="op">=</span><span class="st">'Gradient descent'</span>, markersize<span class="op">=</span><span class="dv">4</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Iteration'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'$f(x_k)$ (log scale)'</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Convergence: Newton vs Gradient Descent'</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>ax.legend()<span class="op">;</span> ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="fdfcd67e" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:46.206567Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:46.206352Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:46.486454Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:46.485172Z&quot;}}" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convergence comparison</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>fvals_newton <span class="op">=</span> [f_simple(p) <span class="cf">for</span> p <span class="kw">in</span> path_newton]</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>fvals_gd <span class="op">=</span> [f_simple(p) <span class="cf">for</span> p <span class="kw">in</span> path_gd2]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>ax.semilogy(<span class="bu">range</span>(<span class="bu">len</span>(fvals_newton)), fvals_newton, <span class="st">'r-o'</span>, label<span class="op">=</span><span class="st">"Newton's method"</span>, markersize<span class="op">=</span><span class="dv">6</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>ax.semilogy(<span class="bu">range</span>(<span class="bu">min</span>(<span class="dv">50</span>, <span class="bu">len</span>(fvals_gd))), fvals_gd[:<span class="dv">50</span>], <span class="st">'b-s'</span>, label<span class="op">=</span><span class="st">'Gradient descent'</span>, markersize<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Iteration'</span>)<span class="op">;</span> ax.set_ylabel(<span class="st">'$f(x_k)$ (log scale)'</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Convergence: Newton vs Gradient Descent'</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>ax.legend()<span class="op">;</span> ax.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week03_unconstrained2_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 <section id="quasi-newton-methods-bfgs" class="level2">
 <h2 class="anchored" data-anchor-id="quasi-newton-methods-bfgs">3. Quasi-Newton Methods: BFGS</h2>
 <p>Computing the full Hessian is expensive. <strong>BFGS</strong> (Broyden–Fletcher–Goldfarb–Shanno) approximates the inverse Hessian using gradient information only, achieving superlinear convergence without second derivatives.</p>
 <p>In practice, BFGS (and its limited-memory variant L-BFGS) is the workhorse of smooth optimisation.</p>
-<div id="241426be" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Using scipy's BFGS</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> np.array([<span class="fl">2.0</span>, <span class="fl">2.0</span>])</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> minimize(f_simple, x0, method<span class="op">=</span><span class="st">'BFGS'</span>, jac<span class="op">=</span>grad_simple)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"BFGS result:"</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  x* = (</span><span class="sc">{</span>result<span class="sc">.</span>x[<span class="dv">0</span>]<span class="sc">:.6f}</span><span class="ss">, </span><span class="sc">{</span>result<span class="sc">.</span>x[<span class="dv">1</span>]<span class="sc">:.6f}</span><span class="ss">)"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  f* = </span><span class="sc">{</span>result<span class="sc">.</span>fun<span class="sc">:.6f}</span><span class="ss">"</span>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Iterations: </span><span class="sc">{</span>result<span class="sc">.</span>nit<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Gradient evaluations: </span><span class="sc">{</span>result<span class="sc">.</span>njev<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="241426be" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-08-11T07:51:46.488700Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-08-11T07:51:46.488465Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-08-11T07:51:47.454275Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-08-11T07:51:47.452947Z&quot;}}" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Using scipy's BFGS</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> np.array([<span class="fl">2.0</span>, <span class="fl">2.0</span>])</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> minimize(f_simple, x0, method<span class="op">=</span><span class="st">'BFGS'</span>, jac<span class="op">=</span>grad_simple)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"BFGS result:"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  x* = (</span><span class="sc">{</span>result<span class="sc">.</span>x[<span class="dv">0</span>]<span class="sc">:.6f}</span><span class="ss">, </span><span class="sc">{</span>result<span class="sc">.</span>x[<span class="dv">1</span>]<span class="sc">:.6f}</span><span class="ss">)"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  f* = </span><span class="sc">{</span>result<span class="sc">.</span>fun<span class="sc">:.6f}</span><span class="ss">"</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Iterations: </span><span class="sc">{</span>result<span class="sc">.</span>nit<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"  Gradient evaluations: </span><span class="sc">{</span>result<span class="sc">.</span>njev<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>BFGS result:
+  x* = (1.000000, 1.000000)
+  f* = -1.000000
+  Iterations: 7
+  Gradient evaluations: 8</code></pre>
+</div>
 </div>
 </section>
 <section id="exercises" class="level2">
@@ -480,16 +514,16 @@ window.Quarto = {
 <summary>
 <b>Exercise 1:</b> Implement gradient descent for <span class="math inline">\(f(x,y) = (x-3)^2 + 2(y+1)^2\)</span>. Try different step sizes <span class="math inline">\(\alpha \in \{0.01, 0.1, 0.5, 1.0\}\)</span> and plot the convergence.
 </summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_quad(x): <span class="cf">return</span> (x[<span class="dv">0</span>]<span class="op">-</span><span class="dv">3</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>(x[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> grad_quad(x): <span class="cf">return</span> np.array([<span class="dv">2</span><span class="op">*</span>(x[<span class="dv">0</span>]<span class="op">-</span><span class="dv">3</span>), <span class="dv">4</span><span class="op">*</span>(x[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>)])</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alpha <span class="kw">in</span> [<span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="fl">1.0</span>]:</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> gradient_descent(grad_quad, np.array([<span class="fl">0.0</span>, <span class="fl">0.0</span>]), alpha<span class="op">=</span>alpha, max_iter<span class="op">=</span><span class="dv">200</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    fvals <span class="op">=</span> [f_quad(p) <span class="cf">for</span> p <span class="kw">in</span> path]</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    plt.semilogy(fvals, label<span class="op">=</span><span class="ss">f'alpha=</span><span class="sc">{</span>alpha<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span> plt.xlabel(<span class="st">'Iteration'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'f(x)'</span>)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Effect of step size'</span>)<span class="op">;</span> plt.show()</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># alpha=0.5 converges fastest; alpha=1.0 diverges (too large)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f_quad(x): <span class="cf">return</span> (x[<span class="dv">0</span>]<span class="op">-</span><span class="dv">3</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>(x[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> grad_quad(x): <span class="cf">return</span> np.array([<span class="dv">2</span><span class="op">*</span>(x[<span class="dv">0</span>]<span class="op">-</span><span class="dv">3</span>), <span class="dv">4</span><span class="op">*</span>(x[<span class="dv">1</span>]<span class="op">+</span><span class="dv">1</span>)])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alpha <span class="kw">in</span> [<span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="fl">1.0</span>]:</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> gradient_descent(grad_quad, np.array([<span class="fl">0.0</span>, <span class="fl">0.0</span>]), alpha<span class="op">=</span>alpha, max_iter<span class="op">=</span><span class="dv">200</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    fvals <span class="op">=</span> [f_quad(p) <span class="cf">for</span> p <span class="kw">in</span> path]</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    plt.semilogy(fvals, label<span class="op">=</span><span class="ss">f'alpha=</span><span class="sc">{</span>alpha<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>plt.legend()<span class="op">;</span> plt.xlabel(<span class="st">'Iteration'</span>)<span class="op">;</span> plt.ylabel(<span class="st">'f(x)'</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Effect of step size'</span>)<span class="op">;</span> plt.show()</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># alpha=0.5 converges fastest; alpha=1.0 diverges (too large)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <details>
 <summary>
