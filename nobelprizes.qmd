@@ -1,0 +1,115 @@
+---
+title: "Nobel Prizes in Economics"
+subtitle: "Every laureate, their key paper, and why it matters"
+title-block-banner: true
+toc: true
+---
+
+<p style="text-align: justify;">
+The **Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel** has been awarded since 1969 to economists whose work reshaped how we understand markets, institutions, growth, and human behaviour. This page lists every laureate alongside a representative paper and a one-line summary of the idea that earned the prize. Use it as a map of the discipline — and a reading list for a lifetime.
+</p>
+
+## 1969–1979 · The Founding Decade
+
+| Year | Laureate(s) | Key Paper | Why It Matters |
+|:----:|:------------|:----------|:---------------|
+| 1969 | **Ragnar Frisch** & **Jan Tinbergen** | Frisch, "Propagation Problems and Impulse Problems in Dynamic Economics" (1933); Tinbergen, *Statistical Testing of Business-Cycle Theories* (1939) | Founded econometrics — the marriage of economic theory, mathematics, and statistics. |
+| 1970 | **Paul Samuelson** | *Foundations of Economic Analysis* (1947) | Unified economics under one mathematical framework; the textbook that trained a generation. |
+| 1971 | **Simon Kuznets** | "Economic Growth and Income Inequality" (1955) | Invented GDP measurement and showed that inequality first rises, then falls, as countries develop. |
+| 1972 | **Kenneth Arrow** & **John Hicks** | Arrow, *Social Choice and Individual Values* (1951); Hicks, *Value and Capital* (1939) | Arrow proved no voting system is perfect; Hicks formalised how consumers and firms make choices. |
+| 1973 | **Wassily Leontief** | *The Structure of the American Economy* (1941) | Created input–output analysis — tracking how industries depend on each other through the whole economy. |
+| 1974 | **Friedrich Hayek** & **Gunnar Myrdal** | Hayek, "The Use of Knowledge in Society" (1945); Myrdal, *Monetary Equilibrium* (1939) | Hayek argued prices carry information no planner can match; Myrdal showed how expectations drive cycles. |
+| 1975 | **Leonid Kantorovich** & **Tjalling Koopmans** | Kantorovich, "Mathematical Methods of Organizing and Planning Production" (1939) | Developed linear programming — the maths behind every modern logistics and resource-allocation problem. |
+| 1976 | **Milton Friedman** | *A Monetary History of the United States, 1867–1960* (1963, with A. Schwartz) | Demonstrated that bad monetary policy, not capitalism, caused the Great Depression. |
+| 1977 | **James Meade** & **Bertil Ohlin** | Ohlin, *Interregional and International Trade* (1933) | Explained why countries trade what they trade — the Heckscher–Ohlin model still anchors trade theory. |
+| 1978 | **Herbert Simon** | "A Behavioral Model of Rational Choice" (1955) | Showed that real humans don't optimise perfectly — they "satisfice," launching behavioural economics. |
+| 1979 | **Arthur Lewis** & **Theodore Schultz** | Lewis, "Economic Development with Unlimited Supplies of Labour" (1954) | Lewis explained how surplus farm labour fuels industrialisation; Schultz showed education is an investment. |
+
+## 1980–1989 · Macro Wars and Market Design
+
+| Year | Laureate(s) | Key Paper | Why It Matters |
+|:----:|:------------|:----------|:---------------|
+| 1980 | **Lawrence Klein** | *Economic Fluctuations in the United States, 1921–1941* (1950) | Built the first large-scale econometric forecasting models used by governments worldwide. |
+| 1981 | **James Tobin** | "Liquidity Preference as Behavior Towards Risk" (1958) | Showed how investors balance risk and return — the theory behind portfolio diversification. |
+| 1982 | **George Stigler** | "The Economics of Information" (1961) | Recognised that searching for prices is costly, explaining why identical goods sell at different prices. |
+| 1983 | **Gérard Debreu** | *Theory of Value* (1959) | Gave a rigorous mathematical proof that competitive markets can reach equilibrium. |
+| 1984 | **Richard Stone** | UN System of National Accounts (1953) | Designed the accounting system every country uses to measure GDP — the backbone of macroeconomic data. |
+| 1985 | **Franco Modigliani** | "The Life Cycle Hypothesis of Saving" (1954, with R. Brumberg) | People save when young and spend when old — a simple idea that reshaped pension and fiscal policy. |
+| 1986 | **James Buchanan** | *The Calculus of Consent* (1962, with G. Tullock) | Applied economic self-interest to politicians and voters, founding public-choice theory. |
+| 1987 | **Robert Solow** | "A Contribution to the Theory of Economic Growth" (1956) | The Solow model showed that long-run growth comes from technology, not just capital accumulation. |
+| 1988 | **Maurice Allais** | "The Allais Paradox" in *Econometrica* (1953) | Revealed that people violate expected-utility theory systematically — decades before Kahneman. |
+| 1989 | **Trygve Haavelmo** | "The Probability Approach in Econometrics" (1944) | Argued that economic data should be treated as random samples, founding modern statistical inference in economics. |
+
+## 1990–1999 · Finance, Games, and Institutions
+
+| Year | Laureate(s) | Key Paper | Why It Matters |
+|:----:|:------------|:----------|:---------------|
+| 1990 | **Harry Markowitz**, **Merton Miller** & **William Sharpe** | Markowitz, "Portfolio Selection" (*JF*, 1952); Sharpe, "Capital Asset Prices" (1964) | Created modern portfolio theory and the CAPM — the mathematics Wall Street runs on. |
+| 1991 | **Ronald Coase** | "The Problem of Social Cost" (1960); "The Nature of the Firm" (1937) | Explained why firms exist and showed that property rights, not regulation, can solve externalities. |
+| 1992 | **Gary Becker** | *Human Capital* (1964); "Crime and Punishment: An Economic Approach" (1968) | Applied economic reasoning to education, discrimination, crime, and the family — economics without borders. |
+| 1993 | **Robert Fogel** & **Douglass North** | North, *Institutions, Institutional Change and Economic Performance* (1990) | Fogel used data to reassess slavery and railroads; North showed institutions are the key to prosperity. |
+| 1994 | **John Harsanyi**, **John Nash** & **Reinhard Selten** | Nash, "Equilibrium Points in N-Person Games" (1950) | Formalised game theory — every strategic interaction in economics now uses the Nash equilibrium. |
+| 1995 | **Robert Lucas Jr.** | "Econometric Policy Evaluation: A Critique" (1976) | The Lucas Critique: historical relationships break when policy changes, revolutionising macro modelling. |
+| 1996 | **James Mirrlees** & **William Vickrey** | Mirrlees, "An Exploration in the Theory of Optimum Income Taxation" (1971) | Designed optimal taxes when the government can't observe people's abilities — the foundation of tax theory. |
+| 1997 | **Robert C. Merton** & **Myron Scholes** | Black & Scholes, "The Pricing of Options and Corporate Liabilities" (1973) | The Black–Scholes formula — how to price any financial derivative; launched quantitative finance. |
+| 1998 | **Amartya Sen** | *Poverty and Famines* (1981); *Collective Choice and Social Welfare* (1970) | Proved famines are caused by rights failures, not food shortages; redefined development as freedom. |
+| 1999 | **Robert Mundell** | "A Theory of Optimum Currency Areas" (*AER*, 1961) | The intellectual blueprint for the euro — when should countries share a currency? |
+
+## 2000–2009 · Causality, Behaviour, and Development
+
+| Year | Laureate(s) | Key Paper | Why It Matters |
+|:----:|:------------|:----------|:---------------|
+| 2000 | **James Heckman** & **Daniel McFadden** | Heckman, "Sample Selection Bias as a Specification Error" (1979) | Heckman corrected a statistical bias found in almost every social-science dataset; McFadden modelled discrete choices. |
+| 2001 | **George Akerlof**, **Michael Spence** & **Joseph Stiglitz** | Akerlof, "The Market for 'Lemons'" (*QJE*, 1970) | Showed how information asymmetry can destroy markets — why used cars, insurance, and credit markets fail. |
+| 2002 | **Daniel Kahneman** & **Vernon Smith** | Kahneman & Tversky, "Prospect Theory" (*Econometrica*, 1979) | People overweight losses and distort probabilities — a new model of decision-making that challenged rationality. |
+| 2003 | **Robert Engle** & **Clive Granger** | Engle, "Autoregressive Conditional Heteroscedasticity" (1982); Granger, "Co-Integration and Error Correction" (1987) | Gave finance the tools to model volatility clustering and long-run relationships in time series. |
+| 2004 | **Finn Kydland** & **Edward Prescott** | "Rules Rather Than Discretion" (*JPE*, 1977); "Time to Build and Aggregate Fluctuations" (1982) | Showed governments face a credibility problem and that technology shocks can drive business cycles. |
+| 2005 | **Robert Aumann** & **Thomas Schelling** | Schelling, *The Strategy of Conflict* (1960) | Aumann formalised repeated games; Schelling showed how focal points and credible threats shape Cold War–era strategy. |
+| 2006 | **Edmund Phelps** | "Phillips Curves, Expectations of Inflation and Optimal Unemployment over Time" (1967) | Added expectations to the Phillips Curve — there is no permanent trade-off between inflation and unemployment. |
+| 2007 | **Leonid Hurwicz**, **Eric Maskin** & **Roger Myerson** | Myerson, "Optimal Auction Design" (1981) | Founded mechanism design theory — how to build rules that make self-interested agents reveal the truth. |
+| 2008 | **Paul Krugman** | "Increasing Returns and Economic Geography" (*JPE*, 1991) | Explained why economic activity clusters in cities and industrial belts — the New Economic Geography. |
+| 2009 | **Elinor Ostrom** & **Oliver Williamson** | Ostrom, *Governing the Commons* (1990) | Ostrom showed communities can manage shared resources without privatisation or regulation — the first woman laureate. |
+
+## 2010–2019 · Markets, Experiments, and Inequality
+
+| Year | Laureate(s) | Key Paper | Why It Matters |
+|:----:|:------------|:----------|:---------------|
+| 2010 | **Peter Diamond**, **Dale Mortensen** & **Christopher Pissarides** | The DMP model: Pissarides, *Equilibrium Unemployment Theory* (1990) | Explained why unemployment persists even when jobs are available — search frictions in labour markets. |
+| 2011 | **Thomas Sargent** & **Christopher Sims** | Sims, "Macroeconomics and Reality" (*Econometrica*, 1980) | Sargent formalised rational expectations in policy; Sims created VARs — the workhorse of empirical macro. |
+| 2012 | **Alvin Roth** & **Lloyd Shapley** | Gale & Shapley, "College Admissions and the Stability of Marriage" (1962) | Invented stable matching — now used to assign doctors to hospitals, students to schools, and organ donors to patients. |
+| 2013 | **Eugene Fama**, **Lars Peter Hansen** & **Robert Shiller** | Fama, "Efficient Capital Markets" (1970); Shiller, "Do Stock Prices Move Too Much?" (1981) | Fama said markets are efficient; Shiller said they're driven by irrational exuberance. Both were right, in different ways. |
+| 2014 | **Jean Tirole** | *The Theory of Industrial Organization* (1988) | Showed how to regulate monopolies and platforms — the theory behind modern antitrust policy. |
+| 2015 | **Angus Deaton** | "An Almost Ideal Demand System" (1980, with J. Muellbauer); *The Great Escape* (2013) | Measured how the world's poorest actually spend their money — transforming development and welfare analysis. |
+| 2016 | **Oliver Hart** & **Bengt Holmström** | Holmström, "Moral Hazard and Observability" (1979); Grossman & Hart, "The Costs and Benefits of Ownership" (1986) | Designed optimal contracts — how to write pay structures that align incentives between bosses and workers, buyers and sellers. |
+| 2017 | **Richard Thaler** | *Nudge* (2008, with C. Sunstein); "Toward a Positive Theory of Consumer Choice" (1980) | Brought behavioural economics to policy — governments worldwide now use "nudge units" to improve decisions. |
+| 2018 | **William Nordhaus** & **Paul Romer** | Nordhaus, DICE model (1992); Romer, "Endogenous Technological Change" (*JPE*, 1990) | Nordhaus put a price on carbon emissions; Romer showed ideas drive growth — two models for the century's biggest challenges. |
+| 2019 | **Abhijit Banerjee**, **Esther Duflo** & **Michael Kremer** | Kremer, "The O-Ring Theory of Economic Development" (1993); Banerjee & Duflo, *Poor Economics* (2011) | Used randomised controlled trials to test what actually works in fighting poverty — evidence over ideology. |
+
+## 2020–2025 · Causes, Crises, and Innovation
+
+| Year | Laureate(s) | Key Paper | Why It Matters |
+|:----:|:------------|:----------|:---------------|
+| 2020 | **Paul Milgrom** & **Robert Wilson** | Milgrom & Weber, "A Theory of Auctions and Competitive Bidding" (1982) | Redesigned how governments sell spectrum, electricity, and permits — auction theory put into practice. |
+| 2021 | **David Card**, **Joshua Angrist** & **Guido Imbens** | Card & Krueger, "Minimum Wages and Employment" (*AER*, 1994); Angrist & Imbens, "Identification and Estimation of Local Average Treatment Effects" (1994) | Card's natural experiments overturned textbook predictions on minimum wages; Angrist and Imbens built the causal-inference toolkit. |
+| 2022 | **Ben Bernanke**, **Douglas Diamond** & **Philip Dybvig** | Diamond & Dybvig, "Bank Runs, Deposit Insurance, and Liquidity" (*JPE*, 1983); Bernanke, "Nonmonetary Effects of the Financial Crisis in the Propagation of the Great Depression" (*AER*, 1983) | Explained why banks are fragile by design and how financial crises amplify recessions. |
+| 2023 | **Claudia Goldin** | "The Quiet Revolution That Transformed Women's Employment, Education, and Family" (*AER*, 2006) | Traced 200 years of data to show why the gender pay gap persists — it's about time flexibility, not discrimination alone. |
+| 2024 | **Daron Acemoglu**, **Simon Johnson** & **James A. Robinson** | "The Colonial Origins of Comparative Development" (*AER*, 2001); *Why Nations Fail* (2012) | Showed that inclusive institutions — not geography, culture, or luck — determine why some nations are rich and others poor. |
+| 2025 | **Joel Mokyr**, **Philippe Aghion** & **Peter Howitt** | Aghion & Howitt, "A Model of Growth Through Creative Destruction" (*Econometrica*, 1992); Mokyr, *The Gifts of Athena* (2002) | Mokyr identified how a "culture of improvement" enabled sustained innovation; Aghion and Howitt formalised Schumpeter's creative destruction as an engine of growth. |
+
+## By the Numbers
+
+- **57 prizes** awarded (1969–2025)
+- **96 laureates** (some years have multiple winners)
+- **3 women laureates**: Elinor Ostrom (2009), Esther Duflo (2019), Claudia Goldin (2023)
+- **Youngest winner**: Esther Duflo, age 46 (2019)
+- **Most represented institution**: University of Chicago
+
+## Further Reading
+
+- [All prizes in economic sciences — NobelPrize.org](https://www.nobelprize.org/prizes/lists/all-prizes-in-economic-sciences/)
+- [Nobel Perspectives — UBS](https://www.ubs.com/microsites/nobel-perspectives/en.html) — short video interviews with laureates
+- [IDEAS/RePEc top papers](https://ideas.repec.org/top/top.item.nbcites.html) — the most-cited economics papers of all time
+
+---
+
+*Many of the papers listed above are freely available through [NBER Working Papers](https://www.nber.org/papers), [JSTOR](https://www.jstor.org), or the authors' personal websites. Links to open-access versions will be added as they are identified.*

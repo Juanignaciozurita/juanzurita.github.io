@@ -75,6 +75,8 @@ website:
             href: quiz.qmd
           - text: Python Playground
             href: playground.qmd
+          - text: "Nobel Prizes in Economics"
+            href: nobelprizes.qmd
           - text: Resources
             href: usefullinks.qmd
       - text: Consulting & Policy

@@ -1624,144 +1624,242 @@
     "text": "For Firms & Institutions: Data Partnerships\n\nI am also open to research partnerships with banks, fintechs, and policy institutions that hold proprietary data on lending, wages, or household finances. I have extensive experience working with large administrative and financial datasets — U.S. Call Reports, HMDA mortgage data, HILDA household panel data, and individual wage records — and can turn your data into rigorous, independent analysis of questions you care about: credit conditions, interest-rate exposure, household resilience, wage dynamics.\n\n\nWhat you get: peer-review-quality analysis, co-branded or independently published research, and findings you can use internally. What I need: data access under an appropriate agreement and a genuine question. If this sounds interesting, email juan.zurita@ed.ac.uk — see also Consulting & Policy for commissioned work."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Juan Zurita",
+    "objectID": "jobmarket.html",
+    "href": "jobmarket.html",
+    "title": "Job Market",
     "section": "",
-    "text": "On the 2026–27 academic job market   Job Market Paper CV"
+    "text": "I am on the 2026–27 academic job market. My research sits at the intersection of macroeconomics, credit markets, and banking — combining theory with empirical analysis to understand how household and bank balance sheets shape the transmission of monetary and fiscal policy. Below you will find everything a committee needs; please email me with any questions."
   },
   {
-    "objectID": "index.html#research-interest",
-    "href": "index.html#research-interest",
-    "title": "Juan Zurita",
-    "section": "Research Interest",
-    "text": "Research Interest\nMacroeconomics\n\nWelcome to my personal website\n\nI am a Fix-Term Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy."
+    "objectID": "jobmarket.html#job-market-paper",
+    "href": "jobmarket.html#job-market-paper",
+    "title": "Job Market",
+    "section": "Job Market Paper",
+    "text": "Job Market Paper\n\nWho Bears the Burden of Bank Capital Regulation? Buffers, Risk Weights, and the Supply of Credit\nJob Market Paper\n\nDownload PDF   Slides\n\n\n\nAbstract\n\nWho bears the burden of bank capital regulation? Using narratively identified capital-requirement shocks and a quarterly panel of U.S. banks (1994–2019), we document two cross-sectional facts: within banks, commercial lending contracts more than real estate lending, reflecting differential risk weights; across banks, institutions with thin voluntary buffers cut lending most. A heterogeneous macro-banking model with precautionary buffers, solved globally and estimated on within-bank impulse responses, rationalises both facts. A one-percentage-point tightening costs 2.4–2.9 percent of credit-market surplus. Risk weights and size tiers redistribute this burden but barely change its aggregate magnitude — a gross transition cost excluding the stability benefits of capital.\n\n\nIn one paragraph: When regulators raise bank capital requirements, who actually pays the price? Using data on roughly 4,800 U.S. banks over twenty-five years, this paper documents two facts: commercial lending contracts more than real estate lending because it carries a higher risk weight, and banks with the thinnest voluntary capital buffers absorb the largest share of the contraction. A structural macro-banking model quantifies the welfare cost at 2.4–2.9 percent of credit-market surplus per percentage point of tightening. Redesigning risk weights or size tiers reshuffles who bears the burden but barely changes its total size — the aggregate cost is driven by the level of requirements, not their architecture."
   },
   {
-    "objectID": "index.html#research-highlights",
-    "href": "index.html#research-highlights",
-    "title": "Juan Zurita",
-    "section": "Research Highlights",
-    "text": "Research Highlights\n\n\nJuly 2026: Job Market Paper: “Who Bears the Burden of Bank Capital Regulation? Buffers, Risk Weights, and the Supply of Credit” — new draft circulated\nMay 2026: My paper “Does Household Debt affect the Transmission Mechanism of Monetary Policy” has been published in Macroeconomic Dynamics\nMarch 2026: New Working Paper: “The Bank Profit Channel of Monetary Policy” with Jiening Le\nFebruary 2026: My project “Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom” has received funding from the Royal Society of Edinburgh.\nJanuary 2026: My paper Banking Heterogeneity, Credit Supply and Economic Growth (Slides) has been published at the International Review of Economics and Finance."
+    "objectID": "jobmarket.html#application-materials",
+    "href": "jobmarket.html#application-materials",
+    "title": "Job Market",
+    "section": "Application Materials",
+    "text": "Application Materials\n\nCurriculum Vitae \nResearch Statement\nTeaching Statement\nPublications & Working Papers"
   },
   {
-    "objectID": "index.html#explore-my-work",
-    "href": "index.html#explore-my-work",
-    "title": "Juan Zurita",
-    "section": "Explore My Work",
-    "text": "Explore My Work\n\n\n\n\n\n\nResearch\nMacroeconomic policy, credit markets, household debt, and banking — publications, working papers, and an interactive explorer.\n\n\n\n\n\n\n\nTeaching\nOpen course materials in Programming & Numerical Methods and Deep Learning for Macroeconomics — interactive notebooks and Colab links.\n\n\n\n\n\n\n\nConsulting & Policy\nApplied research for central banks, regulators, and government — fiscal sustainability, macro modelling, and data strategy."
-  },
-  {
-    "objectID": "cv.html",
-    "href": "cv.html",
-    "title": "CV",
-    "section": "",
-    "text": "Download PDF"
-  },
-  {
-    "objectID": "courses/pnm/slides/week01.html#why-learn-to-program",
-    "href": "courses/pnm/slides/week01.html#why-learn-to-program",
-    "title": "Week 1 — Introduction to Python",
-    "section": "Why learn to program?",
-    "text": "Why learn to program?\n\nModern economics is computational: models without closed-form solutions, large datasets, simulations\nOne skill, many uses: research, central banks, consulting, data science\nThis course: Python — the most widely used language in economics and industry\n\n\nEDIT: these are template slides — replace with your actual lecture content. Speaker notes go in blocks like this one (press S in the browser to see them)."
-  },
-  {
-    "objectID": "courses/pnm/slides/week01.html#why-python",
-    "href": "courses/pnm/slides/week01.html#why-python",
-    "title": "Week 1 — Introduction to Python",
-    "section": "Why Python?",
-    "text": "Why Python?\n\nFree and open source — no licence, works everywhere\nThe scientific stack: NumPy, Matplotlib, pandas, statsmodels\nUsed at central banks, the IMF, tech firms, and hedge funds\nHuge community: almost every question you’ll have has an answer online"
-  },
-  {
-    "objectID": "courses/pnm/slides/week01.html#today",
-    "href": "courses/pnm/slides/week01.html#today",
-    "title": "Week 1 — Introduction to Python",
-    "section": "Today",
-    "text": "Today\n\nVariables and types\nArrays with NumPy\nFunctions and control flow\nPlotting with Matplotlib\nApplication: the Solow growth model"
-  },
-  {
-    "objectID": "courses/pnm/slides/week01.html#variables",
-    "href": "courses/pnm/slides/week01.html#variables",
-    "title": "Week 1 — Introduction to Python",
-    "section": "Variables",
-    "text": "Variables\ngdp = 2.85e12\npopulation = 68_350_000       # underscores for readability\nα = 0.3                       # Greek letters work too!\nprint(f\"GDP per capita: ${gdp/population:,.2f}\")\n\nNo type declarations — Python infers them\nf-strings format output cleanly"
-  },
-  {
-    "objectID": "courses/pnm/slides/week01.html#numpy-in-one-slide",
-    "href": "courses/pnm/slides/week01.html#numpy-in-one-slide",
-    "title": "Week 1 — Introduction to Python",
-    "section": "NumPy in one slide",
-    "text": "NumPy in one slide\nimport numpy as np\n\ngrowth = np.array([2.1, 1.7, -9.3, 7.6, 4.1, 0.3, 0.9])\ngrowth.mean()          # methods on arrays\ngrowth - 2.0           # vectorised: whole array at once\nA @ x                  # matrix multiplication"
-  },
-  {
-    "objectID": "courses/pnm/slides/week01.html#the-solow-model-in-seven-lines",
-    "href": "courses/pnm/slides/week01.html#the-solow-model-in-seven-lines",
-    "title": "Week 1 — Introduction to Python",
-    "section": "The Solow model in seven lines",
-    "text": "The Solow model in seven lines\ndef solow_path(s=0.25, alpha=0.3, delta=0.05, k0=1.0, T=100):\n    k = np.zeros(T)\n    k[0] = k0\n    for t in range(T - 1):\n        k[t + 1] = s * k[t]**alpha + (1 - delta) * k[t]\n    return k\n\\[k_{t+1} = s\\,k_t^{\\alpha} + (1-\\delta)k_t\\]"
-  },
-  {
-    "objectID": "courses/pnm/slides/week01.html#your-turn",
-    "href": "courses/pnm/slides/week01.html#your-turn",
-    "title": "Week 1 — Introduction to Python",
-    "section": "Your turn",
-    "text": "Your turn\nOpen the Week 1 notebook and work through Exercises 1.1 → 5.2\nGolden rule question: which saving rate maximises long-run consumption?"
-  },
-  {
-    "objectID": "courses/pnm/slides/week01.html#next-week",
-    "href": "courses/pnm/slides/week01.html#next-week",
-    "title": "Week 1 — Introduction to Python",
-    "section": "Next week",
-    "text": "Next week\n\nNumPy and linear algebra in depth\nWorking with real economic data\nReading: QuantEcon Python lectures 1–3"
-  },
-  {
-    "objectID": "courses/optimisation/index.html",
-    "href": "courses/optimisation/index.html",
-    "title": "Optimisation & Mathematical Methods for Economics",
-    "section": "",
-    "text": "A 10-week course covering the mathematical theory of optimisation that underpins modern economics. Each module develops a core concept — from unconstrained calculus to dynamic programming — and pairs it with computational exercises in Python so you can see the theory at work. Designed as a companion to Programming & Numerical Methods: that course teaches you to implement algorithms; this one teaches you the mathematics behind them. No prior programming experience is assumed; all materials are open access."
-  },
-  {
-    "objectID": "courses/optimisation/index.html#how-to-use-these-materials",
-    "href": "courses/optimisation/index.html#how-to-use-these-materials",
-    "title": "Optimisation & Mathematical Methods for Economics",
-    "section": "How to use these materials",
-    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud, plus a slide deck for the lecture:\n\nRead online — click the notebook link; it renders as a webpage with all code and output.\nRun in Google Colab — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.\nRun locally — install Anaconda (includes Python, Jupyter, NumPy, and Matplotlib), then download the .ipynb file and open it in Jupyter.\n\nCompanion course: this course provides the mathematical foundations for Programming & Numerical Methods. Taking them together is recommended but not required."
-  },
-  {
-    "objectID": "courses/optimisation/index.html#materials",
-    "href": "courses/optimisation/index.html#materials",
-    "title": "Optimisation & Mathematical Methods for Economics",
-    "section": "Materials",
-    "text": "Materials\n\n\n\nWeek\nTopic\nNotebook\nSlides\nColab\n\n\n\n\n1\nMathematical Foundations\nView · Download\nPDF\n\n\n\n2\nUnconstrained Optimisation I\nView · Download\nPDF\n\n\n\n3\nUnconstrained Optimisation II\nView · Download\nPDF\n\n\n\n4\nConstrained Optimisation I\nView · Download\nPDF\n\n\n\n5\nConstrained Optimisation II\nView · Download\nPDF\n\n\n\n6\nConvex Optimisation\nView · Download\nPDF\n\n\n\n7\nLinear Programming\nView · Download\nPDF\n\n\n\n8\nDynamic Optimisation I\nView · Download\nPDF\n\n\n\n9\nDynamic Optimisation II\nView · Download\nPDF\n\n\n\n10\nFrontiers\nView · Download\nPDF\n\n\n\n\nNotebooks include interactive exercises with hidden solutions — try first, then click to check."
-  },
-  {
-    "objectID": "courses/optimisation/index.html#syllabus",
-    "href": "courses/optimisation/index.html#syllabus",
-    "title": "Optimisation & Mathematical Methods for Economics",
-    "section": "Syllabus",
-    "text": "Syllabus\n\nMathematical foundations — sets, real analysis essentials, vector spaces, matrices, eigenvalues, and positive-definiteness; Python refresher with NumPy\nUnconstrained optimisation I — multivariate calculus review, gradient and Hessian, first- and second-order conditions, convexity and concavity, economic examples (profit maximisation, cost minimisation)\nUnconstrained optimisation II — iterative algorithms: steepest descent, Newton’s method, quasi-Newton (BFGS), convergence rates; implementing gradient descent in Python\nConstrained optimisation I — equality constraints, Lagrange multipliers, the bordered Hessian, envelope theorem; applications to utility maximisation and the expenditure function\nConstrained optimisation II — inequality constraints, Karush–Kuhn–Tucker conditions, complementary slackness, constraint qualification; portfolio choice and production planning\nConvex optimisation — convex sets and functions, convex programs, Lagrangian duality, strong duality and Slater’s condition; solving convex problems with CVXPY\nLinear programming — the standard form, the simplex method, LP duality and shadow prices, sensitivity analysis; applications to input–output models, transportation, and diet problems using SciPy and PuLP\nDynamic optimisation I — calculus of variations, Euler–Lagrange equation, transversality conditions, optimal control theory, Pontryagin’s maximum principle; the Ramsey–Cass–Koopmans growth model\nDynamic optimisation II — the principle of optimality, Bellman’s equation, contraction mapping theorem, policy and value function iteration; consumption–savings with borrowing constraints\nFrontiers — stochastic dynamic programming, introduction to Bayesian optimisation, optimisation in machine learning (SGD, Adam), connections to computational economics and current research"
-  },
-  {
-    "objectID": "courses/optimisation/index.html#assessment",
-    "href": "courses/optimisation/index.html#assessment",
-    "title": "Optimisation & Mathematical Methods for Economics",
-    "section": "Assessment",
-    "text": "Assessment\n\nWeekly problem sets: 20%\nComputational essays (3 over the term): 40%\nFinal project: 30%\nParticipation: 10%"
-  },
-  {
-    "objectID": "courses/optimisation/index.html#references",
-    "href": "courses/optimisation/index.html#references",
-    "title": "Optimisation & Mathematical Methods for Economics",
+    "objectID": "jobmarket.html#references",
+    "href": "jobmarket.html#references",
+    "title": "Job Market",
     "section": "References",
-    "text": "References\n\nMain texts\n\nBoyd, S. & Vandenberghe, L. Convex Optimization (2004) — freely available; main reference for Weeks 2–6\nKochenderfer, M. J. & Wheeler, T. A. Algorithms for Optimization (2019) — freely available; algorithms and implementation\nSundaram, R. K. A First Course in Optimization Theory (1996) — rigorous treatment of constrained optimisation and duality\nChiang, A. C. & Wainwright, K. Fundamental Methods of Mathematical Economics (4th ed.) — accessible introduction for economics students\n\n\n\nSupplementary\n\nJudd, K. L. Numerical Methods in Economics (1998) — bridge to computational implementation (also used in PNM)\nBertsekas, D. P. Convex Optimization Theory — freely available; advanced convex analysis\nBertsekas, D. P. Dynamic Programming and Optimal Control, Vols. I & II — definitive reference for Weeks 8–9\nStokey, N., Lucas, R. & Prescott, E. Recursive Methods in Economic Dynamics (1989) — dynamic programming for economists\nSimon, C. P. & Blume, L. Mathematics for Economists (1994) — comprehensive maths-for-econ reference\nQuantEcon — T. Sargent and J. Stachurski’s open lectures on computational economics\n\n\n\nVideo lectures (all free)\n\nStanford EE364A: Convex Optimization — Stephen Boyd (2023)\nCMU: Convex Optimization — Ryan Tibshirani\nArizona Math Camp: Optimization\nDimitri Bertsekas: Dynamic Programming Lectures\nKIT: Optimization Methods for ML and Engineering — Julius Pfrommer\n\n\n\nPython tools used in this course\n\nSciPy Optimize — general-purpose optimisation routines\nCVXPY — disciplined convex programming in Python\nPuLP — linear programming modelling"
+    "text": "References\n\n\n\nJonathan Thomas\nProfessor, School of Economics, University of Edinburgh · Jonathan.Thomas@ed.ac.uk\n\n\nCorrado Di Guilmi\nAssistant Professor, University of Technology Sydney · Corrado.DiGuilmi@uts.edu.au\n\n\nMengheng Li\nSenior Lecturer, University of Technology Sydney · Mengheng.Li@uts.edu.au"
   },
   {
-    "objectID": "courses/optimisation/index.html#questions",
-    "href": "courses/optimisation/index.html#questions",
-    "title": "Optimisation & Mathematical Methods for Economics",
+    "objectID": "jobmarket.html#teaching",
+    "href": "jobmarket.html#teaching",
+    "title": "Job Market",
+    "section": "Teaching",
+    "text": "Teaching\nI have taught macroeconomics, econometrics, forecasting, and programming/numerical methods at the University of Edinburgh, UTS, ANU, and UCA — see Teaching for the full list and my open course materials: Programming & Numerical Methods and Deep Learning for Macroeconomics (interactive notebooks used by my students)."
+  },
+  {
+    "objectID": "jobmarket.html#research-communication",
+    "href": "jobmarket.html#research-communication",
+    "title": "Job Market",
+    "section": "Research Communication",
+    "text": "Research Communication\nBeyond the papers: plain-English summaries of every paper on the Research page, an interactive explorer of my household-debt results, and public writing for general audiences."
+  },
+  {
+    "objectID": "jobmarket.html#where-to-find-me-this-season",
+    "href": "jobmarket.html#where-to-find-me-this-season",
+    "title": "Job Market",
+    "section": "Where to Find Me This Season",
+    "text": "Where to Find Me This Season\n\n\n[EDIT: conferences where you’ll present this autumn]\n[EDIT: which job markets you’ll attend for interviews]\n\n\nLast updated: July 2026. For the most recent versions of all papers, see Research."
+  },
+  {
+    "objectID": "explorer.html",
+    "href": "explorer.html",
+    "title": "Explore: Household Debt & Policy Effectiveness",
+    "section": "",
+    "text": "Two of my papers in Macroeconomic Dynamics reach a striking pair of conclusions: fiscal stimulus works better when households carry little debt, while rate cuts hit harder — but fade faster — when they carry a lot. Use the controls below to switch between the two policies and across countries, and watch how the level of household debt changes the response of output.\n\n\n\n\n  \n    \n      Government spending ↑\n      Interest rate cut\n    \n    \n      United States\n      Australia\n      Norway\n    \n  \n\n  \n    \n       Low household debt\n      —\n      output response on impact\n    \n    \n       High household debt\n      —\n      output response on impact\n    \n    \n      Published estimate\n      —\n      difference on impact\n    \n  \n\n  \n    \n    \n  \n\n  \n    View as table\n    \n\n\n\nQuarter\nLow debt (% of GDP)\nHigh debt (% of GDP)\n\n\n\n\n\n\n  \n\n  \n\n\n\n\nThe underlying research: Does household debt affect the size of the fiscal multiplier? (Macroeconomic Dynamics, 2024) and Does household debt affect the transmission mechanism of monetary policy? (forthcoming, Macroeconomic Dynamics). For what these results mean in practice, see the summaries on the Research page — and if your institution needs this kind of analysis, see Consulting & Policy."
+  },
+  {
+    "objectID": "courses/smith-to-simulation/index.html",
+    "href": "courses/smith-to-simulation/index.html",
+    "title": "From Adam Smith to Simulation",
+    "section": "",
+    "text": "A 10-week course pairing the history of economic thought with computational exercises in Python. Each module tells the story of a transformative idea — from Adam Smith’s invisible hand to Piketty’s inequality dynamics — then teaches you to build, solve, and simulate the model behind it. No prior programming experience is assumed; the course teaches Python as it goes. All materials are open access."
+  },
+  {
+    "objectID": "courses/smith-to-simulation/index.html#how-to-use-these-materials",
+    "href": "courses/smith-to-simulation/index.html#how-to-use-these-materials",
+    "title": "From Adam Smith to Simulation",
+    "section": "How to use these materials",
+    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud, plus a slide deck for the lecture:\n\nRead online — click the notebook link; it renders as a webpage with all code and output.\nRun in Google Colab — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.\nRun locally — install Anaconda (includes Python, Jupyter, NumPy, and Matplotlib), then download the .ipynb file and open it in Jupyter."
+  },
+  {
+    "objectID": "courses/smith-to-simulation/index.html#materials",
+    "href": "courses/smith-to-simulation/index.html#materials",
+    "title": "From Adam Smith to Simulation",
+    "section": "Materials",
+    "text": "Materials\n\n\n\nWeek\nTopic\nNotebook\nSlides\nColab\n\n\n\n\n1\nThe Invisible Hand — Adam Smith & Market Equilibrium\nView\nPDF\n\n\n\n2\nThe Pin Factory — Division of Labour & Comparative Advantage\nView\nPDF\n\n\n\n3\nMalthus & Ricardo — Population, Land, and the Limits to Growth\nView\nPDF\n\n\n\n4\nMarx & the Machinery Question — Capital and the Labour Share\nView\nPDF\n\n\n\n5\nThe Marginalist Revolution — Utility, Optimisation & Neoclassical Economics\nView\nPDF\n\n\n\n6\nKeynes & the Multiplier — Aggregate Demand and Fiscal Policy\nView\nPDF\n\n\n\n7\nThe Solow Growth Model — Capital Accumulation and Steady States\nView\nPDF\n\n\n\n8\nExpectations & the Lucas Critique — Why Policy Rules Matter\nView\nPDF\n\n\n\n9\nInequality & Distribution — Piketty, Markov Chains & the Wealth Distribution\nView\nPDF\n\n\n\n10\nEdinburgh’s Legacy — Market Failures, Externalities & the Future\nView\nPDF\n\n\n\n\nEach notebook includes interactive exercises with hidden solutions — try first, then click to check.\nFull syllabus: View · PDF"
+  },
+  {
+    "objectID": "courses/smith-to-simulation/index.html#syllabus",
+    "href": "courses/smith-to-simulation/index.html#syllabus",
+    "title": "From Adam Smith to Simulation",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nThe Invisible Hand — Adam Smith and market equilibrium\nThe Pin Factory — division of labour, specialisation, and trade\nMalthus & Ricardo — population, diminishing returns, and the Malthusian trap\nMarx & the Machinery Question — surplus value, capital, and the labour share\nThe Marginalist Revolution — marginal utility, consumer choice, and demand\nKeynes & the Multiplier — the Great Depression, aggregate demand, and fiscal policy\nThe Solow Growth Model — capital accumulation, steady states, and the sources of growth\nExpectations & the Lucas Critique — adaptive vs rational expectations\nInequality & Distribution — Markov chains, wealth simulation, and the Gini coefficient\nEdinburgh’s Legacy — externalities, information asymmetry, and the future of economics"
+  },
+  {
+    "objectID": "courses/smith-to-simulation/index.html#assessment",
+    "href": "courses/smith-to-simulation/index.html#assessment",
+    "title": "From Adam Smith to Simulation",
+    "section": "Assessment",
+    "text": "Assessment\n\nWeekly quizzes: 20%\nComputational essays (3 over the term): 40%\nFinal project: 30%\nParticipation: 10%"
+  },
+  {
+    "objectID": "courses/smith-to-simulation/index.html#references",
+    "href": "courses/smith-to-simulation/index.html#references",
+    "title": "From Adam Smith to Simulation",
+    "section": "References",
+    "text": "References\n\nSmith, A. The Wealth of Nations (1776) — available free at econlib.org\nHeilbroner, R. The Worldly Philosophers — the narrative backbone for the course\nBroadie, A. The Scottish Enlightenment — intellectual context for Edinburgh’s role\nRomer, D. Advanced Macroeconomics — reference for Solow, expectations, and growth\nPiketty, T. Capital in the Twenty-First Century — inequality and distribution"
+  },
+  {
+    "objectID": "courses/smith-to-simulation/index.html#questions",
+    "href": "courses/smith-to-simulation/index.html#questions",
+    "title": "From Adam Smith to Simulation",
     "section": "Questions",
     "text": "Questions\nFound an error in a notebook, or stuck on setup? Email juan.zurita@ed.ac.uk."
+  },
+  {
+    "objectID": "courses/pnm/index.html",
+    "href": "courses/pnm/index.html",
+    "title": "Programming & Numerical Methods for Economics",
+    "section": "",
+    "text": "This course teaches you to solve economic problems with code: writing clean programs in Python, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements."
+  },
+  {
+    "objectID": "courses/pnm/index.html#how-to-use-these-materials",
+    "href": "courses/pnm/index.html#how-to-use-these-materials",
+    "title": "Programming & Numerical Methods for Economics",
+    "section": "How to use these materials",
+    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud:\n\nRead online — click the notebook link; it renders as a webpage with all code and output.\nRun in Google Colab — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.\nRun locally — install Anaconda (includes Python, Jupyter, NumPy, and Matplotlib), then download the .ipynb file from the links below and open it in Jupyter. New to Python? Start with the Python Refresher repository alongside PS0.\n\nQuick experiments: try the Python Playground — run and edit course code directly in your browser, nothing to install."
+  },
+  {
+    "objectID": "courses/pnm/index.html#materials",
+    "href": "courses/pnm/index.html#materials",
+    "title": "Programming & Numerical Methods for Economics",
+    "section": "Materials",
+    "text": "Materials\n\n\n\nWeek\nTopic\nNotebook\nSlides\nColab\n\n\n\n\n1\nIntroduction to Programming\nView · Download\nPDF\n\n\n\n2\nFundamentals of Programming in Python\nView · Download\nPDF\n\n\n\n3\nData Manipulation with pandas\npandas · Case study\nPDF\n\n\n\n4\nFrom Data to Models\nView\nPDF\n\n\n\n5\nNumerical Methods I — Root-Finding & Optimisation\nView\nPDF · Optimisation · VF Approx.\n\n\n\n6\nNumerical Methods II — Optimisation in Economics\nView\nPDF\n\n\n\n7\nNumerical Methods III — Function Approximation\nView · Examples\nPDF\n\n\n\n8\nEconomic Models — Value Function Iteration\nView (Julia)\nPDF\n—\n\n\n9\nModel Estimation — Simulation & Inference\n—\nPDF\n—\n\n\n10\nAdvanced Topics — Heterogeneous Agents\n—\nPDF\n—\n\n\n\n\nNotebooks include interactive exercises with hidden solutions — try first, then click to check.\nDatasets: the survey datasets used in the Week 3 case study, labs, and problem sets (UNPS and related microdata) are distributed through Learn, not this website, for licensing reasons. Notebooks are published with their outputs embedded, so you can follow everything here.\nTest yourself: take the Numerical Methods Quiz — 14 multiple-choice questions covering root-finding, optimisation, and function approximation (Weeks 5–8) with instant feedback.\nExtra reading: pandas cheat sheet · Quadrature Methods · Math Review"
+  },
+  {
+    "objectID": "courses/pnm/index.html#syllabus",
+    "href": "courses/pnm/index.html#syllabus",
+    "title": "Programming & Numerical Methods for Economics",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nIntroduction to programming\nFundamentals of programming in Python\nData manipulation and data analysis\nFrom data to models\nNumerical Methods I\nNumerical Methods II\nNumerical Methods III\nEconomic models\nModel estimation\nAdvanced topics"
+  },
+  {
+    "objectID": "courses/pnm/index.html#references",
+    "href": "courses/pnm/index.html#references",
+    "title": "Programming & Numerical Methods for Economics",
+    "section": "References",
+    "text": "References\n\nNumerical Methods in Economics, Kenneth L. Judd (1998) — main reference for the numerical-methods weeks\nQuantEcon — T. Sargent and J. Stachurski’s open lectures, main reference\nAdvanced: Jesús Fernández-Villaverde’s Computational Methods for Economists lecture notes"
+  },
+  {
+    "objectID": "courses/pnm/index.html#questions",
+    "href": "courses/pnm/index.html#questions",
+    "title": "Programming & Numerical Methods for Economics",
+    "section": "Questions",
+    "text": "Questions\nFound an error in a notebook, or stuck on setup? Email juan.zurita@ed.ac.uk — see For Students for how to get a fast answer."
+  },
+  {
+    "objectID": "courses/forecasting/index.html",
+    "href": "courses/forecasting/index.html",
+    "title": "Economic & Business Forecasting",
+    "section": "",
+    "text": "This course covers the theory and practice of economic and business forecasting: from classical time-series methods (ARMA, exponential smoothing) through multivariate models (VAR, state space, dynamic factors) to modern machine learning and neural-network approaches. The materials below are open to everyone."
+  },
+  {
+    "objectID": "courses/forecasting/index.html#how-to-use-these-materials",
+    "href": "courses/forecasting/index.html#how-to-use-these-materials",
+    "title": "Economic & Business Forecasting",
+    "section": "How to use these materials",
+    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud:\n\nRead online — click the notebook link; it renders as a webpage with all code and output.\nRun in Google Colab — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.\nRun locally — install Anaconda (includes Python, Jupyter, NumPy, and Matplotlib), then download the .ipynb file from the links below and open it in Jupyter."
+  },
+  {
+    "objectID": "courses/forecasting/index.html#materials",
+    "href": "courses/forecasting/index.html#materials",
+    "title": "Economic & Business Forecasting",
+    "section": "Materials",
+    "text": "Materials\n\n\n\nWeek\nTopic\nNotebook\nSlides\nColab\n\n\n\n\n1\nIntroduction to Forecasting\nView · Download\nPDF\n\n\n\n2\nProbability & Statistics\nView · Download\nPDF\n\n\n\n3\nARMA Models\nView · Download\nPDF\n\n\n\n4\nForecasting with ARMA\nView · Download\nPDF\n\n\n\n5\nExponential Smoothing & ETS\nView · Download\nPDF\n\n\n\n6\nVAR Models\nView · Download\nPDF\n\n\n\n7\nState Space & Kalman Filter\nView · Download\nPDF\n\n\n\n8\nDynamic Factor Models\nView · Download\nPDF\n\n\n\n9\nMachine Learning for Forecasting\nView · Download\nPDF\n\n\n\n10\nNeural Networks & Deep Learning\nView · Download\nPDF\n\n\n\n\nNotebooks include interactive exercises with hidden solutions — try first, then click to check."
+  },
+  {
+    "objectID": "courses/forecasting/index.html#syllabus",
+    "href": "courses/forecasting/index.html#syllabus",
+    "title": "Economic & Business Forecasting",
+    "section": "Syllabus",
+    "text": "Syllabus\n\nIntroduction to forecasting\nProbability and statistics for forecasting\nARMA models\nForecasting with ARMA models\nExponential smoothing and ETS\nMultiple time series and VAR models\nState space models and the Kalman filter\nDynamic factor models\nMachine learning for forecasting\nNeural networks and deep learning"
+  },
+  {
+    "objectID": "courses/forecasting/index.html#references",
+    "href": "courses/forecasting/index.html#references",
+    "title": "Economic & Business Forecasting",
+    "section": "References",
+    "text": "References\n\nForecasting: Principles and Practice, Rob J. Hyndman and George Athanasopoulos — free online\nTime Series Analysis, James D. Hamilton (1994)\nElements of Statistical Learning, Hastie, Tibshirani, Friedman — main ML reference\nQuantEcon — open lectures on computational economics"
+  },
+  {
+    "objectID": "courses/forecasting/index.html#questions",
+    "href": "courses/forecasting/index.html#questions",
+    "title": "Economic & Business Forecasting",
+    "section": "Questions",
+    "text": "Questions\nFound an error in a notebook, or stuck on setup? Email juan.zurita@ed.ac.uk."
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Juan Zurita",
+    "section": "",
+    "text": "I work with financial institutions, policy bodies, and businesses that need rigorous, independent analysis of how monetary policy, fiscal policy, and credit conditions affect the economy — and their balance sheets. This page describes what I can help with and how to engage me. For my academic work, see Research."
+  },
+  {
+    "objectID": "consulting.html#what-i-can-help-with",
+    "href": "consulting.html#what-i-can-help-with",
+    "title": "Juan Zurita",
+    "section": "What I can help with",
+    "text": "What I can help with\n\n\n🏦 Bank profitability & interest-rate risk\nHow rate changes feed through to net interest income, and why the impact differs sharply by bank size and funding model. My recent work shows mid-sized banks can lose up to 19% of net interest income after contractionary shocks — relevant for earnings stress-testing and ALM strategy.\n\n\n🏠 Household debt & policy transmission\nHow household indebtedness changes the impact of interest-rate moves and fiscal stimulus on spending and output — essential context for forecasting in high-debt economies like the UK and Australia.\n\n\n📊 Credit supply & regional growth\nHow bank lending shapes local economic activity, and why lender characteristics matter for assessing credit conditions, consolidation, and regional policy.\n\n\n📈 Macroeconomic forecasting & methods\nApplied forecasting and scenario analysis using modern time-series methods (VARs, local projections, Bayesian techniques) — as analysis, or as hands-on training for your team."
+  },
+  {
+    "objectID": "consulting.html#types-of-engagement",
+    "href": "consulting.html#types-of-engagement",
+    "title": "Juan Zurita",
+    "section": "Types of engagement",
+    "text": "Types of engagement\n\nCommissioned analysis — a defined question, answered with data and a clear write-up for a non-technical audience.\nAdvisory work — ongoing input on macro-financial questions: rate-cycle exposure, credit conditions, fiscal outlook.\nTraining & workshops — practical courses for analyst teams on forecasting, Bayesian econometrics, and programming for economics (Julia/numerical methods). I have taught these methods to undergraduates, PhD students, and practitioners.\nExpert commentary — I am happy to speak with journalists and policy audiences about monetary policy, household debt, banking, and the UK fiscal outlook."
+  },
+  {
+    "objectID": "consulting.html#why-me",
+    "href": "consulting.html#why-me",
+    "title": "Juan Zurita",
+    "section": "Why me",
+    "text": "Why me\nMy research on these questions is published in peer-reviewed journals (International Review of Economics and Finance, Macroeconomic Dynamics) and my current project on productivity and the UK’s fiscal sustainability is funded by the Royal Society of Edinburgh. I hold a Lectureship at the University of Edinburgh’s School of Economics, and I have taught macroeconomics, forecasting, and quantitative methods at universities in the UK and Australia."
+  },
+  {
+    "objectID": "consulting.html#forecasting-cattle-prices-in-argentina",
+    "href": "consulting.html#forecasting-cattle-prices-in-argentina",
+    "title": "Juan Zurita",
+    "section": "Forecasting Cattle Prices in Argentina",
+    "text": "Forecasting Cattle Prices in Argentina\n\nArgentina is one of the world’s largest beef producers, and cattle prices at the Mercado Agroganadero S.A. (Buenos Aires) are a key indicator for agricultural policy, rural incomes, and consumer inflation. I maintain an open, reproducible forecasting notebook that applies eight different techniques — ARIMA, exponential smoothing, VAR, state-space models, Ridge and Lasso regression, Random Forest, and LSTM neural networks — to the monthly Indice Novillo (steer price, ARS/kg live weight).\n\n\nThe notebook is designed to be updated with the latest market data from the Consignatarias and MAGyP monthly reports, and the forecasts refresh automatically. It draws on official data from the Ministerio de Agricultura, Ganadería y Pesca, as well as market intelligence from Entre Surcos y Corrales and the Sociedad Argentina de Angus.\n\nWho benefits:\n\nPolicymakers — anticipate inflationary pressures from beef prices (7–8 % of Argentina’s CPI basket) and calibrate export quotas.\nBreeders & feedlot operators — time retention and sale decisions using seasonal forecasts and feed-cost sensitivity analysis.\nStudents & researchers — a rich case study in non-stationary, inflation-affected time series with model comparison across seven families.\n\n\n\n\n\n\n\nNoteInteractive notebook\n\n\n\nOpen the Forecasting Cattle Prices notebook →\n\n\n\nOpen in Colab\n\n\n\n\n\nForecasting Pedigree Angus Vaquillona Prices\n\nA companion notebook focuses on the pedigree and Puro Controlado (PC) Angus vaquillona market — the elite breeding-stock auctions held at major expositions such as Palermo, the Expo Angus de Otoño, and regional breed shows. Auction results are compiled from Entre Surcos y Corrales — Resultados de Cabañas, the Sociedad Argentina de Angus, and press coverage.\n\n\nThe key analytical insight is expressing pedigree prices as a premium ratio over the commercial novillo price — this removes the dominant inflation trend and isolates the genetics premium, which is far more stable and forecastable. Six forecasting models (ARIMA, ETS, state-space, Ridge, Random Forest, and neural network) are compared on this transformed series.\n\n\n\n\n\n\n\nNoteInteractive notebook\n\n\n\nOpen the Pedigree Angus Vaquillona notebook →\n\n\n\nOpen in Colab\n\n\n\n\n\n\nForecasting Pedigree Angus Ternera Prices\n\nA further companion notebook extends the analysis to pedigree and Puro Controlado (PC) Angus terneras (female calves) — a younger category that offers buyers early access to elite genetics at a lower entry price. Terneras are sold at the same major expositions (Palermo, Expo Angus de Otoño, regional breed shows) and data is drawn from the same sources.\n\n\nThe same premium-ratio approach is applied: ternera prices per head divided by the contemporary novillo price per kilogram. Ternera ratios are typically lower than vaquillona ratios — reflecting the younger age and smaller frame — but follow similar cyclical patterns. The top-3 ensemble (Random Forest, Ridge, ARIMA) achieves a MAPE of 16.7% on the test set.\n\n\n\n\n\n\n\nNoteInteractive notebook\n\n\n\nOpen the Pedigree Angus Ternera notebook →\n\n\n\nOpen in Colab"
+  },
+  {
+    "objectID": "consulting.html#data-partnerships",
+    "href": "consulting.html#data-partnerships",
+    "title": "Juan Zurita",
+    "section": "Data partnerships",
+    "text": "Data partnerships\nIf your organisation holds proprietary data on lending, wages, or household finances, a research partnership can turn it into credible, independent insight — see Open Collaborations for what I offer and what I would need."
+  },
+  {
+    "objectID": "consulting.html#get-in-touch",
+    "href": "consulting.html#get-in-touch",
+    "title": "Juan Zurita",
+    "section": "Get in touch",
+    "text": "Get in touch\nEmail juan.zurita@ed.ac.uk with a short description of your question and your timeline, or connect on LinkedIn. I reply to serious enquiries within a few working days."
   },
   {
     "objectID": "courses/dlmacro/index.html",
@@ -1820,242 +1918,207 @@
     "text": "Questions\nFound an error in a notebook, or stuck on setup? Email juan.zurita@ed.ac.uk — see For Students for how to get a fast answer."
   },
   {
-    "objectID": "consulting.html",
-    "href": "consulting.html",
-    "title": "Juan Zurita",
+    "objectID": "courses/optimisation/index.html",
+    "href": "courses/optimisation/index.html",
+    "title": "Optimisation & Mathematical Methods for Economics",
     "section": "",
-    "text": "I work with financial institutions, policy bodies, and businesses that need rigorous, independent analysis of how monetary policy, fiscal policy, and credit conditions affect the economy — and their balance sheets. This page describes what I can help with and how to engage me. For my academic work, see Research."
+    "text": "A 10-week course covering the mathematical theory of optimisation that underpins modern economics. Each module develops a core concept — from unconstrained calculus to dynamic programming — and pairs it with computational exercises in Python so you can see the theory at work. Designed as a companion to Programming & Numerical Methods: that course teaches you to implement algorithms; this one teaches you the mathematics behind them. No prior programming experience is assumed; all materials are open access."
   },
   {
-    "objectID": "consulting.html#what-i-can-help-with",
-    "href": "consulting.html#what-i-can-help-with",
-    "title": "Juan Zurita",
-    "section": "What I can help with",
-    "text": "What I can help with\n\n\n🏦 Bank profitability & interest-rate risk\nHow rate changes feed through to net interest income, and why the impact differs sharply by bank size and funding model. My recent work shows mid-sized banks can lose up to 19% of net interest income after contractionary shocks — relevant for earnings stress-testing and ALM strategy.\n\n\n🏠 Household debt & policy transmission\nHow household indebtedness changes the impact of interest-rate moves and fiscal stimulus on spending and output — essential context for forecasting in high-debt economies like the UK and Australia.\n\n\n📊 Credit supply & regional growth\nHow bank lending shapes local economic activity, and why lender characteristics matter for assessing credit conditions, consolidation, and regional policy.\n\n\n📈 Macroeconomic forecasting & methods\nApplied forecasting and scenario analysis using modern time-series methods (VARs, local projections, Bayesian techniques) — as analysis, or as hands-on training for your team."
-  },
-  {
-    "objectID": "consulting.html#types-of-engagement",
-    "href": "consulting.html#types-of-engagement",
-    "title": "Juan Zurita",
-    "section": "Types of engagement",
-    "text": "Types of engagement\n\nCommissioned analysis — a defined question, answered with data and a clear write-up for a non-technical audience.\nAdvisory work — ongoing input on macro-financial questions: rate-cycle exposure, credit conditions, fiscal outlook.\nTraining & workshops — practical courses for analyst teams on forecasting, Bayesian econometrics, and programming for economics (Julia/numerical methods). I have taught these methods to undergraduates, PhD students, and practitioners.\nExpert commentary — I am happy to speak with journalists and policy audiences about monetary policy, household debt, banking, and the UK fiscal outlook."
-  },
-  {
-    "objectID": "consulting.html#why-me",
-    "href": "consulting.html#why-me",
-    "title": "Juan Zurita",
-    "section": "Why me",
-    "text": "Why me\nMy research on these questions is published in peer-reviewed journals (International Review of Economics and Finance, Macroeconomic Dynamics) and my current project on productivity and the UK’s fiscal sustainability is funded by the Royal Society of Edinburgh. I hold a Lectureship at the University of Edinburgh’s School of Economics, and I have taught macroeconomics, forecasting, and quantitative methods at universities in the UK and Australia."
-  },
-  {
-    "objectID": "consulting.html#forecasting-cattle-prices-in-argentina",
-    "href": "consulting.html#forecasting-cattle-prices-in-argentina",
-    "title": "Juan Zurita",
-    "section": "Forecasting Cattle Prices in Argentina",
-    "text": "Forecasting Cattle Prices in Argentina\n\nArgentina is one of the world’s largest beef producers, and cattle prices at the Mercado Agroganadero S.A. (Buenos Aires) are a key indicator for agricultural policy, rural incomes, and consumer inflation. I maintain an open, reproducible forecasting notebook that applies eight different techniques — ARIMA, exponential smoothing, VAR, state-space models, Ridge and Lasso regression, Random Forest, and LSTM neural networks — to the monthly Indice Novillo (steer price, ARS/kg live weight).\n\n\nThe notebook is designed to be updated with the latest market data from the Consignatarias and MAGyP monthly reports, and the forecasts refresh automatically. It draws on official data from the Ministerio de Agricultura, Ganadería y Pesca, as well as market intelligence from Entre Surcos y Corrales and the Sociedad Argentina de Angus.\n\nWho benefits:\n\nPolicymakers — anticipate inflationary pressures from beef prices (7–8 % of Argentina’s CPI basket) and calibrate export quotas.\nBreeders & feedlot operators — time retention and sale decisions using seasonal forecasts and feed-cost sensitivity analysis.\nStudents & researchers — a rich case study in non-stationary, inflation-affected time series with model comparison across seven families.\n\n\n\n\n\n\n\nNoteInteractive notebook\n\n\n\nOpen the Forecasting Cattle Prices notebook →\n\n\n\nOpen in Colab\n\n\n\n\n\nForecasting Pedigree Angus Vaquillona Prices\n\nA companion notebook focuses on the pedigree and Puro Controlado (PC) Angus vaquillona market — the elite breeding-stock auctions held at major expositions such as Palermo, the Expo Angus de Otoño, and regional breed shows. Auction results are compiled from Entre Surcos y Corrales — Resultados de Cabañas, the Sociedad Argentina de Angus, and press coverage.\n\n\nThe key analytical insight is expressing pedigree prices as a premium ratio over the commercial novillo price — this removes the dominant inflation trend and isolates the genetics premium, which is far more stable and forecastable. Six forecasting models (ARIMA, ETS, state-space, Ridge, Random Forest, and neural network) are compared on this transformed series.\n\n\n\n\n\n\n\nNoteInteractive notebook\n\n\n\nOpen the Pedigree Angus Vaquillona notebook →\n\n\n\nOpen in Colab\n\n\n\n\n\n\nForecasting Pedigree Angus Ternera Prices\n\nA further companion notebook extends the analysis to pedigree and Puro Controlado (PC) Angus terneras (female calves) — a younger category that offers buyers early access to elite genetics at a lower entry price. Terneras are sold at the same major expositions (Palermo, Expo Angus de Otoño, regional breed shows) and data is drawn from the same sources.\n\n\nThe same premium-ratio approach is applied: ternera prices per head divided by the contemporary novillo price per kilogram. Ternera ratios are typically lower than vaquillona ratios — reflecting the younger age and smaller frame — but follow similar cyclical patterns. The top-3 ensemble (Random Forest, Ridge, ARIMA) achieves a MAPE of 16.7% on the test set.\n\n\n\n\n\n\n\nNoteInteractive notebook\n\n\n\nOpen the Pedigree Angus Ternera notebook →\n\n\n\nOpen in Colab"
-  },
-  {
-    "objectID": "consulting.html#data-partnerships",
-    "href": "consulting.html#data-partnerships",
-    "title": "Juan Zurita",
-    "section": "Data partnerships",
-    "text": "Data partnerships\nIf your organisation holds proprietary data on lending, wages, or household finances, a research partnership can turn it into credible, independent insight — see Open Collaborations for what I offer and what I would need."
-  },
-  {
-    "objectID": "consulting.html#get-in-touch",
-    "href": "consulting.html#get-in-touch",
-    "title": "Juan Zurita",
-    "section": "Get in touch",
-    "text": "Get in touch\nEmail juan.zurita@ed.ac.uk with a short description of your question and your timeline, or connect on LinkedIn. I reply to serious enquiries within a few working days."
-  },
-  {
-    "objectID": "courses/forecasting/index.html",
-    "href": "courses/forecasting/index.html",
-    "title": "Economic & Business Forecasting",
-    "section": "",
-    "text": "This course covers the theory and practice of economic and business forecasting: from classical time-series methods (ARMA, exponential smoothing) through multivariate models (VAR, state space, dynamic factors) to modern machine learning and neural-network approaches. The materials below are open to everyone."
-  },
-  {
-    "objectID": "courses/forecasting/index.html#how-to-use-these-materials",
-    "href": "courses/forecasting/index.html#how-to-use-these-materials",
-    "title": "Economic & Business Forecasting",
+    "objectID": "courses/optimisation/index.html#how-to-use-these-materials",
+    "href": "courses/optimisation/index.html#how-to-use-these-materials",
+    "title": "Optimisation & Mathematical Methods for Economics",
     "section": "How to use these materials",
-    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud:\n\nRead online — click the notebook link; it renders as a webpage with all code and output.\nRun in Google Colab — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.\nRun locally — install Anaconda (includes Python, Jupyter, NumPy, and Matplotlib), then download the .ipynb file from the links below and open it in Jupyter."
+    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud, plus a slide deck for the lecture:\n\nRead online — click the notebook link; it renders as a webpage with all code and output.\nRun in Google Colab — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.\nRun locally — install Anaconda (includes Python, Jupyter, NumPy, and Matplotlib), then download the .ipynb file and open it in Jupyter.\n\nCompanion course: this course provides the mathematical foundations for Programming & Numerical Methods. Taking them together is recommended but not required."
   },
   {
-    "objectID": "courses/forecasting/index.html#materials",
-    "href": "courses/forecasting/index.html#materials",
-    "title": "Economic & Business Forecasting",
+    "objectID": "courses/optimisation/index.html#materials",
+    "href": "courses/optimisation/index.html#materials",
+    "title": "Optimisation & Mathematical Methods for Economics",
     "section": "Materials",
-    "text": "Materials\n\n\n\nWeek\nTopic\nNotebook\nSlides\nColab\n\n\n\n\n1\nIntroduction to Forecasting\nView · Download\nPDF\n\n\n\n2\nProbability & Statistics\nView · Download\nPDF\n\n\n\n3\nARMA Models\nView · Download\nPDF\n\n\n\n4\nForecasting with ARMA\nView · Download\nPDF\n\n\n\n5\nExponential Smoothing & ETS\nView · Download\nPDF\n\n\n\n6\nVAR Models\nView · Download\nPDF\n\n\n\n7\nState Space & Kalman Filter\nView · Download\nPDF\n\n\n\n8\nDynamic Factor Models\nView · Download\nPDF\n\n\n\n9\nMachine Learning for Forecasting\nView · Download\nPDF\n\n\n\n10\nNeural Networks & Deep Learning\nView · Download\nPDF\n\n\n\n\nNotebooks include interactive exercises with hidden solutions — try first, then click to check."
+    "text": "Materials\n\n\n\nWeek\nTopic\nNotebook\nSlides\nColab\n\n\n\n\n1\nMathematical Foundations\nView · Download\nPDF\n\n\n\n2\nUnconstrained Optimisation I\nView · Download\nPDF\n\n\n\n3\nUnconstrained Optimisation II\nView · Download\nPDF\n\n\n\n4\nConstrained Optimisation I\nView · Download\nPDF\n\n\n\n5\nConstrained Optimisation II\nView · Download\nPDF\n\n\n\n6\nConvex Optimisation\nView · Download\nPDF\n\n\n\n7\nLinear Programming\nView · Download\nPDF\n\n\n\n8\nDynamic Optimisation I\nView · Download\nPDF\n\n\n\n9\nDynamic Optimisation II\nView · Download\nPDF\n\n\n\n10\nFrontiers\nView · Download\nPDF\n\n\n\n\nNotebooks include interactive exercises with hidden solutions — try first, then click to check."
   },
   {
-    "objectID": "courses/forecasting/index.html#syllabus",
-    "href": "courses/forecasting/index.html#syllabus",
-    "title": "Economic & Business Forecasting",
+    "objectID": "courses/optimisation/index.html#syllabus",
+    "href": "courses/optimisation/index.html#syllabus",
+    "title": "Optimisation & Mathematical Methods for Economics",
     "section": "Syllabus",
-    "text": "Syllabus\n\nIntroduction to forecasting\nProbability and statistics for forecasting\nARMA models\nForecasting with ARMA models\nExponential smoothing and ETS\nMultiple time series and VAR models\nState space models and the Kalman filter\nDynamic factor models\nMachine learning for forecasting\nNeural networks and deep learning"
+    "text": "Syllabus\n\nMathematical foundations — sets, real analysis essentials, vector spaces, matrices, eigenvalues, and positive-definiteness; Python refresher with NumPy\nUnconstrained optimisation I — multivariate calculus review, gradient and Hessian, first- and second-order conditions, convexity and concavity, economic examples (profit maximisation, cost minimisation)\nUnconstrained optimisation II — iterative algorithms: steepest descent, Newton’s method, quasi-Newton (BFGS), convergence rates; implementing gradient descent in Python\nConstrained optimisation I — equality constraints, Lagrange multipliers, the bordered Hessian, envelope theorem; applications to utility maximisation and the expenditure function\nConstrained optimisation II — inequality constraints, Karush–Kuhn–Tucker conditions, complementary slackness, constraint qualification; portfolio choice and production planning\nConvex optimisation — convex sets and functions, convex programs, Lagrangian duality, strong duality and Slater’s condition; solving convex problems with CVXPY\nLinear programming — the standard form, the simplex method, LP duality and shadow prices, sensitivity analysis; applications to input–output models, transportation, and diet problems using SciPy and PuLP\nDynamic optimisation I — calculus of variations, Euler–Lagrange equation, transversality conditions, optimal control theory, Pontryagin’s maximum principle; the Ramsey–Cass–Koopmans growth model\nDynamic optimisation II — the principle of optimality, Bellman’s equation, contraction mapping theorem, policy and value function iteration; consumption–savings with borrowing constraints\nFrontiers — stochastic dynamic programming, introduction to Bayesian optimisation, optimisation in machine learning (SGD, Adam), connections to computational economics and current research"
   },
   {
-    "objectID": "courses/forecasting/index.html#references",
-    "href": "courses/forecasting/index.html#references",
-    "title": "Economic & Business Forecasting",
-    "section": "References",
-    "text": "References\n\nForecasting: Principles and Practice, Rob J. Hyndman and George Athanasopoulos — free online\nTime Series Analysis, James D. Hamilton (1994)\nElements of Statistical Learning, Hastie, Tibshirani, Friedman — main ML reference\nQuantEcon — open lectures on computational economics"
-  },
-  {
-    "objectID": "courses/forecasting/index.html#questions",
-    "href": "courses/forecasting/index.html#questions",
-    "title": "Economic & Business Forecasting",
-    "section": "Questions",
-    "text": "Questions\nFound an error in a notebook, or stuck on setup? Email juan.zurita@ed.ac.uk."
-  },
-  {
-    "objectID": "courses/pnm/index.html",
-    "href": "courses/pnm/index.html",
-    "title": "Programming & Numerical Methods for Economics",
-    "section": "",
-    "text": "This course teaches you to solve economic problems with code: writing clean programs in Python, implementing the numerical methods behind modern macroeconomics (root-finding, optimisation, dynamic programming), and building small models from scratch. The materials below are open to everyone — Edinburgh students should still check Learn for assessed coursework and announcements."
-  },
-  {
-    "objectID": "courses/pnm/index.html#how-to-use-these-materials",
-    "href": "courses/pnm/index.html#how-to-use-these-materials",
-    "title": "Programming & Numerical Methods for Economics",
-    "section": "How to use these materials",
-    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud:\n\nRead online — click the notebook link; it renders as a webpage with all code and output.\nRun in Google Colab — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.\nRun locally — install Anaconda (includes Python, Jupyter, NumPy, and Matplotlib), then download the .ipynb file from the links below and open it in Jupyter. New to Python? Start with the Python Refresher repository alongside PS0.\n\nQuick experiments: try the Python Playground — run and edit course code directly in your browser, nothing to install."
-  },
-  {
-    "objectID": "courses/pnm/index.html#materials",
-    "href": "courses/pnm/index.html#materials",
-    "title": "Programming & Numerical Methods for Economics",
-    "section": "Materials",
-    "text": "Materials\n\n\n\nWeek\nTopic\nNotebook\nSlides\nColab\n\n\n\n\n1\nIntroduction to Programming\nView · Download\nPDF\n\n\n\n2\nFundamentals of Programming in Python\nView · Download\nPDF\n\n\n\n3\nData Manipulation with pandas\npandas · Case study\nPDF\n\n\n\n4\nFrom Data to Models\nView\nPDF\n\n\n\n5\nNumerical Methods I — Root-Finding & Optimisation\nView\nPDF · Optimisation · VF Approx.\n\n\n\n6\nNumerical Methods II — Optimisation in Economics\nView\nPDF\n\n\n\n7\nNumerical Methods III — Function Approximation\nView · Examples\nPDF\n\n\n\n8\nEconomic Models — Value Function Iteration\nView (Julia)\nPDF\n—\n\n\n9\nModel Estimation — Simulation & Inference\n—\nPDF\n—\n\n\n10\nAdvanced Topics — Heterogeneous Agents\n—\nPDF\n—\n\n\n\n\nNotebooks include interactive exercises with hidden solutions — try first, then click to check.\nDatasets: the survey datasets used in the Week 3 case study, labs, and problem sets (UNPS and related microdata) are distributed through Learn, not this website, for licensing reasons. Notebooks are published with their outputs embedded, so you can follow everything here.\nTest yourself: take the Numerical Methods Quiz — 14 multiple-choice questions covering root-finding, optimisation, and function approximation (Weeks 5–8) with instant feedback.\nExtra reading: pandas cheat sheet · Quadrature Methods · Math Review"
-  },
-  {
-    "objectID": "courses/pnm/index.html#syllabus",
-    "href": "courses/pnm/index.html#syllabus",
-    "title": "Programming & Numerical Methods for Economics",
-    "section": "Syllabus",
-    "text": "Syllabus\n\nIntroduction to programming\nFundamentals of programming in Python\nData manipulation and data analysis\nFrom data to models\nNumerical Methods I\nNumerical Methods II\nNumerical Methods III\nEconomic models\nModel estimation\nAdvanced topics"
-  },
-  {
-    "objectID": "courses/pnm/index.html#references",
-    "href": "courses/pnm/index.html#references",
-    "title": "Programming & Numerical Methods for Economics",
-    "section": "References",
-    "text": "References\n\nNumerical Methods in Economics, Kenneth L. Judd (1998) — main reference for the numerical-methods weeks\nQuantEcon — T. Sargent and J. Stachurski’s open lectures, main reference\nAdvanced: Jesús Fernández-Villaverde’s Computational Methods for Economists lecture notes"
-  },
-  {
-    "objectID": "courses/pnm/index.html#questions",
-    "href": "courses/pnm/index.html#questions",
-    "title": "Programming & Numerical Methods for Economics",
-    "section": "Questions",
-    "text": "Questions\nFound an error in a notebook, or stuck on setup? Email juan.zurita@ed.ac.uk — see For Students for how to get a fast answer."
-  },
-  {
-    "objectID": "courses/smith-to-simulation/index.html",
-    "href": "courses/smith-to-simulation/index.html",
-    "title": "From Adam Smith to Simulation",
-    "section": "",
-    "text": "A 10-week course pairing the history of economic thought with computational exercises in Python. Each module tells the story of a transformative idea — from Adam Smith’s invisible hand to Piketty’s inequality dynamics — then teaches you to build, solve, and simulate the model behind it. No prior programming experience is assumed; the course teaches Python as it goes. All materials are open access."
-  },
-  {
-    "objectID": "courses/smith-to-simulation/index.html#how-to-use-these-materials",
-    "href": "courses/smith-to-simulation/index.html#how-to-use-these-materials",
-    "title": "From Adam Smith to Simulation",
-    "section": "How to use these materials",
-    "text": "How to use these materials\nEach week has a notebook you can read online, download, or run in the cloud, plus a slide deck for the lecture:\n\nRead online — click the notebook link; it renders as a webpage with all code and output.\nRun in Google Colab — click the Colab badge and the notebook opens ready to run in your browser. Nothing to install.\nRun locally — install Anaconda (includes Python, Jupyter, NumPy, and Matplotlib), then download the .ipynb file and open it in Jupyter."
-  },
-  {
-    "objectID": "courses/smith-to-simulation/index.html#materials",
-    "href": "courses/smith-to-simulation/index.html#materials",
-    "title": "From Adam Smith to Simulation",
-    "section": "Materials",
-    "text": "Materials\n\n\n\nWeek\nTopic\nNotebook\nSlides\nColab\n\n\n\n\n1\nThe Invisible Hand — Adam Smith & Market Equilibrium\nView\nPDF\n\n\n\n2\nThe Pin Factory — Division of Labour & Comparative Advantage\nView\nPDF\n\n\n\n3\nMalthus & Ricardo — Population, Land, and the Limits to Growth\nView\nPDF\n\n\n\n4\nMarx & the Machinery Question — Capital and the Labour Share\nView\nPDF\n\n\n\n5\nThe Marginalist Revolution — Utility, Optimisation & Neoclassical Economics\nView\nPDF\n\n\n\n6\nKeynes & the Multiplier — Aggregate Demand and Fiscal Policy\nView\nPDF\n\n\n\n7\nThe Solow Growth Model — Capital Accumulation and Steady States\nView\nPDF\n\n\n\n8\nExpectations & the Lucas Critique — Why Policy Rules Matter\nView\nPDF\n\n\n\n9\nInequality & Distribution — Piketty, Markov Chains & the Wealth Distribution\nView\nPDF\n\n\n\n10\nEdinburgh’s Legacy — Market Failures, Externalities & the Future\nView\nPDF\n\n\n\n\nEach notebook includes interactive exercises with hidden solutions — try first, then click to check.\nFull syllabus: View · PDF"
-  },
-  {
-    "objectID": "courses/smith-to-simulation/index.html#syllabus",
-    "href": "courses/smith-to-simulation/index.html#syllabus",
-    "title": "From Adam Smith to Simulation",
-    "section": "Syllabus",
-    "text": "Syllabus\n\nThe Invisible Hand — Adam Smith and market equilibrium\nThe Pin Factory — division of labour, specialisation, and trade\nMalthus & Ricardo — population, diminishing returns, and the Malthusian trap\nMarx & the Machinery Question — surplus value, capital, and the labour share\nThe Marginalist Revolution — marginal utility, consumer choice, and demand\nKeynes & the Multiplier — the Great Depression, aggregate demand, and fiscal policy\nThe Solow Growth Model — capital accumulation, steady states, and the sources of growth\nExpectations & the Lucas Critique — adaptive vs rational expectations\nInequality & Distribution — Markov chains, wealth simulation, and the Gini coefficient\nEdinburgh’s Legacy — externalities, information asymmetry, and the future of economics"
-  },
-  {
-    "objectID": "courses/smith-to-simulation/index.html#assessment",
-    "href": "courses/smith-to-simulation/index.html#assessment",
-    "title": "From Adam Smith to Simulation",
+    "objectID": "courses/optimisation/index.html#assessment",
+    "href": "courses/optimisation/index.html#assessment",
+    "title": "Optimisation & Mathematical Methods for Economics",
     "section": "Assessment",
-    "text": "Assessment\n\nWeekly quizzes: 20%\nComputational essays (3 over the term): 40%\nFinal project: 30%\nParticipation: 10%"
+    "text": "Assessment\n\nWeekly problem sets: 20%\nComputational essays (3 over the term): 40%\nFinal project: 30%\nParticipation: 10%"
   },
   {
-    "objectID": "courses/smith-to-simulation/index.html#references",
-    "href": "courses/smith-to-simulation/index.html#references",
-    "title": "From Adam Smith to Simulation",
+    "objectID": "courses/optimisation/index.html#references",
+    "href": "courses/optimisation/index.html#references",
+    "title": "Optimisation & Mathematical Methods for Economics",
     "section": "References",
-    "text": "References\n\nSmith, A. The Wealth of Nations (1776) — available free at econlib.org\nHeilbroner, R. The Worldly Philosophers — the narrative backbone for the course\nBroadie, A. The Scottish Enlightenment — intellectual context for Edinburgh’s role\nRomer, D. Advanced Macroeconomics — reference for Solow, expectations, and growth\nPiketty, T. Capital in the Twenty-First Century — inequality and distribution"
+    "text": "References\n\nMain texts\n\nBoyd, S. & Vandenberghe, L. Convex Optimization (2004) — freely available; main reference for Weeks 2–6\nKochenderfer, M. J. & Wheeler, T. A. Algorithms for Optimization (2019) — freely available; algorithms and implementation\nSundaram, R. K. A First Course in Optimization Theory (1996) — rigorous treatment of constrained optimisation and duality\nChiang, A. C. & Wainwright, K. Fundamental Methods of Mathematical Economics (4th ed.) — accessible introduction for economics students\n\n\n\nSupplementary\n\nJudd, K. L. Numerical Methods in Economics (1998) — bridge to computational implementation (also used in PNM)\nBertsekas, D. P. Convex Optimization Theory — freely available; advanced convex analysis\nBertsekas, D. P. Dynamic Programming and Optimal Control, Vols. I & II — definitive reference for Weeks 8–9\nStokey, N., Lucas, R. & Prescott, E. Recursive Methods in Economic Dynamics (1989) — dynamic programming for economists\nSimon, C. P. & Blume, L. Mathematics for Economists (1994) — comprehensive maths-for-econ reference\nQuantEcon — T. Sargent and J. Stachurski’s open lectures on computational economics\n\n\n\nVideo lectures (all free)\n\nStanford EE364A: Convex Optimization — Stephen Boyd (2023)\nCMU: Convex Optimization — Ryan Tibshirani\nArizona Math Camp: Optimization\nDimitri Bertsekas: Dynamic Programming Lectures\nKIT: Optimization Methods for ML and Engineering — Julius Pfrommer\n\n\n\nPython tools used in this course\n\nSciPy Optimize — general-purpose optimisation routines\nCVXPY — disciplined convex programming in Python\nPuLP — linear programming modelling"
   },
   {
-    "objectID": "courses/smith-to-simulation/index.html#questions",
-    "href": "courses/smith-to-simulation/index.html#questions",
-    "title": "From Adam Smith to Simulation",
+    "objectID": "courses/optimisation/index.html#questions",
+    "href": "courses/optimisation/index.html#questions",
+    "title": "Optimisation & Mathematical Methods for Economics",
     "section": "Questions",
     "text": "Questions\nFound an error in a notebook, or stuck on setup? Email juan.zurita@ed.ac.uk."
   },
   {
-    "objectID": "explorer.html",
-    "href": "explorer.html",
-    "title": "Explore: Household Debt & Policy Effectiveness",
+    "objectID": "courses/pnm/slides/week01.html#why-learn-to-program",
+    "href": "courses/pnm/slides/week01.html#why-learn-to-program",
+    "title": "Week 1 — Introduction to Python",
+    "section": "Why learn to program?",
+    "text": "Why learn to program?\n\nModern economics is computational: models without closed-form solutions, large datasets, simulations\nOne skill, many uses: research, central banks, consulting, data science\nThis course: Python — the most widely used language in economics and industry\n\n\nEDIT: these are template slides — replace with your actual lecture content. Speaker notes go in blocks like this one (press S in the browser to see them)."
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#why-python",
+    "href": "courses/pnm/slides/week01.html#why-python",
+    "title": "Week 1 — Introduction to Python",
+    "section": "Why Python?",
+    "text": "Why Python?\n\nFree and open source — no licence, works everywhere\nThe scientific stack: NumPy, Matplotlib, pandas, statsmodels\nUsed at central banks, the IMF, tech firms, and hedge funds\nHuge community: almost every question you’ll have has an answer online"
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#today",
+    "href": "courses/pnm/slides/week01.html#today",
+    "title": "Week 1 — Introduction to Python",
+    "section": "Today",
+    "text": "Today\n\nVariables and types\nArrays with NumPy\nFunctions and control flow\nPlotting with Matplotlib\nApplication: the Solow growth model"
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#variables",
+    "href": "courses/pnm/slides/week01.html#variables",
+    "title": "Week 1 — Introduction to Python",
+    "section": "Variables",
+    "text": "Variables\ngdp = 2.85e12\npopulation = 68_350_000       # underscores for readability\nα = 0.3                       # Greek letters work too!\nprint(f\"GDP per capita: ${gdp/population:,.2f}\")\n\nNo type declarations — Python infers them\nf-strings format output cleanly"
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#numpy-in-one-slide",
+    "href": "courses/pnm/slides/week01.html#numpy-in-one-slide",
+    "title": "Week 1 — Introduction to Python",
+    "section": "NumPy in one slide",
+    "text": "NumPy in one slide\nimport numpy as np\n\ngrowth = np.array([2.1, 1.7, -9.3, 7.6, 4.1, 0.3, 0.9])\ngrowth.mean()          # methods on arrays\ngrowth - 2.0           # vectorised: whole array at once\nA @ x                  # matrix multiplication"
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#the-solow-model-in-seven-lines",
+    "href": "courses/pnm/slides/week01.html#the-solow-model-in-seven-lines",
+    "title": "Week 1 — Introduction to Python",
+    "section": "The Solow model in seven lines",
+    "text": "The Solow model in seven lines\ndef solow_path(s=0.25, alpha=0.3, delta=0.05, k0=1.0, T=100):\n    k = np.zeros(T)\n    k[0] = k0\n    for t in range(T - 1):\n        k[t + 1] = s * k[t]**alpha + (1 - delta) * k[t]\n    return k\n\\[k_{t+1} = s\\,k_t^{\\alpha} + (1-\\delta)k_t\\]"
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#your-turn",
+    "href": "courses/pnm/slides/week01.html#your-turn",
+    "title": "Week 1 — Introduction to Python",
+    "section": "Your turn",
+    "text": "Your turn\nOpen the Week 1 notebook and work through Exercises 1.1 → 5.2\nGolden rule question: which saving rate maximises long-run consumption?"
+  },
+  {
+    "objectID": "courses/pnm/slides/week01.html#next-week",
+    "href": "courses/pnm/slides/week01.html#next-week",
+    "title": "Week 1 — Introduction to Python",
+    "section": "Next week",
+    "text": "Next week\n\nNumPy and linear algebra in depth\nWorking with real economic data\nReading: QuantEcon Python lectures 1–3"
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "CV",
     "section": "",
-    "text": "Two of my papers in Macroeconomic Dynamics reach a striking pair of conclusions: fiscal stimulus works better when households carry little debt, while rate cuts hit harder — but fade faster — when they carry a lot. Use the controls below to switch between the two policies and across countries, and watch how the level of household debt changes the response of output.\n\n\n\n\n  \n    \n      Government spending ↑\n      Interest rate cut\n    \n    \n      United States\n      Australia\n      Norway\n    \n  \n\n  \n    \n       Low household debt\n      —\n      output response on impact\n    \n    \n       High household debt\n      —\n      output response on impact\n    \n    \n      Published estimate\n      —\n      difference on impact\n    \n  \n\n  \n    \n    \n  \n\n  \n    View as table\n    \n\n\n\nQuarter\nLow debt (% of GDP)\nHigh debt (% of GDP)\n\n\n\n\n\n\n  \n\n  \n\n\n\n\nThe underlying research: Does household debt affect the size of the fiscal multiplier? (Macroeconomic Dynamics, 2024) and Does household debt affect the transmission mechanism of monetary policy? (forthcoming, Macroeconomic Dynamics). For what these results mean in practice, see the summaries on the Research page — and if your institution needs this kind of analysis, see Consulting & Policy."
+    "text": "Download PDF"
   },
   {
-    "objectID": "jobmarket.html",
-    "href": "jobmarket.html",
-    "title": "Job Market",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Juan Zurita",
     "section": "",
-    "text": "I am on the 2026–27 academic job market. My research sits at the intersection of macroeconomics, credit markets, and banking — combining theory with empirical analysis to understand how household and bank balance sheets shape the transmission of monetary and fiscal policy. Below you will find everything a committee needs; please email me with any questions."
+    "text": "On the 2026–27 academic job market   Job Market Paper CV"
   },
   {
-    "objectID": "jobmarket.html#job-market-paper",
-    "href": "jobmarket.html#job-market-paper",
-    "title": "Job Market",
-    "section": "Job Market Paper",
-    "text": "Job Market Paper\n\nWho Bears the Burden of Bank Capital Regulation? Buffers, Risk Weights, and the Supply of Credit\nJob Market Paper\n\nDownload PDF   Slides\n\n\n\nAbstract\n\nWho bears the burden of bank capital regulation? Using narratively identified capital-requirement shocks and a quarterly panel of U.S. banks (1994–2019), we document two cross-sectional facts: within banks, commercial lending contracts more than real estate lending, reflecting differential risk weights; across banks, institutions with thin voluntary buffers cut lending most. A heterogeneous macro-banking model with precautionary buffers, solved globally and estimated on within-bank impulse responses, rationalises both facts. A one-percentage-point tightening costs 2.4–2.9 percent of credit-market surplus. Risk weights and size tiers redistribute this burden but barely change its aggregate magnitude — a gross transition cost excluding the stability benefits of capital.\n\n\nIn one paragraph: When regulators raise bank capital requirements, who actually pays the price? Using data on roughly 4,800 U.S. banks over twenty-five years, this paper documents two facts: commercial lending contracts more than real estate lending because it carries a higher risk weight, and banks with the thinnest voluntary capital buffers absorb the largest share of the contraction. A structural macro-banking model quantifies the welfare cost at 2.4–2.9 percent of credit-market surplus per percentage point of tightening. Redesigning risk weights or size tiers reshuffles who bears the burden but barely changes its total size — the aggregate cost is driven by the level of requirements, not their architecture."
+    "objectID": "index.html#research-interest",
+    "href": "index.html#research-interest",
+    "title": "Juan Zurita",
+    "section": "Research Interest",
+    "text": "Research Interest\nMacroeconomics\n\nWelcome to my personal website\n\nI am a Fix-Term Lecturer in Economics at the School of Economics at the University of Edinburgh. My research focuses on macroeconomic policy and credit markets. My work combines theoretical frameworks with empirical analysis to better understand the interplay between credit supply and demand and the macroeconomy."
   },
   {
-    "objectID": "jobmarket.html#application-materials",
-    "href": "jobmarket.html#application-materials",
-    "title": "Job Market",
-    "section": "Application Materials",
-    "text": "Application Materials\n\nCurriculum Vitae \nResearch Statement\nTeaching Statement\nPublications & Working Papers"
+    "objectID": "index.html#research-highlights",
+    "href": "index.html#research-highlights",
+    "title": "Juan Zurita",
+    "section": "Research Highlights",
+    "text": "Research Highlights\n\n\nJuly 2026: Job Market Paper: “Who Bears the Burden of Bank Capital Regulation? Buffers, Risk Weights, and the Supply of Credit” — new draft circulated\nMay 2026: My paper “Does Household Debt affect the Transmission Mechanism of Monetary Policy” has been published in Macroeconomic Dynamics\nMarch 2026: New Working Paper: “The Bank Profit Channel of Monetary Policy” with Jiening Le\nFebruary 2026: My project “Productivity Growth and the Fiscal Sustainability Programme in the United Kingdom” has received funding from the Royal Society of Edinburgh.\nJanuary 2026: My paper Banking Heterogeneity, Credit Supply and Economic Growth (Slides) has been published at the International Review of Economics and Finance."
   },
   {
-    "objectID": "jobmarket.html#references",
-    "href": "jobmarket.html#references",
-    "title": "Job Market",
-    "section": "References",
-    "text": "References\n\n\n\nJonathan Thomas\nProfessor, School of Economics, University of Edinburgh · Jonathan.Thomas@ed.ac.uk\n\n\nCorrado Di Guilmi\nAssistant Professor, University of Technology Sydney · Corrado.DiGuilmi@uts.edu.au\n\n\nMengheng Li\nSenior Lecturer, University of Technology Sydney · Mengheng.Li@uts.edu.au"
+    "objectID": "index.html#explore-my-work",
+    "href": "index.html#explore-my-work",
+    "title": "Juan Zurita",
+    "section": "Explore My Work",
+    "text": "Explore My Work\n\n\n\n\n\n\nResearch\nMacroeconomic policy, credit markets, household debt, and banking — publications, working papers, and an interactive explorer.\n\n\n\n\n\n\n\nTeaching\nOpen course materials in Programming & Numerical Methods and Deep Learning for Macroeconomics — interactive notebooks and Colab links.\n\n\n\n\n\n\n\nConsulting & Policy\nApplied research for central banks, regulators, and government — fiscal sustainability, macro modelling, and data strategy."
   },
   {
-    "objectID": "jobmarket.html#teaching",
-    "href": "jobmarket.html#teaching",
-    "title": "Job Market",
-    "section": "Teaching",
-    "text": "Teaching\nI have taught macroeconomics, econometrics, forecasting, and programming/numerical methods at the University of Edinburgh, UTS, ANU, and UCA — see Teaching for the full list and my open course materials: Programming & Numerical Methods and Deep Learning for Macroeconomics (interactive notebooks used by my students)."
+    "objectID": "nobelprizes.html",
+    "href": "nobelprizes.html",
+    "title": "Nobel Prizes in Economics",
+    "section": "",
+    "text": "The Sveriges Riksbank Prize in Economic Sciences in Memory of Alfred Nobel has been awarded since 1969 to economists whose work reshaped how we understand markets, institutions, growth, and human behaviour. This page lists every laureate alongside a representative paper and a one-line summary of the idea that earned the prize. Use it as a map of the discipline — and a reading list for a lifetime."
   },
   {
-    "objectID": "jobmarket.html#research-communication",
-    "href": "jobmarket.html#research-communication",
-    "title": "Job Market",
-    "section": "Research Communication",
-    "text": "Research Communication\nBeyond the papers: plain-English summaries of every paper on the Research page, an interactive explorer of my household-debt results, and public writing for general audiences."
+    "objectID": "nobelprizes.html#the-founding-decade",
+    "href": "nobelprizes.html#the-founding-decade",
+    "title": "Nobel Prizes in Economics",
+    "section": "1969–1979 · The Founding Decade",
+    "text": "1969–1979 · The Founding Decade\n\n\n\n\n\n\n\n\n\nYear\nLaureate(s)\nKey Paper\nWhy It Matters\n\n\n\n\n1969\nRagnar Frisch & Jan Tinbergen\nFrisch, “Propagation Problems and Impulse Problems in Dynamic Economics” (1933); Tinbergen, Statistical Testing of Business-Cycle Theories (1939)\nFounded econometrics — the marriage of economic theory, mathematics, and statistics.\n\n\n1970\nPaul Samuelson\nFoundations of Economic Analysis (1947)\nUnified economics under one mathematical framework; the textbook that trained a generation.\n\n\n1971\nSimon Kuznets\n“Economic Growth and Income Inequality” (1955)\nInvented GDP measurement and showed that inequality first rises, then falls, as countries develop.\n\n\n1972\nKenneth Arrow & John Hicks\nArrow, Social Choice and Individual Values (1951); Hicks, Value and Capital (1939)\nArrow proved no voting system is perfect; Hicks formalised how consumers and firms make choices.\n\n\n1973\nWassily Leontief\nThe Structure of the American Economy (1941)\nCreated input–output analysis — tracking how industries depend on each other through the whole economy.\n\n\n1974\nFriedrich Hayek & Gunnar Myrdal\nHayek, “The Use of Knowledge in Society” (1945); Myrdal, Monetary Equilibrium (1939)\nHayek argued prices carry information no planner can match; Myrdal showed how expectations drive cycles.\n\n\n1975\nLeonid Kantorovich & Tjalling Koopmans\nKantorovich, “Mathematical Methods of Organizing and Planning Production” (1939)\nDeveloped linear programming — the maths behind every modern logistics and resource-allocation problem.\n\n\n1976\nMilton Friedman\nA Monetary History of the United States, 1867–1960 (1963, with A. Schwartz)\nDemonstrated that bad monetary policy, not capitalism, caused the Great Depression.\n\n\n1977\nJames Meade & Bertil Ohlin\nOhlin, Interregional and International Trade (1933)\nExplained why countries trade what they trade — the Heckscher–Ohlin model still anchors trade theory.\n\n\n1978\nHerbert Simon\n“A Behavioral Model of Rational Choice” (1955)\nShowed that real humans don’t optimise perfectly — they “satisfice,” launching behavioural economics.\n\n\n1979\nArthur Lewis & Theodore Schultz\nLewis, “Economic Development with Unlimited Supplies of Labour” (1954)\nLewis explained how surplus farm labour fuels industrialisation; Schultz showed education is an investment."
   },
   {
-    "objectID": "jobmarket.html#where-to-find-me-this-season",
-    "href": "jobmarket.html#where-to-find-me-this-season",
-    "title": "Job Market",
-    "section": "Where to Find Me This Season",
-    "text": "Where to Find Me This Season\n\n\n[EDIT: conferences where you’ll present this autumn]\n[EDIT: which job markets you’ll attend for interviews]\n\n\nLast updated: July 2026. For the most recent versions of all papers, see Research."
+    "objectID": "nobelprizes.html#macro-wars-and-market-design",
+    "href": "nobelprizes.html#macro-wars-and-market-design",
+    "title": "Nobel Prizes in Economics",
+    "section": "1980–1989 · Macro Wars and Market Design",
+    "text": "1980–1989 · Macro Wars and Market Design\n\n\n\n\n\n\n\n\n\nYear\nLaureate(s)\nKey Paper\nWhy It Matters\n\n\n\n\n1980\nLawrence Klein\nEconomic Fluctuations in the United States, 1921–1941 (1950)\nBuilt the first large-scale econometric forecasting models used by governments worldwide.\n\n\n1981\nJames Tobin\n“Liquidity Preference as Behavior Towards Risk” (1958)\nShowed how investors balance risk and return — the theory behind portfolio diversification.\n\n\n1982\nGeorge Stigler\n“The Economics of Information” (1961)\nRecognised that searching for prices is costly, explaining why identical goods sell at different prices.\n\n\n1983\nGérard Debreu\nTheory of Value (1959)\nGave a rigorous mathematical proof that competitive markets can reach equilibrium.\n\n\n1984\nRichard Stone\nUN System of National Accounts (1953)\nDesigned the accounting system every country uses to measure GDP — the backbone of macroeconomic data.\n\n\n1985\nFranco Modigliani\n“The Life Cycle Hypothesis of Saving” (1954, with R. Brumberg)\nPeople save when young and spend when old — a simple idea that reshaped pension and fiscal policy.\n\n\n1986\nJames Buchanan\nThe Calculus of Consent (1962, with G. Tullock)\nApplied economic self-interest to politicians and voters, founding public-choice theory.\n\n\n1987\nRobert Solow\n“A Contribution to the Theory of Economic Growth” (1956)\nThe Solow model showed that long-run growth comes from technology, not just capital accumulation.\n\n\n1988\nMaurice Allais\n“The Allais Paradox” in Econometrica (1953)\nRevealed that people violate expected-utility theory systematically — decades before Kahneman.\n\n\n1989\nTrygve Haavelmo\n“The Probability Approach in Econometrics” (1944)\nArgued that economic data should be treated as random samples, founding modern statistical inference in economics."
+  },
+  {
+    "objectID": "nobelprizes.html#finance-games-and-institutions",
+    "href": "nobelprizes.html#finance-games-and-institutions",
+    "title": "Nobel Prizes in Economics",
+    "section": "1990–1999 · Finance, Games, and Institutions",
+    "text": "1990–1999 · Finance, Games, and Institutions\n\n\n\n\n\n\n\n\n\nYear\nLaureate(s)\nKey Paper\nWhy It Matters\n\n\n\n\n1990\nHarry Markowitz, Merton Miller & William Sharpe\nMarkowitz, “Portfolio Selection” (JF, 1952); Sharpe, “Capital Asset Prices” (1964)\nCreated modern portfolio theory and the CAPM — the mathematics Wall Street runs on.\n\n\n1991\nRonald Coase\n“The Problem of Social Cost” (1960); “The Nature of the Firm” (1937)\nExplained why firms exist and showed that property rights, not regulation, can solve externalities.\n\n\n1992\nGary Becker\nHuman Capital (1964); “Crime and Punishment: An Economic Approach” (1968)\nApplied economic reasoning to education, discrimination, crime, and the family — economics without borders.\n\n\n1993\nRobert Fogel & Douglass North\nNorth, Institutions, Institutional Change and Economic Performance (1990)\nFogel used data to reassess slavery and railroads; North showed institutions are the key to prosperity.\n\n\n1994\nJohn Harsanyi, John Nash & Reinhard Selten\nNash, “Equilibrium Points in N-Person Games” (1950)\nFormalised game theory — every strategic interaction in economics now uses the Nash equilibrium.\n\n\n1995\nRobert Lucas Jr.\n“Econometric Policy Evaluation: A Critique” (1976)\nThe Lucas Critique: historical relationships break when policy changes, revolutionising macro modelling.\n\n\n1996\nJames Mirrlees & William Vickrey\nMirrlees, “An Exploration in the Theory of Optimum Income Taxation” (1971)\nDesigned optimal taxes when the government can’t observe people’s abilities — the foundation of tax theory.\n\n\n1997\nRobert C. Merton & Myron Scholes\nBlack & Scholes, “The Pricing of Options and Corporate Liabilities” (1973)\nThe Black–Scholes formula — how to price any financial derivative; launched quantitative finance.\n\n\n1998\nAmartya Sen\nPoverty and Famines (1981); Collective Choice and Social Welfare (1970)\nProved famines are caused by rights failures, not food shortages; redefined development as freedom.\n\n\n1999\nRobert Mundell\n“A Theory of Optimum Currency Areas” (AER, 1961)\nThe intellectual blueprint for the euro — when should countries share a currency?"
+  },
+  {
+    "objectID": "nobelprizes.html#causality-behaviour-and-development",
+    "href": "nobelprizes.html#causality-behaviour-and-development",
+    "title": "Nobel Prizes in Economics",
+    "section": "2000–2009 · Causality, Behaviour, and Development",
+    "text": "2000–2009 · Causality, Behaviour, and Development\n\n\n\n\n\n\n\n\n\nYear\nLaureate(s)\nKey Paper\nWhy It Matters\n\n\n\n\n2000\nJames Heckman & Daniel McFadden\nHeckman, “Sample Selection Bias as a Specification Error” (1979)\nHeckman corrected a statistical bias found in almost every social-science dataset; McFadden modelled discrete choices.\n\n\n2001\nGeorge Akerlof, Michael Spence & Joseph Stiglitz\nAkerlof, “The Market for ‘Lemons’” (QJE, 1970)\nShowed how information asymmetry can destroy markets — why used cars, insurance, and credit markets fail.\n\n\n2002\nDaniel Kahneman & Vernon Smith\nKahneman & Tversky, “Prospect Theory” (Econometrica, 1979)\nPeople overweight losses and distort probabilities — a new model of decision-making that challenged rationality.\n\n\n2003\nRobert Engle & Clive Granger\nEngle, “Autoregressive Conditional Heteroscedasticity” (1982); Granger, “Co-Integration and Error Correction” (1987)\nGave finance the tools to model volatility clustering and long-run relationships in time series.\n\n\n2004\nFinn Kydland & Edward Prescott\n“Rules Rather Than Discretion” (JPE, 1977); “Time to Build and Aggregate Fluctuations” (1982)\nShowed governments face a credibility problem and that technology shocks can drive business cycles.\n\n\n2005\nRobert Aumann & Thomas Schelling\nSchelling, The Strategy of Conflict (1960)\nAumann formalised repeated games; Schelling showed how focal points and credible threats shape Cold War–era strategy.\n\n\n2006\nEdmund Phelps\n“Phillips Curves, Expectations of Inflation and Optimal Unemployment over Time” (1967)\nAdded expectations to the Phillips Curve — there is no permanent trade-off between inflation and unemployment.\n\n\n2007\nLeonid Hurwicz, Eric Maskin & Roger Myerson\nMyerson, “Optimal Auction Design” (1981)\nFounded mechanism design theory — how to build rules that make self-interested agents reveal the truth.\n\n\n2008\nPaul Krugman\n“Increasing Returns and Economic Geography” (JPE, 1991)\nExplained why economic activity clusters in cities and industrial belts — the New Economic Geography.\n\n\n2009\nElinor Ostrom & Oliver Williamson\nOstrom, Governing the Commons (1990)\nOstrom showed communities can manage shared resources without privatisation or regulation — the first woman laureate."
+  },
+  {
+    "objectID": "nobelprizes.html#markets-experiments-and-inequality",
+    "href": "nobelprizes.html#markets-experiments-and-inequality",
+    "title": "Nobel Prizes in Economics",
+    "section": "2010–2019 · Markets, Experiments, and Inequality",
+    "text": "2010–2019 · Markets, Experiments, and Inequality\n\n\n\n\n\n\n\n\n\nYear\nLaureate(s)\nKey Paper\nWhy It Matters\n\n\n\n\n2010\nPeter Diamond, Dale Mortensen & Christopher Pissarides\nThe DMP model: Pissarides, Equilibrium Unemployment Theory (1990)\nExplained why unemployment persists even when jobs are available — search frictions in labour markets.\n\n\n2011\nThomas Sargent & Christopher Sims\nSims, “Macroeconomics and Reality” (Econometrica, 1980)\nSargent formalised rational expectations in policy; Sims created VARs — the workhorse of empirical macro.\n\n\n2012\nAlvin Roth & Lloyd Shapley\nGale & Shapley, “College Admissions and the Stability of Marriage” (1962)\nInvented stable matching — now used to assign doctors to hospitals, students to schools, and organ donors to patients.\n\n\n2013\nEugene Fama, Lars Peter Hansen & Robert Shiller\nFama, “Efficient Capital Markets” (1970); Shiller, “Do Stock Prices Move Too Much?” (1981)\nFama said markets are efficient; Shiller said they’re driven by irrational exuberance. Both were right, in different ways.\n\n\n2014\nJean Tirole\nThe Theory of Industrial Organization (1988)\nShowed how to regulate monopolies and platforms — the theory behind modern antitrust policy.\n\n\n2015\nAngus Deaton\n“An Almost Ideal Demand System” (1980, with J. Muellbauer); The Great Escape (2013)\nMeasured how the world’s poorest actually spend their money — transforming development and welfare analysis.\n\n\n2016\nOliver Hart & Bengt Holmström\nHolmström, “Moral Hazard and Observability” (1979); Grossman & Hart, “The Costs and Benefits of Ownership” (1986)\nDesigned optimal contracts — how to write pay structures that align incentives between bosses and workers, buyers and sellers.\n\n\n2017\nRichard Thaler\nNudge (2008, with C. Sunstein); “Toward a Positive Theory of Consumer Choice” (1980)\nBrought behavioural economics to policy — governments worldwide now use “nudge units” to improve decisions.\n\n\n2018\nWilliam Nordhaus & Paul Romer\nNordhaus, DICE model (1992); Romer, “Endogenous Technological Change” (JPE, 1990)\nNordhaus put a price on carbon emissions; Romer showed ideas drive growth — two models for the century’s biggest challenges.\n\n\n2019\nAbhijit Banerjee, Esther Duflo & Michael Kremer\nKremer, “The O-Ring Theory of Economic Development” (1993); Banerjee & Duflo, Poor Economics (2011)\nUsed randomised controlled trials to test what actually works in fighting poverty — evidence over ideology."
+  },
+  {
+    "objectID": "nobelprizes.html#causes-crises-and-innovation",
+    "href": "nobelprizes.html#causes-crises-and-innovation",
+    "title": "Nobel Prizes in Economics",
+    "section": "2020–2025 · Causes, Crises, and Innovation",
+    "text": "2020–2025 · Causes, Crises, and Innovation\n\n\n\n\n\n\n\n\n\nYear\nLaureate(s)\nKey Paper\nWhy It Matters\n\n\n\n\n2020\nPaul Milgrom & Robert Wilson\nMilgrom & Weber, “A Theory of Auctions and Competitive Bidding” (1982)\nRedesigned how governments sell spectrum, electricity, and permits — auction theory put into practice.\n\n\n2021\nDavid Card, Joshua Angrist & Guido Imbens\nCard & Krueger, “Minimum Wages and Employment” (AER, 1994); Angrist & Imbens, “Identification and Estimation of Local Average Treatment Effects” (1994)\nCard’s natural experiments overturned textbook predictions on minimum wages; Angrist and Imbens built the causal-inference toolkit.\n\n\n2022\nBen Bernanke, Douglas Diamond & Philip Dybvig\nDiamond & Dybvig, “Bank Runs, Deposit Insurance, and Liquidity” (JPE, 1983); Bernanke, “Nonmonetary Effects of the Financial Crisis in the Propagation of the Great Depression” (AER, 1983)\nExplained why banks are fragile by design and how financial crises amplify recessions.\n\n\n2023\nClaudia Goldin\n“The Quiet Revolution That Transformed Women’s Employment, Education, and Family” (AER, 2006)\nTraced 200 years of data to show why the gender pay gap persists — it’s about time flexibility, not discrimination alone.\n\n\n2024\nDaron Acemoglu, Simon Johnson & James A. Robinson\n“The Colonial Origins of Comparative Development” (AER, 2001); Why Nations Fail (2012)\nShowed that inclusive institutions — not geography, culture, or luck — determine why some nations are rich and others poor.\n\n\n2025\nJoel Mokyr, Philippe Aghion & Peter Howitt\nAghion & Howitt, “A Model of Growth Through Creative Destruction” (Econometrica, 1992); Mokyr, The Gifts of Athena (2002)\nMokyr identified how a “culture of improvement” enabled sustained innovation; Aghion and Howitt formalised Schumpeter’s creative destruction as an engine of growth."
+  },
+  {
+    "objectID": "nobelprizes.html#by-the-numbers",
+    "href": "nobelprizes.html#by-the-numbers",
+    "title": "Nobel Prizes in Economics",
+    "section": "By the Numbers",
+    "text": "By the Numbers\n\n57 prizes awarded (1969–2025)\n96 laureates (some years have multiple winners)\n3 women laureates: Elinor Ostrom (2009), Esther Duflo (2019), Claudia Goldin (2023)\nYoungest winner: Esther Duflo, age 46 (2019)\nMost represented institution: University of Chicago"
+  },
+  {
+    "objectID": "nobelprizes.html#further-reading",
+    "href": "nobelprizes.html#further-reading",
+    "title": "Nobel Prizes in Economics",
+    "section": "Further Reading",
+    "text": "Further Reading\n\nAll prizes in economic sciences — NobelPrize.org\nNobel Perspectives — UBS — short video interviews with laureates\nIDEAS/RePEc top papers — the most-cited economics papers of all time\n\n\nMany of the papers listed above are freely available through NBER Working Papers, JSTOR, or the authors’ personal websites. Links to open-access versions will be added as they are identified."
   },
   {
     "objectID": "playground.html",
