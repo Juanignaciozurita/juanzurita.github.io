@@ -13,6 +13,7 @@ project:
     - "courses/smith-to-simulation/intro.md"
     - "courses/smith-to-simulation/*.ipynb"
     - "courses/optimisation/index.qmd"
+    - "courses/optimisation/notebooks/*.ipynb"
     - "courses/forecasting/index.qmd"
     - "courses/forecasting/notebooks/*.ipynb"
     - "consulting/cattle-forecast/*.ipynb"
