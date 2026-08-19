@@ -1,0 +1,158 @@
+---
+title: "Deep Learning for Econometrics"
+subtitle: "Course Outline"
+title-block-banner: true
+toc: true
+---
+
+## Course Overview
+
+This course bridges modern deep learning with the concerns of applied econometrics: estimation, inference, causal identification, and prediction. Students will learn when and why neural network methods outperform classical approaches, how to maintain econometric rigour when using flexible models, and how to work with non-traditional data sources (text, images, high-dimensional panels). The emphasis throughout is on *why* these tools matter for economics, not just how to code them.
+
+**Prerequisites:** Introductory econometrics (OLS, IV, panel data); basic Python and NumPy (e.g., Programming and Numerical Methods).
+
+**Assessment:** Problem sets (40%), replication project (30%), final exam (30%).
+
+---
+
+## Week 1 — Why Deep Learning for Econometricians?
+
+- The prediction–inference distinction and where DL fits
+- Bias–variance tradeoff: from OLS to universal approximators
+- When linear models fail: nonlinearities, interactions, high dimensionality
+- Overview of the modern ML/econometrics convergence (Athey, Mullainathan)
+
+**Readings:** Mullainathan & Spiess, "Machine Learning: An Applied Econometric Approach" (*JEP*, 2017); Athey, "The Impact of Machine Learning on Economics" (*NBER*, 2018).
+
+---
+
+## Week 2 — Neural Network Foundations for Economists
+
+- Feedforward networks as nonlinear regression
+- Activation functions, loss functions, and gradient descent
+- Backpropagation — the chain rule at scale
+- Universal approximation theorem and what it does (and does not) guarantee
+- Lab: building and training a simple network in PyTorch to fit a nonlinear Engel curve
+
+**Readings:** Goodfellow, Bengio & Courville, *Deep Learning* (2016), Chapters 6–8 (selected sections).
+
+---
+
+## Week 3 — Regularisation, Overfitting, and Honest Inference
+
+- Dropout, weight decay, early stopping — an econometric interpretation
+- Cross-validation vs. sample splitting for inference
+- Honest confidence intervals after model selection
+- The "double-dipping" problem: using the same data for selection and inference
+- Lab: cross-validated neural net vs. penalised regression on a wage equation
+
+**Readings:** Chernozhukov, Chetverikov, Demirer et al., "Double/Debiased Machine Learning" (*Econometrics Journal*, 2018), Sections 1–3.
+
+---
+
+## Week 4 — Prediction in Economics
+
+- Prediction policy problems vs. causal questions (Kleinberg et al.)
+- Forecasting with neural networks: GDP, inflation, asset returns
+- Ensemble methods and model averaging
+- Evaluating predictive performance: out-of-sample R², RMSFE, Diebold–Mariano tests
+- Lab: forecasting UK CPI inflation — ARIMA vs. LSTM vs. random forest
+
+**Readings:** Kleinberg, Ludwig, Mullainathan & Obermeyer, "Prediction Policy Problems" (*AER P&P*, 2015); Goulet Coulombe et al., "How is Machine Learning Useful for Macroeconomic Forecasting?" (*JBES*, 2022).
+
+---
+
+## Week 5 — Causal Inference Meets Machine Learning
+
+- Double/debiased machine learning (DML) for partially linear models
+- Conditional average treatment effects (CATE) — causal forests and neural CATE
+- Meta-learners: S-learner, T-learner, X-learner, R-learner
+- Heterogeneous treatment effects in policy evaluation
+- Lab: estimating heterogeneous returns to education with DML using `DoubleML`
+
+**Readings:** Chernozhukov et al. (2018, full paper); Künzel, Sekhon, Bickel & Yu, "Metalearners for Estimating Heterogeneous Treatment Effects" (*PNAS*, 2019).
+
+---
+
+## Week 6 — Deep Instrumental Variables
+
+- The weak instruments problem and why nonlinearity helps
+- DeepIV: neural networks as first-stage estimators (Hartford et al.)
+- Nonparametric IV with adversarial networks (DFIV)
+- Semiparametric efficiency and the limits of flexibility
+- Lab: estimating demand elasticities with DeepIV vs. 2SLS
+
+**Readings:** Hartford, Lewis, Leyton-Brown & Taddy, "Deep IV: A Flexible Approach for Counterfactual Prediction" (*ICML*, 2017); Bennett, Kallus, Li & Mousavi, "Deep Generalized Method of Moments" (*NeurIPS*, 2019).
+
+---
+
+## Week 7 — Time Series and Sequence Models
+
+- Recurrent neural networks (RNNs) and LSTMs for economic time series
+- Transformers and attention mechanisms — why they dominate modern sequence modelling
+- Nonlinear impulse responses and state-dependent effects
+- Structural breaks and regime detection with deep learning
+- Lab: transformer-based macro forecasting vs. VAR on a multi-country panel
+
+**Readings:** Gu, Kelly & Xiu, "Empirical Asset Pricing via Machine Learning" (*RFS*, 2020); Lim, Arik, Loeff & Pfister, "Temporal Fusion Transformers for Interpretable Multi-Horizon Forecasting" (*IJF*, 2021).
+
+---
+
+## Week 8 — Text as Data
+
+- From bag-of-words to word embeddings to large language models
+- Sentiment analysis of central bank communications (Fed minutes, ECB speeches)
+- Measuring economic policy uncertainty from news text
+- Fine-tuning pre-trained models for domain-specific classification
+- Lab: classifying FOMC statement sentiment with a fine-tuned transformer
+
+**Readings:** Gentzkow, Kelly & Taddy, "Text as Data" (*JEL*, 2019); Hansen & McMahon, "Shocking Language: Understanding the Macroeconomic Effects of Central Bank Communication" (*JMCB*, 2016).
+
+---
+
+## Week 9 — Images, Satellite Data, and Unstructured Information
+
+- Convolutional neural networks (CNNs) for image classification
+- Measuring economic activity from satellite nightlights
+- Urban economics from street-level imagery
+- Transfer learning: using pre-trained vision models for economics
+- Lab: predicting regional poverty from Landsat satellite imagery
+
+**Readings:** Jean, Burke, Xie et al., "Combining Satellite Imagery and Machine Learning to Predict Poverty" (*Science*, 2016); Naik, Kominers, Raskar et al., "Computer Vision Uncovers Predictors of Physical Urban Change" (*PNAS*, 2017).
+
+---
+
+## Week 10 — Frontiers: Foundation Models and the Future of Empirical Economics
+
+- Large language models as economic agents and simulators
+- Synthetic data generation and privacy-preserving econometrics
+- Interpretability and explainability — SHAP, attention maps, counterfactual explanations
+- Ethical considerations: fairness, bias, and algorithmic decision-making
+- The future of the applied economist's toolkit
+- Lab: using an LLM to extract structured data from unstructured economic reports
+
+**Readings:** Korinek, "Generative AI for Economic Research" (*JEL*, 2023); Argyle et al., "Out of One, Many: Using Language Models to Simulate Human Samples" (*Political Analysis*, 2023).
+
+---
+
+## Suggested Software and Libraries
+
+| Tool | Purpose |
+|------|---------|
+| PyTorch | Neural network training and experimentation |
+| scikit-learn | Baseline ML models, cross-validation, evaluation |
+| `DoubleML` | Double/debiased machine learning for causal inference |
+| `EconML` | Heterogeneous treatment effects (Microsoft Research) |
+| Hugging Face Transformers | Pre-trained language and vision models |
+| `geopandas` + `rasterio` | Satellite and geospatial data |
+
+---
+
+## Connections to Other Courses
+
+| Course | Relationship |
+|--------|-------------|
+| Programming and Numerical Methods | Python foundations (prerequisite) |
+| Deep Learning for Macroeconomics | Shares DL fundamentals; this course focuses on econometric inference rather than macro modelling |
+| Optimisation and Mathematical Methods | Gradient-based optimisation theory underpins training |
+| Economic and Business Forecasting | Classical forecasting baselines that Weeks 4 and 7 extend |

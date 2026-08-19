@@ -1649,7 +1649,7 @@
     "href": "jobmarket.html#references",
     "title": "Job Market",
     "section": "References",
-    "text": "References\n\n\n\nJonathan Thomas\nProfessor, School of Economics, University of Edinburgh · Jonathan.Thomas@ed.ac.uk\n\n\nCorrado Di Guilmi\nAssistant Professor, University of Technology Sydney · Corrado.DiGuilmi@uts.edu.au\n\n\nMengheng Li\nSenior Lecturer, University of Technology Sydney · Mengheng.Li@uts.edu.au"
+    "text": "References\n\n\n\nJonathan Thomas\nProfessor, School of Economics, University of Edinburgh · Jonathan.Thomas@ed.ac.uk\n\n\nCorrado Di Guilmi\nAssociate Professor, University of Florence · corrado.diguilmi@unifi.it\n\n\nMengheng Li\nSenior Lecturer, University of Technology Sydney · Mengheng.Li@uts.edu.au"
   },
   {
     "objectID": "jobmarket.html#teaching",
@@ -1811,6 +1811,104 @@
     "title": "Economic & Business Forecasting",
     "section": "Questions",
     "text": "Questions\nFound an error in a notebook, or stuck on setup? Email juan.zurita@ed.ac.uk."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html",
+    "href": "courses/deep-learning-econometrics/outline.html",
+    "title": "Deep Learning for Econometrics",
+    "section": "",
+    "text": "This course bridges modern deep learning with the concerns of applied econometrics: estimation, inference, causal identification, and prediction. Students will learn when and why neural network methods outperform classical approaches, how to maintain econometric rigour when using flexible models, and how to work with non-traditional data sources (text, images, high-dimensional panels). The emphasis throughout is on why these tools matter for economics, not just how to code them.\nPrerequisites: Introductory econometrics (OLS, IV, panel data); basic Python and NumPy (e.g., Programming and Numerical Methods).\nAssessment: Problem sets (40%), replication project (30%), final exam (30%)."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#course-overview",
+    "href": "courses/deep-learning-econometrics/outline.html#course-overview",
+    "title": "Deep Learning for Econometrics",
+    "section": "",
+    "text": "This course bridges modern deep learning with the concerns of applied econometrics: estimation, inference, causal identification, and prediction. Students will learn when and why neural network methods outperform classical approaches, how to maintain econometric rigour when using flexible models, and how to work with non-traditional data sources (text, images, high-dimensional panels). The emphasis throughout is on why these tools matter for economics, not just how to code them.\nPrerequisites: Introductory econometrics (OLS, IV, panel data); basic Python and NumPy (e.g., Programming and Numerical Methods).\nAssessment: Problem sets (40%), replication project (30%), final exam (30%)."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#week-1-why-deep-learning-for-econometricians",
+    "href": "courses/deep-learning-econometrics/outline.html#week-1-why-deep-learning-for-econometricians",
+    "title": "Deep Learning for Econometrics",
+    "section": "Week 1 — Why Deep Learning for Econometricians?",
+    "text": "Week 1 — Why Deep Learning for Econometricians?\n\nThe prediction–inference distinction and where DL fits\nBias–variance tradeoff: from OLS to universal approximators\nWhen linear models fail: nonlinearities, interactions, high dimensionality\nOverview of the modern ML/econometrics convergence (Athey, Mullainathan)\n\nReadings: Mullainathan & Spiess, “Machine Learning: An Applied Econometric Approach” (JEP, 2017); Athey, “The Impact of Machine Learning on Economics” (NBER, 2018)."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#week-2-neural-network-foundations-for-economists",
+    "href": "courses/deep-learning-econometrics/outline.html#week-2-neural-network-foundations-for-economists",
+    "title": "Deep Learning for Econometrics",
+    "section": "Week 2 — Neural Network Foundations for Economists",
+    "text": "Week 2 — Neural Network Foundations for Economists\n\nFeedforward networks as nonlinear regression\nActivation functions, loss functions, and gradient descent\nBackpropagation — the chain rule at scale\nUniversal approximation theorem and what it does (and does not) guarantee\nLab: building and training a simple network in PyTorch to fit a nonlinear Engel curve\n\nReadings: Goodfellow, Bengio & Courville, Deep Learning (2016), Chapters 6–8 (selected sections)."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#week-3-regularisation-overfitting-and-honest-inference",
+    "href": "courses/deep-learning-econometrics/outline.html#week-3-regularisation-overfitting-and-honest-inference",
+    "title": "Deep Learning for Econometrics",
+    "section": "Week 3 — Regularisation, Overfitting, and Honest Inference",
+    "text": "Week 3 — Regularisation, Overfitting, and Honest Inference\n\nDropout, weight decay, early stopping — an econometric interpretation\nCross-validation vs. sample splitting for inference\nHonest confidence intervals after model selection\nThe “double-dipping” problem: using the same data for selection and inference\nLab: cross-validated neural net vs. penalised regression on a wage equation\n\nReadings: Chernozhukov, Chetverikov, Demirer et al., “Double/Debiased Machine Learning” (Econometrics Journal, 2018), Sections 1–3."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#week-4-prediction-in-economics",
+    "href": "courses/deep-learning-econometrics/outline.html#week-4-prediction-in-economics",
+    "title": "Deep Learning for Econometrics",
+    "section": "Week 4 — Prediction in Economics",
+    "text": "Week 4 — Prediction in Economics\n\nPrediction policy problems vs. causal questions (Kleinberg et al.)\nForecasting with neural networks: GDP, inflation, asset returns\nEnsemble methods and model averaging\nEvaluating predictive performance: out-of-sample R², RMSFE, Diebold–Mariano tests\nLab: forecasting UK CPI inflation — ARIMA vs. LSTM vs. random forest\n\nReadings: Kleinberg, Ludwig, Mullainathan & Obermeyer, “Prediction Policy Problems” (AER P&P, 2015); Goulet Coulombe et al., “How is Machine Learning Useful for Macroeconomic Forecasting?” (JBES, 2022)."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#week-5-causal-inference-meets-machine-learning",
+    "href": "courses/deep-learning-econometrics/outline.html#week-5-causal-inference-meets-machine-learning",
+    "title": "Deep Learning for Econometrics",
+    "section": "Week 5 — Causal Inference Meets Machine Learning",
+    "text": "Week 5 — Causal Inference Meets Machine Learning\n\nDouble/debiased machine learning (DML) for partially linear models\nConditional average treatment effects (CATE) — causal forests and neural CATE\nMeta-learners: S-learner, T-learner, X-learner, R-learner\nHeterogeneous treatment effects in policy evaluation\nLab: estimating heterogeneous returns to education with DML using DoubleML\n\nReadings: Chernozhukov et al. (2018, full paper); Künzel, Sekhon, Bickel & Yu, “Metalearners for Estimating Heterogeneous Treatment Effects” (PNAS, 2019)."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#week-6-deep-instrumental-variables",
+    "href": "courses/deep-learning-econometrics/outline.html#week-6-deep-instrumental-variables",
+    "title": "Deep Learning for Econometrics",
+    "section": "Week 6 — Deep Instrumental Variables",
+    "text": "Week 6 — Deep Instrumental Variables\n\nThe weak instruments problem and why nonlinearity helps\nDeepIV: neural networks as first-stage estimators (Hartford et al.)\nNonparametric IV with adversarial networks (DFIV)\nSemiparametric efficiency and the limits of flexibility\nLab: estimating demand elasticities with DeepIV vs. 2SLS\n\nReadings: Hartford, Lewis, Leyton-Brown & Taddy, “Deep IV: A Flexible Approach for Counterfactual Prediction” (ICML, 2017); Bennett, Kallus, Li & Mousavi, “Deep Generalized Method of Moments” (NeurIPS, 2019)."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#week-7-time-series-and-sequence-models",
+    "href": "courses/deep-learning-econometrics/outline.html#week-7-time-series-and-sequence-models",
+    "title": "Deep Learning for Econometrics",
+    "section": "Week 7 — Time Series and Sequence Models",
+    "text": "Week 7 — Time Series and Sequence Models\n\nRecurrent neural networks (RNNs) and LSTMs for economic time series\nTransformers and attention mechanisms — why they dominate modern sequence modelling\nNonlinear impulse responses and state-dependent effects\nStructural breaks and regime detection with deep learning\nLab: transformer-based macro forecasting vs. VAR on a multi-country panel\n\nReadings: Gu, Kelly & Xiu, “Empirical Asset Pricing via Machine Learning” (RFS, 2020); Lim, Arik, Loeff & Pfister, “Temporal Fusion Transformers for Interpretable Multi-Horizon Forecasting” (IJF, 2021)."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#week-8-text-as-data",
+    "href": "courses/deep-learning-econometrics/outline.html#week-8-text-as-data",
+    "title": "Deep Learning for Econometrics",
+    "section": "Week 8 — Text as Data",
+    "text": "Week 8 — Text as Data\n\nFrom bag-of-words to word embeddings to large language models\nSentiment analysis of central bank communications (Fed minutes, ECB speeches)\nMeasuring economic policy uncertainty from news text\nFine-tuning pre-trained models for domain-specific classification\nLab: classifying FOMC statement sentiment with a fine-tuned transformer\n\nReadings: Gentzkow, Kelly & Taddy, “Text as Data” (JEL, 2019); Hansen & McMahon, “Shocking Language: Understanding the Macroeconomic Effects of Central Bank Communication” (JMCB, 2016)."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#week-9-images-satellite-data-and-unstructured-information",
+    "href": "courses/deep-learning-econometrics/outline.html#week-9-images-satellite-data-and-unstructured-information",
+    "title": "Deep Learning for Econometrics",
+    "section": "Week 9 — Images, Satellite Data, and Unstructured Information",
+    "text": "Week 9 — Images, Satellite Data, and Unstructured Information\n\nConvolutional neural networks (CNNs) for image classification\nMeasuring economic activity from satellite nightlights\nUrban economics from street-level imagery\nTransfer learning: using pre-trained vision models for economics\nLab: predicting regional poverty from Landsat satellite imagery\n\nReadings: Jean, Burke, Xie et al., “Combining Satellite Imagery and Machine Learning to Predict Poverty” (Science, 2016); Naik, Kominers, Raskar et al., “Computer Vision Uncovers Predictors of Physical Urban Change” (PNAS, 2017)."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#week-10-frontiers-foundation-models-and-the-future-of-empirical-economics",
+    "href": "courses/deep-learning-econometrics/outline.html#week-10-frontiers-foundation-models-and-the-future-of-empirical-economics",
+    "title": "Deep Learning for Econometrics",
+    "section": "Week 10 — Frontiers: Foundation Models and the Future of Empirical Economics",
+    "text": "Week 10 — Frontiers: Foundation Models and the Future of Empirical Economics\n\nLarge language models as economic agents and simulators\nSynthetic data generation and privacy-preserving econometrics\nInterpretability and explainability — SHAP, attention maps, counterfactual explanations\nEthical considerations: fairness, bias, and algorithmic decision-making\nThe future of the applied economist’s toolkit\nLab: using an LLM to extract structured data from unstructured economic reports\n\nReadings: Korinek, “Generative AI for Economic Research” (JEL, 2023); Argyle et al., “Out of One, Many: Using Language Models to Simulate Human Samples” (Political Analysis, 2023)."
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#suggested-software-and-libraries",
+    "href": "courses/deep-learning-econometrics/outline.html#suggested-software-and-libraries",
+    "title": "Deep Learning for Econometrics",
+    "section": "Suggested Software and Libraries",
+    "text": "Suggested Software and Libraries\n\n\n\nTool\nPurpose\n\n\n\n\nPyTorch\nNeural network training and experimentation\n\n\nscikit-learn\nBaseline ML models, cross-validation, evaluation\n\n\nDoubleML\nDouble/debiased machine learning for causal inference\n\n\nEconML\nHeterogeneous treatment effects (Microsoft Research)\n\n\nHugging Face Transformers\nPre-trained language and vision models\n\n\ngeopandas + rasterio\nSatellite and geospatial data"
+  },
+  {
+    "objectID": "courses/deep-learning-econometrics/outline.html#connections-to-other-courses",
+    "href": "courses/deep-learning-econometrics/outline.html#connections-to-other-courses",
+    "title": "Deep Learning for Econometrics",
+    "section": "Connections to Other Courses",
+    "text": "Connections to Other Courses\n\n\n\n\n\n\n\nCourse\nRelationship\n\n\n\n\nProgramming and Numerical Methods\nPython foundations (prerequisite)\n\n\nDeep Learning for Macroeconomics\nShares DL fundamentals; this course focuses on econometric inference rather than macro modelling\n\n\nOptimisation and Mathematical Methods\nGradient-based optimisation theory underpins training\n\n\nEconomic and Business Forecasting\nClassical forecasting baselines that Weeks 4 and 7 extend"
   },
   {
     "objectID": "consulting.html",
