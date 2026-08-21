@@ -38,7 +38,7 @@ body-classes: home-page
 ---
 
 ::: {.jm-banner}
-**On the 2026–27 academic job market** &nbsp; [Job Market Paper](jobmarket.qmd){.jm-btn} [CV](cv.qmd){.jm-btn}
+**On the 2026–27 academic job market** &nbsp; [Job Market Paper](jobmarket.qmd){.jm-btn} [Research Agenda](files/research_agenda.pdf){.jm-btn} [CV](cv.qmd){.jm-btn}
 :::
 
 ::: {.contact}
