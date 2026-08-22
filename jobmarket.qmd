@@ -38,6 +38,7 @@ Who bears the burden of bank capital regulation? Using narratively identified ca
 - [Research Statement](files/Research_Statement - Juan Zurita - 2026.pdf)
 - [Teaching Statement](files/Juan Zurita Teaching Statement - 2026.pdf)
 - [Publications & Working Papers](research.qmd)
+- [Teaching Evaluations](files/teaching_evaluations.pdf)
 
 ## References {#references}
 
